@@ -1,0 +1,43 @@
+# HOW TO BUILD SOURCE.ANDROID.COM #
+
+source.android.com contains tutorials, references, and miscellaneous information relating to the Android Open Source Project (AOSP). The current iteration of this site is fully static HTML (notably lacking in javascript and doxygen content), and is and/or was maintained by skyler (illustrious intern to the almighty JBQ).
+
+## Short Instructions ##
+
+Run the build script.
+
+    build.py
+
+This generates a directory html_out, which is the fully built site. Hoorah.
+
+
+## Less Short Instructions ##
+
+### Contents Included in Box ###
+
+Necessary source files include:
+
+    site_src/   individual page content in markdown format
+    templates/  templates for page content
+
+and the following content which is copied directly:
+
+    assets/     stylish things that make the page look pretty
+    images/     exactly what it sounds like
+    cdds/       compatibility documents in PDF format
+
+
+### Structure of Site Source ###
+
+The build script currently assumes that
+- directory structure in site_src is only one level deep;
+- every file under the site_src directory is an individual page of source.android.com;
+- each directory within site_src is a tab of source.android.com and contains its particular sidebar.
+
+These assumptions are kind of stupid, but for the moment, they work, because source.android.com is actually very simple.
+
+
+
+# SORDID HISTORY OF SOURCE.ANDROID.COM #
+
+

@@ -1,0 +1,19 @@
+page.title=Permitted Version Strings for Android 2.2
+
+As described in Section 3.2.2 of the [Android 2.2 Compatibility Definition](android-2.2-cdd.pdf), only certain strings are allowable for the system property
+<code>android.os.Build.VERSION.RELEASE</code>. The reason for this is that
+applications and web sites may rely on predictable values for this string, and
+so that end users can easily and reliably identify the version of Android
+running on their devices.
+
+Because subsequent releases of the Android software may revise this string,
+but not change any API behavior, such releases may not be accompanied by a new
+Compatibility Definition Document. This page lists the versions that are
+allowable by an Android 2.2-based system.
+
+The value of <code>android.os.Build.VERSION.RELEASE</code> for Android 2.2
+MUST be one of the following strings:
+
+- 2.2
+- 2.2.1
+

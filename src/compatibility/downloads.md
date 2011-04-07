@@ -1,0 +1,55 @@
+# Android Compatibility Downloads #
+
+Thanks for your interest in Android Compatibility! The links below allow
+you to access the key documents and information.
+
+## Android 2.3 ##
+
+Android 2.3 is the release of the development milestone code-named
+Gingerbread. Android 2.3 is the current version of Android. Source code for
+Android 2.3 is found in the 'gingerbread' branch in the open-source tree. A
+CTS release for Android 2.3 has not yet been prepared, but one will be
+available soon.
+
+- [Android 2.3 Compatibility Definition Document (CDD)](/cdds/android-2.3-cdd.pdf)
+<!-- [Android 2.2 R4 Compatibility Test Suite (CTS)](http://dl.google.com/dl/android/cts/android-cts-2.2_r4-x86.zip) -->
+
+## Android 2.2 ##
+
+Android 2.2 is the release of the development milestone code-named
+FroYo. Source code for Android 2.2 is found in the 'froyo' branch in the
+open-source tree.
+
+- [Android 2.2 Compatibility Definition Document (CDD)](/cdds/android-2.2-cdd.pdf)
+- [Android 2.2 R4 Compatibility Test Suite (CTS)](http://dl.google.com/dl/android/cts/android-cts-2.2_r4-x86.zip)
+
+## Android 2.1 ##
+
+Android 2.1 is the release of the development milestone code-named
+Eclair. Source code for Android 2.1 is found in the 'eclair' branch in the
+open-source tree. Note that for technical reasons, there is no compatibility
+program for Android 2.0 or 2.0.1, and new devices must use Android 2.1.
+
+- [Android 2.1 Compatibility Definition Document (CDD)](/cdds/android-2.1-cdd.pdf)
+- [Android 2.1 R5 Compatibility Test Suite (CTS)](http://dl.google.com/dl/android/cts/android-cts-2.1_r5-x86.zip)
+
+## Android 1.6 ##
+
+Android 1.6 was the release of the development milestone code-named Donut.
+Android 1.6 was obsoleted by Android 2.1. Source code for Android 1.6 is found
+in the 'donut' branch in the open-source tree.
+
+- [Android 1.6 Compatibility Definition Document (CDD)](/cdds/android-1.6-cdd.pdf)
+
+## Compatibility Test Suite Manual ##
+
+The CTS user manual is applicable to any CTS version, but CTS 2.1 R2 and
+beyond require [additional steps](cts-intro.html) to run the accessibility tests.
+
+- [Compatibility Test Suite (CTS) User Manual](/cdds/android-cts-manual-r4.pdf)
+
+## Older Android Versions ##
+
+There is no Compatibility Program for older versions of Android, such as Android
+1.5 (known in development as Cupcake). New devices intended to be Android
+compatible must ship with Android 1.6 or later.
