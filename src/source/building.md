@@ -1,3 +1,19 @@
+<!--
+   Copyright 2010 The Android Open Source Project 
+
+   Licensed under the Apache License, Version 2.0 (the "License"); 
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+-->
+
 # Building the System #
 
 The basic sequence of build commands is as follows:
@@ -21,11 +37,7 @@ an argument, e.g.
     
     $ lunch full-eng
 
-Common targets include
-    
-- **full-eng**: emulator build with all debugging enabled
-- **full_passion-userdebug**: passion (Nexus One) build with minimal debugging 
-- **full_crespo-userdebug**: crespo (Nexus S) build with minimal debugging. 
+The example above refers to a complete build for the emulator, with all debugging enabled.
 
 If run with no arguments `lunch` will prompt you to choose a target from the menu. 
 
@@ -36,8 +48,7 @@ Codename   | Device
 -----------|-----------
 passion    | Nexus One
 crespo     | Nexus S
-voles      | Droid
-opal       | myTouch/Sapphire
+generic    | emulator
 
 and the BUILDTYPE is one of the following:
 
@@ -135,11 +146,7 @@ Please follow the instructions on the [Initializing](initializing.html) page for
 
 ## No USB Permission ##
 
-On most Linux systems, unprivileged users cannot access USB ports by default. 
-
-TODO: what error will occur?
-
-Follow the instructions on the [Initializing](initializing.html) page for configuring USB access.  
+On most Linux systems, unprivileged users cannot access USB ports by default. If you see a permission denied error, follow the instructions on the [Initializing](initializing.html) page for configuring USB access.  
 
 If adb was already running and cannot connect to the device after
 getting those rules set up, it can be killed with `adb kill-server`.

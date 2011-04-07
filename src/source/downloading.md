@@ -1,8 +1,24 @@
+<!--
+   Copyright 2010 The Android Open Source Project 
+
+   Licensed under the Apache License, Version 2.0 (the "License"); 
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+-->
+
 # Downloading the Source Tree #
 
 ## Installing Repo ##
 
-Repo is a tool that makes it easier to work with Git in the context of Android. For more information about Repo, see <a href="{@docRoot}source/git-repo.html">Using Repo and Git</a>.</p>
+Repo is a tool that makes it easier to work with Git in the context of Android. For more information about Repo, see [Version Control](version-control.html).
 
 To install, initialize, and configure Repo, follow these steps:
 
@@ -46,7 +62,7 @@ To pull down files to your working directory from the repositories as specified 
 
     $ repo sync
 
-The Android source files will be located in your working directory under their project names.  The initial sync operation will take several minutes to complete.  For more about `repo sync` and other Repo commands, see [Using Repo and Git](git-repo.html).
+The Android source files will be located in your working directory under their project names.  The initial sync operation will take several minutes to complete.  For more about `repo sync` and other Repo commands, see [Version Control](version-control.html).
 
 
 ## Verifying Git Tags ##

@@ -1,3 +1,19 @@
+<!--
+   Copyright 2010 The Android Open Source Project 
+
+   Licensed under the Apache License, Version 2.0 (the "License"); 
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+-->
+
 # Android Community #
 
 Welcome to the Android community!
@@ -26,7 +42,8 @@ Please consider the following before you post to our lists.
 
 - *Use a clear, relevant message subject.* This helps everyone, both those trying to answer your question as well as those who may be looking for information in the future.
 
-- *Give plenty of details in your post.* Code or log snippets, pointers to screenshots, and similar details will get better results and make for better discussions. For a great guide to phrasing your questions, read [How to Ask Questions the Smart Way](http://www.catb.org/%7Eesr/faqs/smart-questions.html)
+- *Give plenty of details in your post.* Code or log snippets, pointers to screenshots, and similar details will get better results and make for better discussions. For a great guide to phrasing your questions, read [How to Ask Questions the Smart Way](http://www.catb.org/%7Eesr/faqs/smart-questions.html).
+<img src="/images/external-link.png">
 
 ## Open Source Project discussions ##
 

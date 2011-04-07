@@ -1,12 +1,12 @@
 # Getting Started #
-- [Compatibility Overview](overview.html)
-- [Current CDD](/compatibility/2.3/android-2.3-cdd.pdf)
-- [CTS Introduction](cts-intro.html)
-- [CTS Development](cts-development.html)
+- [Compatibility Overview](/compatibility/overview.html)
+- [Current CDD](/compatibility/2.3/android-2.3.3-cdd.pdf)
+- [CTS Introduction](/compatibility/cts-intro.html)
+- [CTS Development](/compatibility/cts-development.html)
 
 # More Information #
-- [Downloads](downloads.html)
+- [Downloads](/compatibility/downloads.html)
 - [FAQs](/faqs.html#compatibility)
-- [Contact Us](contact-us.html)
+- [Contact Us](/compatibility/contact-us.html)
 
 
