@@ -11,10 +11,10 @@ follow the "Getting Started" section [here](downloading.html).
 - For details about Repo and Git, see [Version Control](version-control.html).
 
 - For information about the different roles you can play within the Android
-Open Source community, see [Project roles](/about/roles.html).
+Open Source community, see [Project roles](/source/roles.html).
 
 - If you plan to contribute code to the Android platform, be sure to read
-the [AOSP's licensing information](/about/licenses.html).
+the [AOSP's licensing information](/source/licenses.html).
 
 - Note that changes to some of the upstream projects used by Android should be
 made directly to that project, as described in [Upstream Projects](#upstream-projects).
@@ -101,7 +101,7 @@ see the [Repo reference](/source/using-repo.html).
 
 In short, contribute high-quality code to one or more of the Android projects.
 For details about the different roles in the Android Open Source community and
-who plays them, see [Project Roles](/about/roles.html).
+who plays them, see [Project Roles](/source/roles.html).
 
 ## Using GitWeb to track patch histories ##
 

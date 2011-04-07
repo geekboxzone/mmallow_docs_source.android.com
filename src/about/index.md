@@ -15,11 +15,11 @@ You can find more information about Android from these pages:
 
 - [Our Project Philosophy and Goals](philosophy.html)
 
-- [People and Roles](roles.html)
+- [People and Roles](/source/roles.html)
 
 - [Interacting with the Project](/source/index.html)
 
 - [Android Compatibility](/compatibility/index.html)
 
-- [Licensing Information](licenses.html)
+- [Licensing Information](/source/licenses.html)
 
