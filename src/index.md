@@ -59,6 +59,7 @@ created Android, and made its source code open.
 <div style="clear: both;"/>
 
 <table border="0" style="border: 0px; margin: 0px; padding: 0px;"><tr><td align="center" style="border: 0px; margin: 0px; padding: 0px;">
+<div style="float: left; width: 15%; margin: 1em;">&nbsp;</div>
 <div class="rebox" style="float: left; width: 30%; margin: 1em;"> 
   <h2 style="color: white; background-color: #95C0D0; border: 0px;">Source</h2>
   <div class="p"> 
@@ -70,6 +71,7 @@ created Android, and made its source code open.
   </div> 
 </div> 
 
+<!--
 <div class="rebox" style="float: left; width: 30%; margin: 1em;"> 
   <h2 style="color: white; background-color: #95C0D0; border: 0px;">Porting</h2> 
   <div class="p"> 
@@ -80,6 +82,7 @@ created Android, and made its source code open.
     <p><a href="porting/index.html">Build a Device &raquo;</a></p> 
   </div> 
 </div> 
+-->
 
 <div class="rebox" style="float: left; width: 30%; margin: 1em;"> 
   <h2 style="color: white; background-color: #95C0D0; border: 0px;">Compatibility</h2> 
@@ -91,6 +94,7 @@ created Android, and made its source code open.
     <p><a href="compatibility/index.html">Get Compatible &raquo;</a></p> 
   </div> 
 </div> 
+<div style="float: left; width: 15%; margin: 1em;">&nbsp;</div>
 </td></tr></table>
 
 <div style="clear: both;"/>
