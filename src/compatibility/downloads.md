@@ -28,7 +28,7 @@ CTS release for Android 2.3 has not yet been prepared, but one will be
 available soon.
 
 - [Android 2.3 Compatibility Definition Document (CDD)](2.3/android-2.3.3-cdd.pdf)
-<!-- [Android 2.2 R4 Compatibility Test Suite (CTS)](http://dl.google.com/dl/android/cts/android-cts-2.2_r4-x86.zip) -->
+- [Android 2.3 R2 Compatibility Test Suite (CTS)](http://dl.google.com/dl/android/cts/android-cts-2.3_r2-x86.zip)
 
 ## Android 2.2 ##
 
@@ -37,7 +37,7 @@ FroYo. Source code for Android 2.2 is found in the 'froyo' branch in the
 open-source tree.
 
 - [Android 2.2 Compatibility Definition Document (CDD)](2.2/android-2.2-cdd.pdf)
-- [Android 2.2 R4 Compatibility Test Suite (CTS)](http://dl.google.com/dl/android/cts/android-cts-2.2_r4-x86.zip)
+- [Android 2.2 R5 Compatibility Test Suite (CTS)](http://dl.google.com/dl/android/cts/android-cts-2.2_r5-x86.zip)
 
 ## Android 2.1 ##
 
@@ -56,6 +56,7 @@ Android 1.6 was obsoleted by Android 2.1. Source code for Android 1.6 is found
 in the 'donut' branch in the open-source tree.
 
 - [Android 1.6 Compatibility Definition Document (CDD)](1.6/android-1.6-cdd.pdf)
+- [Android 1.6 R1 Compatibility Test Suite (CTS)](http://dl.google.com/dl/android/cts/android-cts-1.6_r1-x86.zip)
 
 ## Compatibility Test Suite Manual ##
 

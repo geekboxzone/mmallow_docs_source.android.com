@@ -22,11 +22,11 @@
 
 ### Compatibility Definition for Android 2.3 ###
 
-The Compatibility Definition Document for Android 2.3 has been published. 
-The 2.3 CDD allows device manufacturers to use the Android source code to ship
+The Compatibility Definition Document for Android 2.3.3 has been published. 
+Android 2.3 allows device manufacturers to use the Android source code to ship
 a significantly wider variety of devices, including devices with extra-large
-screens, such as tablets.  A release of the Compatibility Test Suite is not
-yet available, but will be soon.  For more information, visit the 
+screens, such as tablets. Android 2.3.3 adds enhanced Near-Field
+Communications support to the Android APIs. For more information, visit the 
 [Compatibility](compatibility/index.html) page.
 
 ### Source Code Available for Android 2.3 ###
