@@ -1,3 +1,19 @@
+<!--
+   Copyright 2010 The Android Open Source Project 
+
+   Licensed under the Apache License, Version 2.0 (the "License"); 
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+-->
+
 # Corporate Contributor License Agreement #
 
 In order to clarify the intellectual property license granted with Contributions from any person or entity, the Android Open Source Project (the "Project") must have a Contributor License Grant ("Grant") on file that has been signed by each Contributor, indicating agreement to the license terms below. This license is for your protection as a Contributor as well as the protection of the Project and the Android Open Source Project Leads (the "Project Leads"); it does not change your rights to use your own Contributions for any other purpose.

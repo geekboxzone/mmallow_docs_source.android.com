@@ -4,17 +4,5 @@
   <title>$title | Android Open Source</title>
 
   <link href="/assets/main.css" rel="stylesheet" type="text/css" />
-
-<!--  <noscript>
-    <style type="text/css">
-      body{overflow:auto;}
-      #body-content{position:relative; top:0;}
-      #doc-content{overflow:visible;border-left:3px solid #666;}
-      #side-nav{padding:0;}
-      #side-nav .toggle-list ul {display:block;}
-      #resize-packages-nav{border-bottom:3px solid #666;}
-    </style>
-  </noscript> -->
 </head>
-
 

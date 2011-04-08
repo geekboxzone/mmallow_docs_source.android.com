@@ -1,7 +1,23 @@
+<!--
+   Copyright 2010 The Android Open Source Project 
+
+   Licensed under the Apache License, Version 2.0 (the "License"); 
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+-->
+
 # People and Roles #
 
 The Android Open Source Project (AOSP) includes individuals working in a variety
-of roles. As noted in [Our Philosophy](about/philosophy.html), Google is responsible for Android product management
+of roles. As noted in [Our Philosophy](philosophy.html), Google is responsible for Android product management
 and the engineering process for the core framework and platform; however,
 the project considers contributions from any source, not just Google. This
 page describes the kinds of roles that interested parties can take on.
@@ -9,7 +25,7 @@ page describes the kinds of roles that interested parties can take on.
 Anyone who is interested in exploring and contributing to Android can use the
 Android Open Source Project resources. Anyone can join the mailing lists, ask
 questions, contribute patches, report bugs, look at submitted patches, and use
-the tools. To get started with the Android code, see [Get Involved](source/index.html).
+the tools. To get started with the Android code, see [Get Involved](/source/index.html).
 
 ## Contributor ##
 

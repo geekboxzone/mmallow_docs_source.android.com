@@ -1,6 +1,6 @@
 # HOW TO BUILD SOURCE.ANDROID.COM #
 
-source.android.com contains tutorials, references, and miscellaneous information relating to the Android Open Source Project (AOSP). The current iteration of this site is fully static HTML (notably lacking in javascript and doxygen content), and is and/or was maintained by skyler (illustrious intern to the almighty JBQ).
+source.android.com contains tutorials, references, and miscellaneous information relating to the Android Open Source Project (AOSP). The current iteration of this site is fully static HTML (notably lacking in javascript and doxygen content), and is and/or was maintained by skyler (illustrious intern under Dan Morrill and assistant to the almighty JBQ).
 
 ## Short Instructions ##
 
@@ -8,8 +8,9 @@ Run the build script.
 
     build.py
 
-This generates a directory html_out, which is the fully built site. Hoorah.
+This generates a directory html_out, which is the fully built site. Hoorah. 
 
+The included micro-httpd.py script is helpful for testing the site on your own machine. 
 
 ## Less Short Instructions ##
 
@@ -24,20 +25,20 @@ and the following content which is copied directly:
 
     assets/     stylish things that make the page look pretty
     images/     exactly what it sounds like
-    cdds/       compatibility documents in PDF format
-
 
 ### Structure of Site Source ###
 
-The build script currently assumes that
-- directory structure in site_src is only one level deep;
-- every file under the site_src directory is an individual page of source.android.com;
+The build script assumes that
+- every .mdml file under the site_src directory is an individual page in markdown format;
 - each directory within site_src is a tab of source.android.com and contains its particular sidebar.
+  Note, the sidebar in the root of site_src/ itself is present but empty.
 
-These assumptions are kind of stupid, but for the moment, they work, because source.android.com is actually very simple.
+
+
+# HOW TO PUSH SOURCE.ANDROID.COM TO PROD #
 
 
 
 # SORDID HISTORY OF SOURCE.ANDROID.COM #
 
-
+Once upon a time, source.android.com used to be a site on Sites.

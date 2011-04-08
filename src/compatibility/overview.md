@@ -1,3 +1,19 @@
+<!--
+   Copyright 2010 The Android Open Source Project 
+
+   Licensed under the Apache License, Version 2.0 (the "License"); 
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+-->
+
 # Compatibility Program Overview #
 
 The Android compatibility program makes it easy for mobile device
@@ -86,7 +102,7 @@ result is a compatible system.
 If you want to build a device compatible with a given Android version,
 start by checking out the source code for that version, and then read the
 corresponding CDD and stay within its guidelines. For additional details,
-simply examine <a href="">the latest CDD</a>.
+simply examine [the latest CDD](2.3/android-2.3.3-cdd.pdf).
 
 # Compatibility Test Suite (CTS) #
 
