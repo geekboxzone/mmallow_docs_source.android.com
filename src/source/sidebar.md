@@ -3,6 +3,7 @@
 - [Initializing the Build Environment](initializing.html)
 - [Downloading the Source](downloading.html)
 - [Building and Running](building.html)
+- [Building for Devices](building-devices.html)
 
 # Navigating the Source #
 
