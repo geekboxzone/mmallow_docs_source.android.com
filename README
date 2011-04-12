@@ -21,6 +21,26 @@ to test changes in a browser:
     cd ./out
     HTTP_PORT=8080 python ../scripts/micro-httpd.py
 
+### Markdown ###
+Markdown is a very simple markup format for plain-text that converts it to
+decent HTML. Useful docs:
+http://daringfireball.net/projects/markdown/syntax
+
+Yes, it was created by John Gruber himself. BWAHAHA!
+
+### Dependencies ###
+
+You need the Python markdown implementation. The original Perl impl probably
+will NOT work.
+
+For (Goo|U)buntu:
+% sudo apt-get install python-markdown
+
+For Mac:
+Eh, haven't tried this yet, not sure. But it should be enough to just install
+Python Markdown by hook or crook and make sure it's in your PATH.
+http://www.freewisdom.org/projects/python-markdown/
+
 ### Contents Included in Box ###
 
 Necessary source files include:
