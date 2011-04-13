@@ -116,7 +116,7 @@ If you want to avoid partitioning/formatting your hard drive, you can use a case
 This will create a .dmg file which, once mounted, acts as a drive with the required formatting for Android development. For a disk image named "android.dmg" stored in your home directory, you can add the following to your `~/.bash_profile` to mount the image when you execute "mountAndroid": 
 
     # mount the android file image
-    function mountAndroid{ hdiutil attach ~/android.dmg-mountpoint /Volumes/android; }
+    function mountAndroid { hdiutil attach ~/android.dmg -mountpoint /Volumes/android; }
 
 Once mounted, you'll do all your work in the "android" volume. You can eject it (unmount it) just like you would with an external drive.
 
