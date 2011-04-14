@@ -20,20 +20,23 @@ At a high level, Android development happens around families of
 releases, which use code names ordered alphabetically after tasty
 treats.
 
+## Platform code names, versions, API levels, and NDK releases ##
+
 The code names match the following version numbers, along with
 API levels and NDK releases provided for convenience:
 
-Code name      | Version | API level
----------------|---------|------------
-(no code name) | 1.0     | API level 1
-(no code name) | 1.1     | API level 2
-Cupcake        | 1.5     | API level 3, NDK 1
-Donut          | 1.6     | API level 4, NDK 2
-Eclair         | 2.0     | API level 5
-Eclair         | 2.0.1   | API level 6
-Eclair         | 2.1     | API level 7, NDK 3
-Froyo          | 2.2.x   | API level 8, NDK 4
-Gingerbread    | 2.3.x   | API level 9, NDK 5
+Code name      | Version      | API level
+---------------|--------------|------------
+(no code name) | 1.0          | API level 1
+(no code name) | 1.1          | API level 2
+Cupcake        | 1.5          | API level 3, NDK 1
+Donut          | 1.6          | API level 4, NDK 2
+Eclair         | 2.0          | API level 5
+Eclair         | 2.0.1        | API level 6
+Eclair         | 2.1          | API level 7, NDK 3
+Froyo          | 2.2.x        | API level 8, NDK 4
+Gingerbread    | 2.3 - 2.3.2  | API level 9, NDK 5
+Gingerbread    | 2.3.3        | API level 10
 
 Starting with Cupcake, individual builds are identified with a short
 build code, e.g. FRF85B. The first letter is the code name of the
@@ -50,12 +53,14 @@ guaranteed to be the exact date at which a build was made, and it is
 common that minor variations added to an existing build re-use the
 same date code as that existing build.
 
+## Source code tags and builds ##
+
 Starting with Donut, the exact list of tags and builds is in the
 following table:
 
 Build  | Tag                | Notes
 -------|--------------------|-----------------------------------
-DRC83  | android-1.6_r1.1     earliest Donut version, ADP1, ADP2
+DRC83  | android-1.6_r1.1   | earliest Donut version, ADP1, ADP2
 DRC92  | android-1.6_r1.2
 DRD08  | android-1.6_r1.3
 DRD20  | android-1.6_r1.4
@@ -76,7 +81,8 @@ FRG83D | android-2.2.1_r2   | Nexus One
 FRG83G | android-2.2.2_r1   | latest Froyo version, Nexus One
 GRH55  | android-2.3_r1     | earliest Gingerbread version, Nexus S
 GRH78  | android-2.3.1_r1   | Nexus S
-GRH78C | android-2.3.2_r1   | latest Gingerbread version, Nexus S
+GRH78C | android-2.3.2_r1   | Nexus S
+GRI40  | android-2.3.3_r1   | latest Gingerbread version, Nexus S, Nexus One
 
 The branches donut, eclair, froyo, gingerbread represent development
 branches that do not exactly match configurations that were tested
@@ -84,3 +90,15 @@ by Google. They might contain a variety of changes in addition to
 the official tagged releases, and those haven't been as thoroughly
 tested.
 
+## Honeycomb GPL modules ##
+
+For Honeycomb, the entire platform source code isn't available.
+However, the parts of Honeycomb licensed under the GPL and LGPL
+are available under the following tags:
+
+Build  | Tag                | Notes
+-------|--------------------|-----------------------------------
+HRI39  | android-3.0_r1     | earliest Honeycomb version, Xoom
+HRI66  | android-3.0_r1.1   | Xoom
+HWI69  | android-3.0_r1.2   | Xoom
+HRI93  | android-3.0_r1.3   |

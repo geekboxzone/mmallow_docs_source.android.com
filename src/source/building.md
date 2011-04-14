@@ -41,22 +41,25 @@ The example above refers to a complete build for the emulator, with all debuggin
 
 If run with no arguments `lunch` will prompt you to choose a target from the menu. 
 
-All build targets take the form DEVICE-BUILDTYPE, where the DEVICE is a codename 
-referring to the particular hardware:
+All build targets take the form BUILD-BUILDTYPE, where the BUILD is a codename
+referring to the particular feature combination:
 
-Codename   | Device
------------|-----------
-passion    | Nexus One
-crespo     | Nexus S
-generic    | emulator
+Build name | Device  | Notes
+
+generic     | emulator | lowest-common denominator
+full        | emulator | fully configured with all languages, apps, input methods
+full_crespo | crespo   | `full` build running on Nexus S ("crespo")
 
 and the BUILDTYPE is one of the following:
 
 Buildtype   | Use
 ------------|--------------------------------------
 user        | limited access; suited for production
-userdebug   | like "user" but with `su` access; preferred for debugging
-eng         | unrestricted access
+userdebug   | like "user" but with root access and debuggability; preferred for debugging
+eng         | development configuration with additional debugging tools
+
+For more information about building for and running on actual hardware, see
+[Building for devices](building-devices.html)
 
 ## Build the Code ##
 
@@ -85,6 +88,9 @@ Once the device is in fastboot mode, run
     $ fastboot flashall -w
 
 The `-w` option wipes the `/data` partition on the device; this is useful for your first time flashing a particular device, but is otherwise unnecessary.
+
+For more information about building for and running on actual hardware, see
+[Building for devices](building-devices.html)
 
 ### Emulate an Android Device ###
 
