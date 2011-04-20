@@ -48,3 +48,11 @@ Protocol.
 
 [&raquo; NFC Information](/tech/nfc/index.html)
 
+## Encryption Technical Information ##
+The Android Open-Source Project includes the ability to encrypt the user's data.
+This document is written for 3rd parties developing Android devices who want to
+include support for encryption on their device.  It covers the few things that
+must be done so encryption will work.
+
+[&raquo; Encryption Information](/tech/encryption/index.html)
+
