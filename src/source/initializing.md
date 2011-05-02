@@ -67,7 +67,7 @@ Java 5: for Froyo and older
 To set up your development environment, install the following required packages:
 
     $ sudo apt-get install git-core gnupg flex bison gperf build-essential zip curl zlib1g-dev libc6-dev 
-      lib32ncurses5-dev ia32-libs x11proto-core-dev libx11-dev lib32readline5-dev lib32z-dev
+      lib32ncurses5-dev ia32-libs x11proto-core-dev libx11-dev lib32readline5-dev lib32z-dev libgl1-mesa-dev
 
 For building Froyo or an older release on a 64-bit system, several other packages are necessary to establish a 32-bit build environment:
 
