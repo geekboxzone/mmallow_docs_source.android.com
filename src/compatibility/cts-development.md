@@ -19,7 +19,7 @@
 ## Initializing Your Repo Client ##
 
 Follow the [instructions](/source/downloading.html)
-to get and build the Android source code but specify `-b froyo`
+to get and build the Android source code but specify `-b gingerbread`
 when issuing the `repo init` command. This assures that your CTS
 changes will be included in the next CTS release and beyond.
 
@@ -72,10 +72,8 @@ Most CTS test cases target a specific class in the Android API. These tests
 have Java package names with a `cts` suffix and class
 names with the `Test` suffix. Each test case consists of
 multiple tests, where each test usually exercises a particular API method of
-the API class being tested. Each test is annotated with a `@TestTargetNew`
-annotation to indicate what API method is being exercised. These tests are
-arranged in a directory structure where tests are grouped into different
-categories like "widgets" and "views."
+the API class being tested. These tests are arranged in a directory structure
+where tests are grouped into different categories like "widgets" and "views."
 
 For example, the CTS test for `android.widget.TextView` is
 `android.widget.cts.TextViewTest` found under the
@@ -90,8 +88,12 @@ Some CTS tests do not directly correspond to an API class but are placed in
 the most related package possible. For instance, the CTS test,
 `android.net.cts.ListeningPortsTest`, is in the `android.net.cts`, because it
 is network related even though there is no `android.net.ListeningPorts` class.
-Thus, use your best judgement when adding new tests and refer to other tests
-as examples.
+You can also create a new test package if necessary. For example, there is an
+"android.security" test package for tests related to security. Thus, use your
+best judgement when adding new tests and refer to other tests as examples.
+
+Finally, a lot of tests are annotated with @TestTargets and @TestTargetNew.
+These are no longer necessary so do not annotate new tests with these.
 
 ### New Test Packages ###
 
