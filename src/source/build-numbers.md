@@ -33,10 +33,12 @@ Cupcake        | 1.5          | API level 3, NDK 1
 Donut          | 1.6          | API level 4, NDK 2
 Eclair         | 2.0          | API level 5
 Eclair         | 2.0.1        | API level 6
-Eclair         | 2.1          | API level 7, NDK 3
+Eclair         | 2.1 (incl. 2.1-update 1) | API level 7, NDK 3
 Froyo          | 2.2.x        | API level 8, NDK 4
 Gingerbread    | 2.3 - 2.3.2  | API level 9, NDK 5
-Gingerbread    | 2.3.3        | API level 10
+Gingerbread    | 2.3.3 - 2.3.4            | API level 10
+Honeycomb      | 3.0                      | API level 11
+Honeycomb      | 3.1                      | API level 12
 
 Starting with Cupcake, individual builds are identified with a short
 build code, e.g. FRF85B. The first letter is the code name of the
@@ -82,7 +84,8 @@ FRG83G | android-2.2.2_r1   | latest Froyo version, Nexus One
 GRH55  | android-2.3_r1     | earliest Gingerbread version, Nexus S
 GRH78  | android-2.3.1_r1   | Nexus S
 GRH78C | android-2.3.2_r1   | Nexus S
-GRI40  | android-2.3.3_r1   | latest Gingerbread version, Nexus S, Nexus One
+GRI40  | android-2.3.3_r1   | Nexus One, Nexus S
+GRJ22  | android-2.3.4_r1   | latest Gingerbread version, Nexus One, Nexus S, Nexus S 4G
 
 The branches donut, eclair, froyo, gingerbread represent development
 branches that do not exactly match configurations that were tested
@@ -98,7 +101,8 @@ are available under the following tags:
 
 Build  | Tag                | Notes
 -------|--------------------|-----------------------------------
-HRI39  | android-3.0_r1     | earliest Honeycomb version, Xoom
-HRI66  | android-3.0_r1.1   | Xoom
-HWI69  | android-3.0_r1.2   | Xoom
-HRI93  | android-3.0_r1.3   |
+HRI39  | android-3.0_r1     | earliest Honeycomb version
+HRI66  | android-3.0_r1.1
+HWI69  | android-3.0_r1.2
+HRI93  | android-3.0_r1.3
+HMJ37  | android-3.1_r1     | latest Honeycomb version
