@@ -85,6 +85,8 @@ GRH55  | android-2.3_r1     | earliest Gingerbread version, Nexus S
 GRH78  | android-2.3.1_r1   | Nexus S
 GRH78C | android-2.3.2_r1   | Nexus S
 GRI40  | android-2.3.3_r1   | Nexus One, Nexus S
+GRI54  | android-2.3.3_r1.1 | Nexus S
+GRJ06D | android-2.3.4_r0.9 | Nexus S 4G
 GRJ22  | android-2.3.4_r1   | latest Gingerbread version, Nexus One, Nexus S, Nexus S 4G
 
 The branches donut, eclair, froyo, gingerbread represent development
