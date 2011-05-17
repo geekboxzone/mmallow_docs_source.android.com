@@ -44,8 +44,8 @@ If run with no arguments `lunch` will prompt you to choose a target from the men
 All build targets take the form BUILD-BUILDTYPE, where the BUILD is a codename
 referring to the particular feature combination:
 
-Build name | Device  | Notes
-
+Build name  | Device   | Notes
+------------|----------|---------------------------
 generic     | emulator | lowest-common denominator
 full        | emulator | fully configured with all languages, apps, input methods
 full_crespo | crespo   | `full` build running on Nexus S ("crespo")
