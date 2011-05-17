@@ -28,7 +28,7 @@ CTS release for Android 2.3 has not yet been prepared, but one will be
 available soon.
 
 - [Android 2.3 Compatibility Definition Document (CDD)](2.3/android-2.3.3-cdd.pdf)
-- [Android 2.3 R2 Compatibility Test Suite (CTS)](http://dl.google.com/dl/android/cts/android-cts-2.3_r2-x86.zip)
+- [Android 2.3 R3 Compatibility Test Suite (CTS)](http://dl.google.com/dl/android/cts/android-cts-2.3_r3-x86.zip)
 
 ## Android 2.2 ##
 
