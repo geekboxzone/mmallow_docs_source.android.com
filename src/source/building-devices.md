@@ -153,13 +153,27 @@ software.
 However, no compatibility issues are expected when running newer systems
 with older bootloaders and radio images according to the following tables.
 
-Nexus S:
+Nexus S (worldwide version "XX"):
 
 Android Version | Preferred Bootloader | Preferred Radio | Also possible
 ----------------|----------------------|-----------------|--------------
 2.3 to 2.3.2    | I9020XXJK1           | I9020XXJK8
 2.3.3           | I9020XXKA3           | I9020XXKB1      | All previous versions
 2.3.4           | I9020XXKA3           | I9020XXKD1      | All previous versions
+
+Nexus S (850MHz version "UC"):
+
+Android Version | Preferred Bootloader | Preferred Radio | Also possible
+----------------|----------------------|-----------------|--------------
+2.3.3           | I9020XXKA3           | I9020UCKB2
+2.3.4           | I9020XXKA3           | I9020UCKD1      | All previous versions
+
+Nexus S (Korea version "KR"):
+
+Android Version | Preferred Bootloader | Preferred Radio | Also possible
+----------------|----------------------|-----------------|--------------
+2.3.3           | I9020XXKA3           | I9020KRKB3
+2.3.4           | I9020XXKA3           | M200KRKC1       | All previous versions
 
 Nexus S 4G:
 
@@ -170,6 +184,6 @@ Android Version | Preferred Bootloader | Preferred Radio | Also possible
 
 If you're building a new version of Android, if your Nexus S or Nexus S 4G has
 an older bootloader and radio image that is marked as being also possible in
-the table above but is not recognized by the build system, you can locally
+the table above but is not recognized by fastboot, you can locally
 delete the `version-bootloader` and `version-baseband` lines in
 `device/samsung/crespo/board-info.txt` or `device/samsung/crespo4g/board-info.txt`.
