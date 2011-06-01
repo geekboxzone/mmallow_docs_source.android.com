@@ -115,13 +115,13 @@ are described in the page about [Building](building.html).
 The recommended builds for the various devices are available through
 the lunch menu, accesed when running the `lunch` command with no arguments:
 
-Device   | Build configuration
----------|---------------------
-crespo   | full_crespo-userdebug
-crespo4g | full_crespo4g-userdebug
-passion  | full_passion-userdebug
-sapphire | full_sapphire-userdebug
-dream    | full_dream-userdebug
+Device   | Branch           | Build configuration
+---------|------------------|------------------------
+crespo   | android-2.3.4_r1 | full_crespo-userdebug
+crespo4g | gingerbread      | full_crespo4g-userdebug
+passion  | android-2.3.4_r1 | full_passion-userdebug
+sapphire | android-2.2.2_r1 | full_sapphire-userdebug
+dream    | android-2.2.2_r1 | full_dream-userdebug
 
 ## Flashing a device ##
 
