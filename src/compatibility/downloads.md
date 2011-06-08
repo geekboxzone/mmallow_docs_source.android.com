@@ -23,9 +23,7 @@ you to access the key documents and information.
 
 Android 2.3 is the release of the development milestone code-named
 Gingerbread. Android 2.3 is the current version of Android. Source code for
-Android 2.3 is found in the 'gingerbread' branch in the open-source tree. A
-CTS release for Android 2.3 has not yet been prepared, but one will be
-available soon.
+Android 2.3 is found in the 'gingerbread' branch in the open-source tree.
 
 - [Android 2.3 Compatibility Definition Document (CDD)](2.3/android-2.3.3-cdd.pdf)
 - [Android 2.3 R3 Compatibility Test Suite (CTS)](http://dl.google.com/dl/android/cts/android-cts-2.3_r3-x86.zip)
@@ -37,7 +35,7 @@ FroYo. Source code for Android 2.2 is found in the 'froyo' branch in the
 open-source tree.
 
 - [Android 2.2 Compatibility Definition Document (CDD)](2.2/android-2.2-cdd.pdf)
-- [Android 2.2 R5 Compatibility Test Suite (CTS)](http://dl.google.com/dl/android/cts/android-cts-2.2_r5-x86.zip)
+- [Android 2.2 R6 Compatibility Test Suite (CTS)](http://dl.google.com/dl/android/cts/android-cts-2.2_r6-x86.zip)
 
 ## Android 2.1 ##
 
