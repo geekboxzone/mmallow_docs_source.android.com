@@ -134,7 +134,7 @@ it's typically better to delete it when flashing a new system.
     $ fastboot erase userdata
 
 An entire Android system can be flashed in a single command: this writes
-teh boot, recovery and system partitions together after verifying that the
+the boot, recovery and system partitions together after verifying that the
 system bring flashed is compatible with the installed bootloader and radio,
 and reboots the system.
 
