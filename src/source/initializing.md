@@ -109,7 +109,16 @@ Android must be built on a case-sensitive file system because the sources contai
 
 ## Creating a case sensitive disk image ##
 
-If you want to avoid partitioning/formatting your hard drive, you can use a case-sensitive disk image instead. To create the image, launch Disk Utility and select "New Image".  A size of 12 GB should be sufficient to complete the build.  Be sure to select "case sensitive, journaled" as the volume format.
+If you want to avoid partitioning/formatting your hard drive, you can use
+a case-sensitive disk image instead. To create the image, launch Disk
+Utility and select "New Image".  A size of 12GB is the minimum to
+complete the build, larger numbers are more future-proof. Using sparse images
+saves space while allowing to grow later as the need arises. Be sure to select
+"case sensitive, journaled" as the volume format.
+
+You can also create it from a shell with the following command:
+
+    # hdiutil create -type SPARSE -fs 'Case-sensitive Journaled HFS+' -size 40g ~/android.dmg
 
 This will create a .dmg file which, once mounted, acts as a drive with the required formatting for Android development. For a disk image named "android.dmg" stored in your home directory, you can add the following to your `~/.bash_profile` to mount the image when you execute "mountAndroid": 
 
