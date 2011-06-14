@@ -22,7 +22,7 @@ that is specific to individual devices.
 The only supported devices are Nexus S, a.k.a. "crespo", and Nexus S 4G, a.k.a.
 "crespo4g".
 Nexus S is the recommended device to use with the Android Open-Source Project.
-Nexus One a.k.a. "passion" is experimentatal and unsupported. Android Developer
+Nexus One a.k.a. "passion" is experimental and unsupported. Android Developer
 Phones (ADP1 and ADP2, a.k.a. "dream" and "sapphire") are obsolete, were
 experimental and unsupported in froyo, and can't be used with gingerbread.
 
