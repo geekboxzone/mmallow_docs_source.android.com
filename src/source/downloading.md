@@ -29,9 +29,10 @@ To install, initialize, and configure Repo, follow these steps:
 
  - Download the Repo script and ensure it is executable:
 
-        $ curl http://android.git.kernel.org/repo > ~/bin/repo
+        $ curl https://android.git.kernel.org/repo > ~/bin/repo
         $ chmod a+x ~/bin/repo
 
+ - The MD5 checksum for repo is bbf05a064c4d184550d71595a662e098
 
 ## Initializing a Repo client ##
 
