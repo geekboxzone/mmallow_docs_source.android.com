@@ -142,7 +142,7 @@ Once mounted, you'll do all your work in the "android" volume. You can eject it 
 
 There is a bug in gmake 3.82 that prevents android from building.  You can install version 3.81 using MacPorts by taking the following steps:
 
-- Edit `/opt/local/etc/macports/sources.conf` and a line that says 
+- Edit `/opt/local/etc/macports/sources.conf` and add a line that says
     
         file:///Users/Shared/dports
 
