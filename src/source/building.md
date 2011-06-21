@@ -98,6 +98,20 @@ The emulator is added to your path automatically by the build process. To run th
 
     $ emulator
 
+# Using ccache #
+
+ccache is a compiler cache for C and C++ that can help make builds faster.
+In the root of the source tree, do the following:
+
+    $ export USE_CCACHE=1
+    $ export CCACHE_DIR=/<path_of_your_choice>/.ccache
+    $ prebuilt/linux-x86/ccache/ccache -M 20G
+
+You can watch ccache being used by doing the following:
+
+    $ watch -n1 -d prebuilt/linux-x86/ccache/ccache -s
+
+On OSX, you should replace `linux-x86` with `darwin-x86`.
 
 # Troubleshooting Common Build Errors #
 
