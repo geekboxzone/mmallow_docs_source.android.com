@@ -157,23 +157,25 @@ Nexus S (worldwide version "XX"):
 
 Android Version | Preferred Bootloader | Preferred Radio | Also possible
 ----------------|----------------------|-----------------|--------------
-2.3 to 2.3.2    | I9020XXJK1           | I9020XXJK8
-2.3.3           | I9020XXKA3           | I9020XXKB1      | All previous versions
-2.3.4           | I9020XXKA3           | I9020XXKD1      | All previous versions
+2.3 (GRH55)     | I9020XXJK1           | I9020XXJK8
+2.3.1 (GRH78)   | I9020XXJK1           | I9020XXJK8
+2.3.2 (GRH78C)  | I9020XXJK1           | I9020XXJK8
+2.3.3 (GRI40)   | I9020XXKA3           | I9020XXKB1      | All previous versions
+2.3.4 (GRJ22)   | I9020XXKA3           | I9020XXKD1      | All previous versions
 
 Nexus S (850MHz version "UC"):
 
 Android Version | Preferred Bootloader | Preferred Radio | Also possible
 ----------------|----------------------|-----------------|--------------
-2.3.3           | I9020XXKA3           | I9020UCKB2
-2.3.4           | I9020XXKA3           | I9020UCKD1      | All previous versions
+2.3.3 (GRI54)   | I9020XXKA3           | I9020UCKB2
+2.3.4 (GRJ22)   | I9020XXKA3           | I9020UCKD1      | All previous versions
 
 Nexus S (Korea version "KR"):
 
 Android Version | Preferred Bootloader | Preferred Radio | Also possible
 ----------------|----------------------|-----------------|--------------
-2.3.3           | I9020XXKA3           | I9020KRKB3
-2.3.4           | I9020XXKA3           | M200KRKC1       | All previous versions
+2.3.3 (GRI54)   | I9020XXKA3           | I9020KRKB3
+2.3.4 (GRJ22)   | I9020XXKA3           | M200KRKC1       | All previous versions
 
 Nexus S 4G:
 
