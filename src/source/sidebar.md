@@ -4,6 +4,7 @@
 - [Downloading the Source](downloading.html)
 - [Building and Running](building.html)
 - [Building for Devices](building-devices.html)
+- [Known Issues](known-issues.html)
 
 # Navigating the Source #
 
