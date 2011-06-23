@@ -41,19 +41,26 @@ Honeycomb      | 3.0                      | API level 11
 Honeycomb      | 3.1                      | API level 12
 
 Starting with Cupcake, individual builds are identified with a short
-build code, e.g. FRF85B. The first letter is the code name of the
-release family, e.g. F is Froyo. The second letter is a branch code
-that allows Google to identify the exact code branch that the build
-was made from, and R is by convention the primary release branch.
+build code, e.g. FRF85B.
+
+The first letter is the code name of the release family, e.g. F is
+Froyo.
+
+The second letter is a branch code that allows Google to identify
+the exact code branch that the build was made from, and R is by
+convention the primary release branch.
+
 The next letter and two digits are a date code. The letter counts
 quarters, with A being Q1 2009. Therefore, F is Q2 2010. The two
 digits count days within the quarter, so F85 is June 24 2010.
+
 Finally, the last letter identifies individual versions related to
 the same date code, sequentially starting with A; A is actually
-implicit and usually omitted for brevity. The date code is not
-guaranteed to be the exact date at which a build was made, and it is
-common that minor variations added to an existing build re-use the
-same date code as that existing build.
+implicit and usually omitted for brevity.
+
+The date code is not guaranteed to be the exact date at which a build
+was made, and it is common that minor variations added to an existing
+build re-use the same date code as that existing build.
 
 ## Source code tags and builds ##
 
