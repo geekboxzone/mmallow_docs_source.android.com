@@ -115,3 +115,13 @@ HRI66  | android-3.0_r1.1
 HWI69  | android-3.0_r1.2
 HRI93  | android-3.0_r1.3
 HMJ37  | android-3.1_r1     | latest Honeycomb version
+
+There is no manifest that contains exactly those. However, there
+are manifests that allow building those components. The following
+commands work for 3.0_r1.1, and using other versions can be done by
+switching the git checkout paramater, and if necessary the -b parameter in
+repo init.
+
+    $ repo init -b master -m 3.0-base.xml
+    $ repo sync
+    $ repo forall -c git checkout android-3.0_r1.1
