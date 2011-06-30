@@ -3,3 +3,4 @@
 - [Debugging](/tech/debugging/index.html)
 - [Encryption](/tech/encryption/index.html)
 - [Security](/tech/security/index.html)
+- [Input](/tech/input/index.html)

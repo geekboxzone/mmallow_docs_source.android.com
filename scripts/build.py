@@ -9,7 +9,7 @@ import subprocess
 
 # call markdown as a subprocess, and capture the output
 def markdown(raw_file):
-  extensions = '-x tables' + ' ' + '-x "toc(title=In This Document)"'
+  extensions = '-x tables -x "toc(title=In This Document)" -x def_list'
   command = 'markdown' + ' ' + extensions + ' ' + raw_file
   p = subprocess.Popen(command, stdout = subprocess.PIPE, shell = True)
   return p.communicate()[0]

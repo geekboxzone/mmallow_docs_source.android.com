@@ -52,3 +52,9 @@ users of the platform. This document focuses on the security features of the
 core Android platform.
 
 [&raquo; Android Security Overview](/tech/security/index.html)
+
+## Input Technical Information ##
+Android's input subsystem is responsible for supporting touch screens,
+keyboard, joysticks, mice and other devices.
+
+[&raquo; Input Information](/tech/input/index.html)

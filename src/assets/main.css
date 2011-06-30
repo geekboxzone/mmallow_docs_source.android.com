@@ -241,6 +241,15 @@ pre {
   padding: 1em;
 }
 
+dt {
+  color: #1f2a33;
+  font-size: 110%;
+}
+
+dd {
+  margin: 1em 1em 1em 1em;
+}
+
 /* TABLE OF CONTENTS */
 
 .toc {
