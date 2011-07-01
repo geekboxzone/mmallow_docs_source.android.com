@@ -38,9 +38,15 @@ Android .apk files to run on the actual device target.
 
 1. For CTS 2.1 R2 and beyond, setup your device (or emulator) to run the accessibility tests:
 
-    a. adb install -r android-cts/repository/testcases/CtsDelegatingAccessibilityService.apk
+    2. adb install -r android-cts/repository/testcases/CtsDelegatingAccessibilityService.apk
 
-    a. On the device, enable Settings > Accessibility > Accessibility > Delegating Accessibility Service
+    2. On the device, enable Settings > Accessibility > Accessibility > Delegating Accessibility Service
+
+1. For CTS 2.3 R4 and beyond, setup your device to run the device administration tests:
+
+    2. adb install -r android-cts/repository/testcases/CtsDeviceAdmin.apk
+
+    2. On the device, enable all the android.deviceadmin.cts.* device administrators under Settings > Location & security > Select device administrators
 
 1. Launch the CTS. The CTS test harness loads the test plan onto the attached devices. For each test in the test harness:
 
