@@ -37,9 +37,11 @@ For (Goo|U)buntu:
 % sudo apt-get install python-markdown
 
 For Mac:
-Eh, haven't tried this yet, not sure. But it should be enough to just install
-Python Markdown by hook or crook and make sure it's in your PATH.
-http://www.freewisdom.org/projects/python-markdown/
+$ sudo easy_install ElementTree
+$ sudo easy_install Markdown
+
+More information here:
+http://www.freewisdom.org/projects/python-markdown/Installation
 
 ### Contents Included in Box ###
 
