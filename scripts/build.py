@@ -44,6 +44,7 @@ if os.path.exists(HTML_DIR):
 os.mkdir(HTML_DIR)
 
 category = 'home'
+parents = {}
 for curdir, subdirs, files in os.walk(SRC_DIR):
   print 'Processing %s...'  % (curdir,),
   outdir = [x for x in curdir.split(os.path.sep) if x]
@@ -51,20 +52,36 @@ for curdir, subdirs, files in os.walk(SRC_DIR):
   if len(outdir) == 2:
     category = outdir[-1]
   outdir = os.path.join(*outdir)
-  
+
   for subdir in subdirs:
     os.mkdir(os.path.join(outdir, subdir))
+
+  parentdir = os.path.dirname(curdir)
+  if parentdir in parents:
+    parent = parents[parentdir]
+  else:
+    parent = ('', '')
 
   if 'sidebar.md' in files:
     sidebar = markdown(os.path.join(curdir, 'sidebar.md'))
     del files[files.index('sidebar.md')]
   else:
-    sidebar = ''
+    sidebar = parent[0]
+
+  if 'sidebar2.md' in files:
+    sidebar2 = markdown(os.path.join(curdir, 'sidebar2.md'))
+    del files[files.index('sidebar2.md')]
+  else:
+    sidebar2 = parent[1]
+
+  parents[curdir] = (sidebar, sidebar2)
+
   for f in files:
     print ' .',
     if f.endswith('.md'):
       main = markdown(os.path.join(curdir, f))
-      final = template.safe_substitute(main=main, sidebar=sidebar, category=category, title=get_title(os.path.join(curdir, f)))
+      final = template.safe_substitute(main=main, sidebar=sidebar, sidebar2=sidebar2, \
+          category=category, title=get_title(os.path.join(curdir, f)))
     
       html = file(os.path.join(outdir, f.replace('.md', '.html')), 'w')
       html.write(final)
