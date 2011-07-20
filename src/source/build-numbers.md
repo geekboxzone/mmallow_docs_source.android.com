@@ -114,7 +114,8 @@ HRI39  | android-3.0_r1     | earliest Honeycomb version
 HRI66  | android-3.0_r1.1
 HWI69  | android-3.0_r1.2
 HRI93  | android-3.0_r1.3
-HMJ37  | android-3.1_r1     | latest Honeycomb version
+HMJ37  | android-3.1_r1
+HTJ85B | android-3.2_r1     | latest Honeycomb version
 
 There is no manifest that contains exactly those. However, there
 are manifests that allow building those components. The following
