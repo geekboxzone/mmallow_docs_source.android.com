@@ -54,7 +54,7 @@ aka Honeycomb, there are only a few requirements:
     "setprop vold.post_fs_data_done 1".
 
 
-## How Adroid encryption works
+## How Android encryption works
 
 Disk encryption on Android is based on dm-crypt, which is a kernel feature that
 works at the block device layer.  Therefore, it is not usable with YAFFS, which
