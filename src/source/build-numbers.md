@@ -36,9 +36,10 @@ Eclair         | 2.0.1        | API level 6
 Eclair         | 2.1 (incl. 2.1-update 1) | API level 7, NDK 3
 Froyo          | 2.2.x        | API level 8, NDK 4
 Gingerbread    | 2.3 - 2.3.2  | API level 9, NDK 5
-Gingerbread    | 2.3.3 - 2.3.4            | API level 10
+Gingerbread    | 2.3.3 - 2.3.5            | API level 10
 Honeycomb      | 3.0                      | API level 11
 Honeycomb      | 3.1                      | API level 12
+Honeycomb      | 3.2                      | API level 13
 
 Starting with Cupcake, individual builds are identified with a short
 build code, e.g. FRF85B.
@@ -94,7 +95,8 @@ GRH78C | android-2.3.2_r1   | Nexus S
 GRI40  | android-2.3.3_r1   | Nexus One, Nexus S
 GRI54  | android-2.3.3_r1.1 | Nexus S
 GRJ06D | android-2.3.4_r0.9 | Nexus S 4G
-GRJ22  | android-2.3.4_r1   | latest Gingerbread version, Nexus One, Nexus S, Nexus S 4G
+GRJ22  | android-2.3.4_r1   | Nexus One, Nexus S, Nexus S 4G
+GRJ90  | android-2.3.5_r1   | latest Gingerbread version, Nexus S 4G
 
 The branches donut, eclair, froyo, gingerbread represent development
 branches that do not exactly match configurations that were tested
