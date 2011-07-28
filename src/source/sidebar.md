@@ -26,6 +26,7 @@
     - [Git Resources](git-resources.html)
 - [Using Eclipse](using-eclipse.html)
 - [Code Style Guidelines](code-style.html)
+- [Development Tips and Tricks](developing.html)
 - [FAQs](/faqs.html)
 
 
