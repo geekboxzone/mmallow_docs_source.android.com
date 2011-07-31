@@ -117,9 +117,9 @@ the lunch menu, accesed when running the `lunch` command with no arguments:
 
 Device   | Branch           | Build configuration
 ---------|------------------|------------------------
-crespo   | android-2.3.4_r1 | full_crespo-userdebug
-crespo4g | gingerbread      | full_crespo4g-userdebug
-passion  | android-2.3.4_r1 | full_passion-userdebug
+crespo   | android-2.3.5_r1 | full_crespo-userdebug
+crespo4g | android-2.3.5_r1 | full_crespo4g-userdebug
+passion  | android-2.3.5_r1 | full_passion-userdebug
 sapphire | android-2.2.2_r1 | full_sapphire-userdebug
 dream    | android-2.2.2_r1 | full_dream-userdebug
 
@@ -162,6 +162,7 @@ Android Version | Preferred Bootloader | Preferred Radio | Also possible
 2.3.2 (GRH78C)  | I9020XXJK1           | I9020XXJK8
 2.3.3 (GRI40)   | I9020XXKA3           | I9020XXKB1      | All previous versions
 2.3.4 (GRJ22)   | I9020XXKA3           | I9020XXKD1      | All previous versions
+2.3.5 (GRJ90)   | I9020XXKA3           | I9020XXKF1      | All previous versions
 
 Nexus S (850MHz version "UC"):
 
@@ -169,6 +170,7 @@ Android Version | Preferred Bootloader | Preferred Radio | Also possible
 ----------------|----------------------|-----------------|--------------
 2.3.3 (GRI54)   | I9020XXKA3           | I9020UCKB2
 2.3.4 (GRJ22)   | I9020XXKA3           | I9020UCKD1      | All previous versions
+2.3.5 (GRJ90)   | I9020XXKA3           | I9020UCKF1      | All previous versions
 
 Nexus S (Korea version "KR"):
 
@@ -176,6 +178,7 @@ Android Version | Preferred Bootloader | Preferred Radio | Also possible
 ----------------|----------------------|-----------------|--------------
 2.3.3 (GRI54)   | I9020XXKA3           | I9020KRKB3
 2.3.4 (GRJ22)   | I9020XXKA3           | M200KRKC1       | All previous versions
+2.3.5 (GRJ90)   | I9020XXKA3           | M200KRKC1       | All previous versions
 
 Nexus S 4G:
 
@@ -183,6 +186,7 @@ Android Version | Preferred Bootloader | Preferred Radio | Also possible
 ----------------|----------------------|-----------------|--------------
 2.3.4 (GRJ06D)  | D720SPRKC5           | D720SPRKC9
 2.3.4 (GRJ22)   | D720SPRKC5           | D720SPRKD8      | All previous versions
+2.3.5 (GRJ90)   | D720SPRKC5           | D720SPRKE5      | All previous versions
 
 If you're building a new version of Android, if your Nexus S or Nexus S 4G has
 an older bootloader and radio image that is marked as being also possible in
