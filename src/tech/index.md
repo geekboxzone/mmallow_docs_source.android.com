@@ -30,24 +30,6 @@ design information on the VM itself, and so on.
 [&raquo; Dalvik Information](/tech/dalvik/index.html)
 
 
-## Bluetooth Technical Information ##
-The Android Open-Source Project includes a bluetooth subsystem currently based
-on the upstream bluez project. Android then layers various IPC and similar
-libraries to link the bluez library with the Android Bluetooth stack and API.
-
-[&raquo; Bluetooth Information](/tech/bluetooth/index.html)
-
-
-## NFC Technical Information ##
-The Android Open-Source Project also includes an NFC implementation. Unlike
-the Android Bluetooth stack, much of the Android NFC stack is new code
-originally contributed to the Android Open-Source Project. This code links the
-Android NFC API to a device's NFC hardware. This section also includes
-information on related Android technologies, such as the simple NDEF Push
-Protocol.
-
-[&raquo; NFC Information](/tech/nfc/index.html)
-
 ## Encryption Technical Information ##
 The Android Open-Source Project includes the ability to encrypt the user's data.
 This document is written for 3rd parties developing Android devices who want to
