@@ -35,7 +35,7 @@ FroYo. Source code for Android 2.2 is found in the 'froyo' branch in the
 open-source tree.
 
 - [Android 2.2 Compatibility Definition Document (CDD)](2.2/android-2.2-cdd.pdf)
-- [Android 2.2 R6 Compatibility Test Suite (CTS)](http://dl.google.com/dl/android/cts/android-cts-2.2_r6-x86.zip)
+- [Android 2.2 R7 Compatibility Test Suite (CTS)](http://dl.google.com/dl/android/cts/android-cts-2.2_r7-x86.zip)
 
 ## Android 2.1 ##
 
