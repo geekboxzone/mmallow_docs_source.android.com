@@ -57,8 +57,8 @@ Java 6: for Gingerbread and newer
 
 Java 5: for Froyo and older
 
-    $ sudo add-apt-repository "deb http://archive.ubuntu.com/ubuntu dapper main multiverse"
-    $ sudo add-apt-repository "deb http://archive.ubuntu.com/ubuntu dapper-updates main multiverse"
+    $ sudo add-apt-repository "deb http://archive.ubuntu.com/ubuntu hardy main multiverse"
+    $ sudo add-apt-repository "deb http://archive.ubuntu.com/ubuntu hardy-updates main multiverse"
     $ sudo apt-get update
     $ sudo apt-get install sun-java5-jdk
 
