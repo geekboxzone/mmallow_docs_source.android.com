@@ -135,7 +135,7 @@ it's typically better to delete it when flashing a new system.
 
 An entire Android system can be flashed in a single command: this writes
 the boot, recovery and system partitions together after verifying that the
-system bring flashed is compatible with the installed bootloader and radio,
+system being flashed is compatible with the installed bootloader and radio,
 and reboots the system.
 
     $ fastboot flashall
