@@ -117,4 +117,11 @@ the engineers building a device. Its intent is to reveal incompatibilities
 early on, and ensure that the software remains compatible throughout the
 development process.
 
+
+# Compatibility Test Suite Verifier (CTS Verifier) #
+The Compatibility Test Suite Verifier (CTS Verifier) is a supplement to the
+Compatibility Test Suite (CTS), available for [download](downloads.html).
+CTS Verifier provides tests for APIs and functions that cannot be tested on a
+stationary device without manual input (e.g. audio quality, accelerometer, etc).
+
 For details on the CTS, consult the [CTS introduction](cts-intro.html).
