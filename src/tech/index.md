@@ -1,7 +1,7 @@
 <!--
-   Copyright 2010 The Android Open Source Project 
+   Copyright 2010 The Android Open Source Project
 
-   Licensed under the Apache License, Version 2.0 (the "License"); 
+   Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
@@ -38,3 +38,10 @@ must be done so encryption will work.
 
 [&raquo; Encryption Information](/tech/encryption/index.html)
 
+##Security Technical Information ##
+Android provides a robust multi-layered security architecture that provides the
+flexibility required for an open platform, while providing protection for all
+users of the platform. This document focuses on the security features of the
+core Android platform.
+
+[&raquo; Android Security Overview](/tech/security/index.html)
