@@ -26,7 +26,8 @@ Gingerbread. Android 2.3 is the current version of Android. Source code for
 Android 2.3 is found in the 'gingerbread' branch in the open-source tree.
 
 - [Android 2.3 Compatibility Definition Document (CDD)](2.3/android-2.3.3-cdd.pdf)
-- [Android 2.3 R8 Compatibility Test Suite (CTS)](http://dl.google.com/dl/android/cts/android-cts-2.3_r8-x86.zip)
+- [Android 2.3 R9 Compatibility Test Suite (CTS)](http://dl.google.com/dl/android/cts/android-cts-2.3_r9-linux_x86-armv5.zip)
+- [Android 2.3 R2 CTS Verifier](http://dl.google.com/dl/android/cts/android-cts-verifier-2.3_r2-linux_x86-armv5.zip)
 
 ## Android 2.2 ##
 
