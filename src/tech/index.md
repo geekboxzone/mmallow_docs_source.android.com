@@ -30,6 +30,13 @@ design information on the VM itself, and so on.
 [&raquo; Dalvik Information](/tech/dalvik/index.html)
 
 
+## Debugging ##
+Android is a large and complex system. This section includes tips and tricks
+about debugging at the platform level.
+
+[&raquo; Debugging Information](/tech/debugging/index.html)
+
+
 ## Encryption Technical Information ##
 The Android Open-Source Project includes the ability to encrypt the user's data.
 This document is written for 3rd parties developing Android devices who want to

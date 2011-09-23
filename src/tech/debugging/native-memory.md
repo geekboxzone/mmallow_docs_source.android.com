@@ -14,13 +14,10 @@
    limitations under the License.
 -->
 
-# Development Tips and Tricks #
+# Debugging Native Memory Use #
 
-A collection of helpful tricks and available facilities for developing
-the platform code.  This tips assume that you are working with an eng
+This tip assume that you are working with an eng
 or userdebug build of the platform, not on a production device.
-
-## Debugging Native Memory Use ##
 
 Android's native memory allocator has some useful debugging features.  You
 can turn on memory tracking with:
