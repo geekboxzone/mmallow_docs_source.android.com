@@ -39,7 +39,7 @@ Gingerbread    | 2.3 - 2.3.2  | API level 9, NDK 5
 Gingerbread    | 2.3.3 - 2.3.7            | API level 10
 Honeycomb      | 3.0                      | API level 11
 Honeycomb      | 3.1                      | API level 12
-Honeycomb      | 3.2 - 3.2.1              | API level 13
+Honeycomb      | 3.2 - 3.2.2              | API level 13
 
 Starting with Cupcake, individual builds are identified with a short
 build code, e.g. FRF85B.
@@ -122,7 +122,8 @@ HRI93  | android-3.0_r1.3
 HMJ37  | android-3.1_r1
 HTJ85B | android-3.2_r1
 HTK55D |
-HTK75D |                    | latest Honeycomb version
+HTK75D |
+HLK75C |                    | latest Honeycomb version
 
 There is no manifest that contains exactly those. However, there
 are manifests that allow building those components. The following
