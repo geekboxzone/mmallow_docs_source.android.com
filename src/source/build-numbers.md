@@ -97,9 +97,9 @@ GRI54  | android-2.3.3_r1.1 | Nexus S
 GRJ06D | android-2.3.4_r0.9 | Nexus S 4G
 GRJ22  | android-2.3.4_r1   | Nexus One, Nexus S, Nexus S 4G
 GRJ90  | android-2.3.5_r1   | Nexus S 4G
-GRK39C |                    | Nexus S
-GRK39F |                    | Nexus One, Nexus S
-GWK74  |                    | latest Gingerbread version, Nexus S 4G
+GRK39C | android-2.3.6_r0.9 | Nexus S
+GRK39F | android-2.3.6_r1   | Nexus One, Nexus S
+GWK74  | android-2.3.7_r1   | latest Gingerbread version, Nexus S 4G
 
 The branches donut, eclair, froyo, gingerbread represent development
 branches that do not exactly match configurations that were tested
@@ -121,17 +121,18 @@ HWI69  | android-3.0_r1.2
 HRI93  | android-3.0_r1.3
 HMJ37  | android-3.1_r1
 HTJ85B | android-3.2_r1
-HTK55D |
-HTK75D |
-HLK75C |
-HLK75D |                    | latest Honeycomb version
+HTK55D | android-3.2.1_r1
+HTK75D | android-3.2.1_r2
+HLK75C | android-3.2.2_r1
+HLK75D | android-3.2.2_r2   | latest Honeycomb version
 
 There is no manifest that contains exactly those. However, there
 are manifests that allow building those components. The following
 commands work for 3.0_r1.1, and using other versions can be done by
-switching the git checkout paramater, and if necessary the -b parameter in
-repo init.
+switching the git checkout paramater, and if necessary the -m parameter in
+repo init. The git checkout command outputs an error for the non-GPL
+projects, where it can't find the tag in question.
 
-    $ repo init -b master -m 3.0-base.xml
+    $ repo init -b master -m base-for-3.0-gpl.xml
     $ repo sync
     $ repo forall -c git checkout android-3.0_r1.1

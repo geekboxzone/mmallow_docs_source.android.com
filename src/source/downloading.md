@@ -29,27 +29,29 @@ To install, initialize, and configure Repo, follow these steps:
 
  - Download the Repo script and ensure it is executable:
 
-        $ curl https://android.git.kernel.org/repo > ~/bin/repo
+        $ curl https://dl-ssl.google.com/dl/googlesource/git-repo/repo > ~/bin/repo
         $ chmod a+x ~/bin/repo
 
- - The MD5 checksum for repo is bbf05a064c4d184550d71595a662e098
+ - The SHA-1 checksum for repo is e1fd3bef059d152edf4d0522590725d317bc637f
 
 ## Initializing a Repo client ##
 
 After installing Repo, set up your client to access the android source repository:
 
- - Create an empty directory to hold your working files:
+ - Create an empty directory to hold your working files.
+ Give it any name you like:
+
 
         $ mkdir WORKING_DIRECTORY
         $ cd WORKING_DIRECTORY
 
  - Run `repo init` to bring down the latest version of Repo with all its most recent bug fixes.  You must specify a URL for the manifest, which specifies where the various repositories included in the Android source will be placed within your working directory.
 
-        $ repo init -u git://android.git.kernel.org/platform/manifest.git
+        $ repo init -u https://android.googlesource.com/platform/manifest
 
     To check out a branch other than "master", specify it with -b:
 
-        $ repo init -u git://android.git.kernel.org/platform/manifest.git -b froyo
+        $ repo init -u https://android.googlesource.com/platform/manifest -b android-2.3.7_r1
 
  - When prompted, please configure Repo with your real name and email address.  To use the Gerrit code-review tool, you will need an email address that is connected with a [registered Google account](http://www.google.com/accounts).  Make sure this is a live address at which you can receive messages.  The name that you provide here will show up in attributions for your code submissions.
 
@@ -63,7 +65,10 @@ To pull down files to your working directory from the repositories as specified 
 
     $ repo sync
 
-The Android source files will be located in your working directory under their project names.  The initial sync operation will take several minutes to complete.  For more about `repo sync` and other Repo commands, see [Version Control](version-control.html).
+The Android source files will be located in your working directory
+under their project names. The initial sync operation will take
+an hour or more to complete. For more about `repo sync` and other
+Repo commands, see [Version Control](version-control.html).
 
 
 ## Verifying Git Tags ##
