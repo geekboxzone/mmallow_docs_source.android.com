@@ -88,7 +88,9 @@ FRG01B | android-2.2_r1.2
 FRG22D | android-2.2_r1.3
 FRG83  | android-2.2.1_r1   | Nexus One
 FRG83D | android-2.2.1_r2   | Nexus One
-FRG83G | android-2.2.2_r1   | latest Froyo version, Nexus One
+FRG83G | android-2.2.2_r1   | Nexus One
+FRK76  | android-2.2.3_r1
+FRK76C | android-2.2.3_r2   | latest Froyo version
 GRH55  | android-2.3_r1     | earliest Gingerbread version, Nexus S
 GRH78  | android-2.3.1_r1   | Nexus S
 GRH78C | android-2.3.2_r1   | Nexus S
