@@ -18,19 +18,25 @@
 
 The "Getting Started" section describes how to set up your local work environment, how to use Repo to get the Android files, and how to build the files on your machine.  To build the Android source files, you will need to use Linux or Mac OS. Building under Windows is not currently supported.
 
-*Note: The source is approximately 2.6GB in size. You will need 10GB free to complete the build.*
+*Note: The source download is approximately 6GB in size.
+You will need 25GB free to complete a single build, and
+up to 80GB (or more) for a full set of builds.*
 
 For an overview of the entire code-review and code-update process, see [Life of a Patch](life-of-a-patch.html).
-
-To see snapshots and histories of the files available in the public Android repositories, visit the [GitWeb](http://android.git.kernel.org) web interface.
 
 
 
 # Setting up a Linux build environment #
 
-The Android build is routinely tested in house on recent versions of Ubuntu (10.04 and later), but most distributions should have the required build tools available.  Reports of successes or failures on other distributions are welcome.  
+The Android build is routinely tested in house on recent versions of
+Ubuntu LTS (10.04), but most distributions should have the required
+build tools available. Reports of successes or failures on other
+distributions are welcome.
 
-*Note: It is also possible to build Android in a virtual machine.  If you are running Linux in a virtual machine, you will need at least 8GB of RAM/swap and 12GB or more of disk space in order to build the Android tree.*
+*Note: It is also possible to build Android in a virtual machine.
+If you are running Linux in a virtual machine, you will need at
+least 16GB of RAM/swap and 30GB or more of disk space in order to
+build the Android tree.*
 
 In general you will need:
 
@@ -38,9 +44,7 @@ In general you will need:
 
  - JDK 6 if you wish to build Gingerbread or newer; JDK 5 for Froyo or older.  You can download both from [java.sun.com](http://java.sun.com/javase/downloads/).
 
- - Git 1.5.4 or newer. You can find it at [git-scm.com](http://git-scm.com/download).
-
- - (optional) Valgrind, a tool that will help you find memory leaks, stack corruption, array bounds overflows, etc. Download from [valgrind.org](http://valgrind.org/downloads/current.html).
+ - Git 1.7 or newer. You can find it at [git-scm.com](http://git-scm.com/download).
 
 Detailed instructions for Ubuntu 10.04+ follow.
 
@@ -98,6 +102,10 @@ over USB.
     SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4e22", MODE="0600", OWNER="<username>"
     # fastboot protocol on crespo/crespo4g (Nexus S)
     SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4e20", MODE="0600", OWNER="<username>"
+    # adb protocol on maguro (Galaxy Nexus)
+    SUBSYSTEM=="usb", ATTR{idVendor}=="04e8", ATTR{idProduct}=="6860", MODE="0600", OWNER="<username>"
+    # fastboot protocol on maguro (Galaxy Nexus)
+    SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4e30", MODE="0600", OWNER="<username>"
 
 Those new rules take effect the next time a device is plugged in.
 It might therefore be necessary to unplug the device and plug it
@@ -110,7 +118,8 @@ variants of GNU/linux might require different configurations.
 
 # Setting up a Mac OS X build environment #
 
-To build the Android files in a Mac OS environment, you need an Intel/x86 machine running MacOS 10.4 (Tiger), 10.5 (Leopard), or 10.6 (Snow Leopard). The Android build system and tools do not support the obsolete PowerPC architecture.
+To build the Android files in a Mac OS environment, you need an
+Intel/x86 machine running MacOS 10.6 (Snow Leopard).
 
 Android must be built on a case-sensitive file system because the sources contain files that differ only in case. We recommend that you build Android on a partition that has been formatted with the journaled file system HFS+.  HFS+ is required to successfully build Mac OS applications such as the Android Emulator for OS X.
 
@@ -118,7 +127,7 @@ Android must be built on a case-sensitive file system because the sources contai
 
 If you want to avoid partitioning/formatting your hard drive, you can use
 a case-sensitive disk image instead. To create the image, launch Disk
-Utility and select "New Image".  A size of 12GB is the minimum to
+Utility and select "New Image".  A size of 25GB is the minimum to
 complete the build, larger numbers are more future-proof. Using sparse images
 saves space while allowing to grow later as the need arises. Be sure to select
 "case sensitive, journaled" as the volume format.
@@ -138,6 +147,7 @@ Once mounted, you'll do all your work in the "android" volume. You can eject it 
 
 - Install XCode from [the Apple developer site](http://developer.apple.com/).
 We recommend version 3.1.4 or newer, i.e. gcc 4.2.
+Version 4.x could cause difficulties.
 If you are not already registered as an Apple developer, you will have to
 create an Apple ID in order to download.
 

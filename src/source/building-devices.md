@@ -16,15 +16,30 @@
 
 # Building for devices #
 
-This page complements the main page about [Building](building.html) with information
-that is specific to individual devices.
+This page complements the main page about [Building](building.html) with
+information that is specific to individual devices.
 
-The only supported devices are Nexus S, a.k.a. "crespo", and Nexus S 4G, a.k.a.
-"crespo4g".
-Nexus S is the recommended device to use with the Android Open-Source Project.
-Nexus One a.k.a. "passion" is experimental and unsupported. Android Developer
-Phones (ADP1 and ADP2, a.k.a. "dream" and "sapphire") are obsolete, were
-experimental and unsupported in froyo, and can't be used with gingerbread.
+The only supported phone with the current release is the GSM/HSPA+ Galaxy
+Nexus, a.k.a. "maguro".
+GSM/HSPA+ Galaxy Nexus is currently the recommended device to use with the
+Android Open-Source Project.
+
+In addition, [PandaBoard](http://pandaboard.org) a.k.a. "panda" is supported
+in the master branch only, but is currently considered experimental.
+The specific details to use a PandaBoard with the Android Open-Source Project
+are in the file `device/ti/panda/README` in the source tree.
+
+Nexus S, a.k.a. "crespo", and Nexus S 4G, a.k.a. "crespo4g", are supported with
+gingerbread, but can't currently be used with newer versions of the Android
+Open-Source Project.
+
+Nexus One a.k.a. "passion" is obsolete, was experimental in gingerbread and
+unsupported, and can't be used with newer versions of the Android Open-Source
+Project.
+
+Android Developer Phones (ADP1 and ADP2, a.k.a. "dream" and "sapphire") are
+obsolete, were experimental and unsupported in froyo, and can't be used with
+newer versions of the Android Open-Source Project.
 
 ## Building fastboot and adb ##
 
@@ -41,6 +56,7 @@ which is a mode in the bootloader that can be used to flash the devices:
 
 Device   | Keys
 ---------|------
+maguro   | Press and hold both *Volume Up* and *Volume Down*, then press and hold *Power*
 crespo   | Press and hold *Volume Up*, then press and hold *Power*
 crespo4g | Press and hold *Volume Up*, then press and hold *Power*
 passion  | Press and hold the trackball, then press *Power*
@@ -57,8 +73,8 @@ It's only possible to flash a custom system if the bootloader allows it.
 
 This is the default setup on ADP1 and ADP2.
 
-On Nexus One, Nexus S, and Nexus S 4G, the bootloader is locked by default.
-With the device in fastboot mode, the bootloader is unlocked with
+On Nexus One, Nexus S, Nexus S 4G, and Galaxy Nexus, the bootloader is locked
+by default. With the device in fastboot mode, the bootloader is unlocked with
 
     $ fastboot oem unlock
 
@@ -67,17 +83,18 @@ privacy reasons. It only needs to be run once.
 
 On Nexus One, the operation voids the warranty and is irreversible.
 
-On Nexus S and Nexus S 4G, the bootloader can be locked back with
+On Nexus S, Nexus S 4G, and Galaxy Nexus, the bootloader can be locked back with
 
     $ fastboot oem lock
 
 ## Obtaining proprietary binaries ##
 
-While it's possible to build and run a system using exclusively source code
-from Android Open-Source Project, such a system can only use the devices'
-hardware capabilities for which Open-Source support exists.
+Starting with IceCreamSandwich, the Android Open-Source Project can't be used
+from pure source code only, and requires additional hardware-related proprietary
+libraries to run, specifically for hardware graphics acceleration.
 
-Official binaries for Nexus S and Nexus S 4G can be downloaded from
+Official binaries for Nexus S, Nexus S 4G, Galaxy Nexus, and PandaBoard can be
+downloaded from
 [Google's Nexus driver page](http://code.google.com/android/nexus/drivers.html),
 which add access to additional hardware capabilities with non-Open-Source code.
 
@@ -85,7 +102,7 @@ There are no official binaries for Nexus One, ADP2 or ADP1.
 
 ### Extracting the proprietary binaries ###
 
-Each driver comes as a self-extracting script in a compressed archive.
+Each set of binaries comes as a self-extracting script in a compressed archive.
 After uncompressing each archive, run the included self-extracting script
 from the root of the source tree, confirm that you agree to the terms of the
 enclosed license agreement, and the binaries and their matching makefiles
@@ -113,10 +130,12 @@ The steps to configure and build the Android Open-Source Project
 are described in the page about [Building](building.html).
 
 The recommended builds for the various devices are available through
-the lunch menu, accesed when running the `lunch` command with no arguments:
+the lunch menu, accessed when running the `lunch` command with no arguments:
 
 Device   | Branch           | Build configuration
 ---------|------------------|------------------------
+maguro   | android-4.0.1_r1 | full_maguro-userdebug
+panda    | master           | full_panda-eng
 crespo   | android-2.3.6_r1 | full_crespo-userdebug
 crespo4g | android-2.3.7_r1 | full_crespo4g-userdebug
 passion  | android-2.3.6_r1 | full_passion-userdebug
@@ -140,16 +159,16 @@ and reboots the system.
 
     $ fastboot flashall
 
-On crespo, crespo4g, sapphire and dream (but not on passion), the commands above can
-be replaced with a single command
+On maguro, panda, crespo, crespo4g, sapphire and dream (but not on passion),
+the commands above can be replaced with a single command
 
     $ fastboot -w flashall
 
-### Nexus S and Nexus S 4G Bootloader and Cell Radio compatibility ###
+### Nexus S, Nexus S 4G and Galaxy Nexus Bootloader and Cell Radio compatibility ###
 
-On Nexus S and Nexus S 4G, each version of Android has only been thoroughly
-tested with on specific version of the underlying bootloader and cell radio
-software.
+On Nexus S, Nexus S 4G, and Galaxy Nexus, each version of Android has only
+been thoroughly tested with on specific version of the underlying bootloader
+and cell radio software.
 However, no compatibility issues are expected when running newer systems
 with older bootloaders and radio images according to the following tables.
 
@@ -193,11 +212,20 @@ Android Version | Preferred Bootloader | Preferred Radio | Also possible
 2.3.5 (GRJ90)   | D720SPRKC5           | D720SPRKE5      | All previous versions
 2.3.7 (GWK74)   | D720SPRKE1           | D720SPRKH1 (*)  | All previous versions
 
-If you're building a new version of Android, if your Nexus S or Nexus S 4G has
+Galaxy Nexus (GSM/HSPA+):
+
+Android Version | Preferred Bootloader | Preferred Radio | Also possible
+----------------|----------------------|-----------------|--------------
+4.0.1 (ITL41D)  | PRIMEKJ10            | I9250XXKK1
+
+If you're building a new version of Android, if your Nexus S, Nexus S 4G or
+Galaxy Nexus has
 an older bootloader and radio image that is marked as being also possible in
 the table above but is not recognized by fastboot, you can locally
 delete the `version-bootloader` and `version-baseband` lines in
-`device/samsung/crespo/board-info.txt` or `device/samsung/crespo4g/board-info.txt`.
+`device/samsung/crespo/board-info.txt` or
+`device/samsung/crespo4g/board-info.txt` or
+`device/samsung/maguro/board-info.txt`
 
 (*) As a note, radio version D720SPRKH1 for Nexus S 4G sometimes erroneously
 reports version D720SPRKE1. If this is the case for your Nexus S 4G, you can

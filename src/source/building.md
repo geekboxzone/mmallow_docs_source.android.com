@@ -46,9 +46,9 @@ referring to the particular feature combination:
 
 Build name  | Device   | Notes
 ------------|----------|---------------------------
-generic     | emulator | lowest-common denominator
 full        | emulator | fully configured with all languages, apps, input methods
-full_crespo | crespo   | `full` build running on Nexus S ("crespo")
+full_maguro | maguro   | `full` build running on Galaxy Nexus GSM/HSPA+ ("maguro")
+full_panda  | panda    | `full` build running on PandaBoard ("panda")
 
 and the BUILDTYPE is one of the following:
 

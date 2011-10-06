@@ -23,9 +23,14 @@ information.
 
 The links below will navigate you away from this site.
 
+## [Android 4.0](http://developer.android.com/sdk/android-4.0-highlights.html) ##
+
+Android 4.0 corresponded to the "IceCreamSandwich" milestone branch, and has an API level of 14.
+
 ## [Android 2.3](http://developer.android.com/sdk/android-2.3-highlights.html) ##
 
 Android 2.3 corresponded to the "Gingerbread" milestone branch, and has an API level of 9.
+In versions 2.3.3 and higher, the API level is 10.
 
 ## [Android 2.2](http://developer.android.com/sdk/android-2.2-highlights.html) ##
 

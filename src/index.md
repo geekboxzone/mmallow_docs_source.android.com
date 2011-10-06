@@ -20,6 +20,14 @@
 
 ## News ##
 
+### Source Code Available for Android 4.0 ###
+
+The source code for the Android 4.0 platform and software stack has been
+released! This release allows OEMs to begin preparing Android 4.0 for
+installation on new and existing devices, and allows hobbyists, enthusiasts,
+and researchers to develop custom builds. For information on how to obtain the
+software, visit our [Getting the Source](source/downloading.html) page.
+
 ### Compatibility Definition for Android 2.3 ###
 
 The Compatibility Definition Document for Android 2.3.3 has been published. 
@@ -28,14 +36,6 @@ a significantly wider variety of devices, including devices with extra-large
 screens, such as tablets. Android 2.3.3 adds enhanced Near-Field
 Communications support to the Android APIs. For more information, visit the 
 [Compatibility](compatibility/index.html) page.
-
-### Source Code Available for Android 2.3 ###
-
-The source code for the Android 2.3 platform and software stack has been
-released! This release allows OEMs to begin preparing Android 2.3 for
-installation on new and existing devices, and allows hobbyists, enthusiasts,
-and researchers to develop custom builds. For information on how to obtain the
-software, visit our [Getting the Source](source/downloading.html) page.
 
 </div>
 

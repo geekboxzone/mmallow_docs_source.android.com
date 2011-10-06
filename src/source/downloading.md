@@ -52,7 +52,7 @@ After installing Repo, set up your client to access the android source repositor
 
     To check out a branch other than "master", specify it with -b:
 
-        $ repo init -u https://android.googlesource.com/platform/manifest -b android-2.3.7_r1
+        $ repo init -u https://android.googlesource.com/platform/manifest -b android-4.0.1_r1
 
  - When prompted, please configure Repo with your real name and email address.  To use the Gerrit code-review tool, you will need an email address that is connected with a [registered Google account](http://www.google.com/accounts).  Make sure this is a live address at which you can receive messages.  The name that you provide here will show up in attributions for your code submissions.
 
