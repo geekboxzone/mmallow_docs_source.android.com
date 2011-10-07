@@ -88,9 +88,9 @@ over USB.
     SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4e12", MODE="0600", OWNER="<username>"
     # fastboot protocol on passion (Nexus One)
     SUBSYSTEM=="usb", ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0fff", MODE="0600", OWNER="<username>"
-    # adb protocol on crespo (Nexus S)
+    # adb protocol on crespo/crespo4g (Nexus S)
     SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4e22", MODE="0600", OWNER="<username>"
-    # fastboot protocol on crespo (Nexus S)
+    # fastboot protocol on crespo/crespo4g (Nexus S)
     SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4e20", MODE="0600", OWNER="<username>"
 
 Those new rules take effect the next time a device is plugged in.
