@@ -123,7 +123,8 @@ HMJ37  | android-3.1_r1
 HTJ85B | android-3.2_r1
 HTK55D |
 HTK75D |
-HLK75C |                    | latest Honeycomb version
+HLK75C |
+HLK75D |                    | latest Honeycomb version
 
 There is no manifest that contains exactly those. However, there
 are manifests that allow building those components. The following
