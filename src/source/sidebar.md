@@ -10,7 +10,6 @@
 - [Platform Overview](overview.html)
 - [Branches & Releases](code-lines.html)
 - [Build Numbers](build-numbers.html)
-- [Browse Source](http://android.git.kernel.org)
 
 # Contributing #
 
