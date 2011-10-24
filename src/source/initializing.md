@@ -51,7 +51,6 @@ The Sun JDK is no longer in Ubuntu's main package repository.  In order to downl
 Java 6: for Gingerbread and newer
 
     $ sudo add-apt-repository "deb http://archive.canonical.com/ lucid partner"
-    $ sudo add-apt-repository "deb-src http://archive.canonical.com/ubuntu lucid partner"
     $ sudo apt-get update
     $ sudo apt-get install sun-java6-jdk
 
