@@ -136,7 +136,9 @@ Once mounted, you'll do all your work in the "android" volume. You can eject it 
 
 ## Installing required packages ##
 
-- Install XCode from [the Apple developer site](http://developer.apple.com/). We recommend version 3.0 or newer.  If you are not already registered as an Apple developer, you will have to create an Apple ID in order to download.
+- Install XCode from [the Apple developer site](http://developer.apple.com/).
+We recommend version 3.1.4 or newer. If you are not already registered as an
+Apple developer, you will have to create an Apple ID in order to download.
 
 - Install MacPorts from [macports.org](http://www.macports.org/install.php).
 
