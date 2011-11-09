@@ -39,6 +39,7 @@ To install, initialize, and configure Repo, follow these steps:
 After installing Repo, set up your client to access the android source repository:
 
  - Create an empty directory to hold your working files.
+ If you're using MacOS, this has to be on a case-sensitive filesystem.
  Give it any name you like:
 
 
