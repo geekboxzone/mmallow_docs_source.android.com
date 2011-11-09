@@ -117,9 +117,9 @@ the lunch menu, accesed when running the `lunch` command with no arguments:
 
 Device   | Branch           | Build configuration
 ---------|------------------|------------------------
-crespo   | android-2.3.5_r1 | full_crespo-userdebug
-crespo4g | android-2.3.5_r1 | full_crespo4g-userdebug
-passion  | android-2.3.5_r1 | full_passion-userdebug
+crespo   | android-2.3.6_r1 | full_crespo-userdebug
+crespo4g | android-2.3.7_r1 | full_crespo4g-userdebug
+passion  | android-2.3.6_r1 | full_passion-userdebug
 sapphire | android-2.2.2_r1 | full_sapphire-userdebug
 dream    | android-2.2.2_r1 | full_dream-userdebug
 
