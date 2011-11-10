@@ -127,7 +127,7 @@ You can also create it from a shell with the following command:
 
     # hdiutil create -type SPARSE -fs 'Case-sensitive Journaled HFS+' -size 40g ~/android.dmg
 
-This will create a .dmg file which, once mounted, acts as a drive with the required formatting for Android development. For a disk image named "android.dmg" stored in your home directory, you can add the following to your `~/.bash_profile` to mount the image when you execute "mountAndroid": 
+This will create a .dmg (or possibly a .dmg.sparsefile) file which, once mounted, acts as a drive with the required formatting for Android development. For a disk image named "android.dmg" stored in your home directory, you can add the following to your `~/.bash_profile` to mount the image when you execute "mountAndroid":
 
     # mount the android file image
     function mountAndroid { hdiutil attach ~/android.dmg -mountpoint /Volumes/android; }
