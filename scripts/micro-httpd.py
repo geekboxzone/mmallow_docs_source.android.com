@@ -18,5 +18,6 @@ import SimpleHTTPServer, SocketServer, os
 PORT = int(os.environ.get('HTTP_PORT', 8080))
 Handler = SimpleHTTPServer.SimpleHTTPRequestHandler
 httpd = SocketServer.TCPServer(("0.0.0.0", PORT), Handler)
+httpd.allow_reuse_address = True
 print "Serving on port %d" % PORT
 httpd.serve_forever()
