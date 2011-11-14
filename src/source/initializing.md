@@ -67,7 +67,7 @@ Java 5: for Froyo and older
 
 ## Installing required packages ##
 
-Ubuntu 10.04 (recommended)
+64-bit (recommended)
 
     $ sudo apt-get install git-core gnupg flex bison gperf build-essential \
       zip curl zlib1g-dev libc6-dev lib32ncurses5-dev ia32-libs \
@@ -75,12 +75,16 @@ Ubuntu 10.04 (recommended)
       libgl1-mesa-dev g++-multilib mingw32 tofrodos python-markdown \
       libxml2-utils
 
-Ubuntu 11.10 (experimental)
+On newer versions of Ubuntu such as 11.10 you may need to do the following:
+
+    $ sudo ln -s /usr/lib/i386-linux-gnu/libX11.so.6 /usr/lib/i386-linux-gnu/libX11.so
+
+32-bit (experimental)
 
     $ sudo apt-get install git-core gnupg flex bison gperf build-essential \
-      zip curl zlib1g-dev libc6-dev libncurses5-dev ia32-libs-multiarch \
-      x11proto-core-dev libx11-dev libreadline6-dev libgl1-mesa-dev \
-      g++-multilib mingw32 tofrodos python-markdown libxml2-utils
+      zip curl zlib1g-dev libc6-dev libncurses5-dev x11proto-core-dev \
+      libx11-dev libreadline6-dev libgl1-mesa-dev tofrodos python-markdown \
+      libxml2-utils
 
 ## Configuring USB Access ##
 
