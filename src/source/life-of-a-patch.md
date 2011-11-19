@@ -24,4 +24,4 @@ the steps below are performed in the web application.
 For full instructions on how to get set up to use gerrit and git, please
 see the [Submitting Patches](submit-patches.html) page.
 
-<img src="/images/workflow-0.png"/>
+<img src="/images/workflow-0.png" alt="workflow diagram"/>

@@ -27,7 +27,7 @@ To work with the Android code, you will need to use both Git and Repo.  In most 
 ## Basic Workflow ##
 
 <div style="float:right">
-  <img src="/images/submit-patches-0.png">
+  <img src="/images/submit-patches-0.png" alt="basic workflow diagram">
 </div>
 
 The basic pattern of interacting with the repositories is as follows:
@@ -60,7 +60,7 @@ To synchronize the files for selected projects:
 ## Creating topic branches ##
 
 Start a topic branch in your local work environment whenever you begin a change, for example when you begin work on a bug or new feature. A topic branch is not a copy of the original files; it is a pointer to a particular commit. This makes creating local branches and switching among them a light-weight operation. By using branches, you can isolate one aspect of your work from the others. For an interesting article about using topic branches, see [Separating topic branches](http://www.kernel.org/pub/software/scm/git/docs/howto/separating-topic-branches.txt).
-<img src="/images/external-link.png">
+<img src="/images/external-link.png" alt="">
 
 To start a topic branch using Repo: 
 
@@ -173,6 +173,6 @@ Deleting a client will *permanently delete* any changes you have not yet uploade
 
 # Git and Repo cheatsheet #
 
-<img src="/images/git-repo-1.png">
+<img src="/images/git-repo-1.png" alt="list of basic git and repo commands">
 
 

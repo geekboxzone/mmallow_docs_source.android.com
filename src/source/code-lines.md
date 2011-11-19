@@ -28,7 +28,7 @@ for a given "code line".  For instance, when a release is cut, sometimes that
 will become a new branch in git, and sometimes not, based on the needs of the
 moment.
 
-<img src="/images/code-lines.png"/>
+<img src="/images/code-lines.png" alt="code-line diagram"/>
 
 ## Notes and Explanations ##
 
