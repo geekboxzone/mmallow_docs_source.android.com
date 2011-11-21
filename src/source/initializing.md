@@ -75,7 +75,11 @@ Java 5: for Froyo and older
       libgl1-mesa-dev g++-multilib mingw32 tofrodos python-markdown \
       libxml2-utils
 
-On newer versions of Ubuntu such as 11.10 you may need to do the following:
+On Ubuntu 10.10:
+
+    $ sudo ln -s /usr/lib32/mesa/libGL.so.1 /usr/lib32/mesa/libGL.so
+
+On Ubuntu 11.10:
 
     $ sudo ln -s /usr/lib/i386-linux-gnu/libX11.so.6 /usr/lib/i386-linux-gnu/libX11.so
 
