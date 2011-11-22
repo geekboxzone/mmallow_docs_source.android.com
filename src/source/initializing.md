@@ -114,6 +114,10 @@ over USB.
     SUBSYSTEM=="usb", ATTR{idVendor}=="04e8", ATTR{idProduct}=="6860", MODE="0600", OWNER="<username>"
     # fastboot protocol on maguro (Galaxy Nexus)
     SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4e30", MODE="0600", OWNER="<username>"
+    # adb protocol on panda (PandaBoard)
+    SUBSYSTEM=="usb", ATTR{idVendor}=="0451", ATTR{idProduct}=="d101", MODE="0600", OWNER="<username>"
+    # fastboot protocol on panda (PandaBoard)
+    SUBSYSTEM=="usb", ATTR{idVendor}=="0451", ATTR{idProduct}=="d022", MODE="0600", OWNER="<username>"
 
 Those new rules take effect the next time a device is plugged in.
 It might therefore be necessary to unplug the device and plug it
