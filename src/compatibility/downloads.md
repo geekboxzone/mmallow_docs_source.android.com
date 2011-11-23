@@ -19,14 +19,24 @@
 Thanks for your interest in Android Compatibility! The links below allow
 you to access the key documents and information.
 
+## Android 4.0 ##
+
+Android 4.0 is the release of the development milestone code-named
+Ice Cream Sandwich. Android 4.0 is the current version of Android. Source code for
+Android 4.0 is found in the 'android-4.0.1_r1' branch in the open-source tree.
+
+- [Android 4.0 Compatibility Definition Document (CDD)](4.0/android-4.0-cdd.pdf)
+- [Android 4.0 R1 Compatibility Test Suite (CTS)](http://dl.google.com/dl/android/cts/android-cts-4.0_r1-linux_x86-arm.zip)
+- [Android 4.0 R1 CTS Verifier](http://dl.google.com/dl/android/cts/android-cts-verifier-4.0_r1-linux_x86-arm.zip)
+
 ## Android 2.3 ##
 
 Android 2.3 is the release of the development milestone code-named
-Gingerbread. Android 2.3 is the current version of Android. Source code for
-Android 2.3 is found in the 'gingerbread' branch in the open-source tree.
+Gingerbread. Source code for Android 2.3 is found in the 'gingerbread' branch in 
+the open-source tree.
 
 - [Android 2.3 Compatibility Definition Document (CDD)](2.3/android-2.3.3-cdd.pdf)
-- [Android 2.3 R9 Compatibility Test Suite (CTS)](http://dl.google.com/dl/android/cts/android-cts-2.3_r9-linux_x86-armv5.zip)
+- [Android 2.3 R10 Compatibility Test Suite (CTS)](http://dl.google.com/dl/android/cts/android-cts-2.3_r10-linux_x86-arm.zip)
 - [Android 2.3 R2 CTS Verifier](http://dl.google.com/dl/android/cts/android-cts-verifier-2.3_r2-linux_x86-armv5.zip)
 
 ## Android 2.2 ##
@@ -36,7 +46,7 @@ FroYo. Source code for Android 2.2 is found in the 'froyo' branch in the
 open-source tree.
 
 - [Android 2.2 Compatibility Definition Document (CDD)](2.2/android-2.2-cdd.pdf)
-- [Android 2.2 R7 Compatibility Test Suite (CTS)](http://dl.google.com/dl/android/cts/android-cts-2.2_r7-x86.zip)
+- [Android 2.2 R8 Compatibility Test Suite (CTS)](http://dl.google.com/dl/android/cts/android-cts-2.2_r8-linux_x86-arm.zip)
 
 ## Android 2.1 ##
 
