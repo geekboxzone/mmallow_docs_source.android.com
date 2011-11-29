@@ -566,7 +566,7 @@ than are indicated here.
 | 0x07 0x00f8 |                                  | 0x008e | KEY_SLEEP                        |         |        |                                  |       |
 | 0x07 0x00f9 |                                  | 0x0098 | KEY_COFFEE                       | 4.0     | 0x001a | KEYCODE_POWER                    |       |
 | 0x07 0x00fa |                                  | 0x00ad | KEY_REFRESH                      |         |        |                                  |       |
-| 0x07 0x00fb |                                  | 0x008c | KEY_CALC                         |         |        |                                  |       |
+| 0x07 0x00fb |                                  | 0x008c | KEY_CALC                         | 4.0.3   | 0x00d2 | KEYCODE_CALCULATOR               |       |
 
 ### HID Generic Desktop Page (0x01) ###
 
@@ -693,7 +693,7 @@ than are indicated here.
 | 0x0c 0x00ea | Volume Decrement                 | 0x0072 | KEY_VOLUMEDOWN                   | 1.6     | 0x0019 | KEYCODE_VOLUME_DOWN              |       |
 | 0x0c 0x0181 | AL Launch Button Config. Tool    |        |                                  |         |        |                                  |       |
 | 0x0c 0x0182 | AL Programmable Button Config.   | 0x009c | KEY_BOOKMARKS                    | 3.0     | 0x00ae | KEYCODE_BOOKMARK                 |       |
-| 0x0c 0x0183 | AL Consumer Control Config.      | 0x00ab | KEY_CONFIG                       |         |        |                                  |       |
+| 0x0c 0x0183 | AL Consumer Control Config.      | 0x00ab | KEY_CONFIG                       | 4.0.3   | 0x00d1 | KEYCODE_MUSIC                    |       |
 | 0x0c 0x0184 | AL Word Processor                | 0x01a5 | KEY_WORDPROCESSOR                |         |        |                                  |       |
 | 0x0c 0x0185 | AL Text Editor                   | 0x01a6 | KEY_EDITOR                       |         |        |                                  |       |
 | 0x0c 0x0186 | AL Spreadsheet                   | 0x01a7 | KEY_SPREADSHEET                  |         |        |                                  |       |
@@ -703,12 +703,12 @@ than are indicated here.
 | 0x0c 0x018a | AL Email Reader                  | 0x009b | KEY_MAIL                         | 1.6     | 0x0041 | KEYCODE_ENVELOPE                 |       |
 | 0x0c 0x018b | AL Newsreader                    | 0x01ab | KEY_NEWS                         |         |        |                                  |       |
 | 0x0c 0x018c | AL Voicemail                     | 0x01ac | KEY_VOICEMAIL                    |         |        |                                  |       |
-| 0x0c 0x018d | AL Contacts / Address Book       | 0x01ad | KEY_ADDRESSBOOK                  |         |        |                                  |       |
-| 0x0c 0x018e | AL Calendar / Schedule           | 0x018d | KEY_CALENDAR                     |         |        |                                  |       |
+| 0x0c 0x018d | AL Contacts / Address Book       | 0x01ad | KEY_ADDRESSBOOK                  | 4.0.3   | 0x00cf | KEYCODE_CONTACTS                 |       |
+| 0x0c 0x018e | AL Calendar / Schedule           | 0x018d | KEY_CALENDAR                     | 4.0.3   | 0x00d0 | KEYCODE_CALENDAR                 |       |
 | 0x0c 0x018f | AL Task / Project Manager        |        |                                  |         |        |                                  |       |
 | 0x0c 0x0190 | AL Log / Journal / Timecard      |        |                                  |         |        |                                  |       |
 | 0x0c 0x0191 | AL Checkbook / Finance           | 0x00db | KEY_FINANCE                      |         |        |                                  |       |
-| 0x0c 0x0192 | AL Calculator                    | 0x008c | KEY_CALC                         |         |        |                                  |       |
+| 0x0c 0x0192 | AL Calculator                    | 0x008c | KEY_CALC                         | 4.0.3   | 0x00d2 | KEYCODE_CALCULATOR               |       |
 | 0x0c 0x0193 | AL A/V Capture / Playback        |        |                                  |         |        |                                  |       |
 | 0x0c 0x0194 | AL Local Machine Browser         | 0x0090 | KEY_FILE                         |         |        |                                  |       |
 | 0x0c 0x0195 | AL LAN/WAN Browser               |        |                                  |         |        |                                  |       |
@@ -744,8 +744,8 @@ than are indicated here.
 | 0x0c 0x01b3 | AL Clock                         |        |                                  |         |        |                                  |       |
 | 0x0c 0x01b4 | AL File Browser                  |        |                                  |         |        |                                  |       |
 | 0x0c 0x01b5 | AL Power Status                  |        |                                  |         |        |                                  |       |
-| 0x0c 0x01b6 | AL Image Browser                 | 0x00e2 | KEY_MEDIA                        |         |        |                                  |       |
-| 0x0c 0x01b7 | AL Audio Browser                 | 0x00d5 | KEY_SOUND                        |         |        |                                  |       |
+| 0x0c 0x01b6 | AL Image Browser                 | 0x00e2 | KEY_MEDIA                        | 3.0     | 0x004f | KEYCODE_HEADSETHOOK              |       |
+| 0x0c 0x01b7 | AL Audio Browser                 | 0x00d5 | KEY_SOUND                        | 4.0.3   | 0x00d1 | KEYCODE_MUSIC                    |       |
 | 0x0c 0x01b8 | AL Movie Browser                 |        |                                  |         |        |                                  |       |
 | 0x0c 0x01b9 | AL Digital Rights Manager        |        |                                  |         |        |                                  |       |
 | 0x0c 0x01ba | AL Digital Wallet                |        |                                  |         |        |                                  |       |
