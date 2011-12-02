@@ -319,6 +319,7 @@ Android includes many features that make common security issues harder to
 exploit. The Android SDK, compilers, and OS use tools to make common memory
 corruption issues significantly harder to exploit, including:
 
++ Address Space Layout Randomization (ASLR) to randomize key locations in memory
 + Hardware-based No eXecute (NX) to prevent code execution on the stack and heap
 + ProPolice to prevent stack buffer overruns
 + safe_iop to reduce integer overflows
