@@ -102,7 +102,7 @@ result is a compatible system.
 If you want to build a device compatible with a given Android version,
 start by checking out the source code for that version, and then read the
 corresponding CDD and stay within its guidelines. For additional details,
-simply examine [the latest CDD](2.3/android-2.3.3-cdd.pdf).
+simply examine [the latest CDD](4.0/android-4.0-cdd.pdf).
 
 # Compatibility Test Suite (CTS) #
 
