@@ -32,7 +32,7 @@ To install, initialize, and configure Repo, follow these steps:
         $ curl https://dl-ssl.google.com/dl/googlesource/git-repo/repo > ~/bin/repo
         $ chmod a+x ~/bin/repo
 
- - The SHA-1 checksum for repo is e1fd3bef059d152edf4d0522590725d317bc637f
+ - The SHA-1 checksum for repo is 29ba4221d4fccdfa8d87931cd73466fdc24040b5
 
 ## Initializing a Repo client ##
 

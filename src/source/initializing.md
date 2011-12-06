@@ -40,7 +40,7 @@ build the Android tree.*
 
 In general you will need:
 
- - Python 2.4 -- 2.7, which you can download from [python.org](http://www.python.org/download/).
+ - Python 2.5 -- 2.7, which you can download from [python.org](http://www.python.org/download/).
 
  - JDK 6 if you wish to build Gingerbread or newer; JDK 5 for Froyo or older.  You can download both from [java.sun.com](http://java.sun.com/javase/downloads/).
 
