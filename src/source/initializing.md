@@ -127,6 +127,32 @@ This is known to work on both Ubuntu Hardy Heron (8.04.x LTS) and
 Lucid Lynx (10.04.x LTS). Other versions of Ubuntu or other
 variants of GNU/linux might require different configurations.
 
+<a name="ccache"></a>
+## Setting up ccache ##
+
+You can optionally tell the build to use the ccache compilation tool.
+Ccache acts as a compiler cache that can be used to speed-up rebuilds.
+This works very well if you do "make clean" often, or if you frequently
+switch between different build products.
+
+Put the following in your .bashrc or equivalent.
+
+    export USE_CCACHE=1
+
+By default the cache will be stored in ~/.ccache.
+If your home directory is on NFS or some other non-local filesystem,
+you will want to specify the directory in your .bashrc as well.
+
+    export CCACHE_DIR=<path-to-your-cache-directory>
+
+The suggested cache size is 50-100GB.
+You will need to run the following command once you have downloaded
+the source code.
+
+    prebuilt/linux-x86/ccache/ccache -M 50G
+
+This setting is stored in the CCACHE_DIR and is persistent.
+
 
 # Setting up a Mac OS X build environment #
 

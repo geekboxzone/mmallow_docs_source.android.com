@@ -115,6 +115,8 @@ After importing the keys, you can verify any tag with
 
     $ git tag -v TAG_NAME
 
+If you haven't [set up ccache](initializing.html#ccache) yet,
+now would be a good time to do it.
 
 # Next: Build the code #
 
