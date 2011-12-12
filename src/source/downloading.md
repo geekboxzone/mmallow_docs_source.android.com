@@ -118,6 +118,19 @@ After importing the keys, you can verify any tag with
 If you haven't [set up ccache](initializing.html#ccache) yet,
 now would be a good time to do it.
 
+## Downloading kernels ##
+
+If you are only interested in kernel sources,
+you can get the kernel you are interested in through one of the following
+commands:
+
+    $ git clone https://android.googlesource.com/kernel/common.git
+    $ git clone https://android.googlesource.com/kernel/goldfish.git
+    $ git clone https://android.googlesource.com/kernel/msm.git
+    $ git clone https://android.googlesource.com/kernel/omap.git
+    $ git clone https://android.googlesource.com/kernel/samsung.git
+    $ git clone https://android.googlesource.com/kernel/tegra.git
+
 # Next: Build the code #
 
 You now have a complete local copy of the Android codebase.  Continue on to [building](building.html)....
