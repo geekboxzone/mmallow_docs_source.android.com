@@ -1,5 +1,19 @@
 #!/usr/bin/env python
 
+# Copyright (C) 2011 The Android Open Source Project
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
 import os
 import glob
 import shutil
@@ -20,7 +34,7 @@ def get_title(raw_file):
   for line in open(raw_file, 'r'):
     if '#' in line:
       return line.strip(' #\n')
-  return ""
+  return ''
 
 
 # directory to compile the site to (will be clobbered during build!)
@@ -31,36 +45,45 @@ SRC_DIR = 'src'
 TEMPLATE_DIR = 'templates'
 
 # filenames of templates to load, in order
-TEMPLATE_LIST = ['includes', 'header', 'sidebar', 'main', 'footer'] 
+TEMPLATE_LIST = ['includes', 'header', 'sidebar', 'main', 'footer']
 
-t = ""
+# Step 1, concatenate the template pieces into a single template string
+t = ''
 for f in TEMPLATE_LIST:
   t += open(os.path.join(TEMPLATE_DIR, f), 'r').read()
 template = string.Template(t)
 
+# Step 2, rm -rf HTML_DIR if it exists, and then re-create it
 if os.path.exists(HTML_DIR):
   shutil.rmtree(HTML_DIR)
 
 os.mkdir(HTML_DIR)
 
+# Step 3, recursively mirror SRC_DIR to HTML_DIR, directory by directory, translating *.md
 category = 'home'
 parents = {}
 for curdir, subdirs, files in os.walk(SRC_DIR):
   print 'Processing %s...'  % (curdir,),
-  outdir = [x for x in curdir.split(os.path.sep) if x]
+  # Step A: split path, and update cached category name if needed
+  curdir = os.path.normpath(curdir)
+  outdir = curdir.split(os.path.sep)
   outdir[0] = HTML_DIR
   if len(outdir) == 2:
     category = outdir[-1]
   outdir = os.path.join(*outdir)
 
+  # Step B: mirror the hierarchy of immediate subdirectories
   for subdir in subdirs:
     os.mkdir(os.path.join(outdir, subdir))
 
+  # Step C: cache the translated sidebars, keyed by parent dir, so we can do sidebar inheritance
+  # FIXME: make this depth-agnostic, perhaps by caching all sidebars and moving the resolution
+  # FIXME: complexity out of the datastructure and into the resolution algorithm.
   parentdir = os.path.dirname(curdir)
   if parentdir in parents:
     parent = parents[parentdir]
   else:
-    parent = ('', '')
+    parent = ('', '', '')
 
   if 'sidebar.md' in files:
     sidebar = markdown(os.path.join(curdir, 'sidebar.md'))
@@ -74,19 +97,30 @@ for curdir, subdirs, files in os.walk(SRC_DIR):
   else:
     sidebar2 = parent[1]
 
-  parents[curdir] = (sidebar, sidebar2)
+  if 'sidebar3.md' in files:
+    sidebar3 = markdown(os.path.join(curdir, 'sidebar3.md'))
+    del files[files.index('sidebar3.md')]
+  else:
+    sidebar3 = parent[2]
 
+  parents[curdir] = (sidebar, sidebar2, sidebar3)
+
+  # Step D: mirror all non-*.md files, and translate (file).md files into (file).html
   for f in files:
     print ' .',
+    # Note that this "absolute" filename has a root at SRC_DIR, not "/"
+    absfilename = os.path.join(curdir, f)
+
     if f.endswith('.md'):
-      main = markdown(os.path.join(curdir, f))
+      main = markdown(absfilename)
       final = template.safe_substitute(main=main, sidebar=sidebar, sidebar2=sidebar2, \
-          category=category, title=get_title(os.path.join(curdir, f)))
-    
+          sidebar3=sidebar3, category=category, title=get_title(absfilename))
+
       html = file(os.path.join(outdir, f.replace('.md', '.html')), 'w')
       html.write(final)
     else:
-      shutil.copy(os.path.join(curdir, f), os.path.join(outdir, f))
+      shutil.copy(absfilename, os.path.join(outdir, f))
   print
 
 print 'Done.'
+

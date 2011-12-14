@@ -1,4 +1,4 @@
-#!/usr/bin/env python2.4
+#!/usr/bin/env python
 
 # Copyright (C) 2010 The Android Open Source Project
 #
@@ -14,10 +14,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import SimpleHTTPServer, SocketServer, os
+import SimpleHTTPServer
+import SocketServer
+import os
+
 PORT = int(os.environ.get('HTTP_PORT', 8080))
 Handler = SimpleHTTPServer.SimpleHTTPRequestHandler
-httpd = SocketServer.TCPServer(("0.0.0.0", PORT), Handler)
+httpd = SocketServer.TCPServer(('0.0.0.0', PORT), Handler)
 httpd.allow_reuse_address = True
-print "Serving on port %d" % PORT
+print 'Serving on port %d' % PORT
 httpd.serve_forever()
+
