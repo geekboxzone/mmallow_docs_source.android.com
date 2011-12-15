@@ -114,9 +114,9 @@ over USB.
     SUBSYSTEM=="usb", ATTR{idVendor}=="22b8", ATTR{idProduct}=="70a9", MODE="0600", OWNER="<username>"
     # fastboot protocol on stingray/wingray (Xoom)
     SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="708c", MODE="0600", OWNER="<username>"
-    # adb protocol on maguro (Galaxy Nexus)
+    # adb protocol on maguro/toro (Galaxy Nexus)
     SUBSYSTEM=="usb", ATTR{idVendor}=="04e8", ATTR{idProduct}=="6860", MODE="0600", OWNER="<username>"
-    # fastboot protocol on maguro (Galaxy Nexus)
+    # fastboot protocol on maguro/toro (Galaxy Nexus)
     SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4e30", MODE="0600", OWNER="<username>"
     # adb protocol on panda (PandaBoard)
     SUBSYSTEM=="usb", ATTR{idVendor}=="0451", ATTR{idProduct}=="d101", MODE="0600", OWNER="<username>"
