@@ -89,6 +89,12 @@ bootloader is unlocked with
 The procedure must be confirmed on-screen, and deletes the user data for
 privacy reasons. It only needs to be run once.
 
+Note that on the Nexus S, Nexus S 4G, Motorola Xoom and on Galaxy Nexus,
+all data on the phone is erased, i.e. both the applications' private data
+and the shared data that is accessible over USB, including photos and
+movies. Be sure to make a backup of any precious files you have before
+unlocking the bootloader.
+
 On Nexus One, the operation voids the warranty and is irreversible.
 
 On Nexus S, Nexus S 4G, Xoom, and Galaxy Nexus,
@@ -96,7 +102,7 @@ the bootloader can be locked back with
 
     $ fastboot oem lock
 
-Note that this erases user data on Xoom.
+Note that this erases user data on Xoom (including the shared USB data).
 
 ## Obtaining proprietary binaries ##
 
@@ -276,3 +282,12 @@ On the CDMA variant of the Motorola Xoom, the CDMA radio needs to be
 manually re-activated after each factory reset.
 
     $ adb shell su root radiooptions 8 *22899
+
+## Restoring a device to its original factory state ##
+
+Factory images for Galaxy Nexus are available from
+[Google's factory image page](http://code.google.com/android/nexus/images.html).
+
+Factory images for the Motorola Xoom are distributed directly by Motorola.
+
+No factory images are available for Nexus S and Nexus One.
