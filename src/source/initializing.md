@@ -20,7 +20,7 @@ The "Getting Started" section describes how to set up your local work environmen
 
 *Note: The source download is approximately 6GB in size.
 You will need 25GB free to complete a single build, and
-up to 80GB (or more) for a full set of builds.*
+up to 90GB (or more) for a full set of builds.*
 
 For an overview of the entire code-review and code-update process, see [Life of a Patch](life-of-a-patch.html).
 
