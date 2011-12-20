@@ -105,8 +105,9 @@ GRK39C | android-2.3.6_r0.9 | Nexus S
 GRK39F | android-2.3.6_r1   | Nexus One, Nexus S
 GWK74  | android-2.3.7_r1   | latest Gingerbread version, Nexus S 4G
 ITL41D | android-4.0.1_r1   | earliest IceCreamSandwich version, Galaxy Nexus
+ITL41D | android-4.0.1_r1.1 | Galaxy Nexus
 ITL41F | android-4.0.1_r1.2 | Galaxy Nexus
-ICL53F |                    | Galaxy Nexus
+ICL53F | android-4.0.2_r1   | Galaxy Nexus
 IML74K | android-4.0.3_r1   | latest IceCreamSandwich version, Nexus S
 
 The branches froyo, gingerbread, ics-mr0, ics-mr1, represent development
