@@ -19,15 +19,15 @@
 Thanks for your interest in Android Compatibility! The links below allow
 you to access the key documents and information.
 
-## Android 4.0 ##
+## Android 4.0.3 ##
 
-Android 4.0 is the release of the development milestone code-named
-Ice Cream Sandwich. Android 4.0 is the current version of Android. Source code for
-Android 4.0 is found in the 'android-4.0.1_r1' branch in the open-source tree.
+Android 4.0.3 is the release of the development milestone code-named
+Ice Cream Sandwich. Android 4.0.3 is the current version of Android. Source code for
+Android 4.0.3 is found in the 'android-4.0.3_r1' branch in the open-source tree.
 
 - [Android 4.0 Compatibility Definition Document (CDD)](4.0/android-4.0-cdd.pdf)
-- [Android 4.0 R1 Compatibility Test Suite (CTS)](http://dl.google.com/dl/android/cts/android-cts-4.0_r1-linux_x86-arm.zip)
-- [Android 4.0 R1 CTS Verifier](http://dl.google.com/dl/android/cts/android-cts-verifier-4.0_r1-linux_x86-arm.zip)
+- [Android 4.0.3 R1 Compatibility Test Suite (CTS)](http://dl.google.com/dl/android/cts/android-cts-4.0.3_r1-linux_x86-arm.zip)
+- [Android 4.0.3 R1 CTS Verifier](http://dl.google.com/dl/android/cts/android-cts-verifier-4.0.3_r1-linux_x86-arm.zip)
 
 ## Android 2.3 ##
 

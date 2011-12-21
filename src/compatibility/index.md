@@ -28,9 +28,7 @@ Android Market shows apps only to those devices that can properly run
 them.
 
 These pages describe the Android Compatibility Program and how to get
-access to compatibility information and tools. The latest version of the
-Android source code and compatibility program is 4.0, which 
-corresponded to the Ice Cream Sandwich branch.
+access to compatibility information and tools.
 
 ## Why build compatible Android devices? ##
 
