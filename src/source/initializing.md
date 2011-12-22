@@ -42,6 +42,8 @@ In general you will need:
 
  - Python 2.5 -- 2.7, which you can download from [python.org](http://www.python.org/download/).
 
+ - GNU Make 3.81 -- 3.82, which you can download from [gnu.org](http://ftp.gnu.org/gnu/make/),
+
  - JDK 6 if you wish to build Gingerbread or newer; JDK 5 for Froyo or older.  You can download both from [java.sun.com](http://java.sun.com/javase/downloads/).
 
  - Git 1.7 or newer. You can find it at [git-scm.com](http://git-scm.com/download).
