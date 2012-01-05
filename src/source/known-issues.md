@@ -19,6 +19,17 @@
 Even with our best care, small problems sometimes slip in. This page keeps
 track of the known issues around using the Android source code.
 
+## Missing CTS Native XML Generator ##
+
+**Symptom**: On some builds of IceCreamSandwich and later, the following
+warning is printed early during the build:
+`/bin/bash: line 0: cd: cts/tools/cts-native-xml-generator/src/res: No
+such file or directory`
+
+**Cause**: Some makefile references that path, which doesn't exist.
+
+**Fix**: None. This is a harmless warning.
+
 ## Black Gingerbread Emulator ##
 
 **Symptom**: The emulator built directly from the gingerbread branch
