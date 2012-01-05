@@ -108,7 +108,8 @@ ITL41D | android-4.0.1_r1   | earliest IceCreamSandwich version, Galaxy Nexus
 ITL41D | android-4.0.1_r1.1 | Galaxy Nexus
 ITL41F | android-4.0.1_r1.2 | Galaxy Nexus
 ICL53F | android-4.0.2_r1   | Galaxy Nexus
-IML74K | android-4.0.3_r1   | latest IceCreamSandwich version, Nexus S
+IML74K | android-4.0.3_r1   | Nexus S
+IML77  |                    | latest IceCreamSandwich version
 
 The branches froyo, gingerbread, ics-mr0, ics-mr1, represent development
 branches that do not exactly match configurations that were tested
