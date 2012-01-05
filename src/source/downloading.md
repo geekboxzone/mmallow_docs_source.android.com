@@ -72,6 +72,31 @@ an hour or more to complete. For more about `repo sync` and other
 Repo commands, see [Version Control](version-control.html).
 
 
+## Using authentication ##
+
+By default, access to the Android source code is anonymous. To protect the
+servers against excessive usage, each IP address is associated with a quota.
+
+When sharing an IP address with other users (e.g. when accessing the source
+repositories from beyond a NAT firewall), the quotas can trigger even for
+regular usage patterns (e.g. if many users sync new clients from the same IP
+address within a short period).
+
+In that case, it is possible to use authenticated access, which then uses
+a separate quota for each user, regardless of the IP address.
+
+The first step is to create a password from
+[the password generator](https://android.googlesource.com/new-password) and
+to save it in `~/.netrc` according to the instructions on that page.
+
+The second step is to force authenticated access, by using the following
+manifest URI: `https://android.googlesource.com/a/platform/manifest`. Notice
+how the `/a/` directory prefix triggers mandatory authentication. You can
+convert an existing client to use mandatory authentication with the following
+command:
+
+    $ repo init -u https://android.googlesource.com/a/platform/manifest
+
 ## Troubleshooting network issues ##
 
 When downloading from behind a proxy (which is common in some
