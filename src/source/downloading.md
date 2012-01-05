@@ -116,6 +116,43 @@ access to modify the TCP setting:
     $ repo sync -j1
 
 
+## Using a local mirror ##
+
+When using many clients, especially in situations where bandwidth is scarce,
+it is better to create a local mirror of the entire server content, and to
+sync clients from that mirror (which requires no network access).
+
+These instructions assume that the mirror is created in `/usr/local/aosp/mirror`.
+The first step is to create and sync the mirror itself, which uses close to
+10GB of network bandwidth and a similar amount of disk space. Notice the
+`--mirror` flag, which can only be specified when creating a new client:
+
+    $ mkdir -p /usr/local/aosp/mirror
+    $ cd /usr/local/aosp/mirror
+    $ repo init -u https://android.googlesource.com/mirror/manifest --mirror
+    $ repo sync
+
+Once the mirror is synced, new clients can be created from it. Note that it's
+important to specify an absolute path:
+
+    $ mkdir -p /usr/local/aosp/master
+    $ cd /usr/local/aosp/master
+    $ repo init -u /usr/local/aosp/mirror/platform/manifest.git
+    $ repo sync
+
+Finally, to sync a client against the server, the mirror needs to be synced
+against the server, then the client against the mirror:
+
+    $ cd /usr/local/aosp/mirror
+    $ repo sync
+    $ cd /usr/local/aosp/master
+    $ repo sync
+
+It's possible to store the mirror on a LAN server and to access it over
+NFS, SSH or Git. It's also possible to store it on a removable drive and
+to pass that drive around between users or between machines.
+
+
 ## Verifying Git Tags ##
 
 Load the following public key into your GnuPG key database. The key is used to sign annotated tags that represent releases.
