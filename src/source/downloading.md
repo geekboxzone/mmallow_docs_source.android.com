@@ -34,6 +34,7 @@ To install, initialize, and configure Repo, follow these steps:
 
  - The SHA-1 checksum for repo is 29ba4221d4fccdfa8d87931cd73466fdc24040b5
 
+
 ## Initializing a Repo client ##
 
 After installing Repo, set up your client to access the android source repository:
@@ -59,7 +60,6 @@ After installing Repo, set up your client to access the android source repositor
 A successful initialization will end with a message stating that Repo is initialized in your working directory.  Your client directory should now contain a `.repo` directory where files such as the manifest will be kept.
 
 
-
 ## Getting the files ##
 
 To pull down files to your working directory from the repositories as specified in the default manifest, run
@@ -70,6 +70,25 @@ The Android source files will be located in your working directory
 under their project names. The initial sync operation will take
 an hour or more to complete. For more about `repo sync` and other
 Repo commands, see [Version Control](version-control.html).
+
+
+## Troubleshooting network issues ##
+
+When downloading from behind a proxy (which is common in some
+corporate environments), it might be necessary to explicitly
+specify the proxy that is then used by repo:
+
+    $ export HTTP_PROXY=http://<proxy_user_id>:<proxy_password>@<proxy_server>:<proxy_port>
+    $ export HTTPS_PROXY=http://<proxy_user_id>:<proxy_password>@<proxy_server>:<proxy_port>
+
+More rarely, Linux clients experience connectivity issues, getting
+stuck in the middle of downloads (typically during "Receiving objects").
+It has been reported that tweaking the settings of the TCP/IP stack and
+using non-parallel commands can improve the situation. You need root
+access to modify the TCP setting:
+
+    $ sudo sysctl -w net.ipv4.tcp_window_scaling=0
+    $ repo sync -j1
 
 
 ## Verifying Git Tags ##
