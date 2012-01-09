@@ -83,7 +83,7 @@ On Ubuntu 10.10:
 
 On Ubuntu 11.10:
 
-    $ sudo ln -s /usr/lib/i386-linux-gnu/libX11.so.6 /usr/lib/i386-linux-gnu/libX11.so
+    $ sudo apt-get install libx11-dev:i386
 
 32-bit (experimental)
 
