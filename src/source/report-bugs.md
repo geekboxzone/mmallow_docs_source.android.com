@@ -22,10 +22,10 @@ improve Android is to let us know about any problems you find with it.
 First, though: if you think you've found a security vulnerability,
 *please don't use the forms below*. Using the public forms below may
 allow anyone to see your report, which may put users at risk until the bug is
-fixed. Instead, please report security bugs to our security team by emailing
-<a href="mailto:security@android.com">security@android.com</a>.  We believe in
-responsible disclosure of security vulnerabilities, and will give you proper
-attribution for any issues you report.
+fixed. Please visit
+<a href="https://developer.android.com/resources/faq/security.html#issue">our
+security faq</a> for more information on reporting security vulnerabilities
+to the Android security team.
 
 Here's how to report non-security bugs:
 
