@@ -19,6 +19,26 @@
 Even with our best care, small problems sometimes slip in. This page keeps
 track of the known issues around using the Android source code.
 
+## Can't upload with repo upload ##
+
+**Symptom**: Trying to upload to Gerrit with `repo upload` results in an
+error `SSH disabled`
+
+**Cause**: `repo` currently assumes that uploads to Gerrit happen over
+SSH, but the AOSP Gerrit only supports HTTPS. A fix is in the works.
+
+**Fix**: Manually push the change to Gerrit with the following command.
+Note that this doesn't provide the same level of support as `repo upload`,
+e.g. it doesn't have any confirmation, doesn' thave any sanity-check about
+unsubmitted changes, and doesn't keep track of what has been uploaded and
+what hasn't.
+
+    $ repo forall . -c 'git push https://android-review.googlesource.com/p/$REPO_PROJECT HEAD:refs/for/master'
+
+The following lists what would be uploaded, before doing the upload:
+
+    $ git log aosp/master..
+
 ## Missing CTS Native XML Generator ##
 
 **Symptom**: On some builds of IceCreamSandwich and later, the following
