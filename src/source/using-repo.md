@@ -84,9 +84,16 @@ Options:
 
 For the specified projects, Repo compares the local branches to the remote branches updated during the last repo sync. Repo will prompt you to select one or more of the branches that have not yet been uploaded for review.
 
-After you select one or more branches, all commits on the selected branches are transmitted to Gerrit over an SSH connection.You will need to configure an SSH key to enable upload authorization. Visit [SSH Keys](http://review.source.android.com/Gerrit#settings,ssh-keys) within the user settings panel to register your public keys with Gerrit. To enable password-less uploads, consider using ssh-agent on your client system.
+After you select one or more branches, all commits on the selected branches
+are transmitted to Gerrit over an HTTPS connection. You will need to
+configure an HTTPS password to enable upload authorization. Visit the
+[Password Generator](https://android-review.googlesource.com/new-password)
+to generate a new username/password pair to use over HTTPS.
 
-When Gerrit receives the object data over its SSH server, it will turn each commit into a change so that reviewers can comment on each commit individually. To combine several "checkpoint" commits together into a single commit, use git rebase -i before you run repo upload.
+When Gerrit receives the object data over its server, it will turn each
+commit into a change so that reviewers can comment on each commit
+individually. To combine several "checkpoint" commits together into a
+single commit, use git rebase -i before you run repo upload.
 
 If you run repo upload without any arguments, it will search all the projects for changes to upload.
 
@@ -121,13 +128,16 @@ Shows outstanding changes between commit and working tree using `git diff`.
 
 Downloads the specified change from the review system and makes it available in your project's local working directory.
 
-For example, to download [change 1241](http://review.source.android.com/1241) into your platform/frameworks/base directory:
+For example, to download [change 23823](https://android-review.googlesource.com/23823) into your platform/frameworks/base directory:
 
-    $ repo download platform/frameworks/base 1241
+    $ repo download platform/build 23823
 
 A `repo sync` should effectively remove any commits retrieved via `repo download`. Or, you can check out the remote branch; e.g., `git checkout m/master`.
 
-*Note: There is a slight mirroring lag between when a change is visible on the web in [Gerrit](http://review.source.android.com) and when `repo download` will be able to find it, because changes are actually downloaded off the git://android.git.kernel.org/ mirror farm. Hence there will always be a lag of approximately 5 minutes before Gerrit pushes newly uploaded changes out to the mirror farm.*
+*Note: There is a slight mirroring lag between when a change is visible on
+the web in [Gerrit](https://android-review.googlesource.com/) and when
+`repo download` will be able to find it for all users, because of replication
+delays to all servers worldwide.
 
 
 ## forall ##

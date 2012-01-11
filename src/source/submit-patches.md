@@ -75,7 +75,10 @@ Once you have committed your change to your personal history, upload it to gerri
 
 If you have started multiple branches in the same repository, you will be prompted to select which one(s) to upload.
 
-After a successful upload, repo will provide you the URL of a new page on [r.android.com](http://review.source.android.com). Visit this link to view your patch on the review server, add comments, or request specific reviewers for your patch. 
+After a successful upload, repo will provide you the URL of a new page on
+[Gerrit](https://android-review.googlesource.com/). Visit this link to view
+your patch on the review server, add comments, or request specific reviewers
+for your patch.
 
 ## Uploading a replacement patch ##
 
@@ -147,7 +150,7 @@ A submission that has been verified and merged will be downloaded with the next 
     $ repo download TARGET CHANGE
 
 where TARGET is the local directory into which the change should be downloaded and CHANGE is the 
-change number as listed in [Gerrit](https://review.source.android.com/). For more information, 
+change number as listed in [Gerrit](https://android-review.googlesource.com/). For more information,
 see the [Repo reference](/source/using-repo.html).
 
 ## How do I become a Verifier or Approver? ##

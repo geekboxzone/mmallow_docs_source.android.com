@@ -16,7 +16,7 @@
 
 # Contributor License Agreement for Individuals #
 
-*Please visit the [code review tool](https://review.source.android.com/#settings,new-agreement)
+*Please visit the [code review tool](https://android-review.googlesource.com/#/settings/new-agreement)
 to execute the grant online.This page provides the text of the Individual Contributor License Grant for your quick review.*
 
 In order to clarify the intellectual property license granted with Contributions from any person or entity, the Android Open Source Project (the "Project") must have a Contributor License Grant ("Grant") on file that has been signed by each Contributor, indicating agreement to the license terms below. This license is for your protection as a Contributor as well as the protection of the Project and the Android Open Source Project Leads (the "Project Leads"); it does not change your rights to use your own Contributions for any other purpose. If you have not already done so, please complete and send an original signed Grant to
@@ -30,7 +30,9 @@ In order to clarify the intellectual property license granted with Contributions
  U.S.A.
 </blockquote>
 
-Scanned agreements may also be emailed in PDF form to cla-submissions@google.com, sent by facsimile to (650) 887-1625, or [signed electronically](https://review.source.android.com/#settings,new-agreement).
+Scanned agreements may also be emailed in PDF form to
+cla-submissions@google.com, sent by facsimile to (650) 887-1625, or
+[signed electronically](https://android-review.googlesource.com/#/settings/new-agreement).
 
 Please read this document carefully before signing and keep a copy for your records.
 

@@ -35,7 +35,7 @@ All *individual* contributors (that is, contributors making contributions
 only on their own behalf) of ideas, code, or documentation to the Android Open
 Source Project will be required to complete, sign, and submit an [Individual
 Contributor License Grant](cla-individual.html). The grant can be executed online through the
-[code review tool](https://review.source.android.com/#settings,agreements). 
+[code review tool](https://android-review.googlesource.com/#/settings/agreements).
 The grant clearly defines the terms under which intellectual
 property has been contributed to the Android Open Source Project. This license
 is for your protection as a contributor as well as the protection of the
