@@ -22,15 +22,13 @@ information that is specific to individual devices.
 The supported devices with the current release are the Galaxy Nexus, Motorola
 Xoom, and Nexus S.
 
-Galaxy Nexus is supported both in GSM/HSPA+ configuration "maguro" and in
-CDMA/LTE configuration "toro". The GSM/HSPA+ configuration is only supported
+Galaxy Nexus is supported only in GSM/HSPA+ configuration "maguro" and only
 if it was originally sold with a "yakju" operating system.
 
-The Motorola Xoom is supported in the configurations sold in the USA,
-in both variants: Wi-Fi only "wingray" and CDMA or CDMA/LTE "stingray".
+The Motorola Xoom is supported in the Wi-fi configuration "wingray"
+sold in the USA.
 
-Nexus S is supported, both in the GSM configuration "crespo" and in the
-CDMA/WiMAX configuration "crespo4g".
+Nexus S is supported in the GSM configuration "crespo".
 
 In addition, [PandaBoard](http://pandaboard.org) a.k.a. "panda" is supported
 in the master branch only, but is currently considered experimental.
@@ -44,6 +42,8 @@ Project.
 Android Developer Phones (ADP1 and ADP2, a.k.a. "dream" and "sapphire") are
 obsolete, were experimental and unsupported in froyo, and can't be used with
 newer versions of the Android Open-Source Project.
+
+No CDMA devices are supported.
 
 ## Building fastboot and adb ##
 
@@ -61,11 +61,8 @@ which is a mode in the bootloader that can be used to flash the devices:
 Device   | Keys
 ---------|------
 maguro   | Press and hold both *Volume Up* and *Volume Down*, then press and hold *Power*
-toro     | Press and hold both *Volume Up* and *Volume Down*, then press and hold *Power*
 wingray  | Press and hold *Volume Down*, then press and hold *Power*
-stingray | Press and hold *Volume Down*, then press and hold *Power*
 crespo   | Press and hold *Volume Up*, then press and hold *Power*
-crespo4g | Press and hold *Volume Up*, then press and hold *Power*
 passion  | Press and hold the trackball, then press *Power*
 sapphire | Press and hold *Back*, then press *Power*
 dream    | Press and hold *Back*, then press *Power*
@@ -80,7 +77,7 @@ It's only possible to flash a custom system if the bootloader allows it.
 
 This is the default setup on ADP1 and ADP2.
 
-On Nexus One, Nexus S, Nexus S 4G, Xoom, and Galaxy Nexus,
+On Nexus One, Nexus S, Xoom, and Galaxy Nexus,
 the bootloader is locked by default. With the device in fastboot mode, the
 bootloader is unlocked with
 
@@ -89,7 +86,7 @@ bootloader is unlocked with
 The procedure must be confirmed on-screen, and deletes the user data for
 privacy reasons. It only needs to be run once.
 
-Note that on the Nexus S, Nexus S 4G, Motorola Xoom and on Galaxy Nexus,
+Note that on the Nexus S, Motorola Xoom and on Galaxy Nexus,
 all data on the phone is erased, i.e. both the applications' private data
 and the shared data that is accessible over USB, including photos and
 movies. Be sure to make a backup of any precious files you have before
@@ -97,7 +94,7 @@ unlocking the bootloader.
 
 On Nexus One, the operation voids the warranty and is irreversible.
 
-On Nexus S, Nexus S 4G, Xoom, and Galaxy Nexus,
+On Nexus S, Xoom, and Galaxy Nexus,
 the bootloader can be locked back with
 
     $ fastboot oem lock
@@ -110,7 +107,7 @@ Starting with IceCreamSandwich, the Android Open-Source Project can't be used
 from pure source code only, and requires additional hardware-related proprietary
 libraries to run, specifically for hardware graphics acceleration.
 
-Official binaries for Nexus S, Nexus S 4G, Galaxy Nexus, and PandaBoard can be
+Official binaries for Nexus S, Galaxy Nexus, and PandaBoard can be
 downloaded from
 [Google's Nexus driver page](http://code.google.com/android/nexus/drivers.html),
 which add access to additional hardware capabilities with non-Open-Source code.
@@ -124,14 +121,6 @@ After uncompressing each archive, run the included self-extracting script
 from the root of the source tree, confirm that you agree to the terms of the
 enclosed license agreement, and the binaries and their matching makefiles
 will get installed in the `vendor/` hierarchy of the source tree.
-
-There's an additional step on Nexus S 4G. Build the signapk tool with
-
-    $ make signapk
-
-Then reassemble the proprietary applicatons with
-
-    $ vendor/samsung/crespo4g/reassemble-apks.sh
 
 ### Cleaning up when adding proprietary binaries ###
 
@@ -152,12 +141,9 @@ the lunch menu, accessed when running the `lunch` command with no arguments:
 Device   | Branch           | Build configuration
 ---------|------------------|------------------------
 maguro   | android-4.0.3_r1 | full_maguro-userdebug
-toro     | android-4.0.3_r1 | full_toro-userdebug
 panda    | master           | full_panda-eng
 wingray  | android-4.0.3_r1 | full_wingray-userdebug
-stingray | android-4.0.3_r1 | full_stingray-userdebug
 crespo   | android-4.0.3_r1 | full_crespo-userdebug
-crespo4g | android-4.0.3_r1 | full_crespo4g-userdebug
 passion  | android-2.3.6_r1 | full_passion-userdebug
 sapphire | android-2.2.2_r1 | full_sapphire-userdebug
 dream    | android-2.2.2_r1 | full_dream-userdebug
@@ -192,9 +178,9 @@ optimally, and it is strongly recommended to re-create them through recovery
 Once in recovery, open the menu (press Power + Volume Up), wipe the cache
 partition, then wipe data.
 
-### Nexus S, Nexus S 4G and Galaxy Nexus Bootloader and Cell Radio compatibility ###
+### Nexus S and Galaxy Nexus Bootloader and Cell Radio compatibility ###
 
-On Nexus S, Nexus S 4G, and Galaxy Nexus, each version of Android has only
+On Nexus S, and Galaxy Nexus, each version of Android has only
 been thoroughly tested with on specific version of the underlying bootloader
 and cell radio software.
 However, no compatibility issues are expected when running newer systems
@@ -234,16 +220,6 @@ Android Version | Preferred Bootloader | Preferred Radio | Also possible
 2.3.6 (GRK39F)  | I9020XXKA3           | M200KRKC1       | All previous versions
 4.0.3 (IML74K)  | I9020XXKL1           | M200KRKC1       | All previous versions
 
-Nexus S 4G:
-
-Android Version | Preferred Bootloader | Preferred Radio | Also possible
-----------------|----------------------|-----------------|--------------
-2.3.4 (GRJ06D)  | D720SPRKC5           | D720SPRKC9
-2.3.4 (GRJ22)   | D720SPRKC5           | D720SPRKD8      | All previous versions
-2.3.5 (GRJ90)   | D720SPRKC5           | D720SPRKE5      | All previous versions
-2.3.7 (GWK74)   | D720SPRKE1 (*)       | D720SPRKH1      | All previous versions
-4.0.3 (IML74K)  | D720SPRKE1 (*)       | D720SPRKL1      | All previous versions
-
 Galaxy Nexus (GSM/HSPA+):
 
 Android Version | Preferred Bootloader | Preferred Radio | Also possible
@@ -252,40 +228,17 @@ Android Version | Preferred Bootloader | Preferred Radio | Also possible
 4.0.2 (ICL53F)  | PRIMEKK15            | I9250XXKK6      | All previous versions
 4.0.3 (IML74K)  | PRIMEKL01            | I9250XXKK6      | All previous versions
 
-Galaxy Nexus (CDMA/LTE):
-
-Android Version | Preferred Bootloader | Preferred Radio | Preferred CDMA Radio | Also possible
-----------------|----------------------|-----------------|----------------------|--------------
-4.0.1 (ITL41D)  | PRIMEKJ10            | I515.EK02       | I515.EK01
-4.0.2 (ICL53F)  | PRIMEKK15            | I515.EK02       | I515.EK05            | All previous versions
-4.0.3 (IML74K)  | PRIMEKL01            | I515.EK04       | I515.EK06            | All previous versions
-
-If you're building a new version of Android, if your Nexus S, Nexus S 4G or
+If you're building a new version of Android, if your Nexus S or
 Galaxy Nexus has
 an older bootloader and radio image that is marked as being also possible in
 the table above but is not recognized by fastboot, you can locally
 delete the `version-bootloader` and `version-baseband` lines in
 `device/samsung/crespo/board-info.txt` or
-`device/samsung/crespo4g/board-info.txt` or
-`device/samsung/maguro/board-info.txt` or
-`device/samsung/toro/board-info.txt`
-
-(*) As a note, bootloader version D720SPRKE1 for Nexus S 4G erroneously
-reports version D720SPRKE1 as the baseband version instead of the true baseband
-version after flashing a new baseband firmware. To make it report the proper
-version again, the phone needs to be powered down, then booted all the way to
-Android, then rebooted to the bootloader.
-
-## Activating the CDMA radio ##
-
-On the CDMA variant of the Motorola Xoom, the CDMA radio needs to be
-manually re-activated after each factory reset.
-
-    $ adb shell su root radiooptions 8 *22899
+`device/samsung/maguro/board-info.txt`
 
 ## Restoring a device to its original factory state ##
 
-Factory images for Galaxy Nexus are available from
+Factory images for Galaxy Nexus (GSM/HSPA+) are available from
 [Google's factory image page](http://code.google.com/android/nexus/images.html).
 
 Factory images for the Motorola Xoom are distributed directly by Motorola.
