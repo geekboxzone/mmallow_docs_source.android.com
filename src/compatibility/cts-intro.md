@@ -32,7 +32,7 @@ Android .apk files to run on the actual device target.
 
 ## Workflow ##
 
-1. [Download](downloads.html) the CTS.
+1. [Download](downloads.html) the CTS and CTS media files.
 
 1. Attach at least one device (or emulator) to your machine.
 
@@ -47,6 +47,12 @@ Android .apk files to run on the actual device target.
     2. adb install -r android-cts/repository/testcases/CtsDeviceAdmin.apk
 
     2. On the device, enable all the android.deviceadmin.cts.* device administrators under Settings > Location & security > Select device administrators
+
+1. For CTS 2.3 R12 and beyond, the CTS media files must be copied to the device's external storage. Check section 4.2 of the latest CTS manual for further details on copying these files.
+
+   2. Unzip the CTS Media zip file.
+
+   2. Run copy_media.sh [720x480|1280x720|1920x1080|all] [-s serial]. If no resolution is specified, the default maximum resolution of 480x360 is assumed.
 
 1. Launch the CTS. The CTS test harness loads the test plan onto the attached devices. For each test in the test harness:
 
