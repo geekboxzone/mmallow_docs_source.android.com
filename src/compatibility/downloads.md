@@ -76,6 +76,7 @@ beyond require [additional steps](cts-intro.html) to run the accessibility tests
 
 ## CTS Media Files ##
 These media files are required for the CTS media stress tests.
+
 - [CTS Media 1.0](http://dl.google.com/dl/android/cts/android-cts-media-1.0.zip)
 
 ## Older Android Versions ##
