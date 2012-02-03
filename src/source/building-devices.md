@@ -43,7 +43,7 @@ Android Developer Phones (ADP1 and ADP2, a.k.a. "dream" and "sapphire") are
 obsolete, were experimental and unsupported in froyo, and can't be used with
 newer versions of the Android Open-Source Project.
 
-No CDMA devices are supported.
+No CDMA devices are supported in the Android Open-Source Project.
 
 ## Building fastboot and adb ##
 
