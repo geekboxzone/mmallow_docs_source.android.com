@@ -67,7 +67,10 @@ Java 5: for Froyo and older
     $ sudo apt-get update
     $ sudo apt-get install sun-java5-jdk
 
-## Installing required packages ##
+## Installing required packages (Ubuntu 10.04 -- 11.10) ##
+
+Ubuntu 10.04 64-bit is recommended.  Building using a newer version of Ubuntu or a 32-bit Ubuntu is
+currently only experimentally supported and is not guaranteed to work on branches other than master.
 
 64-bit (recommended)
 
@@ -91,6 +94,25 @@ On Ubuntu 11.10:
       zip curl zlib1g-dev libc6-dev libncurses5-dev x11proto-core-dev \
       libx11-dev libreadline6-dev libgl1-mesa-dev tofrodos python-markdown \
       libxml2-utils xsltproc
+
+## Installing required packages (Ubuntu 12.04) ##
+
+Building on Ubuntu 12.04 is currently only experimentally supported and is not
+guaranteed to work on branches other than master.
+
+    $ sudo apt-get install git-core gnupg flex bison gperf build-essential \
+      zip curl libc6-dev libncurses5-dev:i386 x11proto-core-dev \
+      libx11-dev:i386 libreadline6-dev:i386 libgl1-mesa-dev:i386 \
+      g++-multilib mingw32 openjdk-6-jdk tofrodos python-markdown \
+      libxml2-utils xsltproc zlib1g-dev:i386
+
+You may also need to fix a compilation issue in a kernel header:
+
+    $ sudo vim /usr/include/linux/usb/ch9.h  # line 592
+
+    # return le16_to_cpu(epd->wMaxPacketSize);
+    return __le16_to_cpu(epd->wMaxPacketSize);
+
 
 ## Configuring USB Access ##
 
