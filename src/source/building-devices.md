@@ -61,6 +61,7 @@ which is a mode in the bootloader that can be used to flash the devices:
 Device   | Keys
 ---------|------
 maguro   | Press and hold both *Volume Up* and *Volume Down*, then press and hold *Power*
+panda    | Press and hold *Input*, then press *Power*
 wingray  | Press and hold *Volume Down*, then press and hold *Power*
 crespo   | Press and hold *Volume Up*, then press and hold *Power*
 passion  | Press and hold the trackball, then press *Power*
