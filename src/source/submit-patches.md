@@ -108,7 +108,7 @@ After either automatic or manual rebase is complete, run `repo upload` to submit
 
 ## After a submission is approved ##
 
-After a submission makes it through the review and verification process, Gerrit automatically merges the change into the public repository. The change will now be visible in gitweb, and others users will be able to run `repo sync` to pull the update into their local client.
+After a submission makes it through the review and verification process, Gerrit automatically merges the change into the public repository. Other users will be able to run `repo sync` to pull the update into their local client.
 
 # For reviewers and verifiers #
 
@@ -167,10 +167,6 @@ Anyone in the community can use Gerrit to add inline comments to code submission
 To add an inline comment, double-click the relevant line of the code and write your comment in the text box that opens. When you click Save, only you can see your comment.
 
 To publish your comments so that others using Gerrit will be able to see them, click the Publish Comments button. Your comments will be emailed to all relevant parties for this change, including the change owner, the patch set uploader (if different from the owner), and all current reviewers.
-
-## Using GitWeb to track patch histories ##
-
-To view snapshots of the files that are in the public Android repositories and view file histories, use the [Android instance of GitWeb](http://android.git.kernel.org/).
 
 <a name="upstream-projects"></a>
 
