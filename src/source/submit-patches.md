@@ -41,7 +41,7 @@ made directly to that project, as described in [Upstream Projects](#upstream-pro
 
 For each change you intend to make, start a new branch within the relevant git repository:
 
-    $ repo start NAME
+    $ repo start NAME .
 
 You can start several independent branches at the same time in the same repository. The branch NAME is local to your workspace and will not be included on gerrit or the final source tree.
 
