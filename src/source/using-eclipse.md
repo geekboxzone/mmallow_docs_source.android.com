@@ -42,7 +42,7 @@ Now edit that copy of `.classpath`, if necessary.
 
 ### Increase Eclipse's Memory Settings ###
 
-The Android project is large enough that Eclipse's Java VM sometimes runs out of memory while compiling it. Avoid this problem by editing the the `eclipse.ini` file. On Apple OSX the eclipse.ini file is located at 
+The Android project is large enough that Eclipse's Java VM sometimes runs out of memory while compiling it. Avoid this problem by editing the `eclipse.ini` file. On Apple OSX the eclipse.ini file is located at
 
     /Applications/eclipse/Eclipse.app/Contents/MacOS/eclipse.ini
 
