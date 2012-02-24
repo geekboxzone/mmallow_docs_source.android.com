@@ -154,7 +154,7 @@ Device   | Branch           | Build configuration
 ---------|------------------|------------------------
 maguro   | android-4.0.3_r1 | full_maguro-userdebug
 toro     | android-4.0.3_r1 | full_toro-userdebug
-panda    | master           | full_panda-eng
+panda    | master           | full_panda-userdebug
 wingray  | android-4.0.3_r1 | full_wingray-userdebug
 stingray | android-4.0.3_r1 | full_stingray-userdebug
 crespo   | android-4.0.3_r1 | full_crespo-userdebug
