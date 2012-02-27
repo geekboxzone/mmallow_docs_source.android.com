@@ -142,12 +142,12 @@ the lunch menu, accessed when running the `lunch` command with no arguments:
 Device   | Branch           | Build configuration
 ---------|------------------|------------------------
 maguro   | android-4.0.3_r1 | full_maguro-userdebug
-panda    | master           | full_panda-eng
+panda    | master           | full_panda-userdebug
 wingray  | android-4.0.3_r1 | full_wingray-userdebug
 crespo   | android-4.0.3_r1 | full_crespo-userdebug
 passion  | android-2.3.6_r1 | full_passion-userdebug
-sapphire | android-2.2.2_r1 | full_sapphire-userdebug
-dream    | android-2.2.2_r1 | full_dream-userdebug
+sapphire | android-2.2.3_r1 | full_sapphire-userdebug
+dream    | android-2.2.3_r1 | full_dream-userdebug
 
 ## Flashing a device ##
 
