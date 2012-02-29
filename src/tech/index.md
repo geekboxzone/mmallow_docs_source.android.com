@@ -58,3 +58,13 @@ Android's input subsystem is responsible for supporting touch screens,
 keyboard, joysticks, mice and other devices.
 
 [&raquo; Input Information](/tech/input/index.html)
+
+## Data Usage Technical Information ##
+Android's data usage features allow users to understand and control how their
+device uses network data. This document is designed for systems integrators
+and mobile operators, to help explain technical details they should be aware
+of when porting Android to specific devices.
+
+[&raquo; Data Usage Information](/tech/datausage/index.html)
+
+
