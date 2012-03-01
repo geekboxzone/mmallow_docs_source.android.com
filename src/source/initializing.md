@@ -24,9 +24,21 @@ up to 90GB (or more) for a full set of builds.*
 
 For an overview of the entire code-review and code-update process, see [Life of a Patch](life-of-a-patch.html).
 
+# Choosing a Branch #
 
+Some of the requirements for your build environment are determined by which
+version of the source code you plan to compile. See
+[Build Numbers](build-numbers.html) for a full listing of branches you may
+choose from. You may also choose to download and build the latest source code
+(called "master"), in which case you will simply omit the branch specification
+when you initialize the repository.
+
+Once you have selected a branch, follow the appropriate instructions below to
+set up your build environment.
 
 # Setting up a Linux build environment #
+
+These instructions apply to all branches, including master.
 
 The Android build is routinely tested in house on recent versions of
 Ubuntu LTS (10.04), but most distributions should have the required
@@ -206,15 +218,20 @@ This is only supported on branches newer than 4.0.x
 
 # Setting up a Mac OS X build environment #
 
-To build the Android files in a Mac OS environment, you need an
-Intel/x86 machine running MacOS 10.6 (Snow Leopard).
+In a default installation, OS X runs on a case-preserving but case-insensitive
+filesystem. This type of filesystem is not supported by git and will cause some
+git commands (such as "git status") to behave abnormally. Because of this, we
+recommend that you always work with the AOSP source files on a case-sensitive
+filesystem. This can be done fairly easily using a disk image, discussed below.
 
-Android must be built on a case-sensitive file system because the sources contain files that differ only in case. We recommend that you build Android on a partition that has been formatted with the journaled file system HFS+.  HFS+ is required to successfully build Mac OS applications such as the Android Emulator for OS X.
+Once the proper filesystem is available, building the master branch in a modern
+OS X environment is very straightforward. Earlier branches, including ICS,
+require some additional tools and SDKs.
 
-## Creating a case sensitive disk image ##
+### Creating a case-sensitive disk image ###
 
-If you want to avoid partitioning/formatting your hard drive, you can use
-a case-sensitive disk image instead. To create the image, launch Disk
+You can create a case-sensitive filesystem within your existing OS X environment
+using a disk image. To create the image, launch Disk
 Utility and select "New Image".  A size of 25GB is the minimum to
 complete the build, larger numbers are more future-proof. Using sparse images
 saves space while allowing to grow later as the need arises. Be sure to select
@@ -231,9 +248,25 @@ This will create a .dmg (or possibly a .dmg.sparsefile) file which, once mounted
 
 Once mounted, you'll do all your work in the "android" volume. You can eject it (unmount it) just like you would with an external drive.
 
-## Installing required packages ##
+## Master branch ##
 
-- Install XCode from [the Apple developer site](http://developer.apple.com/).
+To build the latest source in a Mac OS environment, you will need an Intel/x86
+machine running MacOS 10.6 (Snow Leopard) or MacOS 10.7 (Lion), along with Xcode
+4.2 (Apple's Developer Tools). Although Lion does not come with a JDK, it should
+install automatically when you attempt to build the source.
+
+The remaining sections for Mac OS X only apply to those who wish to build
+earlier branches.
+
+## Branch 4.0.x and all earlier branches ##
+
+To build android-4.0.x and earlier branches in a Mac OS environment, you need an
+Intel/x86 machine running MacOS 10.5 (Leopard) or MacOS 10.6 (Snow Leopard). You
+will need the MacOS 10.5 SDK.
+
+### Installing required packages ###
+
+- Install Xcode from [the Apple developer site](http://developer.apple.com/).
 We recommend version 3.1.4 or newer, i.e. gcc 4.2.
 Version 4.x could cause difficulties.
 If you are not already registered as an Apple developer, you will have to
@@ -255,7 +288,7 @@ create an Apple ID in order to download.
 
         $ POSIXLY_CORRECT=1 sudo port install bison
 
-## Reverting from make 3.82 ##
+### Reverting from make 3.82 ###
 
 For versions of Android before ICS, there is a bug in gmake 3.82 that prevents android from building.  You can install version 3.81 using MacPorts by taking the following steps:
 
@@ -279,7 +312,7 @@ For versions of Android before ICS, there is a bug in gmake 3.82 that prevents a
 
         $ sudo port install gmake @3.81
 
-## Setting a file descriptor limit ##
+### Setting a file descriptor limit ###
 
 On MacOS the default limit on the number of simultaneous file descriptors open is too low and a highly parallel build process may exceed this limit.  
 
