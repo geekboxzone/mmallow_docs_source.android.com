@@ -240,7 +240,7 @@ create an Apple ID in order to download.
 
 ## Reverting from make 3.82 ##
 
-There is a bug in gmake 3.82 that prevents android from building.  You can install version 3.81 using MacPorts by taking the following steps:
+For versions of Android before ICS, there is a bug in gmake 3.82 that prevents android from building.  You can install version 3.81 using MacPorts by taking the following steps:
 
 - Edit `/opt/local/etc/macports/sources.conf` and add a line that says
     
