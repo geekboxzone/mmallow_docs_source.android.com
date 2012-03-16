@@ -44,7 +44,7 @@ other purpose.
 
 For a *corporation* (or other entity) that has assigned employees to
 work on the Android Open Source Project, a [Corporate
-Contributor License Grant](cla-corporate.html) is available. 
+Contributor License Grant](cla-corporate.pdf) is available. 
 This version of the grant allows a
 corporation to authorize contributions submitted by its designated employees
 and to grant copyright and patent licenses. Note that a Corporate Contributor
