@@ -176,7 +176,26 @@ To publish your comments so that others using Gerrit will be able to see them, c
 # Upstream Projects #
 
 Android makes use of a number of other open-source projects, such as the Linux kernel and WebKit, as described in
-[Branches and Releases](/source/code-lines.html). For the upstream projects detailed below, changes should be made directly upstream. Such changes will be incorporated into the Android tree as part of the usual process of pulling these projects.
+[Branches and Releases](/source/code-lines.html). For most projects under `external/`, changes should be made upstream and then the Android maintainers informed of the new upstream release containing these changes. It may also be useful to upload patches that move us to track a new upstream release, though these can be difficult changes to make if the project is widely used within Android like most of the larger ones mentioned below, where we tend to upgrade with every release.
+
+One interesting special case is bionic. Much of the code there is from BSD, so unless the change is to code that's new to bionic, we'd much rather see an upstream fix and then pull a whole new file from the appropriate BSD. (Sadly we have quite a mix of different BSDs at the moment, but we hope to address that in future, and get into a position where we track upstream much more closely.)
+
+## ICU4C ##
+
+All changes to the ICU4C project at `external/icu4c` should be made upstream at
+[icu-project.org/](http://site.icu-project.org/).
+See [Submitting ICU Bugs and Feature Requests](http://site.icu-project.org/bugs) for more.
+
+## OpenSSL ##
+
+All changes to the OpenSSL project at `external/openssl` should be made upstream at
+[openssl.org](http://www.openssl.org).
+
+## V8 ##
+
+All changes to the V8 project at `external/v8` should be submitted upstream at
+[code.google.com/p/v8](http://code.google.com/p/v8). See [Contributing to V8](http://code.google.com/p/v8/wiki/Contributing)
+for details.
 
 ## WebKit ##
 
@@ -187,9 +206,7 @@ fields only if the bug is specific to Android. Bugs are far more likely to recei
 attention once a proposed fix is added and tests are included. See
 [Contributing Code to WebKit](http://webkit.org/coding/contributing.html) for details.
 
-## V8 ##
+## zlib ##
 
-All changes to the V8 project at `external/v8` should be submitted upstream at
-[code.google.com/p/v8](http://code.google.com/p/v8). See [Contributing to V8](http://code.google.com/p/v8/wiki/Contributing)
-for details.
-
+All changes to the zlib project at `external/zlib` should be made upstream at
+[zlib.net](http://zlib.net).
