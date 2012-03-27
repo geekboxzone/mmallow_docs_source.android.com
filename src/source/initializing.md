@@ -72,10 +72,9 @@ used instead of any previously installed JDK.*
 
 ## Installing required packages (Ubuntu 10.04 -- 11.10) ##
 
-Ubuntu 10.04 64-bit is recommended.  Building using a newer version of Ubuntu or a 32-bit Ubuntu is
-currently only experimentally supported and is not guaranteed to work on branches other than master.
-
-64-bit (recommended)
+You will need a 64-bit version of Ubuntu.  Ubuntu 10.04 is recommended.
+Building using a newer version of Ubuntu is currently only experimentally
+supported and is not guaranteed to work on branches other than master.
 
     $ sudo apt-get install git-core gnupg flex bison gperf build-essential \
       zip curl zlib1g-dev libc6-dev lib32ncurses5-dev ia32-libs \
@@ -90,13 +89,6 @@ On Ubuntu 10.10:
 On Ubuntu 11.10:
 
     $ sudo apt-get install libx11-dev:i386
-
-32-bit (experimental)
-
-    $ sudo apt-get install git-core gnupg flex bison gperf build-essential \
-      zip curl zlib1g-dev libc6-dev libncurses5-dev x11proto-core-dev \
-      libx11-dev libreadline6-dev libgl1-mesa-dev tofrodos python-markdown \
-      libxml2-utils xsltproc
 
 ## Installing required packages (Ubuntu 12.04) ##
 
