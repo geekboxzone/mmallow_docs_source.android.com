@@ -41,7 +41,7 @@ Honeycomb        | 3.0           | API level 11
 Honeycomb        | 3.1           | API level 12, NDK 6
 Honeycomb        | 3.2.x         | API level 13
 IceCreamSandwich | 4.0.1 - 4.0.2 | API level 14, NDK 7
-IceCreamSandwich | 4.0.3         | API level 15
+IceCreamSandwich | 4.0.3 - 4.0.4 | API level 15
 
 Starting with Cupcake, individual builds are identified with a short
 build code, e.g. FRF85B.
@@ -109,7 +109,9 @@ ITL41D | android-4.0.1_r1.1 | Galaxy Nexus
 ITL41F | android-4.0.1_r1.2 | Galaxy Nexus
 ICL53F | android-4.0.2_r1   | Galaxy Nexus
 IML74K | android-4.0.3_r1   | Nexus S
-IML77  |                    | latest IceCreamSandwich version
+IML77  | android-4.0.3_r1.1 |
+IMM76  | android-4.0.4_r1   |
+IMM76D | android-4.0.4_r1.1 | Nexus S, latest IceCreamSandwich version
 
 The branches froyo, gingerbread, ics-mr0, ics-mr1, represent development
 branches that do not exactly match configurations that were tested
