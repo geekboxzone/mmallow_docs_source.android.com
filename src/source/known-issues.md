@@ -42,6 +42,17 @@ of gingerbread.
 **Fix**: Use version R12 of the emulator, and a newer kernel that matches
 those tools. No need to do a clean build.
 
-    $ repo forall external/qemu -c git checkout aosp/tools_r12
+    $ repo forall platform/external/qemu -c git checkout aosp/tools_r12
     $ make
     $ emulator -kernel prebuilt/android-arm/kernel/kernel-qemu-armv7
+
+## Emulator built on MacOS 10.7 Lion doesn't work. ##
+
+**Symptom**: The emulator (any version) built on MacOS 10.7 Lion
+and/or on XCode 4.x doesn't start.
+
+**Cause**: Some change in the development environment causes
+the emulator to be compiled in a way that prevents it from working.
+
+**Fix**: Use an emulator binary from the SDK, which is built on
+MacOS 10.6 with XCode 3 and works on MacOS 10.7.
