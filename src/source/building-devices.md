@@ -243,9 +243,13 @@ delete the `version-bootloader` and `version-baseband` lines in
 
 ## Restoring a device to its original factory state ##
 
-Factory images for Galaxy Nexus (GSM/HSPA+) are available from
+Factory images
+for Galaxy Nexus (GSM/HSPA+ "yakju" and CDMA/LTE "mysid")
+and
+for Nexus S (all variants)
+are available from
 [Google's factory image page](http://code.google.com/android/nexus/images.html).
 
 Factory images for the Motorola Xoom are distributed directly by Motorola.
 
-No factory images are available for Nexus S and Nexus One.
+No factory images are available for Nexus One.
