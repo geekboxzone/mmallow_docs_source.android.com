@@ -17,7 +17,8 @@
 # Life of a Patch #
 
 The Android Open Source Project (AOSP) uses a web-based code review tool
-known as Gerrit. The image below is a flowchart that details what happens to
+known as [Gerrit](https://android-review.googlesource.com/).
+The image below is a flowchart that details what happens to
 a patch, once it's been written. Though it may appear complex, the majority of
 the steps below are performed in the web application.
 

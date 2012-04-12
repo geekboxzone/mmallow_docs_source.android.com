@@ -48,4 +48,6 @@ review them.
 
 You can get started with Android by learning about the [Life of a Patch](life-of-a-patch.html), 
 and by learning about `git`, `repo`, and other tools using the links to the left. 
+You can also view the activity on all contributions on our
+[Gerrit server](https://android-review.googlesource.com/).
 If you need help along the way, you can join our [discussion groups](/community/index.html).
