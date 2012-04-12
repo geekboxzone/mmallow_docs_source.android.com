@@ -101,14 +101,6 @@ guaranteed to work on branches other than master.
       g++-multilib mingw32 openjdk-6-jdk tofrodos python-markdown \
       libxml2-utils xsltproc zlib1g-dev:i386
 
-You may also need to fix a compilation issue in a kernel header:
-
-    $ sudo vim /usr/include/linux/usb/ch9.h  # line 592
-
-    # return le16_to_cpu(epd->wMaxPacketSize);
-    return __le16_to_cpu(epd->wMaxPacketSize);
-
-
 ## Configuring USB Access ##
 
 Under GNU/linux systems (and specifically under Ubuntu systems),
