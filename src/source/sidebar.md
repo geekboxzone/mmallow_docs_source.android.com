@@ -17,6 +17,7 @@
 
 - [Life of a Patch](life-of-a-patch.html)
 - [Submitting Patches](submit-patches.html)
+- [View Patches](https://android-review.googlesource.com/)
 - [Life of a Bug](life-of-a-bug.html)
 - [Reporting Bugs](report-bugs.html)
 

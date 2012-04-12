@@ -16,7 +16,8 @@
 
 # Submitting Patches #
 
-This page describes the full process of submitting a patch to the AOSP, including reviewing and tracking changes with Gerrit.
+This page describes the full process of submitting a patch to the AOSP, including
+reviewing and tracking changes with [Gerrit](https://android-review.googlesource.com/).
 
 ## Prerequisites ##
 
