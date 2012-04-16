@@ -187,7 +187,7 @@ and cell radio software.
 However, no compatibility issues are expected when running newer systems
 with older bootloaders and radio images according to the following tables.
 
-Nexus S (worldwide version "XX"):
+Nexus S (worldwide version "XX", i9020t and i9023):
 
 Android Version | Preferred Bootloader | Preferred Radio | Also possible
 ----------------|----------------------|-----------------|--------------
@@ -201,7 +201,7 @@ Android Version | Preferred Bootloader | Preferred Radio | Also possible
 4.0.3 (IML74K)  | I9020XXKL1           | I9020XXKI1      | All previous versions
 4.0.4 (IMM76D)  | I9020XXKL1           | I9020XXKI1
 
-Nexus S (850MHz version "UC"):
+Nexus S (850MHz version "UC", i9020a):
 
 Android Version | Preferred Bootloader | Preferred Radio | Also possible
 ----------------|----------------------|-----------------|--------------
@@ -211,9 +211,9 @@ Android Version | Preferred Bootloader | Preferred Radio | Also possible
 2.3.6 (GRK39C)  | I9020XXKA3           | I9020UCKF1      | All previous versions
 2.3.6 (GRK39F)  | I9020XXKA3           | I9020UCKF1      | All previous versions
 4.0.3 (IML74K)  | I9020XXKL1           | I9020UCKF1      | All previous versions
-4.0.4 (IMM76D)  | I9020XXKL1           | I9020UCKJ1      | All previous versions
+4.0.4 (IMM76D)  | I9020XXKL1           | I9020UCKJ1
 
-Nexus S (Korea version "KR"):
+Nexus S (Korea version "KR", m200):
 
 Android Version | Preferred Bootloader | Preferred Radio | Also possible
 ----------------|----------------------|-----------------|--------------
@@ -222,7 +222,7 @@ Android Version | Preferred Bootloader | Preferred Radio | Also possible
 2.3.5 (GRJ90)   | I9020XXKA3           | M200KRKC1       | All previous versions
 2.3.6 (GRK39F)  | I9020XXKA3           | M200KRKC1       | All previous versions
 4.0.3 (IML74K)  | I9020XXKL1           | M200KRKC1       | All previous versions
-4.0.4 (IMM76D)  | I9020XXKL1           | M200KRKC1       | All previous versions
+4.0.4 (IMM76D)  | I9020XXKL1           | M200KRKC1       | Versions from 2.3.6
 
 Galaxy Nexus (GSM/HSPA+):
 
@@ -231,7 +231,7 @@ Android Version | Preferred Bootloader | Preferred Radio | Also possible
 4.0.1 (ITL41D)  | PRIMEKJ10            | I9250XXKK1
 4.0.2 (ICL53F)  | PRIMEKK15            | I9250XXKK6      | All previous versions
 4.0.3 (IML74K)  | PRIMEKL01            | I9250XXKK6      | All previous versions
-4.0.4 (IMM76D)  | PRIMEKL03            | I9250XXLA02     | Versions from 4.0.2
+4.0.4 (IMM76D)  | PRIMEKL03            | I9250XXLA02
 
 If you're building a new version of Android, if your Nexus S or
 Galaxy Nexus has
