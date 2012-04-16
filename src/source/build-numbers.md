@@ -111,7 +111,7 @@ ICL53F | android-4.0.2_r1   | Galaxy Nexus
 IML74K | android-4.0.3_r1   | Nexus S
 IML77  | android-4.0.3_r1.1 |
 IMM76  | android-4.0.4_r1   |
-IMM76D | android-4.0.4_r1.1 | Nexus S, latest IceCreamSandwich version
+IMM76D | android-4.0.4_r1.1 | Nexus S, Nexus S 4G, Galaxy Nexus, latest IceCreamSandwich version
 
 The branches froyo, gingerbread, ics-mr0, ics-mr1, represent development
 branches that do not exactly match configurations that were tested
@@ -137,7 +137,8 @@ HTK55D | android-3.2.1_r1
 HTK75D | android-3.2.1_r2
 HLK75C | android-3.2.2_r1
 HLK75D | android-3.2.2_r2
-HLK75F | android-3.2.4_r1   | latest Honeycomb version
+HLK75F | android-3.2.4_r1
+HLK75H | android-3.2.6_r1   | latest Honeycomb version
 
 There is no manifest that contains exactly those. However, there
 are manifests that allow building those components. The following
