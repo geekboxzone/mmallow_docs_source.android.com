@@ -28,8 +28,8 @@ stack. Because many users find their way here looking for the Google apps for
 Android (such as Gmail and so on), we have components set up for their
 convenience. However, these apps are not part of Android, and any issues
 reported on these components are not guaranteed to to receive attention.
-Most notably, to report issues related to Android Market, you should visit the
-[Android Market Support Forum](http://www.google.com/support/forum/p/Android+Market?hl=en).
+Most notably, to report issues related to Google Play, you should visit the
+[Google Play Support Forum](https://support.google.com/googleplay/).
 
 Here's the life of a bug, in a nutshell:
 

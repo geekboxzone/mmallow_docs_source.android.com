@@ -73,16 +73,16 @@ of the open source Android platform, or they may be developed by an OEM for a
 specific device.
 
 + **User-Installed Applications**: Android provides an open development
-environment supporting any third-party application. The Android Market offers
+environment supporting any third-party application. Google Play offers
 users hundreds of thousands of applications.
 
 Google provides a set of cloud-based services that are available to any
 compatible Android device.  The primary services are:
 
-+ **Android Market**: The Android Market is a collection of services that
++ **Google Play**: Google Play is a collection of services that
 allow users to discover, install, and purchase applications from their Android
-device or the web.  The Market makes it easy for developers to reach Android
-users and potential customers.   The Market also provides community review,
+device or the web.  Google Play makes it easy for developers to reach Android
+users and potential customers.   Google Play also provides community review,
 application [license
 verification](http://developer.android.com/guide/publishing/licensing.html),
 and other security services.
@@ -132,7 +132,7 @@ release.
 + **Open Source and Community Review**: The Android Open Source Project enables
 broad security review by any interested party. Android also uses open source
 technologies that have undergone significant external security review,
-such as the Linux kernel.  The Android Market provides a forum for users and companies
+such as the Linux kernel.  Google Play provides a forum for users and companies
 to provide information about specific applications directly to users.
 + **Incident Response**: Even with all of these precautions, security issues
 may occur after shipping, which is why the Android project has created a
@@ -142,8 +142,8 @@ discussion of potential vulnerabilities. Upon the discovery of legitimate
 issues, the Android team has a response process that enables the rapid
 mitigation of vulnerabilities to ensure that potential risk to all Android
 users is minimized.  These cloud-supported responses can include updating the
-Android platform (over-the-air updates), removing applications from the Android
-Market, and removing applications from devices in the field.
+Android platform (over-the-air updates), removing applications from Google
+Play, and removing applications from devices in the field.
 
 ##Android Platform Security Architecture
 
@@ -526,7 +526,7 @@ always make fully informed decisions, the Android permissions model makes
 information about applications easily accessible to a wide range of users.  For
 example, unexpected permissions requests can prompt more sophisticated users to
 ask critical questions about application functionality and share their concerns
-in places such as the [Android Market](https://market.android.com) where they
+in places such as [Google Play](htts://play.google.com) where they
 are visible to all users.
 
 <table>
@@ -674,10 +674,10 @@ Code signing allows developers to identify the author of the application and to
 update their application without creating complicated interfaces and
 permissions. Every application that is run on the Android platform must be
 signed by the developer.  Applications that attempt to install without being
-signed will rejected by either the Android Market or the package installer on
+signed will rejected by either Google Play or the package installer on
 the Android device.
 
-On Android Market, application signing bridges the trust Google has with the
+On Google Play, application signing bridges the trust Google has with the
 developer and the trust the developer has with their application.  Developers
 know their application is provided, unmodified to the Android device; and
 developers can be held accountable for behavior of their application.

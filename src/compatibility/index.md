@@ -21,10 +21,10 @@ innovative mobile apps. Three key components work together to realize this
 platform.
 
 The Android Compatibility Program defines the technical details of Android
-platform and provides tools used by OEMs to ensure that developers’ apps run
+platform and provides tools used by OEMs to ensure that developers' apps run
 on a variety of devices. The Android SDK provides built-in tools that
 Developers use to clearly state the device features their apps require. And
-Android Market shows apps only to those devices that can properly run
+Google Play shows apps only to those devices that can properly run
 them.
 
 These pages describe the Android Compatibility Program and how to get
@@ -73,8 +73,8 @@ Building a compatible device is a three-step process:
 
 # Joining the Ecosystem #
 
-Once you've built a compatible device, you may wish to include Android
-Market to provide your users access to the third-party app ecosystem.
+Once you've built a compatible device, you may wish to include Google
+Play to provide your users access to the third-party app ecosystem.
 Unfortunately, for a variety of legal and business reasons, we aren't able to
-automatically license Android Market to all compatible devices. To inquire
-about access about Android Market, you can [contact us](contact-us.html).
+automatically license Google Play to all compatible devices. To inquire
+about access about Google Play, you can [contact us](contact-us.html).

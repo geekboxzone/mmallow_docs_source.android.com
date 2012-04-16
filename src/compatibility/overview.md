@@ -47,7 +47,7 @@ device.
 any other device that is compatible with the same Android platform version.
 Android devices will differ in hardware and software capabilities, so the
 compatibility program also provides the tools needed for distribution systems
-such as Android Market to implement appropriate filtering. This means that
+such as Google Play to implement appropriate filtering. This means that
 users can only see applications which they can actually run.
 
 - *Enable device manufacturers to differentiate while being

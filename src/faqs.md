@@ -181,7 +181,7 @@ devices based on the same source.
 The function of the Android Compatibility Program is to define a baseline
 implementation of Android that is compatible with third-party apps written
 by developers. Devices that are "Android compatible" may participate in the
-Android ecosystem, including Android Market; devices that don't meet the
+Android ecosystem, including Google Play; devices that don't meet the
 compatibility requirements exist outside that ecosystem.
 
 In other words, the Android Compatibility Program is how we separate
@@ -239,9 +239,9 @@ Android apps ecosystem. Anyone is welcome to use the Android source code,
 but if the device isn't compatible, it's not considered part of the Android
 ecosystem.
 
-### What is the role of Android Market in compatibility? ###
+### What is the role of Google Play in compatibility? ###
 
-Devices that are Android compatible may seek to license the Android Market
+Devices that are Android compatible may seek to license the Google Play
 client software. This allows them to become part of the Android app
 ecosystem, by allowing users to download developers' apps from a catalog
 shared by all compatible devices. This option isn't available to devices
@@ -263,22 +263,22 @@ The CDD will evolve over time to reflect market realities. For instance,
 the 1.6 CDD only allows cell phones, but the 2.1 CDD allows devices to omit
 telephony hardware, allowing for non-phone devices such as tablet-style
 music players to be compatible. As we make these changes, we will also
-augment Android Market to allow developers to retain control over where
+augment Google Play to allow developers to retain control over where
 their apps are available. To continue the telephony example, an app that
-manages SMS text messages would not be useful on a media player, so Android
-Market allows the developer to restrict that app exclusively to phone
+manages SMS text messages would not be useful on a media player, so Google
+Play allows the developer to restrict that app exclusively to phone
 devices.
 
-### If my device is compatible, does it automatically have access to Android Market and branding? ###
+### If my device is compatible, does it automatically have access to Google Play and branding? ###
 
-Android Market is a service operated by Google. Achieving compatibility is
-a prerequisite for obtaining access to the Android Market software and branding.
-Device manufacturers should contact Google to obtain access to Android
-Market.
+Google Play is a service operated by Google. Achieving compatibility is
+a prerequisite for obtaining access to the Google Play software and branding.
+Device manufacturers should contact Google to obtain access to Google
+Play.
 
-### If I am not a manufacturer, how can I get Android Market? ###
+### If I am not a manufacturer, how can I get Google Play? ###
 
-Android Market is only licensed to handset manufacturers shipping devices.
+Google Play is only licensed to handset manufacturers shipping devices.
 For questions about specific cases, contact android-partnerships@google.com.
 
 ### How can I get access to the Google apps for Android, such as Maps? ###
@@ -293,7 +293,7 @@ inquiries related to those apps.
 No. The Android Compatibility Program is optional. Since the Android source
 code is open, anyone can use it to build any kind of device. However, if a
 manufacturer wishes to use the Android name with their product, or wants
-access to Android Market, they must first demonstrate that the device is
+access to Google Play, they must first demonstrate that the device is
 compatible.
 
 ### How much does compatibility certification cost? ###
@@ -319,7 +319,7 @@ with a number of OEMs, who provide input on its contents.
 
 Since Android's code is open-source, we can't prevent someone from using an
 old version to launch a device. Instead, Google chooses not to license the
-Android Market client software for use on versions that are considered
+Google Play client software for use on versions that are considered
 obsolete. This allows anyone to continue to ship old versions of Android,
 but those devices won't use the Android name and will exist outside the
 Android apps ecosystem, just as if they were non-compatible.
@@ -346,13 +346,13 @@ However, wherever practical we will make draft versions of CDDs available.
 ### How are device manufacturers' compatibility claims validated? ###
 
 There is no validation process for Android device compatibility. However,
-if the device is to include Android Market, Google will typically validate
-the device for compatibility before agreeing to license the Market client
+if the device is to include Google Play, Google will typically validate
+the device for compatibility before agreeing to license the Google Play client
 software.
 
 ### What happens if a device that claims compatibility is later found to have compatibility problems? ###
 
-Typically, Google's relationships with Android Market licensees allow us to
+Typically, Google's relationships with Google Play licensees allow us to
 ask them to release updated system images that fix the problems.
 
 ## Compatibility Test Suite ##
