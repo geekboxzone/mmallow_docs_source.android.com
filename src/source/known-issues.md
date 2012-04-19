@@ -109,3 +109,17 @@ libraries that aren't available in the Android Open Source
 Project.
 
 **Fix**: None.
+
+## Build errors related to using the wrong compiler. ##
+
+**Symptom**: The build fails with various symptoms. One
+such symptom is `cc1: error: unrecognized command line option "-m32"`
+
+**Cause**: The Android build system uses the default compiler
+in the PATH, assuming it's a suitable compiler to generate
+binaries that run on the host. Other situations (e.g. using
+the Android NDK or building the kernel) cause the default
+compiler to not be a host compiler.
+
+**Fix**: Use a "clean" shell, in which no previous
+actions could have swapped the default compiler.
