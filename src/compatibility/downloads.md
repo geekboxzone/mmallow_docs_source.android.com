@@ -26,8 +26,8 @@ Ice Cream Sandwich. Android 4.0.3 is the current version of Android. Source code
 Android 4.0.3 is found in the 'android-4.0.3_r1' branch in the open-source tree.
 
 - [Android 4.0 Compatibility Definition Document (CDD)](4.0/android-4.0-cdd.pdf)
-- [Android 4.0.3 R2 Compatibility Test Suite (CTS)](http://dl.google.com/dl/android/cts/android-cts-4.0.3_r2-linux_x86-arm.zip)
-- [Android 4.0.3 R1 CTS Verifier](http://dl.google.com/dl/android/cts/android-cts-verifier-4.0.3_r1-linux_x86-arm.zip)
+- [Android 4.0.3 R2 Compatibility Test Suite (CTS)](https://dl.google.com/dl/android/cts/android-cts-4.0.3_r2-linux_x86-arm.zip)
+- [Android 4.0.3 R1 CTS Verifier](https://dl.google.com/dl/android/cts/android-cts-verifier-4.0.3_r1-linux_x86-arm.zip)
 
 ## Android 2.3 ##
 
@@ -36,8 +36,8 @@ Gingerbread. Source code for Android 2.3 is found in the 'gingerbread' branch in
 the open-source tree.
 
 - [Android 2.3 Compatibility Definition Document (CDD)](2.3/android-2.3.3-cdd.pdf)
-- [Android 2.3 R12 Compatibility Test Suite (CTS)](http://dl.google.com/dl/android/cts/android-cts-2.3_r12-linux_x86-arm.zip)
-- [Android 2.3 R2 CTS Verifier](http://dl.google.com/dl/android/cts/android-cts-verifier-2.3_r2-linux_x86-armv5.zip)
+- [Android 2.3 R12 Compatibility Test Suite (CTS)](https://dl.google.com/dl/android/cts/android-cts-2.3_r12-linux_x86-arm.zip)
+- [Android 2.3 R2 CTS Verifier](https://dl.google.com/dl/android/cts/android-cts-verifier-2.3_r2-linux_x86-armv5.zip)
 
 ## Android 2.2 ##
 
@@ -46,7 +46,7 @@ FroYo. Source code for Android 2.2 is found in the 'froyo' branch in the
 open-source tree.
 
 - [Android 2.2 Compatibility Definition Document (CDD)](2.2/android-2.2-cdd.pdf)
-- [Android 2.2 R8 Compatibility Test Suite (CTS)](http://dl.google.com/dl/android/cts/android-cts-2.2_r8-linux_x86-arm.zip)
+- [Android 2.2 R8 Compatibility Test Suite (CTS)](https://dl.google.com/dl/android/cts/android-cts-2.2_r8-linux_x86-arm.zip)
 
 ## Android 2.1 ##
 
@@ -56,7 +56,7 @@ open-source tree. Note that for technical reasons, there is no compatibility
 program for Android 2.0 or 2.0.1, and new devices must use Android 2.1.
 
 - [Android 2.1 Compatibility Definition Document (CDD)](2.1/android-2.1-cdd.pdf)
-- [Android 2.1 R5 Compatibility Test Suite (CTS)](http://dl.google.com/dl/android/cts/android-cts-2.1_r5-x86.zip)
+- [Android 2.1 R5 Compatibility Test Suite (CTS)](https://dl.google.com/dl/android/cts/android-cts-2.1_r5-x86.zip)
 
 ## Android 1.6 ##
 
@@ -65,7 +65,7 @@ Android 1.6 was obsoleted by Android 2.1. Source code for Android 1.6 is found
 in the 'donut' branch in the open-source tree.
 
 - [Android 1.6 Compatibility Definition Document (CDD)](1.6/android-1.6-cdd.pdf)
-- [Android 1.6 R1 Compatibility Test Suite (CTS)](http://dl.google.com/dl/android/cts/android-cts-1.6_r1-x86.zip)
+- [Android 1.6 R1 Compatibility Test Suite (CTS)](https://dl.google.com/dl/android/cts/android-cts-1.6_r1-x86.zip)
 
 ## Compatibility Test Suite Manual ##
 
@@ -77,7 +77,7 @@ beyond require [additional steps](cts-intro.html) to run the accessibility tests
 ## CTS Media Files ##
 These media files are required for the CTS media stress tests.
 
-- [CTS Media 1.0](http://dl.google.com/dl/android/cts/android-cts-media-1.0.zip)
+- [CTS Media 1.0](https://dl.google.com/dl/android/cts/android-cts-media-1.0.zip)
 
 ## Older Android Versions ##
 

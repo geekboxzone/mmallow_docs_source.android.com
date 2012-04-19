@@ -195,7 +195,7 @@ All changes to the OpenSSL project at `external/openssl` should be made upstream
 ## V8 ##
 
 All changes to the V8 project at `external/v8` should be submitted upstream at
-[code.google.com/p/v8](http://code.google.com/p/v8). See [Contributing to V8](http://code.google.com/p/v8/wiki/Contributing)
+[code.google.com/p/v8](https://code.google.com/p/v8). See [Contributing to V8](https://code.google.com/p/v8/wiki/Contributing)
 for details.
 
 ## WebKit ##

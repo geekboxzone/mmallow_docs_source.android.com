@@ -84,7 +84,7 @@ allow users to discover, install, and purchase applications from their Android
 device or the web.  Google Play makes it easy for developers to reach Android
 users and potential customers.   Google Play also provides community review,
 application [license
-verification](http://developer.android.com/guide/publishing/licensing.html),
+verification](https://developer.android.com/guide/publishing/licensing.html),
 and other security services.
 
 + **Android Updates**: The Android update service delivers new capabilities and
@@ -93,9 +93,9 @@ the air (OTA).
 
 + **Application Services**: Frameworks that allow Android applications to use
 cloud capabilities such as ([backing
-up](http://developer.android.com/guide/topics/data/backup.html)) application
+up](https://developer.android.com/guide/topics/data/backup.html)) application
 data and settings and cloud-to-device messaging
-([C2DM](http://code.google.com/android/c2dm/index.html))
+([C2DM](https://code.google.com/android/c2dm/index.html))
 for push messaging.
 
 These services are not part of the Android Open Source Project and are out
@@ -284,7 +284,7 @@ administrator and enforced by the operating system. Filesystem encryption
 requires the use of a user password, pattern-based screen lock is not supported.
 
 More details on implementation of filesystem encryption are available at
-[http://source.android.com/tech/encryption/android_crypto_implementation.html](/
+[https://source.android.com/tech/encryption/android_crypto_implementation.html](/
 tech/encryption/android_crypto_implementation.html)
 
 ##Password Protection
@@ -309,7 +309,7 @@ defaults on) lost or stolen handsets.
 In addition to use in applications included with the Android system, these APIs
 are available to third-party providers of Device Management solutions. Details
 on the API are provided here:
-[http://developer.android.com/guide/topics/admin/device-admin.html](http://devel
+[https://developer.android.com/guide/topics/admin/device-admin.html](https://devel
 oper.android.com/guide/topics/admin/device-admin.html).
 
 
@@ -385,21 +385,21 @@ extension.
 The main Android application building blocks are:
 
 + **AndroidManifest.xml**: The
-[AndroidManifest.xml](http://developer.android.com/guide/topics/manifest/manifes
+[AndroidManifest.xml](https://developer.android.com/guide/topics/manifest/manifes
 t-intro.html) file is the control file that tells the system what to do with
 all the top-level components (specifically activities, services, broadcast
 receivers, and content providers described below) in an application. This also
 specifies which permissions are required.
 
 + **Activities**: An
-[Activity](http://developer.android.com/guide/topics/fundamentals/activities.htm
+[Activity](https://developer.android.com/guide/topics/fundamentals/activities.htm
 l) is, generally, the code for a single, user-focused task.  It usually
 includes displaying a UI to the user, but it does not have to -- some
 Activities never display UIs.  Typically, one of the application's Activities
 is the entry point to an application.
 
 + **Services**: A
-[Service](http://developer.android.com/guide/topics/fundamentals/services.html)
+[Service](https://developer.android.com/guide/topics/fundamentals/services.html)
 is a body of code that runs in the background. It can run in its own process,
 or in the context of another application's process. Other components "bind" to
 a Service and invoke methods on it via remote procedure calls. An example of a
@@ -408,10 +408,10 @@ user probably still intends for music to keep playing. A Service keeps the
 music going even when the UI has completed.
 
 + **Broadcast Receiver**: A
-[BroadcastReceiver](http://developer.android.com/reference/android/content/Broad
+[BroadcastReceiver](https://developer.android.com/reference/android/content/Broad
 castReceiver.html) is an object that is instantiated when an IPC mechanism
 known as an
-[Intent](http://code.google.com/android/reference/android/content/Intent.html)
+[Intent](https://developer.android.com/reference/android/content/Intent.html)
 is issued by the operating system or another application.  An application may
 register a receiver for the low battery message, for example, and change its
 behavior based on that information.
@@ -471,8 +471,7 @@ prevent circumvention. An example of the user messaging when an application is
 installed while requesting access to protected APIs is shown in *Figure 2*.
 
 The system default permissions are described at
-[http://code.google.com/android/reference/android/Manifest.permission.html](http
-://code.google.com/android/reference/android/Manifest.permission.html).
+[https://developer.android.com/reference/android/Manifest.permission.html](https://developer.android.com/reference/android/Manifest.permission.html).
 Applications may declare their own permissions for other applications to use.
 Such permissions are not listed in the above location.
 
@@ -480,7 +479,7 @@ When defining a permission a protectionLevel attribute tells the system how the
 user is to be informed of applications requiring the permission, or who is
 allowed to hold a permission. Details on creating and using application
 specific permissions are described at
-[http://developer.android.com/guide/topics/security/security.html](http://develo
+[https://developer.android.com/guide/topics/security/security.html](https://develo
 per.android.com/guide/topics/security/security.html).
 
 There are some device capabilities, such as the ability to send SMS broadcast
@@ -558,7 +557,7 @@ Android also provides new IPC mechanisms:
 + **Binder**: A lightweight capability-based remote procedure call mechanism
 designed for high performance when performing in-process and cross-process
 calls. Binder is implemented using a custom Linux driver. See
-[http://developer.android.com/reference/android/os/Binder.html](http://developer
+[https://developer.android.com/reference/android/os/Binder.html](https://developer
 .android.com/reference/android/os/Binder.html).
 
 + **Services**: Services (discussed above) can provide interfaces directly
@@ -571,16 +570,14 @@ instance and handing it off to the system. The system locates some other piece
 of code (in this case, the Browser) that knows how to handle that Intent, and
 runs it. Intents can also be used to broadcast interesting events (such as a
 notification) system-wide. See
-[http://code.google.com/android/reference/android/content/Intent.html](http://co
-de.google.com/android/reference/android/content/Intent.html).
+[https://developer.android.com/reference/android/content/Intent.html](https://developer.android.com/reference/android/content/Intent.html.
 
 + **ContentProviders**: A ContentProvider is a data storehouse that provides
 access to data on the device; the classic example is the ContentProvider that
 is used to access the user's list of contacts. An application can access data
 that other applications have exposed via a ContentProvider, and an application
 can also define its own ContentProviders to expose data of its own. See
-[http://code.google.com/android/reference/android/content/ContentProvider.html](
-http://code.google.com/android/reference/android/content/ContentProvider.html).
+[https://developer.android.com/reference/android/content/ContentProvider.html](https://developer.android.com/reference/android/content/ContentProvider.html).
 
 While it is possible to implement IPC using other mechanisms such as network
 sockets or world-writable files, these are the recommended Android IPC
@@ -705,7 +702,7 @@ Applications are also able to declare security permissions at the Signature
 protection level, restricting access only to applications signed with the same
 key while maintaining distinct UIDs and Application Sandboxes. A closer
 relationship with a shared Application Sandbox is allowed via the [shared UID
-feature](http://developer.android.com/guide/topics/manifest/manifest-element.htm
+feature](https://developer.android.com/guide/topics/manifest/manifest-element.htm
 l#uid) where two or more applications signed with same developer key can
 declare a shared UID in their manifest.
 
@@ -718,7 +715,7 @@ many DRM schemes; which DRM schemes a device supports is left to the device
 manufacturer.
 
 The [Android DRM
-framework](http://developer.android.com/reference/android/drm/package-summary.ht
+framework](https://developer.android.com/reference/android/drm/package-summary.ht
 ml) is implemented in two architectural layers (see figure below):
 
 + A DRM framework API, which is exposed to applications through the Android
@@ -787,24 +784,23 @@ r.android.com/security_at_android_dot_com.txt).
 #Other Resources
 
 Information about the Android Open Source Project is available at
-[http://source.android.com](http://source.android.com).
+[https://source.android.com](https://source.android.com).
 
 Information for Android application developers is here:
-[http://developer.android.com](http://developer.android.com).
+[https://developer.android.com](https://developer.android.com).
 
 The Android Security team can be reached at
 [security@android.com](mailto:security@android.com).
 
 Security information exists throughout the Android Open Source and Developer
 Sites. A good place to start is here:
-[http://developer.android.com/guide/topics/security/security.html](http://develo
+[https://developer.android.com/guide/topics/security/security.html](https://develo
 per.android.com/guide/topics/security/security.html).
 
 A Security FAQ for developers is located here:
-[http://developer.android.com/resources/faq/security.html](http://developer.andr
+[https://developer.android.com/resources/faq/security.html](https://developer.andr
 oid.com/resources/faq/security.html).
 
 A community resource for discussion about Android security exists here:
-[http://groups.google.com/group/android-security-discuss](http://groups.google.c
-om/group/android-security-discuss).
+[https://groups.google.com/forum/?fromgroups#!forum/android-security-discuss](https://groups.google.com/forum/?fromgroups#!forum/android-security-discuss).
 

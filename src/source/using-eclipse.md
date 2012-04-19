@@ -21,7 +21,7 @@ This document will help you set up the Eclipse IDE for Android platform developm
 *Note: if you are looking for information on how to use
 Eclipse to develop applications that run on Android, this is not the right
 page for you. You probably would find [the Eclipse page on 
-developer.android.com](http://developer.android.com/sdk/eclipse-adt.html) more useful.*
+developer.android.com](https://developer.android.com/sdk/eclipse-adt.html) more useful.*
 
 ## Basic setup ##
 

@@ -35,7 +35,7 @@ email address we've set up specifically this purpose: [cts@android.com](mailto:c
 cases that require disclosure of confidential information only, so general
 questions will be directed back to the public android-compatibility
 list. Note also that this list is for specific technical questions; general
-inquiries will also be directed back to the [android-compatibility list.](http://groups.google.com/group/android-compatibility)
+inquiries will also be directed back to the [android-compatibility list.](https://groups.google.com/forum/?fromgroups#!forum/android-compatibility)
 
 ## For Business Inquiries ##
 

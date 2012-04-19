@@ -16,27 +16,27 @@
 
 # Android Platform Overview #
 
-Our sister site, [developer.android.com](http://developer.android.com/), 
+Our sister site, [developer.android.com](https://developer.android.com/),
 includes feature overviews of the various Android platform versions.
 The links below will take you to developer.android.com where you can view this
 information.
 
 The links below will navigate you away from this site.
 
-## [Android 4.0](http://developer.android.com/sdk/android-4.0-highlights.html) ##
+## [Android 4.0](https://developer.android.com/sdk/android-4.0-highlights.html) ##
 
 Android 4.0 corresponded to the "IceCreamSandwich" milestone branch, and has an API level of 14.
 
-## [Android 2.3](http://developer.android.com/sdk/android-2.3-highlights.html) ##
+## [Android 2.3](https://developer.android.com/sdk/android-2.3-highlights.html) ##
 
 Android 2.3 corresponded to the "Gingerbread" milestone branch, and has an API level of 9.
 In versions 2.3.3 and higher, the API level is 10.
 
-## [Android 2.2](http://developer.android.com/sdk/android-2.2-highlights.html) ##
+## [Android 2.2](https://developer.android.com/sdk/android-2.2-highlights.html) ##
 
 Android 2.2 corresponded to the "FroYo" milestone branch, and has an API level of 8.
 
-## [Android 2.1](http://developer.android.com/sdk/android-2.0-highlights.html) ##
+## [Android 2.1](https://developer.android.com/sdk/android-2.0-highlights.html) ##
 
 Android 2.1 corresponded to the "Eclair" milestone branch, and has an API level of 7.
 
@@ -48,16 +48,16 @@ program for 2.0 or 2.0.1, the officially compatible Eclair-based release is Andr
 2.1. (The linked document refers to Android 2.0, because there were
 no new platform features added in 2.1.)
 
-## [Android 1.6](http://developer.android.com/sdk/android-1.6-highlights.html) ##
+## [Android 1.6](https://developer.android.com/sdk/android-1.6-highlights.html) ##
 
 Android 1.6 corresponded to the "Donut" milestone branch, and has an API level of 4.
 
-## [Android 1.5](http://developer.android.com/sdk/android-1.5-highlights.html) ##
+## [Android 1.5](https://developer.android.com/sdk/android-1.5-highlights.html) ##
 
 Android 1.5 corresponded to the "Cupcake" milestone branch, and has an API
 level of 3.
 
-## [Android 1.1](http://developer.android.com/sdk/android-1.1.html) ##
+## [Android 1.1](https://developer.android.com/sdk/android-1.1.html) ##
 
 Android 1.1 has an API level of 2. Android 1.1 was known as
 "Petit Four" internally, though this name was not used officially.

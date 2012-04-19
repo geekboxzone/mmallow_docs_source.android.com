@@ -55,7 +55,7 @@ After installing Repo, set up your client to access the android source repositor
 
         $ repo init -u https://android.googlesource.com/platform/manifest -b android-4.0.1_r1
 
- - When prompted, please configure Repo with your real name and email address.  To use the Gerrit code-review tool, you will need an email address that is connected with a [registered Google account](http://www.google.com/accounts).  Make sure this is a live address at which you can receive messages.  The name that you provide here will show up in attributions for your code submissions.
+ - When prompted, please configure Repo with your real name and email address.  To use the Gerrit code-review tool, you will need an email address that is connected with a [registered Google account](https://www.google.com/accounts).  Make sure this is a live address at which you can receive messages.  The name that you provide here will show up in attributions for your code submissions.
 
 A successful initialization will end with a message stating that Repo is initialized in your working directory.  Your client directory should now contain a `.repo` directory where files such as the manifest will be kept.
 

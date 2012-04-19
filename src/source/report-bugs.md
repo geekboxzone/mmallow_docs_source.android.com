@@ -29,17 +29,17 @@ to the Android security team.
 
 Here's how to report non-security bugs:
 
-- [Search for your bug](http://code.google.com/p/android/issues/advsearch) to see if anyone has already reported it.
+- [Search for your bug](https://code.google.com/p/android/issues/advsearch) to see if anyone has already reported it.
 
 - If you find your issue and it's important to you, star it! That's how we know which bugs are most important to fix.
 
 - If no one's reported your bug, file the bug. You can use one of these templates:
 
-    - [Bug in your Device](http://code.google.com/p/android/issues/entry?template=User%20bug%20report) - use this if you are a user reporting a bug in a device you own
+    - [Bug in your Device](https://code.google.com/p/android/issues/entry?template=User%20bug%20report) - use this if you are a user reporting a bug in a device you own
 
-    - [Bug in the Software](http://code.google.com/p/android/issues/entry?template=Developer%20bug%20report) - use this if you found a bug in the course of developing an app
+    - [Bug in the Software](https://code.google.com/p/android/issues/entry?template=Developer%20bug%20report) - use this if you found a bug in the course of developing an app
 
-    - [Feature Request](http://code.google.com/p/android/issues/entry?template=Feature%20request) - use this for a feature you'd like to see in a future verison
+    - [Feature Request](https://code.google.com/p/android/issues/entry?template=Feature%20request) - use this for a feature you'd like to see in a future verison
 
 Please note that we can't guarantee that any particular bug can be fixed in
 any particular release. To see what happens to your bug once you report it,

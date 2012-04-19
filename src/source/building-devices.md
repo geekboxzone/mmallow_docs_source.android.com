@@ -110,7 +110,7 @@ libraries to run, specifically for hardware graphics acceleration.
 
 Official binaries for Nexus S, Galaxy Nexus, and PandaBoard can be
 downloaded from
-[Google's Nexus driver page](http://code.google.com/android/nexus/drivers.html),
+[Google's Nexus driver page](https://code.google.com/android/nexus/drivers.html),
 which add access to additional hardware capabilities with non-Open-Source code.
 
 There are no official binaries for Nexus One, ADP2 or ADP1.
@@ -248,7 +248,7 @@ for Galaxy Nexus (GSM/HSPA+ "yakju" and CDMA/LTE "mysid")
 and
 for Nexus S (all variants)
 are available from
-[Google's factory image page](http://code.google.com/android/nexus/images.html).
+[Google's factory image page](https://code.google.com/android/nexus/images.html).
 
 Factory images for the Motorola Xoom are distributed directly by Motorola.
 
