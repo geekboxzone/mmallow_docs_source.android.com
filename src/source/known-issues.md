@@ -84,6 +84,36 @@ corner cases in the NAT code.
 
 **Fix**: Configure VirtualBox to use bridged network instead of NAT.
 
+## Difficulties syncing the source tree (DNS issues). ##
+
+**Symptom**: When running `repo sync`, the process fails with
+various errors related to not recognizing the hostname. One such
+error is `<urlopen error [Errno -2] Name or service not known>`.
+
+**Cause**: Some DNS systems have a hard time coping with the
+high number of queries involved in syncing the source tree
+(there can be several hundred requests in a worst-case scenario).
+
+**Fix**: Manually resolve the relevant hostnames, and hard-code
+those results locally.
+
+You can resolve them with the `nslookup` command, which will give
+you one numerical IP address for each of those (typically in the
+"Address" part of the output).
+
+    $ nslookup googlesource.com
+    $ nslookup android.googlesource.com
+
+You can then hard-code them locally by editing `/etc/hosts`, and
+adding two lines in that file, of the form:
+
+    aaa.bbb.ccc.ddd googlesource.com
+    eee.fff.ggg.hhh android.googlesource.com
+
+Note that this will only work as long as the servers' addresses
+don't change, and if they do and you can't connect you'll have
+to resolve those hostnames again and edit `etc/hosts` accordingly.
+
 ## `make snod` and emulator builds. ##
 
 **Symptom**: When using `make snod` (make system no dependencies)
