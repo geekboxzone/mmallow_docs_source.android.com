@@ -123,3 +123,18 @@ compiler to not be a host compiler.
 
 **Fix**: Use a "clean" shell, in which no previous
 actions could have swapped the default compiler.
+
+## Build errors caused by non-default tool settings. ##
+
+**Symptom**: The build fails with various symptoms, possibly
+complinaing about missing files or files that have the
+wrong format. One such symptom is `member [...] in archive is not an object`.
+
+**Cause**: The Android build system tends to use many host tools
+and to rely on their default behaviors. Some settings change
+those tools' behaviors and make them behave in ways that
+confuse the build system. Variables known to cause such
+issues are `CDPATH` and `GREP_OPTIONS`.
+
+**Fix**: Build Android in an environment that has as few
+customizations as possible.
