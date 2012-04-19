@@ -114,6 +114,18 @@ Note that this will only work as long as the servers' addresses
 don't change, and if they do and you can't connect you'll have
 to resolve those hostnames again and edit `etc/hosts` accordingly.
 
+## Difficulties syncing the source tree (TCP issues). ##
+
+**Symptom**: `repo sync` hangs while syncing, often when it's
+completed 99% of the sync.
+
+**Cause**: Some settings in the TCP/IP stack cause difficulties
+in some network environments, such that `repo sync` neither completes
+nor fails.
+
+**Fix**: On linux, `sysctl -w net.ipv4.tcp_window_scaling=0`. On
+MacOS, disable the rfc1323 extension in the network settings.
+
 ## `make snod` and emulator builds. ##
 
 **Symptom**: When using `make snod` (make system no dependencies)
