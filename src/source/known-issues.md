@@ -70,6 +70,20 @@ large amounts of data getting transfered.
 and explicitly using `repo sync -j1` have been reported to
 improve the situation for some users.
 
+## Difficulties syncing the source tree (VirtualBox Ethernet issues). ##
+
+**Symptom**: When running `repo sync` in some VirtualBox installations,
+the process hangs or fails with a variety of possible symptoms.
+One such symptom is
+`DownloadError: HTTP 500 (Internal Server Error: Server got itself in trouble)`.
+
+**Cause**: The default network behavior of VirtualBox is to use
+NAT (Network Addrss Translation) to connect the guest system to
+the network. The heavy network activity of repo sync triggers some
+corner cases in the NAT code.
+
+**Fix**: Configure VirtualBox to use bridged network instead of NAT.
+
 ## `make snod` and emulator builds. ##
 
 **Symptom**: When using `make snod` (make system no dependencies)
