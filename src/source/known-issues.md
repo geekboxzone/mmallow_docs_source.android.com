@@ -56,3 +56,16 @@ the emulator to be compiled in a way that prevents it from working.
 
 **Fix**: Use an emulator binary from the SDK, which is built on
 MacOS 10.6 with XCode 3 and works on MacOS 10.7.
+
+## Difficulties syncing the source code (proxy issues). ##
+
+**Symptom**: `repo init` or `repo sync` fail with http errors,
+typically 403 or 500.
+
+**Cause**: There are quite a few possible causes, most often
+related to http proxies, which have difficulties handling the
+large amounts of data getting transfered.
+
+**Fix**: While there's no general solution, using python 2.7
+and explicitly using `repo sync -j1` have been reported to
+improve the situation for some users.
