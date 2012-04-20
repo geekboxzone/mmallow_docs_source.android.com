@@ -218,3 +218,19 @@ gcc to llvm, and llvm rejects code that used to be
 accepted by gcc.
 
 **Fix**: Use XCode 4.2.
+
+## Build error with 4.0.x and earlier on Ubuntu 11.10. ##
+
+**Symptom**: Building IceCreamSandwich 4.0.x (and older
+versions) on Ubuntu 11.10 and newer fails with errors similar to this:
+`<command-line>:0:0: warning: "_FORTIFY_SOURCE" redefined [enabled by default]`
+
+**Cause**: Ubuntu 11.10 uses a version of gcc where that symbol
+is defined by default, and Android also defines that symbol,
+which causes a conflict.
+
+**Fix**: Either downgrade to Ubuntu 10.04, or use the master
+branch, which can be compiled on Ubuntu 11.10 and newer.
+
+    $ repo init -b master
+    $ repo sync
