@@ -35,7 +35,7 @@ We created Android so that all developers can distribute their applications
 to users on an open platform. One of the best ways you can help Android is to
 write cool apps that users love!
 
-To get started, visit [developer.android.com](http://developer.android.com). This site
+To get started, visit [developer.android.com](https://developer.android.com). This site
 provides the information and tools you need to write applications for
 compatible Android devices, using the SDK.
 

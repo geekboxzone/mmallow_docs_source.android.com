@@ -128,7 +128,7 @@ with Java 1.5, `make` will abort with a message such as
     The correct version is: RIGHT_VERSION.
  
     Please follow the machine setup instructions at
-        http://source.android.com/download
+        https://source.android.com/source/download.html
     ************************************************************
 
 This may be caused by
