@@ -208,3 +208,13 @@ branch, which can be built on MacOS 10.7.
 
     $ repo init -b master
     $ repo sync
+
+## Build error on MacOS with XCode 4.3. ##
+
+**Symptom**: All builds fail when using XCode 4.3.
+
+**Cause**: XCode 4.3 switched the default compiler from
+gcc to llvm, and llvm rejects code that used to be
+accepted by gcc.
+
+**Fix**: Use XCode 4.2.
