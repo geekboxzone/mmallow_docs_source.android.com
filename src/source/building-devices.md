@@ -113,6 +113,10 @@ downloaded from
 [Google's Nexus driver page](http://code.google.com/android/nexus/drivers.html),
 which add access to additional hardware capabilities with non-Open-Source code.
 
+When a device is suppoted in the master branch, the binaries for the most
+recent numbered release are the ones that should be used in the master
+branch.
+
 There are no official binaries for Nexus One, ADP2 or ADP1.
 
 ### Extracting the proprietary binaries ###
@@ -139,15 +143,15 @@ are described in the page about [Building](building.html).
 The recommended builds for the various devices are available through
 the lunch menu, accessed when running the `lunch` command with no arguments:
 
-Device   | Branch             | Build configuration
----------|--------------------|------------------------
-maguro   | android-4.0.4_r1.1 | full_maguro-userdebug
-panda    | master             | full_panda-userdebug
-wingray  | android-4.0.4_r1.1 | full_wingray-userdebug
-crespo   | android-4.0.4_r1.1 | full_crespo-userdebug
-passion  | android-2.3.7_r1   | full_passion-userdebug
-sapphire | android-2.2.3_r1   | full_sapphire-userdebug
-dream    | android-2.2.3_r1   | full_dream-userdebug
+Device   | Branch                       | Build configuration
+---------|------------------------------|------------------------
+maguro   | android-4.0.4_r1.1 or master | full_maguro-userdebug
+panda    | master                       | full_panda-userdebug
+wingray  | android-4.0.4_r1.1 or master | full_wingray-userdebug
+crespo   | android-4.0.4_r1.1 or master | full_crespo-userdebug
+passion  | android-2.3.7_r1             | full_passion-userdebug
+sapphire | android-2.2.3_r1             | full_sapphire-userdebug
+dream    | android-2.2.3_r1             | full_dream-userdebug
 
 ## Flashing a device ##
 
