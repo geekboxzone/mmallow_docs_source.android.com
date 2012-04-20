@@ -70,6 +70,62 @@ large amounts of data getting transfered.
 and explicitly using `repo sync -j1` have been reported to
 improve the situation for some users.
 
+## Difficulties syncing the source tree (VirtualBox Ethernet issues). ##
+
+**Symptom**: When running `repo sync` in some VirtualBox installations,
+the process hangs or fails with a variety of possible symptoms.
+One such symptom is
+`DownloadError: HTTP 500 (Internal Server Error: Server got itself in trouble)`.
+
+**Cause**: The default network behavior of VirtualBox is to use
+NAT (Network Addrss Translation) to connect the guest system to
+the network. The heavy network activity of repo sync triggers some
+corner cases in the NAT code.
+
+**Fix**: Configure VirtualBox to use bridged network instead of NAT.
+
+## Difficulties syncing the source tree (DNS issues). ##
+
+**Symptom**: When running `repo sync`, the process fails with
+various errors related to not recognizing the hostname. One such
+error is `<urlopen error [Errno -2] Name or service not known>`.
+
+**Cause**: Some DNS systems have a hard time coping with the
+high number of queries involved in syncing the source tree
+(there can be several hundred requests in a worst-case scenario).
+
+**Fix**: Manually resolve the relevant hostnames, and hard-code
+those results locally.
+
+You can resolve them with the `nslookup` command, which will give
+you one numerical IP address for each of those (typically in the
+"Address" part of the output).
+
+    $ nslookup googlesource.com
+    $ nslookup android.googlesource.com
+
+You can then hard-code them locally by editing `/etc/hosts`, and
+adding two lines in that file, of the form:
+
+    aaa.bbb.ccc.ddd googlesource.com
+    eee.fff.ggg.hhh android.googlesource.com
+
+Note that this will only work as long as the servers' addresses
+don't change, and if they do and you can't connect you'll have
+to resolve those hostnames again and edit `etc/hosts` accordingly.
+
+## Difficulties syncing the source tree (TCP issues). ##
+
+**Symptom**: `repo sync` hangs while syncing, often when it's
+completed 99% of the sync.
+
+**Cause**: Some settings in the TCP/IP stack cause difficulties
+in some network environments, such that `repo sync` neither completes
+nor fails.
+
+**Fix**: On linux, `sysctl -w net.ipv4.tcp_window_scaling=0`. On
+MacOS, disable the rfc1323 extension in the network settings.
+
 ## `make snod` and emulator builds. ##
 
 **Symptom**: When using `make snod` (make system no dependencies)
@@ -97,3 +153,44 @@ viruses.
 **Fix**: After verifying that there are no actual viruses
 involved, disable anti-virus on the Android tree. This has
 the added benefit of reducing build times.
+
+## Camera, GPS and NFC don't work on Galaxy Nexus. ##
+
+**Symptom**: Camera, GPS and NFC don't work on Galaxy Nexus.
+As an example, the Camera application crashes as soon as it's
+launched.
+
+**Cause**: Those hardware peripherals require proprietary
+libraries that aren't available in the Android Open Source
+Project.
+
+**Fix**: None.
+
+## Build errors related to using the wrong compiler. ##
+
+**Symptom**: The build fails with various symptoms. One
+such symptom is `cc1: error: unrecognized command line option "-m32"`
+
+**Cause**: The Android build system uses the default compiler
+in the PATH, assuming it's a suitable compiler to generate
+binaries that run on the host. Other situations (e.g. using
+the Android NDK or building the kernel) cause the default
+compiler to not be a host compiler.
+
+**Fix**: Use a "clean" shell, in which no previous
+actions could have swapped the default compiler.
+
+## Build errors caused by non-default tool settings. ##
+
+**Symptom**: The build fails with various symptoms, possibly
+complinaing about missing files or files that have the
+wrong format. One such symptom is `member [...] in archive is not an object`.
+
+**Cause**: The Android build system tends to use many host tools
+and to rely on their default behaviors. Some settings change
+those tools' behaviors and make them behave in ways that
+confuse the build system. Variables known to cause such
+issues are `CDPATH` and `GREP_OPTIONS`.
+
+**Fix**: Build Android in an environment that has as few
+customizations as possible.
