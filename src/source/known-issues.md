@@ -194,3 +194,17 @@ issues are `CDPATH` and `GREP_OPTIONS`.
 
 **Fix**: Build Android in an environment that has as few
 customizations as possible.
+
+## Build error with 4.0.x and earlier on MacOS 10.7. ##
+
+**Symptom**: Building IceCreamSandwich 4.0.x (and older
+versions) fails on MacOS 10.7 with errors similar to this:
+`Undefined symbols for architecture i386: "_SDL_Init"`
+
+**Cause**: 4.0.x is not compatible with MacOS 10.7.
+
+**Fix**: Either downgrade to MacOS 10.6, or use the master
+branch, which can be built on MacOS 10.7.
+
+    $ repo init -b master
+    $ repo sync
