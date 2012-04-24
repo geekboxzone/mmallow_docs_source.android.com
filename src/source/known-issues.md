@@ -84,3 +84,16 @@ re-optimize the applications each time the framework changes.
 versions with `make installclean` and run a full build to
 re-generate non-optimized versions. After that, `make snod`
 will work.
+
+## "Permission Denied" during builds. ##
+
+**Symptom**: All builds fail with "Permission Denied", possibly
+along with anti-virus warnings.
+
+**Cause**: Some anti-virus programs mistakenly recognize some
+source files in the Android source tree as if they contained
+viruses.
+
+**Fix**: After verifying that there are no actual viruses
+involved, disable anti-virus on the Android tree. This has
+the added benefit of reducing build times.
