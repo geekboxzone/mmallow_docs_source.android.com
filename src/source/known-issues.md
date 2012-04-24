@@ -69,3 +69,18 @@ large amounts of data getting transfered.
 **Fix**: While there's no general solution, using python 2.7
 and explicitly using `repo sync -j1` have been reported to
 improve the situation for some users.
+
+## `make snod` and emulator builds. ##
+
+**Symptom**: When using `make snod` (make system no dependencies)
+on emulator builds, the resulting build doesn't work.
+
+**Cause**: All emulator builds now run Dex optimization at build
+time by default, which requires to follow all dependencies to
+re-optimize the applications each time the framework changes.
+
+**Fix**: Locally disable Dex optimizations with
+`export WITH_DEXPREOPT=false`, delete the existing optimized
+versions with `make installclean` and run a full build to
+re-generate non-optimized versions. After that, `make snod`
+will work.
