@@ -53,7 +53,7 @@ Provide arguments to CTS to immediately start executing a test:
 ## Writing CTS Tests ##
 
 CTS tests use JUnit and the Android testing APIs. Review the 
-[Testing and Instrumentation](http://d.android.com/guide/topics/testing/testing_android.html) 
+[Testing and Instrumentation](https://developer.android.com/guide/topics/testing/testing_android.html)
 tutorial while perusing the existing tests under the
 `cts/tests/tests` directory. You will see that CTS tests mostly follow the same
 conventions used in other Android tests.

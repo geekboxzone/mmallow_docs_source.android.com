@@ -165,7 +165,7 @@ however, we'll be sure to update this page as well.
 
 Finally, you should be aware that for a variety of reasons, there are
 actually multiple issue trackers for Android-related issues. The 
-[Google Code Project Hosting Issue Tracker](http://code.google.com/p/android/issues/list) 
+[Google Code Project Hosting Issue Tracker](https://code.google.com/p/android/issues/list)
 is the *only* official public issue tracker; however,
 Google also maintains a private issue tracker, own, as do most OEMs. We try to
 keep the public issue tracker in sync with private issue trackers

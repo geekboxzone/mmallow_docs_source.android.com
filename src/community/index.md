@@ -30,7 +30,7 @@ for help with your phone.
 
 Please note that if you're looking for information about building
 applications for Android, you can find a separate set of groups for those at
-our sister site, developer.android.com: [http://developer.android.com/community/index.html]
+our sister site, developer.android.com: [https://developer.android.com/resources/community-groups.html]
 
 ## Getting the Most from Our Lists ##
 
@@ -49,42 +49,42 @@ Please consider the following before you post to our lists.
 
 - *android-platform*: 
     This list is for general discussion about the Android open-source project or the platform technologies.
-    - Subscribe using Google Groups: [android-platform](http://groups.google.com/group/android-platform)
+    - Subscribe using Google Groups: [android-platform](https://groups.google.com/forum/?fromgroups#!forum/android-platform)
     - Subscribe via email: [android-platform](mailto:android-platform+subscribe@googlegroups.com)
 
 - *android-building*:
     Subscribe to this list for discussion and help on building the Android source code, and on the build system. If you've just checked out the source code and have questions about how to turn it into binaries, start here.
-    - Subscribe using Google Groups: [android-building](http://groups.google.com/group/android-building)
+    - Subscribe using Google Groups: [android-building](https://groups.google.com/forum/?fromgroups#!forum/android-building)
     - Subscribe via email: [android-building](mailto:android-building+subscribe@googlegroups.com)
 
 - *android-porting*:
     This list is for developers who want to port Android to a new device. If you're wondering how to combine the Android source code with your hardware, this is the right group for you. Discuss here the specifics of porting Android to individual devices, from obtaining toolchains and merging kernel drivers all the way to configuring or modifying applications for your specific
 configuration.
-    - Subscribe using Google Groups: [android-porting](http://groups.google.com/group/android-porting)
+    - Subscribe using Google Groups: [android-porting](https://groups.google.com/forum/?fromgroups#!forum/android-porting)
     - Subscribe via email: [android-porting](mailto:android-porting+subscribe@googlegroups.com)
 
 - *android-contrib*:
     This list is for developers who want to contribute code to Android. This is a working list, and is not appropriate for general discussion. We ask that general discussion go to android-platform.  Note: contributors to the Android kernel should go to the android-kernel list, below.
-    - Subscribe using Google Groups: [android-contrib](http://groups.google.com/group/android-contrib)
+    - Subscribe using Google Groups: [android-contrib](https://groups.google.com/forum/?fromgroups#!forum/android-contrib)
     - Subscribe via email: [android-contrib](mailto:android-contrib+subscribe@googlegroups.com)
 
 - *android-kernel*:
     This list is for deveopers who want to contribute to the Linux kernel that Android devices use. If you've downloaded the kernel code, if you know how to compile it, if you want to write kernel code to specifically support Android,
 this is your place. This group isn't for user-space topics (see android-platform for that), and people will shake their fingers at you and call you naughty if you ask user-space questions here.
-    - Subscribe using Google Groups: [android-kernel](http://groups.google.com/group/android-kernel)
+    - Subscribe using Google Groups: [android-kernel](https://groups.google.com/forum/?fromgroups#!forum/android-kernel)
     - Subscribe via email: [android-kernel](mailto:android-kernel+subscribe@googlegroups.com)
 
 ## Using email with Google Groups ##
 
-Instead of using the [Google groups](http://groups.google.com) site, you can use your email client of choice to participate in the mailing lists.
+Instead of using the [Google groups](https://groups.google.com/) site, you can use your email client of choice to participate in the mailing lists.
 
 To subscribe to a group without using the Google Groups site, use the link under "subscribe via email" in the lists above.
 
 To set up how you receive mailing list postings by email:
 
-1. Sign into the group via the Google Groups site. For example, for the android-platform group you would [http://groups.google.com/group/android-platform].
+1. Sign into the group via the Google Groups site. For example, for the android-platform group you would use [https://groups.google.com/forum/?fromgroups#!forum/android-platform].
 
-1. Click "Edit my membership" on the right side.
+1. Click "My membership" on the right side.
 
 1. Under "How do you want to read this group?" select one of the email options.
 
