@@ -23,7 +23,7 @@ The supported devices with the current release are the Galaxy Nexus, Motorola
 Xoom, and Nexus S.
 
 Galaxy Nexus is supported only in GSM/HSPA+ configuration "maguro" and only
-if it was originally sold with a "yakju" operating system.
+if it was originally sold with a "yakju" or "takju" operating system.
 
 The Motorola Xoom is supported in the Wi-fi configuration "wingray"
 sold in the USA.
@@ -248,7 +248,7 @@ delete the `version-bootloader` and `version-baseband` lines in
 ## Restoring a device to its original factory state ##
 
 Factory images
-for Galaxy Nexus (GSM/HSPA+ "yakju" and CDMA/LTE "mysid")
+for Galaxy Nexus (GSM/HSPA+ "yakju" and "takju", and CDMA/LTE "mysid")
 and
 for Nexus S (all variants)
 are available from
