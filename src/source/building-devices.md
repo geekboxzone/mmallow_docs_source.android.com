@@ -145,10 +145,10 @@ the lunch menu, accessed when running the `lunch` command with no arguments:
 
 Device   | Branch                       | Build configuration
 ---------|------------------------------|------------------------
-maguro   | android-4.0.4_r1.1 or master | full_maguro-userdebug
+maguro   | android-4.0.4_r1.2 or master | full_maguro-userdebug
 panda    | master                       | full_panda-userdebug
-wingray  | android-4.0.4_r1.1 or master | full_wingray-userdebug
-crespo   | android-4.0.4_r1.1 or master | full_crespo-userdebug
+wingray  | android-4.0.4_r1.2 or master | full_wingray-userdebug
+crespo   | android-4.0.4_r1.2 or master | full_crespo-userdebug
 passion  | android-2.3.7_r1             | full_passion-userdebug
 sapphire | android-2.2.3_r1             | full_sapphire-userdebug
 dream    | android-2.2.3_r1             | full_dream-userdebug
@@ -204,6 +204,7 @@ Android Version | Preferred Bootloader | Preferred Radio | Also possible
 2.3.6 (GRK39F)  | I9020XXKA3           | I9020XXKF1      | All previous versions
 4.0.3 (IML74K)  | I9020XXKL1           | I9020XXKI1      | All previous versions
 4.0.4 (IMM76D)  | I9020XXKL1           | I9020XXKI1
+4.0.4 (IMM76I)  | I9020XXKL1           | I9020XXKI1
 
 Nexus S (850MHz version "UC", i9020a):
 
@@ -216,6 +217,7 @@ Android Version | Preferred Bootloader | Preferred Radio | Also possible
 2.3.6 (GRK39F)  | I9020XXKA3           | I9020UCKF1      | All previous versions
 4.0.3 (IML74K)  | I9020XXKL1           | I9020UCKF1      | All previous versions
 4.0.4 (IMM76D)  | I9020XXKL1           | I9020UCKJ1
+4.0.4 (IMM76I)  | I9020XXKL1           | I9020UCKJ1
 
 Nexus S (Korea version "KR", m200):
 
@@ -227,6 +229,7 @@ Android Version | Preferred Bootloader | Preferred Radio | Also possible
 2.3.6 (GRK39F)  | I9020XXKA3           | M200KRKC1       | All previous versions
 4.0.3 (IML74K)  | I9020XXKL1           | M200KRKC1       | All previous versions
 4.0.4 (IMM76D)  | I9020XXKL1           | M200KRKC1       | Versions from 2.3.6
+4.0.4 (IMM76I)  | I9020XXKL1           | M200KRKC1       | Versions from 2.3.6
 
 Galaxy Nexus (GSM/HSPA+):
 
@@ -236,6 +239,7 @@ Android Version | Preferred Bootloader | Preferred Radio | Also possible
 4.0.2 (ICL53F)  | PRIMEKK15            | I9250XXKK6      | All previous versions
 4.0.3 (IML74K)  | PRIMEKL01            | I9250XXKK6      | All previous versions
 4.0.4 (IMM76D)  | PRIMEKL03            | I9250XXLA02
+4.0.4 (IMM76I)  | PRIMEKL03            | I9250XXLA02
 
 If you're building a new version of Android, if your Nexus S or
 Galaxy Nexus has
