@@ -194,3 +194,43 @@ issues are `CDPATH` and `GREP_OPTIONS`.
 
 **Fix**: Build Android in an environment that has as few
 customizations as possible.
+
+## Build error with 4.0.x and earlier on MacOS 10.7. ##
+
+**Symptom**: Building IceCreamSandwich 4.0.x (and older
+versions) fails on MacOS 10.7 with errors similar to this:
+`Undefined symbols for architecture i386: "_SDL_Init"`
+
+**Cause**: 4.0.x is not compatible with MacOS 10.7.
+
+**Fix**: Either downgrade to MacOS 10.6, or use the master
+branch, which can be built on MacOS 10.7.
+
+    $ repo init -b master
+    $ repo sync
+
+## Build error on MacOS with XCode 4.3. ##
+
+**Symptom**: All builds fail when using XCode 4.3.
+
+**Cause**: XCode 4.3 switched the default compiler from
+gcc to llvm, and llvm rejects code that used to be
+accepted by gcc.
+
+**Fix**: Use XCode 4.2.
+
+## Build error with 4.0.x and earlier on Ubuntu 11.10. ##
+
+**Symptom**: Building IceCreamSandwich 4.0.x (and older
+versions) on Ubuntu 11.10 and newer fails with errors similar to this:
+`<command-line>:0:0: warning: "_FORTIFY_SOURCE" redefined [enabled by default]`
+
+**Cause**: Ubuntu 11.10 uses a version of gcc where that symbol
+is defined by default, and Android also defines that symbol,
+which causes a conflict.
+
+**Fix**: Either downgrade to Ubuntu 10.04, or use the master
+branch, which can be compiled on Ubuntu 11.10 and newer.
+
+    $ repo init -b master
+    $ repo sync
