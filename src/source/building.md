@@ -145,14 +145,6 @@ Repo is built on particular functionality from Python 2.x and is unfortunately i
 
     $ apt-get install python
 
-## Gmake Version 3.82 ##
-
-There is a bug in `make` version 3.82 on Mac OS that prevents building Android. 
-
-TODO: what the error looks like with GNU make 3.82 on older builds that don't explicitly detect it.
-
-Follow the instructions on the [Initializing](initializing.html) page for reverting GNU make from 3.82 to 3.81.
-
 ## Case Insensitive Filesystem ##
 
 If you are building on an HFS filesystem on Mac OS X, you may encounter an error such as
