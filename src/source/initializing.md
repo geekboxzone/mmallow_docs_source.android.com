@@ -170,6 +170,39 @@ the source code.
 
 This setting is stored in the CCACHE_DIR and is persistent.
 
+## Using a separate output directory ##
+
+By default, the output of each build is stored in the out/
+subdirectory of the matching source tree.
+
+On some machines with multiple storage devices, builds are
+faster when storing the source files and the output on
+separate volumes. For additional performance, the output
+can be stored on a filesystem optimized for speed instead
+of crash robustness, since all files can be re-generated
+in case of filesystem corruption.
+
+To set this up, export the `OUT_DIR_COMMON_BASE` variable
+to point to the location where your output directories
+will be stored.
+
+    export OUT_DIR_COMMON_BASE=<path-to-your-out-directory>
+
+The output directory for each separate source tree will be
+named after the directory holding the source tree.
+
+For instance, if you have source trees as `/source/master1`
+and `/source/master2` and `OUT_DIR_COMMON_BASE` is set to
+`/output`, the output directories will be `/output/master1`
+and `/output/master2`.
+
+It's important in that case to not have multiple source
+trees stored in directories that have the same name,
+as those would end up sharing an output directory, with
+unpredictable results.
+
+This is only supported on branches newer than 4.0.x
+(IceCreamSandwich).
 
 # Setting up a Mac OS X build environment #
 
