@@ -38,6 +38,18 @@ made directly to that project, as described in [Upstream Projects](#upstream-pro
 
 # For contributors #
 
+## Authenticate with the server ##
+
+Before you can upload to Gerrit, you need to establish a password that
+will identify you with the server. You only need to do this once.
+
+- Sign in on the [AOSP Gerrit Server](https://android-review.googlesource.com/).
+
+- Go to Settings -> HTTP Password -> Obtain Password
+
+- Follow the instructions on the subsquent pages, and copy-paste your
+password in `~/.netrc`. If there are two password lines, copy both.
+
 ## Start a repo branch ##
 
 For each change you intend to make, start a new branch within the relevant git repository:
