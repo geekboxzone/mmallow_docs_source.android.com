@@ -45,12 +45,17 @@ a later step.
 Depending on which kernel you want,
 
     $ git clone https://android.googlesource.com/kernel/common.git
+    $ git clone https://android.googlesource.com/kernel/exynos.git
     $ git clone https://android.googlesource.com/kernel/goldfish.git
     $ git clone https://android.googlesource.com/kernel/msm.git
     $ git clone https://android.googlesource.com/kernel/omap.git
     $ git clone https://android.googlesource.com/kernel/samsung.git
     $ git clone https://android.googlesource.com/kernel/tegra.git
 
+The goldfish project contains the kernel sources for the emulated
+platforms. The msm project has the sources for ADP1, ADP2 and
+Nexus One. The omap project is used for PandaBoard and Galaxy Nexus,
+the samsung project for Nexus S, and the tegra project for Xoom.
 
 ## Downloading a prebuilt gcc ##
 
