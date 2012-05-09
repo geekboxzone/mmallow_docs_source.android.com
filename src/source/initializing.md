@@ -146,6 +146,8 @@ over USB.
     # fastboot protocol on panda (PandaBoard)
     SUBSYSTEM=="usb", ATTR{idVendor}=="0451", ATTR{idProduct}=="d022", MODE="0600", OWNER="<username>"
     # usbboot protocol on panda (PandaBoard)
+    SUBSYSTEM=="usb", ATTR{idVendor}=="0451", ATTR{idProduct}=="d00f", MODE="0600", OWNER="<username>"
+    # usbboot protocol on panda (PandaBoard ES)
     SUBSYSTEM=="usb", ATTR{idVendor}=="0451", ATTR{idProduct}=="d010", MODE="0600", OWNER="<username>"
 
 Those new rules take effect the next time a device is plugged in.
