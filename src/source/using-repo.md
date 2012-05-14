@@ -39,7 +39,7 @@ Installs Repo in the current directory. This creates a `.repo/` directory that c
 
 Options:
 
-* `-u`: specify a URL from which to retrieve a manifest repository. The common manifest can be found at `git://android.git.kernel.org/platform/manifest.git`
+* `-u`: specify a URL from which to retrieve a manifest repository. The common manifest can be found at `https://android.googlesource.com/platform/manifest`
 
 * `-m`: select a manifest file within the repository. If no manifest name is selected, the default is default.xml. 
 
