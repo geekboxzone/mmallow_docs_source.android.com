@@ -121,7 +121,7 @@ system needs to be configured to allow such access.
 
 The recommended approach is to create a file
 `/etc/udev/rules.d/51-android.rules` (as the root user) and to copy
-the following lines in it. <username> must be replaced by the
+the following lines in it. `<username>` must be replaced by the
 actual username of the user who is authorized to access the phones
 over USB.
 
