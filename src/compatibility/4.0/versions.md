@@ -34,3 +34,5 @@ allowable by an Android 4.0-based system. The only permitted values for
 - 4.0.1
 
 - 4.0.3
+
+- 4.0.4
