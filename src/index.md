@@ -28,14 +28,12 @@ installation on new and existing devices, and allows hobbyists, enthusiasts,
 and researchers to develop custom builds. For information on how to obtain the
 software, visit our [Getting the Source](source/downloading.html) page.
 
-### Compatibility Definition for Android 2.3 ###
+### Compatibility Definition for Android 4.0 ###
 
-The Compatibility Definition Document for Android 2.3.3 has been published. 
-Android 2.3 allows device manufacturers to use the Android source code to ship
-a significantly wider variety of devices, including devices with extra-large
-screens, such as tablets. Android 2.3.3 adds enhanced Near-Field
-Communications support to the Android APIs. For more information, visit the 
-[Compatibility](compatibility/index.html) page.
+The Compatibility Definition Document for Android 4.0 has been published. 
+Android 4.0 allows device manufacturers to use the Android source code to ship
+a significantly wider variety of devices including phones and tablets. 
+For more information, visit the [Compatibility](compatibility/index.html) page.
 
 </div>
 
