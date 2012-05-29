@@ -45,6 +45,10 @@ Ubuntu LTS (10.04), but most distributions should have the required
 build tools available. Reports of successes or failures on other
 distributions are welcome.
 
+For Gingerbread (2.3.x) and newer versions, including the master
+branch, a 64-bit environment is required. Older versions can be
+compiled on 32-bit systems.
+
 *Note: It is also possible to build Android in a virtual machine.
 If you are running Linux in a virtual machine, you will need at
 least 16GB of RAM/swap and 30GB or more of disk space in order to
