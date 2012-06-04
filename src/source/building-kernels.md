@@ -52,10 +52,18 @@ Depending on which kernel you want,
     $ git clone https://android.googlesource.com/kernel/samsung.git
     $ git clone https://android.googlesource.com/kernel/tegra.git
 
-The goldfish project contains the kernel sources for the emulated
-platforms. The msm project has the sources for ADP1, ADP2 and
-Nexus One. The omap project is used for PandaBoard and Galaxy Nexus,
-the samsung project for Nexus S, and the tegra project for Xoom.
+  - The `goldfish` project contains the kernel sources for the emulated
+platforms.
+  - The `msm` project has the sources for ADP1, ADP2, Nexus One, and
+can be used as a starting point for work on Qualcomm MSM chipsets.
+  - The `omap` project is used for PandaBoard and Galaxy Nexus, and
+can be used as a starting point for work on TI OMAP chipsets.
+  - The `samsung` project is used for Nexus S and can be used as a
+starting point for work on Samsung Hummingbird chipsets.
+  - The `tegra` project is for Xoom, and can be used as a starting
+point for work on NVIDIA Tegra chipsets.
+  - The `exynos` project can be used as a starting point for work
+on Samsung Exynos chipsets.
 
 ## Downloading a prebuilt gcc ##
 
