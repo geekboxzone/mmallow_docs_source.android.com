@@ -88,6 +88,10 @@ As an example, we would build the panda kernel using the following commands:
 To build the tuna kernel, you may run the previous commands replacing all
 instances of "panda" with "tuna".
 
-The image is output as arch/arm/boot/zImage.  You may copy it as
-device/<vendor>/<name>/kernel or device/ti/panda/kernel in the case of this
+  - The kernel for maguro and toro is `device/samsung/tuna/kernel`
+  - The kernel for crespo and crespo4g is `device/samsung/crespo/kernel`
+  - The kernel for stingray and wingray is `device/moto/wingray/kernel`
+
+The image is output as `arch/arm/boot/zImage`.  You may copy it as
+`device/<vendor>/<name>/kernel` or `device/ti/panda/kernel` in the case of this
 example.
