@@ -32,12 +32,8 @@ To install, initialize, and configure Repo, follow these steps:
         $ curl https://dl-ssl.google.com/dl/googlesource/git-repo/repo > ~/bin/repo
         $ chmod a+x ~/bin/repo
 
- - For version 1.16, the SHA-1 checksum for repo is
- 19ba8290344752da23e00cfb2b26afb43b463fe6
-
- - *Note: an incorrect SHA-1 checksum had been published
- for repo version 1.16. That version of repo was not
- harmful, but it pointed to the wrong back-end server.*
+ - For version 1.17, the SHA-1 checksum for repo is
+ ddd79b6d5a7807e911b524cb223bc3544b661c28
 
 
 ## Initializing a Repo client ##
