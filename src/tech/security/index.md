@@ -321,7 +321,7 @@ corruption issues significantly harder to exploit, including:
 
 + Address Space Layout Randomization (ASLR) to randomize key locations in memory
 + Hardware-based No eXecute (NX) to prevent code execution on the stack and heap
-+ ProPolice to prevent stack buffer overruns
++ ProPolice to prevent stack buffer overruns (-fstack-protector)
 + safe_iop to reduce integer overflows
 + Extensions to OpenBSD dlmalloc to prevent double free() vulnerabilities and
 to prevent chunk consolidation attacks.  Chunk consolidation attacks are a
@@ -329,6 +329,7 @@ common way to exploit heap corruption.
 + OpenBSD calloc to prevent integer overflows during memory allocation
 + Linux mmap_min_addr() to mitigate null pointer dereference privilege
 escalation
++ Format string vulnerability protections (-Wformat-security -Werror=format-security)
 
 ##Rooting of Devices
 
