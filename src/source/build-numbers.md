@@ -112,7 +112,9 @@ IML74K | android-4.0.3_r1   | Nexus S
 IML77  | android-4.0.3_r1.1 |
 IMM76  | android-4.0.4_r1   |
 IMM76D | android-4.0.4_r1.1 | Nexus S, Nexus S 4G, Galaxy Nexus
-IMM76I | android-4.0.4_r1.2 | Galaxy Nexus, latest IceCreamSandwich version
+IMM76I | android-4.0.4_r1.2 | Galaxy Nexus
+IMM76K | android-4.0.4_r2   | Galaxy Nexus
+IMM76L | android-4.0.4_r2.1 | latest IceCreamSandwich version
 
 The branches froyo, gingerbread, ics-mr0, ics-mr1, represent development
 branches that do not exactly match configurations that were tested
