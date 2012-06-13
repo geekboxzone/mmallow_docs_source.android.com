@@ -14,19 +14,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import os
+import codecs
 import glob
+import markdown
+import os
 import shutil
 import string
 import subprocess
-
-
-# call markdown as a subprocess, and capture the output
-def markdown(raw_file):
-  extensions = '-x tables -x "toc(title=In This Document)" -x def_list'
-  command = 'markdown' + ' ' + extensions + ' ' + raw_file
-  p = subprocess.Popen(command, stdout = subprocess.PIPE, shell = True)
-  return p.communicate()[0]
 
 
 # read just the title (first heading) from a source page
@@ -63,6 +57,11 @@ os.mkdir(HTML_DIR)
 category = 'home'
 parents = {}
 for curdir, subdirs, files in os.walk(SRC_DIR):
+  def md(path):
+    text = codecs.open(path, encoding='utf8').read()
+    extensions = ['tables', 'def_list', 'toc(title=In This Document)']
+    return markdown.markdown(text, extensions)
+
   print 'Processing %s...'  % (curdir,),
   # Step A: split path, and update cached category name if needed
   curdir = os.path.normpath(curdir)
@@ -86,19 +85,19 @@ for curdir, subdirs, files in os.walk(SRC_DIR):
     parent = ('', '', '')
 
   if 'sidebar.md' in files:
-    sidebar = markdown(os.path.join(curdir, 'sidebar.md'))
+    sidebar = md(os.path.join(curdir, 'sidebar.md'))
     del files[files.index('sidebar.md')]
   else:
     sidebar = parent[0]
 
   if 'sidebar2.md' in files:
-    sidebar2 = markdown(os.path.join(curdir, 'sidebar2.md'))
+    sidebar2 = md(os.path.join(curdir, 'sidebar2.md'))
     del files[files.index('sidebar2.md')]
   else:
     sidebar2 = parent[1]
 
   if 'sidebar3.md' in files:
-    sidebar3 = markdown(os.path.join(curdir, 'sidebar3.md'))
+    sidebar3 = md(os.path.join(curdir, 'sidebar3.md'))
     del files[files.index('sidebar3.md')]
   else:
     sidebar3 = parent[2]
@@ -112,15 +111,14 @@ for curdir, subdirs, files in os.walk(SRC_DIR):
     absfilename = os.path.join(curdir, f)
 
     if f.endswith('.md'):
-      main = markdown(absfilename)
+      main = md(absfilename)
       final = template.safe_substitute(main=main, sidebar=sidebar, sidebar2=sidebar2, \
           sidebar3=sidebar3, category=category, title=get_title(absfilename))
 
-      html = file(os.path.join(outdir, f.replace('.md', '.html')), 'w')
+      html = codecs.open(os.path.join(outdir, f.replace('.md', '.html')), 'w', encoding="utf8")
       html.write(final)
     else:
       shutil.copy(absfilename, os.path.join(outdir, f))
   print
 
 print 'Done.'
-
