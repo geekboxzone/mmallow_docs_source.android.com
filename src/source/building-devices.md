@@ -244,10 +244,10 @@ Android Version | Preferred Bootloader | Preferred Radio | Also possible
 4.0.1 (ITL41D)  | PRIMEKJ10            | I9250XXKK1
 4.0.2 (ICL53F)  | PRIMEKK15            | I9250XXKK6      | All previous versions
 4.0.3 (IML74K)  | PRIMEKL01            | I9250XXKK6      | All previous versions
-4.0.4 (IMM76D)  | PRIMEKL03            | I9250XXLA02
-4.0.4 (IMM76I)  | PRIMEKL03            | I9250XXLA02
-4.0.4 (IMM76K)  | PRIMEKL03            | I9250XXLA02
-4.0.4 (IMM76L)  | PRIMEKL03            | I9250XXLA02
+4.0.4 (IMM76D)  | PRIMELA03            | I9250XXLA02
+4.0.4 (IMM76I)  | PRIMELA03            | I9250XXLA02
+4.0.4 (IMM76K)  | PRIMELA03            | I9250XXLA02
+4.0.4 (IMM76L)  | PRIMELA03            | I9250XXLA02
 
 If you're building a new version of Android, if your Nexus S or
 Galaxy Nexus has
