@@ -62,7 +62,7 @@ The following paths are consulted in order.
 *   `/data/system/devices/idc/DEVICE_NAME.idc`
 
 When constructing a file path that contains the device name, all characters
-in the device name other than '0'-'9', 'a'-'z', 'A'-'Z', '-' or '_' are replaced by '_'.
+in the device name other than '0'-'9', 'a'-'z', 'A'-'Z', '-' or '\_' are replaced by '\_'.
 
 ## Syntax ##
 
