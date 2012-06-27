@@ -1,4 +1,4 @@
-﻿[TOC]
+[TOC]
 #Android Security Overview
 
 ##Introduction
@@ -319,17 +319,32 @@ Android includes many features that make common security issues harder to
 exploit. The Android SDK, compilers, and OS use tools to make common memory
 corruption issues significantly harder to exploit, including:
 
-+ Address Space Layout Randomization (ASLR) to randomize key locations in memory
-+ Hardware-based No eXecute (NX) to prevent code execution on the stack and heap
+**Android 2.2+**
+
 + ProPolice to prevent stack buffer overruns (-fstack-protector)
 + safe_iop to reduce integer overflows
 + Extensions to OpenBSD dlmalloc to prevent double free() vulnerabilities and
 to prevent chunk consolidation attacks.  Chunk consolidation attacks are a
 common way to exploit heap corruption.
 + OpenBSD calloc to prevent integer overflows during memory allocation
-+ Linux mmap_min_addr() to mitigate null pointer dereference privilege
-escalation
+
+**Android 2.3+**
+
 + Format string vulnerability protections (-Wformat-security -Werror=format-security)
++ Hardware-based No eXecute (NX) to prevent code execution on the stack and heap
++ Linux mmap_min_addr to mitigate null pointer dereference privilege
+escalation (further enhanced in Android 4.1)
+
+**Android 4.0+**
+
++ Address Space Layout Randomization (ASLR) to randomize key locations in memory
+
+**Android 4.1+**
+
++ PIE (Position Independent Executable) support
++ Read-only relocations / immediate binding (-Wl,-z,relro -Wl,-z,now)
++ dmesg_restrict enabled (avoid leaking kernel addresses)
++ kptr_restrict enabled (avoid leaking kernel addresses)
 
 ##Rooting of Devices
 
