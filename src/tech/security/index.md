@@ -319,7 +319,7 @@ Android includes many features that make common security issues harder to
 exploit. The Android SDK, compilers, and OS use tools to make common memory
 corruption issues significantly harder to exploit, including:
 
-**Android 2.2+**
+**Android 1.5+**
 
 + ProPolice to prevent stack buffer overruns (-fstack-protector)
 + safe_iop to reduce integer overflows
