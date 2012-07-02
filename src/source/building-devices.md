@@ -20,7 +20,7 @@ This page complements the main page about [Building](building.html) with
 information that is specific to individual devices.
 
 The supported devices with the current release are the Galaxy Nexus, Motorola
-Xoom, and Nexus S.
+Xoom, Nexus S and Nexus S 4G.
 
 Galaxy Nexus is supported only in GSM/HSPA+ configuration "maguro" and only
 if it was originally sold with a "yakju" or "takju" operating system.
@@ -28,7 +28,7 @@ if it was originally sold with a "yakju" or "takju" operating system.
 The Motorola Xoom is supported in the Wi-fi configuration "wingray"
 sold in the USA.
 
-Nexus S is supported in the GSM configuration "crespo".
+Nexus S is supported in all configurations. Nexus S 4G is supported.
 
 In addition, [PandaBoard](http://pandaboard.org) a.k.a. "panda" is supported
 in the master branch only, but is currently considered experimental.
@@ -78,7 +78,7 @@ It's only possible to flash a custom system if the bootloader allows it.
 
 This is the default setup on ADP1 and ADP2.
 
-On Nexus One, Nexus S, Xoom, and Galaxy Nexus,
+On Nexus One, Nexus S, Nexus S 4G, Xoom, and Galaxy Nexus,
 the bootloader is locked by default. With the device in fastboot mode, the
 bootloader is unlocked with
 
@@ -87,7 +87,7 @@ bootloader is unlocked with
 The procedure must be confirmed on-screen, and deletes the user data for
 privacy reasons. It only needs to be run once.
 
-Note that on the Nexus S, Motorola Xoom and on Galaxy Nexus,
+Note that on the Nexus S, Nexus S 4G, Motorola Xoom and on Galaxy Nexus,
 all data on the phone is erased, i.e. both the applications' private data
 and the shared data that is accessible over USB, including photos and
 movies. Be sure to make a backup of any precious files you have before
@@ -95,7 +95,7 @@ unlocking the bootloader.
 
 On Nexus One, the operation voids the warranty and is irreversible.
 
-On Nexus S, Xoom, and Galaxy Nexus,
+On Nexus S, Nexus S 4G, Xoom, and Galaxy Nexus,
 the bootloader can be locked back with
 
     $ fastboot oem lock
@@ -108,7 +108,7 @@ Starting with IceCreamSandwich, the Android Open-Source Project can't be used
 from pure source code only, and requires additional hardware-related proprietary
 libraries to run, specifically for hardware graphics acceleration.
 
-Official binaries for Nexus S, Galaxy Nexus, and PandaBoard can be
+Official binaries for Nexus S, Nexus S 4G, Galaxy Nexus, and PandaBoard can be
 downloaded from
 [Google's Nexus driver page](https://developers.google.com/android/nexus/drivers),
 which add access to additional hardware capabilities with non-Open-Source code.
@@ -183,9 +183,9 @@ optimally, and it is strongly recommended to re-create them through recovery
 Once in recovery, open the menu (press Power + Volume Up), wipe the cache
 partition, then wipe data.
 
-### Nexus S and Galaxy Nexus Bootloader and Cell Radio compatibility ###
+### Nexus S, Nexus S 4G and Galaxy Nexus Bootloader and Cell Radio compatibility ###
 
-On Nexus S, and Galaxy Nexus, each version of Android has only
+On Nexus S, Nexus S 4G and Galaxy Nexus, each version of Android has only
 been thoroughly tested with on specific version of the underlying bootloader
 and cell radio software.
 However, no compatibility issues are expected when running newer systems
@@ -237,6 +237,12 @@ Android Version | Preferred Bootloader | Preferred Radio | Also possible
 4.0.4 (IMM76K)  | I9020XXKL1           | M200KRKC1
 4.0.4 (IMM76L)  | I9020XXKL1           | M200KRKC1
 
+Nexus S 4G (CDMA/WiMAX version, d720):
+
+Android Version | Preferred Bootloader | Preferred Radio | Also possible
+----------------|----------------------|-----------------|--------------
+4.0.4 (IMM76L)  | D720SPRKE1           | D720SPRLC1
+
 Galaxy Nexus (GSM/HSPA+):
 
 Android Version | Preferred Bootloader | Preferred Radio | Also possible
@@ -249,7 +255,7 @@ Android Version | Preferred Bootloader | Preferred Radio | Also possible
 4.0.4 (IMM76K)  | PRIMELA03            | I9250XXLA02
 4.0.4 (IMM76L)  | PRIMELA03            | I9250XXLA02
 
-If you're building a new version of Android, if your Nexus S or
+If you're building a new version of Android, if your Nexus S, Nexus S 4G or
 Galaxy Nexus has
 an older bootloader and radio image that is marked as being also possible in
 the table above but is not recognized by fastboot, you can locally
