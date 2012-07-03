@@ -205,7 +205,7 @@ As a multiuser operating system, a fundamental security objective of the Linux
 kernel is to isolate user resources from one another.  The Linux security
 philosophy is to protect user resources from one another. Thus, Linux:
 
-+ Pevents user A from reading user B's files
++ Prevents user A from reading user B's files
 + Ensures that user A does not exhaust user B's memory
 + Ensures that user A does not exhaust user B's CPU resources
 + Ensures that user A does not exhaust user B's devices (e.g. telephony, GPS,
