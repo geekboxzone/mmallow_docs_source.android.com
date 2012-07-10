@@ -22,7 +22,7 @@ details on this issue tracker, please see the [Reporting Bugs](report-bugs.html)
 Reporting bugs is great (thank you!), but what happens to a bug report once
 you file it? This page describes the Life of a Bug.
 
-*lease note: the the Android Open Source Project (AOSP) issue tracker is
+*Please note: the Android Open Source Project (AOSP) issue tracker is
 intended only for bugs and feature requests related to the Android software
 stack. Because many users find their way here looking for the Google apps for
 Android (such as Gmail and so on), we have components set up for their
