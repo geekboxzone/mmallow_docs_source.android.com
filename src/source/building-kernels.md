@@ -60,8 +60,8 @@ can be used as a starting point for work on Qualcomm MSM chipsets.
 can be used as a starting point for work on TI OMAP chipsets.
   - The `samsung` project is used for Nexus S and can be used as a
 starting point for work on Samsung Hummingbird chipsets.
-  - The `tegra` project is for Xoom, and can be used as a starting
-point for work on NVIDIA Tegra chipsets.
+  - The `tegra` project is for Xoom and Nexus 7, and can be used as
+a starting point for work on NVIDIA Tegra chipsets.
   - The `exynos` project can be used as a starting point for work
 on Samsung Exynos chipsets.
 

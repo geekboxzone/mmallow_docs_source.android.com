@@ -18,9 +18,9 @@
 
 The "Getting Started" section describes how to set up your local work environment, how to use Repo to get the Android files, and how to build the files on your machine.  To build the Android source files, you will need to use Linux or Mac OS. Building under Windows is not currently supported.
 
-*Note: The source download is approximately 6GB in size.
-You will need 25GB free to complete a single build, and
-up to 90GB (or more) for a full set of builds.*
+*Note: The source download is approximately 8.5GB in size.
+You will need over 30GB free to complete a single build, and
+up to 100GB (or more) for a full set of builds.*
 
 For an overview of the entire code-review and code-update process, see [Life of a Patch](life-of-a-patch.html).
 
@@ -54,7 +54,7 @@ If you are running Linux in a virtual machine, you will need at
 least 16GB of RAM/swap and 30GB or more of disk space in order to
 build the Android tree.*
 
-In general you will need:
+Detailed instructions for Ubuntu and MacOS follow. In general you will need:
 
  - Python 2.5 -- 2.7, which you can download from [python.org](http://www.python.org/download/).
 
@@ -63,8 +63,6 @@ In general you will need:
  - JDK 6 if you wish to build Gingerbread or newer; JDK 5 for Froyo or older.  You can download both from [java.sun.com](http://java.sun.com/javase/downloads/).
 
  - Git 1.7 or newer. You can find it at [git-scm.com](http://git-scm.com/download).
-
-Detailed instructions for Ubuntu 10.04+ follow.
 
 ## Installing the JDK ##
 
@@ -154,6 +152,10 @@ over USB.
     SUBSYSTEM=="usb", ATTR{idVendor}=="0451", ATTR{idProduct}=="d00f", MODE="0600", OWNER="<username>"
     # usbboot protocol on panda (PandaBoard ES)
     SUBSYSTEM=="usb", ATTR{idVendor}=="0451", ATTR{idProduct}=="d010", MODE="0600", OWNER="<username>"
+    # adb protocol on grouper (Nexus 7)
+    SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4e42", MODE="0600", OWNER="<username>"
+    # fastboot protocol on grouper (Nexus 7)
+    SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4e40", MODE="0600", OWNER="<username>"
 
 Those new rules take effect the next time a device is plugged in.
 It might therefore be necessary to unplug the device and plug it
@@ -220,8 +222,8 @@ trees stored in directories that have the same name,
 as those would end up sharing an output directory, with
 unpredictable results.
 
-This is only supported on branches newer than 4.0.x
-(IceCreamSandwich).
+This is only supported on Jelly Bean (4.1) and newer,
+including the master branch.
 
 # Setting up a Mac OS X build environment #
 

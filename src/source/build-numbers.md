@@ -40,8 +40,9 @@ Gingerbread      | 2.3.3 - 2.3.7 | API level 10
 Honeycomb        | 3.0           | API level 11
 Honeycomb        | 3.1           | API level 12, NDK 6
 Honeycomb        | 3.2.x         | API level 13
-IceCreamSandwich | 4.0.1 - 4.0.2 | API level 14, NDK 7
-IceCreamSandwich | 4.0.3 - 4.0.4 | API level 15
+Ice Cream Sandwich | 4.0.1 - 4.0.2 | API level 14, NDK 7
+Ice Cream Sandwich | 4.0.3 - 4.0.4 | API level 15, NDK 8
+Jelly Bean       | 4.1.x         | API level 16
 
 Starting with Cupcake, individual builds are identified with a short
 build code, e.g. FRF85B.
@@ -104,7 +105,7 @@ GRJ90  | android-2.3.5_r1   | Nexus S 4G
 GRK39C | android-2.3.6_r0.9 | Nexus S
 GRK39F | android-2.3.6_r1   | Nexus One, Nexus S
 GWK74  | android-2.3.7_r1   | latest Gingerbread version, Nexus S 4G
-ITL41D | android-4.0.1_r1   | earliest IceCreamSandwich version, Galaxy Nexus
+ITL41D | android-4.0.1_r1   | earliest Ice Cream Sandwich version, Galaxy Nexus
 ITL41D | android-4.0.1_r1.1 | Galaxy Nexus
 ITL41F | android-4.0.1_r1.2 | Galaxy Nexus
 ICL53F | android-4.0.2_r1   | Galaxy Nexus
@@ -114,9 +115,15 @@ IMM76  | android-4.0.4_r1   |
 IMM76D | android-4.0.4_r1.1 | Nexus S, Nexus S 4G, Galaxy Nexus
 IMM76I | android-4.0.4_r1.2 | Galaxy Nexus
 IMM76K | android-4.0.4_r2   | Galaxy Nexus
-IMM76L | android-4.0.4_r2.1 | latest IceCreamSandwich version
+IMM76L | android-4.0.4_r2.1 | latest Ice Cream Sandwich version
+JRO03C | android-4.1.1_r1   | earliest Jelly Bean version, Galaxy Nexus
+JRO03D | android-4.1.1_r1.1 | Nexus 7
+JRO03E | android-4.1.1_r2   | Nexus S
+JRO03H | android-4.1.1_r3   |
+JRO03L | android-4.1.1_r4   | latest Jelly Bean version, Nexus S
 
-The branches froyo, gingerbread, ics-mr0, ics-mr1, represent development
+The branches froyo, gingerbread, ics-mr0, ics-mr1, jb-dev,
+represent development
 branches that do not exactly match configurations that were tested
 by Google. They might contain a variety of changes in addition to
 the official tagged releases, and those haven't been as thoroughly

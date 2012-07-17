@@ -20,9 +20,9 @@
 
 ## News ##
 
-### Source Code Available for Android 4.0 ###
+### Source Code Available for Android 4.1 ###
 
-The source code for the Android 4.0 platform and software stack has been
+The source code for the Android 4.1 platform and software stack has been
 released! This release allows OEMs to begin preparing Android 4.0 for
 installation on new and existing devices, and allows hobbyists, enthusiasts,
 and researchers to develop custom builds. For information on how to obtain the

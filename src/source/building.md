@@ -42,7 +42,7 @@ The example above refers to a complete build for the emulator, with all debuggin
 If run with no arguments `lunch` will prompt you to choose a target from the menu. 
 
 All build targets take the form BUILD-BUILDTYPE, where the BUILD is a codename
-referring to the particular feature combination:
+referring to the particular feature combination. Here's a partial list:
 
 Build name  | Device   | Notes
 ------------|----------|---------------------------

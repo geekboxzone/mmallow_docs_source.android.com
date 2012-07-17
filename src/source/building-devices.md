@@ -19,31 +19,41 @@
 This page complements the main page about [Building](building.html) with
 information that is specific to individual devices.
 
-The supported devices with the current release are the Galaxy Nexus, Motorola
-Xoom, Nexus S and Nexus S 4G.
+With the current release, it is possible to build for Nexus 7, for some
+variants of Galaxy Nexus, for a variant of the Motorola Xoom, and for
+all variants of Nexus S and Nexus S 4G. The exact level of functionality
+for each device depends on the availability of the relevant proprietary
+hardware-specific binaries.
 
-Galaxy Nexus is supported only in GSM/HSPA+ configuration "maguro" and only
-if it was originally sold with a "yakju" or "takju" operating system.
+All variants of Nexus 7 can be used. On Nexus 7, graphics and audio are
+functional, as well as WiFi and Bluetooth.
 
-The Motorola Xoom is supported in the Wi-fi configuration "wingray"
-sold in the USA.
+The variants of Galaxy Nexus that be used are the GSM/HSPA+ configuration
+"maguro" (only if it was originally sold with a "yakju" or "takju" operating
+system) and the VZW CDMA/LTE configuration "toro". On those devices, graphics
+and audio are functional, as well as WiFi, Bluetooth, and access to the
+respective cellular networks. The orientation sensors are functional.
 
-Nexus S is supported in all configurations. Nexus S 4G is supported.
+The Motorola Xoom is can be used in the Wi-Fi configuration "wingray"
+sold in the USA. Graphics and audio are functional as well as WiFi and
+Bluetooth and the orientation sensors.
 
-In addition, [PandaBoard](http://pandaboard.org) a.k.a. "panda" is supported
-in the master branch only, but is currently considered experimental.
+All configurations of Nexus S and Nexus S 4G can be used, and on those
+devices all the peripherals are functional: graphics, audio, Wifi, Bluetooth,
+cell networks, sensors, camera, hardware codecs, NFC, GPS.
+
+In addition, [PandaBoard](http://pandaboard.org) a.k.a. "panda" can be used
+in the master branch, but is considered experimental.
 The specific details to use a PandaBoard with the Android Open-Source Project
 are in the file `device/ti/panda/README` in the source tree.
 
-Nexus One a.k.a. "passion" is obsolete, was experimental in gingerbread and
-unsupported, and can't be used with newer versions of the Android Open-Source
+Nexus One a.k.a. "passion" is obsolete, was experimental in gingerbread,
+and can't be used with newer versions of the Android Open-Source
 Project.
 
 Android Developer Phones (ADP1 and ADP2, a.k.a. "dream" and "sapphire") are
-obsolete, were experimental and unsupported in froyo, and can't be used with
+obsolete, were experimental in froyo, and can't be used with
 newer versions of the Android Open-Source Project.
-
-No CDMA devices are supported in the Android Open-Source Project.
 
 ## Building fastboot and adb ##
 
@@ -60,16 +70,18 @@ which is a mode in the bootloader that can be used to flash the devices:
 
 Device   | Keys
 ---------|------
+grouper  | Press *Power* for a second, and press *Volume Down* when the bootloader logo appears
 maguro   | Press and hold both *Volume Up* and *Volume Down*, then press and hold *Power*
+toro     | Press and hold both *Volume Up* and *Volume Down*, then press and hold *Power*
 panda    | Press and hold *Input*, then press *Power*
 wingray  | Press and hold *Volume Down*, then press and hold *Power*
 crespo   | Press and hold *Volume Up*, then press and hold *Power*
+crespo4g | Press and hold *Volume Up*, then press and hold *Power*
 passion  | Press and hold the trackball, then press *Power*
 sapphire | Press and hold *Back*, then press *Power*
 dream    | Press and hold *Back*, then press *Power*
 
-Also, on devices running froyo or later where adb is enabled,
-the command `adb reboot bootloader` can be used to reboot from
+Also, the command `adb reboot bootloader` can be used to reboot from
 Android directly into the bootloader with no key combinations.
 
 ## Unlocking the bootloader ##
@@ -78,7 +90,7 @@ It's only possible to flash a custom system if the bootloader allows it.
 
 This is the default setup on ADP1 and ADP2.
 
-On Nexus One, Nexus S, Nexus S 4G, Xoom, and Galaxy Nexus,
+On Nexus One, Nexus S, Nexus S 4G, Xoom, Galaxy Nexus, and Nexus 7,
 the bootloader is locked by default. With the device in fastboot mode, the
 bootloader is unlocked with
 
@@ -87,7 +99,8 @@ bootloader is unlocked with
 The procedure must be confirmed on-screen, and deletes the user data for
 privacy reasons. It only needs to be run once.
 
-Note that on the Nexus S, Nexus S 4G, Motorola Xoom and on Galaxy Nexus,
+Note that on the Nexus S, Nexus S 4G, Motorola Xoom, Galaxy Nexus,
+and on Nexus 7,
 all data on the phone is erased, i.e. both the applications' private data
 and the shared data that is accessible over USB, including photos and
 movies. Be sure to make a backup of any precious files you have before
@@ -95,7 +108,7 @@ unlocking the bootloader.
 
 On Nexus One, the operation voids the warranty and is irreversible.
 
-On Nexus S, Nexus S 4G, Xoom, and Galaxy Nexus,
+On Nexus S, Nexus S 4G, Xoom, Galaxy Nexus, and Nexus 7,
 the bootloader can be locked back with
 
     $ fastboot oem lock
@@ -104,20 +117,20 @@ Note that this erases user data on Xoom (including the shared USB data).
 
 ## Obtaining proprietary binaries ##
 
-Starting with IceCreamSandwich, the Android Open-Source Project can't be used
+Starting with Ice Cream Sandwich, the Android Open-Source Project can't be used
 from pure source code only, and requires additional hardware-related proprietary
 libraries to run, specifically for hardware graphics acceleration.
 
-Official binaries for Nexus S, Nexus S 4G, Galaxy Nexus, and PandaBoard can be
-downloaded from
+Official binaries for Nexus S, Nexus S 4G, Galaxy Nexus, Nexus 7, and PandaBoard
+can be downloaded from
 [Google's Nexus driver page](https://developers.google.com/android/nexus/drivers),
 which add access to additional hardware capabilities with non-Open-Source code.
 
-When a device is suppoted in the master branch, the binaries for the most
+When using the master branch for a device, the binaries for the most
 recent numbered release are the ones that should be used in the master
 branch.
 
-There are no official binaries for Nexus One, ADP2 or ADP1.
+There are limited binaries for Nexus One, and none for ADP2 or ADP1.
 
 ### Extracting the proprietary binaries ###
 
@@ -145,10 +158,13 @@ the lunch menu, accessed when running the `lunch` command with no arguments:
 
 Device   | Branch                       | Build configuration
 ---------|------------------------------|------------------------
-maguro   | android-4.0.4_r2.1 or master | full_maguro-userdebug
+grouper  | android-4.1.1_r4 or master   | full_grouper-userdebug
+maguro   | android-4.1.1_r4 or master   | full_maguro-userdebug
+toro     | android-4.1.1_r4 or master   | full_toro-userdebug
 panda    | master                       | full_panda-userdebug
-wingray  | android-4.0.4_r2.1 or master | full_wingray-userdebug
-crespo   | android-4.0.4_r2.1 or master | full_crespo-userdebug
+wingray  | android-4.1.1_r4 or master   | full_wingray-userdebug
+crespo   | android-4.1.1_r4 or master   | full_crespo-userdebug
+crespo4g | android-4.1.1_r4 or master   | full_crespo4g-userdebug
 passion  | android-2.3.7_r1             | full_passion-userdebug
 sapphire | android-2.2.3_r1             | full_sapphire-userdebug
 dream    | android-2.2.3_r1             | full_dream-userdebug
@@ -157,21 +173,11 @@ dream    | android-2.2.3_r1             | full_dream-userdebug
 
 Set the device in fastboot mode if necessary (see above).
 
-Because user data is typically incompatible between builds of Android,
-it's typically better to delete it when flashing a new system.
-
-    $ fastboot erase cache
-    $ fastboot erase userdata
-
 An entire Android system can be flashed in a single command: this writes
 the boot, recovery and system partitions together after verifying that the
 system being flashed is compatible with the installed bootloader and radio,
-and reboots the system.
-
-    $ fastboot flashall
-
-On all devices except passion,
-the commands above can be replaced with a single command
+and reboots the system. This also erases all the user data, similarly to
+`fastboot oem unlock` mentioned earlier.
 
     $ fastboot -w flashall
 
@@ -183,92 +189,13 @@ optimally, and it is strongly recommended to re-create them through recovery
 Once in recovery, open the menu (press Power + Volume Up), wipe the cache
 partition, then wipe data.
 
-### Nexus S, Nexus S 4G and Galaxy Nexus Bootloader and Cell Radio compatibility ###
-
-On Nexus S, Nexus S 4G and Galaxy Nexus, each version of Android has only
-been thoroughly tested with on specific version of the underlying bootloader
-and cell radio software.
-However, no compatibility issues are expected when running newer systems
-with older bootloaders and radio images according to the following tables.
-
-Nexus S (worldwide version "XX", i9020t and i9023):
-
-Android Version | Preferred Bootloader | Preferred Radio | Also possible
-----------------|----------------------|-----------------|--------------
-2.3 (GRH55)     | I9020XXJK1           | I9020XXJK8
-2.3.1 (GRH78)   | I9020XXJK1           | I9020XXJK8
-2.3.2 (GRH78C)  | I9020XXJK1           | I9020XXJK8
-2.3.3 (GRI40)   | I9020XXKA3           | I9020XXKB1      | All previous versions
-2.3.4 (GRJ22)   | I9020XXKA3           | I9020XXKD1      | All previous versions
-2.3.5 (GRJ90)   | I9020XXKA3           | I9020XXKF1      | All previous versions
-2.3.6 (GRK39F)  | I9020XXKA3           | I9020XXKF1      | All previous versions
-4.0.3 (IML74K)  | I9020XXKL1           | I9020XXKI1      | All previous versions
-4.0.4 (IMM76D)  | I9020XXKL1           | I9020XXKI1
-4.0.4 (IMM76I)  | I9020XXKL1           | I9020XXKI1
-4.0.4 (IMM76K)  | I9020XXKL1           | I9020XXKI1
-4.0.4 (IMM76L)  | I9020XXKL1           | I9020XXKI1
-
-Nexus S (850MHz version "UC", i9020a):
-
-Android Version | Preferred Bootloader | Preferred Radio | Also possible
-----------------|----------------------|-----------------|--------------
-2.3.3 (GRI54)   | I9020XXKA3           | I9020UCKB2
-2.3.4 (GRJ22)   | I9020XXKA3           | I9020UCKD1      | All previous versions
-2.3.5 (GRJ90)   | I9020XXKA3           | I9020UCKF1      | All previous versions
-2.3.6 (GRK39C)  | I9020XXKA3           | I9020UCKF1      | All previous versions
-2.3.6 (GRK39F)  | I9020XXKA3           | I9020UCKF1      | All previous versions
-4.0.3 (IML74K)  | I9020XXKL1           | I9020UCKF1      | All previous versions
-4.0.4 (IMM76D)  | I9020XXKL1           | I9020UCKJ1
-4.0.4 (IMM76I)  | I9020XXKL1           | I9020UCKJ1
-4.0.4 (IMM76K)  | I9020XXKL1           | I9020UCKJ1
-4.0.4 (IMM76L)  | I9020XXKL1           | I9020UCKJ1
-
-Nexus S (Korea version "KR", m200):
-
-Android Version | Preferred Bootloader | Preferred Radio | Also possible
-----------------|----------------------|-----------------|--------------
-2.3.3 (GRI54)   | I9020XXKA3           | I9020KRKB3
-2.3.4 (GRJ22)   | I9020XXKA3           | M200KRKC1       | All previous versions
-2.3.5 (GRJ90)   | I9020XXKA3           | M200KRKC1       | All previous versions
-2.3.6 (GRK39F)  | I9020XXKA3           | M200KRKC1       | All previous versions
-4.0.3 (IML74K)  | I9020XXKL1           | M200KRKC1       | All previous versions
-4.0.4 (IMM76D)  | I9020XXKL1           | M200KRKC1
-4.0.4 (IMM76I)  | I9020XXKL1           | M200KRKC1
-4.0.4 (IMM76K)  | I9020XXKL1           | M200KRKC1
-4.0.4 (IMM76L)  | I9020XXKL1           | M200KRKC1
-
-Nexus S 4G (CDMA/WiMAX version, d720):
-
-Android Version | Preferred Bootloader | Preferred Radio | Also possible
-----------------|----------------------|-----------------|--------------
-4.0.4 (IMM76L)  | D720SPRKE1           | D720SPRLC1
-
-Galaxy Nexus (GSM/HSPA+):
-
-Android Version | Preferred Bootloader | Preferred Radio | Also possible
-----------------|----------------------|-----------------|--------------
-4.0.1 (ITL41D)  | PRIMEKJ10            | I9250XXKK1
-4.0.2 (ICL53F)  | PRIMEKK15            | I9250XXKK6      | All previous versions
-4.0.3 (IML74K)  | PRIMEKL01            | I9250XXKK6      | All previous versions
-4.0.4 (IMM76D)  | PRIMELA03            | I9250XXLA02
-4.0.4 (IMM76I)  | PRIMELA03            | I9250XXLA02
-4.0.4 (IMM76K)  | PRIMELA03            | I9250XXLA02
-4.0.4 (IMM76L)  | PRIMELA03            | I9250XXLA02
-
-If you're building a new version of Android, if your Nexus S, Nexus S 4G or
-Galaxy Nexus has
-an older bootloader and radio image that is marked as being also possible in
-the table above but is not recognized by fastboot, you can locally
-delete the `version-bootloader` and `version-baseband` lines in
-`device/samsung/crespo/board-info.txt` or
-`device/samsung/maguro/board-info.txt`
-
 ## Restoring a device to its original factory state ##
 
 Factory images
-for Galaxy Nexus (GSM/HSPA+ "yakju" and "takju", and CDMA/LTE "mysid")
+for Nexus 7,
+for Galaxy Nexus (GSM/HSPA+ "yakju" and "takju", and CDMA/LTE "mysid"),
 and
-for Nexus S (all variants)
+for Nexus S and Nexus S 4G (all variants)
 are available from
 [Google's factory image page](https://developers.google.com/android/nexus/images).
 
