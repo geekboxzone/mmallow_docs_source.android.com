@@ -83,7 +83,7 @@ in the 'donut' branch in the open-source tree.
 The CTS user manual is applicable to any CTS version, but CTS 2.1 R2 and
 beyond require [additional steps](cts-intro.html) to run the accessibility tests.
 
-- [Compatibility Test Suite (CTS) User Manual](android-cts-manual-r4.pdf)
+- [Compatibility Test Suite (CTS) User Manual](android-cts-manual-r5.pdf)
 
 ## CTS Media Files ##
 These media files are required for the CTS media stress tests.
