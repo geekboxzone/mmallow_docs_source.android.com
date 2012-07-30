@@ -598,18 +598,18 @@
     <code>B:</code> first source register or pair<br/>
     <code>C:</code> second source register or pair</td>
   <td>Perform the indicated floating point or <code>long</code> comparison,
-    storing <code>0</code> if the two arguments are equal, <code>1</code>
-    if the second argument is larger, or <code>-1</code> if the first
-    argument is larger. The "bias" listed for the floating point operations
-    indicates how <code>NaN</code> comparisons are treated: "Gt bias"
+    setting <code>a</code> to <code>0</code> if <code>b == c</code>,
+    <code>1</code> if <code>b &gt; c</code>,
+    or <code>-1</code> if <code>b &lt; c</code>.
+    The "bias" listed for the floating point operations
+    indicates how <code>NaN</code> comparisons are treated: "gt bias"
     instructions return <code>1</code> for <code>NaN</code> comparisons,
-    and "lt bias" instructions return
-    <code>-1</code>.
+    and "lt bias" instructions return <code>-1</code>.
     <p>For example, to check to see if floating point
-    <code>a &lt; b</code>, then it is advisable to use
+    <code>x &lt; y</code> it is advisable to use
     <code>cmpg-float</code>; a result of <code>-1</code> indicates that
     the test was true, and the other values indicate it was false either
-    due to a valid comparison or because one or the other values was
+    due to a valid comparison or because one of the values was
     <code>NaN</code>.</p>
   </td>
 </tr>
