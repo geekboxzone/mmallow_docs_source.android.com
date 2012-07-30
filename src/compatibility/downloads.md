@@ -22,7 +22,7 @@ you to access the key documents and information.
 ## Android 4.1 ##
 
 Android 4.1.1 is the release of the development milestone code-named
-Ice Cream Sandwich. Android 4.1.1 is the current version of Android. Source code for
+Jelly Bean. Android 4.1.1 is the current version of Android. Source code for
 Android 4.1.1 is found in the 'android-4.1.1_r1' branch in the open-source tree.
 
 - [Android 4.1 Compatibility Definition Document (CDD)](4.1/android-4.1-cdd.pdf)
