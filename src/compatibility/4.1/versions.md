@@ -26,7 +26,7 @@ running on their devices.
 Because subsequent releases of the Android software may revise this string,
 but not change any API behavior, such releases may not be accompanied by a new
 Compatibility Definition Document. This page lists the versions that are
-allowable by an Android 4.0-based system. The only permitted values for
+allowable by an Android 4.1-based system. The only permitted values for
 `android.os.Build.VERSION.RELEASE` for Android 4.1 are:
 
 - 4.1
