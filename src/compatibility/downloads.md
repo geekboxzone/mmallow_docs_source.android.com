@@ -27,7 +27,7 @@ Android 4.1.1 is found in the 'android-4.1.1_r1' branch in the open-source tree.
 
 - [Android 4.1 Compatibility Definition Document (CDD)](4.1/android-4.1-cdd.pdf)
 - [Android 4.1 R1 Compatibility Test Suite (CTS)](https://dl.google.com/dl/android/cts/android-cts-4.1_r1-linux_x86-arm.zip)
-- [Android 4.1 R1 CTS Verifier](https://dl.google.com/dl/android/cts/android-cts-verifier-4.1_r1-linux_x86-arm.zip)
+- [Android 4.1 R2 CTS Verifier](https://dl.google.com/dl/android/cts/android-cts-verifier-4.1_r2-linux_x86-arm.zip)
 
 
 ## Android 4.0.3 ##
