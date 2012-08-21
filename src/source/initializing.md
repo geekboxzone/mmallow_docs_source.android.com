@@ -185,7 +185,12 @@ you will want to specify the directory in your .bashrc as well.
 
 The suggested cache size is 50-100GB.
 You will need to run the following command once you have downloaded
-the source code.
+the source code:
+
+    prebuilts/misc/linux-x86/ccache/ccache -M 50G
+
+When building Ice Cream Sandwich (4.0.x) or older, ccache is in
+a different location:
 
     prebuilt/linux-x86/ccache/ccache -M 50G
 

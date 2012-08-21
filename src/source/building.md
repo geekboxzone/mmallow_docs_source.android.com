@@ -105,13 +105,18 @@ In the root of the source tree, do the following:
 
     $ export USE_CCACHE=1
     $ export CCACHE_DIR=/<path_of_your_choice>/.ccache
-    $ prebuilt/linux-x86/ccache/ccache -M 20G
+    $ prebuilts/misc/linux-x86/ccache/ccache -M 50G
+
+The suggested cache size is 50-100G.
 
 You can watch ccache being used by doing the following:
 
-    $ watch -n1 -d prebuilt/linux-x86/ccache/ccache -s
+    $ watch -n1 -d prebuilts/misc/linux-x86/ccache/ccache -s
 
 On OSX, you should replace `linux-x86` with `darwin-x86`.
+
+When using Ice Cream Sandwich (4.0.x) or older, you should replace
+`prebuilts/misc` with `prebuilt`.
 
 # Troubleshooting Common Build Errors #
 
