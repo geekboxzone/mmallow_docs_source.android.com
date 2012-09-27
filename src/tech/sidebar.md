@@ -5,3 +5,4 @@
 - [Security](/tech/security/index.html)
 - [Input](/tech/input/index.html)
 - [Data Usage](/tech/datausage/index.html)
+- [Accessories](/tech/accessories/index.html)

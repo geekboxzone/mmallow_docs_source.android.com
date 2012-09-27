@@ -67,4 +67,9 @@ of when porting Android to specific devices.
 
 [&raquo; Data Usage Information](/tech/datausage/index.html)
 
+## Accessory Protocol Information ##
+Android devices can connect to hardware accessories, such as audio docks,
+keyboards and custom hardware, through USB or Bluetooth. This document
+describes the Android Open Accessory protocol for accessory hardware builders.
 
+[&raquo; Accessory Protocol Information](/tech/accessories/index.html)
