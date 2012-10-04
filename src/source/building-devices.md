@@ -26,15 +26,20 @@ for each device depends on the availability of the relevant proprietary
 hardware-specific binaries.
 
 All variants of Nexus 7 can be used. On Nexus 7, graphics and audio are
-functional, as well as WiFi and Bluetooth.
+functional, as well as WiFi and Bluetooth. Due to hardware differences, do
+not use 4.1.1 on a Nexus 7 that was originally sold with 4.1.2 or newer.
 
-The variants of Galaxy Nexus that be used are the GSM/HSPA+ configuration
+The variants of Galaxy Nexus that can be used are the GSM/HSPA+ configuration
 "maguro" (only if it was originally sold with a "yakju" or "takju" operating
 system) and the VZW CDMA/LTE configuration "toro". On those devices, graphics
 and audio are functional, as well as WiFi, Bluetooth, and access to the
 respective cellular networks. The orientation sensors are functional.
 
-The Motorola Xoom is can be used in the Wi-Fi configuration "wingray"
+The Sprint CDMA/LTE configuration "toroplus" of Galaxy Nexus is supported
+experimentally. On that configuration, the cellular network is not functional,
+and the other peripherals work like they do on "toro".
+
+The Motorola Xoom can be used in the Wi-Fi configuration "wingray"
 sold in the USA. Graphics and audio are functional as well as WiFi and
 Bluetooth and the orientation sensors.
 
@@ -158,16 +163,20 @@ the lunch menu, accessed when running the `lunch` command with no arguments:
 
 Device   | Branch                       | Build configuration
 ---------|------------------------------|------------------------
-grouper  | android-4.1.1_r4 or master   | full_grouper-userdebug
-maguro   | android-4.1.1_r4 or master   | full_maguro-userdebug
-toro     | android-4.1.1_r4 or master   | full_toro-userdebug
+grouper  | android-4.1.2_r1 or master   | full_grouper-userdebug
+maguro   | android-4.1.2_r1 or master   | full_maguro-userdebug
+toro     | android-4.1.2_r1 or master   | full_toro-userdebug
+toroplus | master                       | full_toroplus-userdebug
 panda    | master                       | full_panda-userdebug
-wingray  | android-4.1.1_r4 or master   | full_wingray-userdebug
-crespo   | android-4.1.1_r4 or master   | full_crespo-userdebug
-crespo4g | android-4.1.1_r4 or master   | full_crespo4g-userdebug
+wingray  | android-4.1.2_r1 or master   | full_wingray-userdebug
+crespo   | android-4.1.2_r1 or master   | full_crespo-userdebug
+crespo4g | android-4.1.2_r1 or master   | full_crespo4g-userdebug
 passion  | android-2.3.7_r1             | full_passion-userdebug
 sapphire | android-2.2.3_r1             | full_sapphire-userdebug
 dream    | android-2.2.3_r1             | full_dream-userdebug
+
+Do not use 4.1.1 on a Nexus 7 that was originally sold with 4.1.2
+or newer.
 
 ## Flashing a device ##
 

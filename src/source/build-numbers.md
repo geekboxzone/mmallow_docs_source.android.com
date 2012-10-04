@@ -110,8 +110,8 @@ ITL41D | android-4.0.1_r1.1 | Galaxy Nexus
 ITL41F | android-4.0.1_r1.2 | Galaxy Nexus
 ICL53F | android-4.0.2_r1   | Galaxy Nexus
 IML74K | android-4.0.3_r1   | Nexus S
-IML77  | android-4.0.3_r1.1 |
-IMM76  | android-4.0.4_r1   |
+IML77  | android-4.0.3_r1.1
+IMM76  | android-4.0.4_r1
 IMM76D | android-4.0.4_r1.1 | Nexus S, Nexus S 4G, Galaxy Nexus
 IMM76I | android-4.0.4_r1.2 | Galaxy Nexus
 IMM76K | android-4.0.4_r2   | Galaxy Nexus
@@ -119,8 +119,11 @@ IMM76L | android-4.0.4_r2.1 | latest Ice Cream Sandwich version
 JRO03C | android-4.1.1_r1   | earliest Jelly Bean version, Galaxy Nexus
 JRO03D | android-4.1.1_r1.1 | Nexus 7
 JRO03E | android-4.1.1_r2   | Nexus S
-JRO03H | android-4.1.1_r3   |
-JRO03L | android-4.1.1_r4   | latest Jelly Bean version, Nexus S
+JRO03H | android-4.1.1_r3
+JRO03L | android-4.1.1_r4   | Nexus S
+JRO03O | android-4.1.1_r5   | Galaxy Nexus
+JRO03R | android-4.1.1_r6   | Nexus S 4G
+JZO54K | android-4.1.2_r1   | latest Jelly Bean version, Nexus S, Galaxy Nexus, Nexus 7
 
 The branches froyo, gingerbread, ics-mr0, ics-mr1, jb-dev,
 represent development
