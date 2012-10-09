@@ -76,6 +76,7 @@ which is a mode in the bootloader that can be used to flash the devices:
 Device   | Keys
 ---------|------
 grouper  | Press *Power* for a second, and press *Volume Down* when the bootloader logo appears
+phantasm | Power the device, cover it with one hand after the LEDs light up and until they turn red
 maguro   | Press and hold both *Volume Up* and *Volume Down*, then press and hold *Power*
 toro     | Press and hold both *Volume Up* and *Volume Down*, then press and hold *Power*
 panda    | Press and hold *Input*, then press *Power*
