@@ -123,7 +123,7 @@ JRO03H | android-4.1.1_r3
 JRO03L | android-4.1.1_r4   | Nexus S
 JRO03O | android-4.1.1_r5   | Galaxy Nexus
 JRO03R | android-4.1.1_r6   | Nexus S 4G
-JZO54K | android-4.1.2_r1   | latest Jelly Bean version, Nexus S, Galaxy Nexus, Nexus 7
+JZO54K | android-4.1.2_r1   | latest Jelly Bean version, Galaxy Nexus, Nexus 7
 
 The branches froyo, gingerbread, ics-mr0, ics-mr1, jb-dev,
 represent development
