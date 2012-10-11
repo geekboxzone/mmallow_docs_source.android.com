@@ -44,11 +44,11 @@ CTS console:
 
     cd /path/to/android/root
     make cts
-    cts
+    cts-tradefed
 
-Provide arguments to CTS to immediately start executing a test:
+At the cts-tf console, enter e.g.:
 
-    cts start --plan CTS -p android.os.cts.BuildVersionTest
+    run cts --plan CTS -p android.os.cts.BuildVersionTest
 
 ## Writing CTS Tests ##
 
