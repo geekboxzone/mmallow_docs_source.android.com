@@ -718,8 +718,8 @@ Applications are also able to declare security permissions at the Signature
 protection level, restricting access only to applications signed with the same
 key while maintaining distinct UIDs and Application Sandboxes. A closer
 relationship with a shared Application Sandbox is allowed via the [shared UID
-feature](https://developer.android.com/guide/topics/manifest/manifest-element.htm
-l#uid) where two or more applications signed with same developer key can
+feature](https://developer.android.com/guide/topics/manifest/manifest-element.html#uid)
+where two or more applications signed with same developer key can
 declare a shared UID in their manifest.
 
 ##Digital Rights Management
@@ -731,8 +731,8 @@ many DRM schemes; which DRM schemes a device supports is left to the device
 manufacturer.
 
 The [Android DRM
-framework](https://developer.android.com/reference/android/drm/package-summary.ht
-ml) is implemented in two architectural layers (see figure below):
+framework](https://developer.android.com/reference/android/drm/package-summary.html)
+is implemented in two architectural layers (see figure below):
 
 + A DRM framework API, which is exposed to applications through the Android
 application framework and runs through the Dalvik VM for standard applications.
@@ -794,8 +794,7 @@ Any developer, Android user, or security researcher can notify the Android
 security team of potential security issues by sending email to
 security@android.com. If desired, communication can be encrypted using the
 Android security team PGP key available here:
-[https://developer.android.com/security_at_android_dot_com.txt](https://develope
-r.android.com/security_at_android_dot_com.txt).
+[https://developer.android.com/security_at_android_dot_com.txt](https://developer.android.com/security_at_android_dot_com.txt).
 
 #Other Resources
 
@@ -810,12 +809,13 @@ The Android Security team can be reached at
 
 Security information exists throughout the Android Open Source and Developer
 Sites. A good place to start is here:
-[https://developer.android.com/guide/topics/security/security.html](https://develo
-per.android.com/guide/topics/security/security.html).
+[https://developer.android.com/guide/topics/security/security.html](https://developer.android.com/guide/topics/security/security.html).
 
 A Security FAQ for developers is located here:
-[https://developer.android.com/resources/faq/security.html](https://developer.andr
-oid.com/resources/faq/security.html).
+[https://developer.android.com/resources/faq/security.html](https://developer.android.com/resources/faq/security.html).
+
+Security Best Practices for developers is located here:
+[https://developer.android.com/guide/practices/security.html](https://developer.android.com/guide/practices/security.html).
 
 A community resource for discussion about Android security exists here:
 [https://groups.google.com/forum/?fromgroups#!forum/android-security-discuss](https://groups.google.com/forum/?fromgroups#!forum/android-security-discuss).
