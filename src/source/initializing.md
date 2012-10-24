@@ -56,7 +56,7 @@ build the Android tree.*
 
 Detailed instructions for Ubuntu and MacOS follow. In general you will need:
 
- - Python 2.5 -- 2.7, which you can download from [python.org](http://www.python.org/download/).
+ - Python 2.6 -- 2.7, which you can download from [python.org](http://www.python.org/download/).
 
  - GNU Make 3.81 -- 3.82, which you can download from [gnu.org](http://ftp.gnu.org/gnu/make/),
 
