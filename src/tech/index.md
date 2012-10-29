@@ -67,4 +67,10 @@ of when porting Android to specific devices.
 
 [&raquo; Data Usage Information](/tech/datausage/index.html)
 
+## External Storage Technical Information
 
+Android supports devices with external storage, typically provided by physical
+media or an emulation layer.  This document is designed to help systems
+integrators configure Android devices.
+
+[&raquo; External Storage Technical Information](/tech/storage/index.html)
