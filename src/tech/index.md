@@ -73,3 +73,10 @@ keyboards and custom hardware, through USB or Bluetooth. This document
 describes the Android Open Accessory protocol for accessory hardware builders.
 
 [&raquo; Accessory Protocol Information](/tech/accessories/index.html)
+
+## External Storage Technical Information
+Android supports devices with external storage, typically provided by physical
+media or an emulation layer.  This document is designed to help systems
+integrators configure Android devices.
+
+[&raquo; External Storage Technical Information](/tech/storage/index.html)
