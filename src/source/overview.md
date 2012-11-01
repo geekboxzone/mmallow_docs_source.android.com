@@ -23,6 +23,10 @@ information.
 
 The links below will navigate you away from this site.
 
+## [Android 4.1](https://developer.android.com/about/versions/jelly-bean.html) ##
+
+Android 4.1 corresponded to the "Jelly Bean" milestone branch, and has an API level of 16.
+
 ## [Android 4.0](https://developer.android.com/sdk/android-4.0-highlights.html) ##
 
 Android 4.0 corresponded to the "IceCreamSandwich" milestone branch, and has an API level of 14.
