@@ -90,7 +90,7 @@ You will need a 64-bit version of Ubuntu.  Ubuntu 10.04 is recommended.
 Building using a newer version of Ubuntu is currently only experimentally
 supported and is not guaranteed to work on branches other than master.
 
-    $ sudo apt-get install git gnupg flex bison gperf build-essential \
+    $ sudo apt-get install git-core gnupg flex bison gperf build-essential \
       zip curl zlib1g-dev libc6-dev lib32ncurses5-dev ia32-libs \
       x11proto-core-dev libx11-dev lib32readline5-dev lib32z-dev \
       libgl1-mesa-dev g++-multilib mingw32 tofrodos python-markdown \
