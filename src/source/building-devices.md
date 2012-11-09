@@ -25,20 +25,20 @@ The exact level of functionality for each device depends on the availability
 of the relevant proprietary hardware-specific binaries.
 
 All configurations of Nexus 10 can be used, and on those
-devices all the peripherals are functional: graphics, audio, Wifi, Bluetooth,
+devices all the peripherals are functional: graphics, audio, Wi-Fi, Bluetooth,
 sensors, cameras, hardware codecs, NFC, GPS.
 
 Nexus 4 cannot be used at the moment.
 
-The WiFi variants of Nexus 7 can be used. On Nexus 7, graphics and audio are
-functional, as well as WiFi and Bluetooth. Due to hardware differences, do
+The Wi-Fi variants of Nexus 7 can be used. On Nexus 7, graphics and audio are
+functional, as well as Wi-Fi and Bluetooth. Due to hardware differences, do
 not use 4.1.1 on a Nexus 7 that was originally sold with 4.1.2 or newer.
 The 3G variant is not supported.
 
 The variants of Galaxy Nexus that can be used are the GSM/HSPA+ configuration
 "maguro" (only if it was originally sold with a "yakju" or "takju" operating
 system) and the VZW CDMA/LTE configuration "toro". On those devices, graphics
-and audio are functional, as well as WiFi, Bluetooth, and access to the
+and audio are functional, as well as Wi-Fi, Bluetooth, and access to the
 respective cellular networks. The orientation sensors are functional.
 
 The Sprint CDMA/LTE configuration "toroplus" of Galaxy Nexus is supported
@@ -47,10 +47,10 @@ and the other peripherals work like they do on "toro".
 
 The Motorola Xoom can be used in the Wi-Fi configuration "wingray"
 sold in the USA, with Android 4.1.2. Graphics and audio are functional
-as well as WiFi and Bluetooth and the orientation sensors.
+as well as Wi-Fi and Bluetooth and the orientation sensors.
 
 All configurations of Nexus S and Nexus S 4G can be used with Android 4.1.2.
-On those devices all the peripherals are functional: graphics, audio, Wifi,
+On those devices all the peripherals are functional: graphics, audio, Wi-Fi,
 Bluetooth, cell networks, sensors, camera, hardware codecs, NFC, GPS.
 
 In addition, [PandaBoard](http://pandaboard.org) a.k.a. "panda" can be used
