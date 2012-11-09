@@ -43,6 +43,7 @@ Honeycomb        | 3.2.x         | API level 13
 Ice Cream Sandwich | 4.0.1 - 4.0.2 | API level 14, NDK 7
 Ice Cream Sandwich | 4.0.3 - 4.0.4 | API level 15, NDK 8
 Jelly Bean       | 4.1.x         | API level 16
+Jelly Bean       | 4.2           | API level 17
 
 Starting with Cupcake, individual builds are identified with a short
 build code, e.g. FRF85B.
@@ -124,9 +125,11 @@ JRO03L | android-4.1.1_r4   | Nexus S
 JRO03O | android-4.1.1_r5   | Galaxy Nexus
 JRO03R | android-4.1.1_r6   | Nexus S 4G
 JRO03S | android-4.1.1_r6.1 | Nexus 7
-JZO54K | android-4.1.2_r1   | latest Jelly Bean version, Nexus S, Galaxy Nexus, Nexus 7
+JZO54K | android-4.1.2_r1   | Nexus S, Galaxy Nexus, Nexus 7
+JOP39B | android-4.2_r1     | latest Jelly Bean version, Galaxy Nexus, Nexus 7, Nexys 4, Nexus 10
 
 The branches froyo, gingerbread, ics-mr0, ics-mr1, jb-dev,
+jb-mr1-dev,
 represent development
 branches that do not exactly match configurations that were tested
 by Google. They might contain a variety of changes in addition to

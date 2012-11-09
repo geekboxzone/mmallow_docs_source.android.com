@@ -19,15 +19,21 @@
 This page complements the main page about [Building](building.html) with
 information that is specific to individual devices.
 
-With the current release, it is possible to build for Nexus 7, for some
-variants of Galaxy Nexus, for a variant of the Motorola Xoom, and for
-all variants of Nexus S and Nexus S 4G. The exact level of functionality
-for each device depends on the availability of the relevant proprietary
-hardware-specific binaries.
+With the current release, it is possible to build for
+Nexus 10, for Nexus 7, and for some variants of Galaxy Nexus.
+The exact level of functionality for each device depends on the availability
+of the relevant proprietary hardware-specific binaries.
 
-All variants of Nexus 7 can be used. On Nexus 7, graphics and audio are
+All configurations of Nexus 10 can be used, and on those
+devices all the peripherals are functional: graphics, audio, Wifi, Bluetooth,
+sensors, cameras, hardware codecs, NFC, GPS.
+
+Nexus 4 cannot be used at the moment.
+
+The WiFi variants of Nexus 7 can be used. On Nexus 7, graphics and audio are
 functional, as well as WiFi and Bluetooth. Due to hardware differences, do
 not use 4.1.1 on a Nexus 7 that was originally sold with 4.1.2 or newer.
+The 3G variant is not supported.
 
 The variants of Galaxy Nexus that can be used are the GSM/HSPA+ configuration
 "maguro" (only if it was originally sold with a "yakju" or "takju" operating
@@ -40,12 +46,12 @@ experimentally. On that configuration, the cellular network is not functional,
 and the other peripherals work like they do on "toro".
 
 The Motorola Xoom can be used in the Wi-Fi configuration "wingray"
-sold in the USA. Graphics and audio are functional as well as WiFi and
-Bluetooth and the orientation sensors.
+sold in the USA, with Android 4.1.2. Graphics and audio are functional
+as well as WiFi and Bluetooth and the orientation sensors.
 
-All configurations of Nexus S and Nexus S 4G can be used, and on those
-devices all the peripherals are functional: graphics, audio, Wifi, Bluetooth,
-cell networks, sensors, camera, hardware codecs, NFC, GPS.
+All configurations of Nexus S and Nexus S 4G can be used with Android 4.1.2.
+On those devices all the peripherals are functional: graphics, audio, Wifi,
+Bluetooth, cell networks, sensors, camera, hardware codecs, NFC, GPS.
 
 In addition, [PandaBoard](http://pandaboard.org) a.k.a. "panda" can be used
 in the master branch, but is considered experimental.
@@ -75,17 +81,18 @@ which is a mode in the bootloader that can be used to flash the devices:
 
 Device   | Keys
 ---------|------
+manta    | Press and hold both *Volume Up* and *Volume Down*, then press and hold *Power*
+mako     | Press and hold *Volume Down*, then press and hold *Power*
 grouper  | Press *Power* for a second, and press *Volume Down* when the bootloader logo appears
+tilapia  | Press *Power* for a second, and press *Volume Down* when the bootloader logo appears
 phantasm | Power the device, cover it with one hand after the LEDs light up and until they turn red
 maguro   | Press and hold both *Volume Up* and *Volume Down*, then press and hold *Power*
 toro     | Press and hold both *Volume Up* and *Volume Down*, then press and hold *Power*
+toroplus | Press and hold both *Volume Up* and *Volume Down*, then press and hold *Power*
 panda    | Press and hold *Input*, then press *Power*
 wingray  | Press and hold *Volume Down*, then press and hold *Power*
 crespo   | Press and hold *Volume Up*, then press and hold *Power*
 crespo4g | Press and hold *Volume Up*, then press and hold *Power*
-passion  | Press and hold the trackball, then press *Power*
-sapphire | Press and hold *Back*, then press *Power*
-dream    | Press and hold *Back*, then press *Power*
 
 Also, the command `adb reboot bootloader` can be used to reboot from
 Android directly into the bootloader with no key combinations.
@@ -94,10 +101,7 @@ Android directly into the bootloader with no key combinations.
 
 It's only possible to flash a custom system if the bootloader allows it.
 
-This is the default setup on ADP1 and ADP2.
-
-On Nexus One, Nexus S, Nexus S 4G, Xoom, Galaxy Nexus, and Nexus 7,
-the bootloader is locked by default. With the device in fastboot mode, the
+The bootloader is locked by default. With the device in fastboot mode, the
 bootloader is unlocked with
 
     $ fastboot oem unlock
@@ -105,17 +109,18 @@ bootloader is unlocked with
 The procedure must be confirmed on-screen, and deletes the user data for
 privacy reasons. It only needs to be run once.
 
-Note that on the Nexus S, Nexus S 4G, Motorola Xoom, Galaxy Nexus,
-and on Nexus 7,
-all data on the phone is erased, i.e. both the applications' private data
+All data on the phone is erased, i.e. both the applications' private data
 and the shared data that is accessible over USB, including photos and
 movies. Be sure to make a backup of any precious files you have before
 unlocking the bootloader.
 
-On Nexus One, the operation voids the warranty and is irreversible.
+On Nexus 10, after unlocking the bootloader, the internal storage is
+left unformatted and must be formatted with
 
-On Nexus S, Nexus S 4G, Xoom, Galaxy Nexus, and Nexus 7,
-the bootloader can be locked back with
+    $ fastboot format cache
+    $ fastboot format userdata
+
+The bootloader can be locked back with
 
     $ fastboot oem lock
 
@@ -123,11 +128,12 @@ Note that this erases user data on Xoom (including the shared USB data).
 
 ## Obtaining proprietary binaries ##
 
-Starting with Ice Cream Sandwich, the Android Open-Source Project can't be used
+The Android Open-Source Project can't be used
 from pure source code only, and requires additional hardware-related proprietary
 libraries to run, specifically for hardware graphics acceleration.
 
-Official binaries for Nexus S, Nexus S 4G, Galaxy Nexus, Nexus 7, and PandaBoard
+Official binaries for Nexus S, Nexus S 4G, Galaxy Nexus, Nexus 7, Nexus 4,
+Nexus 10 and PandaBoard
 can be downloaded from
 [Google's Nexus driver page](https://developers.google.com/android/nexus/drivers),
 which add access to additional hardware capabilities with non-Open-Source code.
@@ -135,8 +141,6 @@ which add access to additional hardware capabilities with non-Open-Source code.
 When using the master branch for a device, the binaries for the most
 recent numbered release are the ones that should be used in the master
 branch.
-
-There are limited binaries for Nexus One, and none for ADP2 or ADP1.
 
 ### Extracting the proprietary binaries ###
 
@@ -164,17 +168,16 @@ the lunch menu, accessed when running the `lunch` command with no arguments:
 
 Device   | Branch                       | Build configuration
 ---------|------------------------------|------------------------
-grouper  | android-4.1.2_r1 or master   | full_grouper-userdebug
-maguro   | android-4.1.2_r1 or master   | full_maguro-userdebug
-toro     | android-4.1.2_r1 or master   | full_toro-userdebug
+manta    | android-4.2_r1 or master     | full_manta-userdebug
+grouper  | android-4.2_r1 or master     | full_grouper-userdebug
+tipalia  | android-4.2_r1 or master     | full_tilapia-userdebug
+maguro   | android-4.2_r1 or master     | full_maguro-userdebug
+toro     | android-4.2_r1 or master     | full_toro-userdebug
 toroplus | master                       | full_toroplus-userdebug
 panda    | master                       | full_panda-userdebug
-wingray  | android-4.1.2_r1 or master   | full_wingray-userdebug
-crespo   | android-4.1.2_r1 or master   | full_crespo-userdebug
-crespo4g | android-4.1.2_r1 or master   | full_crespo4g-userdebug
-passion  | android-2.3.7_r1             | full_passion-userdebug
-sapphire | android-2.2.3_r1             | full_sapphire-userdebug
-dream    | android-2.2.3_r1             | full_dream-userdebug
+wingray  | android-4.1.2_r1             | full_wingray-userdebug
+crespo   | android-4.1.2_r1             | full_crespo-userdebug
+crespo4g | android-4.1.2_r1             | full_crespo4g-userdebug
 
 Do not use 4.1.1 on a Nexus 7 that was originally sold with 4.1.2
 or newer.
@@ -202,13 +205,15 @@ partition, then wipe data.
 ## Restoring a device to its original factory state ##
 
 Factory images
-for Nexus 7,
-for Galaxy Nexus (GSM/HSPA+ "yakju" and "takju", and CDMA/LTE "mysid"),
+for Nexus 10,
+for Nexus 4,
+for Nexus Q,
+for Nexus 7 (all variants),
+for Galaxy Nexus (GSM/HSPA+ "yakju" and "takju",
+and CDMA/LTE "mysid" and "mysidspr"),
 and
 for Nexus S and Nexus S 4G (all variants)
 are available from
 [Google's factory image page](https://developers.google.com/android/nexus/images).
 
 Factory images for the Motorola Xoom are distributed directly by Motorola.
-
-No factory images are available for Nexus One.
