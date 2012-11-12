@@ -152,10 +152,14 @@ over USB.
     SUBSYSTEM=="usb", ATTR{idVendor}=="0451", ATTR{idProduct}=="d00f", MODE="0600", OWNER="<username>"
     # usbboot protocol on panda (PandaBoard ES)
     SUBSYSTEM=="usb", ATTR{idVendor}=="0451", ATTR{idProduct}=="d010", MODE="0600", OWNER="<username>"
-    # adb protocol on grouper (Nexus 7)
+    # adb protocol on grouper/tilapia (Nexus 7)
     SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4e42", MODE="0600", OWNER="<username>"
-    # fastboot protocol on grouper (Nexus 7)
+    # fastboot protocol on grouper/tilapia (Nexus 7)
     SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4e40", MODE="0600", OWNER="<username>"
+    # adb protocol on mako/manta (Nexus 4, Nexus 10)
+    SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4ee2", MODE="0600", OWNER="<username>"
+    # fastboot protocol on mako/manta (Nexus 4, Nexus 10)
+    SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4ee0", MODE="0600", OWNER="<username>"
 
 Those new rules take effect the next time a device is plugged in.
 It might therefore be necessary to unplug the device and plug it
