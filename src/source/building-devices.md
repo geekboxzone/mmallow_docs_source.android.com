@@ -24,9 +24,8 @@ Nexus 10, for Nexus 7, and for some variants of Galaxy Nexus.
 The exact level of functionality for each device depends on the availability
 of the relevant proprietary hardware-specific binaries.
 
-All configurations of Nexus 10 can be used, and on those
-devices all the peripherals are functional: graphics, audio, Wi-Fi, Bluetooth,
-sensors, cameras, hardware codecs, NFC, GPS.
+All configurations of Nexus 10 can be used. On those devices, graphics, audio,
+Wi-Fi, Bluetooth, camera, NFC, GPS and orientation sensors are functional.
 
 Nexus 4 cannot be used at the moment.
 
