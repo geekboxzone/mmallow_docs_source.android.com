@@ -19,7 +19,7 @@
 ## Initializing Your Repo Client ##
 
 Follow the [instructions](/source/downloading.html)
-to get and build the Android source code but specify `-b android-4.1.1_r1`
+to get and build the Android source code but specify `-b android-4.2_r1`
 when issuing the `repo init` command. This assures that your CTS
 changes will be included in the next CTS release and beyond.
 
@@ -48,7 +48,7 @@ CTS console:
 
 At the cts-tf console, enter e.g.:
 
-    run cts --plan CTS -p android.os.cts.BuildVersionTest
+    run cts --plan CTS
 
 ## Writing CTS Tests ##
 
