@@ -154,9 +154,9 @@ viruses.
 involved, disable anti-virus on the Android tree. This has
 the added benefit of reducing build times.
 
-## Camera, GPS and NFC don't work on Galaxy Nexus. ##
+## Camera and GPS don't work on Galaxy Nexus. ##
 
-**Symptom**: Camera, GPS and NFC don't work on Galaxy Nexus.
+**Symptom**: Camera and GPS don't work on Galaxy Nexus.
 As an example, the Camera application crashes as soon as it's
 launched.
 

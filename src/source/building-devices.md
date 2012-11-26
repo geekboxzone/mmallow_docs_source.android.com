@@ -38,7 +38,7 @@ The variants of Galaxy Nexus that can be used are the GSM/HSPA+ configuration
 "maguro" (only if it was originally sold with a "yakju" or "takju" operating
 system) and the VZW CDMA/LTE configuration "toro". On those devices, graphics
 and audio are functional, as well as Wi-Fi, Bluetooth, and access to the
-respective cellular networks. The orientation sensors are functional.
+respective cellular networks. NFC and the orientation sensors are functional.
 
 The Sprint CDMA/LTE configuration "toroplus" of Galaxy Nexus is supported
 experimentally. On that configuration, the cellular network is not functional,
