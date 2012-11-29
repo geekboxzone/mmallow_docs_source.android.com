@@ -54,16 +54,16 @@ Depending on which kernel you want,
 
   - The `goldfish` project contains the kernel sources for the emulated
 platforms.
-  - The `msm` project has the sources for ADP1, ADP2, Nexus One, and
-can be used as a starting point for work on Qualcomm MSM chipsets.
-  - The `omap` project is used for PandaBoard and Galaxy Nexus, and
-can be used as a starting point for work on TI OMAP chipsets.
-  - The `samsung` project is used for Nexus S and can be used as a
-starting point for work on Samsung Hummingbird chipsets.
-  - The `tegra` project is for Xoom and Nexus 7, and can be used as
-a starting point for work on NVIDIA Tegra chipsets.
-  - The `exynos` project can be used as a starting point for work
-on Samsung Exynos chipsets.
+  - The `msm` project has the sources for ADP1, ADP2, Nexus One, Nexus 4,
+and can be used as a starting point for work on Qualcomm MSM chipsets.
+  - The `omap` project is used for PandaBoard and Galaxy Nexus,
+and can be used as a starting point for work on TI OMAP chipsets.
+  - The `samsung` project is used for Nexus S,
+and can be used as a starting point for work on Samsung Hummingbird chipsets.
+  - The `tegra` project is for Xoom and Nexus 7,
+and can be used as a starting point for work on NVIDIA Tegra chipsets.
+  - The `exynos` project has the kernel sources for Nexus 10,
+and can be used as a starting point for work on Samsung Exynos chipsets.
 
 ## Downloading a prebuilt gcc ##
 
@@ -88,6 +88,9 @@ As an example, we would build the panda kernel using the following commands:
 To build the tuna kernel, you may run the previous commands replacing all
 instances of "panda" with "tuna".
 
+  - The kernel for mantaray is `device/samsung/manta/kernel`
+  - The kernel for mako is `device/lge/mako-kernel/kernel`
+  - The kernel for grouper and tilapia is `device/asus/grouper/kernel`
   - The kernel for maguro and toro is `device/samsung/tuna/kernel`
   - The kernel for crespo and crespo4g is `device/samsung/crespo/kernel`
   - The kernel for stingray and wingray is `device/moto/wingray/kernel`

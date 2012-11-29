@@ -20,7 +20,7 @@ This page complements the main page about [Building](building.html) with
 information that is specific to individual devices.
 
 With the current release, it is possible to build for
-Nexus 10, for Nexus 7, and for some variants of Galaxy Nexus.
+Nexus 10, for Nexus 7 (Wi-Fi), and for some variants of Galaxy Nexus.
 The exact level of functionality for each device depends on the availability
 of the relevant proprietary hardware-specific binaries.
 
@@ -32,7 +32,7 @@ Nexus 4 cannot be used at the moment.
 The Wi-Fi variants of Nexus 7 can be used. On Nexus 7, graphics and audio are
 functional, as well as Wi-Fi and Bluetooth. Due to hardware differences, do
 not use 4.1.1 on a Nexus 7 that was originally sold with 4.1.2 or newer.
-The 3G variant is not supported.
+The Mobile variant is not supported.
 
 The variants of Galaxy Nexus that can be used are the GSM/HSPA+ configuration
 "maguro" (only if it was originally sold with a "yakju" or "takju" operating
@@ -167,11 +167,11 @@ the lunch menu, accessed when running the `lunch` command with no arguments:
 
 Device   | Branch                       | Build configuration
 ---------|------------------------------|------------------------
-manta    | android-4.2_r1 or master     | full_manta-userdebug
-grouper  | android-4.2_r1 or master     | full_grouper-userdebug
-tipalia  | android-4.2_r1 or master     | full_tilapia-userdebug
-maguro   | android-4.2_r1 or master     | full_maguro-userdebug
-toro     | android-4.2_r1 or master     | full_toro-userdebug
+manta    | android-4.2.1_r1 or master   | full_manta-userdebug
+grouper  | android-4.2.1_r1 or master   | full_grouper-userdebug
+tipalia  | android-4.2.1_r1 or master   | full_tilapia-userdebug
+maguro   | android-4.2.1_r1 or master   | full_maguro-userdebug
+toro     | android-4.2.1_r1 or master   | full_toro-userdebug
 toroplus | master                       | full_toroplus-userdebug
 panda    | master                       | full_panda-userdebug
 wingray  | android-4.1.2_r1             | full_wingray-userdebug
