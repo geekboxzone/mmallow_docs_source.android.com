@@ -156,9 +156,9 @@ over USB.
     SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4e42", MODE="0600", OWNER="<username>"
     # fastboot protocol on grouper/tilapia (Nexus 7)
     SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4e40", MODE="0600", OWNER="<username>"
-    # adb protocol on mako/manta (Nexus 4, Nexus 10)
+    # adb protocol on manta (Nexus 10)
     SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4ee2", MODE="0600", OWNER="<username>"
-    # fastboot protocol on mako/manta (Nexus 4, Nexus 10)
+    # fastboot protocol on manta (Nexus 10)
     SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4ee0", MODE="0600", OWNER="<username>"
 
 Those new rules take effect the next time a device is plugged in.
