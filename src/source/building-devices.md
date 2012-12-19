@@ -27,8 +27,6 @@ of the relevant proprietary hardware-specific binaries.
 All configurations of Nexus 10 can be used. On those devices, graphics, audio,
 Wi-Fi, Bluetooth, camera, NFC, GPS and orientation sensors are functional.
 
-Nexus 4 cannot be used at the moment.
-
 The Wi-Fi variants of Nexus 7 can be used. On Nexus 7, graphics and audio are
 functional, as well as Wi-Fi and Bluetooth. Due to hardware differences, do
 not use 4.1.1 on a Nexus 7 that was originally sold with 4.1.2 or newer.
@@ -81,7 +79,6 @@ which is a mode in the bootloader that can be used to flash the devices:
 Device   | Keys
 ---------|------
 manta    | Press and hold both *Volume Up* and *Volume Down*, then press and hold *Power*
-mako     | Press and hold *Volume Down*, then press and hold *Power*
 grouper  | Press *Power* for a second, and press *Volume Down* when the bootloader logo appears
 tilapia  | Press *Power* for a second, and press *Volume Down* when the bootloader logo appears
 phantasm | Power the device, cover it with one hand after the LEDs light up and until they turn red
@@ -131,7 +128,7 @@ The Android Open-Source Project can't be used
 from pure source code only, and requires additional hardware-related proprietary
 libraries to run, specifically for hardware graphics acceleration.
 
-Official binaries for Nexus S, Nexus S 4G, Galaxy Nexus, Nexus 7, Nexus 4,
+Official binaries for Nexus S, Nexus S 4G, Galaxy Nexus, Nexus 7,
 Nexus 10 and PandaBoard
 can be downloaded from
 [Google's Nexus driver page](https://developers.google.com/android/nexus/drivers),
@@ -205,7 +202,6 @@ partition, then wipe data.
 
 Factory images
 for Nexus 10,
-for Nexus 4,
 for Nexus Q,
 for Nexus 7 (all variants),
 for Galaxy Nexus (GSM/HSPA+ "yakju" and "takju",
