@@ -23,19 +23,17 @@ this site, you can reach us in one of a few different ways. To get the most
 out of any of these options, please first read "Getting the Most from Our
 Lists" on the [Community page](index.html)
 
-## For General Discussion ##
+## For Android Compatibility Definition and Compatibility Test Suite Technical Questions ##
+If you have questions about Android compatibility that aren't covered in this site, you can reach
+us in one of a few different ways. To get the most out of any of these options, please first read "Getting the Most from Our
+Lists" on the [Community page](index.html). If you have specific issues with the Compatibility Test Suite or the Compatibility Definition
+[android-compatibility list.](https://groups.google.com/forum/?fromgroups#!forum/android-compatibility) is the discussion forum for you.
 
-The preferred way to reach us is via the [compatibility@android.com](mailto:compatibility@android.com) address.
+    - Subscribe using Google Groups: [android-compatibility](https://groups.google.com/forum/?fromgroups#!forum/android-compatibility)
+    - Subscribe via email: [android-building](mailto:android-compatibility+subscribe@googlegroups.com)
 
-## For CTS Technical Questions ##
-
-If you have specific issues with the Compatibility Test Suite that require
-you to disclose information you'd prefer not to be public, you can contact an
-email address we've set up specifically this purpose: [cts@android.com](mailto:cts@android.com). This email address is for
-cases that require disclosure of confidential information only, so general
-questions will be directed back to the public android-compatibility
-list. Note also that this list is for specific technical questions; general
-inquiries will also be directed back to the [android-compatibility list.](https://groups.google.com/forum/?fromgroups#!forum/android-compatibility)
+Note that if you're a user looking for help with your Android device, this page probably isn't for you;
+you should contact your carrier or manufacturer for help with your Android device.
 
 ## For Business Inquiries ##
 
