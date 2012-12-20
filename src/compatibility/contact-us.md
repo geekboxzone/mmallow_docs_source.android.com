@@ -29,8 +29,8 @@ us in one of a few different ways. To get the most out of any of these options, 
 Lists" on the [Community page](index.html). If you have specific issues with the Compatibility Test Suite or the Compatibility Definition
 [android-compatibility list.](https://groups.google.com/forum/?fromgroups#!forum/android-compatibility) is the discussion forum for you.
 
-    - Subscribe using Google Groups: [android-compatibility](https://groups.google.com/forum/?fromgroups#!forum/android-compatibility)
-    - Subscribe via email: [android-building](mailto:android-compatibility+subscribe@googlegroups.com)
+- Subscribe using Google Groups: [android-compatibility](https://groups.google.com/forum/?fromgroups#!forum/android-compatibility)
+- Subscribe via email: [android-building](mailto:android-compatibility+subscribe@googlegroups.com)
 
 Note that if you're a user looking for help with your Android device, this page probably isn't for you;
 you should contact your carrier or manufacturer for help with your Android device.
