@@ -199,6 +199,12 @@ All changes to the ICU4C project at `external/icu4c` should be made upstream at
 [icu-project.org/](http://site.icu-project.org/).
 See [Submitting ICU Bugs and Feature Requests](http://site.icu-project.org/bugs) for more.
 
+## LLVM/Clang/Compiler-rt ##
+
+All changes to LLVM-related projects (`external/clang`, `external/compiler-rt`,
+`external/llvm`) should be made upstream at
+[llvm.org/](http://llvm.org/).
+
 ## OpenSSL ##
 
 All changes to the OpenSSL project at `external/openssl` should be made upstream at
