@@ -1,0 +1,121 @@
+page.title=Command File Format
+@jd:body
+
+<!--
+    Copyright 2010 The Android Open Source Project
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+<p>A command file allows one to specify sets of TF commands (that is, configurations with their
+associated arguments) to be specified all at once.  Further, the format used in the command file
+supports simple macro expansions, which makes it very useful without being unwieldy.  You can see a
+relatively involved example at the bottom of the page, as well as more gradual documentation
+immediately below.</p>
+<h2 id="lines">Lines</h2>
+<p>The format is line-based.</p>
+<ul>
+<li>Each output line will be considered as the arguments for a single Configuration for Trade
+    Federation to run.</li>
+<li>Each input line will turn into one or more output lines.</li>
+</ul>
+<p>In essence, the command file format combinatorially creates a sequence of Configuration specifications that it passes to Trade Federation to run.  Blank lines are ignored.  Comments are delimited by the "#" character and may only be preceded by whitespace.</p>
+<h2 id="macros">Macros</h2>
+<p>The specific syntax for defining a macro is discussed below in the Short Macro and Long Macro sections.  The following rules apply to all macros</p>
+<ul>
+<li>The name of a macro must begin with an alpha character.  Each subsequent character may be any
+    alphanumeric, an underscore, or a hyphen.</li>
+<li>A macro with name "macro_name" is invoked by adding macro_name() as an argument on some subsequent
+    line.</li>
+<li>The macro format does not support passing arguments to macros.  It allows only concatenation.</li>
+<li>A macro's expansion may contain invocations of other macros.  Technically, a macro's expansion may
+    contain invocations of itself, but in that case, the macro will never fully expand.</li>
+<li>The parser currently has a hard limit of 10 iterations of expansion.  This will be made
+    configurable at some point.</li>
+<li>During a single iteration of expansion:<ul>
+<li>All short macro invocations on a line will be expanded a single level — macro invocations
+    embedded within the first-level expansions will not be expanded yet</li>
+<li>Only one long macro invocation on a line will be expanded.  This will be the left-most long
+    macro invocation.</li>
+</ul>
+</li>
+</ul>
+<h2 id="short-macros">Short Macros</h2>
+<p>A short macro can be defined with the syntax:</p>
+<pre><code>MACRO macro_name = this is the macro expansion
+</code></pre>
+<p>The macro expansion terminates at the end of the line.  For multi-line expansion, see Long Macros
+below.</p>
+<h3 id="short-macro-expansion">Short Macro Expansion</h3>
+<ul>
+<li><code>a macro_name() invocation</code><br />
+  will be replaced by<br />
+  <code>a this is the macro expansion invocation</code></li>
+<li><code>three macro_name() A macro_name() B macro_name()</code><br />
+  will be replaced by (all during the first iteration)<br />
+  <code>three this is the macro expansion A this is the macro expansion B this is the macro expansion</code></li>
+</ul>
+<h2 id="long-macros">Long Macros</h2>
+<p>A long macro can be defined with the syntax:</p>
+<pre><code>LONG MACRO macro_name
+  expansion line 1
+  expansion line 2
+  expansion line 3
+END MACRO
+</code></pre>
+<p>The macro is then invoked with th enormal <code>macro_name()</code> syntax.  Leading whitespace/indentation
+will be ignored.</p>
+<h3 id="long-macro-expansion">Long Macro Expansion</h3>
+<p>The output of a single input line will include one line for each combination of macro expansions on
+that line.  That is, the number of output lines is multiplicatively related to the number of macro
+expansions on that line:</p>
+<ul>
+<li>Only a single long macro invocation per line will be expanded during a single iteration.  This
+    means that a line may only contain 10 long macro invocations to stay under the iteration count
+    limit.</li>
+<li>
+<p>A single invocation of a long macro on a single line will cause that line to expand to the number
+    of lines of the long macro's expansion.  On each expanded line, the invocation will be replaced
+    by the corresponding line of the macro's expansion.</p>
+</li>
+<li>
+<p>Example 1:</p>
+<pre><code>a macro_name() invocation
+</code></pre>
+<p>will be replaced by (in a single iteration)</p>
+<pre><code>a expansion line 1 invocation
+a expansion line 2 invocation
+a expansion line 3 invocation
+</code></pre>
+</li>
+<li>
+<p>Example 2:</p>
+<pre><code>alpha macro_name() beta macro_name()
+</code></pre>
+<p>will be replaced by (during the first iteration)</p>
+<pre><code>alpha expansion line 1 beta macro_name()
+alpha expansion line 2 beta macro_name()
+alpha expansion line 3 beta macro_name()
+</code></pre>
+<p>which will be replaced by (during the second iteration)</p>
+<pre><code>alpha expansion line 1 beta expansion line 1
+alpha expansion line 1 beta expansion line 2
+alpha expansion line 1 beta expansion line 3
+alpha expansion line 2 beta expansion line 1
+alpha expansion line 2 beta expansion line 2
+alpha expansion line 2 beta expansion line 3
+alpha expansion line 3 beta expansion line 1
+alpha expansion line 3 beta expansion line 2
+alpha expansion line 3 beta expansion line 3
+</code></pre>
+</li>
+</ul>
