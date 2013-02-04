@@ -65,11 +65,16 @@ and flags.
 ### Key Declarations ###
 
 Key declarations each consist of the keyword `key` followed by a Linux key code
-number, an Android key code name, and optional set of whitespace delimited policy flags.
+number and an Android key code name, or the keyword `usage` followed by a HID
+usage and an Android key code name. The HID usage is represented as a 32-bit
+integer, where the high 16-bits represent the HID usage page and the low
+16-bits represent the HID usage ID. Either of these declarations can then be
+followed by an optional set of whitespace delimited policy flags.
 
     key 1     ESCAPE
     key 114   VOLUME_DOWN       WAKE
     key 16    Q                 VIRTUAL     WAKE
+    key usage 0x0c006F          BRIGHTNESS_UP
 
 The following policy flags are recognized:
 
