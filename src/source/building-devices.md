@@ -39,7 +39,8 @@ and audio are functional, as well as Wi-Fi, Bluetooth, and access to the
 respective cellular networks. NFC and the orientation sensors are functional.
 
 The Sprint CDMA/LTE configuration "toroplus" of Galaxy Nexus is supported
-experimentally. On that configuration, the cellular network is not functional,
+experimentally, in the jb-mr1-dev-plus-aosp branch. On that configuration,
+the cellular network is not functional,
 and the other peripherals work like they do on "toro".
 
 The Motorola Xoom can be used in the Wi-Fi configuration "wingray"
@@ -51,7 +52,7 @@ On those devices all the peripherals are functional: graphics, audio, Wi-Fi,
 Bluetooth, cell networks, sensors, camera, hardware codecs, NFC, GPS.
 
 In addition, [PandaBoard](http://pandaboard.org) a.k.a. "panda" can be used
-in the master branch, but is considered experimental.
+in the jb-mr1-dev-plus-aosp branch, but is considered experimental.
 The specific details to use a PandaBoard with the Android Open-Source Project
 are in the file `device/ti/panda/README` in the source tree.
 
@@ -164,13 +165,12 @@ the lunch menu, accessed when running the `lunch` command with no arguments:
 
 Device   | Branch                       | Build configuration
 ---------|------------------------------|------------------------
-manta    | android-4.2.1_r1 or master   | full_manta-userdebug
-grouper  | android-4.2.1_r1 or master   | full_grouper-userdebug
-tipalia  | android-4.2.1_r1 or master   | full_tilapia-userdebug
-maguro   | android-4.2.1_r1 or master   | full_maguro-userdebug
-toro     | android-4.2.1_r1 or master   | full_toro-userdebug
-toroplus | master                       | full_toroplus-userdebug
-panda    | master                       | full_panda-userdebug
+manta    | android-4.2.1_r1.2           | full_manta-userdebug
+grouper  | android-4.2.1_r1.2           | full_grouper-userdebug
+maguro   | android-4.2.1_r1.2           | full_maguro-userdebug
+toro     | android-4.2.1_r1.2           | full_toro-userdebug
+toroplus | jb-mr1-dev-plus-aosp         | full_toroplus-userdebug
+panda    | jb-mr1-dev-plus-aosp         | full_panda-userdebug
 wingray  | android-4.1.2_r1             | full_wingray-userdebug
 crespo   | android-4.1.2_r1             | full_crespo-userdebug
 crespo4g | android-4.1.2_r1             | full_crespo4g-userdebug
