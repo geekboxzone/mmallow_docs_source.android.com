@@ -127,10 +127,13 @@ JRO03R | android-4.1.1_r6   | Nexus S 4G
 JRO03S | android-4.1.1_r6.1 | Nexus 7
 JZO54K | android-4.1.2_r1   | Nexus S, Galaxy Nexus, Nexus 7
 JOP40C | android-4.2_r1     | Galaxy Nexus, Nexus 7, Nexus 4, Nexus 10
-JOP40D | android-4.2.1_r1   | latest Jelly Bean version, Galaxy Nexus, Nexus 7, Nexus 4, Nexus 10
+JOP40D | android-4.2.1_r1   | Galaxy Nexus, Nexus 7, Nexus 4, Nexus 10
+JOP40F | android-4.2.1_r1.1 | Nexus 10
+JOP40G | android-4.2.1_r1.2 | Nexus 4
+JDP39  | android-4.2.2_r1   | latest Jelly Bean version, Galaxy Nexus, Nexus 7, Nexus 4, Nexus 10
 
 The branches froyo, gingerbread, ics-mr0, ics-mr1, jb-dev,
-jb-mr1-dev,
+jb-mr1-dev, jb-mr1.1-dev
 represent development
 branches that do not exactly match configurations that were tested
 by Google. They might contain a variety of changes in addition to
