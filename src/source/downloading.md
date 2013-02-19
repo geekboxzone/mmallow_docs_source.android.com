@@ -34,6 +34,8 @@ To install, initialize, and configure Repo, follow these steps:
 
  - For version 1.17, the SHA-1 checksum for repo is
  ddd79b6d5a7807e911b524cb223bc3544b661c28
+ - For version 1.19, the SHA-1 checksum for repo is
+ 92cbad8c880f697b58ed83e348d06619f8098e6c
 
 
 ## Initializing a Repo client ##
