@@ -199,6 +199,12 @@ All changes to the ICU4C project at `external/icu4c` should be made upstream at
 [icu-project.org/](http://site.icu-project.org/).
 See [Submitting ICU Bugs and Feature Requests](http://site.icu-project.org/bugs) for more.
 
+## mksh ##
+
+All changes to the MirBSD Korn Shell project at `external/mksh` should be made upstream
+either by sending an eMail to miros-mksh on the mirbsd.o®g domain (no subscription
+required to submit there) or (optionally) at [Launchpad](https://launchpad.net/mksh).
+
 ## OpenSSL ##
 
 All changes to the OpenSSL project at `external/openssl` should be made upstream at
