@@ -23,11 +23,11 @@ you to access the key documents and information.
 
 Android 4.2 is the release of the development milestone code-named
 Jelly Bean-MR1. Android 4.2 is the current version of Android. Source code for
-Android 4.2 is found in the 'android-4.2_r1' branch in the open-source tree.
+Android 4.2 is found in the 'android-4.2.2_r1' branch in the open-source tree.
 
 - [Android 4.2 Compatibility Definition Document (CDD)](4.2/android-4.2-cdd.pdf)
-- [Android 4.2 R1 Compatibility Test Suite (CTS)](https://dl.google.com/dl/android/cts/android-cts-4.2_r1-linux_x86-arm.zip)
-- [Android 4.2 R3 CTS Verifier](https://dl.google.com/dl/android/cts/android-cts-verifier-4.2_r3-linux_x86-arm.zip)
+- [Android 4.2 R2 Compatibility Test Suite (CTS)](https://dl.google.com/dl/android/cts/android-cts-4.2_r2-linux_x86-arm.zip)
+- [Android 4.2 R4 CTS Verifier](https://dl.google.com/dl/android/cts/android-cts-verifier-4.2_r4-linux_x86-arm.zip)
 
 ## Android 4.1 ##
 

@@ -30,7 +30,7 @@ Lists" on the [Community page](/community/index.html). If you have specific issu
 [android-compatibility list.](https://groups.google.com/forum/?fromgroups#!forum/android-compatibility) is the discussion forum for you.
 
 - Subscribe using Google Groups: [android-compatibility](https://groups.google.com/forum/?fromgroups#!forum/android-compatibility)
-- Subscribe via email: [android-building](mailto:android-compatibility+subscribe@googlegroups.com)
+- Subscribe via email: [android-compatibility](mailto:android-compatibility+subscribe@googlegroups.com)
 
 Note that if you're a user looking for help with your Android device, this page probably isn't for you;
 you should contact your carrier or manufacturer for help with your Android device.

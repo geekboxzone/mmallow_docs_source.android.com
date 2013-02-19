@@ -74,6 +74,11 @@ this is your place. This group isn't for user-space topics (see android-platform
     - Subscribe using Google Groups: [android-kernel](https://groups.google.com/forum/?fromgroups#!forum/android-kernel)
     - Subscribe via email: [android-kernel](mailto:android-kernel+subscribe@googlegroups.com)
 
+- *android-cell*:
+    This list is for Android cellular technologies, both voice and data.
+    - Subscribe using Google Groups: [android-cell](http://groups.google.com/group/android-cell)
+    - Subscribe via email: [android-cell](mailto:android-cell+subscribe@googlegroups.com)
+
 ## Using email with Google Groups ##
 
 Instead of using the [Google groups](https://groups.google.com/) site, you can use your email client of choice to participate in the mailing lists.
