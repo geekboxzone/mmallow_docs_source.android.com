@@ -102,6 +102,16 @@ for curdir, subdirs, files in os.walk(SRC_DIR):
   else:
     sidebar3 = parent[2]
 
+  if 'index-intro.md' in files:
+    intro = md(os.path.join(curdir, 'index-intro.md'))
+  else:
+    intro = ''
+
+  if 'index-news.md' in files:
+    news = md(os.path.join(curdir, 'index-news.md'))
+  else:
+    news = ''
+
   parents[curdir] = (sidebar, sidebar2, sidebar3)
 
   # Step D: mirror all non-*.md files, and translate (file).md files into (file).html
@@ -114,6 +124,9 @@ for curdir, subdirs, files in os.walk(SRC_DIR):
       main = md(absfilename)
       final = template.safe_substitute(main=main, sidebar=sidebar, sidebar2=sidebar2, \
           sidebar3=sidebar3, category=category, title=get_title(absfilename))
+
+      if cmp(absfilename, 'src/index.md') == 0:
+        final = string.Template(final).safe_substitute(intro=intro, news=news)
 
       html = codecs.open(os.path.join(outdir, f.replace('.md', '.html')), 'w', encoding="utf8")
       html.write(final)
