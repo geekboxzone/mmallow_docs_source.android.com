@@ -205,6 +205,12 @@ All changes to LLVM-related projects (`external/clang`, `external/compiler-rt`,
 `external/llvm`) should be made upstream at
 [llvm.org/](http://llvm.org/).
 
+## mksh ##
+
+All changes to the MirBSD Korn Shell project at `external/mksh` should be made upstream
+either by sending an eMail to miros-mksh on the mirbsd.o®g domain (no subscription
+required to submit there) or (optionally) at [Launchpad](https://launchpad.net/mksh).
+
 ## OpenSSL ##
 
 All changes to the OpenSSL project at `external/openssl` should be made upstream at
