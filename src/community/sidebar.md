@@ -5,6 +5,7 @@
 - [android-kernel](https://groups.google.com/forum/?fromgroups#!forum/android-kernel) (off-site)
 - [android-platform](https://groups.google.com/forum/?fromgroups#!forum/android-platform) (off-site)
 - [android-porting](https://groups.google.com/forum/?fromgroups#!forum/android-porting) (off-site)
+- [android-cell](https://groups.google.com/forum/?fromgroups#!forum/android-cell) (off-site)
 - [repo-discuss](https://groups.google.com/forum/?fromgroups#!forum/repo-discuss) (off-site)
 
 # Other Links #
