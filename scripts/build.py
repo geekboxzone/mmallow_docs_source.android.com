@@ -104,11 +104,13 @@ for curdir, subdirs, files in os.walk(SRC_DIR):
 
   if 'index-intro.md' in files:
     intro = md(os.path.join(curdir, 'index-intro.md'))
+    del files[files.index('index-intro.md')]
   else:
     intro = ''
 
   if 'index-news.md' in files:
     news = md(os.path.join(curdir, 'index-news.md'))
+    del files[files.index('index-news.md')]
   else:
     news = ''
 
