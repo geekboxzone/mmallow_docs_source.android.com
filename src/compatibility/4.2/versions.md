@@ -30,3 +30,7 @@ allowable by an Android 4.2-based system. The only permitted values for
 `android.os.Build.VERSION.RELEASE` for Android 4.2 are:
 
 - 4.2
+
+- 4.2.1
+
+- 4.2.2
