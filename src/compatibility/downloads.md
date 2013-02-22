@@ -36,8 +36,8 @@ Jelly Bean. Android 4.1.1 is the current version of Android. Source code for
 Android 4.1.1 is found in the 'android-4.1.1_r1' branch in the open-source tree.
 
 - [Android 4.1 Compatibility Definition Document (CDD)](4.1/android-4.1-cdd.pdf)
-- [Android 4.1 R1 Compatibility Test Suite (CTS)](https://dl.google.com/dl/android/cts/android-cts-4.1_r1-linux_x86-arm.zip)
-- [Android 4.1 R4 CTS Verifier](https://dl.google.com/dl/android/cts/android-cts-verifier-4.1_r4-linux_x86-arm.zip)
+- [Android 4.1 R2 Compatibility Test Suite (CTS)](https://dl.google.com/dl/android/cts/android-cts-4.1_r2-linux_x86-arm.zip)
+- [Android 4.1 R5 CTS Verifier](https://dl.google.com/dl/android/cts/android-cts-verifier-4.1_r5-linux_x86-arm.zip)
 
 
 ## Android 4.0.3 ##
@@ -47,8 +47,8 @@ Ice Cream Sandwich. Android 4.0.3 is the current version of Android. Source code
 Android 4.0.3 is found in the 'android-4.0.3_r1' branch in the open-source tree.
 
 - [Android 4.0 Compatibility Definition Document (CDD)](4.0/android-4.0-cdd.pdf)
-- [Android 4.0.3 R3 Compatibility Test Suite (CTS)](https://dl.google.com/dl/android/cts/android-cts-4.0.3_r3-linux_x86-arm.zip)
-- [Android 4.0.3 R2 CTS Verifier](https://dl.google.com/dl/android/cts/android-cts-verifier-4.0.3_r2-linux_x86-arm.zip)
+- [Android 4.0.3 R2 Compatibility Test Suite (CTS)](https://dl.google.com/dl/android/cts/android-cts-4.0.3_r2-linux_x86-arm.zip)
+- [Android 4.0.3 R1 CTS Verifier](https://dl.google.com/dl/android/cts/android-cts-verifier-4.0.3_r1-linux_x86-arm.zip)
 
 ## Android 2.3 ##
 
