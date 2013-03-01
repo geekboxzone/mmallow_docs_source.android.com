@@ -24,12 +24,13 @@ Nexus 4, Nexus 10, Nexus 7, and for some variants of Galaxy Nexus.
 The exact level of functionality for each device depends on the availability
 of the relevant proprietary hardware-specific binaries.
 
-For Nexus 4 and on Nexus 7, all configurations can be used,
+For Nexus 4 "mako" and on Nexus 7 "grouper" (Wi-Fi) and "tilapia" (Mobile),
+all configurations can be used,
 and all the hardware is functional.
 Due to hardware differences, do not use 4.1.1 on a Nexus 7 that
 was originally sold with 4.1.2 or newer.
 
-All configurations of Nexus 10 can be used. On those devices, graphics, audio,
+All configurations of Nexus 10 "manta" can be used. On those devices, graphics, audio,
 Wi-Fi, Bluetooth, camera, NFC, GPS and orientation sensors are functional.
 
 The variants of Galaxy Nexus that can be used are the GSM/HSPA+ configuration
@@ -71,6 +72,7 @@ which is a mode in the bootloader that can be used to flash the devices:
 Device   | Keys
 ---------|------
 manta    | Press and hold both *Volume Up* and *Volume Down*, then press and hold *Power*
+mako     | Press and hold *Volume Down*, then press and hold *Power*
 grouper  | Press *Power* for a second, and press *Volume Down* when the bootloader logo appears
 tilapia  | Press *Power* for a second, and press *Volume Down* when the bootloader logo appears
 phantasm | Power the device, cover it with one hand after the LEDs light up and until they turn red
@@ -155,6 +157,7 @@ the lunch menu, accessed when running the `lunch` command with no arguments:
 Device   | Branch                       | Build configuration
 ---------|------------------------------|------------------------
 manta    | android-4.2.2_r1 or master   | full_manta-userdebug
+mako     | android-4.2.2_r1 or master   | full_mako-userdebug
 grouper  | android-4.2.2_r1 or master   | full_grouper-userdebug
 tilapia  | android-4.2.2_r1 or master   | full_grouper-userdebug
 maguro   | android-4.2.2_r1 or master   | full_maguro-userdebug
