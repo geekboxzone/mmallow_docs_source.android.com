@@ -19,6 +19,16 @@
 Even with our best care, small problems sometimes slip in. This page keeps
 track of the known issues around using the Android source code.
 
+## Missing CellBroadcastReceiver in toro builds ##
+
+**Symptom**: On AOSP builds for toro (up to Jelly Bean 4.2.1),
+CellBroadcastReceiver doesn't get included in the system.
+
+**Cause**: There's a typo in vendor/samsung/toro/device-partial.mk,
+where PRODUCT_PACKAGES has the K replaced by an H.
+
+**Fix**: Use the latest packages for 4.2.2, or manually fix the typo.
+
 ## Missing CTS Native XML Generator ##
 
 **Symptom**: On some builds of IceCreamSandwich and later, the following
