@@ -74,6 +74,13 @@ describes the Android Open Accessory protocol for accessory hardware builders.
 
 [&raquo; Accessory Protocol Information](/tech/accessories/index.html)
 
+## Android Framework Technical Information
+The Android application framework includes a number of features that are
+only available to systems integrators.  This document describes how to define
+and use runtime shared libraries when building a system.
+
+[&raquo; Android Framework Technical Information](/tech/framework/index.html)
+
 ## External Storage Technical Information
 Android supports devices with external storage, typically provided by physical
 media or an emulation layer.  This document is designed to help systems
