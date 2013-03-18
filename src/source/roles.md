@@ -17,7 +17,7 @@
 # People and Roles #
 
 The Android Open Source Project (AOSP) includes individuals working in a variety
-of roles. As noted in [Our Philosophy](philosophy.html), Google is responsible for Android product management
+of roles. As noted in [Our Philosophy](/about/philosophy.html), Google is responsible for Android product management
 and the engineering process for the core framework and platform; however,
 the project considers contributions from any source, not just Google. This
 page describes the kinds of roles that interested parties can take on.
