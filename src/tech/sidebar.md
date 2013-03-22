@@ -6,3 +6,5 @@
 - [Input](/tech/input/index.html)
 - [Data Usage](/tech/datausage/index.html)
 - [Accessories](/tech/accessories/index.html)
+- [Framework](/tech/framework/index.html)
+- [Storage](/tech/storage/index.html)
