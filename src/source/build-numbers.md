@@ -151,7 +151,7 @@ Build  | Tag                | Notes
 HRI39  | android-3.0_r1     | earliest Honeycomb version
 HRI66  | android-3.0_r1.1
 HWI69  | android-3.0_r1.2
-HRI93  | android-3.0_r1.3
+HRI83  | android-3.0_r1.3
 HMJ37  | android-3.1_r1
 HTJ85B | android-3.2_r1
 HTK55D | android-3.2.1_r1
