@@ -20,17 +20,18 @@ This page complements the main page about [Building](building.html) with
 information that is specific to individual devices.
 
 With the current release, it is possible to build for
-Nexus 10, for Nexus 7 (Wi-Fi), and for some variants of Galaxy Nexus.
+Nexus 4, Nexus 10, Nexus 7, and for some variants of Galaxy Nexus.
 The exact level of functionality for each device depends on the availability
 of the relevant proprietary hardware-specific binaries.
 
-All configurations of Nexus 10 can be used. On those devices, graphics, audio,
-Wi-Fi, Bluetooth, camera, NFC, GPS and orientation sensors are functional.
+For Nexus 4 "mako" and on Nexus 7 "grouper" (Wi-Fi) and "tilapia" (Mobile),
+all configurations can be used,
+and all the hardware is functional.
+Due to hardware differences, do not use 4.1.1 on a Nexus 7 that
+was originally sold with 4.1.2 or newer.
 
-The Wi-Fi variants of Nexus 7 can be used. On Nexus 7, graphics and audio are
-functional, as well as Wi-Fi and Bluetooth. Due to hardware differences, do
-not use 4.1.1 on a Nexus 7 that was originally sold with 4.1.2 or newer.
-The Mobile variant is not supported.
+All configurations of Nexus 10 "manta" can be used. On those devices, graphics, audio,
+Wi-Fi, Bluetooth, camera, NFC, GPS and orientation sensors are functional.
 
 The variants of Galaxy Nexus that can be used are the GSM/HSPA+ configuration
 "maguro" (only if it was originally sold with a "yakju" or "takju" operating
@@ -39,7 +40,7 @@ and audio are functional, as well as Wi-Fi, Bluetooth, and access to the
 respective cellular networks. NFC and the orientation sensors are functional.
 
 The Sprint CDMA/LTE configuration "toroplus" of Galaxy Nexus is supported
-experimentally, in the jb-mr1-dev-plus-aosp branch. On that configuration,
+experimentally, in the master branch only. On that configuration,
 the cellular network is not functional,
 and the other peripherals work like they do on "toro".
 
@@ -48,21 +49,12 @@ sold in the USA, with Android 4.1.2. Graphics and audio are functional
 as well as Wi-Fi and Bluetooth and the orientation sensors.
 
 All configurations of Nexus S and Nexus S 4G can be used with Android 4.1.2.
-On those devices all the peripherals are functional: graphics, audio, Wi-Fi,
-Bluetooth, cell networks, sensors, camera, hardware codecs, NFC, GPS.
+On those devices all the hardware is functional.
 
 In addition, [PandaBoard](http://pandaboard.org) a.k.a. "panda" can be used
-in the jb-mr1-dev-plus-aosp branch, but is considered experimental.
+in the master branch, but is considered experimental.
 The specific details to use a PandaBoard with the Android Open-Source Project
 are in the file `device/ti/panda/README` in the source tree.
-
-Nexus One a.k.a. "passion" is obsolete, was experimental in gingerbread,
-and can't be used with newer versions of the Android Open-Source
-Project.
-
-Android Developer Phones (ADP1 and ADP2, a.k.a. "dream" and "sapphire") are
-obsolete, were experimental in froyo, and can't be used with
-newer versions of the Android Open-Source Project.
 
 ## Building fastboot and adb ##
 
@@ -80,6 +72,7 @@ which is a mode in the bootloader that can be used to flash the devices:
 Device   | Keys
 ---------|------
 manta    | Press and hold both *Volume Up* and *Volume Down*, then press and hold *Power*
+mako     | Press and hold *Volume Down*, then press and hold *Power*
 grouper  | Press *Power* for a second, and press *Volume Down* when the bootloader logo appears
 tilapia  | Press *Power* for a second, and press *Volume Down* when the bootloader logo appears
 phantasm | Power the device, cover it with one hand after the LEDs light up and until they turn red
@@ -129,15 +122,13 @@ The Android Open-Source Project can't be used
 from pure source code only, and requires additional hardware-related proprietary
 libraries to run, specifically for hardware graphics acceleration.
 
-Official binaries for Nexus S, Nexus S 4G, Galaxy Nexus, Nexus 7,
-Nexus 10 and PandaBoard
-can be downloaded from
+Official binaries for the supported devices can be downloaded from
 [Google's Nexus driver page](https://developers.google.com/android/nexus/drivers),
 which add access to additional hardware capabilities with non-Open-Source code.
 
-When using the master branch for a device, the binaries for the most
-recent numbered release are the ones that should be used in the master
-branch.
+When building the master branch for a device, the binaries for the most
+recent numbered release or with the most recent date
+are the ones that should be used.
 
 ### Extracting the proprietary binaries ###
 
@@ -165,12 +156,14 @@ the lunch menu, accessed when running the `lunch` command with no arguments:
 
 Device   | Branch                       | Build configuration
 ---------|------------------------------|------------------------
-manta    | android-4.2.1_r1.2           | full_manta-userdebug
-grouper  | android-4.2.1_r1.2           | full_grouper-userdebug
-maguro   | android-4.2.1_r1.2           | full_maguro-userdebug
-toro     | android-4.2.1_r1.2           | full_toro-userdebug
-toroplus | jb-mr1-dev-plus-aosp         | full_toroplus-userdebug
-panda    | jb-mr1-dev-plus-aosp         | full_panda-userdebug
+manta    | android-4.2.2_r1 or master   | full_manta-userdebug
+mako     | android-4.2.2_r1 or master   | full_mako-userdebug
+grouper  | android-4.2.2_r1 or master   | full_grouper-userdebug
+tilapia  | android-4.2.2_r1 or master   | full_grouper-userdebug
+maguro   | android-4.2.2_r1 or master   | full_maguro-userdebug
+toro     | android-4.2.2_r1 or master   | full_toro-userdebug
+toroplus | master                       | full_toroplus-userdebug
+panda    | master                       | full_panda-userdebug
 wingray  | android-4.1.2_r1             | full_wingray-userdebug
 crespo   | android-4.1.2_r1             | full_crespo-userdebug
 crespo4g | android-4.1.2_r1             | full_crespo4g-userdebug
@@ -202,12 +195,13 @@ partition, then wipe data.
 
 Factory images
 for Nexus 10,
+for Nexus 4,
 for Nexus Q,
-for Nexus 7 (all variants),
+for Nexus 7,
 for Galaxy Nexus (GSM/HSPA+ "yakju" and "takju",
 and CDMA/LTE "mysid" and "mysidspr"),
 and
-for Nexus S and Nexus S 4G (all variants)
+for Nexus S and Nexus S 4G
 are available from
 [Google's factory image page](https://developers.google.com/android/nexus/images).
 
