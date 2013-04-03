@@ -19,6 +19,20 @@
 Even with our best care, small problems sometimes slip in. This page keeps
 track of the known issues around using the Android source code.
 
+## SDK build fails in 4.2.2 ##
+
+**Symptom**: The SDK builds fail in the tagged 4.2.2 release,
+with the following error:
+`Docs droiddoc: out/target/common/docs/online-gcm-ref
+javadoc: error - No packages or classes specified.`
+
+**Cause**: The documentation for GCM isn't Open Source,
+and there's a spurious reference to it from the Open Source
+documentation.
+
+**Fix**: in frameworks/base,
+`git revert 5f9922d7c3bce158e4c7a58929d4075e7c91e32e`
+
 ## Missing CellBroadcastReceiver in toro builds ##
 
 **Symptom**: On AOSP builds for toro (up to Jelly Bean 4.2.1),
