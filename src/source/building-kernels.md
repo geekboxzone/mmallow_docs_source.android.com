@@ -20,7 +20,7 @@ If you are only interested in the kernel, you may use this guide
 to download and build the appropriate kernel.
 
 The following instructions assume that you have not downloaded all
-of AOSP.  If you have downloaded all of AOSP, you may skip the git
+of AOSP. If you have downloaded all of AOSP, you may skip the git
 clone steps other than the step to download the actual kernel sources.
 
 We will use the Pandaboard kernel in all the following examples.
@@ -28,17 +28,34 @@ We will use the Pandaboard kernel in all the following examples.
 
 ## Figuring out which kernel to build ##
 
-You will want to look at the git log for the kernel in the device project that
-you are interested in.
+This table lists the names and locations of the kernel sources and binaries:
+
+Device   | Binary location               | Source location | Build configuration
+---------|-------------------------------|-----------------|--------------------
+manta    | device/samsung/manta/kernel   | kernel/exynos   | manta_defconfig
+mako     | device/lge/mako-kernel/kernel | kernel/msm      | mako_defconfig
+grouper  | device/asus/grouper/kernel    | kernel/tegra    | tegra3_android_defconfig
+tilapia  | device/asus/grouper/kernel    | kernel/tegra    | tegra3_android_defconfig
+maguro   | device/samsung/tuna/kernel    | kernel/omap     | tuna_defconfig
+toro     | device/samsung/tuna/kernel    | kernel/omap     | tuna_defconfig
+panda    | device/ti/panda/kernel        | kernel/omap     | panda_defconfig
+stingray | device/moto/wingray/kernel    | kernel/tegra    | stingray_defconfig
+wingray  | device/moto/wingray/kernel    | kernel/tegra    | stingray_defconfig
+crespo   | device/samsung/crespo/kernel  | kernel/samsung  | herring_defconfig
+crespo4g | device/samsung/crespo/kernel  | kernel/samsung  | herring_defconfig
+
+You will want to look at the git log for the kernel binary in the device
+project that you are interested in.
 Device projects are of the form device/&lt;vendor&gt;/&lt;name&gt;.
 
     $ git clone https://android.googlesource.com/device/ti/panda
     $ cd panda
-    $ git log kernel
+    $ git log --max-count=1 kernel
 
-The log should contain notes of the commit SHA1 for the appropriate
-kernel project.  Keep this value at hand so that you can use it in
-a later step.
+The commit message for the kernel binary contains a partial git log
+of the kernel sources that were used to build the binary in question.
+The first entry in the log is the most recent, i.e. the one used to
+build that kernel. You will need it at a later step.
 
 ## Downloading sources ##
 
@@ -69,9 +86,16 @@ and can be used as a starting point for work on Samsung Exynos chipsets.
 
 Ensure that the prebuilt toolchain is in your path.
 
-    $ git clone https://android.googlesource.com/platform/prebuilt
-    $ export PATH=$(pwd)/prebuilt/linux-x86/toolchain/arm-eabi-4.4.3/bin:$PATH
+    $ export PATH=$(pwd)/prebuilts/gcc/linux-x86/arm/arm-eabi-4.6/bin:$PATH
 
+Or
+
+    $ export PATH=$(pwd)/prebuilts/gcc/darwin-x86/arm/arm-eabi-4.6/bin:$PATH
+
+On a linux host, if you don't have an Android source tree, you can download
+the prebuilt toolchain from:
+
+    $ git clone https://android.googlesource.com/platform/prebuilts/gcc/linux-x86/arm/arm-eabi-4.6
 
 ## Building ##
 
@@ -88,13 +112,5 @@ As an example, we would build the panda kernel using the following commands:
 To build the tuna kernel, you may run the previous commands replacing all
 instances of "panda" with "tuna".
 
-  - The kernel for mantaray is `device/samsung/manta/kernel`
-  - The kernel for mako is `device/lge/mako-kernel/kernel`
-  - The kernel for grouper and tilapia is `device/asus/grouper/kernel`
-  - The kernel for maguro and toro is `device/samsung/tuna/kernel`
-  - The kernel for crespo and crespo4g is `device/samsung/crespo/kernel`
-  - The kernel for stingray and wingray is `device/moto/wingray/kernel`
-
-The image is output as `arch/arm/boot/zImage`.  You may copy it as
-`device/<vendor>/<name>/kernel` or `device/ti/panda/kernel` in the case of this
-example.
+The kernel binary is output as `arch/arm/boot/zImage`, and needs to be copied
+into the Android source tree in order to build the matching boot image.
