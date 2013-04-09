@@ -1,0 +1,197 @@
+page.title=Overview
+@jd:body
+
+<!--
+    Copyright 2010 The Android Open Source Project
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+<div id="qv-wrapper">
+  <div id="qv">
+    <h2>In this document</h2>
+    <ol id="auto-toc">
+    </ol>
+  </div>
+</div>
+
+
+<p>Welcome to the Android Platform Development Kit (PDK) Guide! The Android PDK allows partners to port 
+  their drivers as well as develop, optimize, and test against an upcoming Android platform release.
+  The Android PDK includes a set of interfaces for the Android hardware abstraction layer (HAL),
+  platform sources for integration, a binary system image, and HAL and integration documentation.
+  In addition, the PDK also ships with the Android Compatibility Test Suite (CTS).
+</p>
+
+<h2 id="arch">Android Low-Level System Architecture</h2>
+<p>Before you begin porting Android to your hardware, it is important to have an
+understanding of how Android works at a high level. Because your drivers and HAL code interact
+with many layers of Android code, this understanding can help you find
+your way through the many layers of code that are available to you through the AOSP
+(Android Open Source Project) source tree as well as the PDK.
+The following diagram shows a system level view of how Android works:
+</p>
+
+<img src="images/system-architecture.png">
+
+<p class="img-caption"><strong>Figure 1.</strong> Android System Architecture</p>
+
+  <h4>Application framework</h4>
+  <p>This is the level that most application developers concern themselves with. You should be
+    aware of the APIs available to developers as many of them map 1:1 to the underlying HAL
+    interfaces and can provide information as to how to implement your driver.
+  </p>
+
+  <h4>Binder IPC</h4>
+  <p>
+  The Binder Inter-Process Communication mechanism allows the application framework to
+  cross process boundaries and call into the Android system services code. This basically allows
+  high level framework APIs to interact with Android's system services. At the application framework level, all
+  of this communication is hidden from the developer and things appear to "just work." 
+  </p>
+
+  <h4>System services</h4>
+  <p>Most of the functionality exposed through the application framework APIs  must
+    communicate with some sort of system service to access the underlying hardware. Services
+    are divided into modular components with focused functionality 
+    such as the Window Manager, Search Service, or Notification Manager. System services are grouped
+    into two buckets: system and media. The system services include things such as the Window or
+    Notification Manager. The media services include all the services involved in playing and
+    recording media.
+  </p>
+  
+<h4>Hardware abstraction layer (HAL)</h4>
+<p>The HAL serves as a standard interface that allows the Android system to call into the device
+  driver layer while being agnostic about the lower-level implementations of your drivers and hardware.
+  You must implement the corresponding HAL (and driver) for the particular piece of hardware that your product
+  provides. Android does not mandate a standard interaction between your HAL implementation and your device drivers, so
+  you have free reign to do what is best for your situation. However, you must abide by the contract
+  defined in each hardware-specific HAL interface for the Android system to be able
+  to correctly interact with your hardware. HAL implementations are typically built into
+  shared library modules (<code>.so</code> files).
+</p>
+<h4>Linux Kernel</h4>
+<p>For the most part, developing your device drivers is the same as developing a typical Linux device driver.
+  Android uses a specialized version of the Linux kernel with a few special additions such as
+  wakelocks, a memory management system that is more agressive in preserving memory,
+  the Binder IPC driver, and other features that are important for a mobile embedded platform like Android.
+  These additions have less to do with driver development than with the system's functionality. The PDK
+  does not provide kernel sources, so you must provide your own. You can use any version of the kernel that
+  you want as long as it supports the required features, such as the binder driver. However, we recommend
+  using the latest version of the Android kernel. For the latest Android kernel, see
+  <a href="http://source.android.com/source/building-kernels.html" >Building Kernels</a>.
+</p>
+
+
+<h2 id="pdk">PDK Components</h2>
+<p>Now that you have a high-level overview of the Android system, we'll go over the PDK and what it provides
+  to port Android to your product. The PDK provides source files needed to implement
+  your product and a platform binary that lets you build a runnable system image. You can then install
+  this barebones image to test your product with the latest builds of Android. The most important source files
+  included in the PDK are located in the:</p>
+
+  <ul>
+    <li><code>frameworks/native</code> directory</li>
+    <li><code>frameworks/av</code> directory for media, camera, DRM, and the audio framework stack</code></li>
+    <li><code>hardware/libhardware/include/hardware</code> directory for the HAL interfaces </li>
+    <li><code>vendor/pdk/data/cts</code> directory for the CTS binaries</li>
+  </ul>
+</p>
+<p>In addition, the Android PDK includes the following source directories:</p>
+<ul>
+  <li>abi</li>
+  <li>bionic</li>
+  <li>bootable</li>
+  <li>build</li>
+  <li>device</li>
+  <li>external (Chromium and Webkit are not included)</li>
+  <li>hardware</li>
+  <li>libnativehelper</li>
+  <li>pdk</li>
+  <li>prebuilt</li>
+  <li>prebuilts</li>
+  <li>system</li>
+</ul>
+
+  <p>The PDK also contains documentation that is split into three different sections:</p>
+  <ul>
+    <li><a href="{@docRoot}guide/getting_started.html">Getting Started</a> - Explains how to download the PDK source, how the Android build system works, and how to configure a build for your specific product.</li>
+    <li><a href="{@docRoot}guide/hal.html">The Hardware Abstraction Layer</a> - Explains the various HALs provided by Android and the interfaces (C header files) that define them. </li>
+      <li><a href="{@docRoot}guide/reference/files.html">HAL reference</a> - A quick reference for the various HAL interfaces.</li>
+  </ul>
+
+<h3 id="cts">Compatibility Test Suite</h3>
+<p>CTS binaries for ARM, MIPS, and x86 are provided in the corresponding directories in <code>vendor/pdk/data/cts</code>. Only the ARM
+  variant is Google-verified as there is no Nexus device running on any other architecture. Not all of the CTS tests since the
+  complete Android platform is not present. The following CTS tests should work:</p>
+
+<ul>
+      <li>android.bluetooth</li>
+      <li>android.graphics</li>
+      <li>android.graphics2</li>
+      <li>android.hardware</li>
+      <li>android.location</li>
+      <li>android.opengl</li>
+      <li>android.openglperf</li>
+      <li>android.media</li>
+      <li>android.mediastress</li>
+      <li>android.nativemedia.sl</li>
+      <li>android.nativemedia.xa</li>
+      <li>android.net</li>
+      <li>android.renderscript</li>
+    </ul>
+    <p>You can run individual packages such as <code>android.media</code> with:</p>
+    <pre>cts-tradefed run singleCommand cts --skip-device-info --package android.media</pre>
+</ul>
+
+  <p>Because the PDK is missing many components compared to a full Android source tree,
+  there is a PDK test plan that is provided with CTS that limits the tests that are ran when using the PDK. You can run
+  this special test plan with the following command:</p>
+
+  <pre>run cts --plan PDK</pre>
+    
+<p>CTS is always actively under development, so we expect some tests to fail. CTS results
+  for the Galaxy Nexus are provided for you in the
+  the <code>vendor/pdk/data/cts/</code> directory and will show which tests fail on that
+  device. You can safely ignore the failed tests for your devices as well.</p>
+
+  <p>See the <a href="http://source.android.com/compatibility/cts-intro.html">CTS manual</a> for more information on CTS.</p>
+
+<h2 id="inc-ex">PDK Inclusions and Exclusions</h2>
+<p>The PDK is a subset of the complete Android source tree and might be missing things that you might need. Here is a list of what the PDK supports
+  and does not support:</p>
+<ul>
+  <li>Supports building Android apps using the publicly available, standard SDK. Builds with non-public platform APIs are not supported. The JNI build is supported.</li>
+  <li>Supports only <code>en_US</code> locale.</li>
+  <li>Supports only phone layouts. Tablet layouts are not included.</li>
+  <li>Enables support for software navigation buttons by default, which you can disable by setting <code>qemu.jw.mainkeys=1</code>.</li>
+  <li>Builds all binaries with SMP (symmetric multiprocessing) features enabled. This might have a small performance impact on non-SMP CPUs.</li>
+  <li>Includes a minimal amount of Java libraries. Obtain any additional Java libraries from the publicly released Android source tree.</li>
+  <li>Contains a minimum number of applications. Build and install necessary applications as needed.</li>
+  <li>Does not support media streaming.</li>
+  <li>Does not include non-Latin fonts. (set by <code>MINIMAL_FONT_FOOTPRINT</code> variable in <code>BoardConfig.mk</code>).
+  An app might crash if it requires such fonts. </li>
+  <li>Does not support replacing framework resources by using the overlay mechanism.
+    This means all configurations controlled by framework resources are fixed.</li>   
+  <li>Does not support NFC</li>
+  <li>Does not support DRM</li>
+</ul>
+
+<h2 id="knownissues">Support and Known Issues</h2>
+<p>
+For questions or to report issues related with the PDK, send a message to the <a href="https://groups.google.com/a/google.com/forum/?fromgroups#!forum/android-pdk-feedback">android-pdk@google.com</a> mailing list.</p>
+
+<p>The following list describes the known issues with the PDK:</p>
+<ul>
+  <li>After running the CTS (Compatibility Test Suite), <code>android.process.acore</code> crashes. This is caused by
+some missing components in PDK and does not affect the operation of CTS tests.</li>
+</p>
