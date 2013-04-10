@@ -250,7 +250,6 @@ PRODUCT_PACKAGES += \
 </ol>
 
 <h2>Audio preprocessing effects</h2>
-The Android platform supports audio effects on supported devices  in the audiofx package, which app developers have access to. Devices turn on effects by de
 <p>
 The Android platform supports audio effects on supported devices in the
 <a href="http://developer.android.com/reference/android/media/audiofx/package-summary.html">audiofx</a>
