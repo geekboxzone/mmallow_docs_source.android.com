@@ -102,9 +102,10 @@ then both <code>AXIS_GAS</code> and <code>AXIS_BRAKE</code> are set to <code>0</
 <p>An inverted axis inverts the sign of the axis value.</p>
 <p>The following declaration maps <code>ABS_RZ</code> (indicated by <code>0x05</code>) to <code>AXIS_BRAKE</code>
 (indicated by <code>BRAKE</code>), and inverts the output by negating it.</p>
-<pre><code>axis 0x05 invert AXIS_RZ
+<pre><code>axis 0x05 invert BRAKE
 </code></pre>
-<p>In the above example, if the value of <code>ABS_RZ</code> is <code>2</code> then <code>AXIS_RZ</code> is set to <code>-2</code>.</p>
+<p>In the above example, if the value of <code>ABS_RZ</code> is <code>2</code> then
+<code>AXIS_BRAKE</code> is set to <code>-2</code>.</p>
 <h4 id="center-flat-position-option">Center Flat Position Option</h4>
 <p>The Linux input protocol provides a way for input device drivers to specify the
 center flat position of joystick axes but not all of them do and some of them
