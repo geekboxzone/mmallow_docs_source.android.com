@@ -250,13 +250,27 @@ PRODUCT_PACKAGES += \
 </ol>
 
 <h2>Audio preprocessing effects</h2>
-<p>You can expose audio preprocessing effects to application developers through your
-audio HAL so they can take advantage of platform features. Preprocessing effects
-are always paired with the use case mode in which the preprocessing is requested. In Android
+The Android platform supports audio effects on supported devices  in the audiofx package, which app developers have access to. Devices turn on effects by de
+<p>
+The Android platform supports audio effects on supported devices in the
+<a href="http://developer.android.com/reference/android/media/audiofx/package-summary.html">audiofx</a>
+package, which is available for developers to access. For example, on the Nexus 10, the following pre-processing effects are supported: </p>
+<ul>
+  <li><a href="http://developer.android.com/reference/android/media/AcousticEchoCanceller">Acoustic Echo 
+  Cancellation</a></li>
+  <li><a href="http://developer.android.com/reference/android/media/AutomaticGainControl">Automatic Gain 
+  Control</a></li>
+  <li><a href="http://developer.android.com/reference/android/media/NoiseSuppressor">Noise 
+  Suppression</a></li>
+</ul>
+</p>
+
+
+<p>Pre-processing effects are always paired with the use case mode in which the pre-processing is requested. In Android
 app development, a use case is referred to as an <code>AudioSource</code>, and app developers
 request to use the <code>AudioSource</code> abstraction instead of the actual audio hardware device to use.
-The following list shows the different
-<code>AudioSource</code> options available that an app developer can choose.
+The Android Audio Policy Manager maps an <code>AudioSource</code> to the actual hardware with <code>AudioPolicyManagerBase::getDeviceForInputSource(int 
+inputSource)</code>. In Android 4.2, the following sources are exposed to developers:
 </p>
 <ul>
 <code><li>android.media.MediaRecorder.AudioSource.CAMCORDER</li></code>
@@ -269,26 +283,23 @@ The following list shows the different
 <code><li>android.media.MediaRecorder.AudioSource.DEFAULT</li></code>
 </ul>
 
-<p>The default preprocessing effects to be applied for each of the <code>AudioSource</code> is 
+<p>The default pre-processing effects that are applied for each <code>AudioSource</code> is 
 specified in the <code>/system/etc/audio_effects.conf</code> file. To specify
-your own effects, create a <code>/system/vendor/etc/audio_effects.conf</code> file
-and specify any preprocessing effects that you need to turn on for every <code>AudioSource</code> type.
+your own default effects for every <code>AudioSource</code>, create a <code>/system/vendor/etc/audio_effects.conf</code> file
+and specify any pre-processing effects that you need to turn on. For an example, 
+see the implementation for the Nexus 10 in <code>device/samsung/manta/audio_effects.conf</code>
 
-<p class="note"><strong>Note:</strong> Voice recognition does not have any preprocessing 
-effects by default</p>
+<p class="warning"><strong>Warning:</strong> For the <code>VOICE_RECOGNITION</code> use case, do not enable
+the noise supression pre-processing effect. This effect is already turned off by default, but if you enable 
+it in your own <code>audio_effects.conf</code> file, it is ignored by all of the 
+Google Apps that use voice recognition..</p>
 
-The following example for Nexus 10 enables preprocessing for the VOIP <code>AudioSource</code> and Camcorder <code>AudioSource</code>.
+The following example enables pre-processing for the VOIP <code>AudioSource</code> and Camcorder <code>AudioSource</code>. 
+If you turn these on, then the app developer does not need to explicilty request 
+to use these effects when they are requesting the particular <code>AudioSource</code>.
 </p>
 
 <pre>
-effects {
- agc {
-   library audience_pre_processing
-   uuid e9e87eb0-0b55-11e2-892e-0800200c9a66
- }
- ...
-}
-
 pre_processing {
    voice_communication {
        aec {}
@@ -301,28 +312,9 @@ pre_processing {
 </pre>
 
 <h3>Source tuning</h3>
-<p>For source tuning, there are no explicit requirements on audio gain or audio processing
+<p>For <code>AudioSource</code> tuning, there are no explicit requirements on audio gain or audio processing
 with the exception of voice recognition (<code>VOICE_RECOGNITION</code>).</p>
 
-<p>The Android Audio Policy Manager maps sources to devices with <code>AudioPolicyManagerBase::getDeviceForInputSource(int 
-inputSource)</code>. In Android 4.2, the following sources are exposed to developers:
-</p>
-
-<pre>
-android.media.AcousticEchoCanceller
-android.media.AutomaticGainControl
-android.media.NoiseSuppressor
-</pre>
-
-<p>
-The audio preprocessing effects are developer facing APIs for platform effects that you 
-can tune on a use case basis. For example, you can tune noise suppressor and wind noise suppressor for <code>CAMCORDER</code>
-or stationary noise suppressor for <code>VOICE_COMMUNICATION</code>.
-Similarly, you can tune Automatic Gain Control (<code>agc</code>) for close-talk for 
-<code>VOICE_COMMUNICATION</code> and main phone mic for far-talk for <code>CAMCORDER</code>.
-</p>
-
-<h3>Voice recognition configuration and requirements</h3>
 <p>The following are the requirements for voice recognition:</p>
 
 <ul>
@@ -334,13 +326,29 @@ Similarly, you can tune Automatic Gain Control (<code>agc</code>) for close-talk
 <li>Effects / pre-processing must be disabled by default</li>
 </ul>
 
-<h3>Implementing audio preprocessing effects</h3>
+For other sources, you could tune sources with the following effects:
+
+<ul>
+  <li>Noise Supressor
+    <ul>
+      <li>Tunes for wind noise supressor for <code>CAMCORDER</code></li>
+      <li>Tuned for stationary noise supressor for <code>VOICE_COMMUNICATION</code></li>
+    </ul>
+  </li>
+  <li>Automatic Gain Control
+    <ul>
+      <li>Tuned for close-talk for <code>VOICE_COMMUNICATION</code> and main phone mic</li>
+      <li>Tuned for far-talk for <code>CAMCORDER</code></li>
+    </ul>
+  </li>
+</ul>
 
 <h3>More information</h3>
 <p>For more information, see:</p>
 <ul>
-<li>Android Open Source Project documentation for 
-<a href="http://developer.android.com/reference/android/media/audiofx/packagesummary.html">audio effects</a>.</li>
-<li>Android Open Source project documentation for <a href="http://developer.android.com/reference/android/media/audiofx/NoiseSuppressor.
-html">Noise Suppression audio effect</a></li>
+<li>Android documentation for <a href="http://developer.android.com/reference/android/media/audiofx/package-summary.html">audiofx 
+package</a>
+
+<li>Android documentation for <a href="http://developer.android.com/reference/android/media/audiofx/NoiseSuppressor.html">Noise Suppression audio effect</a></li>
+<li><code>device/samsung/manta/audio_effects.conf</code> file for the Nexus 10</li>
 </ul>
