@@ -16,6 +16,7 @@ page.title=Android Security Overview
     See the License for the specific language governing permissions and
     limitations under the License.
 -->
+
 <h2 id="introduction">Introduction</h2>
 <p>Android is a modern mobile platform that was designed to be truly open. Android
 applications make use of advanced hardware and software, as well as local and
@@ -23,14 +24,17 @@ served data, exposed through the platform to bring innovation and value to
 consumers. To protect that value, the platform must offer an application
 environment that ensures the security of users, data, applications, the device,
 and the network.</p>
+
 <p>Securing an open platform requires a robust security architecture and rigorous
 security programs.  Android was designed with multi-layered security that
 provides the flexibility required for an open platform, while providing
 protection for all users of the platform.</p>
+
 <p>Android was designed with developers in mind. Security controls were designed
 to reduce the burden on developers. Security-savvy developers can easily work
 with and rely on flexible security controls.  Developers less familiar with
 security will be protected by safe defaults.</p>
+
 <p>Android was designed with device users in mind. Users are provided visibility
 into how applications work, and control over those applications.  This design
 includes the expectation that attackers would attempt to perform common
@@ -38,6 +42,7 @@ attacks, such as social engineering attacks to convince device users to install
 malware, and attacks on third-party applications on Android. Android was
 designed to both reduce the probability of these attacks and greatly limit the
 impact of the attack in the event it was successful.</p>
+
 <p>This document outlines the goals of the Android security program, describes the
 fundamentals of the Android security architecture, and answers the most
 pertinent questions for system architects and security analysts.  This document
@@ -46,6 +51,7 @@ discuss security issues that are unique to specific applications, such as those
 related to the browser or SMS application. Recommended best practices for
 building Android devices, deploying Android devices, or developing applications
 for Android are not the goal of this document and are provided elsewhere.</p>
+
 <h1 id="background">Background</h1>
 <p>Android provides an open source platform and application environment for mobile
 devices.</p>
@@ -99,8 +105,7 @@ allow users to discover, install, and purchase applications from their Android
 device or the web.  Google Play makes it easy for developers to reach Android
 users and potential customers.   Google Play also provides community review,
 application <a href="https://developer.android.com/guide/publishing/licensing.html">license
-verification</a>,
-and other security services.</p>
+verification</a>, application security scanning, and other security services.</p>
 </li>
 <li>
 <p><strong>Android Updates</strong>: The Android update service delivers new capabilities and
@@ -218,6 +223,7 @@ philosophy is to protect user resources from one another. Thus, Linux:</p>
 <li>Ensures that user A does not exhaust user B's devices (e.g. telephony, GPS,
 bluetooth)</li>
 </ul>
+
 <h2 id="the-application-sandbox">The Application Sandbox</h2>
 <p>The Android platform takes advantage of the Linux user-based protection as a
 means of identifying and isolating application resources.  The Android system
@@ -259,18 +265,131 @@ libraries, application runtime, application framework, and applications.  This
 partition is set to read-only. When a user boots the device into Safe Mode,
 only core Android applications are available. This ensures that the user can
 boot their phone into an environment that is free of third-party software.</p>
+
 <h2 id="filesystem-permissions">Filesystem Permissions</h2>
 <p>In a UNIX-style environment, filesystem permissions ensure that one user cannot
 alter or read another user's files. In the case of Android, each application
 runs as its own user. Unless the developer explicitly exposes files to other
 applications, files created by one application cannot be read or altered by
 another application.</p>
-<h2 id="filesystem-encryption">Filesystem Encryption</h2>
+
+
+<h2 id="crypto">Cryptography</h2>
+
+<p>
+Android provides a set of cryptographic APIs for use by applications. These
+include  implementations of standard and commonly used cryptographic primitives
+such as AES, RSA, DSA, and SHA. Additionally, APIs are provided for higher level
+protocols such as SSL and HTTPS.
+</p>
+
+<p>
+Android 4.0 introduced the
+<a href="http://developer.android.com/reference/android/security/KeyChain.html">KeyChain</a>
+class to allow applications to use the system credential storage for private
+keys and certificate chains.
+</p>
+
+<h2>Memory Management Security Enhancements</h2>
+
+Android includes many features that make common security issues harder to
+exploit. The Android SDK, compilers, and OS use tools to make common memory
+corruption issues significantly harder to exploit, including:
+
+<dl>
+<dt><strong>Android 1.5</strong></dt>
+<dd><ul>
+<li>ProPolice to prevent stack buffer overruns (-fstack-protector)</li>
+<li>safe_iop to reduce integer overflows</li>
+<li>Extensions to OpenBSD dlmalloc to prevent double free() vulnerabilities and
+to prevent chunk consolidation attacks.  Chunk consolidation attacks are a
+common way to exploit heap corruption.</li>
+<li>OpenBSD calloc to prevent integer overflows during memory allocation</li>
+</ul>
+</dd>
+
+<dt><strong>Android 2.3</strong></dt>
+<dd><ul>
+<li>Format string vulnerability protections (-Wformat-security -Werror=format-security)</li>
+<li>Hardware-based No eXecute (NX) to prevent code execution on the stack and heap</li>
+<li>Linux mmap_min_addr to mitigate null pointer dereference privilege
+escalation (further enhanced in Android 4.1)</li>
+</ul>
+</dd>
+
+<dt><strong>Android 4.0</strong></dt>
+<dd>Address Space Layout Randomization (ASLR) to randomize key locations in memory
+</dd>
+
+<dt><strong>Android 4.1</strong></dt>
+<dd><ul>
+<li>PIE (Position Independent Executable) support</li>
+<li>Read-only relocations / immediate binding (-Wl,-z,relro -Wl,-z,now)</li>
+<li>dmesg_restrict enabled (avoid leaking kernel addresses)</li>
+<li>kptr_restrict enabled (avoid leaking kernel addresses)</li>
+</ul>
+</dd>
+
+<dt><strong>Android 4.2</strong></dt>
+<dd><code>FORTIFY_SOURCE</code> for system code</dd>
+
+</dl>
+
+<h2>Rooting of Devices</h2>
+<p>
+By default, on Android only the kernel and a small subset of the core
+applications run with root permissions. Android does not prevent a user or
+application with root permissions from modifying the operating system, kernel,
+and any other application.  In general, root has full access to all
+applications and all application data. Users that change the permissions on an
+Android device to grant root access to applications increase the security
+exposure to malicious applications and potential application flaws.
+</p>
+<p>
+The ability to modify an Android device they own is important to developers
+working with the Android platform. On many Android devices users have the
+ability to unlock the bootloader in order to allow installation of an alternate
+operating system. These alternate operating systems may allow an owner to gain
+root access for purposes of debugging applications and system components or to
+access features not presented to applications by Android APIs.
+</p>
+<p>
+On some devices, a person with physical control of a device and a USB cable is
+able to install a new operating system that provides root privileges to the
+user. To protect any existing user data from compromise the bootloader unlock
+mechanism requires that the bootloader erase any existing user data as part of
+the unlock step. Root access gained via exploiting a kernel bug or security
+hole can bypass this protection.
+</p>
+<p>
+Encrypting data with a key stored on-device does not protect the application
+data from root users. Applications can add a layer of data protection using
+encryption with a key stored off-device, such as on a server or a user
+password.  This approach can provide temporary protection while the key is not
+present, but at some point the key must be provided to the application and it
+then becomes accessible to root users.
+</p>
+<p>
+A more robust approach to protecting data from root users is through the use of
+hardware solutions. OEMs may choose to implement hardware solutions that limit
+access to specific types of content such as DRM for video playback, or the
+NFC-related trusted storage for Google wallet.
+</p>
+<p>
+In the case of a lost or stolen device, full filesystem encryption on Android
+devices uses the device password to protect the encryption key, so modifying
+the bootloader or operating system is not sufficient to access user data
+without the user’s device password.
+</p>
+<h2>User Security Features</h2>
+
+<h3 id="filesystem-encryption">Filesystem Encryption</h3>
+
 <p>Android 3.0 and later provides full filesystem encryption, so all user data can
 be encrypted in the kernel using the dmcrypt implementation of AES128 with CBC
-and ESSIV:SHA256.   The encryption key is protected by AES128 using a key
+and ESSIV:SHA256. The encryption key is protected by AES128 using a key
 derived from the user password, preventing unauthorized access to stored data
-without the user device password.   To provide resistance against systematic
+without the user device password. To provide resistance against systematic
 password guessing attacks (e.g. “rainbow tables” or brute force), the
 password is combined with a random salt and hashed repeatedly with SHA1 using
 the standard PBKDF2 algorithm prior to being used to decrypt the filesystem
@@ -279,14 +398,15 @@ Android provides password complexity rules that can be set by the device
 administrator and enforced by the operating system. Filesystem encryption
 requires the use of a user password, pattern-based screen lock is not supported.</p>
 <p>More details on implementation of filesystem encryption are available at
-<a href="/
-tech/encryption/android_crypto_implementation.html">https://source.android.com/tech/encryption/android_crypto_implementation.html</a></p>
+<a href="/tech/encryption/android_crypto_implementation.html">https://source.android.com/tech/encryption/android_crypto_implementation.html</a></p>
+
 <h2 id="password-protection">Password Protection</h2>
 <p>Android can be configured to verify a user-supplied password prior to providing
 access to a device. In addition to preventing unauthorized use of the device,
 this password protects the cryptographic key for full filesystem encryption.</p>
 <p>Use of a password and/or password complexity rules can be required by a device
 administrator.</p>
+
 <h2 id="device-administration">Device Administration</h2>
 <p>Android 2.2 and later provide the Android Device Administration API, which
 provides device administration features at the system level. For example, the
@@ -300,71 +420,7 @@ are available to third-party providers of Device Management solutions. Details
 on the API are provided here:
 <a href="https://devel
 oper.android.com/guide/topics/admin/device-admin.html">https://developer.android.com/guide/topics/admin/device-admin.html</a>.</p>
-<h2 id="memory-management-security-enhancements">Memory Management Security Enhancements</h2>
-<p>Android includes many features that make common security issues harder to
-exploit. The Android SDK, compilers, and OS use tools to make common memory
-corruption issues significantly harder to exploit, including:</p>
-<p><strong>Android 1.5+</strong></p>
-<ul>
-<li>ProPolice to prevent stack buffer overruns (-fstack-protector)</li>
-<li>safe_iop to reduce integer overflows</li>
-<li>Extensions to OpenBSD dlmalloc to prevent double free() vulnerabilities and
-to prevent chunk consolidation attacks.  Chunk consolidation attacks are a
-common way to exploit heap corruption.</li>
-<li>OpenBSD calloc to prevent integer overflows during memory allocation</li>
-</ul>
-<p><strong>Android 2.3+</strong></p>
-<ul>
-<li>Format string vulnerability protections (-Wformat-security -Werror=format-security)</li>
-<li>Hardware-based No eXecute (NX) to prevent code execution on the stack and heap</li>
-<li>Linux mmap_min_addr to mitigate null pointer dereference privilege
-escalation (further enhanced in Android 4.1)</li>
-</ul>
-<p><strong>Android 4.0+</strong></p>
-<ul>
-<li>Address Space Layout Randomization (ASLR) to randomize key locations in memory</li>
-</ul>
-<p><strong>Android 4.1+</strong></p>
-<ul>
-<li>PIE (Position Independent Executable) support</li>
-<li>Read-only relocations / immediate binding (-Wl,-z,relro -Wl,-z,now)</li>
-<li>dmesg_restrict enabled (avoid leaking kernel addresses)</li>
-<li>kptr_restrict enabled (avoid leaking kernel addresses)</li>
-</ul>
-<h2 id="rooting-of-devices">Rooting of Devices</h2>
-<p>By default, on Android only the kernel and a small subset of the core
-applications run with root permissions. Android does not prevent a user or
-application with root permissions from modifying the operating system, kernel,
-and any other application.  In general, root has full access to all
-applications and all application data. Users that change the permissions on an
-Android device to grant root access to applications increase the security
-exposure to malicious applications and potential application flaws.</p>
-<p>The ability to modify an Android device they own is important to developers
-working with the Android platform. On many Android devices users have the
-ability to unlock the bootloader in order to allow installation of an alternate
-operating system. These alternate operating systems may allow an owner to gain
-root access for purposes of debugging applications and system components or to
-access features not presented to applications by Android APIs.</p>
-<p>On some devices, a person with physical control of a device and a USB cable is
-able to install a new operating system that provides root privileges to the
-user. To protect any existing user data from compromise the bootloader unlock
-mechanism requires that the bootloader erase any existing user data as part of
-the unlock step. Root access gained via exploiting a kernel bug or security
-hole can bypass this protection.</p>
-<p>Encrypting data with a key stored on-device does not protect the application
-data from root users. Applications can add a layer of data protection using
-encryption with a key stored off-device, such as on a server or a user
-password.  This approach can provide temporary protection while the key is not
-present, but at some point the key must be provided to the application and it
-then becomes accessible to root users.</p>
-<p>A more robust approach to protecting data from root users is through the use of
-hardware solutions. OEMs may choose to implement hardware solutions that limit
-access to specific types of content such as DRM for video playback, or the
-NFC-related trusted storage for Google wallet.</p>
-<p>In the case of a lost or stolen device, full filesystem encryption on Android
-devices uses the device password to protect the encryption key, so modifying
-the bootloader or operating system is not sufficient to access user data
-without the user’s device password.</p>
+
 <h1 id="android-application-security">Android Application Security</h1>
 <h2 id="elements-of-applications">Elements of Applications</h2>
 <p>Android provides an open source platform and application environment for mobile
@@ -412,8 +468,10 @@ register a receiver for the low battery message, for example, and change its
 behavior based on that information.</p>
 </li>
 </ul>
+
 <h2 id="the-android-permission-model-accessing-protected-apis">The Android Permission Model: Accessing Protected APIs</h2>
-<p>By default, an Android application can only access a limited range of system
+<p>All applications on Android run in an Application Sandbox, described earlier in this document.
+By default, an Android application can only access a limited range of system
 resources. The system manages Android application access to resources that, if
 used incorrectly or maliciously, could adversely impact the user experience,
 the network, or data on the device.</p>
@@ -578,6 +636,13 @@ These APIs include:</p>
 <li>In-App Billing</li>
 <li>NFC Access</li>
 </ul>
+
+<p> Android 4.2 adds further control on the use of SMS. Android will provide a
+notification if an application attempts to send SMS to a short code that uses
+premium services which might cause additional charges.  The user can choose
+whether to allow the application to send the message or block it.
+</p>
+
 <h2 id="sim-card-access">SIM Card Access</h2>
 <p>Low level access to the SIM card is not available to third-party apps. The OS
 handles all communications with the SIM card including access to personal
@@ -661,10 +726,20 @@ does not perform CA verification for application certificates.</p>
 <p>Applications are also able to declare security permissions at the Signature
 protection level, restricting access only to applications signed with the same
 key while maintaining distinct UIDs and Application Sandboxes. A closer
-relationship with a shared Application Sandbox is allowed via the <a href="https://developer.android.com/guide/topics/manifest/manifest-element.html#uid">shared UID
-feature</a>
-where two or more applications signed with same developer key can
+relationship with a shared Application Sandbox is allowed via the
+<a href="https://developer.android.com/guide/topics/manifest/manifest-element.html#uid">shared UID
+feature</a> where two or more applications signed with same developer key can
 declare a shared UID in their manifest.</p>
+
+<h2 id="app-verification">Application Verification</h2>
+<p>
+Android 4.2 and later support application verification. Users can choose to
+enable “Verify Apps" and have applications evaluated by an application verifier
+prior to installation.  App verification can alert the user if they try to
+install an app that might be harmful; if an application is especially bad, it
+can block installation.
+</p>
+
 <h2 id="digital-rights-management">Digital Rights Management</h2>
 <p>The Android platform provides an extensible DRM framework that lets
 applications manage rights-protected content according to the license
