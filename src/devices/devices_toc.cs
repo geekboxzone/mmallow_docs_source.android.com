@@ -143,13 +143,20 @@
             <span class="en">Power</span>
           </a>
       </li>
-
-      <li>      
-          <a href="<?cs var:toroot ?>devices/tech/security/index.html">
-            <span class="en">Security</span>
-          </a>
+     <li class="nav-section">
+          <div class="nav-section-header">
+            <a href="<?cs var:toroot ?>devices/tech/security/index.html">
+              <span class="en">Input</span>
+            </a>
+          </div>
+          <ul>
+            <li>      
+              <a href="<?cs var:toroot ?>devices/tech/security/enhancements.html">
+                <span class="en">Security Enhancements in Android 4.2</span>
+              </a>
+            </li>
+          </ul>
       </li>
-
       
 
       <li class="nav-section">
