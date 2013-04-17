@@ -19,7 +19,7 @@ import SocketServer
 import os
 
 
-outdir = os.path.join(os.path.dirname(__file__), '..', 'out')
+outdir = os.environ.get('OUTDIR', os.path.join(os.path.dirname(__file__), '..', 'out'))
 os.chdir(outdir)
 PORT = int(os.environ.get('HTTP_PORT', 8080))
 Handler = SimpleHTTPServer.SimpleHTTPRequestHandler

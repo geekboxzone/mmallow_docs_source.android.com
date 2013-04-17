@@ -17,19 +17,23 @@ page.title=Getting Started
     limitations under the License.
 -->
 <h2 id="using-the-console">Using the console</h2>
-<p>TF is based around an interactive console.  You can fire up the console by going to the
-<code>tools/tradefederation/</code> directory and running</p>
+<p>Trade Federation is based around an interactive console.  You can fire up the console by
+downloading TF or building it from source, and then going to the <code>tradefederation/</code>
+directory and running</p>
 <pre><code>$ ./tradefed.sh
 </code></pre>
 <p>You should end up at a <code>tf &gt;</code> prompt.</p>
 <p>The console is self-documenting.  Try entering "help"</p>
 <pre><code>tf &gt;help
-Enter 'q' or 'exit' to exit
+Enter 'q' or 'exit' to exit. Use '--wait-for-command|-c' to exit only after all commands have executed.
 Enter 'kill' to attempt to forcibly exit, by shutting down adb
 
-Enter 'help list'  for help with 'list' commands
+Enter 'help all' to see all embedded documentation at once.
+
+Enter 'help list' for help with 'list' commands
 [...]
 </code></pre>
+
 <p>As the help text suggests, the help menus are organized hierarchically</p>
 <pre><code>tf &gt;help list
 l(?:ist)? help:
@@ -37,23 +41,29 @@ l(?:ist)? help:
     d[evices]      List all detected or known devices
 [...]
 </code></pre>
+
 <p>The majority of commands have a convenient short form, which the help text displays.  The
 <code>l(?:ist)?</code> is a regular expression.  As an example, here are the four equivalent ways to list
 invocations:
-<em> <code>list invocations</code>
-</em> <code>list i</code>
-<em> <code>l invocations</code>
-</em> <code>l i</code></p>
-<h2 id="running-a-configcommand">Running a config/command</h2>
+<ul>
+<li><code>list invocations</code></li>
+<li><code>list i</code></li>
+<li><code>l invocations</code></li>
+<li><code>l i</code></li>
+</ul>
+
+<h2 id="running-a-command">Running a command</h2>
 <p>This is documented by the <code>help run</code> command in the console.</p>
-<p>As a reminder, a command is a config along with all of its command-line arguments.  A command <em>must</em>
+<p>As a reminder, a <em>command</em> is a config along with all of its command-line arguments.  A command <em>must</em>
 begin with the name of the respective config.</p>
+
 <p>As a quick example, you could run the calculator unit tests like so:</p>
-<pre><code>$./tradefed.sh
+<pre><code>$ ./tradefed.sh
 tf &gt;run instrument --package com.android.calculator2.tests
 </code></pre>
-<p>As a shortcut, if you specify any arguments to <code>tradefed.sh</code>, it will attempt to execute them as if
-they were typed on the commandline.  So the short version of the above would be</p>
+
+<p>As a shortcut, if you specify any arguments to the <code>tradefed.sh</code> script, it will attempt to execute them as if
+they were typed on the commandline.  So a shorter version of the above would be</p>
 <pre><code>$./tradefed.sh run instrument --package com.android.calculator2.tests
 </code></pre>
 <p>In both of these cases, the name of the config is "instrument", and
@@ -67,11 +77,12 @@ will only show "important" arguments, and "--help-all" will show all arguments, 
 whether they've been marked as "important" or not.  To take the final step, you can tell TF to print
 the contents of any config (compiled-in or local) with the <code>dump config &lt;configname&gt;</code> console
 command.</p>
-<h3 id="so-lets-say-you-want-to-run-the-calculator-instrumentation-tests-but-dont-know-where-to-start">So, let's say you want to run the calculator instrumentation tests, but don't know where to start.</h3>
+
+<h3 id="run-tests-self-help">So, let's say you want to run the calculator instrumentation tests, but don't know where to start.</h3>
 <p>You could try something like this sequence of steps.  First, look for a config that looks like it
 might do what you want:</p>
 <pre><code>tf &gt;list configs
-Use 'run command --help &lt;configuration_name&gt;' to get list of options for a configuration
+Use 'run command &lt;configuration_name&gt; --help' to get list of options for a configuration
 Use 'dump config &lt;configuration_name&gt;' to display the configuration's XML content.
 
 Available configurations include:
@@ -79,8 +90,9 @@ Available configurations include:
   instrument: Runs a single Android instrumentation test on an existing device
 [...]
 </code></pre>
+
 <p>Now that you've found something reasonable-looking, see what options it takes.  The <code>list configs</code> output suggests trying <code>run command instrument --help</code></p>
-<pre><code>tf &gt;run command --help instrument
+<pre><code>tf &gt;run command instrument --help
 'instrument' configuration: Runs a single Android instrumentation test on an existing device
 
 Printing help for only the important options. To see help for all options, use the --help-all flag
@@ -88,27 +100,31 @@ Printing help for only the important options. To see help for all options, use t
   'instrumentation' test options:
     -p, --package        The manifest package name of the Android test application to run.
 </code></pre>
+
 <p>As the message suggests, if you need more options, use the "--help-all" flag instead of "--help".  In this case, we've got all we need.  You could figure out the package by checking with <code>runtest</code>, or reading testdefs.xml directly.  We use <code>runtest -n</code> to simply show what would be run without actually running it:</p>
-<pre><code>$runtest -n calculator
+<pre><code>$ runtest -n calculator
 adb root
-ONE_SHOT_MAKEFILE="packages/apps/Calculator/Android.mk" make -j4 -C "/srv/xsdg/master2" files
-adb sync
+ONE_SHOT_MAKEFILE="packages/apps/Calculator/Android.mk" make -j4 -C "/path/to/tree" all_modules
 adb  shell am instrument -w com.android.calculator2.tests/android.test.InstrumentationTestRunner
 </code></pre>
+
 <p>The argument to <code>am instrument</code> that comes before the slash is the manifest package.  <code>android.test.InstrumentationTestRunner</code> is the default runner, so no need to set it if that's the
 right one.  Otherwise, using "--help-all" will tell you about the "--runner" argument, which you can
-use to specify an alternate runner.  Ok, so at this point, we've got the following command, which
-you'll recognize from above</p>
+use to specify an alternate runner.</p>
+
+<p>Ok, finally, we've come up with the following command, which you'll recognize from above.</p>
 <pre><code>tf &gt;run instrument --package com.android.calculator2.tests
 </code></pre>
+
 <h2 id="interacting-with-a-device">Interacting with a device</h2>
 <h3 id="generic-device-behavior-in-tf">Generic device behavior in TF</h3>
-<p>The running version of a command is called in <code>invocation</code>.  First and foremost, every invocation
+<p>The running version of a command is called an <code>invocation</code>.  First and foremost, every invocation
 requires a device before it can run.  In addition to physical Android devices, TF can run tests with
-a mock device (by specifying the "-n" argument for the command), or with the Android emulator (by
+a mock device (by specifying the "-n" argument for the command), or with an Android emulator instance (by
 specifying the "-e" argument").</p>
+
 <p>The primary console command to figure out what devices are up to is <code>list devices</code>:</p>
-<pre><code>$./tradefed.sh
+<pre><code>$ ./tradefed.sh
 06-07 17:03:22 I/: Detected new device 016B756E03018007
 06-07 17:03:22 I/: Detected new device 1700614743c14397
 06-07 17:03:22 I/: Detected new device 3531C342606300EC
@@ -119,13 +135,15 @@ Serial            State      Product   Variant   Build   Battery
 3531C342606300EC  Available  herring   crespo4g  MASTER  92
 </code></pre>
 <p>As far as the invocations are concerned, there are three device states: available, unavailable, and
-allocated.  An <code>Available</code> device is ready to be allocated for an invocation.  An <code>Unavailable</code>
+allocated.  An <em>Available</em> device is ready to be allocated for an invocation.  An <em>Unavailable</em>
 device is not ready for allocation, for any of a variety of reasons — TF may have deemed to the
 device as unstable, the device may be critically low on storage, or something else may be amiss.
-Finally, an <code>Allocated</code> device is a device that is already being used by an invocation.</p>
+Finally, an <em>Allocated</em> device is a device that is already being used by an invocation.</p>
+
 <p>When you start TF, all detected physical devices will be checked for responsiveness with a simple
 shell command.  If the command completes successfully, the device will be listed as Available.  If
 the command fails, the device state will be shown as Unavailable.  Thereafter, a device will typically bounce between the Available and Allocated states as invocation requirements dictate.</p>
+
 <p>Finally, once invocations are already underway, you can see what's going on with the <code>list
 invocations</code> command</p>
 <pre><code>tf &gt;run instrument --package com.android.calculator2.tests
@@ -141,17 +159,18 @@ tf &gt;l i
 Command Id  Exec Time  Device            State
 1           0m:02      1700614743c14397  running stub on build 0
 </code></pre>
+
 <h3 id="running-invocations-on-specific-devices">Running invocations on specific devices</h3>
 <p>TF supports a number of filtering mechanisms for specifying which device or devices to use for a
-particular invocation.  Since the filtering mechanisms are run before a command turns into an
+particular invocation.  Since the filtering mechanisms are evaluated before a command turns into an
 invocation, you can find all of the filtering options in the help for any config:</p>
-<p>tf &gt;run instrument --help-all
+<pre><code>tf &gt;run instrument --help-all
 [...]
   device_requirements options:
     -s, --serial         run this test on a specific device with given serial number(s).
     --exclude-serial     run this test on any device except those with this serial number(s).
     --product-type       run this test on device with this product type(s).  May also filter by variant using product:variant.
-    --property           run this test on device with this property value. Expected format <propertyname>=<propertyvalue>.
+    --property           run this test on device with this property value. Expected format &lt;propertyname&gt;=&lt;propertyvalue&gt;.
     -e, --[no-]emulator  force this test to run on emulator. Default: false.
     -d, --[no-]device    force this test to run on a physical device, not an emulator. Default: false.
     --[no-]new-emulator  allocate a placeholder emulator. Should be used when config intends to launch an emulator Default: false.
@@ -159,10 +178,11 @@ invocation, you can find all of the filtering options in the help for any config
                          do not allocate a device for this test. Default: false.
     --min-battery        only run this test on a device whose battery level is at least the given amount. Scale: 0-100
     --max-battery        only run this test on a device whose battery level is strictly less than the given amount. Scale: 0-100
-[...]</p>
-<p>The built-in help should be pretty self-explanatory.  All of the filtering options excluding "-n",
+[...]</code></pre>
+
+<p>The built-in help will hopefully be pretty self-explanatory.  All of the filtering options excluding "-n",
 "-e", and "-d" may be specified as many times as needed.  So, for instance, to run an invocation
-using any Verizon Galaxy Nexus, you could do the following:</p>
+using any Verizon Galaxy Nexus, you could do the following:</p> <!-- FIXME probably use Mako here -->
 <pre><code>tf &gt;run instrument --package com.android.calculator2.tests --product-type tuna:toro
 </code></pre>
 <p>As another example, to run on a GSM device with a SIM, you could do the following:</p>
@@ -173,6 +193,7 @@ excludes devices that aren't in the list of required serials, and --exclude-seri
 that <em>are</em> in its list.  As such, an argument like --exclude-serial XXX --serial XXX will simply
 make the respective command un-runnable — it will never match any device, since all devices are
 excluded.</p>
+
 <h2 id="logging">Logging</h2>
 <p>There are a few different aspects to logging in TF.  First and foremost, TF has a built-in logging
 infrastructure that's based on DDMLib's Log class.  For the common case, where the log tag is just
@@ -184,20 +205,24 @@ private static final LOG_TAG = "ClassName";
 Log.v(LOG_TAG, "This is a simple verbose log message");
 Log.w(LOG_TAG, String.format("This warning message brought to you by the number %d", 17));
 </code></pre>
+
 <p>You can now accomplish the same thing with the shim like this:</p>
 <pre><code>class ClassName {
 [...]
 CLog.v("This is a simple verbose log message");
 CLog.w("This warning message brought to you by the number %d", 17);
 </code></pre>
+
 <p>Each Invocation has its own ThreadGroup.  Any host-side logging that happens inside of that thread
 group is associated with the Invocation, and will be reported as that invocation's "host_log" after
 the Invocation completes.</p>
-<p>Device logging is performed as part of TradeFed's device wrapper.  We keep a buffer of up to 20 MB
+
+<p>Device logging is performed as part of TF's device wrapper.  We keep a buffer of up to 20 MB
 that captures log data as the device churns it out.  In particular, we are not limited by the size
 of the on-device logcat buffer.</p>
+
 <p>The next important piece is the ITestInvocationListener.  This is one of the components of an
-Invocation that handles results reporting.  Each reporter has the option to implement the #testLog
+Invocation that handles results reporting.  Each reporter has the option to implement the <code>#testLog</code>
 method, which will be used to pass logfiles to that result reporter.  Among the files that are
 passed by TF itself will be the aforementioned host_log, as well as the device logcat for the device
 associated with the Invocation.</p>

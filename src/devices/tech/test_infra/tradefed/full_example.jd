@@ -1,4 +1,4 @@
-page.title=Tutorial
+page.title=End-to-End Test Example
 @jd:body
 
 <!--
@@ -16,19 +16,26 @@ page.title=Tutorial
     See the License for the specific language governing permissions and
     limitations under the License.
 -->
+
 <p>This tutorial guides you through the construction of a "hello world" Trade Federation test
 configuration, and gives you a hands-on introduction to the Trade Federation framework.  Starting
-from the Tf development environment, it guides you through the process of creating a simple Trade
+from the TF development environment, it guides you through the process of creating a simple Trade
 Federation config and gradually adding more features to it.</p>
+
 <p>The tutorial presents the TF test development process as a set of exercises, each consisting of
 several steps.  The exercises demonstrate how to gradually build and refine your configuration, and
-provide all the sample code you need to complete the test configuration.</p>
+provide all the sample code you need to complete the test configuration.  The title of each
+exercise is annotated with a letter describing which roles are involved in that step: "D" for
+Developer, "I" for Integrator, and/or "T" for Test Runner.</p>
+
 <p>When you are finished with the tutorial, you will have created a functioning TF configuration and
 will have learned many of the most important concepts in the TF framework.</p>
-<h2 id="set-up-tradefederation-development-environment">Set up TradeFederation development environment</h2>
+
+<h2>Set up TradeFederation development environment</h2>
 <p>See (FIXME: link) for how to setup the development environment. The rest of this tutorial assumes you have a shell open that has been initialized to the TradeFederation environment. </p>
 <p>For simplicity, this tutorial will illustrate adding a configuration and its classes to the TradeFederation framework core library. Later tutorials/documentation will show how to create your own library that extends TradeFederation.</p>
-<h2 id="creating-a-test-class">Creating a test class</h2>
+
+<h2>Creating a test class (D)</h2>
 <p>Lets create a hello world test that just dumps a message to stdout. A TradeFederation test must
 implement the (FIXME: link) IRemoteTest interface.</p>
 <p>Here's an implementation for the HelloWorldTest:</p>
