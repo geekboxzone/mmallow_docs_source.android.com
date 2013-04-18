@@ -31,7 +31,7 @@ track of the known issues around using the Android source code.</p>
 <p><strong>Symptom</strong></p>On AOSP builds for toro (up to Jelly Bean 4.2.1),
 CellBroadcastReceiver doesn't get included in the system.</p>
 
-<p><strong>Cause</strong></p>: There's a typo in <code>vendor/samsung/toro/device-partial.mk</code>,
+<p><strong>Cause:</strong></p> There's a typo in <code>vendor/samsung/toro/device-partial.mk</code>,
 where <code>PRODUCT_PACKAGES</code> has the K replaced by an H.
 <p><strong>Fix</strong>: Use the latest packages for 4.2.2, or manually fix the typo.</p>
 
