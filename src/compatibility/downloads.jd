@@ -19,14 +19,17 @@ page.title=Android Compatibility Downloads
 
 <p>Thanks for your interest in Android Compatibility! The links below allow
 you to access the key documents and information.</p>
+<p>Thanks for your interest in Android Compatibility! The links below allow
+you to access the key documents and information.</p>
+
 <h2 id="android-42">Android 4.2</h2>
 <p>Android 4.2 is the release of the development milestone code-named
 Jelly Bean-MR1. Android 4.2 is the current version of Android. Source code for
-Android 4.2 is found in the 'android-4.2_r1' branch in the open-source tree.</p>
+Android 4.2 is found in the 'android-4.2.2_r1' branch in the open-source tree.</p>
 <ul>
 <li><a href="4.2/android-4.2-cdd.pdf">Android 4.2 Compatibility Definition Document (CDD)</a></li>
-<li><a href="https://dl.google.com/dl/android/cts/android-cts-4.2_r1-linux_x86-arm.zip">Android 4.2 R1 Compatibility Test Suite (CTS)</a></li>
-<li><a href="https://dl.google.com/dl/android/cts/android-cts-verifier-4.2_r1-linux_x86-arm.zip">Android 4.2 R1 CTS Verifier</a></li>
+<li><a href="https://dl.google.com/dl/android/cts/android-cts-4.2_r4-linux_x86-arm.zip">Android 4.2 R4 Compatibility Test Suite (CTS)</a></li>
+<li><a href="https://dl.google.com/dl/android/cts/android-cts-verifier-4.2_r5-linux_x86-arm.zip">Android 4.2 R5 CTS Verifier</a></li>
 </ul>
 <h2 id="android-41">Android 4.1</h2>
 <p>Android 4.1.1 is the release of the development milestone code-named
@@ -34,8 +37,8 @@ Jelly Bean. Android 4.1.1 is the current version of Android. Source code for
 Android 4.1.1 is found in the 'android-4.1.1_r1' branch in the open-source tree.</p>
 <ul>
 <li><a href="4.1/android-4.1-cdd.pdf">Android 4.1 Compatibility Definition Document (CDD)</a></li>
-<li><a href="https://dl.google.com/dl/android/cts/android-cts-4.1_r1-linux_x86-arm.zip">Android 4.1 R1 Compatibility Test Suite (CTS)</a></li>
-<li><a href="https://dl.google.com/dl/android/cts/android-cts-verifier-4.1_r2-linux_x86-arm.zip">Android 4.1 R2 CTS Verifier</a></li>
+<li><a href="https://dl.google.com/dl/android/cts/android-cts-4.1_r3-linux_x86-arm.zip">Android 4.1 R3 Compatibility Test Suite (CTS)</a></li>
+<li><a href="https://dl.google.com/dl/android/cts/android-cts-verifier-4.1_r6-linux_x86-arm.zip">Android 4.1 R6 CTS Verifier</a></li>
 </ul>
 <h2 id="android-403">Android 4.0.3</h2>
 <p>Android 4.0.3 is the release of the development milestone code-named

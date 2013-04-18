@@ -27,41 +27,37 @@ page.title=Building for devices
 <p>This page complements the main page about
 <a href="building-running.html">Building and Running</a> with
 information that is specific to individual devices.</p>
+
 <p>With the current release, it is possible to build for
-Nexus 10, for Nexus 7 (Wi-Fi), and for some variants of Galaxy Nexus.
+Nexus 4, Nexus 10, Nexus 7, and for some variants of Galaxy Nexus.
 The exact level of functionality for each device depends on the availability
 of the relevant proprietary hardware-specific binaries.</p>
-<p>All configurations of Nexus 10 can be used. On those devices, graphics, audio,
+<p>For Nexus 4 "mako" and on Nexus 7 "grouper" (Wi-Fi) and "tilapia" (Mobile),
+all configurations can be used,
+and all the hardware is functional.
+Due to hardware differences, do not use 4.1.1 on a Nexus 7 that
+was originally sold with 4.1.2 or newer.</p>
+<p>All configurations of Nexus 10 "manta" can be used. On those devices, graphics, audio,
 Wi-Fi, Bluetooth, camera, NFC, GPS and orientation sensors are functional.</p>
-<p>Nexus 4 cannot be used at the moment.</p>
-<p>The Wi-Fi variants of Nexus 7 can be used. On Nexus 7, graphics and audio are
-functional, as well as Wi-Fi and Bluetooth. Due to hardware differences, do
-not use 4.1.1 on a Nexus 7 that was originally sold with 4.1.2 or newer.
-The Mobile variant is not supported.</p>
 <p>The variants of Galaxy Nexus that can be used are the GSM/HSPA+ configuration
 "maguro" (only if it was originally sold with a "yakju" or "takju" operating
 system) and the VZW CDMA/LTE configuration "toro". On those devices, graphics
 and audio are functional, as well as Wi-Fi, Bluetooth, and access to the
 respective cellular networks. NFC and the orientation sensors are functional.</p>
 <p>The Sprint CDMA/LTE configuration "toroplus" of Galaxy Nexus is supported
-experimentally. On that configuration, the cellular network is not functional,
+experimentally, in the jb-mr1-dev-plus-aosp branch. On that configuration,
+the cellular network is not functional,
 and the other peripherals work like they do on "toro".</p>
 <p>The Motorola Xoom can be used in the Wi-Fi configuration "wingray"
 sold in the USA, with Android 4.1.2. Graphics and audio are functional
 as well as Wi-Fi and Bluetooth and the orientation sensors.</p>
 <p>All configurations of Nexus S and Nexus S 4G can be used with Android 4.1.2.
-On those devices all the peripherals are functional: graphics, audio, Wi-Fi,
-Bluetooth, cell networks, sensors, camera, hardware codecs, NFC, GPS.</p>
+On those devices all the hardware is functional.</p>
 <p>In addition, <a href="http://pandaboard.org">PandaBoard</a> a.k.a. "panda" can be used
-in the master branch, but is considered experimental.
+in the jb-mr1-dev-plus-aosp branch, but is considered experimental.
 The specific details to use a PandaBoard with the Android Open-Source Project
 are in the file <code>device/ti/panda/README</code> in the source tree.</p>
-<p>Nexus One a.k.a. "passion" is obsolete, was experimental in gingerbread,
-and can't be used with newer versions of the Android Open-Source
-Project.</p>
-<p>Android Developer Phones (ADP1 and ADP2, a.k.a. "dream" and "sapphire") are
-obsolete, were experimental in froyo, and can't be used with
-newer versions of the Android Open-Source Project.</p>
+
 <h2 id="building-fastboot-and-adb">Building fastboot and adb</h2>
 <p>If you don't already have those tools, fastboot and adb can be built with
 the regular build system. Follow the instructions on the page about
@@ -156,14 +152,12 @@ $ fastboot format userdata
 <p>The Android Open-Source Project can't be used
 from pure source code only, and requires additional hardware-related proprietary
 libraries to run, specifically for hardware graphics acceleration.</p>
-<p>Official binaries for Nexus S, Nexus S 4G, Galaxy Nexus, Nexus 7, Nexus 4,
-Nexus 10 and PandaBoard
-can be downloaded from
+<p>Official binaries for the supported devices can be downloaded from
 <a href="https://developers.google.com/android/nexus/drivers">Google's Nexus driver page</a>,
 which add access to additional hardware capabilities with non-Open-Source code.</p>
-<p>When using the master branch for a device, the binaries for the most
-recent numbered release are the ones that should be used in the master
-branch.</p>
+<p>When building the master branch for a device, the binaries for the most
+recent numbered release or with the most recent date
+are the ones that should be used.</p>
 <h3 id="extracting-the-proprietary-binaries">Extracting the proprietary binaries</h3>
 <p>Each set of binaries comes as a self-extracting script in a compressed archive.
 After uncompressing each archive, run the included self-extracting script
@@ -178,7 +172,7 @@ build needs to be deleted with</p>
 </code></pre>
 <h2 id="picking-and-building-the-configuration-that-matches-a-device">Picking and building the configuration that matches a device</h2>
 <p>The steps to configure and build the Android Open-Source Project
-are described in the page about <a href="building-running.html">Building and Running</a>.</p>
+are described in the page about <a href="building.html">Building</a>.</p>
 <p>The recommended builds for the various devices are available through
 the lunch menu, accessed when running the <code>lunch</code> command with no arguments:</p>
 <table>
@@ -192,27 +186,32 @@ the lunch menu, accessed when running the <code>lunch</code> command with no arg
 <tbody>
 <tr>
 <td>manta</td>
-<td>android-4.2.1_r1 or master</td>
+<td>android-4.2.2_r1 or master</td>
 <td>full_manta-userdebug</td>
 </tr>
 <tr>
+<td>mako</td>
+<td>android-4.2.2_r1 or master</td>
+<td>full_mako-userdebug</td>
+</tr>
+<tr>
 <td>grouper</td>
-<td>android-4.2.1_r1 or master</td>
+<td>android-4.2.2_r1 or master</td>
 <td>full_grouper-userdebug</td>
 </tr>
 <tr>
-<td>tipalia</td>
-<td>android-4.2.1_r1 or master</td>
-<td>full_tilapia-userdebug</td>
+<td>tilapia</td>
+<td>android-4.2.2_r1 or master</td>
+<td>full_grouper-userdebug</td>
 </tr>
 <tr>
 <td>maguro</td>
-<td>android-4.2.1_r1 or master</td>
+<td>android-4.2.2_r1 or master</td>
 <td>full_maguro-userdebug</td>
 </tr>
 <tr>
 <td>toro</td>
-<td>android-4.2.1_r1 or master</td>
+<td>android-4.2.2_r1 or master</td>
 <td>full_toro-userdebug</td>
 </tr>
 <tr>
@@ -264,11 +263,11 @@ partition, then wipe data.</p>
 for Nexus 10,
 for Nexus 4,
 for Nexus Q,
-for Nexus 7 (all variants),
+for Nexus 7,
 for Galaxy Nexus (GSM/HSPA+ "yakju" and "takju",
 and CDMA/LTE "mysid" and "mysidspr"),
 and
-for Nexus S and Nexus S 4G (all variants)
+for Nexus S and Nexus S 4G
 are available from
 <a href="https://developers.google.com/android/nexus/images">Google's factory image page</a>.</p>
 <p>Factory images for the Motorola Xoom are distributed directly by Motorola.</p>
