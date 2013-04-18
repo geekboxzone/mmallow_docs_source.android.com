@@ -146,7 +146,7 @@ This may be caused by
 
 ## Python Version 3 ##
 
-Repo is built on particular functionality from Python 2.x and is unfortunately incompatible with Python 3.  In order to use repo, please install Python 2.x:
+Repo is built on particular functionality from Python 2 and is unfortunately incompatible with Python 3.  In order to use repo, please install Python 2.6 - 2.7:
 
     $ apt-get install python
 
