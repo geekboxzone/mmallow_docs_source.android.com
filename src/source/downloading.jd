@@ -63,6 +63,9 @@ $ chmod a+x ~/bin/repo
 <p>
   For version 1.17, the SHA-1 checksum for repo is ddd79b6d5a7807e911b524cb223bc3544b661c28
 </p>
+<p>
+  For version 1.19, the SHA-1 checksum for repo is 92cbad8c880f697b58ed83e348d06619f8098e6c
+</p>
 <h2 id="initializing-a-repo-client">
   Initializing a Repo client
 </h2>
