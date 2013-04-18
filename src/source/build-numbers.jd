@@ -421,15 +421,35 @@ following table:</p>
 <td>android-4.2_r1</td>
 <td>Galaxy Nexus, Nexus 7, Nexus 4, Nexus 10</td>
 </tr>
+
 <tr>
 <td>JOP40D</td>
 <td>android-4.2.1_r1</td>
+<td>Galaxy Nexus, Nexus 7, Nexus 4, Nexus 10</td>
+</tr>
+
+<tr>
+<td>JOP40F</td>
+<td>android-4.2.1_r1.1</td>
+<td>Nexus 10</td>
+</tr>
+
+<tr>
+<td>JOP40G</td>
+<td>android-4.2.1_r1.2</td>
+<td>Nexus 4</td>
+</tr>
+
+<tr>
+<td>JDQ39</td>
+<td>android-4.2.2_r1</td>
 <td>latest Jelly Bean version, Galaxy Nexus, Nexus 7, Nexus 4, Nexus 10</td>
 </tr>
+
 </tbody>
 </table>
 <p>The branches froyo, gingerbread, ics-mr0, ics-mr1, jb-dev,
-jb-mr1-dev,
+jb-mr1-dev, jb-mr1.1-dev
 represent development
 branches that do not exactly match configurations that were tested
 by Google. They might contain a variety of changes in addition to
@@ -465,7 +485,7 @@ are available under the following tags:</p>
 <td></td>
 </tr>
 <tr>
-<td>HRI93</td>
+<td>HRI83</td>
 <td>android-3.0_r1.3</td>
 <td></td>
 </tr>

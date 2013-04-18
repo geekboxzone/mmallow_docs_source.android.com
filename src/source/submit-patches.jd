@@ -185,6 +185,17 @@ who plays them, see <a href="/source/roles.html">Project Roles</a>.</p>
 <p>All changes to the ICU4C project at <code>external/icu4c</code> should be made upstream at
 <a href="http://site.icu-project.org/">icu-project.org/</a>.
 See <a href="http://site.icu-project.org/bugs">Submitting ICU Bugs and Feature Requests</a> for more.</p>
+
+<h2 id="llvmclangcompiler-rt">LLVM/Clang/Compiler-rt</h2>
+<p>All changes to LLVM-related projects (<code>external/clang</code>, <code>external/compiler-rt</code>,
+<code>external/llvm</code>) should be made upstream at
+<a href="http://llvm.org/">llvm.org/</a>.</p>
+
+<h2 id="mksh">
+<p>All changes to the MirBSD Korn Shell project at <code>external/mksh</code> should be made upstream
+either by sending an email to miros-mksh on the mirbsd.o®g domain (no subscription
+required to submit there) or (optionally) at <a href="https://launchpad.net/mksh">Launchpad</a>.
+</p>
 <h2 id="openssl">OpenSSL</h2>
 <p>All changes to the OpenSSL project at <code>external/openssl</code> should be made upstream at
 <a href="http://www.openssl.org">openssl.org</a>.</p>
