@@ -166,65 +166,16 @@
           </a>
         </div>
         <ul>
-          <li class="nav-section">
-            <div class="nav-section-header">
-              <a href="<?cs var:toroot ?>devices/tech/test_infra/tradefed/fundamentals/index.html">
-                <span class="en">Start Here</span>
-              </a>
-            </div>
-            <ul>
-              <li><a href="<?cs var:toroot ?>devices/tech/test_infra/tradefed/fundamentals/machine_setup.html"
-                >Machine Setup</a></li>
-              <li><a href="<?cs var:toroot ?>devices/tech/test_infra/tradefed/fundamentals/devices.html"
-                >Working with Devices</a></li>
-              <li><a href="<?cs var:toroot ?>devices/tech/test_infra/tradefed/fundamentals/lifecycle.html"
-                >Test Lifecycle</a></li>
-              <li><a href="<?cs var:toroot ?>devices/tech/test_infra/tradefed/fundamentals/options.html"
-                >Option Handling</a></li>
-            </ul>
-          </li>
-
-          <li class="nav-section">
-            <div class="nav-section-header">
-              <a href="<?cs var:toroot ?>devices/tech/test_infra/tradefed/developer/index.html">
-                <span class="en">Developer Docs</span>
-              </a>
-            </div>
-            <ul>
-              <li><a href="<?cs var:toroot ?>devices/tech/test_infra/tradefed/developer/unit_tests.html"
-                >Unit Testing TF Components</a></li>
-              <li><a href="<?cs var:toroot ?>devices/tech/test_infra/tradefed/developer/utility_classes.html"
-                >Handy Utility Classes</a></li>
-              <li><a href="<?cs var:toroot ?>devices/tech/test_infra/tradefed/developer/implementation.html"
-                >How To Write an I-Whatever</a></li>
-            </ul>
-          </li>
-          <li class="nav-section">
-            <div class="nav-section-header">
-              <a href="<?cs var:toroot ?>devices/tech/test_infra/tradefed/integrator/index.html">
-                <span class="en">Integrator Docs</span>
-              </a>
-            </div>
-            <ul>
-              <li><a href="<?cs var:toroot ?>devices/tech/test_infra/tradefed/integrator/config_xml_spec.html"
-                >XML Config Format Spec</a></li>
-              <li><a href="<?cs var:toroot ?>devices/tech/test_infra/tradefed/integrator/commandfile_format.html"
-                >Command File Format</a></li>
-            </ul>
-          </li>
-          <li class="nav-section">
-            <div class="nav-section-header">
-              <a href="<?cs var:toroot ?>devices/tech/test_infra/tradefed/runner/index.html">
-                <span class="en">Test Runner Docs</span>
-              </a>
-            </div>
-            <ul>
-              <li><a href="<?cs var:toroot ?>devices/tech/test_infra/tradefed/runner/cli.html"
-                >Command Line Interaction</a></li>
-              <li><a href="<?cs var:toroot ?>devices/tech/test_infra/tradefed/runner/debug.html"
-                >Debugging Unexpected Results</a></li>
-            </ul>
-          </li>
+          <li><a href="<?cs var:toroot ?>devices/tech/test_infra/tradefed/fundamentals/index.html"
+            >Start Here</a></li>
+          <li><a href="<?cs var:toroot ?>devices/tech/test_infra/tradefed/fundamentals/machine_setup.html"
+            >Machine Setup</a></li>
+          <li><a href="<?cs var:toroot ?>devices/tech/test_infra/tradefed/fundamentals/devices.html"
+            >Working with Devices</a></li>
+          <li><a href="<?cs var:toroot ?>devices/tech/test_infra/tradefed/fundamentals/lifecycle.html"
+            >Test Lifecycle</a></li>
+          <li><a href="<?cs var:toroot ?>devices/tech/test_infra/tradefed/fundamentals/options.html"
+            >Option Handling</a></li>
           <li><a href="<?cs var:toroot ?>devices/tech/test_infra/tradefed/full_example.html"
             >An End-to-End Example</a></li>
           <li id="tradefed-tree-list" class="nav-section">
