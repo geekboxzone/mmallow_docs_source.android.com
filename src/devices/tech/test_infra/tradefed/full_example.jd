@@ -431,10 +431,10 @@ addition to being logged to a file.</p>
 </code></pre>
 
 <h2>That's All, Folks!</h2>
-<p>If you're stuck on something, the source code has a lot of useful information that isn't
-exposed in the documentation.
-<a href="https://android.googlesource.com/platform/tools/tradefederation/+/master">Click
-here to browse the Trade Federation source.</a></p>
+<p>As a reminder, if you're stuck on something, the
+<a href="https://android.googlesource.com/platform/tools/tradefederation/+/master"
+>Trade Federation source code</a> has a lot of useful information that isn't
+exposed in the documentation.  And if all else fails, try asking on the
+<a href="/source/community/index.html">android-platform</a> Google Group, with "Trade Federation"
+in the message subject.</p>
 
-<p>If all else fails, feel free to try asking on the <b>android-platform</b> Google Group.
-<a href="/source/community/index.html">See Here.</a></p>
