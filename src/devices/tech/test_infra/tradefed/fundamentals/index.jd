@@ -49,8 +49,7 @@ Runners to identify results that don't make sense, and to work with the Develope
 Integrators to figure out where the bugs may lie and get them fixed.</p>
 
 <h2>What's Next</h2>
-<p>People in all three roles should at least glance through all of the common docs in this
-section.
+<p>People in all three roles should at least glance through all the rest of the docs.
 <a href="/devices/tech/test_infra/tradefed/fundamentals/machine_setup.html"
 >Machine Setup</a> will get you to the point where you can run TF.
 <a href="/devices/tech/test_infra/tradefed/fundamentals/devices.html"
@@ -63,8 +62,14 @@ Developer, Integrator, and Test Runner interact, and then
 >Option Handling</a> will demonstrate how to put that theory into practice.</p>
 
 
-<p>After that, the three named documentation sections will each provide details that are pertinent
-for that particular role.  Finally, the
-<a href="/devices/tech/test_infra/tradefed/full_example.html"
->End-to-End Example</a> takes you through the development, integration,
-and deployment of a sample test.  It involves aspects of each role.</p>
+<p>Finally, the <a href="/devices/tech/test_infra/tradefed/full_example.html"
+>End-to-End Example</a> takes you through the development, integration, and deployment of a sample
+test.  It involves aspects of each role, and should offer hints at how to do more complicated
+things that aren't directly discussed in the documentation.</p>
+
+<p>If you've gotten through everything here and still have unanswered questions, first try taking
+a look at the <a href="https://android.googlesource.com/platform/tools/tradefederation/+/master"
+>Trade Federation source code.</a>.  Beyond that, feel free to try asking on the
+<a href="/source/community/index.html">android-platform</a> Google Group.  For best results, make
+sure to mention "Trade Federation" (or "tradefed", or "TF") in the message subject.</p>
+
