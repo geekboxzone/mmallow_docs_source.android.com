@@ -36,6 +36,7 @@
           <li><a href="<?cs var:toroot ?>devices/audio_warmup.html">Warmup</a></li>
           <li><a href="<?cs var:toroot ?>devices/audio_avoiding_pi.html">Avoiding Priority Inversion</a></li>
           <li><a href="<?cs var:toroot ?>devices/latency_design.html">Design For Reduced Latency</a></li>
+          <li><a href="<?cs var:toroot ?>devices/audio_terminology.html">Terminology</a></li>
         </ul>
       </li>
       <li><a href="<?cs var:toroot ?>devices/camera.html">Camera v1</a></li>
