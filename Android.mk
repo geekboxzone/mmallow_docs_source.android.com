@@ -6,8 +6,9 @@ LOCAL_MODULE_CLASS:=JAVA_LIBRARIES
 LOCAL_DROIDDOC_HTML_DIR:=src
 # Droiddoc needs java source to run. Just pointing to a dummy location
 # and deleting output later in delete-ref target
-LOCAL_ADDITIONAL_JAVA_DIR:=frameworks/base/core/java/android/annotation
-LOCAL_DROIDDOC_CUSTOM_TEMPLATE_DIR:=build/tools/droiddoc/templates-sac
+LOCAL_ADDITIONAL_JAVA_DIR := frameworks/base/core/java/android/annotation
+# FIXME FIXME FIXME LOCAL_ADDITIONAL_DEPENDENCIES := tradefed-docs
+LOCAL_DROIDDOC_CUSTOM_TEMPLATE_DIR := build/tools/droiddoc/templates-sac
 LOCAL_MODULE := online-sac
 LOCAL_DROIDDOC_OPTIONS:= \
         -toroot / \
@@ -31,3 +32,4 @@ setup-tradefed-ref:
 	$(hide) rm -rf $(OUT_DOCS)/online-sac/reference
 	$(hide) cp -R ../tradefed/out/target/common/docs/tradefed/reference $(OUT_DOCS)/online-sac
 	$(hide) cp ../tradefed/out/target/common/docs/tradefed/navtree_data.js $(OUT_DOCS)/online-sac/navtree_data.js
+
