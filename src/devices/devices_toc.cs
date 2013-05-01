@@ -158,6 +158,11 @@
                 <span class="en">Security Enhancements in Android 4.2</span>
               </a>
             </li>
+            <li>
+              <a href="<?cs var:toroot ?>devices/tech/security/enhancements43.html">
+                <span class="en">Security Enhancements in Android 4.3</span>
+              </a>
+            </li>
           </ul>
       </li>
       
