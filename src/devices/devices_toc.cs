@@ -148,12 +148,12 @@
      <li class="nav-section">
           <div class="nav-section-header">
             <a href="<?cs var:toroot ?>devices/tech/security/index.html">
-              <span class="en">Input</span>
+              <span class="en">Security</span>
             </a>
           </div>
           <ul>
             <li>      
-              <a href="<?cs var:toroot ?>devices/tech/security/enhancements.html">
+              <a href="<?cs var:toroot ?>devices/tech/security/enhancements42.html">
                 <span class="en">Security Enhancements in Android 4.2</span>
               </a>
             </li>
