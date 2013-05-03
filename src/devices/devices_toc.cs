@@ -146,7 +146,7 @@
      <li class="nav-section">
           <div class="nav-section-header">
             <a href="<?cs var:toroot ?>devices/tech/security/index.html">
-              <span class="en">Input</span>
+              <span class="en">Security</span>
             </a>
           </div>
           <ul>
