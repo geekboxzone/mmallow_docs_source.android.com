@@ -13,7 +13,7 @@
     See the License for the specific language governing permissions and
     limitations under the License.
 -->
-<?cs # Table of contents for Dev pdk.?>
+<?cs # Table of contents for adk?>
 <ul id="nav">
   <!-- Accessories -->
   <li class="nav-section">

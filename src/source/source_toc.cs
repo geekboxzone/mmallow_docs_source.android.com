@@ -12,14 +12,14 @@
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
     limitations under the License.
---><?cs # Table of contents for Dev pdk.?>
+--><?cs # Table of contents for source.?>
 <ul id="nav">
   <li class="nav-section">
     <div class="nav-section-header">
       <a href="<?cs var:toroot ?>source/index.html">
         <span class="en">Overview</span>
       </a>
-    </div>    
+    </div>
     <ul>
       <li><a href="<?cs var:toroot ?>source/code-lines.html">Codelines, Branches, and Releases</a></li>
       <li><a href="<?cs var:toroot ?>source/build-numbers.html">Codenames, Tags, and Build Numbers</a></li>
@@ -37,7 +37,7 @@
         </a>
       </div>
        <ul>
-        <li><a href="<?cs var:toroot ?>source/initializing.html">Initializing the Build Environment</a></li>        
+        <li><a href="<?cs var:toroot ?>source/initializing.html">Initializing the Build Environment</a></li>
         <li><a href="<?cs var:toroot ?>source/downloading.html">Downloading the Source</a></li>
         <li><a href="<?cs var:toroot ?>source/building-running.html">Building and Running</a></li>
         <li><a href="<?cs var:toroot ?>source/building-devices.html">Building for Devices</a></li>
