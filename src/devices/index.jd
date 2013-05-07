@@ -27,14 +27,14 @@ page.title=Porting Android to Devices
   <p>Android provides you with the freedom to implement your own device specifications
   and the drivers to support them. The hardware abstraction layer (HAL) gives you a
   standard way to create software hooks in between the Android
-  platform stack and your hardware. In addition, the Android operating system 
+  platform stack and your hardware. In addition, the Android operating system
   is open-sourced to help you through your device's bringup.</p>
 
   <p>To ensure that your devices maintain a high level of quality and offers a consistent
   experience for your users, they must must also
   pass the tests in the compatibility test suite (CTS). CTS ensures that anyone
   building a device meets a quality standard that ensures apps run reliabaly well
-  and gives users a good experience. For more information, see the 
+  and gives users a good experience. For more information, see the
   <a href="{@docRoot}compatibility/index.html">Compatibility</a> section.</p>
 
  <h2>Android Low-Level System Architecture</h2>
@@ -62,19 +62,19 @@ level view of how Android works:
   The Binder Inter-Process Communication mechanism allows the application framework to
   cross process boundaries and call into the Android system services code. This basically allows
   high level framework APIs to interact with Android's system services. At the application framework level, all
-  of this communication is hidden from the developer and things appear to "just work." 
+  of this communication is hidden from the developer and things appear to "just work."
   </p>
 
   <h4>System services</h4>
   <p>Most of the functionality exposed through the application framework APIs  must
     communicate with some sort of system service to access the underlying hardware. Services
-    are divided into modular components with focused functionality 
+    are divided into modular components with focused functionality
     such as the Window Manager, Search Service, or Notification Manager. System services are grouped
     into two buckets: system and media. The system services include things such as the Window or
     Notification Manager. The media services include all the services involved in playing and
     recording media.
   </p>
-  
+
 <h4>Hardware abstraction layer (HAL)</h4>
 <p>The HAL serves as a standard interface that allows the Android system to call into the device
   driver layer while being agnostic about the lower-level implementations of your drivers and hardware.
@@ -90,9 +90,7 @@ level view of how Android works:
   Android uses a specialized version of the Linux kernel with a few special additions such as
   wakelocks, a memory management system that is more agressive in preserving memory,
   the Binder IPC driver, and other features that are important for a mobile embedded platform like Android.
-  These additions have less to do with driver development than with the system's functionality. The PDK
-  does not provide kernel sources, so you must provide your own. You can use any version of the kernel that
-  you want as long as it supports the required features, such as the binder driver. However, we recommend
+  These additions have less to do with driver development than with the system's functionality. You can use any version of the kernel that you want as long as it supports the required features, such as the binder driver. However, we recommend
   using the latest version of the Android kernel. For the latest Android kernel, see
   <a href="{@docRoot}source/building-kernels.html" >Building Kernels</a>.
 </p>
