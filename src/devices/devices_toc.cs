@@ -13,7 +13,7 @@
     See the License for the specific language governing permissions and
     limitations under the License.
 -->
-<?cs # Table of contents for Dev pdk.?>
+<?cs # Table of contents for devices.?>
 <ul id="nav">
 
 <!-- Porting Android -->
@@ -22,7 +22,7 @@
       <a href="<?cs var:toroot ?>devices/index.html">
         <span class="en">Porting</span>
       </a>
-    </div>    
+    </div>
     <ul>
       <li><a href="<?cs var:toroot ?>devices/media.html">Media</a></li>
       <li class="nav-section">
@@ -53,7 +53,7 @@
 <!-- End Porting Android -->
   </li>
 
-  
+
   <li class="nav-section">
     <div class="nav-section-header">
       <a href="<?cs var:toroot ?>devices/tech/index.html">
@@ -131,14 +131,14 @@
           <li><a href="<?cs var:toroot ?>devices/tech/input/validate-keymaps.html">Validate Keymaps</a></li>
         </ul>
       </li>
-      
-      <li>      
+
+      <li>
           <a href="<?cs var:toroot ?>devices/tech/kernel.html">
             <span class="en">Kernel</span>
           </a>
       </li>
-      
-      <li>      
+
+      <li>
           <a href="<?cs var:toroot ?>devices/tech/power.html">
             <span class="en">Power</span>
           </a>
@@ -150,14 +150,14 @@
             </a>
           </div>
           <ul>
-            <li>      
+            <li>
               <a href="<?cs var:toroot ?>devices/tech/security/enhancements.html">
                 <span class="en">Security Enhancements in Android 4.2</span>
               </a>
             </li>
           </ul>
       </li>
-      
+
 
       <li class="nav-section">
         <div class="nav-section-header">
