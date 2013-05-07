@@ -24,7 +24,7 @@ header.hide=1
 
   <div class="landing-banner">
       <h1 itemprop="name" style="margin-bottom:0;">Welcome to the Android Open Source Project!</h1>
-      
+
       <p>
       Android is an open-source software stack for a wide range of devices and a corresponding open-source project led by Google.
       Here you can find the information and source code you need to learn more about the Android platform. From there you can
@@ -62,15 +62,13 @@ header.hide=1
       </a>
       <a href="{@docRoot}devices/index.html">
         <h4>Build Devices</h4>
-        <p>The Android PDK lets you build devices with the latest Android platform, before
-          it is released to the public. This gives you a headstart on creating the compelling
-          devices that your customers want.</p>
+        <p>Build devices with the latest Android platform and create
+        create compelling devices that your customers want.</p>
       </a>
 
       <a href="{@docRoot}accessories/index.html">
         <h4>Build Accessories</h4>
-        <p>Sometimes, a device can't do it all. Tap into Android's open accessory standard and
-          build accessories to complement the wide variety of Android-powered devices.</p>
+        <p>Sometimes, a device can't do it all. Tap into Android's open accessory standard and build accessories to complement the wide variety of Android-powered devices.</p>
       </a>
 
       <a href="{@docRoot}compatibility/index.html">
