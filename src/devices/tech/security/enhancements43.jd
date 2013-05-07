@@ -9,11 +9,13 @@ in Android 4.3:
 
 <ul>
   <li><strong>Android sandbox reinforced with SELinux.</strong>
-  Android now uses SELinux,
-  a mandatory access control (MAC) system in the Linux kernel originally
-  designed for government security, to augment the UID based Application
-  sandbox. This protects the operating system against potential security
-  vulnerabilities.</li>
+  This release strengthens the Android sandbox using the SELinux
+  mandatory access control system (MAC) in the Linux kernel. SELinux
+  reinforcement is invisible to users and developers, and adds robustness
+  to the existing Android security model while maintaining compatibility
+  with existing applications. To ensure continued compatibility this release
+  allows the use of SELinux in a permissive mode. This mode logs any policy
+  violations, but will not break applications or affect system behavior.</li>
 
   <li><strong>No setuid/setgid programs.</strong>
   Added support for filesystem capabilities
