@@ -24,8 +24,7 @@ page.title=Initializing a Build Environment
   </div>
 </div>
 
-<h1 id="initializing-a-build-environment">Initializing a Build Environment</h1>
-<p>The "Getting Started" section describes how to set up your local work environment, how to use Repo to get the Android files, and how to build the files on your machine.  To build the Android source files, you will need to use Linux or Mac OS. Building under Windows is not currently supported.</p>
+<p>This section describes how to set up your local work environment to build the Android source files. You will need to use Linux or Mac OS. Building under Windows is not currently supported.</p>
 <p><em>Note: The source download is approximately 8.5GB in size.
 You will need over 30GB free to complete a single build, and
 up to 100GB (or more) for a full set of builds.</em></p>
