@@ -24,7 +24,7 @@ header.hide=1
 
   <div class="landing-banner">
       <h1 itemprop="name" style="margin-bottom:0;">Legal Notice</h1>
-      
+
     <p>Android is developed by Google Inc. and the <a
     href="http://www.openhandsetalliance.com/">Open Handset Alliance</a>. We've made it available to you
     as a development platform pursuant to our commitment to openness, freedom, and innovation in
@@ -34,7 +34,7 @@ header.hide=1
 
 <h2 id="Brands">Android Brands</h2>
 
-<p>The "Android" name, the <img src="{@docRoot}assets/images/sac-logo.png" alt="Android"
+<p>The "Android" name, the <img src="{@docRoot}assets/images/sac_logo.png" alt="Android"
 style="margin:0;padding:0 2px;vertical-align:baseline" /> logo, and
 <a href="http://www.google.com/permissions/">other trademarks</a> are property of Google Inc.
 You may not use the logo or the logo's custom typeface.</p>
