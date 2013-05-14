@@ -37,6 +37,7 @@
           <li><a href="<?cs var:toroot ?>devices/audio_avoiding_pi.html">Avoiding Priority Inversion</a></li>
           <li><a href="<?cs var:toroot ?>devices/latency_design.html">Design For Reduced Latency</a></li>
           <li><a href="<?cs var:toroot ?>devices/audio_terminology.html">Terminology</a></li>
+          <li><a href="<?cs var:toroot ?>devices/testing_circuit.html">Testing Circuit</a></li>
         </ul>
       </li>
       <li><a href="<?cs var:toroot ?>devices/camera.html">Camera v1</a></li>
