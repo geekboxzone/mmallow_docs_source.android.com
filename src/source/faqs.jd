@@ -24,6 +24,7 @@ page.title=Frequently Asked Questions
   </div>
 </div>
 
+<a name="top"></a>
 <h2 id="open-source">Open Source</h2>
 <h3 id="what-is-the-android-open-source-project">What is the Android Open Source Project?</h3>
 <p>We use the phrase "Android Open Source Project" or "AOSP" to refer to the
@@ -181,6 +182,7 @@ contributions.</p>
 Approvers are typically Google employees, but the same approvers are
 responsible for all submissions, regardless of origin.</p>
 <p>You can find more information on this topic at the <a href="source/submit-patches.html">Submitting Patches</a> page.</p>
+<a href="#top">Back to top</a>  
 <h2 id="compatibility">Compatibility</h2>
 <h3 id="what-does-compatibility-mean">What does "compatibility" mean?</h3>
 <p>We define an "Android compatible" device as one that can run any
@@ -280,6 +282,7 @@ software.</p>
 <h3 id="what-happens-if-a-device-that-claims-compatibility-is-later-found-to-have-compatibility-problems">What happens if a device that claims compatibility is later found to have compatibility problems?</h3>
 <p>Typically, Google's relationships with Google Play licensees allow us to
 ask them to release updated system images that fix the problems.</p>
+<a href="#top">Back to top</a>
 <h2 id="compatibility-test-suite">Compatibility Test Suite</h2>
 <h3 id="what-is-the-purpose-of-the-cts">What is the purpose of the CTS?</h3>
 <p>The Compatibility Test Suite is a tool used by device manufacturers to help
@@ -311,7 +314,7 @@ implement the 'adb' debugging utility. This means that any compatible device
 -- including ones available at retail -- must be able to run the CTS
 tests.</p>
 
-
+<a href="#top">Back to top</a>
 <h2>Security</h2>
 <h3 id="secure">Is Android secure?</h3>
 
@@ -442,4 +445,4 @@ those fixes to the manufacturers of the products through the open source project
 properly support your customers by keeping abreast of software updates, please
 contact us at <a
 href="mailto:info@openhandsetalliance.com">info@openhandsetalliance.com</a>.</p>
-
+<a href="#top">Back to top</a>

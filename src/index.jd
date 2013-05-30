@@ -26,10 +26,10 @@ header.hide=1
       <h1 itemprop="name" style="margin-bottom:0;">Welcome to the Android Open Source Project!</h1>
 
       <p>
-      Android is an open-source software stack for a wide range of devices and a corresponding open-source project led by Google.
-      Here you can find the information and source code you need to learn more about the Android platform. From there you can
+      Android is an open-source software stack for a wide range of mobile devices and a corresponding open-source project led by 
+      Google. Here you can find the information and source code you need to learn more about the Android platform. From there you can
       create custom variants of the Android software stack, build devices and accessories that run on the Android platform,
-      and ensure that your devices are compatible with the Android compatibility definition.
+      and ensure your devices are compatible with the Android compatibility definition.
       </p>
 
   </div>
@@ -42,13 +42,18 @@ header.hide=1
   <div class="landing-docs">
     <div class="col-8">
     <h3>Updates</h3>
-      <a href="">
-        <h4>Source Code Available for Android 4.1</h4>
-        <p>Android is an open-source software stack for mobile devices, and a corresponding open-source project led by Google. We created Android in response to our own experiences launching mobile apps. We wanted to make sure that there was no central point of failure, so that no industry player can restrict or control the innovations of any other. That's why we created Android, and made its source code open.</p>
+      <a href="{@docRoot}source/index.html">
+        <h4>Source Code Available for Android 4.3</h4>
+        <p>Android is an open-source software stack for a wide array of mobile devices with different form factors. 
+        We created Android in response to our own experiences launching mobile apps. We wanted to make sure there was 
+        no central point of failure so no industry player can restrict or control the innovations of any other. That's 
+        why we created Android and made its source code open.</p>
       </a>
-      <a href="">
-        <h4>Compatibility Definition for Android 4.0</h4>
-        <p>Android is an open-source software stack for mobile devices, and a corresponding open-source project led by Google. We created Android in response to our own experiences launching mobile apps. We wanted to make sure that there was no central point of failure, so that no industry player can restrict or control the innovations of any other. That's why we created Android, and made its source code open.</p>
+      <a href="{@docRoot}compatibility/index.html">
+        <h4>Compatibility Definition for Android 4.3</h4>
+        <p>Android's purpose is to establish an open platform for developers to build innovative apps. The Android 
+        Compatibility program defines the technical details of the Android platform and provides tools for device manufacturers to 
+        ensure developers' apps run on a variety of devices.</p>
       </a>
     </div>
 
