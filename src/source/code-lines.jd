@@ -44,7 +44,7 @@ page.title=Codelines, Branches, and Releases
   release is cut, sometimes that will become a new branch in git, and sometimes not, based on
   the needs of the moment.
 </p>
-<ul>
+<ol>
   <li>
 	<p>
 	  At any given moment, there is a current latest release of the Android platform. This
@@ -71,7 +71,7 @@ page.title=Codelines, Branches, and Releases
 	  become the new latest release.
 	</p>
   </li>
-</ul>
+</ol>
 <p>
   <img src="{@docRoot}images/code-lines.png" alt="code-line diagram">
 </p>
