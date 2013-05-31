@@ -320,7 +320,7 @@ s.addAll(Arrays.asList(args));
 </code></pre>
 <p>Loop variables should be declared in the for statement itself unless there
 is a compelling reason to do otherwise:</p>
-<pre><code>for (int i = 0; i n; i++) {
+<pre><code>for (int i = 0; i < n; i++) {
     doSomething(i);
 }
 </code></pre>
