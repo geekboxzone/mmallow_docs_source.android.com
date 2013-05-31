@@ -18,7 +18,7 @@ page.title=Contributing
 -->
 <p>Thanks for your interest in Android! Here are some ways you can get involved
 and help us improve Android. For background on the Android project and our
-goals, check out the <a href="/source/index.html">Overview</a> page.</p>
+goals, check out the <a href="{@docRoot}source/index.html">Overview</a> page.</p>
 <h2 id="report-bugs">Report Bugs</h2>
 
 <p>One of the easiest and most effective ways you can help improve Android is

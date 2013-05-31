@@ -31,7 +31,7 @@ page describes the kinds of roles that interested parties can take on.</p>
 <p>Anyone who is interested in exploring and contributing to Android can use the
 Android Open Source Project resources. Anyone can join the mailing lists, ask
 questions, contribute patches, report bugs, look at submitted patches, and use
-the tools. To get started with the Android code, see <a href="/source/contributing.html">Contributing</a>.</p>
+the tools. To get started with the Android code, see <a href="{@docRoot}source/contributing.html">Contributing</a>.</p>
 <h2 id="contributor">Contributor</h2>
 <p>A "Contributor" is anyone making contributions to the AOSP source code,
 including both employees of Google or other companies, as well as external
