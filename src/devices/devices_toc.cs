@@ -116,6 +116,11 @@
           <li><a href="<?cs var:toroot ?>devices/tech/encryption/android_crypto_implementation.html">Encryption Technical Information</a></li>
         </ul>
       </li>
+     <li>
+          <a href="<?cs var:toroot ?>devices/tech/storage/index.html">
+            <span class="en">External Storage</span>
+          </a>
+      </li>
       <li class="nav-section">
         <div class="nav-section-header">
           <a href="<?cs var:toroot ?>devices/tech/input/index.html">
