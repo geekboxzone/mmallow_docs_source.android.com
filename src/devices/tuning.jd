@@ -93,15 +93,18 @@ in the <code>device.mk</code> as <code>PRODUCT_PROPERTY_OVERRIDES</code>.
   using a cache large enough to hold two screens worth of 8-bit textures. For instance, on a 1280x800 display, a full screen buffer uses about 1 MB, so the cache should be at least 2 MB.</td>
 </tr>
 <tr>
-
-
   <td><code>ro.hwui.fbo_cache_size</code></td>
   <td><code>integer</code></td>
   <td><code>16</code></td>
   <td>Defines the number of FBO names the renderer can hold in the cache at any given time.
   We recommend keeping this number low.</td>
 </tr>
-
+<tr>
+  <td><code>ro.hwui.r_buffer_cache_size</code></td>
+  <td><code>float</code></td>
+  <td><code>2</code></td>
+  <td>Defines the size, in megabytes, of the render buffers cache per process. It is recommended to use a cache large enough to hold twice the screen in 8 bits. For instance, on a 1280x800 display, a full screen buffer uses about 1 MB so the cache should be at least 2 MB. The cache can be smaller if the device supports 4 bits or 1 bit stencil buffers.</td>
+</tr>
 <tr>
   <td><code>ro.hwui.texture_cache_flush_rate</code></td>
   <td><code>float</code></td>
@@ -177,5 +180,11 @@ in the <code>device.mk</code> as <code>PRODUCT_PROPERTY_OVERRIDES</code>.
   <td><code>192</code></td>
   <td>Defines the luminance threshold above which white gamma correction is applied.
   The value must be defined in the range 0..255.</td>
+</tr>
+<tr>
+  <td><code>hwui.use_gpu_pixel_buffers</code></td>
+  <td><code>boolean</code></td>
+  <td><code>true</code></td>
+  <td>Used to enable or disable the use of PBOs on OpenGL ES 3.0 hardware. PBOs are used by the renderer to perform asynchronous texture uploads, especially for the font cache. This property should always remain enabled but can be disabled during bringup or development if the use of PBOs causes corruptions or terrible performance. This is why the property is not read-only.</td>
 </tr>
 </table>
