@@ -22,7 +22,7 @@ page.title=Dalvik Executable Format
 files, which are used to hold a set of class definitions and their associated
 adjunct data.</p>
 
-<h1>Guide To Types</h1>
+<h2>Guide To Types</h2>
 
 <table class="guide">
 <thead>
@@ -159,7 +159,7 @@ values are unlikely to be needed).</p>
 </tbody>
 </table>
 
-<h1>Overall File Layout</h1>
+<h2>Overall File Layout</h2>
 
 <table class="format">
 <thead>
@@ -258,9 +258,9 @@ values are unlikely to be needed).</p>
 </tbody>
 </table>
 
-<h1>Bitfield, String, and Constant Definitions</h1>
+<h2>Bitfield, String, and Constant Definitions</h2>
 
-<h2><code>DEX_FILE_MAGIC</code></h2>
+<h3><code>DEX_FILE_MAGIC</code></h3>
 <h4>embedded in <code>header_item</code></h4>
 
 <p>The constant array/string <code>DEX_FILE_MAGIC</code> is the list of
@@ -286,7 +286,7 @@ platform (February&ndash;March 2008). In several respects, these earlier
 versions of the format differ significantly from the version described in this
 document.</p>
 
-<h2><code>ENDIAN_CONSTANT</code> and <code>REVERSE_ENDIAN_CONSTANT</code></h2>
+<h3><code>ENDIAN_CONSTANT</code> and <code>REVERSE_ENDIAN_CONSTANT</code></h3>
 <h4>embedded in <code>header_item</code></h4>
 
 <p>The constant <code>ENDIAN_CONSTANT</code> is used to indicate the
@@ -302,7 +302,7 @@ uint ENDIAN_CONSTANT = 0x12345678;
 uint REVERSE_ENDIAN_CONSTANT = 0x78563412;
 </pre>
 
-<h2><code>NO_INDEX</code></h2>
+<h3><code>NO_INDEX</code></h3>
 <h4>embedded in <code>class_def_item</code> and
 <code>debug_info_item</code></h4>
 
@@ -319,7 +319,7 @@ representable as a single byte in the <code>uleb128p1</code> encoding.</p>
 uint NO_INDEX = 0xffffffff;    // == -1 if treated as a signed int
 </pre>
 
-<h2><code>access_flags</code> Definitions</h2>
+<h3><code>access_flags</code> Definitions</h3>
 <h4>embedded in <code>class_def_item</code>,
 <code>encoded_field</code>, <code>encoded_method</code>, and
 <code>InnerClass</code></h4>
@@ -496,7 +496,7 @@ overall properties of classes and class members.</p>
 <p><super>*</super> Only allowed on for <code>InnerClass</code> annotations,
 and must not ever be on in a <code>class_def_item</code>.</p>
 
-<h2>MUTF-8 (Modified UTF-8) Encoding</h2>
+<h3>MUTF-8 (Modified UTF-8) Encoding</h3>
 
 <p>As a concession to easier legacy support, the <code>.dex</code> format
 encodes its string data in a de facto standard modified UTF-8 form, hereafter
@@ -535,7 +535,7 @@ MUTF-8 is actually closer to the (relatively less well-known) encoding
 <a href="http://www.unicode.org/reports/tr26/">CESU-8</a> than to UTF-8
 per se.</p>
 
-<h2><code>encoded_value</code> Encoding</h2>
+<h3><code>encoded_value</code> Encoding</h3>
 <h4>embedded in <code>annotation_element</code> and
 <code>encoded_array_item</code></h4>
 
@@ -1072,7 +1072,7 @@ all reference types are represented by a single <code>'L'</code> character.</p>
   </tr>
 </table>
 
-<h2><i>TypeDescriptor</i> Semantics</h2>
+<h3><i>TypeDescriptor</i> Semantics</h3>
 
 <p>This is the meaning of each of the variants of <i>TypeDescriptor</i>.</p>
 
@@ -1134,12 +1134,12 @@ all reference types are represented by a single <code>'L'</code> character.</p>
 </tbody>
 </table>
 
-<h1>Items and Related Structures</h1>
+<h2>Items and Related Structures</h2>
 
 <p>This section includes definitions for each of the top-level items that
 may appear in a <code>.dex</code> file.
 
-<h2><code>header_item</code></h2>
+<h3><code>header_item</code></h3>
 <h4>appears in the <code>header</code> section</h4>
 <h4>alignment: 4 bytes</h4>
 
@@ -1322,7 +1322,7 @@ may appear in a <code>.dex</code> file.
 </tbody>
 </table>
 
-<h2><code>map_list</code></h2>
+<h3><code>map_list</code></h3>
 <h4>appears in the <code>data</code> section</h4>
 <h4>referenced from <code>header_item</code></h4>
 <h4>alignment: 4 bytes</h4>
@@ -1518,7 +1518,7 @@ be ordered by initial offset and must not overlap.</p>
 </table>
 
 
-<h2><code>string_id_item</code></h2>
+<h3><code>string_id_item</code></h3>
 <h4>appears in the <code>string_ids</code> section</h4>
 <h4>alignment: 4 bytes</h4>
 
@@ -1544,7 +1544,7 @@ be ordered by initial offset and must not overlap.</p>
 </tbody>
 </table>
 
-<h2><code>string_data_item</code></h2>
+<h3><code>string_data_item</code></h3>
 <h4>appears in the <code>data</code> section</h4>
 <h4>alignment: none (byte-aligned)</h4>
 
@@ -1583,7 +1583,7 @@ be ordered by initial offset and must not overlap.</p>
 </tbody>
 </table>
 
-<h2><code>type_id_item</code></h2>
+<h3><code>type_id_item</code></h3>
 <h4>appears in the <code>type_ids</code> section</h4>
 <h4>alignment: 4 bytes</h4>
 
@@ -1607,7 +1607,7 @@ be ordered by initial offset and must not overlap.</p>
 </tbody>
 </table>
 
-<h2><code>proto_id_item</code></h2>
+<h3><code>proto_id_item</code></h3>
 <h4>appears in the <code>proto_ids</code> section</h4>
 <h4>alignment: 4 bytes</h4>
 
@@ -1650,7 +1650,7 @@ be ordered by initial offset and must not overlap.</p>
 </tbody>
 </table>
 
-<h2><code>field_id_item</code></h2>
+<h3><code>field_id_item</code></h3>
 <h4>appears in the <code>field_ids</code> section</h4>
 <h4>alignment: 4 bytes</h4>
 
@@ -1688,7 +1688,7 @@ be ordered by initial offset and must not overlap.</p>
 </tbody>
 </table>
 
-<h2><code>method_id_item</code></h2>
+<h3><code>method_id_item</code></h3>
 <h4>appears in the <code>method_ids</code> section</h4>
 <h4>alignment: 4 bytes</h4>
 
@@ -1726,7 +1726,7 @@ be ordered by initial offset and must not overlap.</p>
 </tbody>
 </table>
 
-<h2><code>class_def_item</code></h2>
+<h3><code>class_def_item</code></h3>
 <h4>appears in the <code>class_defs</code> section</h4>
 <h4>alignment: 4 bytes</h4>
 
@@ -1830,7 +1830,7 @@ be ordered by initial offset and must not overlap.</p>
 </tbody>
 </table>
 
-<h2><code>class_data_item</code></h2>
+<h3><code>class_data_item</code></h3>
 <h4>referenced from <code>class_def_item</code></h4>
 <h4>appears in the <code>data</code> section</h4>
 <h4>alignment: none (byte-aligned)</h4>
@@ -1975,7 +1975,7 @@ be ordered by initial offset and must not overlap.</p>
 </tbody>
 </table>
 
-<h2><code>type_list</code></h2>
+<h3><code>type_list</code></h3>
 <h4>referenced from <code>class_def_item</code> and
 <code>proto_id_item</code></h4>
 <h4>appears in the <code>data</code> section</h4>
@@ -2022,7 +2022,7 @@ be ordered by initial offset and must not overlap.</p>
 </tbody>
 </table>
 
-<h2><code>code_item</code></h2>
+<h3><code>code_item</code></h3>
 <h4>referenced from <code>encoded_method</code></h4>
 <h4>appears in the <code>data</code> section</h4>
 <h4>alignment: 4 bytes</h4>
@@ -2248,7 +2248,7 @@ be ordered by initial offset and must not overlap.</p>
 </tbody>
 </table>
 
-<h2><code>debug_info_item</code></h2>
+<h3><code>debug_info_item</code></h3>
 <h4>referenced from <code>code_item</code></h4>
 <h4>appears in the <code>data</code> section</h4>
 <h4>alignment: none (byte-aligned)</h4>
@@ -2481,7 +2481,7 @@ line += DBG_LINE_BASE + (adjusted_opcode % DBG_LINE_RANGE)
 address += (adjusted_opcode / DBG_LINE_RANGE)
 </pre>
 
-<h2><code>annotations_directory_item</code></h2>
+<h3><code>annotations_directory_item</code></h3>
 <h4>referenced from <code>class_def_item</code></h4>
 <h4>appears in the <code>data</code> section</h4>
 <h4>alignment: 4 bytes</h4>
@@ -2607,7 +2607,7 @@ address += (adjusted_opcode / DBG_LINE_RANGE)
 </tbody>
 </table>
 
-<h3><code>parameter_annotation</code> Format</h2>
+<h3><code>parameter_annotation</code> Format</h3>
 
 <table class="format">
 <thead>
@@ -2637,7 +2637,7 @@ address += (adjusted_opcode / DBG_LINE_RANGE)
 </tbody>
 </table>
 
-<h2><code>annotation_set_ref_list</code></h2>
+<h3><code>annotation_set_ref_list</code></h3>
 <h4>referenced from <code>parameter_annotations_item</code></h4>
 <h4>appears in the <code>data</code> section</h4>
 <h4>alignment: 4 bytes</h4>
@@ -2688,7 +2688,7 @@ address += (adjusted_opcode / DBG_LINE_RANGE)
 </tbody>
 </table>
 
-<h2><code>annotation_set_item</code></h2>
+<h3><code>annotation_set_item</code></h3>
 <h4>referenced from <code>annotations_directory_item</code>,
 <code>field_annotations_item</code>,
 <code>method_annotations_item</code>, and
@@ -2744,7 +2744,7 @@ address += (adjusted_opcode / DBG_LINE_RANGE)
 </table>
 
 
-<h2><code>annotation_item</code></h2>
+<h3><code>annotation_item</code></h3>
 <h4>referenced from <code>annotation_set_item</code></h4>
 <h4>appears in the <code>data</code> section</h4>
 <h4>alignment: none (byte-aligned)</h4>
@@ -2810,7 +2810,7 @@ address += (adjusted_opcode / DBG_LINE_RANGE)
 </tbody>
 </table>
 
-<h2><code>encoded_array_item</code></h2>
+<h3><code>encoded_array_item</code></h3>
 <h4>referenced from <code>class_def_item</code></h4>
 <h4>appears in the <code>data</code> section</h4>
 <h4>alignment: none (byte-aligned)</h4>
@@ -2835,7 +2835,7 @@ address += (adjusted_opcode / DBG_LINE_RANGE)
 </tbody>
 </table>
 
-<h1>System Annotations</h1>
+<h2>System Annotations</h2>
 
 <p>System annotations are used to represent various pieces of reflective
 information about classes (and methods and fields). This information is
@@ -2844,7 +2844,7 @@ generally only accessed indirectly by client (non-system) code.</p>
 <p>System annotations are represented in <code>.dex</code> files as
 annotations with visibility set to <code>VISIBILITY_SYSTEM</code>.
 
-<h2><code>dalvik.annotation.AnnotationDefault</code></h2>
+<h3><code>dalvik.annotation.AnnotationDefault</code></h3>
 <h4>appears on methods in annotation interfaces</h4>
 
 <p>An <code>AnnotationDefault</code> annotation is attached to each
@@ -2870,7 +2870,7 @@ annotation interface which wishes to indicate default bindings.</p>
 </tbody>
 </table>
 
-<h2><code>dalvik.annotation.EnclosingClass</code></h2>
+<h3><code>dalvik.annotation.EnclosingClass</code></h3>
 <h4>appears on classes</h4>
 
 <p>An <code>EnclosingClass</code> annotation is attached to each class
@@ -2898,7 +2898,7 @@ both an <code>EnclosingClass</code> and an
 </tbody>
 </table>
 
-<h2><code>dalvik.annotation.EnclosingMethod</code></h2>
+<h3><code>dalvik.annotation.EnclosingMethod</code></h3>
 <h4>appears on classes</h4>
 
 <p>An <code>EnclosingMethod</code> annotation is attached to each class
@@ -2924,7 +2924,7 @@ and an <code>EnclosingMethod</code> annotation.</p>
 </tbody>
 </table>
 
-<h2><code>dalvik.annotation.InnerClass</code></h2>
+<h3><code>dalvik.annotation.InnerClass</code></h3>
 <h4>appears on classes</h4>
 
 <p>An <code>InnerClass</code> annotation is attached to each class
@@ -2961,7 +2961,7 @@ Any class which has this annotation must also have <i>either</i> an
 </tbody>
 </table>
 
-<h2><code>dalvik.annotation.MemberClasses</code></h2>
+<h3><code>dalvik.annotation.MemberClasses</code></h3>
 <h4>appears on classes</h4>
 
 <p>A <code>MemberClasses</code> annotation is attached to each class
@@ -2985,7 +2985,7 @@ that has a name.)</p>
 </tbody>
 </table>
 
-<h2><code>dalvik.annotation.Signature</code></h2>
+<h3><code>dalvik.annotation.Signature</code></h3>
 <h4>appears on classes, fields, and methods</h4>
 
 <p>A <code>Signature</code> annotation is attached to each class,
@@ -3028,7 +3028,7 @@ tools that generate <code>.dex</code> files.</p>
 </tbody>
 </table>
 
-<h2><code>dalvik.annotation.Throws</code></h2>
+<h3><code>dalvik.annotation.Throws</code></h3>
 <h4>appears on methods</h4>
 
 <p>A <code>Throws</code> annotation is attached to each method which is
