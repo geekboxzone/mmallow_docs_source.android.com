@@ -19,7 +19,7 @@ page.title=Compatibility Test Suite
 
 <h2 id="how-does-the-cts-work">How does the CTS work?</h2>
 <div style="float: right">
-    <img src="/images/cts-0.png">
+    <img src="{@docRoot}images/cts-0.png">
 </div>
 
 <p>The CTS is an automated testing harness that includes two major software components:</p>

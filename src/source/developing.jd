@@ -73,7 +73,7 @@ For information about using repo to download source, see <a href="{@docRoot}sour
 </code></pre>
 <h2 id="creating-topic-branches">Creating topic branches</h2>
 <p>Start a topic branch in your local work environment whenever you begin a change, for example when you begin work on a bug or new feature. A topic branch is not a copy of the original files; it is a pointer to a particular commit. This makes creating local branches and switching among them a light-weight operation. By using branches, you can isolate one aspect of your work from the others. For an interesting article about using topic branches, see <a href="http://www.kernel.org/pub/software/scm/git/docs/howto/separating-topic-branches.txt">Separating topic branches</a>.
-<img src="/images/external-link.png" alt=""></p>
+<img src="{@docRoot}images/external-link.png" alt=""></p>
 <p>To start a topic branch using Repo: </p>
 <pre><code>$ repo start BRANCH_NAME
 </code></pre>
@@ -156,4 +156,4 @@ $ git rebase --continue
 </code></pre>
 <p>Deleting a client will <em>permanently delete</em> any changes you have not yet uploaded for review.</p>
 <h2 id="git-and-repo-cheatsheet">Git and Repo cheatsheet</h2>
-<p><img src="/images/git-repo-1.png" alt="list of basic git and repo commands"></p>
+<p><img src="{@docRoot}images/git-repo-1.png" alt="list of basic git and repo commands"></p>

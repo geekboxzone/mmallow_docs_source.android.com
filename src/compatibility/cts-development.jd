@@ -18,12 +18,12 @@ page.title=CTS Development
 -->
 
 <h2 id="initializing-your-repo-client">Initializing Your Repo Client</h2>
-<p>Follow the <a href="/source/downloading.html">instructions</a>
+<p>Follow the <a href="{@docRoot}source/downloading.html">instructions</a>
 to get and build the Android source code but specify <code>-b android-4.2_r1</code>
 when issuing the <code>repo init</code> command. This assures that your CTS
 changes will be included in the next CTS release and beyond.</p>
 <h2 id="setting-up-eclipse">Setting Up Eclipse</h2>
-<p>Follow the <a href="/source/using-eclipse.html">instructions</a>
+<p>Follow the <a href="{@docRoot}source/using-eclipse.html">instructions</a>
 to setup Eclipse but execute the following command to generate the
 <code>.classpath</code> file rather than copying the one from the development
 project:</p>
@@ -104,6 +104,6 @@ the <code>cts/tests/src/android/opengl</code> directory.</p>
 <li>Fix or remove tests annotated with BrokenTest and KnownFailure.</li>
 </ul>
 <h2 id="submitting-your-changes">Submitting Your Changes</h2>
-<p>Follow the <a href="/source/submit-patches.html">Android Contributors' Workflow</a>
+<p>Follow the <a href="{@docRoot}source/submit-patches.html">Android Contributors' Workflow</a>
 to contribute changes to CTS. A reviewer
 will be assigned to your change, and your change should be reviewed shortly!</p>

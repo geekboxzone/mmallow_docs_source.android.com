@@ -93,7 +93,7 @@ stable branch from the experimental branch as appropriate.</p>
 <p>Finally, Google works on the next version of the Android platform in tandem
 with developing a flagship device. This branch pulls in changes from the
 experimental and stable branches as appropriate.</p>
-<p>You can find more information on this topic at our <a href="source/code-lines.html">Branches and Releases</a>.</p>
+<p>You can find more information on this topic at our <a href="{@docRoot}source/code-lines.html">Branches and Releases</a>.</p>
 <h3 id="why-are-parts-of-android-developed-in-private">Why are parts of Android developed in private?</h3>
 <p>It typically takes over a year to bring a device to market, but of course
 device manufacturers want to ship the latest software they can. Developers,
