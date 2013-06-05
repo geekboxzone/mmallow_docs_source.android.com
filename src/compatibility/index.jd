@@ -49,7 +49,7 @@ Android compatibility program in general, see <a href="overview.html">the progra
 <ol>
 <li>
 <p><em>Obtain the Android software source code</em>.
-    This is <a href="/source/index.html">the source code for the Android platform</a>, that you port to your hardware.</p>
+    This is <a href="{@docRoot}source/index.html">the source code for the Android platform</a>, that you port to your hardware.</p>
 </li>
 <li>
 <p><em>Comply with Android Compatibility Definition Document (CDD)</em>.
