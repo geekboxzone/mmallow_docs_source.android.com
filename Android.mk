@@ -30,6 +30,6 @@ setup-hal-ref:
 
 setup-tradefed-ref:
 	$(hide) rm -rf $(OUT_DOCS)/online-sac/reference
-	$(hide) cp -R ../tradefed/out/target/common/docs/tradefed/reference $(OUT_DOCS)/online-sac
-	$(hide) cp ../tradefed/out/target/common/docs/tradefed/navtree_data.js $(OUT_DOCS)/online-sac/navtree_data.js
+	$(hide) cp -R out/target/common/docs/tradefed/reference $(OUT_DOCS)/online-sac
+	$(hide) cp out/target/common/docs/tradefed/navtree_data.js $(OUT_DOCS)/online-sac/navtree_data.js
 
