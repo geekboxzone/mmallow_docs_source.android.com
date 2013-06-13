@@ -23,6 +23,13 @@ These are audio terms that are widely used, with their conventional meanings.
 
 <dl>
 
+<dt>acoustics</dt>
+<dd>
+The study of the mechanical properties of sound, for example how the
+physical placement of transducers such as speakers and microphones on
+a device affects perceived audio quality.
+</dd>
+
 <dt>bits per sample or bit depth</dt>
 <dd>
 Number of bits of information per sample.
@@ -43,6 +50,16 @@ A set of samples, one per channel, at a point in time.
 <dd>
 The number of frames handed from one module to the next at once;
 for example the audio HAL interface uses this concept.
+</dd>
+
+<dt>Hz</dt>
+<dd>
+The units for sample rate or frame rate.
+</dd>
+
+<dt>latency</dt>
+<dd>
+Time delay as a signal passes through a system.
 </dd>
 
 <dt>mono</dt>
@@ -87,6 +104,13 @@ See Wikipedia article
 for the general definition. As used within Android, it refers primarily
 to the kernel audio framework and drivers, not to the user-mode API. See
 tinyalsa.
+</dd>
+
+<dt>AudioEffect</dt>
+<dd>
+An API and implementation framework for output (post-processing) effects
+and input (pre-processing) effects.  The API is defined at
+<a class="external-link" href="http://developer.android.com/reference/android/media/audiofx/AudioEffect.html" target="_android">android.media.audiofx.AudioEffect</a>
 </dd>
 
 <dt>AudioFlinger</dt>
@@ -166,6 +190,13 @@ A higher-level client API than AudioTrack, for playing either encoded
 content, or content which includes multi-media audio and video tracks.
 </dd>
 
+<dt>media.log</dt>
+<dd>
+An AudioFlinger debugging feature, available in custom builds only,
+for logging audio events to a circular buffer where they can then be
+dumped retroactively when needed.
+</dd>
+
 <dt>mediaserver</dt>
 <dd>
 An Android system process that contains a number of media-related
@@ -199,6 +230,14 @@ OpenSL ES 1.0.1.
 A module within AudioFlinger responsible for synchronizing state
 among threads. Whereas NBAIO is used to pass data, StateQueue is used
 to pass control information.
+</dd>
+
+<dt>tee sink</dt>
+<dd>
+An AudioFlinger debugging feature, available in custom builds only,
+for retaining a short fragment of recent audio for later analysis.
+This permits comparison between what was actually played or recorded
+vs. what was expected.
 </dd>
 
 <dt>tinyalsa</dt>
