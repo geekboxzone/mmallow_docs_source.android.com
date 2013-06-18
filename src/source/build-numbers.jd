@@ -125,6 +125,11 @@ API levels and NDK releases provided for convenience:</p>
 <td>4.2.x</td>
 <td>API level 17</td>
 </tr>
+<tr>
+<td>Jelly Bean</td>
+<td>4.3</td>
+<td>API level 18</td>
+</tr>
 </tbody>
 </table>
 <p>Starting with Cupcake, individual builds are identified with a short
@@ -443,13 +448,19 @@ following table:</p>
 <tr>
 <td>JDQ39</td>
 <td>android-4.2.2_r1</td>
+<td>Galaxy Nexus, Nexus 7, Nexus 4, Nexus 10</td>
+</tr>
+
+<tr>
+<td>JWR66N</td>
+<td>android-4.2.3_r1</td>
 <td>latest Jelly Bean version, Galaxy Nexus, Nexus 7, Nexus 4, Nexus 10</td>
 </tr>
 
 </tbody>
 </table>
 <p>The branches froyo, gingerbread, ics-mr0, ics-mr1, jb-dev,
-jb-mr1-dev, jb-mr1.1-dev
+jb-mr1-dev, jb-mr1.1-dev, jb-mr2-dev
 represent development
 branches that do not exactly match configurations that were tested
 by Google. They might contain a variety of changes in addition to
