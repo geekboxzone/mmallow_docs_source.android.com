@@ -29,7 +29,7 @@ page.title=Building for devices
 information that is specific to individual devices.</p>
 
 <p>With the current release, it is possible to build for
-Nexus 4, Nexus 10, Nexus 7, and for some variants of Galaxy Nexus.
+Nexus 4, Nexus 7, and for some variants of Galaxy Nexus.
 The exact level of functionality for each device depends on the availability
 of the relevant proprietary hardware-specific binaries.</p>
 <p>For Nexus 4 "mako" and on Nexus 7 "grouper" (Wi-Fi) and "tilapia" (Mobile),
@@ -37,7 +37,8 @@ all configurations can be used,
 and all the hardware is functional.
 Due to hardware differences, do not use 4.1.1 on a Nexus 7 that
 was originally sold with 4.1.2 or newer.</p>
-<p>All configurations of Nexus 10 "manta" can be used. On those devices, graphics, audio,
+<p>All configurations of Nexus 10 "manta" can be used with 4.2.2.
+On those devices, graphics, audio,
 Wi-Fi, Bluetooth, camera, NFC, GPS and orientation sensors are functional.</p>
 <p>The variants of Galaxy Nexus that can be used are the GSM/HSPA+ configuration
 "maguro" (only if it was originally sold with a "yakju" or "takju" operating
@@ -85,11 +86,11 @@ which is a mode in the bootloader that can be used to flash the devices:</p>
 </tr>
 <tr>
 <td>grouper</td>
-<td>Press <em>Power</em> for a second, and press <em>Volume Down</em> when the bootloader logo appears</td>
+<td>Press and hold <em>Volume Down</em>, then press and hold <em>Power</em></td>
 </tr>
 <tr>
 <td>tilapia</td>
-<td>Press <em>Power</em> for a second, and press <em>Volume Down</em> when the bootloader logo appears</td>
+<td>Press and hold <em>Volume Down</em>, then press and hold <em>Power</em></td>
 </tr>
 <tr>
 <td>phantasm</td>
@@ -186,43 +187,43 @@ the lunch menu, accessed when running the <code>lunch</code> command with no arg
 <tbody>
 <tr>
 <td>manta</td>
-<td>android-4.2.2_r1 or master</td>
+<td>android-4.2.2_r1</td>
 <td>full_manta-userdebug</td>
 </tr>
 <tr>
 <td>mako</td>
-<td>android-4.2.2_r1 or master</td>
-<td>full_mako-userdebug</td>
+<td>android-4.3_r1 or master</td>
+<td>aosp_mako-userdebug</td>
 </tr>
 <tr>
 <td>grouper</td>
-<td>android-4.2.2_r1 or master</td>
-<td>full_grouper-userdebug</td>
+<td>android-4.3_r1 or master</td>
+<td>aosp_grouper-userdebug</td>
 </tr>
 <tr>
 <td>tilapia</td>
-<td>android-4.2.2_r1 or master</td>
-<td>full_grouper-userdebug</td>
+<td>android-4.3_r1 or master</td>
+<td>aosp_grouper-userdebug</td>
 </tr>
 <tr>
 <td>maguro</td>
-<td>android-4.2.2_r1 or master</td>
-<td>full_maguro-userdebug</td>
+<td>android-4.3_r1 or master</td>
+<td>aosp_maguro-userdebug</td>
 </tr>
 <tr>
 <td>toro</td>
-<td>android-4.2.2_r1 or master</td>
-<td>full_toro-userdebug</td>
+<td>android-4.3_r1 or master</td>
+<td>aosp_toro-userdebug</td>
 </tr>
 <tr>
 <td>toroplus</td>
 <td>master</td>
-<td>full_toroplus-userdebug</td>
+<td>aosp_toroplus-userdebug</td>
 </tr>
 <tr>
 <td>panda</td>
 <td>master</td>
-<td>full_panda-userdebug</td>
+<td>aosp_panda-userdebug</td>
 </tr>
 <tr>
 <td>wingray</td>
