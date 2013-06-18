@@ -50,7 +50,7 @@ and the short form is more commonly used in documentation.</p>
 <h2 id="choose-a-target">Choose a Target</h2>
 <p>Choose which target to build with <code>lunch</code>.  The exact configuration can be passed as
 an argument, e.g. </p>
-<pre><code>$ lunch full-eng
+<pre><code>$ lunch aosp_arm-eng
 </code></pre>
 <p>The example above refers to a complete build for the emulator, with all debugging enabled.</p>
 <p>If run with no arguments <code>lunch</code> will prompt you to choose a target from the menu. </p>
@@ -66,19 +66,19 @@ referring to the particular feature combination. Here's a partial list:</p>
 </thead>
 <tbody>
 <tr>
-<td>full</td>
-<td>emulator</td>
-<td>fully configured with all languages, apps, input methods</td>
+<td>aosp_arm</td>
+<td>ARM emulator</td>
+<td>AOSP, fully configured with all languages, apps, input methods</td>
 </tr>
 <tr>
-<td>full_maguro</td>
+<td>aosp_maguro</td>
 <td>maguro</td>
-<td><code>full</code> build running on Galaxy Nexus GSM/HSPA+ ("maguro")</td>
+<td>AOSP, running on Galaxy Nexus GSM/HSPA+ ("maguro")</td>
 </tr>
 <tr>
-<td>full_panda</td>
+<td>aosp_panda</td>
 <td>panda</td>
-<td><code>full</code> build running on PandaBoard ("panda")</td>
+<td>AOSP, running on PandaBoard ("panda")</td>
 </tr>
 </tbody>
 </table>
