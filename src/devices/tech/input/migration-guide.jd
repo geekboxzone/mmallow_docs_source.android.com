@@ -38,7 +38,7 @@ USB product id / vendor id or by device name.</p>
 function input devices.  These files should simple contain a line to set
 the keyboard type to <code>SPECIAL_FUNCTION</code>.</p>
 <p>A good way to ensure that all built-in input devices are appropriately configured
-is to run <a href="/tech/input/dumpsys.html">Dumpsys</a> and look for devices that
+is to run <a href="dumpsys.html">Dumpsys</a> and look for devices that
 are inappropriately using <code>Generic.kcm</code>.</p>
 <h2 id="migrating-to-android-honeycomb-32">Migrating to Android Honeycomb 3.2</h2>
 <p>In Honeycomb 3.2, we added support for joysticks and extended the key layout file
@@ -51,5 +51,5 @@ protocol "B".  We also support digitizer tablets and stylus-based touch devices.
 multitouch input protocol correctly according to the standard.</p>
 <p>You will also need to update your input device configuration files because some
 properties have been changed to be simpler and more systematic.</p>
-<p>Refer to <a href="/tech/input/touch-devices.html">Touch Devices</a> for more details about
+<p>Refer to <a href="touch-devices.html">Touch Devices</a> for more details about
 driver requirements.</p>

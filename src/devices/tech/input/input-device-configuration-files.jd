@@ -123,5 +123,5 @@ device to wake up and respond.</p>
 correctly for all internal input devices.</p>
 <h2 id="validation">Validation</h2>
 <p>Make sure to validate your input device configuration files using the
-<a href="/tech/input/validate-keymaps.html">Validate Keymaps</a> tool.</p>
+<a href="validate-keymaps.html">Validate Keymaps</a> tool.</p>
 

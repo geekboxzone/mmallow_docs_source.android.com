@@ -398,7 +398,7 @@ Android provides password complexity rules that can be set by the device
 administrator and enforced by the operating system. Filesystem encryption
 requires the use of a user password, pattern-based screen lock is not supported.</p>
 <p>More details on implementation of filesystem encryption are available at
-<a href="/tech/encryption/android_crypto_implementation.html">https://source.android.com/tech/encryption/android_crypto_implementation.html</a></p>
+<a href="/devices/tech/encryption/android_crypto_implementation.html">https://source.android.com/devices/tech/encryption/android_crypto_implementation.html</a></p>
 
 <h2 id="password-protection">Password Protection</h2>
 <p>Android can be configured to verify a user-supplied password prior to providing
