@@ -249,7 +249,7 @@ PRODUCT_PACKAGES += \
   </li>
 </ol>
 
-<h2>Audio preprocessing effects</h2>
+<h2 id="preprocessing">Audio preprocessing effects</h2>
 <p>
 The Android platform supports audio effects on supported devices in the
 <a href="http://developer.android.com/reference/android/media/audiofx/package-summary.html">audiofx</a>
@@ -309,7 +309,7 @@ pre_processing {
 }
 </pre>
 
-<h3>Source tuning</h3>
+<h3 id="tuning">Source tuning</h3>
 <p>For <code>AudioSource</code> tuning, there are no explicit requirements on audio gain or audio processing
 with the exception of voice recognition (<code>VOICE_RECOGNITION</code>).</p>
 
@@ -341,7 +341,7 @@ with the exception of voice recognition (<code>VOICE_RECOGNITION</code>).</p>
   </li>
 </ul>
 
-<h3>More information</h3>
+<h3 id="more">More information</h3>
 <p>For more information, see:</p>
 <ul>
 <li>Android documentation for <a href="http://developer.android.com/reference/android/media/audiofx/package-summary.html">audiofx 
