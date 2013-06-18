@@ -35,7 +35,11 @@ to the Android security team.</p>
 <p>Here's how to report non-security bugs:</p>
 <ul>
 <li>
-<p><a href="https://code.google.com/p/android/issues/advsearch">Search for your bug</a> to see if anyone has already reported it.</p>
+<p><a href="https://code.google.com/p/android/issues/advsearch">Search for
+your bug</a> to see if anyone has already reported it. Don't forget to
+search for all issues, not just open ones, as your issue might already
+have been reported and closed. To help find the most popular results,
+sort the result by number of stars.</p>
 </li>
 <li>
 <p>If you find your issue and it's important to you, star it! That's how we know which bugs are most important to fix.</p>
@@ -55,6 +59,15 @@ to the Android security team.</p>
 </ul>
 </li>
 </ul>
+<p>Keep in mind that an issue tracker is not a user support forum. It is a list
+of pending technical tasks, along with information relevant for those tasks,
+and information about progress on those tasks including which ones might
+get worked on in the short term.</p>
+<p>This issue tracker is narrowly focused on the Android Open Source Project.
+Issues with retail devices need to be reported through those devices' support
+channels, especially for devices other than Nexus. Issues with applications
+that aren't part of AOSP need to be reported with those applications'
+developers; that is also the case for Google applications.</p>
 <p>Please note that we can't guarantee that any particular bug can be fixed in
 any particular release. To see what happens to your bug once you report it,
 read <a href="life-of-a-bug.html">Life of a Bug</a>.</p>
