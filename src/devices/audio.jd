@@ -172,7 +172,7 @@ audio_hw_modules {
 <h3 id="codecs">Media Codecs</h3>
 
 <p>Ensure that the audio codecs that your hardware and drivers support are properly declared for your product. See
-  <a href="{@docRoot}guide/media.html#expose"> Exposing Codecs to the Framework</a> for information on how to do this.
+  <a href="media.html#expose"> Exposing Codecs to the Framework</a> for information on how to do this.
 </p>
 
 <h2 id="configuring">

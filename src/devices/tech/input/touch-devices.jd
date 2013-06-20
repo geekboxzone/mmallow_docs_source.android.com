@@ -545,7 +545,7 @@ input device configuration, virtual key map and key layout.</p>
 <p>Refer to the following sections for more details about the files that
 participate in keyboard configuration:</p>
 <ul>
-<li><a href="/tech/input/input-device-configuration-files.html">Input Device Configuration Files</a></li>
+<li><a href="input-device-configuration-files.html">Input Device Configuration Files</a></li>
 <li><a href="#virtual-key-map-files">Virtual Key Map Files</a></li>
 </ul>
 <h3 id="properties">Properties</h3>

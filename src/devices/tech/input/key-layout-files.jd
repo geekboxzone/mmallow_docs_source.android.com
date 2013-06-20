@@ -239,7 +239,7 @@ not apply.</p>
     input system uses a virtual key map file to translate X / Y touch coordinates
     into Linux key codes, then uses the key layout file to translate
     Linux key codes into Android key codes.</p>
-<p>Refer to the section on <a href="/tech/input/touch-devices.html">Touch Devices</a>
+<p>Refer to the section on <a href="touch-devices.html">Touch Devices</a>
 for more details about virtual key map files.</p>
 <p>The key layout file for the touch screen input device must specify the
 appropriate key mapping and include the <code>VIRTUAL</code> flag for each key.</p>
@@ -281,4 +281,4 @@ for the framework <code>config.xml</code> resource.</p>
 </code></pre>
 <h2 id="validation">Validation</h2>
 <p>Make sure to validate your key layout files using the
-<a href="/tech/input/validate-keymaps.html">Validate Keymaps</a> tool.</p>
+<a href="validate-keymaps.html">Validate Keymaps</a> tool.</p>

@@ -37,9 +37,7 @@ conditions hold:</p>
 </ul>
 <p>Joysticks are currently classified as keyboards because joystick and gamepad buttons
 are reported by <code>EV_KEY</code> events in the same way keyboard keys are reported.  Thus
-joysticks and gamepads also make use of key map files for configuration.
-Refer to the section on <a href="/tech/input/joystick-devices.html">Joystick Devices</a> for
-more information.</p>
+joysticks and gamepads also make use of key map files for configuration.</p>
 <p>Once an input device has been classified as a keyboard, the system loads the
 input device configuration file and keyboard layout for the keyboard.</p>
 <p>The system then tries to determine additional characteristics of the device.</p>
@@ -170,9 +168,9 @@ map and input device configuration.</p>
 <p>Refer to the following sections for more details about the files that
 participate in keyboard configuration:</p>
 <ul>
-<li><a href="/tech/input/key-layout-files.html">Key Layout Files</a></li>
-<li><a href="/tech/input/key-character-map-files.html">Key Character Map Files</a></li>
-<li><a href="/tech/input/input-device-configuration-files.html">Input Device Configuration Files</a></li>
+<li><a href="key-layout-files.html">Key Layout Files</a></li>
+<li><a href="key-character-map-files.html">Key Character Map Files</a></li>
+<li><a href="input-device-configuration-files.html">Input Device Configuration Files</a></li>
 </ul>
 <h3 id="properties">Properties</h3>
 <p>The following input device configuration properties are used for keyboards.</p>
