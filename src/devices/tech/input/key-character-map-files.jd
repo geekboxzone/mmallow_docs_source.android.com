@@ -422,4 +422,4 @@ if they are designed for other languages.</p>
 or user-selectable keyboard layouts.</p>
 <h2 id="validation">Validation</h2>
 <p>Make sure to validate your key character map files using the
-<a href="/tech/input/validate-keymaps.html">Validate Keymaps</a> tool.</p>
+<a href="validate-keymaps.html">Validate Keymaps</a> tool.</p>
