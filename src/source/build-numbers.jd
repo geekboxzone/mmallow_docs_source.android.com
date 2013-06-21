@@ -416,11 +416,19 @@ following table:</p>
 <td>android-4.1.1_r6.1</td>
 <td>Nexus 7</td>
 </tr>
+
 <tr>
 <td>JZO54K</td>
 <td>android-4.1.2_r1</td>
 <td>Nexus S, Galaxy Nexus, Nexus 7</td>
 </tr>
+
+<tr>
+<td>JZO54L</td>
+<td>android-4.1.2_r2</td>
+<td></td>
+</tr>
+
 <tr>
 <td>JOP40C</td>
 <td>android-4.2_r1</td>
@@ -449,6 +457,18 @@ following table:</p>
 <td>JDQ39</td>
 <td>android-4.2.2_r1</td>
 <td>Galaxy Nexus, Nexus 7, Nexus 4, Nexus 10</td>
+</tr>
+
+<tr>
+<td>JDQ39B</td>
+<td>android-4.2.2_r1.1</td>
+<td>Nexus 7</td>
+</tr>
+
+<tr>
+<td>JDQ39E</td>
+<td>android-4.2.2_r1.1</td>
+<td>Nexus 4</td>
 </tr>
 
 <tr>
