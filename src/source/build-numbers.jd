@@ -472,8 +472,14 @@ following table:</p>
 </tr>
 
 <tr>
+<td>JWR66L</td>
+<td>android-4.3_r0.9</td>
+<td>Nexus 7</td>
+</tr>
+
+<tr>
 <td>JWR66N</td>
-<td>android-4.2.3_r1</td>
+<td>android-4.3_r1</td>
 <td>latest Jelly Bean version, Galaxy Nexus, Nexus 7, Nexus 4, Nexus 10</td>
 </tr>
 
