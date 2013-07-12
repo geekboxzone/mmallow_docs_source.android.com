@@ -28,7 +28,7 @@ header.hide=1
       <p>
       Android is an open-source software stack for a wide range of mobile devices and a corresponding open-source project led by 
       Google. Here you can find the information and source code you need to learn more about the Android platform. From there you can
-      create custom variants of the Android software stack, build devices and accessories that run on the Android platform,
+      create custom variants of the Android software stack, port devices and accessories to the Android platform,
       and ensure your devices are compatible with the Android compatibility definition.
       </p>
 
@@ -66,8 +66,8 @@ header.hide=1
         the Android ecosystem.</p>
       </a>
       <a href="{@docRoot}devices/index.html">
-        <h4>Build Devices</h4>
-        <p>Build devices with the latest Android platform and
+        <h4>Port Android to Devices</h4>
+        <p>Port the latest Android platform and
         create compelling devices that your customers want.</p>
       </a>
 
