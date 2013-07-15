@@ -33,46 +33,46 @@ Android Open Source Project resources. Anyone can join the mailing lists, ask
 questions, contribute patches, report bugs, look at submitted patches, and use
 the tools. To get started with the Android code, see <a href="{@docRoot}source/contributing.html">Contributing</a>.</p>
 <h2 id="contributor">Contributor</h2>
-<p>A "Contributor" is anyone making contributions to the AOSP source code,
-including both employees of Google or other companies, as well as external
-developers who are contributing to Android on their own behalf.  There is no
-distinction between Contributors who are employed by Google, and those who are
-not: all engineers use the same tools (git, repo, and gerrit), 
+<p>"Contributors" are those making contributions to the AOSP source code,
+including both employees of Google or other companies, as well as individual
+developers who are contributing to Android on their own behalf. There is no
+distinction between contributors who are employed by Google and those who are
+not; all engineers use the same tools (git, repo, and gerrit),
 follow the same code review process, and are subject
 to the same requirements on code style and so on.</p>
 <h2 id="developer">Developer</h2>
-<p>A "Developer" is an engineer writing applications that run on Android
-devices. There is, of course, no difference in skillset between a "Developer"
-and a "Contributor", but AOSP uses "Developer" to distinguish between
-engineers using the platform and those contributing to it. Developers are
-(along with end users) the "customers" of the platform that the Contributors
-create. As such, we talk about Developers a lot, though this isn't technically
+<p>"Developers" are engineers writing applications that run on Android
+devices. There is often little difference in skillset between a developer
+and a contributor. But AOSP uses "developer" to distinguish between
+engineers using the platform and those contributing to it. Developers
+(along with users) are the "customers" of the platform the contributors
+create. As such, we talk about developers a lot, though this isn't technically
 a separate role in the AOSP per se.</p>
 <h2 id="verifier">Verifier</h2>
 <p>"Verifiers" are responsible for testing change requests. After individuals
 have submitted a significant amount of high-quality code to the project, the
-Project Leads might invite them to become Verifiers. <em>Note: at this
-time, generally Verifiers are the same as Approvers.</em></p>
+project leads might invite them to become verifiers. <em>Note: at this
+time, verifiers act similarly to approvers.</em></p>
 <h2 id="approver">Approver</h2>
 <p>"Approvers" are experienced members of the project who have demonstrated their
 design skills and have made significant technical contributions to the
-project. In the code-review process, an Approver decides whether to include or
-exclude a change. Project Leads (who are typically employed by Google) choose
-the Approvers, sometimes promoting to this position Verifiers who have
+project. In the code-review process, an approver decides whether to include or
+exclude a change. Project leads (who are typically employed by Google) choose
+the approvers, sometimes promoting to this position verifiers who have
 demonstrated their expertise within a specific project.</p>
-<h2 id="project-leads">Project Leads</h2>
+<h2 id="project-leads">Project Lead</h2>
 <p>Android consists of a number of sub-projects; you can see these in the git
-repository, as individual .git files. Tech Leads are senior Contributors who
-oversee the engineering for individual Android projects. Typically these tech
-leads will be Google employees.  A Project Lead for an individual project is
+repository as individual .git files. "Project leads" are senior contributors who
+oversee the engineering for individual Android projects. Typically these project
+leads are Google employees. A project lead for an individual project is
 responsible for the following:</p>
 <ul>
 <li>
-<p>Lead all technical aspects of the project; for example, the project roadmap, 
-  development, release cycles, versioning, and QA.</p>
+<p>Lead all technical aspects of the project, including the project roadmap,
+  development, release cycles, versioning, and quality assurance (QA).</p>
 </li>
 <li>
-<p>Ensure that the project is QA-ed in time for scheduled Android platform
+<p>Ensure the project is tested by QA in time for scheduled Android platform
   releases.</p>
 </li>
 <li>
