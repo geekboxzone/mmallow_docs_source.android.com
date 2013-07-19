@@ -40,6 +40,18 @@ clone steps other than the step to download the actual kernel sources.</p>
     <th>Build configuration</th>
   </tr>
   <tr>
+    <td>flo</td>
+    <td>device/asus/flo-kernel/kernel</td>
+    <td>kernel/msm</td>
+    <td>flo_defconfig</td>
+  </tr>
+  <tr>
+    <td>deb</td>
+    <td>device/asus/flo-kernel/kernel</td>
+    <td>kernel/msm</td>
+    <td>flo_defconfig</td>
+  </tr>
+  <tr>
     <td>manta</td>
     <td>device/samsung/manta/kernel</td>
     <td>kernel/exynos</td>
