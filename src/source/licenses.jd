@@ -24,14 +24,16 @@ page.title=Licenses
   </div>
 </div>
 
-<p>The Android Open Source Project uses a few <a href="http://www.opensource.org/">open source initiative</a> 
+<p>The Android Open Source Project uses a few 
+<a href="http://www.opensource.org/">open source initiative</a>
 approved open source licenses for our software.</p>
-<h2 id="android-open-source-project-license">Android Open Source Project license</h2>
-<p>The preferred license for the Android Open Source Project is the <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache 
-Software License, 2.0</a> ("Apache 2.0"), 
+<h2 id="android-open-source-project-license">Android Open Source Project License</h2>
+<p>The preferred license for the Android Open Source Project is the
+<a href="http://www.apache.org/licenses/LICENSE-2.0">Apache
+Software License, Version 2.0</a> ("Apache 2.0"),
 and the majority of the Android software is licensed
 with Apache 2.0. While the project will strive to adhere to the preferred
-license, there may be exceptions which will be handled on a case-by-case
+license, there may be exceptions that will be handled on a case-by-case
 basis. For example, the Linux kernel patches are under the GPLv2 license with
 system exceptions, which can be found on <a href="http://www.kernel.org/pub/linux/kernel/COPYING">kernel.org</a>.</p>
 <h2 id="contributor-license-grants">Contributor License Grants</h2>
@@ -47,28 +49,28 @@ project; it does not change your rights to use your own contributions for any
 other purpose.</p>
 <p>For a <em>corporation</em> (or other entity) that has assigned employees to
 work on the Android Open Source Project, a <a href="cla-corporate.pdf">Corporate
-Contributor License Grant</a> is available. 
+Contributor License Grant</a> is available.
 This version of the grant allows a
 corporation to authorize contributions submitted by its designated employees
 and to grant copyright and patent licenses. Note that a Corporate Contributor
 License Grant does not remove the need for any developer to sign their own
-Individual Contributor License Grant as an individual, to cover any of their
-contributions which are <em>not</em> owned by the corporation signing the
+Individual Contributor License Grant as an individual. The individual grant is needed
+to cover any of their contributions that are <em>not</em> owned by the corporation signing the
 Corporate Contributor License Grant.</p>
-<p>Please note that we based our grants on the ones that the 
+<p>Please note we based our grants on the ones the
 <a href="http://www.apache.org">Apache Software Foundation</a> uses, which can
-be found on <a href="http://www.apache.org/licenses/">the Apache web site</a>.</p>
+be found on the <a href="http://www.apache.org/licenses/">Apache web site</a>.</p>
 <h2 id="why-apache-software-license">Why Apache Software License?</h2>
 <p>We are sometimes asked why Apache Software License 2.0 is the preferred
 license for Android. For userspace (that is, non-kernel) software, we do in
 fact prefer ASL2.0 (and similar licenses like BSD, MIT, etc.) over other
 licenses such as LGPL.</p>
 <p>Android is about freedom and choice. The purpose of Android is promote
-openness in the mobile world, but we don't believe it's possible to predict or
+openness in the mobile world, and we don't believe it's possible to predict or
 dictate all the uses to which people will want to put our software. So, while
 we encourage everyone to make devices that are open and modifiable, we don't
 believe it is our place to force them to do so. Using LGPL libraries would
-often force them to do so.</p>
+often force them to do just that.</p>
 <p>Here are some of our specific concerns:</p>
 <ul>
 <li>
@@ -83,8 +85,8 @@ flash storage.)</p>
 <li>
 <p>LGPL requires allowance of customer modification and reverse
 engineering for debugging those modifications.  Most device makers do
-not want to have to be bound by these terms, so to minimize the burden on
-these companies we minimize usage of LGPL software in userspace.</li></p>
+not want to have to be bound by these terms. So to minimize the burden on
+these companies, we minimize usage of LGPL software in userspace.</li></p>
 </li>
 <li>
 <p>Historically, LGPL libraries have been the source of a large number
@@ -97,8 +99,8 @@ simply not use LGPL libraries if we can avoid it.</p>
 </li>
 </ul>
 <p>The issues discussed above are our reasons for preferring ASL2.0 for
-our own code. They aren't criticisms of LGPL or other licenses. We do
-feel strongly on this topic, even to the point where we've gone out of our
-way to make sure as much code as possible is ASL2.0. However, we love all free
+our own code. They aren't criticisms of LGPL or other licenses. We are
+passionate about this topic, even to the point where we've gone out of our
+way to make sure as much code as possible is ASL2.0 licensed. However, we love all free
 and open source licenses, and respect others' opinions and preferences. We've
-simply decided that ASL2.0 is the right license for our goals.</p>
+simply decided ASL2.0 is the right license for our goals.</p>
