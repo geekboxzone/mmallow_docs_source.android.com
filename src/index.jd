@@ -44,7 +44,8 @@ header.hide=1
     <h3>Updates</h3>
       <a href="{@docRoot}source/index.html">
         <h4>Source Code Available for Android 4.3</h4>
-        <p>Android is an open-source software stack for a wide array of mobile devices with different form factors. 
+        <p>Android is an open-source software stack for a wide array of mobile devices with different form factors.
+<img border="0" src="images/Android_Robot_100.png" alt="Android Partner icon" style="display:inline;float:right;margin:5px 10px"> 
         We created Android in response to our own experiences launching mobile apps. We wanted to make sure there was 
         no central point of failure so no industry player can restrict or control the innovations of any other. That's 
         why we created Android and made its source code open.</p>
