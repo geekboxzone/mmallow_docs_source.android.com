@@ -479,25 +479,31 @@ following table:</p>
 
 <tr>
 <td>JWR66L</td>
-<td>android-4.3_w_r0.8</td>
+<td>android-4.3_r0.9</td>
 <td>Nexus 7</td>
 </tr>
 
 <tr>
 <td>JWR66N</td>
-<td>android-4.3_w_r0.9</td>
-<td>Galaxy Nexus, Nexus 7, Nexus 4, Nexus 10</td>
+<td>android-4.3_r0.9.1</td>
+<td>Galaxy Nexus, Nexus 7 (grouper/tilapia/flo), Nexus 4, Nexus 10</td>
 </tr>
 
 <tr>
 <td>JWR66V</td>
-<td>android-4.3_w_r1</td>
+<td>android-4.3_r1</td>
 <td>Galaxy Nexus, Nexus 7 (grouper/tilapia), Nexus 4, Nexus 10</td>
 </tr>
 
 <tr>
+<td>JSR78D</td>
+<td>android-4.3_r2</td>
+<td>Nexus 7 (deb)</td>
+</tr>
+
+<tr>
 <td>JSS15J</td>
-<td>android-4.3_s_r1</td>
+<td>android-4.3_r2.1</td>
 <td>latest Jelly Bean version, Nexus 7 (flo/deb)</td>
 </tr>
 
