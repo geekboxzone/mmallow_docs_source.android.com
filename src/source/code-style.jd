@@ -378,7 +378,7 @@ extra engineering effort.</p>
 <p>The use and location of static imports have been mildly controversial
 issues. Some people would prefer static imports to be interspersed with the
 remaining imports, some would prefer them reside above or below all other
-imports. Additinally, we have not yet come up with a way to make all IDEs use
+imports. Additionally, we have not yet come up with a way to make all IDEs use
 the same ordering.</p>
 <p>Since most people consider this a low priority issue, just use your
 judgement and please be consistent.</p>
