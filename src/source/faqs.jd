@@ -181,7 +181,7 @@ contributions.</p>
 <p>Once submitted, changes need to be accepted by a designated Approver.
 Approvers are typically Google employees, but the same approvers are
 responsible for all submissions, regardless of origin.</p>
-<p>You can find more information on this topic at the <a href="source/submit-patches.html">Submitting Patches</a> page.</p>
+<p>You can find more information on this topic at the <a href="{@docRoot}source/submit-patches.html">Submitting Patches</a> page.</p>
 <a href="#top">Back to top</a>  
 <h2 id="compatibility">Compatibility</h2>
 <h3 id="what-does-compatibility-mean">What does "compatibility" mean?</h3>
