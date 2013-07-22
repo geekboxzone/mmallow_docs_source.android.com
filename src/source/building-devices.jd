@@ -194,12 +194,12 @@ the lunch menu, accessed when running the <code>lunch</code> command with no arg
 <tbody>
 <tr>
 <td>flo</td>
-<td>android-4.3_s_r1 or master</td>
+<td>android-4.3_r2.1 or master</td>
 <td>aosp_flo-userdebug</td>
 </tr>
 <tr>
 <td>deb</td>
-<td>android-4.3_s_r1 or master</td>
+<td>android-4.3_r2.1 or master</td>
 <td>aosp_deb-userdebug</td>
 </tr>
 <tr>
@@ -209,27 +209,27 @@ the lunch menu, accessed when running the <code>lunch</code> command with no arg
 </tr>
 <tr>
 <td>mako</td>
-<td>android-4.3_w_r1 or master</td>
+<td>android-4.3_r1 or master</td>
 <td>aosp_mako-userdebug</td>
 </tr>
 <tr>
 <td>grouper</td>
-<td>android-4.3_w_r1 or master</td>
+<td>android-4.3_r1 or master</td>
 <td>aosp_grouper-userdebug</td>
 </tr>
 <tr>
 <td>tilapia</td>
-<td>android-4.3_w_r1 or master</td>
+<td>android-4.3_r1 or master</td>
 <td>aosp_tilapia-userdebug</td>
 </tr>
 <tr>
 <td>maguro</td>
-<td>android-4.3_w_r1 or master</td>
+<td>android-4.3_r1 or master</td>
 <td>aosp_maguro-userdebug</td>
 </tr>
 <tr>
 <td>toro</td>
-<td>android-4.3_w_r1 or master</td>
+<td>android-4.3_r1 or master</td>
 <td>aosp_toro-userdebug</td>
 </tr>
 <tr>
