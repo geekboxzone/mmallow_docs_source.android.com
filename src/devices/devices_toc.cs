@@ -169,9 +169,14 @@
                 <span class="en">Security Enhancements in Android 4.3</span>
               </a>
             </li>
+            <li>
+              <a href="<?cs var:toroot ?>devices/tech/security/se-linux.html">
+                <span class="en">Security-Enhanced Linux</span>
+              </a>
+            </li>
+
           </ul>
       </li>
-
 
       <li class="nav-section">
         <div class="nav-section-header">
