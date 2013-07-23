@@ -99,7 +99,7 @@ result is a compatible system.</p>
 <p>If you want to build a device compatible with a given Android version,
 start by checking out the source code for that version, and then read the
 corresponding CDD and stay within its guidelines. For additional details,
-simply examine <a href="4.2/android-4.2-cdd.pdf">the latest CDD</a>.</p>
+simply examine <a href="/compatibility/android-4.3-cdd.pdf">the latest CDD</a>.</p>
 <h1 id="compatibility-test-suite-cts">Compatibility Test Suite (CTS)</h1>
 <p>The CTS is a free, commercial-grade test suite, available for
 <a href="downloads.html">download</a>.
