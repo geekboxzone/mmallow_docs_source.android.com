@@ -31,7 +31,7 @@ code. </p>
 corresponding security policy that works by default across the <a
 href="https://android.googlesource.com/">Android Open Source Project</a>. In
 permissive mode, no actions are prevented. Instead, all potential violations are
-logged by the kernel to dmesg. This allows Android and Android device
+logged by the kernel to <code>dmesg</code>. This allows Android and Android device
 manufacturers to gather information about errors so they may refine their
 software and SELinux policies before enforcing them.</p>
 
@@ -77,12 +77,20 @@ href="https://android.googlesource.com/platform/external/sepolicy/">https://andr
 cover the upstream Android operating system. Place those files within the
 &lt;root&gt;/device/manufacturer/device-name/sepolicy directory.</p>
 
-<p>Then just update your BoardConfig.mk makefile - located in the
+<p>Then just update your <code>BoardConfig.mk</code> makefile - located in the
 &lt;device-name&gt; directory containing the sepolicy subdirectory - to
-reference the sepolicy subdirectory once created, like so: <pre>
-BOARD_SEPOLICY_DIRS := \ <root>/device/manufacturer/device-name/sepolicy
+reference the sepolicy subdirectory once created, like so:</p>
 
-BOARD_SEPOLICY_UNION := \ genfs_contexts \ file_contexts \ sepolicy.te </pre>
+<pre>
+BOARD_SEPOLICY_DIRS := \
+        &lt;root&gt;/device/manufacturer/device-name/sepolicy
+
+BOARD_SEPOLICY_UNION := \
+        genfs_contexts \ 
+        file_contexts \ 
+        sepolicy.te 
+</pre>
+
 <p>After rebuilding your device, it is enabled with SELinux. You can now either
 customize your SELinux policies to accommodate your own additions to the Android
 operating system as described in the <em>Customization</em> section or verify
@@ -91,9 +99,7 @@ your existing setup as covered in the <em>Validation</em> section.</p>
 <h2 id="customization">Customization</h2> <p>Once you&rsquo;ve integrated this
 base level of functionality and thoroughly analyzed the results, you may add
 your own policy settings to cover your customizations to the Android operating
-system.</p>
-
-<p>Of course, these policies must still meet the <a
+system. Of course, these policies must still meet the <a
 href="{@docRoot}compatibility/index.html">Android Compatibility
 program</a> requirements and not remove the default SELinux settings.</p>
 
@@ -111,21 +117,36 @@ href="{@docRoot}compatibility/android-4.3-cdd.pdf">http://source.android.com/com
 upon role. Because the default policy provided by Android is so permissive, OEMs
 have great leeway in strengthening it. Here is how we recommend proceeding:</p>
 
-<ol> <li> <p>Use the <a
+<ol>
+<li>
+<p>Use the <a
 href="https://android.googlesource.com/kernel/common/">latest Android
-kernel</a>.</p> </li> <li> <p>Adopt the <a
+kernel</a>.</p> </li>
+<li>
+<p>Adopt the <a
 href="http://en.wikipedia.org/wiki/Principle_of_least_privilege">principle of
-least privilege</a>.</p> </li> <li> <p>Address only your own additions to
+least privilege</a>.</p></li>
+<li>
+<p>Address only your own additions to
 Android. The default policy works with the <a
 href="https://android.googlesource.com/">Android Open Source Project</a>
-codebase automatically.</p> </li> <li> <p>Compartmentalize software components
-into modules that conduct singular tasks.</p> </li> <li> <p>Create SELinux
-policies that isolate those tasks from unrelated functions.</p> </li> <li>
+codebase automatically.</p></li>
+<li>
+<p>Compartmentalize software components
+into modules that conduct singular tasks.</p></li>
+<li>
+<p>Create SELinux
+policies that isolate those tasks from unrelated functions.</p></li>
+<li>
 <p>Put those policies in *.te files (the extension for SELinux policy source
 files) within the &lt;root&gt;/device/manufacturer/device-name/sepolicy
-directory.</p> </li> <li> <p>Release your SELinux implementation in permissive
-mode first.</p> </li> <li> <p>Analyze results and refine policy settings.</p>
-</li> </ol>
+directory.</p></li>
+<li>
+<p>Release your SELinux implementation in permissive
+mode first.</p></li>
+<li><p>Analyze results and refine policy settings.</p>
+</li>
+</ol>
 
 <p>Once integrated, OEM Android development should include a step to ensure
 SELinux compatibility going forward. In an ideal software development process,
@@ -149,37 +170,37 @@ need to make this change with each new Android release.</p>
 <h2 id="use-cases">Use Cases</h2> <p>Here are specific examples of exploits to
 consider when crafting your own software and associated SELinux policies:</p>
 
-<p>Symlinks - Because symlinks appear as files, they are often read just as
-that. This can lead to exploits. For instance, some privileged components such
+<p><strong>Symlinks</strong> - Because symlinks appear as files, they are often read 
+just as that. This can lead to exploits. For instance, some privileged components such
 as init change the permissions of certain files, sometimes to be excessively
 open.</p>
 
 <p>Attackers might then replace those files with symlinks to code they control,
-allowing the attacker to overwrite arbitrary files.</p>
+allowing the attacker to overwrite arbitrary files. But if you know your application 
+will never traverse a symlink, you can prohibit it from doing so with SELinux.</p>
 
-<p>But if you know your application will never traverse a symlink, you can
-prohibit it from doing so with SELinux.</p>
-
-<p>System files - Consider the class of system files that should only be
-modified by the system server. Still, since netd, init, and vold run as root,
-they can access those system files. So if netd became compromised, it could
-compromise those files and potentially the system server itself.</p>
+<p><strong>System files</strong> - Consider the class of system files that should only be
+modified by the system server. Still, since <code>netd</code>, <code>init</code>, 
+and <code>vold</code> run as root, they can access those system files. So if 
+<code>netd</code> became compromised, it could compromise those files and 
+potentially the system server itself.</p>
 
 <p>With SELinux, you can identify those files as system server data files.
 Therefore, the only domain that has read/write access to them is system server.
-Even if netd became compromised, it could not switch domains to the system
-server domain and access those system files although it runs as root.</p>
+Even if <code>netd</code> became compromised, it could not switch domains to the 
+system server domain and access those system files although it runs as root.</p>
 
-<p>App data - Another example is the class of things that must run as root that
-should not get to access app data. This is incredibly useful as wide-ranging
-assertions can be made, such as certain domains unrelated to application data
+<p><strong>App data</strong> - Another example is the class of functions that
+must run as root but should not get to access app data. This is incredibly useful as 
+wide-ranging assertions can be made, such as certain domains unrelated to application data
 being prohibited from accessing the internet.</p>
 
-<p>setattr &nbsp;- For commands such as chmod and chown, you could identify the
-set of files where the associated domain can conduct setattr. Anything outside
-of that could be prohibited from these changes, even by root. So an application
-might run chmod and chown against those labeled app_data_files but not
-shell_data_files or system_data_files.</p> <h2 id="related-files">Related
+<p><strong>setattr</strong> - For commands such as <code>chmod</code> and
+<code>chown</code>, you could identify the set of files where the associated domain 
+can conduct <code>setattr</code>. Anything outside of that could be prohibited from 
+these changes, even by root. So an application might run <code>chmod</code> and
+<code>chown</code> against those labeled app_data_files but not shell_data_files or 
+system_data_files.</p> <h2 id="related-files">Related
 Files</h2> <p>This section serves to guide you once you&rsquo;ve decided to
 customize the SELinux policy settings. See the <em>Customization</em> section
 for steps. We recommend device manufacturers start with the default Android
@@ -197,38 +218,51 @@ associated with applications by the key used to sign each application. This
 setting is made at the top of each SELinux policy source (*.te) file.</p>
 
 <p>Here are the files you must create or edit in order to customize SELinux:</p>
-<ul> <li> <p>New SELinux policy source (*.te) files - Located in the
+<ul> 
+<li>
+<p><em>New SELinux policy source (*.te) files</em> - Located in the
 &lt;root&gt;/device/manufacturer/device-name/sepolicy directory These files
 define domains and their labels. The new policy files get concatenated with the
 existing policy files during compilation into a single SELinux kernel policy
-file. </p> </li> <li> <p>Updated BoardConfig.mk makefile - Located in the
+file.</p></li> 
+<li>
+<p><em>Updated <code>BoardConfig.mk</code> makefile</em> - Located in the
 &lt;device-name&gt; directory containing the sepolicy subdirectory. It must be
 updated to reference the sepolicy subdirectory once created if it wasn&rsquo;t
-in initial implementation.</p> </li> <li> <p>Updated file_contexts - Located in
+in initial implementation.</p> </li> 
+<li>
+<p><em>Updated <code>file_contexts</code></em> - Located in
 the sepolicy subdirectory. It labels files and is managed in the userspace. As
 you create new policies, update this file to reference them. In order to apply
-new file_contexts, you must run restorecon on the file to be relabeled.</p>
+new <code>file_contexts</code>, you must run <code>restorecon</code> on the file
+to be relabeled.</p>
 </li> </ul>
 
-<p>The remaining files in the /sepolicy directory are either auto-generated or
+<p>The remaining files in the sepolicy directory are either auto-generated or
 should remain static. The policy files come in the form: allow, domain, and
 context, for a set of actions:</p>
 
-<ul> <li> <p>Allow - Gives the role permission to carry out the action described
-in the context within the specified domain.</p> </li> <li> <p>Domain - Domain
+<ul>
+<li>
+<p><em>Allow</em> - Gives the role permission to carry out the action described
+in the context within the specified domain.</p> </li>
+<li>
+<p><em>Domain</em> - Domain
 represents scope of the rule and gets converted to a security identifier (SID)
-in the kernel.</p> </li> <li> <p>Context - An identifier for the rule, converted
+in the kernel.</p> </li>
+<li>
+<p><em>Context</em> - An identifier for the rule, this is converted
 to an integer in the kernel.</p> </li> </ul>
 
-<p>And so the an example use of this would follow the structure:</p> <p>allow
-appdomain app_data_file:file rw_file_perms;</p>
+<p>And so the an example use of this would follow the structure:<br>
+<code>allow appdomain app_data_file:file rw_file_perms;</code></p>
 
 <p>This says an application is allowed to read and write files labeled
 app_data_file. During compilation, those overrides are concatenated to the
 existing SELinux settings and into a single security policy. These overrides add
 to the base security policy rather than subtract from existing settings.</p>
 
-<p>Once the new policy files and BoardConfig.mk updates are in place, the new
+<p>Once the new policy files and <code>BoardConfig.mk</code> updates are in place, the new
 policy settings get automatically uploaded to the device.</p>
 
 <h2 id="validation">Validation</h2> <p>Android strongly encourages OEMs to test
@@ -237,17 +271,17 @@ they should initially release their own policies in permissive mode. If
 possible, apply the new policy to devices of employees first as a test.</p>
 
 <p>Once applied, make sure SELinux is running in the correct mode on the device
-by issuing the command: getenforce</p>
+by issuing the command: <code>getenforce</code></p>
 
 <p>This will print the SELinux mode: either Disabled, Enforcing, or Permissive.
 If permissive, you are compliant. Enforcing is explicitly not compliant in
 Android 4.3. (Because of its risk, enforcing mode comes with a much heavier
 testing burden.)</p>
 
-<p>Then check for errors. Errors are routed as event logs to dmesg and viewable
-locally on the device. Manufacturers should examine the SELinux output to dmesg
-on these devices and refine settings prior to public release in permissive
-mode.</p>
+<p>Then check for errors. Errors are routed as event logs to <code>dmesg</code> 
+and viewable locally on the device. Manufacturers should examine the SELinux output 
+to <code>dmesg</code> on these devices and refine settings prior to public release in 
+permissive mode.</p>
 
 <p>With this output, manufacturers can readily identify when system users or
 components are in violation of SELinux policy. Manufacturers can then repair
@@ -267,8 +301,8 @@ meet the <a href="{@docRoot}compatibility/index.html">Android
 Compatibility program</a> requirements:<br><a
 href="{@docRoot}compatibility/android-4.3-cdd.pdf">http://source.android.com/compatibility/android-4.3-cdd.pdf</a></p>
 
-<p>If you run the devices through the CTS and find no errors in dmesg, you can
-consider your SELinux implementation compatible.</p>
+<p>If you run the devices through the CTS and find no errors in
+<code>dmesg</code>, you can consider your SELinux implementation compatible.</p>
 
 <p>Finally, if possible, turn on enforcement internally (on devices of
 employees) to raise the visibility of failures. Identify any user issues and
