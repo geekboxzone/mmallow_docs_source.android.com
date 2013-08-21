@@ -16,7 +16,7 @@ page.title=Performance tuning
     See the License for the specific language governing permissions and
     limitations under the License.
 -->
-<p>This document describes performance tuninig that you can do to get the most out of your
+<p>This document describes performance tuning that you can do to get the most out of your
   hardware.</p>
 
 <h2>OpenGLRenderer (libhwui) Properties</h2>

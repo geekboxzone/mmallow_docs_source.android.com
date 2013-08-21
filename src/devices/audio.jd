@@ -255,12 +255,9 @@ The Android platform supports audio effects on supported devices in the
 <a href="http://developer.android.com/reference/android/media/audiofx/package-summary.html">audiofx</a>
 package, which is available for developers to access. For example, on the Nexus 10, the following pre-processing effects are supported: </p>
 <ul>
-  <li><a href="http://developer.android.com/reference/android/media/AcousticEchoCanceller">Acoustic Echo 
-  Cancellation</a></li>
-  <li><a href="http://developer.android.com/reference/android/media/AutomaticGainControl">Automatic Gain 
-  Control</a></li>
-  <li><a href="http://developer.android.com/reference/android/media/NoiseSuppressor">Noise 
-  Suppression</a></li>
+  <li><a href="http://developer.android.com/reference/android/media/audiofx/AcousticEchoCanceler.html">Acoustic Echo Cancellation</a></li>
+  <li><a href="http://developer.android.com/reference/android/media/audiofx/AutomaticGainControl.html">Automatic Gain Control</a></li>
+  <li><a href="http://developer.android.com/reference/android/media/audiofx/NoiseSuppressor.html">Noise Suppression</a></li>
 </ul>
 </p>
 
