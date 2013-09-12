@@ -41,6 +41,7 @@
         </ul>
       </li>
       <li><a href="<?cs var:toroot ?>devices/camera.html">Camera v1</a></li>
+      <li><a href="<?cs var:toroot ?>devices/camera3.html">Camera v3</a></li>
       <li><a href="<?cs var:toroot ?>devices/drm.html">DRM</a></li>
       <li><a href="<?cs var:toroot ?>devices/graphics.html">Graphics</a></li>
       <li><a href="<?cs var:toroot ?>devices/bluetooth.html">Bluetooth</a></li>
