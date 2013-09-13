@@ -42,7 +42,7 @@ Android .apk files to run on the actual device target.</p>
 <p>Attach at least one device (or emulator) to your machine.</p>
 </li>
 <li>
-<p>For CTS 2.1 R2 and beyond, setup your device (or emulator) to run the accessibility tests:</p>
+<p>For CTS 2.1 R2 and earlier versions, set up your device (or emulator) to run the accessibility tests:</p>
 <ol>
 <li>
 <p>adb install -r android-cts/repository/testcases/CtsDelegatingAccessibilityService.apk</p>
@@ -53,13 +53,13 @@ Android .apk files to run on the actual device target.</p>
 </ol>
 </li>
 <li>
-<p>For CTS 2.3 R4 and beyond, setup your device to run the device administration tests:</p>
+<p>For CTS 2.3 R4 and beyond, set up your device to run the device administration tests:</p>
 <ol>
 <li>
 <p>adb install -r android-cts/repository/testcases/CtsDeviceAdmin.apk</p>
 </li>
 <li>
-<p>On the device, enable all the android.deviceadmin.cts.* device administrators under Settings &gt; Location &amp; security &gt; Select device administrators</p>
+<p>On the device, enable the two android.deviceadmin.cts.CtsDeviceAdminReceiver* device administrators under Settings &gt; Location &amp; security &gt; Select device administrators</p>
 </li>
 </ol>
 </li>
