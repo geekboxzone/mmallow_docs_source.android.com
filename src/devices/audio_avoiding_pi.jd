@@ -11,34 +11,34 @@ page.title=Avoiding Priority Inversion
 
 <p>
 This article explains how the Android's audio system attempts to avoid
-priority inversion, as of the Android 4.1 (Jellybean) release,
+priority inversion, as of the Android 4.1 release,
 and highlights techniques that you can use too.
 </p>
 
 <p>
 These techniques may be useful to developers of high-performance
 audio apps, OEMs, and SoC providers who are implementing an audio
-HAL. Please note that implementing these techniques is not
+HAL. Please note implementing these techniques is not
 guaranteed to prevent glitches or other failures, particularly if
 used outside of the audio context.
-Your results may vary and you should conduct your own
+Your results may vary, and you should conduct your own
 evaluation and testing.
 </p>
 
 <h2 id="background">Background</h2>
 
 <p>
-The Android audio server "AudioFlinger" and AudioTrack/AudioRecord
+The Android AudioFlinger audio server and AudioTrack/AudioRecord
 client implementation are being re-architected to reduce latency.
-This work started in Android 4.1 (Jellybean), continued in 4.2
-(Jellybean MR1), and more improvements are likely in "K".
+This work started in Android 4.1, continued in 4.2 and 4.3, and now more
+improvements exist in version 4.4.
 </p>
 
 <p>
-The lower latency needed many changes throughout the system. One
-important change was to  assign CPU resources to time-critical
+To achieve this lower latency, many changes were needed throughout the system. One
+important change is to assign CPU resources to time-critical
 threads with a more predictable scheduling policy. Reliable scheduling
-allows the audio buffer sizes and counts to be reduced, while still
+allows the audio buffer sizes and counts to be reduced while still
 avoiding artifacts due to underruns.
 </p>
 
@@ -64,7 +64,7 @@ are used, or delay in responding to a command.
 
 <p>
 In the Android audio implementation, priority inversion is most
-likely to occur in these places, and so we focus attention here:
+likely to occur in these places. And so we focus attention here:
 </p>
 
 <ul>
@@ -80,7 +80,7 @@ different priorities)
 </li>
 
 <li>
-within the audio HAL implementation, e.g. for telephony or echo cancellation
+within the audio Hardware Abstraction Layer (HAL) implementation, e.g. for telephony or echo cancellation
 </li>
 
 <li>
@@ -119,7 +119,7 @@ priority inheritance mutexes
 
 <p>
 Disabling interrupts is not feasible in Linux user space, and does
-not work for SMP.
+not work for Symmetric Multi-Processors (SMP).
 </p>
 
 
@@ -162,15 +162,15 @@ such as:
 </ul>
 
 <p>
-All of these return the previous value, and include the necessary
+All of these return the previous value and include the necessary
 SMP barriers. The disadvantage is they can require unbounded retries.
 In practice, we've found that the retries are not a problem.
 </p>
 
 <p>
-Note: atomic operations and their interactions with memory barriers
+<strong>Note</strong>: Atomic operations and their interactions with memory barriers
 are notoriously badly misunderstood and used incorrectly. We include
-these here for completeness, but recommend you also read the article
+these methods here for completeness but recommend you also read the article
 <a href="https://developer.android.com/training/articles/smp.html">
 SMP Primer for Android</a>
 for further information.
@@ -202,7 +202,7 @@ low-priority modules.
 When state does need to be shared, limit the state to the
 maximum-size
 <a href="http://en.wikipedia.org/wiki/Word_(computer_architecture)">word</a>
-that can be accessed atomically in one bus operation
+that can be accessed atomically in one-bus operation
 without retries.
 </li>
 
@@ -244,7 +244,7 @@ we've found them to be complex and error-prone.
 </p>
 
 <p>
-In Android 4.2 (Jellybean MR1), you can find our non-blocking,
+Starting in Android 4.2, you can find our non-blocking,
 single-reader/writer classes in these locations:
 </p>
 
@@ -267,14 +267,14 @@ frameworks/av/services/audioflinger/StateQueue*
 <p>
 These were designed specifically for AudioFlinger and are not
 general-purpose. Non-blocking algorithms are notorious for being
-difficult to debug. You can look at this code as a model, but be
+difficult to debug. You can look at this code as a model. But be
 aware there may be bugs, and the classes are not guaranteed to be
 suitable for other purposes.
 </p>
 
 <p>
 For developers, we may update some of the sample OpenSL ES application
-code to use non-blocking, or referencing a non-Android open source
+code to use non-blocking algorithms or reference a non-Android open source
 library.
 </p>
 

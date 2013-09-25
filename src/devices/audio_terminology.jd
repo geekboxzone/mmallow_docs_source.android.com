@@ -76,7 +76,7 @@ A number representing the audio value for a single channel at a point in time.
 <dd>
 Number of frames per second;
 note that "frame rate" is thus more accurate,
-but "sample rate" is conventionally used to mean "frame rate".
+but "sample rate" is conventionally used to mean "frame rate."
 </dd>
 
 <dt>stereo</dt>
@@ -89,7 +89,7 @@ Two channels.
 <h2 id="androidSpecificTerms">Android-Specific Terms</h2>
 
 <p>
-These are terms that are specific to Android audio framework, or that
+These are terms specific to the Android audio framework, or that
 may have a special meaning within Android beyond their general meaning.
 </p>
 
@@ -135,7 +135,8 @@ or a software application, rather than a software module within a system.
 <dt>AudioRecord</dt>
 <dd>
 The primary low-level client API for receiving data from an audio
-input device such as microphone.  The data is usually in PCM format.
+input device such as microphone.  The data is usually in pulse-code modulation
+(PCM) format.
 </dd>
 
 <dt>AudioResampler</dt>
@@ -187,7 +188,7 @@ An AudioTrack client with lower latency but fewer features, on some devices.
 <dt>MediaPlayer</dt>
 <dd>
 A higher-level client API than AudioTrack, for playing either encoded
-content, or content which includes multi-media audio and video tracks.
+content, or content which includes multimedia audio and video tracks.
 </dd>
 
 <dt>media.log</dt>
@@ -215,7 +216,7 @@ NBAIO are for pipes of various kinds.
 <dd>
 A thread within AudioFlinger that services most full-featured
 AudioTrack clients, and either directly drives an output device or feeds
-it's sub-mix into FastMixer via a pipe.
+its sub-mix into FastMixer via a pipe.
 </dd>
 
 <dt>OpenSL ES</dt>
@@ -243,7 +244,7 @@ vs. what was expected.
 <dt>tinyalsa</dt>
 <dd>
 A small user-mode API above ALSA kernel with BSD license, recommended
-for use by HAL implementations.
+for use in HAL implementations.
 </dd>
 
 <dt>track</dt>

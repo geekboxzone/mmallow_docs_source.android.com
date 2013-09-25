@@ -25,7 +25,7 @@ page.title=Audio
 </div>
 
 <p>
-  Android's audio HAL connects the higher level, audio-specific
+  Android's audio Hardware Abstraction Layer (HAL) connects the higher level, audio-specific
   framework APIs in <a href="http://developer.android.com/reference/android/media/package-summary.html">android.media</a>
   to the underlying audio driver and hardware. 
 </p>
@@ -45,7 +45,7 @@ page.title=Audio
     At the application framework level is the app code, which utilizes the
     <a href="http://developer.android.com/reference/android/media/package-summary.html">android.media</a>
     APIs to interact with the audio hardware. Internally, this code calls corresponding JNI glue
-    classes to access the native code that interacts with the auido hardware.
+    classes to access the native code that interacts with the audio hardware.
   </dd>
   <dt>
     JNI
@@ -82,9 +82,11 @@ page.title=Audio
     HAL
   </dt>
   <dd>
-    The hardware abstraction layer defines the standard interface that audio services calls into
+    The HAL defines the standard interface that audio services call into
     and that you must implement to have your audio hardware function correctly. The audio HAL
-    interfaces are located in <code>hardware/libhardware/include/hardware</code>.
+    interfaces are located in
+<code>hardware/libhardware/include/hardware</code>. See <a
+href="http://source.android.com/devices/reference/audio_8h_source.html">audio.h</a> for additional details.
   </dd>
   <dt>
     Kernel Driver
@@ -130,14 +132,15 @@ Also, see
    header files for a reference of the properties that you can define.
 </p>
 <h3 id="multichannel">Multi-channel support</h3>
-<p>If your hardware and driver supports multi-channel audio via HDMI, you can output the audio stream
+<p>If your hardware and driver supports multichannel audio via HDMI, you can output the audio stream
   directly to the audio hardware. This bypasses the AudioFlinger mixer so it doesn't get downmixed to two channels. 
   
   <p>
-  The audio HAL must expose whether an output stream profile supports multi-channel audio capabilities.
+  The audio HAL must expose whether an output stream profile supports multichannel audio capabilities.
   If the HAL exposes its capabilities, the default policy manager allows multichannel playback over 
   HDMI.</p>
- <p>For more implementation details, see the <code>device/samsung/tuna/audio/audio_hw.c</code> in the Jellybean release.</p>
+ <p>For more implementation details, see the
+<code>device/samsung/tuna/audio/audio_hw.c</code> in the Android 4.1 release.</p>
 
   <p>
   To specify that your product contains a multichannel audio output, edit the <code>audio_policy.conf</code> file to describe the multichannel
@@ -165,18 +168,18 @@ audio_hw_modules {
 </pre>
 
 
-  <p>If your product does not support multichannel audio, AudioFlinger's mixer downmixes the content to stereo
+  <p>AudioFlinger's mixer downmixes the content to stereo
     automatically when sent to an audio device that does not support multichannel audio.</p>
 </p>
 
-<h3 id="codecs">Media Codecs</h3>
+<h3 id="codecs">Media codecs</h3>
 
-<p>Ensure that the audio codecs that your hardware and drivers support are properly declared for your product. See
+<p>Ensure the audio codecs your hardware and drivers support are properly declared for your product. See
   <a href="media.html#expose"> Exposing Codecs to the Framework</a> for information on how to do this.
 </p>
 
 <h2 id="configuring">
-  Configuring the Shared Library
+  Configuring the shared library
 </h2>
 <p>
   You need to package the HAL implementation into a shared library and copy it to the
@@ -192,7 +195,7 @@ audio_hw_modules {
 LOCAL_MODULE := audio.primary.&lt;device_name&gt;
 </pre>
     <p>
-      Notice that your library must be named <code>audio_primary.&lt;device_name&gt;.so</code> so
+      Notice your library must be named <code>audio_primary.&lt;device_name&gt;.so</code> so
       that Android can correctly load the library. The "<code>primary</code>" portion of this
       filename indicates that this shared library is for the primary audio hardware located on the
       device. The module names <code>audio.a2dp.&lt;device_name&gt;</code> and
@@ -249,24 +252,27 @@ PRODUCT_PACKAGES += \
   </li>
 </ol>
 
-<h2 id="preprocessing">Audio preprocessing effects</h2>
+<h2 id="preprocessing">Audio pre-processing effects</h2>
 <p>
-The Android platform supports audio effects on supported devices in the
+The Android platform provides audio effects on supported devices in the
 <a href="http://developer.android.com/reference/android/media/audiofx/package-summary.html">audiofx</a>
 package, which is available for developers to access. For example, on the Nexus 10, the following pre-processing effects are supported: </p>
 <ul>
-  <li><a href="http://developer.android.com/reference/android/media/audiofx/AcousticEchoCanceler.html">Acoustic Echo Cancellation</a></li>
-  <li><a href="http://developer.android.com/reference/android/media/audiofx/AutomaticGainControl.html">Automatic Gain Control</a></li>
-  <li><a href="http://developer.android.com/reference/android/media/audiofx/NoiseSuppressor.html">Noise Suppression</a></li>
+  <li><a
+href="http://developer.android.com/reference/android/media/audiofx/AcousticEchoCanceler.html">Acoustic Echo Cancellation</a></li>
+  <li><a
+href="http://developer.android.com/reference/android/media/audiofx/AutomaticGainControl.html">Automatic Gain Control</a></li>
+  <li><a
+href="http://developer.android.com/reference/android/media/audiofx/NoiseSuppressor.html">Noise Suppression</a></li>
 </ul>
 </p>
 
 
 <p>Pre-processing effects are always paired with the use case mode in which the pre-processing is requested. In Android
-app development, a use case is referred to as an <code>AudioSource</code>, and app developers
-request to use the <code>AudioSource</code> abstraction instead of the actual audio hardware device to use.
+app development, a use case is referred to as an <code>AudioSource</code>; and app developers
+request to use the <code>AudioSource</code> abstraction instead of the actual audio hardware device.
 The Android Audio Policy Manager maps an <code>AudioSource</code> to the actual hardware with <code>AudioPolicyManagerBase::getDeviceForInputSource(int 
-inputSource)</code>. In Android 4.2, the following sources are exposed to developers:
+inputSource)</code>. The following sources are exposed to developers:
 </p>
 <ul>
 <code><li>android.media.MediaRecorder.AudioSource.CAMCORDER</li></code>
@@ -288,11 +294,13 @@ see the implementation for the Nexus 10 in <code>device/samsung/manta/audio_effe
 <p class="warning"><strong>Warning:</strong> For the <code>VOICE_RECOGNITION</code> use case, do not enable
 the noise suppression pre-processing effect. It should not be turned on by default when recording from this audio source,
 and you should not enable it in your own audio_effects.conf file. Turning on the effect by default will cause the device to fail
-the <a href="/compatibility/index.html"> compatibility requirement </a>
-regardless of whether is was on by default due to configuration file, or the audio HAL implementation's default behavior.</p>
+the <a href="/compatibility/index.html">compatibility requirement</a> regardless of whether this was on by default due to 
+configuration file, or the audio HAL implementation's default behavior.</p>
 
 <p>The following example enables pre-processing for the VoIP <code>AudioSource</code> and Camcorder <code>AudioSource</code>.
-By declaring the <code>AudioSource</code> configuration in this manner, the framework will automatically request from the audio HAL the use of those effects</p>
+By declaring the <code>AudioSource</code> configuration in this manner, the
+framework will automatically request from the audio HAL the use of those
+effects.</p>
 
 <pre>
 pre_processing {
