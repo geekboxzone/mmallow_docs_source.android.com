@@ -134,6 +134,8 @@ SUBSYSTEM=="usb", ATTR{idVendor}=="04e8", ATTR{idProduct}=="6860", MODE="0600", 
 SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4e30", MODE="0600", OWNER="&lt;username&gt;"
 # adb protocol on panda (PandaBoard)
 SUBSYSTEM=="usb", ATTR{idVendor}=="0451", ATTR{idProduct}=="d101", MODE="0600", OWNER="&lt;username&gt;"
+# adb protocol on panda (PandaBoard ES)
+SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="d002", MODE="0600", OWNER="&lt;username&gt;"
 # fastboot protocol on panda (PandaBoard)
 SUBSYSTEM=="usb", ATTR{idVendor}=="0451", ATTR{idProduct}=="d022", MODE="0600", OWNER="&lt;username&gt;"
 # usbboot protocol on panda (PandaBoard)
