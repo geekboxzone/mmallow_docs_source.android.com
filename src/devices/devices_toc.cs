@@ -32,12 +32,22 @@
         </a>
       </div>
         <ul>
-          <li><a href="<?cs var:toroot ?>devices/audio_latency.html">Latency</a></li>
+          <li><a href="<?cs var:toroot ?>devices/audio_implement.html">Implementation</a></li>
           <li><a href="<?cs var:toroot ?>devices/audio_warmup.html">Warmup</a></li>
-          <li><a href="<?cs var:toroot ?>devices/audio_avoiding_pi.html">Avoiding Priority Inversion</a></li>
-          <li><a href="<?cs var:toroot ?>devices/latency_design.html">Design For Reduced Latency</a></li>
+	      <li class="nav-section">
+      		<div class="nav-section-header">
+          	<a href="<?cs var:toroot ?>devices/audio_latency.html">
+		<span class="en">Latency</span>	
+	  	</a>
+	</div>
+            <ul>
+		<li><a href="<?cs var:toroot ?>devices/audio_latency_measure.html">Measure</a></li>
+                <li><a href="<?cs var:toroot ?>devices/latency_design.html">Design</a></li>
+		<li><a href="<?cs var:toroot ?>devices/testing_circuit.html">Testing Circuit</a></li>
+	    </ul>
+	   </li>	
+          <li><a href="<?cs var:toroot ?>devices/audio_avoiding_pi.html">Priority Inversion</a></li>
           <li><a href="<?cs var:toroot ?>devices/audio_terminology.html">Terminology</a></li>
-          <li><a href="<?cs var:toroot ?>devices/testing_circuit.html">Testing Circuit</a></li>
         </ul>
       </li>
       <li><a href="<?cs var:toroot ?>devices/camera.html">Camera v1</a></li>
