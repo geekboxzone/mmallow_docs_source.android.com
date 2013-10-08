@@ -84,8 +84,7 @@ used instead of any previously installed JDK.</em></p>
 
 <h2 id="installing-required-packages-ubuntu-1204">Installing required packages (Ubuntu 12.04)</h2>
 <p>You will need a 64-bit version of Ubuntu.  Ubuntu 12.04 is recommended.
-Building using an older version of Ubuntu is not supported on master or recent releases.
-supported and is not guaranteed to work on branches other than master.</p>
+Building using an older version of Ubuntu is not supported on master or recent releases.</p>
 <pre><code>$ sudo apt-get install git gnupg flex bison gperf build-essential \
   zip curl libc6-dev libncurses5-dev:i386 x11proto-core-dev \
   libx11-dev:i386 libreadline6-dev:i386 libgl1-mesa-glx:i386 \
