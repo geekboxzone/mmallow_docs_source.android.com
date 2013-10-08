@@ -81,10 +81,22 @@ $ sudo apt-get install sun-java5-jdk
 </code></pre>
 <p><em>Note: The <code>lunch</code> command in the build step will ensure that the Sun JDK is
 used instead of any previously installed JDK.</em></p>
-<h2 id="installing-required-packages-ubuntu-1004-1110">Installing required packages (Ubuntu 10.04 -- 11.10)</h2>
-<p>You will need a 64-bit version of Ubuntu.  Ubuntu 10.04 is recommended.
-Building using a newer version of Ubuntu is currently only experimentally
+
+<h2 id="installing-required-packages-ubuntu-1204">Installing required packages (Ubuntu 12.04)</h2>
+<p>You will need a 64-bit version of Ubuntu.  Ubuntu 12.04 is recommended.
+Building using an older version of Ubuntu is not supported on master or recent releases.
 supported and is not guaranteed to work on branches other than master.</p>
+<pre><code>$ sudo apt-get install git gnupg flex bison gperf build-essential \
+  zip curl libc6-dev libncurses5-dev:i386 x11proto-core-dev \
+  libx11-dev:i386 libreadline6-dev:i386 libgl1-mesa-glx:i386 \
+  libgl1-mesa-dev g++-multilib mingw32 tofrodos \
+  python-markdown libxml2-utils xsltproc zlib1g-dev:i386
+$ sudo ln -s /usr/lib/i386-linux-gnu/mesa/libGL.so.1 /usr/lib/i386-linux-gnu/libGL.so
+</code></pre>
+
+<h2 id="installing-required-packages-ubuntu-1004-1110">Installing required packages (Ubuntu 10.04 -- 11.10)</h2>
+<p>Building on Ubuntu 10.04-11.10 is no longer supported, but may be useful for building older
+releases of AOSP.</p>
 <pre><code>$ sudo apt-get install git-core gnupg flex bison gperf build-essential \
   zip curl zlib1g-dev libc6-dev lib32ncurses5-dev ia32-libs \
   x11proto-core-dev libx11-dev lib32readline5-dev lib32z-dev \
@@ -96,16 +108,6 @@ supported and is not guaranteed to work on branches other than master.</p>
 </code></pre>
 <p>On Ubuntu 11.10:</p>
 <pre><code>$ sudo apt-get install libx11-dev:i386
-</code></pre>
-<h2 id="installing-required-packages-ubuntu-1204">Installing required packages (Ubuntu 12.04)</h2>
-<p>Building on Ubuntu 12.04 is currently only experimentally supported and is not
-guaranteed to work on branches other than master.</p>
-<pre><code>$ sudo apt-get install git gnupg flex bison gperf build-essential \
-  zip curl libc6-dev libncurses5-dev:i386 x11proto-core-dev \
-  libx11-dev:i386 libreadline6-dev:i386 libgl1-mesa-glx:i386 \
-  libgl1-mesa-dev g++-multilib mingw32 tofrodos \
-  python-markdown libxml2-utils xsltproc zlib1g-dev:i386
-$ sudo ln -s /usr/lib/i386-linux-gnu/mesa/libGL.so.1 /usr/lib/i386-linux-gnu/libGL.so
 </code></pre>
 <h2 id="configuring-usb-access">Configuring USB Access</h2>
 <p>Under GNU/linux systems (and specifically under Ubuntu systems),
@@ -233,6 +235,10 @@ function mountAndroid { hdiutil attach ~/android.dmg -mountpoint /Volumes/androi
 <p>Once mounted, you'll do all your work in the "android" volume. You can eject it (unmount it) just like you would with an external drive.</p>
 <h2 id="master-branch">Master branch</h2>
 <p>To build the latest source in a Mac OS environment, you will need an Intel/x86
+machine running MacOS 10.8 (Mountain Lion), along with Xcode
+4.5.2 and Command Line Tools.</p>
+<h2 id="branch-40x-and-all-earlier-branches">Branch 4.2.x and earlier branches</h2>
+<p>To build 4.2.x and earlier source in a Mac OS environment, you will need an Intel/x86
 machine running MacOS 10.6 (Snow Leopard) or MacOS 10.7 (Lion), along with Xcode
 4.2 (Apple's Developer Tools). Although Lion does not come with a JDK, it should
 install automatically when you attempt to build the source.</p>
