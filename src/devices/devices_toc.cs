@@ -53,7 +53,17 @@
       <li><a href="<?cs var:toroot ?>devices/camera.html">Camera</a></li>
       <li><a href="<?cs var:toroot ?>devices/drm.html">DRM</a></li>
       <li><a href="<?cs var:toroot ?>devices/tech/encryption/index.html">Encryption</a></li>
-      <li><a href="<?cs var:toroot ?>devices/tech/storage/index.html">External Storage</a></li>
+      <li class="nav-section">
+        <div class="nav-section-header">
+          <a href="<?cs var:toroot ?>devices/tech/storage/index.html">
+            <span class="en">External Storage</span>
+          </a>
+        </div>
+        <ul>
+          <li><a href="<?cs var:toroot ?>devices/tech/storage/config.html">Device Specific Configuration</a></li>
+          <li><a href="<?cs var:toroot ?>devices/tech/storage/config-example.html">Typical Configuration Examples</a></li>
+        </ul>
+      </li>
       <li><a href="<?cs var:toroot ?>devices/graphics.html">Graphics</a></li>
       <li class="nav-section">
         <div class="nav-section-header">
