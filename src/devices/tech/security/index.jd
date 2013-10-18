@@ -16,6 +16,13 @@ page.title=Android Security Overview
     See the License for the specific language governing permissions and
     limitations under the License.
 -->
+<div id="qv-wrapper">
+  <div id="qv">
+    <h2>In this document</h2>
+    <ol id="auto-toc">
+    </ol>
+  </div>
+</div>
 
 <h2 id="introduction">Introduction</h2>
 <p>Android is a modern mobile platform that was designed to be truly open. Android
@@ -273,6 +280,14 @@ runs as its own user. Unless the developer explicitly exposes files to other
 applications, files created by one application cannot be read or altered by
 another application.</p>
 
+<h2 id="se-linux">Security-Enhanced Linux</h2>
+
+<p>Android uses Security-Enhanced
+Linux (SELinux) to apply access control policies and establish an environment of
+mandatory access control (mac). See <a
+href="{@docRoot}devices/tech/security/se-linux.html">Validating
+Security-Enhanced Linux in
+Android</a> for details.</p>
 
 <h2 id="crypto">Cryptography</h2>
 
