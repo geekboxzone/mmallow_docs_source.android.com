@@ -105,6 +105,11 @@
               </a>
             </li>
             <li>
+              <a href="<?cs var:toroot ?>devices/tech/security/dm-verity.html">
+                <span class="en">dm-verity on boot</span>
+              </a>
+            </li>
+            <li>
               <a href="<?cs var:toroot ?>devices/tech/security/se-linux.html">
                 <span class="en">Security-Enhanced Linux</span>
               </a>
