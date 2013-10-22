@@ -50,7 +50,23 @@
         </ul>
       </li>
       <li><a href="<?cs var:toroot ?>devices/bluetooth.html">Bluetooth</a></li>
-      <li><a href="<?cs var:toroot ?>devices/camera.html">Camera</a></li>
+      <li class="nav-section">
+        <div class="nav-section-header">
+          <a href="<?cs var:toroot ?>devices/camera/camera.html">
+            <span class="en">Camera</span>
+          </a>
+        </div>
+        <ul>
+          <li><a href="<?cs var:toroot ?>devices/camera/camera3.html">Camera HAL3</a></li>
+          <li><a href="<?cs var:toroot ?>devices/camera/camera3_requests_hal.html">HAL Subsystem</a></li>
+          <li><a href="<?cs var:toroot ?>devices/camera/camera3_metadata.html">Metadata and Controls</a></li>
+          <li><a href="<?cs var:toroot ?>devices/camera/camera3_3Amodes.html">3A Modes and State</a></li>
+          <li><a href="<?cs var:toroot ?>devices/camera/camera3_crop_reprocess.html">Output and Cropping</a></li>
+          <li><a href="<?cs var:toroot ?>devices/camera/camera3_error_stream.html">Errors and Streams</a></li>
+          <li><a href="<?cs var:toroot ?>devices/camera/camera3_requests_methods.html">Request Creation</a></li>
+        </ul>
+      </li>
+
       <li><a href="<?cs var:toroot ?>devices/drm.html">DRM</a></li>
       <li><a href="<?cs var:toroot ?>devices/tech/encryption/index.html">Encryption</a></li>
       <li class="nav-section">
