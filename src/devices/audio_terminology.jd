@@ -56,7 +56,15 @@ To decrease the number of channels, e.g. from stereo to mono, or from 5.1 to ste
 This can be accomplished by dropping some channels, mixing channels, or more advanced signal processing.
 Simple mixing without attenuation or limiting has the potential for overflow and clipping.
 Compare to "upmixing".
-</dl>
+</dd>
+
+<dt>duck</dt>
+<dd>
+To temporarily reduce the volume of one stream, when another stream
+becomes active.  For example, if music is playing and a notification arrives,
+then the music stream could be ducked while the notification plays.
+Compare to "mute".
+</dd>
 
 <dt>frame</dt>
 <dd>
@@ -98,12 +106,24 @@ Strictly, since stereo is more than one channel, it is also "multi" channel.
 But that usage would be confusing.
 </dd>
 
+<dt>mute</dt>
+<dd>
+To (temporarily) force volume to be zero, independently from the usual volume controls.
+</dd>
+
 <dt>PCM</dt>
 <dd>
 Pulse Code Modulation, the most common low-level encoding of digital audio.
 The audio signal is sampled at a regular interval, called the sample rate,
 and then quantized to discrete values within a particular range depending on the bit depth.
 For example, for 16-bit PCM, the sample values are integers between -32768 and +32767.
+</dd>
+
+<dt>ramp</dt>
+<dd>
+To gradually increase or decrease the level of a particular audio parameter,
+for example volume or the strength of an effect.
+A volume ramp is commonly applied when pausing and resuming music, to avoid a hard audible transition.
 </dd>
 
 <dt>sample</dt>
@@ -116,6 +136,12 @@ A number representing the audio value for a single channel at a point in time.
 Number of frames per second;
 note that "frame rate" is thus more accurate,
 but "sample rate" is conventionally used to mean "frame rate."
+</dd>
+
+<dt>sonification</dt>
+<dd>
+The use of sound to express feedback or information,
+for example touch sounds and keyboard sounds.
 </dd>
 
 <dt>stereo</dt>
@@ -146,6 +172,11 @@ Compare to "downmixing".
 <dd>
 An effect that attempts to spatialize audio channels, such as trying to
 simulate more speakers, or give the illusion that various sound sources have position.
+</dd>
+
+<dt>volume</dt>
+<dd>
+Loudness, the subjective strength of an audio signal.
 </dd>
 
 <h3 id="hardwareTerms">Hardware and Accessories</h3>
@@ -370,6 +401,14 @@ runs within the mediaserver process. See Wikipedia article
 for the generic definition.
 </dd>
 
+<dt>audio focus</dt>
+<dd>
+A set of APIs for managing audio interactions across multiple independent apps.
+See <a href="http://developer.android.com/training/managing-audio/audio-focus.html">Managing Audio
+Focus</a> and the focus-related methods and constants of
+<a href="http://developer.android.com/reference/android/media/AudioManager.html">android.media.AudioManager</a>.
+</dd>
+
 <dt>AudioMixer</dt>
 <dd>
 The module within AudioFlinger responsible for
@@ -482,6 +521,12 @@ API level 9 support a native audio API which is based on a subset of
 OpenSL ES 1.0.1.
 </dd>
 
+<dt>silent mode</dt>
+<dd>
+A user-settable feature to mute the phone ringer and notifications,
+without affecting media playback (music, videos, games) or alarms.
+</dd>
+
 <dt>SoundPool</dt>
 <dd>
 A higher-level client API than AudioTrack, used for playing sampled
@@ -504,6 +549,20 @@ among threads. Whereas NBAIO is used to pass data, StateQueue is used
 to pass control information.
 </dd>
 
+<dt>strategy</dt>
+<dd>
+A grouping of stream types with similar behavior, used by the audio policy service.
+</dd>
+
+<dt>stream type</dt>
+<dd>
+An enumeration that expresses a use case for audio output.
+The audio policy implementation uses the stream type, along with other parameters,
+to determine volume and routing decisions.
+Specific stream types are listed at
+<a href="http://developer.android.com/reference/android/media/AudioManager.html">android.media.AudioManager</a>.
+</dd>
+
 <dt>tee sink</dt>
 <dd>
 An AudioFlinger debugging feature, available in custom builds only,
@@ -518,9 +577,34 @@ A small user-mode API above ALSA kernel with BSD license, recommended
 for use in HAL implementations.
 </dd>
 
+<dt>ToneGenerator</dt>
+<dd>
+A higher-level client API than AudioTrack, used for playing DTMF signals.
+See the Wikipedia article
+<a class="external-link" href="http://en.wikipedia.org/wiki/Dual-tone_multi-frequency_signaling"
+target="_android">Dual-tone multi-frequency signaling</a>,
+and the API definition at
+<a href="http://developer.android.com/reference/android/media/ToneGenerator.html"
+target="_android">android.media.ToneGenerator</a>.
+</dd>
+
 <dt>track</dt>
 <dd>
 An audio stream, controlled by the AudioTrack API.
+</dd>
+
+<dt>volume attenuation curve</dt>
+<dd>
+A device-specific mapping from a generic volume index to a particular attenuation factor
+for a given output.
+</dd>
+
+<dt>volume index</dt>
+<dd>
+A unitless integer that expresses the desired relative volume of a stream.
+The volume-related APIs of
+<a href="http://developer.android.com/reference/android/media/AudioManager.html">android.media.AudioManager</a>
+operate in volume indices rather than absolute attenuation factors.
 </dd>
 
 </dl>
