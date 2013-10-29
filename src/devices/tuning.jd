@@ -69,6 +69,15 @@ in the <code>device.mk</code> as <code>PRODUCT_PROPERTY_OVERRIDES</code>.
 </tr>
 
 <tr>
+  <td><code>ro.hwui.patch_cache_size</code></td>
+  <td><code>integer</code></td>
+  <td><code>128</code></td>
+  <td>Defines the size, in kilobytes, of the 9-patches cache, per process. This
+cache holds only vertex data and can therefore be kept small. Each vertex is
+made of 4 floats, or 16 bytes.</td>
+</tr>
+
+<tr>
   <td><code>ro.hwui.path_cache_size</code></td>
   <td><code>float</code></td>
   <td><code>4</code></td>
@@ -76,6 +85,7 @@ in the <code>device.mk</code> as <code>PRODUCT_PROPERTY_OVERRIDES</code>.
   cache large enough to hold at least one screen worth of 32-bit textures. For instance,
   on a 1280x800 display, a full screen buffer uses about 4 MB, so the cache should be at least 4 MB.</td>
 </tr>
+
 <tr>
   <td><code>ro.hwui.shape_cache_size</code></td>
   <td><code>float</code></td>
@@ -138,6 +148,16 @@ in the <code>device.mk</code> as <code>PRODUCT_PROPERTY_OVERRIDES</code>.
   <td><code>512</code></td>
   <td>Defines the height in pixels of the large font cache. The large font cache is used for glyphs too large to fit in the default font cache. The upper bound depends on how fast the GPU can upload textures. 
   We recommend using at least 512 pixels but at most 2048 pixels. You should also use a power of two value.</td>
+</tr>
+
+<tr>
+  <td><code>ro.zygote.disable_gl_preload</code></td>
+  <td><code>boolean</code></td>
+  <td><code>false</code></td>
+  <td>Used to enable/disable preloading of EGL/GL drivers in Zygote at boot time. When this property is 
+set to false, Zygote will preload the GL drivers by invoking eglGetDisplay(EGL_DEFAULT_DISPLAY). 
+The goal is to load the dynamic libraries code in Zygote to share it with all the other processes. If a driver
+does not support being shared, set this property to true.</td>
 </tr>
 
 <tr>
