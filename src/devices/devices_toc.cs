@@ -119,6 +119,30 @@
 
           </ul>
       </li>
+     <li class="nav-section">
+          <div class="nav-section-header">
+            <a href="<?cs var:toroot ?>devices/sensors/index.html">
+              <span class="en">Sensors</span>
+            </a>
+          </div>
+          <ul>
+            <li>
+              <a href="<?cs var:toroot ?>devices/sensors/base_triggers.html">
+                <span class="en">Base sensors</span>
+              </a>
+            </li>
+            <li>
+              <a href="<?cs var:toroot ?>devices/sensors/composite_sensors.html">
+                <span class="en">Composite sensors</span>
+              </a>
+            </li>
+            <li>
+              <a href="<?cs var:toroot ?>devices/sensors/batching.html">
+                <span class="en">Batching results</span>
+              </a>
+            </li>
+          </ul>
+      </li>
     </ul>
   </li>
 <!-- End Porting Android -->

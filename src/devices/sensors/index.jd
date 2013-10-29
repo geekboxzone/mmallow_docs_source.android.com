@@ -1,0 +1,262 @@
+page.title=Sensors HAL overview
+@jd:body
+
+<!--
+    Copyright 2013 The Android Open Source Project
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+<div id="qv-wrapper">
+  <div id="qv">
+    <h2>In this document</h2>
+    <ol id="auto-toc">
+    </ol>
+  </div>
+</div>
+
+<h2 id="intro">Introduction</h2>
+<p><a href="http://developer.android.com/guide/topics/sensors/sensors_overview.html">Android 
+  sensors</a> give applications access to a mobile device's underlying base sensor(s): 
+  accelerometer, gyroscope, and magnetometer. Manufacturers develop the drivers 
+  that define additional composite sensor types from those base sensors. For 
+  instance, Android offers both calibrated and uncalibrated gyroscopes, a 
+  geomagnetic rotation vector and a game rotation vector. This variety gives 
+  developers some flexibility in tuning applications for battery life optimization 
+  and accuracy.</p>
+<p>The <a href="{@docRoot}devices/reference/sensors_8h_source.html">Sensors
+Hardware Abstraction Layer (HAL) API</a> is the interface between the hardware drivers 
+and the Android framework; the <a href="http://developer.android.com/reference/android/hardware/Sensor.html">Sensors Software Development Kit (SDK) 
+  API</a> is the interface between the Android framework and the Java applications. Please note, 
+  the Sensors HAL API described in this documentation is not identical to the 
+  Sensors SDK API described on <a href="http://developer.android.com/reference/android/hardware/Sensor.html">developer.android.com</a>. 
+  For example, some sensors that are deprecated in the SDK may still exist in the 
+  HAL, and vice versa.</p>
+<p>Similarly, audio recorders, Global Positioning System (GPS) devices, and 
+  accessory (pluggable) sensors are not supported by the Android Sensors HAL API 
+  described here. This API covers sensors that are physically part of the device 
+  only. Please see the <a href="{@docRoot}devices/audio.html">Audio</a>, <a href="{@docRoot}devices/reference/gps_8h.html">Location </a><a href="{@docRoot}devices/reference/gps_8h.html">Strategies</a>, 
+  and the <a href="{@docRoot}accessories/index.html">Accessories</a> section 
+  for information on those devices.</p>
+<p>Application framework<br/>
+  At the application framework level is the app code, which utilizes the <a href="http://developer.android.com/reference/android/hardware/package-summary.html">android.hardware</a> APIs to interact with the sensors hardware. Internally, this code calls 
+  corresponding JNI glue classes to access the native code that interacts with the 
+  sensors hardware.</p>
+<p>JNI<br/>
+  The JNI code associated with <a href="http://developer.android.com/reference/android/hardware/package-summary.html">android.hardware</a> is located in the frameworks/base/core/jni/ directory. This code calls the lower 
+  level native code to obtain access to the sensor hardware.</p>
+<p>Native framework<br/>
+  The native framework is defined in frameworks/native/ and provides a native 
+  equivalent to the <a href="http://developer.android.com/reference/android/hardware/package-summary.html">android.hardware</a> package. The native framework calls the Binder IPC proxies to obtain access to 
+  sensor-specific services.</p>
+<p>Binder IPC<br/>
+  The Binder IPC proxies facilitate communication over process boundaries.</p>
+<p>HAL<br/>
+  The Hardware Abstraction Layer (HAL) defines the standard interface that sensor 
+  services call into and that you must implement to have your sensor hardware 
+  function correctly. The sensor HAL interfaces are located in 
+  hardware/libhardware/include/hardware.</p>
+<p>Kernel Driver<br/>
+  The sensors driver interacts with the hardware and your implementation of the 
+  HAL. The HAL is driver-agnostic.</p>
+<h3 id="axis-def">Sensor axis definition</h3>
+<p>The sensor event values are expressed in a specific frame that is static 
+  relative to the phone. This API is relative only to the NATURAL orientation of 
+  the screen. In other words:</p>
+<ul>
+  <li>the axes are not swapped when the device's screen orientation changes.</li>
+  <li>higher level services <em>may</em> perform this transformation.</li>
+</ul>
+<div class="figure" style="width:269px"> <img src="http://developer.android.com/images/axis_device.png" alt="Coordinate system relative to device for Sensor
+    API" height="225" />
+  <p class="img-caption"> <strong>Figure 1.</strong> Coordinate system (relative to a device) that's used by the Sensor
+    API. </p>
+</div>
+<h3 id="accuracy">Accuracy</h3>
+<p>The sensors included by the manufacturer must be accurate and precise to meet
+the expectations of application developers. The sensors included in Android devices are 
+  tested for sensor interaction and accuracy as part of the <a href="{@docRoot}compatibility/index.html">Android Compatibility 
+    program</a> starting in the 
+  Android 4.4 release. Testing will continue to be improved in future releases. 
+  See the <em>Sensors</em> section of the Android Compatibility Definition Document (CDD) 
+  for the exact requirements.</p>
+<h3 id="power">Power consumption</h3>
+<p>Some defined sensor are higher power than others. Others are lower power by 
+  design and should be implemented as such with their processing done in the 
+  hardware. This means they should not require the application processor to be 
+  running. Here are the low-power sensors:</p>
+<ul>
+  <li><a href="{@docRoot}devices/sensors/composite_sensors.html#Magnetometer">Geomagnetic rotation vector</a></li>
+  <li><a href="{@docRoot}devices/sensors/composite_sensors.html#Significant">Significant motion</a></li>
+  <li><a href="{@docRoot}devices/sensors/composite_sensors.html#counter">Step counter</a></li>
+  <li><a href="{@docRoot}devices/sensors/composite_sensors.html#detector">Step detector</a></li>
+</ul>
+<p>They are accompanied by a low-power <img src="images/battery_icon.png"
+alt="low-power sensors"/>
+  icon in the <a href="{@docRoot}devices/sensors/composite_sensors.html#summary">Sensor summary</a> table. </p>
+<p>These sensor types cannot be implemented at high power as their primary benefit 
+  is low battery use. It is better to not implement a low-power sensor at all 
+  rather than implement it as high power.</p>
+<p>Composite low-power sensor types, such as the step detector, must have their 
+  processing conducted in the hardware; power use is much lower than if done in 
+  the software. Power use is low on small microprocessors and even lower still on 
+  application-specific integrated circuits (ASICs). A hardware implementation of 
+  composite sensor types can also make use of more raw sensor data and a better 
+  synchronization between sensors.</p>
+<h3 id="release">HAL release cycle</h3>
+<p>Functionality is tied to versions of the API. Android maintains two versions of 
+  the Sensors HAL API per release. For instance, if version 1 was the latest and 
+  version 1.1 is released, the version prior to 1 will no longer be supported upon 
+  that release. Only the two latest versions of the Sensors HAL API are supported.</p>
+<h2 id="interaction">Interaction</h2>
+<h3 id="concurrent">Concurrent running</h3>
+<p>Android sensors must work independently of one another. Activating one sensor 
+  shall not deactivate another sensor. Activating one shall not reduce the rate of 
+  another. This is a key element of compatibility testing.</p>
+<h3 id="suspend">Interaction with suspend mode</h3>
+<p>Unless otherwise noted, an enabled sensor shall not prevent the system on a chip 
+  (SoC) from going into suspend mode. See the <a
+href="{@docRoot}devices/sensors/batching.html#Suspend">Suspend 
+    mode</a> section for a full description of the expected 
+  behavior in this mode. It is the responsibility of applications to keep a 
+  partial <a href="http://developer.android.com/reference/android/os/PowerManager.WakeLock.html">wake 
+    lock</a> should they wish to receive sensor events while the screen is off. While in 
+  suspend mode, and unless otherwise noted (<a
+href="{@docRoot}devices/sensors/batching.html">batch</a> mode 
+  and sensor particularities), enabled sensors' events are lost.</p>
+<p>Note that conceptually, the sensor itself is not deactivated while in suspend 
+  mode. Instead, the data it returns is missing. The oldest data is dropped to 
+  accommodate the latest data. As soon as the SoC gets out of suspend mode, 
+  operations resume as normal.</p>
+<p>Most applications should either hold a wake lock to ensure the system doesn't go 
+  to suspend, or unregister from the sensors when they do not need them, unless 
+  batch mode is active. When batching, sensors must continue to fill their 
+  internal FIFO. (See the documentation of <a
+href="{@docRoot}devices/sensors/batching.html">batch</a> mode 
+  to learn how suspend interacts with batch mode.)</p>
+<p>In batch mode, and only when the flag SENSORS_BATCH_WAKE_UPON_FIFO_FULL is set 
+  and supported, the specified sensor must be able to wake-up the SoC and be able 
+  to buffer at least 10 seconds worth of the requested sensor events.</p>
+<p>There are notable exceptions to this behavior, which are sensor-dependent. (See 
+  the sensor types descriptions below.)</p>
+<p>The individual sensor references specify the wake-up behavior of each sensor:</p>
+<ul>
+  <li>wake-up: yes - this sensor must wake-up the SoC to deliver events</li>
+  <li>wake-up: no - this sensor shall not wake-up the SoC; events are dropped</li>
+</ul>
+<h3 id="fusion">Sensor fusion and virtual sensors</h3>
+<p>Many composite sensor types are or can be implemented as virtual sensors from 
+  underlying base sensors on the device. Examples of composite sensors types 
+  include the rotation vector sensor, orientation sensor, step detector and step 
+  counter.</p>
+<p>From the point of view of this API, these virtual sensors <strong>must</strong> appear as 
+  real, individual sensors. It is the responsibility of the driver and HAL to make 
+  sure this is the case.</p>
+<p>In particular, all sensors must be able to function concurrently. For example, 
+  if defining both an accelerometer and a step counter, then both must be able to 
+  work concurrently.</p>
+<h3 id="hal">HAL interface</h3>
+<p>These are the common sensor calls expected at the HAL level:</p>
+<ol>
+  <li><em>getSensorList()</em> - Gets the list of all sensors.</li>
+  <li><em>activate()</em> - Starts the specified sensor.</li>
+  <li><em>batch</em> - Sets parameters to group event data collection and optimize power use.</li>
+  <li><em>setDelay()</em> - Sets the event's period in 
+    nanoseconds for a given sensor.</li>
+  <li><em>flush()</em> - Flush adds an event to the end of the 
+    &quot;batch mode&quot; FIFO for the specified sensor and flushes the FIFO.</li>
+  <li><em>poll()</em> - Returns an array of sensor data. </li>
+</ol>
+<p>Please note, the implementation must be thread safe and allow these values to be 
+  called from different threads.</p>
+<h4 id="getSensorList">getSensorList(sensor_type)</h4>
+<p>Provide the list of sensors implemented by the HAL for the given sensor type. </p>
+<p>Developers may then make multiple calls to get sensors of different types or use 
+  Sensor.TYPE_ALL to get all the sensors. See getSensorList() defined on 
+  developer.android.com for more details.</p>
+<h4 id="activate">activate(sensor, true/false)</h4>
+<pre>
+            int (*activate)(struct sensors_poll_device_t *dev,
+                    int handle, int enabled);</pre>
+<p>Activates or deactivates the sensor with the specified handle. Handles must be 
+  higher than SENSORS_HANDLE_BASE and must be unique. A handle identifies a given 
+  sensor. The handle is used to activate and/or deactivate sensors. In this 
+  version of the API, there can only be 256 handles.</p>
+<p>The handle is the handle of the sensor to change. The enabled argument is set to 
+  1 to enable or 0 to disable the sensor.</p>
+<p>Unless otherwise noted in the individual sensor type descriptions, an activated 
+  sensor never prevents the SoC from going into suspend mode; that is, the HAL 
+  shall not hold a partial wake lock on behalf of applications.<br/>
+  <br/>
+  One-shot sensors deactivate themselves automatically upon receiving an event, 
+  and they must still accept to be deactivated through a call to activate(..., 
+  ..., 0).<br/>
+  <br/>
+  If &quot;enabled&quot; is 1 and the sensor is already activated, this function is a no-op 
+  and succeeds. If &quot;enabled&quot; is 0 and the sensor is already deactivated, this 
+  function is a no-op and succeeds. This returns 0 on success and a negative errno 
+  code otherwise.</p>
+<h4 id="batch">batch(sensor, batching parameters)</h4>
+<pre>
+            int (*batch)(struct sensors_poll_device_1* dev,
+                   int handle, int flags, int64_t period_ns, int64_t timeout);
+</pre>
+<p>Sets parameters to group event data collection and reduce power use. Batching 
+  can enable significant power savings by allowing the application processor to 
+  sleep rather than awake for each notification. Instead, these notifications can 
+  be grouped and processed together. See the <a
+href="{@docRoot}devices/sensors/batching.html">Batching</a> section for details.</p>
+<h4 id="setDelay">setDelay(sensor, delay)</h4>
+<pre>
+            int (*setDelay)(struct sensors_poll_device_t *dev,
+                    int handle, int64_t period_ns);
+</pre>
+<p>Sets the event's period in nanoseconds for a given sensor. What the period_ns 
+  parameter means depends on the specified sensor's trigger mode:</p>
+<ul>
+  <li>Continuous: setDelay() sets the sampling rate.</li>
+  <li>On-change: setDelay() limits the delivery rate of events.</li>
+  <li>One-shot: setDelay() is ignored. It has no effect.</li>
+  <li>Special: See specific sensor type descriptions.</li>
+</ul>
+<p>For continuous and on-change sensors, if the requested value is less than sensor_t::minDelay, then it's silently clamped to sensor_t::minDelay unless 
+  sensor_t::minDelay is 0, in which case it is clamped to &gt;= 1ms:<br/>
+  @return 0 if successful, &lt; 0 on error</p>
+<h4 id="flush">flush()</h4>
+<pre>
+            int (*flush)(struct sensors_poll_device_1* dev, int handle);
+</pre>
+<p>Flush adds a META_DATA_FLUSH_COMPLETE event (sensors_event_meta_data_t) to the 
+  end of the &quot;batch mode&quot; FIFO for the specified sensor and flushes the FIFO; 
+  those events are delivered as usual (i.e.: as if the batch timeout had expired) 
+  and removed from the FIFO.<br/>
+  <br/>
+  The flush happens asynchronously (i.e.: this function must return immediately). 
+  If the implementation uses a single FIFO for several sensors, that FIFO is 
+  flushed and the META_DATA_FLUSH_COMPLETE event is added only for the specified 
+  sensor.<br/>
+  <br/>
+  If the specified sensor wasn't in batch mode, flush succeeds and promptly sends 
+  a META_DATA_FLUSH_COMPLETE event for that sensor.</p>
+<p>If the FIFO was empty at the time of the call, flush returns 0 (success) and 
+  promptly sends a META_DATA_FLUSH_COMPLETE event for that sensor.<br/>
+  <br/>
+  If the specified sensor wasn't enabled, flush returns -EINVAL. return 0 on 
+  success, negative errno code otherwise.</p>
+<h4 id="poll">poll()</h4>
+<pre>            int (*poll)(struct sensors_poll_device_t *dev,
+                    sensors_event_t* data, int count);</pre>
+<p>Returns an array of sensor data. This function must block until events are 
+  available. It will return the number of events read on success, or -errno in 
+  case of an error.</p>
+<p>The number of events returned in data must be less or equal to the &quot;count&quot; 
+  argument. This function shall never return 0 (no event).</p>
