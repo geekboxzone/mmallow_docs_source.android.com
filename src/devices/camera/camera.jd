@@ -1,8 +1,8 @@
-page.title=Camera Version 1
+page.title=Camera HAL overview
 @jd:body
 
 <!--
-    Copyright 2010 The Android Open Source Project
+    Copyright 2013 The Android Open Source Project
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -138,7 +138,7 @@ frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:system/et
 <li>Declare your camera’s media codec, format, and resolution capabilities in
 <code>device/&lt;company_name&gt;/&lt;device_name&gt;/media_profiles.xml</code> and
 <code>device/&lt;company_name&gt;/&lt;device_name&gt;/media_codecs.xml</code> XML files.
- For more information, see <a href="media.html#expose"> Exposing
+ For more information, see <a href="{@docRoot}devices/media.html#expose"> Exposing
  Codecs and Profiles to the Framework</a> for information on how to do this.
 </p></code>
 
