@@ -142,6 +142,7 @@
           <li><a href="<?cs var:toroot ?>devices/tech/dalvik/dalvik-bytecode.html">Bytecode Format</a></li>
           <li><a href="<?cs var:toroot ?>devices/tech/dalvik/dex-format.html">.Dex Format</a></li>
           <li><a href="<?cs var:toroot ?>devices/tech/dalvik/instruction-formats.html">Instruction Formats</a></li>
+          <li><a href="<?cs var:toroot ?>devices/tech/dalvik/art.html">Introducing ART</a></li>
         </ul>
       </li>
 

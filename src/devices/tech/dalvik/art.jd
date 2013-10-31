@@ -1,0 +1,52 @@
+page.title=Introducing ART
+@jd:body
+
+<!--
+    Copyright 2013 The Android Open Source Project
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+<p>
+ART is a new Android runtime being introduced experimentally in the 4.4
+release. This is a preview of work in progress in KitKat that can be turned on
+in Settings &gt; developer options. This is available for the purpose of
+obtaining early developer and partner feedback.</p>
+
+<p><strong>Important</strong>: Dalvik must remain the default runtime or
+you risk breaking your Android implementations and third-party applications.</p>
+
+<p>
+Two runtimes are now available, the existing Dalvik runtime (libdvm.so) and the
+ART (libart.so). A device can be built using either or both.
+(You can dual boot from Developer options if both are installed.)
+</p>
+
+<p>
+The <code>dalvikvm</code> command line tool can run with either of them now.
+See runtime_common.mk. That is included from build/target/product/runtime_libdvm.mk or
+build/target/product/runtime_libdvm.mk or both.</p>
+
+<p>
+A new <code>PRODUCT_RUNTIMES</code> variable controls which runtimes
+are included in a build. Include it within either
+build/target/product/core_minimal.mk or build/target/product/core_base.mk.
+</p>
+
+<p>
+Add this to the device makefile to have both runtimes
+built and installed, with Dalvik as the default:
+</br>
+<code>PRODUCT_RUNTIMES := runtime_libdvm_default</code>
+</br>
+<code>PRODUCT_RUNTIMES += runtime_libart</code>
+</p>
