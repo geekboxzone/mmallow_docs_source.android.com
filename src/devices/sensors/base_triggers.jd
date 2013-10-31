@@ -1,0 +1,143 @@
+page.title=Base sensors and trigger modes
+@jd:body
+
+<!--
+    Copyright 2013 The Android Open Source Project
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+<div id="qv-wrapper">
+  <div id="qv">
+    <h2>In this document</h2>
+    <ol id="auto-toc">
+    </ol>
+  </div>
+</div>
+
+<h2 id="triggers">Trigger modes</h2>
+<p>Sensors can report events in different ways called trigger modes; each sensor 
+  type has one and only one trigger mode associated to it. Four trigger modes 
+  exist:</p>
+<h3 id="continuous">Continuous</h3>
+<p>Events are reported at a constant rate defined by setDelay(). Example sensors 
+  using the continuous trigger mode are accelerometers and gyroscopes.</p>
+<h3 id="on-change">On-change</h3>
+<p>Events are reported only if the sensor's value has changed. setDelay() is used 
+  to set a lower limit to the reporting period, meaning the minimum time between 
+  consecutive events. Activating the sensor also triggers an event. The HAL must 
+  return an event immediately when an on-change sensor is activated. Example 
+  sensors using the on-change trigger mode are the step counter and proximity 
+  sensor types.</p>
+<h3 id="one-shot">One-shot</h3>
+<p>Upon detection of an event, the sensor deactivates itself and then sends a 
+  single event. Order matters to avoid race conditions. No other event is sent 
+  until the sensor is reactivated. setDelay() is ignored. 
+<a
+href="{@docRoot}devices/sensors/composite_sensors.html#Significant">Significant
+motion</a> is an example of this kind of sensor.</p>
+<h3 id="special">Special</h3>
+<p>See the individual sensor type descriptions for details.</p>
+<h2 id="categories">Categories</h2>
+<p>Sensors fall into four primary categories:</p>
+<blockquote>
+  <p><em>Base</em> - records core measurements from which all other sensors are derived <br/>
+    <em>Activity</em> - detects user or device movement<br/>
+    <em>Attitude</em> - measures the orientation of the device<br/>
+    <em>Uncalibrated</em> - is identical to the corresponding base sensor except the 
+    dynamic calibration is reported separately rather than applied to the results</p>
+</blockquote>
+<h2 id="base">Base sensors</h2>
+<p>These sensor types are listed first because they are the fundamental sensors 
+  upon which all other sensor types are based.</p>
+<h3 id="Accelerometer">Accelerometer</h3>
+<p><em>Trigger-mode: Continuous<br/>
+Wake-up sensor: No</em></p>
+<p>All values are in SI units (m/s^2) and measure the acceleration of the device 
+  minus the force of gravity.</p>
+<p>Acceleration sensors return sensor events for all three axes at a constant rate 
+  defined by setDelay().</p>
+<ul>
+  <li>x: Acceleration on the x-axis</li>
+  <li>y: Acceleration on the y-axis</li>
+  <li>z: Acceleration on the z-axis</li>
+</ul>
+<p>Note the readings from the accelerometer include the acceleration due to gravity 
+  (which is opposite the direction of the gravity vector).</p>
+<p>Here are examples:</p>
+<ul>
+  <li>The norm of (x, y, z)  should be close to 0 when in free fall.</li>
+  <li>When the device lies flat on a table and is pushed on its left side toward the 
+    right, the x acceleration value is positive.</li>
+  <li>When the device lies flat on a table, the acceleration value is +9.81, which 
+    corresponds to the acceleration of the device (0 m/s^2) minus the force of 
+    gravity (-9.81 m/s^2).</li>
+  <li>When the device lies flat on a table and is pushed toward the sky, the 
+    acceleration value is greater than +9.81, which corresponds to the 
+    acceleration of the device (+A m/s^2) minus the force of gravity (-9.81 
+    m/s^2).</li>
+</ul>
+<h3 id="Ambient">Ambient temperature</h3>
+<p><em>Trigger-mode: On-change<br/>
+Wake-up sensor: No</em></p>
+<p>This sensor provides the ambient (room) temperature in degrees Celsius.</p>
+<h3 id="Geomagnetic">Geomagnetic field</h3>
+<p><em>Trigger-mode: Continuous<br/>
+Wake-up sensor: No</em></p>
+<p>All values are in micro-Tesla (uT) and measure the geomagnetic field in the X, Y 
+  and Z axis.</p>
+<p>Returned values include calibration mechanisms so the vector is aligned with the 
+  magnetic declination and heading of the earth's geomagnetic field.</p>
+<p>Magnetic field sensors return sensor events for all three axes at a constant 
+  rate defined by setDelay().</p>
+<h3 id="Gyroscope">Gyroscope</h3>
+<p><em>Trigger-mode: Continuous<br/>
+Wake-up sensor: No</em></p>
+<p>All values are in radians/second and measure the rate of rotation around the X, 
+  Y and Z axis.  The coordinate system is the same as is used for the acceleration 
+  sensor. Rotation is positive in the counter-clockwise direction (right-hand 
+  rule).</p>
+<p>That is, an observer looking from some positive location on the x, y or z axis 
+  at a device positioned on the origin would report positive rotation if the 
+  device appeared to be rotating counter clockwise. Note that this is the standard 
+  mathematical definition of positive rotation and does not agree with the 
+  definition of roll given elsewhere.</p>
+<p>The range should at least be 17.45 rad/s (ie: ~1000 deg/s).</p>
+<p>Automatic gyro-drift compensation is required.</p>
+<h3 id="Light">Light</h3>
+<p><em>Trigger-mode: On-change<br/>
+Wake-up sensor: No</em></p>
+<p>The light sensor value is returned in SI lux units.</p>
+<h3 id="Proximity">Proximity</h3>
+<p><em>Trigger-mode: On-change<br/>
+Wake-up sensor: Yes</em></p>
+<p>Measures the distance from the sensor to the closest visible surface. As this is 
+  a wake-up sensor, it should wake up the SoC when it is running and detects a 
+  change in proximity. The distance value is measured in centimeters. Note that 
+  some proximity sensors only support a binary &quot;near&quot; or &quot;far&quot; measurement. In 
+  this case, the sensor should report its maxRange value in the &quot;far&quot; state and a 
+  value less than maxRange in the &quot;near&quot; state.</p>
+<p>To ensure the applications have the time to receive the event before the 
+  application processor goes back to sleep, the driver must hold a &quot;timeout wake 
+  lock&quot; for 200 milliseconds for every wake-up sensor. That is, the application 
+  processor should not be allowed to go back to sleep in the 200 milliseconds 
+  following a wake-up interrupt.</p>
+<h3 id="Pressure">Pressure</h3>
+<p><em>Trigger-mode: Continuous<br/>
+Wake-up sensor: No</em></p>
+<p>The pressure sensor uses a barometer to return the atmospheric pressure in 
+  hectopascal (hPa).</p>
+<h3 id="humidity">Relative humidity</h3>
+<p><em>Trigger-mode: On-change<br/>
+Wake-up sensor: No</em></p>
+<p>A relative humidity sensor measures relative ambient air humidity and returns a 
+  value in percent.</p>
