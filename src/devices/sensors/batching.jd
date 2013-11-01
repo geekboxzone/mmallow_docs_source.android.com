@@ -25,36 +25,46 @@ page.title=Batching sensor results
 </div>
 
 <h2 id="Why">Why batch?</h2>
-<p>Batching can enable significant power savings by preventing the application 
-  processor from waking up to receive each notification. Instead, these 
-  notifications can be grouped and processed together.</p>
-<p>Enabling batch mode for a given sensor sets the delay between events. A timeout 
-  value of zero disables batch mode for the given sensor. The period_ns parameter is equivalent to calling setDelay() -- this function both enables or disables the batch mode AND sets the event's period in nanoseconds. See setDelay() for a detailed explanation of the period_ns parameter.</p>
+<p>This page presents the specificities of Batch mode and the expected behaviors
+  of sensors while in batch mode. Batching can enable significant power savings by 
+  preventing the application processor from waking up to receive each event. Instead, these 
+  events can be grouped and processed together.</p>
+<h2 id="batch-function">batch(int handle, int flags, int64_t period_ns, int64_t
+  max_report_latency)</h2>
+<p>Enabling batch mode for a given sensor sets the delay between events.
+  max_report_latency sets the maximum time by which events can be delayed and 
+  batched together before being reported to the applications. A value of zero 
+  disables batch mode for the given sensor. The period_ns parameter is equivalent 
+  to calling setDelay() -- this function both enables or disables the batch mode 
+  AND sets the event's period in nanoseconds. See setDelay() for a detailed 
+  explanation of the period_ns parameter.</p>
 <p>In non-batch mode, all sensor events must be reported as soon as they are 
   detected. For example, an accelerometer activated at 50Hz will trigger 
   interrupts 50 times per second.<br/>
   While in batch mode, sensor events do not need to be reported as soon as they 
   are detected. They can be temporarily stored and reported in batches, as long as 
-  no event is delayed by more than &quot;timeout&quot; nanoseconds. That is, all events 
+  no event is delayed by more than &quot;maxReportingLatency&quot; nanoseconds. That is, all events 
   since the previous batch are recorded and returned at once. This reduces the 
   amount of interrupts sent to the SoC and allows the SoC to switch to a lower 
   power mode (idle) while the sensor is capturing and batching data.</p>
 <p>setDelay() is not affected and it behaves as usual. <br/>
   <br/>
   Each event has a timestamp associated with it. The timestamp must be accurate 
-  and correspond to the time in which the event physically happened.</p>
+  and correspond to the time at which the event physically happened.</p>
 <p>Batching does not modify the behavior of poll(): batches from different sensors 
   can be interleaved and split. As usual, all events from the same sensor are 
   time-ordered.</p>
-<h2 id="Suspend">Suspend mode</h2>
+<h2 id="Suspend">Behavior outside of suspend mode</h2>
 <p>These are the power modes of the application processor: on, idle, and suspend. 
   The sensors behave differently in each of these modes. As you would imagine, on 
-  mode is when the application processor is running. Idle mode is low-power use 
-  waiting for activity before going into suspension. Suspend mode is when the 
-  application processor is not running.</p>
+  mode is when the application processor is running. Idle mode is a medium power mode 
+  where the application processor is powered but doesn't perform any tasks.
+  Suspend is a low-power mode where the application processor is not powered. The
+  power consumption of the device in this mode is usually 100 times less than in the On
+  mode.</p>
 <p>When the SoC is awake (not in suspend mode), events must be reported in batches 
-  at least every &quot;timeout.&quot; No event shall be dropped or lost. If internal 
-  hardware FIFOs fill up before the timeout, then events are reported at that 
+  at least every maxReportingLatency. No event shall be dropped or lost. If internal 
+  hardware FIFOs fill up before the maxReportingLatency, then events are reported at that 
   point to ensure no event is lost.</p>
 <h2 id="Normal">Normal behavior in suspend mode</h2>
 <p>By default, batch mode doesn't significantly change the interaction with suspend 
@@ -77,6 +87,9 @@ as the recent history as possible, and batch operation resumes as usual.</p>
 <p>The caller will set the SENSORS_BATCH_WAKE_UPON_FIFO_FULL flag to activate this 
   mode. If the sensor does not support this mode, batch() will fail when the flag 
   is set.</p>
+<p>In batch mode, and only when the flag SENSORS_BATCH_WAKE_UPON_FIFO_FULL is
+  set and supported, the specified sensor must be able to wake-up the SoC and be
+  able to buffer at least 10 seconds worth of the requested sensor events.</p>
 <p>When running with the WAKE_UPON_FIFO_FULL flag set, no events can be lost. When 
   the FIFO is getting full, the sensor must wake up the SoC from suspend and 
   return a batch before the FIFO fills-up.</p>
@@ -86,8 +99,9 @@ as the recent history as possible, and batch operation resumes as usual.</p>
   without the FIFO overflowing (no events shall be lost).</p>
 <p>Implementing the WAKE_UPON_FIFO_FULL mode is optional. If the hardware cannot 
   support this mode, or if the physical FIFO is so small that the device would 
-  never be allowed to go into suspend for at least 10 seconds, then this function <strong>must</strong> fail when the flag SENSORS_BATCH_WAKE_UPON_FIFO_FULL is set, regardless 
-  of the value of the timeout parameter.</p>
+  never be allowed to go into suspend for at least 10 seconds, then this function 
+  <strong>must</strong> fail when the flag SENSORS_BATCH_WAKE_UPON_FIFO_FULL is set, regardless 
+  of the value of the maxReportingLatency parameter.</p>
 <h2 id="Implementing">Implementing batching</h2>
 <p>Batch mode, if supported, should happen at the hardware level, typically using 
   hardware FIFOs. In particular, it SHALL NOT be implemented in the HAL, as this 
@@ -99,8 +113,8 @@ as the recent history as possible, and batch operation resumes as usual.</p>
   as soon as one batch must be reported.</p>
 <p>For example, if the following sensors are activated:</p>
 <ul>
-  <li>accelerometer batched with timeout = 20s</li>
-  <li>gyroscope batched with timeout = 5s</li>
+  <li>accelerometer batched with maxReportingLatency = 20s</li>
+  <li>gyroscope batched with maxReportingLatency = 5s</li>
 </ul>
 <p>Then the accelerometer batches can be reported at the same time the gyroscope 
   batches are reported (every 5 seconds).<br/>
@@ -108,7 +122,7 @@ as the recent history as possible, and batch operation resumes as usual.</p>
   Batch mode can be enabled or disabled at any time, in particular while the 
   specified sensor is already enabled; and this shall not result in the loss of 
   events.</p>
-<h2 id="different-sensors">Batching different sensors</h2>
+<h2 id="fifo-allocation">FiFo allocation priority</h2>
 <p>On platforms in which hardware FIFO size is limited, the system designers may 
   have to choose how much FIFO to reserve for each sensor. To help with this 
   choice, here is a list of applications made possible when batching is 
@@ -168,10 +182,10 @@ as the recent history as possible, and batch operation resumes as usual.</p>
   time and not based on the state of the system.</p>
 <p>If some other constraints above cannot be satisfied, -EINVAL is returned.<br/>
   <br/>
-  Note: the timeout parameter when &gt; 0 has no impact on whether this function 
+  Note: the maxReportingLatency parameter when &gt; 0 has no impact on whether this function 
   succeeds or fails.<br/>
   <br/>
-  If timeout is set to 0, this function must succeed.</p>
+  If maxReportingLatency is set to 0, this function must succeed.</p>
 <h2 id="Supporting-docs">Supporting documentation</h2>
 <p><a href="http://developer.android.com/guide/topics/sensors/index.html">Developer - Location and Sensors 
   APIs</a></p>
