@@ -43,46 +43,40 @@ header.hide=1
     <div class="col-8">
     <h3>Updates</h3>
       <a href="{@docRoot}source/index.html">
-        <h4>Source Code Available for Android</h4>
+        <h4>Source Code Available for Android</h4></a>
         <p>Android is an open-source software stack for a wide array of mobile devices with different form factors.
 <img border="0" src="images/Android_Robot_100.png" alt="Android Partner icon" style="display:inline;float:right;margin:5px 10px"> 
         We created Android in response to our own experiences launching mobile apps. We wanted to make sure there was 
         no central point of failure so no industry player can restrict or control the innovations of any other. That's 
         why we created Android and made its source code open.</p>
-      </a>
       <a href="{@docRoot}compatibility/index.html">
-        <h4>Compatibility Definition for Android</h4>
+        <h4>Compatibility Definition for Android</h4></a>
         <p>Android's purpose is to establish an open platform for developers to build innovative apps. The Android 
         Compatibility program defines the technical details of the Android platform and provides tools for device manufacturers to 
         ensure developers' apps run on a variety of devices.</p>
-      </a>
     </div>
 
     <div class="col-8">
       <h3>Getting Started</h3>
       <a href="{@docRoot}source/index.html">
-        <h4>Explore the Source</h4>
+        <h4>Explore the Source</h4></a>
         <p>Get the complete Android platform and modify and build it to suit your needs. You can
         also contribute to the Open Source Project to make your changes available to everyone else in
         the Android ecosystem.</p>
-      </a>
       <a href="{@docRoot}devices/index.html">
-        <h4>Port Android to Devices</h4>
+        <h4>Port Android to Devices</h4></a>
         <p>Port the latest Android platform and
         create compelling devices that your customers want.</p>
-      </a>
 
       <a href="{@docRoot}accessories/index.html">
-        <h4>Build Accessories</h4>
+        <h4>Build Accessories</h4></a>
         <p>Sometimes, a device can't do it all. Tap into Android's open accessory standard and build accessories to complement the wide variety of Android-powered devices.</p>
-      </a>
 
       <a href="{@docRoot}compatibility/index.html">
-        <h4>Get Compatible</h4>
+        <h4>Get Compatible</h4></a>
         <p>Being Android-compatible lets you offer custom features but still give users and developers a consistent
           and standard experience across all Android-powered devices. Android provides guidance
           and a test suite to verify your Android compatibility.</p>
-      </a>
     </div>
 
   </div>
