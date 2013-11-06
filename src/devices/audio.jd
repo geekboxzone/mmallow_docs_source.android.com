@@ -16,14 +16,6 @@ page.title=Audio
     See the License for the specific language governing permissions and
     limitations under the License.
 -->
-<div id="qv-wrapper">
-  <div id="qv">
-    <h2>In this document</h2>
-    <ol id="auto-toc">
-    </ol>
-  </div>
-</div>
-
 <p>
   Android's audio Hardware Abstraction Layer (HAL) connects the higher level, audio-specific
   framework APIs in <a href="http://developer.android.com/reference/android/media/package-summary.html">android.media</a>
