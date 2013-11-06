@@ -395,5 +395,4 @@ encouraged to work with their Android account managers to analyze SELinux
 results and improve policy settings. Over time, Android intends to support
 common manufacturer additions in its default SELinux policy. For more
 information, contact <a
-href="mailto:security@android.com">security@android.com</a> or Geremy Condra (<a
-href="mailto:gcondra@google.com">gcondra@google.com</a>) directly.
+href="mailto:security@google.com?subject=se-linux">security@android.com</a>.
