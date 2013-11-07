@@ -130,6 +130,11 @@ API levels and NDK releases provided for convenience:</p>
 <td>4.3.x</td>
 <td>API level 18</td>
 </tr>
+<tr>
+<td>KitKat</td>
+<td>4.4</td>
+<td>API level 19</td>
+</tr>
 </tbody>
 </table>
 <p>Starting with Cupcake, individual builds are identified with a short
@@ -537,10 +542,16 @@ following table:</p>
 <td>Latest Jelly Bean version, Nexus 7 (deb)</td>
 </tr>
 
+<tr>
+<td>KRT16M</td>
+<td>android-4.4_r1</td>
+<td>Initial KitKat version, Nexus 5 (hammerhead)</td>
+</tr>
+
 </tbody>
 </table>
 <p>The branches froyo, gingerbread, ics-mr0, ics-mr1, jb-dev,
-jb-mr1-dev, jb-mr1.1-dev, jb-mr2-dev
+jb-mr1-dev, jb-mr1.1-dev, jb-mr2-dev, kitkat-dev
 represent development
 branches that do not exactly match configurations that were tested
 by Google. They might contain a variety of changes in addition to

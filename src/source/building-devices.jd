@@ -76,6 +76,11 @@ which is a mode in the bootloader that can be used to flash the devices:</p>
 </thead>
 <tbody>
 <tr>
+<td>hammerhead</td>
+<td>Press and hold both <em>Volume Up</em> and <em>Volume Down</em>, then press
+and hold <em>Power</em></td>
+</tr>
+<tr>
 <td>flo</td>
 <td>Press and hold <em>Volume Down</em>, then press and hold <em>Power</em></td>
 </tr>
@@ -192,6 +197,11 @@ the lunch menu, accessed when running the <code>lunch</code> command with no arg
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>hammerhead</td>
+<td>android-4.4_r1</td>
+<td>aosp_hammerhead-userdebug</td>
+</tr>
 <tr>
 <td>flo</td>
 <td>android-4.3_r2.3</td>
