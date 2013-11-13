@@ -16,8 +16,6 @@ page.title=Bytecode for the Dalvik VM
     See the License for the specific language governing permissions and
     limitations under the License.
 -->
-<p>Copyright &copy; 2007 The Android Open Source Project
-
 <h2>General Design</h2>
 
 <ul>
