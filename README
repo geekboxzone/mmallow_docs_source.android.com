@@ -1,80 +1,83 @@
-# HOW TO BUILD SOURCE.ANDROID.COM #
+# HOW TO UPDATE SOURCE.ANDROID.COM #
 
-source.android.com contains tutorials, references, and miscellaneous
-information relating to the Android Open Source Project (AOSP). The current
-iteration of this site is fully static HTML (notably lacking in javascript and
-doxygen content), and is and/or was maintained by skyler (illustrious intern
-under Dan Morrill and assistant to the almighty JBQ).
+The source.android.com site contains tutorials, references, and other
+information related to the Android Open Source Project (AOSP). The rendered
+output of this site is static HTML, although the source contents are stored
+in Javadoc. Conduct your edits in the Javadoc (.jd files).
 
-## Short Instructions ##
+Note that the currently viewable docs at http://source.android.com/
+are not necessarily exactly in sync with the doc sources you can download from
+AOSP. If you want to make a contribution to the doc sources, please check in at
+android-contrib@ group. That way, we can make sure the affected docs are stable
+before you upload your CL.
 
-Run the build script, from the same directory as this file:
+### File Location ###
 
-    python scripts/build.py
+The source.android.com source files are stored in the platform/docs/source.android.com/
+Android project:
+https://android.googlesource.com/platform/docs/source.android.com/
 
-This generates the directory ./out, which is the fully built site. Hoorah. 
+The files to be edited are located in: <root>/docs/source.android.com/src
 
-The included scripts/micro-httpd.py script is helpful for testing the site on
-your own machine. Running it will start up a tiny HTTP server that you can hit
-to test changes in a browser:
+Every .jd file under src/ is an individual page in Javadoc format. This format
+closely resembles HTML with different headers.
 
-    cd ./out
-    HTTP_PORT=8080 python ../scripts/micro-httpd.py
+Subdirectories exist for the tabs of source.android.com with their structure
+roughly (but not identically) mirroring navigation of the site.
 
-### Markdown ###
-Markdown is a very simple markup format for plain-text that converts it to
-decent HTML. Useful docs:
-http://daringfireball.net/projects/markdown/syntax
-
-Yes, it was created by John Gruber himself. BWAHAHA!
+In addition, each tab and subdirectory contains a *_toc.cs file (such as
+devices_toc.cs) that defines the navigation for that section of the site. When
+pages are added or removed, the corresponding *_toc.cs file must be updated to
+match.
 
 ### Dependencies ###
 
-You need the Python markdown implementation. The original Perl impl probably
-will NOT work.
+ - Vi, Emacs or another plain-text editor
+ - Python
+ - App Engine - https://developers.google.com/appengine/
+ - An app.yaml configuration file placed in the root of the
+   out/target/common/docs/online-sac directory with these contents:
+   -----
+   application: NAMEOFYOURAPP
+   version: 1
+   runtime: python
+   api_version: 1
 
-For (Goo|U)buntu:
-% sudo apt-get install python-markdown
+   handlers:
+   - url: /
+     static_dir: /
+   -----
 
-For Mac:
-$ sudo easy_install ElementTree
-$ sudo easy_install Markdown
+## Edit Instructions ##
 
-More information here:
-http://www.freewisdom.org/projects/python-markdown/Installation
+1. Initialize the repository and download the Android source per:
+http://source.android.com/source/downloading.html
 
-### Contents Included in Box ###
+2. Start a temporary branch for your changes, such as:
+http://source.android.com/source/using-repo.html#start
 
-Necessary source files include:
+3. Edit the Javadoc file(s) and save your changes.
 
-    src/        individual page content in markdown format
-    templates/  templates for page content
+4. If a page was added or removed, update the corresponding *.toc.cs file to
+reflect the change.
 
-and the following content which is copied directly:
+5. Run the following make command from the root of the project parent directory:
 
-    assets/     stylish things that make the page look pretty
-    images/     exactly what it sounds like
+    make online-sac-docs
 
-### Structure of Site Source ###
+This generates the output in:
+<root>/out/target/common/docs/online-sac
 
-The build script assumes that
-- Every .md file under src/ is an individual page in markdown format.
-- Each directory under src/ is a tab of source.android.com and contains its
-  particular sidebar.  Note, the sidebar in the root of site_src/ itself is
-  present but empty.
-- Please use .md if possible (because this will pick up the global site CSS
-  and layout.) But the build.py script will indeed copy arbitrary files to the
-  output dir, so it is possible to simply place .html, .pdf, and similar files
-  to the src/ tree and they will be copied directly to ./out.
+6. Start App Engine and point it at the output directory, like so:
 
+    python /bin/google_appengine/dev_appserver.py \ 
+    /master/out/target/common/docs/online-sac \
+    --address 0.0.0.0 --port 8080 &
 
-# HOW TO PUSH SOURCE.ANDROID.COM TO PROD #
-Coming soon. For now, harass morrildl, jbq, and/or btmura.
+7. Review your changes at localhost:8080/index.html
 
+8. Once satisfied, submit the changes as described at:
+http://source.android.com/source/submit-patches.html
 
-# SORDID HISTORY OF SOURCE.ANDROID.COM #
+Your change will be routed to the source.android.com team for inclusion.
 
-Once upon a time, source.android.com used to be a site on Sites.
-Then it was rewritten to use the developer SDK docs, but this was hard to edit
-and overkill.
-Now it is as you see it.
