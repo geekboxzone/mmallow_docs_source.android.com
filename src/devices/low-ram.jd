@@ -55,7 +55,6 @@ levels, smaller graphics caches, etc.</li>
 <li>Reduced per-process font cache overhead.</li>
 <li>Introduced ArrayMap/ArraySet and used extensively in framework as a
 lighter-footprint replacement for HashMap/HashSet.</li>
-levels, smaller graphics caches, etc.</li>
 </ul>
 
 <h3 id="opt-proc">Procstats</h3>
