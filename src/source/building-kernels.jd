@@ -40,6 +40,12 @@ clone steps other than the step to download the actual kernel sources.</p>
     <th>Build configuration</th>
   </tr>
   <tr>
+    <td>hammerhead</td>
+    <td>device/lge/hammerhead-kernel</td>
+    <td>kernel/msm</td>
+    <td>hammerhead_defconfig</td>
+  </tr>
+  <tr>
     <td>flo</td>
     <td>device/asus/flo-kernel/kernel</td>
     <td>kernel/msm</td>
