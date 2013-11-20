@@ -23,7 +23,7 @@ you access to key documents and information about the program.</p>
 <h2 id="android-44">Android 4.4</h2>
 <p>Android 4.4 is the release of the development milestone code-named
 KitKat. Source code for Android 4.4 is found in the
-'android-4.4_r1-cts' branch in the open-source tree.</p>
+'android-cts-4.4_r1' branch in the open-source tree.</p>
 <ul>
 <li><a
 href="https://dl.google.com/dl/android/cts/android-cts-4.4_r1-linux_x86-arm.zip">Android
