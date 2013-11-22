@@ -22,6 +22,10 @@ include $(BUILD_DROIDDOC)
 setup-hal-ref:
 	$(hide) doxygen docs/source.android.com/Doxyfile
 
+# Put HAL refs in PDK instead and strip nav to s.a.c.
+pdk-hal-ref:
+	$(hide) doxygen vendor/pdk/data/google/Doxyfile
+
 # Run "make tradefed-docs" in "tradefed" branch before running this target
 # This sets up the tradefed javadocs for viewing in s.a.c.
 # Target assumes that you have a "tradefed" directory
