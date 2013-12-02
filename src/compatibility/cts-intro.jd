@@ -34,6 +34,8 @@ Android .apk files to run on the actual device target.</p>
 </li>
 </ul>
 <h2 id="workflow">Workflow</h2>
+<p>This section summarizes CTS setup. Please refer to the <a href="android-cts-manual.pdf">
+CTS User Manual</a> for detailed instructions.</p>
 <ol>
 <li>
 <p><a href="downloads.html">Download</a> the CTS and CTS media files.</p>
