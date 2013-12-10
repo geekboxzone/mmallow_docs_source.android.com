@@ -32,18 +32,18 @@ page.title=Batching sensor results
 <h2 id="batch-function">batch(int handle, int flags, int64_t period_ns, int64_t
   max_report_latency)</h2>
 <p>Enabling batch mode for a given sensor sets the delay between events.
-  max_report_latency sets the maximum time by which events can be delayed and 
+  <code>max_report_latency</code> sets the maximum time by which events can be delayed and
   batched together before being reported to the applications. A value of zero 
-  disables batch mode for the given sensor. The period_ns parameter is equivalent 
+  disables batch mode for the given sensor. The <code>period_ns</code> parameter is equivalent
   to calling setDelay() -- this function both enables or disables the batch mode 
   AND sets the event's period in nanoseconds. See setDelay() for a detailed 
-  explanation of the period_ns parameter.</p>
+  explanation of the <code>period_ns</code> parameter.</p>
 <p>In non-batch mode, all sensor events must be reported as soon as they are 
   detected. For example, an accelerometer activated at 50Hz will trigger 
   interrupts 50 times per second.<br/>
   While in batch mode, sensor events do not need to be reported as soon as they 
   are detected. They can be temporarily stored and reported in batches, as long as 
-  no event is delayed by more than &quot;maxReportingLatency&quot; nanoseconds. That is, all events 
+  no event is delayed by more than <code>maxReportingLatency</code> nanoseconds. That is, all events 
   since the previous batch are recorded and returned at once. This reduces the 
   amount of interrupts sent to the SoC and allows the SoC to switch to a lower 
   power mode (idle) while the sensor is capturing and batching data.</p>
@@ -83,24 +83,26 @@ as the recent history as possible, and batch operation resumes as usual.</p>
   even when the device goes into suspend mode.</p>
 <p>For a given rate, if a sensor has the capability to store at least 10 seconds 
   worth of events in its FIFO and is able to wake up the SoC, it can implement an 
-  optional secondary mode: the WAKE_UPON_FIFO_FULL mode.</p>
-<p>The caller will set the SENSORS_BATCH_WAKE_UPON_FIFO_FULL flag to activate this 
+  optional secondary mode: the <code>WAKE_UPON_FIFO_FULL</code> mode.</p>
+<p>The caller will set the <code>SENSORS_BATCH_WAKE_UPON_FIFO_FULL</code> flag to activate this
   mode. If the sensor does not support this mode, batch() will fail when the flag 
   is set.</p>
-<p>In batch mode, and only when the flag SENSORS_BATCH_WAKE_UPON_FIFO_FULL is
+<p>In batch mode, and only when the flag
+<code>SENSORS_BATCH_WAKE_UPON_FIFO_FULL</code> is
   set and supported, the specified sensor must be able to wake-up the SoC and be
   able to buffer at least 10 seconds worth of the requested sensor events.</p>
-<p>When running with the WAKE_UPON_FIFO_FULL flag set, no events can be lost. When 
+<p>When running with the <code>WAKE_UPON_FIFO_FULL</code> flag set, no events can be lost. When
   the FIFO is getting full, the sensor must wake up the SoC from suspend and 
   return a batch before the FIFO fills-up.</p>
 <p>Depending on the device, it might take a few milliseconds for the SoC to 
   entirely come out of suspend and start flushing the FIFO. Enough head room must 
   be allocated in the FIFO to allow the device to entirely come out of suspend 
   without the FIFO overflowing (no events shall be lost).</p>
-<p>Implementing the WAKE_UPON_FIFO_FULL mode is optional. If the hardware cannot 
+<p>Implementing the <code>WAKE_UPON_FIFO_FULL</code> mode is optional. If the hardware cannot
   support this mode, or if the physical FIFO is so small that the device would 
   never be allowed to go into suspend for at least 10 seconds, then this function 
-  <strong>must</strong> fail when the flag SENSORS_BATCH_WAKE_UPON_FIFO_FULL is set, regardless 
+  <strong>must</strong> fail when the flag
+<code>SENSORS_BATCH_WAKE_UPON_FIFO_FULL</code> is set, regardless
   of the value of the maxReportingLatency parameter.</p>
 <h2 id="Implementing">Implementing batching</h2>
 <p>Batch mode, if supported, should happen at the hardware level, typically using 
@@ -113,8 +115,8 @@ as the recent history as possible, and batch operation resumes as usual.</p>
   as soon as one batch must be reported.</p>
 <p>For example, if the following sensors are activated:</p>
 <ul>
-  <li>accelerometer batched with maxReportingLatency = 20s</li>
-  <li>gyroscope batched with maxReportingLatency = 5s</li>
+  <li>accelerometer batched with <code>maxReportingLatency</code> = 20s</li>
+  <li>gyroscope batched with <code>maxReportingLatency</code> = 5s</li>
 </ul>
 <p>Then the accelerometer batches can be reported at the same time the gyroscope 
   batches are reported (every 5 seconds).<br/>
@@ -158,11 +160,11 @@ as the recent history as possible, and batch operation resumes as usual.</p>
   Allows full collection of sensor data while leaving the SoC in<br/>
   suspend mode. Only to consider if fifo space is not an issue.<br/>
   <br/>
-  In each of the cases above, if WAKE_UPON_FIFO_FULL is implemented, the<br/>
+  In each of the cases above, if <code>WAKE_UPON_FIFO_FULL</code> is implemented, the<br/>
   applications might decide to let the SoC go to suspend, allowing for even<br/>
   more power savings.</p>
 <h2 id="Dry-run">Dry run</h2>
-<p>If the flag SENSORS_BATCH_DRY_RUN is set, this function returns without 
+<p>If the flag <code>SENSORS_BATCH_DRY_RUN</code> is set, this function returns without
   modifying the batch mode or the event period and has no side effects, but 
   returns errors as usual (as it would if this flag was not set). This flag is 
   used to check if batch mode is available for a given configuration, in 
@@ -170,8 +172,9 @@ as the recent history as possible, and batch operation resumes as usual.</p>
 <h2 id="Return-values">Return values</h2>
 <p>Because sensors must be independent, the return value must not depend on the 
   state of the system (whether another sensor is on or not), nor on whether the 
-  flag SENSORS_BATCH_DRY_RUN is set (in other words, if a batch call with 
-  SENSORS_BATCH_DRY_RUN is successful, the same call without SENSORS_BATCH_DRY_RUN 
+  flag <code>SENSORS_BATCH_DRY_RUN</code> is set (in other words, if a batch call with
+  <code>SENSORS_BATCH_DRY_RUN</code> is successful, the same call without
+<code>SENSORS_BATCH_DRY_RUN</code>
   must succeed as well).</p>
 <p>If successful, 0 is returned.</p>
 <p>If the specified sensor doesn't support batch mode, -EINVAL is returned.<br/>
@@ -182,10 +185,10 @@ as the recent history as possible, and batch operation resumes as usual.</p>
   time and not based on the state of the system.</p>
 <p>If some other constraints above cannot be satisfied, -EINVAL is returned.<br/>
   <br/>
-  Note: the maxReportingLatency parameter when &gt; 0 has no impact on whether this function 
-  succeeds or fails.<br/>
+  Note: The <code>maxReportingLatency</code> parameter when &gt; 0 has no impact on
+  whether this function succeeds or fails.<br/>
   <br/>
-  If maxReportingLatency is set to 0, this function must succeed.</p>
+  If <code>maxReportingLatency</code> is set to 0, this function must succeed.</p>
 <h2 id="Supporting-docs">Supporting documentation</h2>
 <p><a href="http://developer.android.com/guide/topics/sensors/index.html">Developer - Location and Sensors 
   APIs</a></p>
