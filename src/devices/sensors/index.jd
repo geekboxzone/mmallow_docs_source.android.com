@@ -218,9 +218,14 @@ href="{@docRoot}devices/sensors/batching.html">Batching</a> section for details.
   <li>One-shot: setDelay() is ignored. It has no effect.</li>
   <li>Special: See specific sensor type descriptions.</li>
 </ul>
-<p>For continuous and on-change sensors, if the requested value is less than sensor_t::minDelay, then it's silently clamped to sensor_t::minDelay unless 
-  sensor_t::minDelay is 0, in which case it is clamped to &gt;= 1ms:<br/>
-  @return 0 if successful, &lt; 0 on error</p>
+<p>For continuous and on-change sensors, if the requested value is less than sensor_t::minDelay,
+then it's silently clamped to sensor_t::minDelay unless sensor_t::minDelay is 0,
+in which case it is clamped to &gt;= 1ms. setDelay will not be called when the sensor is
+in batching mode. In this case, batch() will be called with the new period. Return 0 if successful, 
+&lt; 0 on error.</p>
+<p>When calculating the sampling period T in setDelay (or batch), the actual period
+should be smaller than T and no smaller than T/2. Finer granularity is not
+necessary.</p>
 <h4 id="flush">flush()</h4>
 <pre>
             int (*flush)(struct sensors_poll_device_1* dev, int handle);
