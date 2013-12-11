@@ -132,7 +132,7 @@ API levels and NDK releases provided for convenience:</p>
 </tr>
 <tr>
 <td>KitKat</td>
-<td>4.4</td>
+<td>4.4 - 4.4.2</td>
 <td>API level 19</td>
 </tr>
 </tbody>
@@ -551,7 +551,19 @@ following table:</p>
 <tr>
 <td>KRT16S</td>
 <td>android-4.4_r1.2</td>
-<td>Latest KitKat version, Nexus 7 (flo/deb/grouper/tilapia), Nexus 4, Nexus 10</td>
+<td>KitKat version, Nexus 7 (flo/deb/grouper/tilapia), Nexus 4, Nexus 10</td>
+</tr>
+
+<tr>
+<td>KOT49E</td>
+<td>android-4.4.1_r1</td>
+<td>KitKat version, Nexus 5, Nexus 7 (flo/deb/grouper/tilapia), Nexus 4, Nexus 10</td>
+</tr>
+
+<tr>
+<td>KOT49H</td>
+<td>android-4.4.2_r1</td>
+<td>Latest KitKat version, Nexus 5, Nexus 7 (flo/deb/grouper/tilapia), Nexus 4, Nexus 10</td>
 </tr>
 
 </tbody>
