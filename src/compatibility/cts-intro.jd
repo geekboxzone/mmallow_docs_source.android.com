@@ -62,6 +62,8 @@ CTS User Manual</a> for detailed instructions.</p>
 </li>
 <li>
 <p>On the device, enable the two android.deviceadmin.cts.CtsDeviceAdminReceiver* device administrators under Settings &gt; Location &amp; security &gt; Select device administrators</p>
+<p><strong>Note</strong>: Make sure the android.deviceadmin.cts.CtsDeviceAdminDeactivatedReceiver
+stays disabled in the same menu.</p>
 </li>
 </ol>
 </li>
