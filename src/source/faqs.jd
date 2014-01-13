@@ -25,6 +25,10 @@ page.title=Frequently Asked Questions
 </div>
 
 <a name="top"></a>
+<p>Please see the <a
+href="http://developer.android.com/guide/faq/index.html">Android FAQs</a> on
+developer.android.com for answers to other common questions.
+
 <h2 id="open-source">Open Source</h2>
 <h3 id="what-is-the-android-open-source-project">What is the Android Open Source Project?</h3>
 <p>We use the phrase "Android Open Source Project" or "AOSP" to refer to the
