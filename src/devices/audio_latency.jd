@@ -26,8 +26,10 @@ page.title=Audio Latency
 
 <p>Audio latency is the time delay as an audio signal passes through a system.
   For a complete description of audio latency for the purposes of Android
-  compatibility, see <em>Section 5.4 Audio Latency</em>
+  compatibility, see <em>Section 5.5 Audio Latency</em>
   in the <a href="http://source.android.com/compatibility/index.html">Android CDD</a>.
+  See <a href="latency_design.html">Design For Reduced Latency</a> for an 
+  understanding of Android's audio latency-reduction efforts.
 </p>
 
 <h2 id="contributors">Contributors to Latency</h2>
@@ -37,8 +39,8 @@ page.title=Audio Latency
   but a similar discussion applies to input latency.
 </p>
 <p>
-  Assuming that the analog circuitry does not contribute significantly.
-  Then the major surface-level contributors to audio latency are the following:
+  Assuming the analog circuitry does not contribute significantly, then the major 
+surface-level contributors to audio latency are the following:
 </p>
 
 <ul>
@@ -53,14 +55,14 @@ page.title=Audio Latency
   The reason is that buffer count and buffer size are more of an
   <em>effect</em> than a <em>cause</em>.  What usually happens is that
   a given buffer scheme is implemented and tested, but during testing, an audio
-  underrun is heard as a "click" or "pop".  To compensate, the
+  underrun is heard as a "click" or "pop."  To compensate, the
   system designer then increases buffer sizes or buffer counts.
   This has the desired result of eliminating the underruns, but it also
   has the undesired side effect of increasing latency.
 </p>
 
 <p>
-  A better approach is to understand the underlying causes of the
+  A better approach is to understand the causes of the
   underruns and then correct those.  This eliminates the
   audible artifacts and may even permit even smaller or fewer buffers
   and thus reduce latency.
@@ -95,7 +97,7 @@ page.title=Audio Latency
 
 <p>
   The obvious solution is to avoid CFS for high-performance audio
-  threads. Beginning with Android 4.1 (Jelly Bean), such threads now use the
+  threads. Beginning with Android 4.1, such threads now use the
   <code>SCHED_FIFO</code> scheduling policy rather than the <code>SCHED_NORMAL</code> (also called
   <code>SCHED_OTHER</code>) scheduling policy implemented by CFS.
 </p>
@@ -107,17 +109,17 @@ page.title=Audio Latency
   non-audio user threads with policy <code>SCHED_FIFO</code>. The available <code>SCHED_FIFO</code>
   priorities range from 1 to 99.  The audio threads run at priority
   2 or 3.  This leaves priority 1 available for lower priority threads,
-  and priorities 4 to 99 for higher priority threads.  We recommend that
+  and priorities 4 to 99 for higher priority threads.  We recommend 
   you use priority 1 whenever possible, and reserve priorities 4 to 99 for
   those threads that are guaranteed to complete within a bounded amount
-  of time, and are known to not interfere with scheduling of audio threads.
+  of time and are known to not interfere with scheduling of audio threads.
 </p>
 
 <h3>Scheduling latency</h3>
 <p>
   Scheduling latency is the time between when a thread becomes
   ready to run, and when the resulting context switch completes so that the
-  thread actually runs on a CPU. The shorter the latency the better and 
+  thread actually runs on a CPU. The shorter the latency the better, and 
   anything over two milliseconds causes problems for audio. Long scheduling
   latency is most likely to occur during mode transitions, such as
   bringing up or shutting down a CPU, switching between a security kernel
@@ -129,7 +131,7 @@ page.title=Audio Latency
 <p>
   In many designs, CPU 0 services all external interrupts.  So a
   long-running interrupt handler may delay other interrupts, in particular
-  audio DMA completion interrupts. Design interrupt handlers
+  audio direct memory access (DMA) completion interrupts. Design interrupt handlers
   to finish quickly and defer any lengthy work to a thread (preferably
   a CFS thread or <code>SCHED_FIFO</code> thread of priority 1).
 </p>
@@ -148,7 +150,8 @@ page.title=Audio Latency
 
 <p>
   There are several techniques available to measure output latency,
-  with varying degrees of accuracy and ease of running.
+  with varying degrees of accuracy and ease of running, described below. Also
+see the <a href="testing_circuit.html">Testing circuit</a> for an example test environment.
 </p>
 
 <h3>LED and oscilloscope test</h3>
@@ -167,8 +170,8 @@ If your production device does not have an LED, you can install the
 </p>
 
 <ul>
-  <li>Use a General Purpose Input/Output (GPIO) pin for the same purpose</li>
-  <li>Use JTAG or another debugging port</li>
+  <li>Use a General Purpose Input/Output (GPIO) pin for the same purpose.</li>
+  <li>Use JTAG or another debugging port.</li>
   <li>Use the screen backlight. This might be risky as the
   backlight may have a non-neglible latency, and can contribute to
   an inaccurate latency reading.
@@ -183,8 +186,8 @@ If your production device does not have an LED, you can install the
 
   <p class="note"><b>Note:</b> To get useful results, it is crucial to use the correct
   APIs in the test app so that you're exercising the fast audio output path.
-  See the separate document "Application developer guidelines for reduced
-  audio latency". <!-- where is this ?-->
+  See <a href="latency_design.html">Design For Reduced Latency</a> for
+  background.
   </p>
   </li>
   <li>Place a light sensor next to the LED.</li>
@@ -198,7 +201,7 @@ If your production device does not have an LED, you can install the
   <p>The difference in time is the approximate audio output latency,
   assuming that the LED latency and light sensor latency are both zero.
   Typically, the LED and light sensor each have a relatively low latency
-  on the order of 1 millisecond or less, which is sufficiently low enough
+  on the order of one millisecond or less, which is sufficiently low enough
   to ignore.</p>
 
 <h3>Larsen test</h3>
@@ -206,7 +209,8 @@ If your production device does not have an LED, you can install the
   One of the easiest latency tests is an audio feedback
   (Larsen effect) test. This provides a crude measure of combined output
   and input latency by timing an impulse response loop. This test is not very useful
-  by itself because of the nature of the test, but</p>
+  by itself because of the nature of the test, but it can be useful for calibrating 
+  other tests</p>
 
 <p>To conduct this test:</p>
 <ol>
@@ -219,7 +223,7 @@ If your production device does not have an LED, you can install the
 
   <p>This method does not break down the
   component times, which is important when the output latency
-  and input latency are independent, so this method is not recommended for measuring output latency, but might be useful
+  and input latency are independent. So this method is not recommended for measuring output latency, but might be useful
   to help measure output latency.</p>
 
 <h2 id="measuringInput">Measuring Input Latency</h2>
@@ -270,7 +274,7 @@ overall.
 </p>
   <ul>
   <li>Configure any DSP after the app processor so that it adds
-  minimal latency</li>
+  minimal latency.</li>
   <li>Run tests under different conditions
   such as having the screen on or off, USB plugged in or unplugged,
   WiFi on or off, Bluetooth on or off, and telephony and data radios
@@ -278,7 +282,7 @@ overall.
   <li>Select relatively quiet music that you're very familiar with, and which is easy
   to hear underruns in.</li>
   <li>Use wired headphones for extra sensitivity.</li>
-  <li>Give yourself breaks so that you don't experience "ear fatigue".</li>
+  <li>Give yourself breaks so that you don't experience "ear fatigue."</li>
   </ul>
 
 <p>
@@ -297,11 +301,11 @@ overall.
 
 <p>
   The output of <code>dumpsys media.audio_flinger</code> also contains a
-  useful section called "simple moving statistics". This has a summary
+  useful section called "simple moving statistics." This has a summary
   of the variability of elapsed times for each audio mix and I/O cycle.
   Ideally, all the time measurements should be about equal to the mean or
   nominal cycle time. If you see a very low minimum or high maximum, this is an
-  indication of a problem, which is probably a high scheduling latency or interrupt
+  indication of a problem, likely a high scheduling latency or interrupt
   disable time. The <i>tail</i> part of the output is especially helpful,
   as it highlights the variability beyond +/- 3 standard deviations.
 </p>

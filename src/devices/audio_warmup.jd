@@ -40,12 +40,13 @@ warmup time.</p>
   and reports it as part of the output of the <code>dumpsys media.audio_flinger</code> command.
   At warmup, FastMixer calls <code>write()</code>
   repeatedly until the time between two <code>write()</code>s is the amount expected.
-  FastMixer determines audio warmup by seeing how long a HAL <code>write()</code> takes to stabilize. 
+  FastMixer determines audio warmup by seeing how long a Hardware Abstraction
+Layer (HAL) <code>write()</code> takes to stabilize. 
 </p>
 
-<p>To measure audio warmup, do the following
-steps for the built-in speaker and wired headphones and at different times after booting.
-Warmup times are usually different for each output device and right after booting the device:</p>
+<p>To measure audio warmup, follow these steps for the built-in speaker and wired headphones 
+  and at different times after booting. Warmup times are usually different for each output device 
+  and right after booting the device:</p>
 
 <ol>
   <li>Ensure that FastMixer is enabled.</li>
@@ -75,7 +76,7 @@ sampleRate=44100 frameCount=256 measuredWarmup=X ms, warmupCycles=X
 </p>
 </li>
 <li>
-  Take five measurements and report them all, as well as the mean.
+  Take five measurements and record them all, as well as the mean.
   If they are not all approximately the same,
   then it’s likely that a measurement is incorrect.
   For example, if you don’t wait long enough after the audio has been off,
@@ -102,7 +103,7 @@ sampleRate=44100 frameCount=256 measuredWarmup=X ms, warmupCycles=X
   <li>Good circuit design</li>
   <li>Accurate time delays in kernel device driver</li>
   <li>Performing independent warmup operations concurrently rather than sequentially</li>
-  <li>Leaving circuits powered on or not reconfiguring clocks (increases idle power consumption).
+  <li>Leaving circuits powered on or not reconfiguring clocks (increases idle power consumption)
   <li>Caching computed parameters</li>
   </ul>
   However, beware of excessive optimization. You may find that you

@@ -10,12 +10,12 @@ page.title=Design For Reduced Latency
 </div>
 
 <p>
-Android 4.1 (Jelly Bean) release introduced internal framework changes for
+The Android 4.1 release introduced internal framework changes for
 a lower latency audio output path. There were no public client API
 or HAL API changes. This document describes the initial design,
 which is expected to evolve over time.
 Having a good understanding of this design should help device OEM and
-SoC vendors to implement the design correctly on their particular devices
+SoC vendors implement the design correctly on their particular devices
 and chipsets.  This article is not intended for application developers.
 </p>
 
@@ -42,7 +42,7 @@ the <code>track_flags_t</code> parameter of the <code>IAudioTrack</code> factory
 </p>
 
 <p>
-AudioFlinger (server) reviews the <code>TRACK_FAST</code> request and may
+The AudioFlinger audio server reviews the <code>TRACK_FAST</code> request and may
 optionally deny the request at server level. It informs the client
 whether or not the request was accepted, via bit <code>CBLK_FAST</code> of the
 shared memory control block.
@@ -61,8 +61,8 @@ The factors that impact the decision include:
 </ul>
 
 <p>
-If the client's request was accepted, it is called a "fast track",
-otherwise it's called a "normal track".
+If the client's request was accepted, it is called a "fast track."
+Otherwise it's called a "normal track."
 </p>
 
 <h2 id="mixerThreads">Mixer Threads</h2>
@@ -102,8 +102,8 @@ Omitted features:
 <h4>Period</h4>
 
 <p>
-The fast mixer runs periodically, with a recommended period of 2
-to 3 ms, or slightly higher if needed for scheduling stability.
+The fast mixer runs periodically, with a recommended period of two
+to three milliseconds (ms), or slightly higher if needed for scheduling stability.
 This number was chosen so that, accounting for the complete
 buffer pipeline, the total latency is on the order of 10 ms. Smaller
 values are possible but may result in increased power consumption
@@ -169,7 +169,7 @@ All features are enabled:
 
 <p>
 The period is computed to be the first integral multiple of the
-fast mixer period that is >= 20 milliseconds.
+fast mixer period that is >= 20 ms.
 </p>
 
 <h4>Scheduling</h4>

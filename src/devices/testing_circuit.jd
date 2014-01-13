@@ -13,7 +13,8 @@ page.title=Testing Circuit
 The file <a href="http://developer.android.com/downloads/partner/audio/av_sync_board.zip">av_sync_board.zip</a>
 contains CAD files for an A/V sync and latency testing
 printed circuit board (PCB).
-The files include a fabrication drawing, EAGLE CAD, schematic, and BOM.
+The files include a fabrication drawing, EAGLE CAD, schematic, and BOM. See <a
+href="audio_latency.html">Audio Latency</a> for recommended testing methods.
 </p>
 
 <p>
@@ -28,7 +29,8 @@ are negligible relative to the audio.
 
 <p>
 This design is supplied "as is", and we aren't be responsible for any errors in the design.
-But if you have any suggestions for improvement, please post to android-porting group.
+But if you have any suggestions for improvement, please post to the <a
+href="https://groups.google.com/forum/#!forum/android-porting">android-porting</a> group.
 </p>
 
 <p>
