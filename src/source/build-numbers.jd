@@ -548,6 +548,12 @@ following table:</p>
 <td>Initial KitKat version, Nexus 5 (hammerhead)</td>
 </tr>
 
+<tr>
+<td>KRT16O</td>
+<td>android-4.4_r1.1</td>
+<td>Latest KitKat version, Nexus 7 (flo/deb/grouper/tilapia), Nexus 4, Nexus 10</td>
+</tr>
+
 </tbody>
 </table>
 <p>The branches froyo, gingerbread, ics-mr0, ics-mr1, jb-dev,
