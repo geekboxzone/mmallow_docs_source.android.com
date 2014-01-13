@@ -43,7 +43,7 @@ header.hide=1
     <div class="col-8">
     <h3>Updates</h3>
       <a href="{@docRoot}source/index.html">
-        <h4>Source Code Available for Android 4.3</h4>
+        <h4>Source Code Available for Android 4.4</h4>
         <p>Android is an open-source software stack for a wide array of mobile devices with different form factors.
 <img border="0" src="images/Android_Robot_100.png" alt="Android Partner icon" style="display:inline;float:right;margin:5px 10px"> 
         We created Android in response to our own experiences launching mobile apps. We wanted to make sure there was 
@@ -51,7 +51,7 @@ header.hide=1
         why we created Android and made its source code open.</p>
       </a>
       <a href="{@docRoot}compatibility/index.html">
-        <h4>Compatibility Definition for Android 4.3</h4>
+        <h4>Compatibility Definition for Android 4.4</h4>
         <p>Android's purpose is to establish an open platform for developers to build innovative apps. The Android 
         Compatibility program defines the technical details of the Android platform and provides tools for device manufacturers to 
         ensure developers' apps run on a variety of devices.</p>
