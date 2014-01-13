@@ -30,6 +30,10 @@ page.title=Composite sensors
 underlying base sensors, and trigger modes. Certain base sensors are required of 
 each sensor for accuracy. Using other tools to approximate results should be 
 avoided as they will invariably provide a poor user experience.</p>
+
+<p>When there is no gyroscope on the device, and
+only when there is no gyroscope, you may implement the rotation vector and
+other composite sensors without using the gyroscope.</p>
 <table>
   <tr>
 <th>Sensor type</th>
