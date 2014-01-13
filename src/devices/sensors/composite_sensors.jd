@@ -131,7 +131,8 @@ Wake-up sensor: No</em></p>
 
 <p>Indicates the linear acceleration of the device in device coordinates, not 
 including gravity. The output is conceptually:<br/>
-output of TYPE_ACCELERATION minus output of TYPE_GRAVITY.</p>
+output of <code>TYPE_ACCELERATION</code> minus output of
+<code>TYPE_GRAVITY</code>.</p>
 
 <p>Readings on all axes should be close to 0 when the device is immobile. Units are 
 m/s^2. The coordinate system is the same as is used for the acceleration sensor.</p>
@@ -193,7 +194,7 @@ before the application processor goes back to sleep, the driver must hold a
 application processor should not be allowed to go back to sleep in the 200 
 milliseconds following a wake-up interrupt.</p>
 
-<p>IMPORTANT NOTE: This sensor is very different from the other types in that it 
+<p><strong>Important</strong>: This sensor is very different from the other types in that it
 must work when the screen is off without the need for holding a partial wake 
 lock (other than the timeout wake lock) and MUST allow the SoC to go into 
 suspend. When significant motion is detected, the sensor must awaken the SoC and 
@@ -323,10 +324,10 @@ the current device orientation.</p>
 <p>The rotation is encoded as the four (reordered) components of a unit quaternion:</p>
 
 <ul>
-<li>sensors_event_t.data[0] = rot_axis.x*sin(theta/2)</li>
-<li>sensors_event_t.data[1] = rot_axis.y*sin(theta/2)</li>
-<li>sensors_event_t.data[2] = rot_axis.z*sin(theta/2)</li>
-<li>sensors_event_t.data[3] = cos(theta/2)</li>
+<li><code>sensors_event_t.data[0]</code> = rot_axis.x*sin(theta/2)</li>
+<li><code>sensors_event_t.data[1]</code> = rot_axis.y*sin(theta/2)</li>
+<li><code>sensors_event_t.data[2]</code> = rot_axis.z*sin(theta/2)</li>
+<li><code>sensors_event_t.data[3]</code> = cos(theta/2)</li>
 </ul>
 
 <p>Where:</p>
@@ -341,7 +342,7 @@ representing the rotation axis</li>
 this will cause erratic client behaviour.</p>
 
 <p>In addition, this sensor reports an estimated heading accuracy:<br/>
-sensors_event_t.data[4] = estimated_accuracy (in radians)</p>
+<code>sensors_event_t.data[4]</code> = estimated_accuracy (in radians)</p>
 
 <p>The heading error must be less than estimated_accuracy 95% of the time. This 
 sensor must use a gyroscope and an accelerometer as main orientation change 
@@ -362,7 +363,7 @@ some other reference. That reference is allowed to drift by the same order of
 magnitude as the gyroscope drifts around the Z axis.</p>
 
 <p>This sensor does not report an estimated heading accuracy:<br/>
-sensors_event_t.data[4] is reserved and should be set to 0</p>
+<code>sensors_event_t.data[4]</code> is reserved and should be set to 0</p>
 
 <p>In an ideal case, a phone rotated and returned to the same real-world 
 orientation should report the same game rotation vector (without using the 
@@ -397,7 +398,7 @@ gyroscope, and gyroscope input cannot be used by this sensor.</p>
 
 <p>Just like the rotation vector sensor, this sensor reports an estimated heading 
 accuracy:<br/>
-sensors_event_t.data[4] = estimated_accuracy (in radians)</p>
+<code>sensors_event_t.data[4]</code> = estimated_accuracy (in radians)</p>
 
 <p>The heading error must be less than estimated_accuracy 95% of the time.</p>
 
@@ -492,7 +493,8 @@ not</strong> be reported by this HAL. Instead, the regular
 <a href="{@docRoot}devices/sensors/base_triggers.html#Gyroscope">Gyroscope</a> sensor is used without drift compensation.</p>
 
 <p>If this sensor is present, then the corresponding Gyroscope sensor must be 
-present and both must return the same sensor_t::name and sensor_t::vendor.</p>
+present and both must return the same <code>sensor_t::name</code> and
+<code>sensor_t::vendor</code>.</p>
 
 <h3 id="Magnetic-field-uncalibrated">Magnetic field uncalibrated</h3>
 
@@ -525,7 +527,8 @@ These values are expected to jump as soon as the estimate of the hard iron
 changes, and they should be stable the rest of the time.</p>
 
 <p>If this sensor is present, then the corresponding Geomagnetic field sensor must 
-be present and both must return the same  sensor_t::name and sensor_t::vendor.</p>
+be present and both must return the same  <code>sensor_t::name</code> and
+<code>sensor_t::vendor</code>.</p>
 
 <p>See the <a href="{@docRoot}devices/sensors/base_triggers.html#Geomagnetic">geomagnetic field</a> sensor description for more 
 information.<br/></p>

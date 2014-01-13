@@ -55,7 +55,7 @@ and the Android framework; the <a href="http://developer.android.com/reference/a
   The JNI code associated with <a href="http://developer.android.com/reference/android/hardware/package-summary.html">android.hardware</a> is located in the frameworks/base/core/jni/ directory. This code calls the lower 
   level native code to obtain access to the sensor hardware.</p>
 <p>Native framework<br/>
-  The native framework is defined in frameworks/native/ and provides a native 
+  The native framework is defined in <code>frameworks/native/</code> and provides a native
   equivalent to the <a href="http://developer.android.com/reference/android/hardware/package-summary.html">android.hardware</a> package. The native framework calls the Binder IPC proxies to obtain access to 
   sensor-specific services.</p>
 <p>Binder IPC<br/>
@@ -64,7 +64,9 @@ and the Android framework; the <a href="http://developer.android.com/reference/a
   The Hardware Abstraction Layer (HAL) defines the standard interface that sensor 
   services call into and that you must implement to have your sensor hardware 
   function correctly. The sensor HAL interfaces are located in 
-  hardware/libhardware/include/hardware.</p>
+  <code>hardware/libhardware/include/hardware</code>. See <a
+href="http://source.android.com/devices/reference/sensors_8h.html">sensors.h</a> for
+additional details.</p>
 <p>Kernel Driver<br/>
   The sensors driver interacts with the hardware and your implementation of the 
   HAL. The HAL is driver-agnostic.</p>
@@ -171,14 +173,14 @@ mode, but must also wake it up when an event is triggered.</p>
 <h4 id="getSensorList">getSensorList(sensor_type)</h4>
 <p>Provide the list of sensors implemented by the HAL for the given sensor type. </p>
 <p>Developers may then make multiple calls to get sensors of different types or use 
-  Sensor.TYPE_ALL to get all the sensors. See getSensorList() defined on 
+  <code>Sensor.TYPE_ALL</code> to get all the sensors. See getSensorList() defined on
   developer.android.com for more details.</p>
 <h4 id="activate">activate(sensor, true/false)</h4>
 <pre>
             int (*activate)(struct sensors_poll_device_t *dev,
                     int handle, int enabled);</pre>
 <p>Activates or deactivates the sensor with the specified handle. Handles must be 
-  higher than SENSORS_HANDLE_BASE and must be unique. A handle identifies a given 
+  higher than <code>SENSORS_HANDLE_BASE</code> and must be unique. A handle identifies a given
   sensor. The handle is used to activate and/or deactivate sensors. In this 
   version of the API, there can only be 256 handles.</p>
 <p>The handle is the handle of the sensor to change. The enabled argument is set to 
@@ -210,16 +212,17 @@ href="{@docRoot}devices/sensors/batching.html">Batching</a> section for details.
             int (*setDelay)(struct sensors_poll_device_t *dev,
                     int handle, int64_t period_ns);
 </pre>
-<p>Sets the event's period in nanoseconds for a given sensor. What the period_ns 
-  parameter means depends on the specified sensor's trigger mode:</p>
+<p>Sets the event's period in nanoseconds for a given sensor. What the
+<code>period_ns</code> parameter means depends on the specified sensor's trigger mode:</p>
 <ul>
   <li>Continuous: setDelay() sets the sampling rate.</li>
   <li>On-change: setDelay() limits the delivery rate of events.</li>
   <li>One-shot: setDelay() is ignored. It has no effect.</li>
   <li>Special: See specific sensor type descriptions.</li>
 </ul>
-<p>For continuous and on-change sensors, if the requested value is less than sensor_t::minDelay,
-then it's silently clamped to sensor_t::minDelay unless sensor_t::minDelay is 0,
+<p>For continuous and on-change sensors, if the requested value is less than
+<code>sensor_t::minDelay</code>, then it's silently clamped to
+<code>sensor_t::minDelay</code> unless <code>sensor_t::minDelay</code> is 0,
 in which case it is clamped to &gt;= 1ms. setDelay will not be called when the sensor is
 in batching mode. In this case, batch() will be called with the new period. Return 0 if successful, 
 &lt; 0 on error.</p>
@@ -230,20 +233,21 @@ necessary.</p>
 <pre>
             int (*flush)(struct sensors_poll_device_1* dev, int handle);
 </pre>
-<p>Flush adds a META_DATA_FLUSH_COMPLETE event (sensors_event_meta_data_t) to the 
+<p>Flush adds a <code>META_DATA_FLUSH_COMPLETE</code> event
+(<code>sensors_event_meta_data_t</code>) to the
   end of the &quot;batch mode&quot; FIFO for the specified sensor and flushes the FIFO; 
   those events are delivered as usual (i.e.: as if the batch timeout had expired) 
   and removed from the FIFO.<br/>
   <br/>
   The flush happens asynchronously (i.e.: this function must return immediately). 
   If the implementation uses a single FIFO for several sensors, that FIFO is 
-  flushed and the META_DATA_FLUSH_COMPLETE event is added only for the specified 
+  flushed and the <code>META_DATA_FLUSH_COMPLETE</code> event is added only for the specified
   sensor.<br/>
   <br/>
   If the specified sensor wasn't in batch mode, flush succeeds and promptly sends 
-  a META_DATA_FLUSH_COMPLETE event for that sensor.</p>
+  a <code>META_DATA_FLUSH_COMPLETE</code> event for that sensor.</p>
 <p>If the FIFO was empty at the time of the call, flush returns 0 (success) and 
-  promptly sends a META_DATA_FLUSH_COMPLETE event for that sensor.<br/>
+  promptly sends a <code>META_DATA_FLUSH_COMPLETE</code> event for that sensor.<br/>
   <br/>
   If the specified sensor wasn't enabled, flush returns -EINVAL. return 0 on 
   success, negative errno code otherwise.</p>
