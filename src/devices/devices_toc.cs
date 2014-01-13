@@ -24,7 +24,6 @@
       </a>
     </div>
     <ul>
-      <li><a href="<?cs var:toroot ?>devices/media.html">Media</a></li>
       <li class="nav-section">
       <div class="nav-section-header">
         <a href="<?cs var:toroot ?>devices/audio.html">
@@ -50,18 +49,58 @@
           <li><a href="<?cs var:toroot ?>devices/audio_terminology.html">Terminology</a></li>
         </ul>
       </li>
-      <li><a href="<?cs var:toroot ?>devices/camera.html">Camera v1</a></li>
-      <li><a href="<?cs var:toroot ?>devices/camera3.html">Camera v3</a></li>
-      <li><a href="<?cs var:toroot ?>devices/drm.html">DRM</a></li>
-      <li><a href="<?cs var:toroot ?>devices/graphics.html">Graphics</a></li>
       <li><a href="<?cs var:toroot ?>devices/bluetooth.html">Bluetooth</a></li>
-      <!-- Find a better section for these -->
+      <li><a href="<?cs var:toroot ?>devices/camera.html">Camera</a></li>
+      <li><a href="<?cs var:toroot ?>devices/drm.html">DRM</a></li>
+      <li><a href="<?cs var:toroot ?>devices/tech/encryption/index.html">Encryption</a></li>
+      <li><a href="<?cs var:toroot ?>devices/tech/storage/index.html">External Storage</a></li>
+      <li><a href="<?cs var:toroot ?>devices/graphics.html">Graphics</a></li>
       <li class="nav-section">
-        <div class="nav-section-header empty">
-          <a href="<?cs var:toroot ?>devices/reference/files.html">
-            <span class="en">Reference</span>
+        <div class="nav-section-header">
+          <a href="<?cs var:toroot ?>devices/tech/input/index.html">
+            <span class="en">Input</span>
           </a>
         </div>
+        <ul>
+          <li><a href="<?cs var:toroot ?>devices/tech/input/overview.html">Overview</a></li>
+          <li><a href="<?cs var:toroot ?>devices/tech/input/key-layout-files.html">Key Layout Files</a></li>
+          <li><a href="<?cs var:toroot ?>devices/tech/input/key-character-map-files.html">Key Character Map Files</a></li>
+          <li><a href="<?cs var:toroot ?>devices/tech/input/input-device-configuration-files.html">Input Device Configuration Files</a></li>
+          <li><a href="<?cs var:toroot ?>devices/tech/input/migration-guide.html">Migration Guide</a></li>
+          <li><a href="<?cs var:toroot ?>devices/tech/input/keyboard-devices.html">Keyboard Devices</a></li>
+          <li><a href="<?cs var:toroot ?>devices/tech/input/touch-devices.html">Touch Devices</a></li>
+          <li><a href="<?cs var:toroot ?>devices/tech/input/dumpsys.html">Dumpsys</a></li>
+          <li><a href="<?cs var:toroot ?>devices/tech/input/getevent.html">Getevent</a></li>
+          <li><a href="<?cs var:toroot ?>devices/tech/input/validate-keymaps.html">Validate Keymaps</a></li>
+        </ul>
+      </li>
+      <li><a href="<?cs var:toroot ?>devices/media.html">Media</a></li>
+     <li class="nav-section">
+          <div class="nav-section-header">
+            <a href="<?cs var:toroot ?>devices/tech/security/index.html">
+              <span class="en">Security</span>
+            </a>
+          </div>
+          <ul>
+            <li>
+              <a href="<?cs var:toroot
+?>devices/tech/security/enhancements42.html">
+                <span class="en">Security Enhancements in Android 4.2</span>
+              </a>
+            </li>
+            <li>
+              <a href="<?cs var:toroot
+?>devices/tech/security/enhancements43.html">
+                <span class="en">Security Enhancements in Android 4.3</span>
+              </a>
+            </li>
+            <li>
+              <a href="<?cs var:toroot ?>devices/tech/security/se-linux.html">
+                <span class="en">Security-Enhanced Linux</span>
+              </a>
+            </li>
+
+          </ul>
       </li>
     </ul>
   </li>
@@ -118,38 +157,11 @@
       </li>
 
       <li class="nav-section">
-        <div class="nav-section-header">
-          <a href="<?cs var:toroot ?>devices/tech/encryption/index.html">
-            <span class="en">Encryption</span>
+        <div class="nav-section-header empty">
+          <a href="<?cs var:toroot ?>devices/reference/files.html">
+            <span class="en">HAL File Reference</span>
           </a>
         </div>
-        <ul>
-          <li><a href="<?cs var:toroot ?>devices/tech/encryption/android_crypto_implementation.html">Encryption Technical Information</a></li>
-        </ul>
-      </li>
-     <li>
-          <a href="<?cs var:toroot ?>devices/tech/storage/index.html">
-            <span class="en">External Storage</span>
-          </a>
-      </li>
-      <li class="nav-section">
-        <div class="nav-section-header">
-          <a href="<?cs var:toroot ?>devices/tech/input/index.html">
-            <span class="en">Input</span>
-          </a>
-        </div>
-        <ul>
-          <li><a href="<?cs var:toroot ?>devices/tech/input/overview.html">Overview</a></li>
-          <li><a href="<?cs var:toroot ?>devices/tech/input/key-layout-files.html">Key Layout Files</a></li>
-          <li><a href="<?cs var:toroot ?>devices/tech/input/key-character-map-files.html">Key Character Map Files</a></li>
-          <li><a href="<?cs var:toroot ?>devices/tech/input/input-device-configuration-files.html">Input Device Configuration Files</a></li>
-          <li><a href="<?cs var:toroot ?>devices/tech/input/migration-guide.html">Migration Guide</a></li>
-          <li><a href="<?cs var:toroot ?>devices/tech/input/keyboard-devices.html">Keyboard Devices</a></li>
-          <li><a href="<?cs var:toroot ?>devices/tech/input/touch-devices.html">Touch Devices</a></li>
-          <li><a href="<?cs var:toroot ?>devices/tech/input/dumpsys.html">Dumpsys</a></li>
-          <li><a href="<?cs var:toroot ?>devices/tech/input/getevent.html">Getevent</a></li>
-          <li><a href="<?cs var:toroot ?>devices/tech/input/validate-keymaps.html">Validate Keymaps</a></li>
-        </ul>
       </li>
 
       <li>
@@ -162,31 +174,6 @@
           <a href="<?cs var:toroot ?>devices/tech/power.html">
             <span class="en">Power</span>
           </a>
-      </li>
-     <li class="nav-section">
-          <div class="nav-section-header">
-            <a href="<?cs var:toroot ?>devices/tech/security/index.html">
-              <span class="en">Security</span>
-            </a>
-          </div>
-          <ul>
-            <li>
-              <a href="<?cs var:toroot ?>devices/tech/security/enhancements42.html">
-                <span class="en">Security Enhancements in Android 4.2</span>
-              </a>
-            </li>
-            <li>
-              <a href="<?cs var:toroot ?>devices/tech/security/enhancements43.html">
-                <span class="en">Security Enhancements in Android 4.3</span>
-              </a>
-            </li>
-            <li>
-              <a href="<?cs var:toroot ?>devices/tech/security/se-linux.html">
-                <span class="en">Security-Enhanced Linux</span>
-              </a>
-            </li>
-
-          </ul>
       </li>
 
       <li class="nav-section">
@@ -211,7 +198,7 @@
           <li id="tradefed-tree-list" class="nav-section">
             <div class="nav-section-header">
               <a href="<?cs var:toroot ?>reference/packages.html">
-            <span class="en">Reference</span>
+            <span class="en">Package Index</span>
           </a>
         <div>
       </li>
