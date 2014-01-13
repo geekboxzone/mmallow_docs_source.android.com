@@ -47,7 +47,7 @@ CTS User Manual</a> for detailed instructions.</p>
 <p>For CTS versions 2.1 R2 through 4.2 R4, set up your device (or emulator) to run the accessibility tests:</p>
 <ol>
 <li>
-<p>adb install -r android-cts/repository/testcases/CtsDelegatingAccessibilityService.apk</p>
+<code>adb install -r android-cts/repository/testcases/CtsDelegatingAccessibilityService.apk</code>
 </li>
 <li>
 <p>On the device, enable Settings &gt; Accessibility &gt; Accessibility &gt; Delegating Accessibility Service</p>
@@ -58,11 +58,12 @@ CTS User Manual</a> for detailed instructions.</p>
 <p>For CTS 2.3 R4 and beyond, set up your device to run the device administration tests:</p>
 <ol>
 <li>
-<p>adb install -r android-cts/repository/testcases/CtsDeviceAdmin.apk</p>
+<code>adb install -r android-cts/repository/testcases/CtsDeviceAdmin.apk</code>
 </li>
 <li>
-<p>On the device, enable the two android.deviceadmin.cts.CtsDeviceAdminReceiver* device administrators under Settings &gt; Location &amp; security &gt; Select device administrators</p>
-<p><strong>Note</strong>: Make sure the android.deviceadmin.cts.CtsDeviceAdminDeactivatedReceiver
+<p>On the device, enable the two <code>android.deviceadmin.cts.CtsDeviceAdminReceiver*</code> device
+administrators under Settings &gt; Location &amp; security &gt; Select device administrators</p>
+<p><strong>Note</strong>: Make sure the <code>android.deviceadmin.cts.CtsDeviceAdminDeactivatedReceiver</code>
 stays disabled in the same menu.</p>
 </li>
 </ol>
@@ -74,7 +75,9 @@ stays disabled in the same menu.</p>
 <p>Unzip the CTS Media zip file.</p>
 </li>
 <li>
-<p>Run copy_media.sh [720x480|1280x720|1920x1080|all] [-s serial]. If no resolution is specified, the default maximum resolution of 480x360 is assumed.</p>
+<p>Run the following command. If no resolution is specified, the default maximum resolution of
+480x360 is assumed:</p>
+<code>copy_media.sh [720x480|1280x720|1920x1080|all] [-s serial]</code>
 </li>
 </ol>
 </li>
