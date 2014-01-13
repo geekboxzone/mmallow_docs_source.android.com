@@ -23,3 +23,7 @@ the Android project.</p>
 with the ongoing development of Dalvik, as opposed to most of the
 other documentation on this site, which is geared more towards
 application development.</p>
+
+<p>Please note, in Android 4.4 a new virtual machine - ART - is being introduced
+experimentally that will eventually replace Dalvik. Please see <a
+href="{@docRoot}devices/tech/dalvik/art.html">Introducing ART</a> for details.
