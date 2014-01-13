@@ -124,10 +124,7 @@ alt="low-power sensors"/>
   another. This is a key element of compatibility testing.</p>
 <h3 id="suspend">Interaction with suspend mode</h3>
 <p>Unless otherwise noted, an enabled sensor shall not prevent the system on a chip 
-  (SoC) from going into suspend mode. See the <a
-href="{@docRoot}devices/sensors/batching.html#Suspend">Suspend 
-    mode</a> section for a full description of the expected 
-  behavior in this mode. It is the responsibility of applications to keep a 
+  (SoC) from going into suspend mode. It is the responsibility of applications to keep a 
   partial <a href="http://developer.android.com/reference/android/os/PowerManager.WakeLock.html">wake 
     lock</a> should they wish to receive sensor events while the screen is off. While in 
   suspend mode, and unless otherwise noted (<a
@@ -143,16 +140,9 @@ href="{@docRoot}devices/sensors/batching.html">batch</a> mode
   internal FIFO. (See the documentation of <a
 href="{@docRoot}devices/sensors/batching.html">batch</a> mode 
   to learn how suspend interacts with batch mode.)</p>
-<p>In batch mode, and only when the flag SENSORS_BATCH_WAKE_UPON_FIFO_FULL is set 
-  and supported, the specified sensor must be able to wake-up the SoC and be able 
-  to buffer at least 10 seconds worth of the requested sensor events.</p>
-<p>There are notable exceptions to this behavior, which are sensor-dependent. (See 
-  the sensor types descriptions below.)</p>
-<p>The individual sensor references specify the wake-up behavior of each sensor:</p>
-<ul>
-  <li>wake-up: yes - this sensor must wake-up the SoC to deliver events</li>
-  <li>wake-up: no - this sensor shall not wake-up the SoC; events are dropped</li>
-</ul>
+<p>Wake-up sensors are a notable exception to the above. Wake-up sensors must
+wake up the SoC to deliver events. They must still let the SoC go into suspend
+mode, but must also wake it up when an event is triggered.</p>
 <h3 id="fusion">Sensor fusion and virtual sensors</h3>
 <p>Many composite sensor types are or can be implemented as virtual sensors from 
   underlying base sensors on the device. Examples of composite sensors types 
@@ -168,8 +158,8 @@ href="{@docRoot}devices/sensors/batching.html">batch</a> mode
 <p>These are the common sensor calls expected at the HAL level:</p>
 <ol>
   <li><em>getSensorList()</em> - Gets the list of all sensors.</li>
-  <li><em>activate()</em> - Starts the specified sensor.</li>
-  <li><em>batch</em> - Sets parameters to group event data collection and optimize power use.</li>
+  <li><em>activate()</em> - Starts or stops the specified sensor.</li>
+  <li><em>batch()</em> - Sets parameters to group event data collection and optimize power use.</li>
   <li><em>setDelay()</em> - Sets the event's period in 
     nanoseconds for a given sensor.</li>
   <li><em>flush()</em> - Flush adds an event to the end of the 
