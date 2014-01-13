@@ -26,15 +26,10 @@ page.title=Running Android with low RAM
 
 <h2 id="intro">Introduction</h2>
 
-<p>In release 4.4, Android begins explicit support for devices with 512MB
-memory. As of Q3 2013, more than 30% of all Android devices run on
-platform versions older than 4.0. Most of these devices tend to be low-end with
-512MB or less RAM. One of the primary goals of this release 
-is to ensure Android can continue to run on a 512MB device.</p>
-
-<p>This documentation is intended to help OEMs optimize and configure Android 4.4 for 
-  low-RAM devices. Several of these optimizations are generic enough that 
-they can be applied to previous releases as well. </p>
+<p>Android now supports devices with 512MB of RAM. This documentation is intended 
+to help OEMs optimize and configure Android 4.4 for low-memory devices. Several 
+of these optimizations are generic enough that they can be applied to previous 
+releases as well.</p>
 
 <h2 id="optimizations">Android 4.4 platform optimizations</h2>
 
@@ -86,7 +81,7 @@ wrong thing).
 <h2 id="build-time">Build-time configuration</h2>
 <h3 id="flag">Enable Low Ram Device flag</h3>
 <p>We are introducing a new API called <code>ActivityManager.isLowRamDevice()</code> for applications to  determine if they should turn off specific memory-intensive 
-  features that work poorly on low-end devices.</p>
+  features that work poorly on low-memory devices.</p>
 <p>For 512MB devices, this API is expected to return: "true" It can be enabled by 
   the following system property in the device makefile.<br/>
 <code>PRODUCT_PROPERTY_OVERRIDES += ro.config.low_ram=true</code></p>
@@ -111,7 +106,7 @@ the really low-memory devices, we recommend the JIT be disabled entirely.<code>
 
 
   <p>Ensure the default wallpaper setup on launcher is <strong>not</strong>
-using live-wallpaper. Low-end devices should not pre-install any live wallpapers. </p>
+using live-wallpaper. Low-memory devices should not pre-install any live wallpapers. </p>
 
 
 <h2 id="kernel">Kernel configuration</h2>
