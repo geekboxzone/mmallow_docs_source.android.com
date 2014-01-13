@@ -84,6 +84,7 @@
           <li><a href="<?cs var:toroot ?>devices/tech/input/validate-keymaps.html">Validate Keymaps</a></li>
         </ul>
       </li>
+      <li><a href="<?cs var:toroot ?>devices/low-ram.html">Low RAM</a></li>
       <li><a href="<?cs var:toroot ?>devices/media.html">Media</a></li>
      <li class="nav-section">
           <div class="nav-section-header">
