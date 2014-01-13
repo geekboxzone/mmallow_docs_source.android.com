@@ -85,7 +85,7 @@ stays disabled in the same menu.</p>
 <p>Launch the CTS. The CTS test harness loads the test plan onto the attached devices. For each test in the test harness:</p>
 <ul>
 <li>
-<p>The test harness pushes a .apk file to each device, executes the test through instrumentation, and records test results.</p>
+<p>The test harness pushes an .apk file to each device, executes the test through instrumentation, and records test results.</p>
 </li>
 <li>
 <p>The test harness removes the .apk file from each device.</p>
@@ -93,7 +93,8 @@ stays disabled in the same menu.</p>
 </ul>
 </li>
 <li>
-<p>Once all the tests are executed, you can view the test results in your browser and use the results to adjust your design. You can continue to run the CTS throughout your development process.</p>
+<p>Once all the tests are executed, view the test results in your browser and
+use them to adjust your design. You can continue to run the CTS throughout your development process.</p>
 </li>
 </ol>
 <h2 id="types-of-test-cases">Types of test cases</h2>
@@ -106,7 +107,8 @@ stays disabled in the same menu.</p>
 <p><em>Functional tests</em> test a combination of APIs together in a higher-level use-case.</p>
 </li>
 <li>
-<p><em>Reference application tests</em> instrument a complete sample application to exercise a full set of APIs and Android runtime services</p>
+<p><em>Reference application tests</em> instrument a complete sample application
+to exercise a full set of APIs and Android runtime services.</p>
 </li>
 </ul>
 <p>Future versions of the CTS will include the following types of test cases:</p>
@@ -138,7 +140,7 @@ stays disabled in the same menu.</p>
 </tr>
 <tr>
 <td>Dalvik VM Tests</td>
-<td>The tests focus on testing the Dalvik VM</td>
+<td>The tests focus on testing the Dalvik VM.</td>
 </tr>
 <tr>
 <td>Platform Data Model</td>
