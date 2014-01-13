@@ -1,0 +1,1570 @@
+page.title=Camera Version 3 
+@jd:body
+
+<!--
+    Copyright 2010 The Android Open Source Project
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+<div id="qv-wrapper">
+  <div id="qv">
+    <h2>In this document</h2>
+    <ol id="auto-toc">
+    </ol>
+  </div>
+</div>
+
+<p>Android's camera HAL connects the higher level
+camera framework APIs in <a
+href="http://developer.android.com/reference/android/hardware/package-summary.html">android.hardware</a>
+to your underlying camera driver and hardware. The latest version of Android introduces a new, underlying 
+implementation of the camera stack. If you have previously developed a camera HAL module and driver for
+other versions of Android, be aware that there are significant changes in the camera pipeline.</p>
+
+<p>Version 1 of the camera HAL is still supported for future releases of Android, because many devices
+still rely on it. Implementing both HALs is also supported by
+the Android camera service, which is useful when you want to support a
+less capable front-facing camera with version 1 of HAL and a more advanced
+back-facing camera with the version 3 of HAL. Version 2 was a stepping stone to
+version 3 and is not supported.</p>
+
+<p class="note"><strong>Note:</strong> The new camera HAL is in active development and can change
+  at any time. This document describes at a high level the design of the camera subsystem and
+  omits many details. Stay tuned for more updates to the PDK repository and look out for updates
+  to the HAL and reference implementation of the HAL for more information.
+</p>
+
+
+<h2 id="overview">Overview</h2>
+<p>Version 1 of the camera subsystem was designed as a black box with high-level controls.
+  Roughly speaking, the old subsystem has three operating modes:
+</p>
+
+<ul>
+<li>Preview</li>
+<li>Video Record</li>
+<li>Still Capture</li>
+</ul>
+ 
+<p>Each mode has slightly different capabilities and overlapping capabilities.
+This made it hard to implement new types of features, such as burst mode,
+since it would fall between two of these modes.
+</p>
+
+<p>
+Version 3 of the camera subsystem structures the operation modes into a single unified view,
+which can be used to implement any of the previous modes and several others, such as burst mode.
+In simple terms, the app framework requests a frame from the camera subsystem,
+and the camera subsystem returns results to an output stream.
+In addition, metadata that contains information such as
+color spaces and lens shading is generated for each set of results.
+The following sections and diagram give you more detail about each component.</p>
+
+ <img src="images/camera2_block.png" />
+
+ <p class="img-caption"><strong>Figure 1.</strong> Camera block diagram</p>
+ <h3 id="supported-version">Supported version</h3>
+ <p>Camera devices that support this version of the HAL must return
+   CAMERA_DEVICE_API_VERSION_3_1 in camera_device_t.common.version and in
+   camera_info_t.device_version (from camera_module_t.get_camera_info).</p>
+<p>Camera modules that may contain version 3.1 devices must implement at least
+   version 2.0 of the camera module interface (as defined by
+   camera_module_t.common.module_api_version).</p>
+ <p>See camera_common.h for more versioning details. </p>
+ <h3 id="version-history">Version history</h3>
+<h4>1.0</h4>
+<p>Initial Android camera HAL (Android 4.0) [camera.h]: </p>
+ <ul>
+   <li> Converted from C++ CameraHardwareInterface abstraction layer.</li>
+   <li> Supports android.hardware.Camera API.</li>
+</ul>
+ <h4>2.0</h4>
+ <p>Initial release of expanded-capability HAL (Android 4.2) [camera2.h]:</p>
+ <ul>
+   <li> Sufficient for implementing existing android.hardware.Camera API.</li>
+   <li> Allows for ZSL queue in camera service layer</li>
+   <li> Not tested for any new features such manual capture control, Bayer RAW
+     capture, reprocessing of RAW data.</li>
+ </ul>
+ <h4>3.0</h4>
+ <p>First revision of expanded-capability HAL:</p>
+ <ul>
+   <li> Major version change since the ABI is completely different. No change to
+     the required hardware capabilities or operational model from 2.0.</li>
+   <li> Reworked input request and stream queue interfaces: Framework calls into
+     HAL with next request and stream buffers already dequeued. Sync framework
+     support is included, necessary for efficient implementations.</li>
+   <li> Moved triggers into requests, most notifications into results.</li>
+   <li> Consolidated all callbacks into framework into one structure, and all
+     setup methods into a single initialize() call.</li>
+   <li> Made stream configuration into a single call to simplify stream
+     management. Bidirectional streams replace STREAM_FROM_STREAM construct.</li>
+   <li> Limited mode semantics for older/limited hardware devices.</li>
+ </ul>
+ <h4>3.1</h4>
+ <p>Minor revision of expanded-capability HAL:</p>
+ <ul>
+   <li> configure_streams passes consumer usage flags to the HAL.</li>
+   <li> flush call to drop all in-flight requests/buffers as fast as possible.
+   </li>
+ </ul>
+<h2 id="requests">Requests</h2>
+<p>
+The app framework issues requests for captured results to the
+camera subsystem. One request corresponds to one set of results. A request encapsulates
+all configuration information about the capturing
+and processing of those results. This includes things such as resolution and pixel format; manual
+sensor, lens, and flash control; 3A operating modes; RAW to YUV processing control; and statistics
+generation. This allows for much more control over the results' output and processing. Multiple
+requests can be in flight at once and submitting requests is non-blocking. And the requests are always 
+processed in the order they are received.
+</p>
+
+
+<h2 id="hal">The HAL and camera subsystem</h2>
+<p>
+The camera subsystem includes the implementations for components in the camera pipeline such as the 3A algorithm and processing controls. The camera HAL
+provides interfaces for you to implement your versions of these components. To maintain cross-platform compatibility between
+multiple device manufacturers and ISP vendors, the camera pipeline model is virtual and does not directly correspond to any real ISP.
+However, it is similar enough to real processing pipelines so that you can map it to your hardware efficiently. 
+In addition, it is abstract enough to allow for multiple different algorithms and orders of operation
+without compromising either quality, efficiency, or cross-device compatibility.<p>
+
+<p>
+ The camera pipeline also supports triggers
+that the app framework can initiate to turn on things such as auto-focus. It also sends notifications back
+to the app framework, notifying apps of events such as an auto-focus lock or errors. </p>
+
+ <img id="figure2" src="images/camera2_hal.png" /> <p class="img-caption"><strong>Figure 2.</strong> Camera pipeline
+
+<p>
+Please note, some image processing blocks shown in the diagram above are not
+well-defined in the initial release.
+</p>
+
+<p>
+The camera pipeline makes the following assumptions:
+</p>
+
+<ul>
+  <li>RAW Bayer output undergoes no processing inside the ISP.</li>
+  <li>Statistics are generated based off the raw sensor data.</li>
+  <li>The various processing blocks that convert raw sensor data to YUV are in
+an arbitrary order.</li>
+  <li>While multiple scale and crop units are shown, all scaler units share the output region controls (digital zoom).
+    However, each unit may have a different output resolution and pixel format.</li>
+</ul>
+
+<h3 id="startup">Startup and expected operation sequence</h3>
+<p>Please see <a
+href="https://android.googlesource.com/platform/hardware/libhardware/+/master/include/hardware/camera3.h">platform/hardware/libhardware/include/hardware/camera3.h</a> 
+for definitions of these structures and methods.</p>
+<ol>
+  <li>Framework calls camera_module_t-&gt;common.open(), which returns a
+    hardware_device_t structure.</li>
+  <li>Framework inspects the hardware_device_t-&gt;version field, and
+instantiates
+    the appropriate handler for that version of the camera hardware device. In
+    case the version is CAMERA_DEVICE_API_VERSION_3_0, the device is cast to
+    a camera3_device_t.</li>
+  <li>Framework calls camera3_device_t-&gt;ops-&gt;initialize() with the
+framework
+    callback function pointers. This will only be called this one time after
+    open(), before any other functions in the ops structure are called.</li>
+  <li>The framework calls camera3_device_t-&gt;ops-&gt;configure_streams() with
+a list
+    of input/output streams to the HAL device.</li>
+  <li>The framework allocates gralloc buffers and calls
+    camera3_device_t-&gt;ops-&gt;register_stream_buffers() for at least one of
+the
+    output streams listed in configure_streams. The same stream is registered
+    only once.</li>
+  <li>The framework requests default settings for some number of use cases with
+    calls to camera3_device_t-&gt;ops-&gt;construct_default_request_settings().
+This
+    may occur any time after step 3.</li>
+  <li>The framework constructs and sends the first capture request to the HAL
+    with settings based on one of the sets of default settings, and with at
+    least one output stream that has been registered earlier by the
+    framework. This is sent to the HAL with
+    camera3_device_t-&gt;ops-&gt;process_capture_request(). The HAL must block
+the
+    return of this call until it is ready for the next request to be sent.</li>
+  <li>The framework continues to submit requests, and possibly call
+    register_stream_buffers() for not-yet-registered streams, and call
+    construct_default_request_settings to get default settings buffers for
+    other use cases.</li>
+  <li>When the capture of a request begins (sensor starts exposing for the
+    capture), the HAL calls camera3_callback_ops_t-&gt;notify() with the SHUTTER
+    event, including the frame number and the timestamp for start of exposure.
+    This notify call must be made before the first call to
+    process_capture_result() for that frame number.</li>
+  <li>After some pipeline delay, the HAL begins to return completed captures to
+    the framework with camera3_callback_ops_t-&gt;process_capture_result().
+These
+    are returned in the same order as the requests were submitted. Multiple
+    requests can be in flight at once, depending on the pipeline depth of the
+    camera HAL device.</li>
+  <li>After some time, the framework may stop submitting new requests, wait for
+    the existing captures to complete (all buffers filled, all results
+    returned), and then call configure_streams() again. This resets the camera
+    hardware and pipeline for a new set of input/output streams. Some streams
+    may be reused from the previous configuration; if these streams' buffers
+    had already been registered with the HAL, they will not be registered
+    again. The framework then continues from step 7, if at least one
+    registered output stream remains. (Otherwise, step 5 is required
+first.)</li>
+  <li>Alternatively, the framework may call
+camera3_device_t-&gt;common-&gt;close()
+    to end the camera session. This may be called at any time when no other
+    calls from the framework are active, although the call may block until all
+    in-flight captures have completed (all results returned, all buffers
+    filled). After the close call returns, no more calls to the
+    camera3_callback_ops_t functions are allowed from the HAL. Once the
+    close() call is underway, the framework may not call any other HAL device
+    functions.</li>
+  <li>In case of an error or other asynchronous event, the HAL must call
+    camera3_callback_ops_t-&gt;notify() with the appropriate error/event
+    message. After returning from a fatal device-wide error notification, the
+    HAL should act as if close() had been called on it. However, the HAL must
+    either cancel or complete all outstanding captures before calling
+    notify(), so that once notify() is called with a fatal error, the
+    framework will not receive further callbacks from the device. Methods
+    besides close() should return -ENODEV or NULL after the notify() method
+    returns from a fatal error message.
+  </li>
+</ol>
+<h3>Operational modes</h3>
+<p>The camera 3 HAL device can implement one of two possible operational modes:
+  limited and full. Full support is expected from new higher-end
+  devices. Limited mode has hardware requirements roughly in line with those
+  for a camera HAL device v1 implementation, and is expected from older or
+  inexpensive devices. Full is a strict superset of limited, and they share the
+  same essential operational flow, as documented above.</p>
+<p>The HAL must indicate its level of support with the
+  android.info.supportedHardwareLevel static metadata entry, with 0 indicating
+  limited mode, and 1 indicating full mode support.</p>
+<p>Roughly speaking, limited-mode devices do not allow for application control
+  of capture settings (3A control only), high-rate capture of high-resolution
+  images, raw sensor readout, or support for YUV output streams above maximum
+  recording resolution (JPEG only for large images).</p>
+<p>Here are the details of limited-mode behavior:</p>
+<ul>
+  <li>Limited-mode devices do not need to implement accurate synchronization
+    between capture request settings and the actual image data
+    captured. Instead, changes to settings may take effect some time in the
+    future, and possibly not for the same output frame for each settings
+    entry. Rapid changes in settings may result in some settings never being
+    used for a capture. However, captures that include high-resolution output
+    buffers ( &gt; 1080p ) have to use the settings as specified (but see below
+  for processing rate).<br />
+  <br />
+  </li>
+  <li>(TODO: Is this reference properly located? It was after the settings list below.) Captures in limited mode that include high-resolution (&gt; 1080p) output
+  buffers may block in process_capture_request() until all the output buffers
+  have been filled. A full-mode HAL device must process sequences of
+  high-resolution requests at the rate indicated in the static metadata for
+  that pixel format. The HAL must still call process_capture_result() to
+  provide the output; the framework must simply be prepared for
+  process_capture_request() to block until after process_capture_result() for
+  that request completes for high-resolution captures for limited-mode
+  devices.<br />
+    <br />
+  </li>
+  <li>Limited-mode devices do not need to support most of the
+    settings/result/static info metadata. Full-mode devices must support all
+    metadata fields listed in TODO. Specifically, only the following settings
+    are expected to be consumed or produced by a limited-mode HAL device:
+    <blockquote>
+      <p> android.control.aeAntibandingMode (controls)<br />
+android.control.aeExposureCompensation (controls)<br />
+android.control.aeLock (controls)<br />
+android.control.aeMode (controls)<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[OFF means ON_FLASH_TORCH - TODO]<br />
+android.control.aeRegions (controls)<br />
+android.control.aeTargetFpsRange (controls)<br />
+android.control.afMode (controls)<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[OFF means infinity focus]<br />
+android.control.afRegions (controls)<br />
+android.control.awbLock (controls)<br />
+android.control.awbMode (controls)<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[OFF not supported]<br />
+android.control.awbRegions (controls)<br />
+android.control.captureIntent (controls)<br />
+android.control.effectMode (controls)<br />
+android.control.mode (controls)<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[OFF not supported]<br />
+android.control.sceneMode (controls)<br />
+android.control.videoStabilizationMode (controls)<br />
+android.control.aeAvailableAntibandingModes (static)<br />
+android.control.aeAvailableModes (static)<br />
+android.control.aeAvailableTargetFpsRanges (static)<br />
+android.control.aeCompensationRange (static)<br />
+android.control.aeCompensationStep (static)<br />
+android.control.afAvailableModes (static)<br />
+android.control.availableEffects (static)<br />
+android.control.availableSceneModes (static)<br />
+android.control.availableVideoStabilizationModes (static)<br />
+android.control.awbAvailableModes (static)<br />
+android.control.maxRegions (static)<br />
+android.control.sceneModeOverrides (static)<br />
+android.control.aeRegions (dynamic)<br />
+android.control.aeState (dynamic)<br />
+android.control.afMode (dynamic)<br />
+android.control.afRegions (dynamic)<br />
+android.control.afState (dynamic)<br />
+android.control.awbMode (dynamic)<br />
+android.control.awbRegions (dynamic)<br />
+android.control.awbState (dynamic)<br />
+android.control.mode (dynamic)</p>
+      <p> android.flash.info.available (static)</p>
+      <p> android.info.supportedHardwareLevel (static)</p>
+      <p> android.jpeg.gpsCoordinates (controls)<br />
+        android.jpeg.gpsProcessingMethod (controls)<br />
+        android.jpeg.gpsTimestamp (controls)<br />
+        android.jpeg.orientation (controls)<br />
+        android.jpeg.quality (controls)<br />
+        android.jpeg.thumbnailQuality (controls)<br />
+        android.jpeg.thumbnailSize (controls)<br />
+        android.jpeg.availableThumbnailSizes (static)<br />
+        android.jpeg.maxSize (static)<br />
+        android.jpeg.gpsCoordinates (dynamic)<br />
+        android.jpeg.gpsProcessingMethod (dynamic)<br />
+        android.jpeg.gpsTimestamp (dynamic)<br />
+        android.jpeg.orientation (dynamic)<br />
+        android.jpeg.quality (dynamic)<br />
+        android.jpeg.size (dynamic)<br />
+        android.jpeg.thumbnailQuality (dynamic)<br />
+        android.jpeg.thumbnailSize (dynamic)</p>
+      <p> android.lens.info.minimumFocusDistance (static)</p>
+      <p> android.request.id (controls)<br />
+        android.request.id (dynamic)</p>
+      <p> android.scaler.cropRegion (controls)<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ignores (x,y), assumes center-zoom]<br />
+        android.scaler.availableFormats (static)<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[RAW not supported]<br />
+        android.scaler.availableJpegMinDurations (static)<br />
+        android.scaler.availableJpegSizes (static)<br />
+        android.scaler.availableMaxDigitalZoom (static)<br />
+        android.scaler.availableProcessedMinDurations (static)<br />
+        android.scaler.availableProcessedSizes (static)<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[full resolution not supported]<br />
+        android.scaler.maxDigitalZoom (static)<br />
+        android.scaler.cropRegion (dynamic)</p>
+      <p> android.sensor.orientation (static)<br />
+        android.sensor.timestamp (dynamic)</p>
+      <p> android.statistics.faceDetectMode (controls)<br />
+        android.statistics.info.availableFaceDetectModes (static)<br />
+        android.statistics.faceDetectMode (dynamic)<br />
+        android.statistics.faceIds (dynamic)<br />
+        android.statistics.faceLandmarks (dynamic)<br />
+        android.statistics.faceRectangles (dynamic)<br />
+        android.statistics.faceScores (dynamic)</p>
+    </blockquote>
+  </li>
+</ul>
+<h3 id="interaction">Interaction between the application capture request, 3A control, and the
+processing pipeline</h3>
+
+<p>
+Depending on the settings in the 3A control block, the camera pipeline ignores some of the parameters in the application’s capture request
+and uses the values provided by the 3A control routines instead. For example, when auto-exposure is active, the exposure time,
+frame duration, and sensitivity parameters of the sensor are controlled by the platform 3A algorithm,
+and any app-specified values are ignored. The values chosen for the frame by the 3A routines must be
+reported in the output metadata. The following table describes the different modes of the 3A control block
+and the properties that are controlled by these modes. See the
+platform/system/media/camera/docs/docs.html file for definitions of these
+properties. 
+</p>
+
+
+<table>
+  <tr>
+    <th>Parameter</th>
+    <th>State</th>
+    <th>Properties controlled</th>
+  </tr>
+
+  <tr>
+    <td rowspan="5">android.control.aeMode</td>
+    <td>OFF</td>
+    <td>None</td>
+  </tr>
+  <tr>
+    <td>ON</td>
+    <td>
+      <ul>
+        <li>android.sensor.exposureTime</li>
+        <li>android.sensor.frameDuration</li>
+        <li>android.sensor.sensitivity</li>
+        <li>android.lens.aperture (if supported)</li>
+        <li>android.lens.filterDensity (if supported)</li>
+      </ul>
+  </tr>
+  <tr>
+    <td>ON_AUTO_FLASH</td>
+    <td>Everything is ON, plus android.flash.firingPower,  android.flash.firingTime, and android.flash.mode</td>
+  </tr>
+
+  <tr>
+    <td>ON_ALWAYS_FLASH</td>
+    <td>Same as ON_AUTO_FLASH</td>
+  </tr>
+
+  <tr>
+    <td>ON_AUTO_FLASH_RED_EYE</td>
+    <td>Same as ON_AUTO_FLASH</td>
+  </tr>
+
+  <tr>
+    <td rowspan="2">android.control.awbMode</td>
+    <td>OFF</td>
+    <td>None</td>
+  </tr>
+
+ <tr>
+    <td>WHITE_BALANCE_*</td>
+    <td>android.colorCorrection.transform. Platform-specific adjustments if android.colorCorrection.mode is FAST or HIGH_QUALITY.</td>
+  </tr>
+
+  <tr>
+    <td rowspan="2">android.control.afMode</td>
+    <td>OFF</td>
+    <td>None</td>
+  </tr>
+
+  <tr>
+    <td>FOCUS_MODE_*</td>
+    <td>android.lens.focusDistance</td>
+  </tr>
+
+  <tr>
+    <td rowspan="2">android.control.videoStabilization</td>
+    <td>OFF</td>
+    <td>None</td>
+  </tr>
+
+  <tr>
+    <td>ON</td>
+    <td>Can adjust android.scaler.cropRegion to implement video stabilization</td>
+  </tr>
+
+  <tr>
+    <td rowspan="3">android.control.mode</td>
+    <td>OFF</td>
+    <td>AE, AWB, and AF are disabled</td>
+  </tr>
+
+  <tr>
+    <td>AUTO</td>
+    <td>Individual AE, AWB, and AF settings are used</td>
+  </tr>
+
+  <tr>
+    <td>SCENE_MODE_*</td>
+    <td>Can override all parameters listed above. Individual 3A controls are disabled.</td>
+  </tr>
+
+</table>
+
+<p>The controls exposed for the 3A algorithm mostly map 1:1 to the old API’s parameters
+  (such as exposure compensation, scene mode, or white balance mode).
+</p>
+
+
+<p>
+The controls in the Image Processing block in <a href="#figure2">Figure 2</a> all operate on a similar principle, and generally each block has three modes:
+</p>
+
+<ul>
+  <li>
+    OFF: This processing block is disabled. The demosaic, color correction, and tone curve adjustment blocks cannot be disabled.
+  </li>
+  <li>
+    FAST: In this mode, the processing block may not slow down the output frame rate compared to OFF mode, but should otherwise produce the best-quality output it can given that restriction. Typically, this would be used for preview or video recording modes, or burst capture for still images. On some devices, this may be equivalent to OFF mode (no processing can be done without slowing down the frame rate), and on some devices, this may be equivalent to HIGH_QUALITY mode (best quality still does not slow down frame rate).
+  </li>
+  <li>
+    HIGH_QUALITY: In this mode, the processing block should produce the best quality result possible, slowing down the output frame rate as needed. Typically, this would be used for high-quality still capture. Some blocks include a manual control which can be optionally selected instead of FAST or HIGH_QUALITY. For example, the color correction block supports a color transform matrix, while the tone curve adjustment supports an arbitrary global tone mapping curve.
+  </li>
+</ul>
+
+<p>See the <a href="">Android Camera Processing Pipeline Properties</a> spreadsheet for more information on all available properties.</p>
+
+<h2 id="metadata">Metadata support</h2>
+
+<p>To support the saving of DNG files by the Android framework, substantial metadata is required about the sensor’s characteristics. This includes information such as color spaces and lens shading functions.</p>
+<p>
+Most of this information is a static property of the camera subsystem, and can therefore be queried before configuring any output pipelines or submitting any requests. The new camera APIs greatly expand the information provided by the <code>getCameraInfo()</code> method to provide this information to the application.
+</p>
+<p>
+In addition, manual control of the camera subsystem requires feedback from the
+assorted devices about their current state, and the actual parameters used in
+capturing a given frame. If an application needs to implement a custom 3A
+routine (for example, to properly meter for an HDR burst), it needs to know the settings used to capture the latest set of results it has received in order to update the settings for the next request. Therefore, the new camera API adds a substantial amount of dynamic metadata to each captured frame. This includes the requested and actual parameters used for the capture, as well as additional per-frame metadata such as timestamps and statistics generator output.
+</p>
+
+<h2 id="3amodes">3A modes and state machines</h2>
+<p>While the actual 3A algorithms are up to the HAL implementation, a high-level
+  state machine description is defined by the HAL interface to allow the HAL
+  device and the framework to communicate about the current state of 3A and
+trigger 3A events.</p>
+<p>When the device is opened, all the individual 3A states must be
+  STATE_INACTIVE. Stream configuration does not reset 3A. For example, locked
+  focus must be maintained across the configure() call.</p>
+<p>Triggering a 3A action involves simply setting the relevant trigger entry in
+  the settings for the next request to indicate start of trigger. For example,
+  the trigger for starting an autofocus scan is setting the entry
+  ANDROID_CONTROL_AF_TRIGGER to ANDROID_CONTROL_AF_TRIGGER_START for one
+  request; and cancelling an autofocus scan is triggered by setting
+  ANDROID_CONTROL_AF_TRIGGER to ANDROID_CONTRL_AF_TRIGGER_CANCEL. Otherwise,
+  the entry will not exist or be set to ANDROID_CONTROL_AF_TRIGGER_IDLE. Each
+  request with a trigger entry set to a non-IDLE value will be treated as an
+  independent triggering event.</p>
+<p>At the top level, 3A is controlled by the ANDROID_CONTROL_MODE setting. It
+  selects between no 3A (ANDROID_CONTROL_MODE_OFF), normal AUTO mode
+  (ANDROID_CONTROL_MODE_AUTO), and using the scene mode setting
+  (ANDROID_CONTROL_USE_SCENE_MODE):</p>
+<ul>
+  <li>In OFF mode, each of the individual Auto-focus(AF), auto-exposure (AE),
+and auto-whitebalance (AWB) modes are effectively OFF,
+    and none of the capture controls may be overridden by the 3A routines.</li>
+  <li>In AUTO mode, AF, AE, and AWB modes all run
+    their own independent algorithms, and have their own mode, state, and
+    trigger metadata entries, as listed in the next section.</li>
+  <li>In USE_SCENE_MODE, the value of the ANDROID_CONTROL_SCENE_MODE entry must
+    be used to determine the behavior of 3A routines. In SCENE_MODEs other than
+    FACE_PRIORITY, the HAL must override the values of
+    ANDROID_CONTROL_AE/AWB/AF_MODE to be the mode it prefers for the selected
+    SCENE_MODE. For example, the HAL may prefer SCENE_MODE_NIGHT to use
+    CONTINUOUS_FOCUS AF mode. Any user selection of AE/AWB/AF_MODE when scene
+    must be ignored for these scene modes.</li>
+  <li>For SCENE_MODE_FACE_PRIORITY, the AE/AWB/AF_MODE controls work as in
+    ANDROID_CONTROL_MODE_AUTO, but the 3A routines must bias toward metering
+    and focusing on any detected faces in the scene.
+  </li>
+</ul>
+
+<h3 id="autofocus">Auto-focus settings and result entries</h3>
+<p>Main metadata entries:</p>
+<p>ANDROID_CONTROL_AF_MODE: Control for selecting the current autofocus
+mode. Set by the framework in the request settings.</p>
+<p>AF_MODE_OFF: AF is disabled; the framework/app directly controls lens
+position.</p>
+<p>AF_MODE_AUTO: Single-sweep autofocus. No lens movement unless AF is
+triggered.</p>
+<p>AF_MODE_MACRO: Single-sweep up-close autofocus. No lens movement unless
+AF is triggered.</p>
+<p>AF_MODE_CONTINUOUS_VIDEO: Smooth continuous focusing, for recording
+  video. Triggering immediately locks focus in current
+position. Canceling resumes cotinuous focusing.</p>
+<p>AF_MODE_CONTINUOUS_PICTURE: Fast continuous focusing, for
+  zero-shutter-lag still capture. Triggering locks focus once currently
+active sweep concludes. Canceling resumes continuous focusing.</p>
+<p>AF_MODE_EDOF: Advanced extended depth of field focusing. There is no
+  autofocus scan, so triggering one or canceling one has no effect.
+Images are focused automatically by the HAL.</p>
+<p>ANDROID_CONTROL_AF_STATE: Dynamic metadata describing the current AF
+algorithm state, reported by the HAL in the result metadata.</p>
+<p>AF_STATE_INACTIVE: No focusing has been done, or algorithm was
+  reset. Lens is not moving. Always the state for MODE_OFF or MODE_EDOF.
+When the device is opened, it must start in this state.</p>
+<p>AF_STATE_PASSIVE_SCAN: A continuous focus algorithm is currently scanning
+for good focus. The lens is moving.</p>
+<p>AF_STATE_PASSIVE_FOCUSED: A continuous focus algorithm believes it is
+  well focused. The lens is not moving. The HAL may spontaneously leave
+this state.</p>
+<p>AF_STATE_ACTIVE_SCAN: A scan triggered by the user is underway.</p>
+<p>AF_STATE_FOCUSED_LOCKED: The AF algorithm believes it is focused. The
+lens is not moving.</p>
+<p>AF_STATE_NOT_FOCUSED_LOCKED: The AF algorithm has been unable to
+focus. The lens is not moving.</p>
+<p>ANDROID_CONTROL_AF_TRIGGER: Control for starting an autofocus scan, the
+  meaning of which depends on mode and state. Set by the framework in
+the request settings.</p>
+<p>AF_TRIGGER_IDLE: No current trigger.</p>
+<p>AF_TRIGGER_START: Trigger start of AF scan. Effect depends on mode and
+state.</p>
+<p>AF_TRIGGER_CANCEL: Cancel current AF scan if any, and reset algorithm to
+default.</p>
+<p>Additional metadata entries:</p>
+<p>ANDROID_CONTROL_AF_REGIONS: Control for selecting the regions of the field of
+view (FOV)
+  that should be used to determine good focus. This applies to all AF
+  modes that scan for focus. Set by the framework in the request
+settings.</p>
+
+<h3 id="autoexpose">Auto-exposure settings and result entries</h3>
+<p>Main metadata entries:</p>
+<p>ANDROID_CONTROL_AE_MODE: Control for selecting the current auto-exposure
+mode. Set by the framework in the request settings.</p>
+<p>
+  AE_MODE_OFF: Autoexposure is disabled; the user controls exposure, gain,
+  frame duration, and flash.
+</p>
+<p>AE_MODE_ON: Standard autoexposure, with flash control disabled. User may
+  set flash to fire or to torch mode.
+</p>
+<p>AE_MODE_ON_AUTO_FLASH: Standard autoexposure, with flash on at HAL's
+  discretion for precapture and still capture. User control of flash
+  disabled.
+</p>
+<p>AE_MODE_ON_ALWAYS_FLASH: Standard autoexposure, with flash always fired
+  for capture, and at HAL's discretion for precapture. User control of
+  flash disabled.
+</p>
+<p>AE_MODE_ON_AUTO_FLASH_REDEYE: Standard autoexposure, with flash on at
+  HAL's discretion for precapture and still capture. Use a flash burst
+  at end of precapture sequence to reduce redeye in the final
+  picture. User control of flash disabled.
+</p>
+<p>ANDROID_CONTROL_AE_STATE: Dynamic metadata describing the current AE
+  algorithm state, reported by the HAL in the result metadata.
+</p>
+<p>AE_STATE_INACTIVE: Initial AE state after mode switch. When the device is
+  opened, it must start in this state.
+</p>
+<p>AE_STATE_SEARCHING: AE is not converged to a good value and is adjusting
+  exposure parameters.
+</p>
+<p>AE_STATE_CONVERGED: AE has found good exposure values for the current
+  scene, and the exposure parameters are not changing. HAL may
+  spontaneously leave this state to search for a better solution.
+</p>
+<p>AE_STATE_LOCKED: AE has been locked with the AE_LOCK control. Exposure
+  values are not changing.
+</p>
+<p>AE_STATE_FLASH_REQUIRED: The HAL has converged exposure but believes
+  flash is required for a sufficiently bright picture. Used for
+  determining if a zero-shutter-lag frame can be used.
+</p>
+<p>AE_STATE_PRECAPTURE: The HAL is in the middle of a precapture
+  sequence. Depending on AE mode, this mode may involve firing the
+  flash for metering or a burst of flash pulses for redeye reduction.
+</p>
+<p>ANDROID_CONTROL_AE_PRECAPTURE_TRIGGER: Control for starting a metering
+  sequence before capturing a high-quality image. Set by the framework in
+  the request settings.
+</p>
+<p>PRECAPTURE_TRIGGER_IDLE: No current trigger.
+</p>
+<p>PRECAPTURE_TRIGGER_START: Start a precapture sequence. The HAL should
+  use the subsequent requests to measure good exposure/white balance
+  for an upcoming high-resolution capture.
+</p>
+<p>Additional metadata entries:
+</p>
+<p>ANDROID_CONTROL_AE_LOCK: Control for locking AE controls to their current
+  values.</p>
+<p>ANDROID_CONTROL_AE_EXPOSURE_COMPENSATION: Control for adjusting AE
+  algorithm target brightness point.</p>
+<p>ANDROID_CONTROL_AE_TARGET_FPS_RANGE: Control for selecting the target frame
+  rate range for the AE algorithm. The AE routine cannot change the frame
+  rate to be outside these bounds.</p>
+<p>ANDROID_CONTROL_AE_REGIONS: Control for selecting the regions of the FOV
+  that should be used to determine good exposure levels. This applies to
+  all AE modes besides OFF.
+</p>
+
+<h3 id="autowb">Auto-whitebalance settings and result entries</h3>
+<p>Main metadata entries:</p>
+<p>ANDROID_CONTROL_AWB_MODE: Control for selecting the current white-balance
+  mode.
+</p>
+<p>AWB_MODE_OFF: Auto-whitebalance is disabled. User controls color matrix.
+</p>
+<p>AWB_MODE_AUTO: Automatic white balance is enabled; 3A controls color
+  transform, possibly using more complex transforms than a simple
+  matrix.
+</p>
+<p>AWB_MODE_INCANDESCENT: Fixed white balance settings good for indoor
+  incandescent (tungsten) lighting, roughly 2700K.
+</p>
+<p>AWB_MODE_FLUORESCENT: Fixed white balance settings good for fluorescent
+  lighting, roughly 5000K.
+</p>
+<p>AWB_MODE_WARM_FLUORESCENT: Fixed white balance settings good for
+  fluorescent lighting, roughly 3000K.
+</p>
+<p>AWB_MODE_DAYLIGHT: Fixed white balance settings good for daylight,
+  roughly 5500K.
+</p>
+<p>AWB_MODE_CLOUDY_DAYLIGHT: Fixed white balance settings good for clouded
+  daylight, roughly 6500K.
+</p>
+<p>AWB_MODE_TWILIGHT: Fixed white balance settings good for
+  near-sunset/sunrise, roughly 15000K.
+</p>
+<p>AWB_MODE_SHADE: Fixed white balance settings good for areas indirectly
+  lit by the sun, roughly 7500K.
+</p>
+<p>ANDROID_CONTROL_AWB_STATE: Dynamic metadata describing the current AWB
+  algorithm state, reported by the HAL in the result metadata.
+</p>
+<p>AWB_STATE_INACTIVE: Initial AWB state after mode switch. When the device
+  is opened, it must start in this state.
+</p>
+<p>AWB_STATE_SEARCHING: AWB is not converged to a good value and is
+  changing color adjustment parameters.
+</p>
+<p>AWB_STATE_CONVERGED: AWB has found good color adjustment values for the
+  current scene, and the parameters are not changing. HAL may
+  spontaneously leave this state to search for a better solution.
+</p>
+<p>AWB_STATE_LOCKED: AWB has been locked with the AWB_LOCK control. Color
+  adjustment values are not changing.
+</p>
+<p>Additional metadata entries:
+</p>
+<p>ANDROID_CONTROL_AWB_LOCK: Control for locking AWB color adjustments to
+  their current values.
+</p>
+<p>ANDROID_CONTROL_AWB_REGIONS: Control for selecting the regions of the FOV
+  that should be used to determine good color balance. This applies only
+  to auto-whitebalance mode.
+</p>
+
+<h3 id="genstate">General state machine transition notes
+</h3>
+<p>Switching between AF, AE, or AWB modes always resets the algorithm's state
+  to INACTIVE.  Similarly, switching between CONTROL_MODE or
+  CONTROL_SCENE_MODE if CONTROL_MODE == USE_SCENE_MODE resets all the
+  algorithm states to INACTIVE.
+</p>
+<p>The tables below are per-mode.
+</p>
+
+<h3 id="af-state">AF state machines</h3>
+<table width="100%" border="1">
+  <tr>
+    <td colspan="4" scope="col"><h4>mode = AF_MODE_OFF or AF_MODE_EDOF</h4></td>
+  </tr>
+  <tr>
+    <th scope="col">State</th>
+    <th scope="col">Transformation cause</th>
+    <th scope="col">New state</th>
+    <th scope="col">Notes</th>
+  </tr>
+  <tr>
+    <td>INACTIVE</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>AF is disabled</td>
+  </tr>
+  <tr>
+    <td colspan="4"><h4>mode = AF_MODE_AUTO or AF_MODE_MACRO</h4></td>
+  </tr>
+  <tr>
+    <th scope="col">State</th>
+    <th scope="col">Transformation cause</th>
+    <th scope="col">New state</th>
+    <th scope="col">Notes</th>
+  </tr>
+  <tr>
+    <td>INACTIVE</td>
+    <td>AF_TRIGGER</td>
+    <td>ACTIVE_SCAN</td>
+    <td>Start AF sweep<br />
+  Lens now moving</td>
+  </tr>
+  <tr>
+    <td>ACTIVE_SCAN</td>
+    <td>AF sweep done</td>
+    <td>FOCUSED_LOCKED</td>
+    <td>If AF successful<br />
+  Lens now locked </td>
+  </tr>
+  <tr>
+    <td>ACTIVE_SCAN</td>
+    <td>AF sweep done</td>
+    <td>NOT_FOCUSED_LOCKED</td>
+    <td>If AF successful<br />
+Lens now locked </td>
+  </tr>
+  <tr>
+    <td>ACTIVE_SCAN</td>
+    <td>AF_CANCEL</td>
+    <td>INACTIVE</td>
+    <td>Cancel/reset AF<br />
+  Lens now locked</td>
+  </tr>
+  <tr>
+    <td>FOCUSED_LOCKED</td>
+    <td>AF_CANCEL</td>
+    <td>INACTIVE</td>
+    <td>Cancel/reset AF</td>
+  </tr>
+  <tr>
+    <td>FOCUSED_LOCKED</td>
+    <td>AF_TRIGGER</td>
+    <td>ACTIVE_SCAN </td>
+    <td>Start new sweep<br />
+  Lens now moving</td>
+  </tr>
+  <tr>
+    <td>NOT_FOCUSED_LOCKED</td>
+    <td>AF_CANCEL</td>
+    <td>INACTIVE</td>
+    <td>Cancel/reset AF</td>
+  </tr>
+  <tr>
+    <td>NOT_FOCUSED_LOCKED</td>
+    <td>AF_TRIGGER</td>
+    <td>ACTIVE_SCAN</td>
+    <td>Start new sweep<br />
+Lens now moving</td>
+  </tr>
+  <tr>
+    <td>All states</td>
+    <td>mode change </td>
+    <td>INACTIVE</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="4"><h4>mode = AF_MODE_CONTINUOUS_VIDEO</h4></td>
+  </tr>
+  <tr>
+    <th scope="col">State</th>
+    <th scope="col">Transformation cause</th>
+    <th scope="col">New state</th>
+    <th scope="col">Notes</th>
+  </tr>
+  <tr>
+    <td>INACTIVE</td>
+    <td>HAL initiates new scan</td>
+    <td>PASSIVE_SCAN</td>
+    <td>Start AF sweep<br />
+Lens now moving</td>
+  </tr>
+  <tr>
+    <td>INACTIVE</td>
+    <td>AF_TRIGGER</td>
+    <td>NOT_FOCUSED_LOCKED</td>
+    <td>AF state query <br />
+    Lens now locked</td>
+  </tr>
+  <tr>
+    <td>PASSIVE_SCAN</td>
+    <td>HAL completes current scan</td>
+    <td>PASSIVE_FOCUSED</td>
+    <td>End AF scan<br />
+    Lens now locked <br /></td>
+  </tr>
+  <tr>
+    <td>PASSIVE_SCAN</td>
+    <td>AF_TRIGGER</td>
+    <td>FOCUSED_LOCKED</td>
+    <td>Immediate transformation<br />
+      if focus is good<br />
+Lens now locked</td>
+  </tr>
+  <tr>
+    <td>PASSIVE_SCAN</td>
+    <td>AF_TRIGGER</td>
+    <td>NOT_FOCUSED_LOCKED</td>
+    <td>Immediate transformation<br />
+if focus is bad<br />
+Lens now locked</td>
+  </tr>
+  <tr>
+    <td>PASSIVE_SCAN</td>
+    <td>AF_CANCEL</td>
+    <td>INACTIVE</td>
+    <td>Reset lens position<br />
+    Lens now locked</td>
+  </tr>
+  <tr>
+    <td>PASSIVE_FOCUSED</td>
+    <td>HAL initiates new scan</td>
+    <td>PASSIVE_SCAN</td>
+    <td>Start AF scan<br />
+      Lens now moving</td>
+  </tr>
+  <tr>
+    <td>PASSIVE_FOCUSED</td>
+    <td>AF_TRIGGER</td>
+    <td>FOCUSED_LOCKED</td>
+    <td>Immediate transformation<br />
+if focus is good<br />
+Lens now locked</td>
+  </tr>
+  <tr>
+    <td>PASSIVE_FOCUSED</td>
+    <td>AF_TRIGGER</td>
+    <td>NOT_FOCUSED_LOCKED</td>
+    <td>Immediate transformation<br />
+if focus is bad<br />
+Lens now locked</td>
+  </tr>
+  <tr>
+    <td>FOCUSED_LOCKED</td>
+    <td>AF_TRIGGER</td>
+    <td>FOCUSED_LOCKED</td>
+    <td>No effect</td>
+  </tr>
+  <tr>
+    <td>FOCUSED_LOCKED</td>
+    <td>AF_CANCEL</td>
+    <td>INACTIVE</td>
+    <td>Restart AF scan</td>
+  </tr>
+  <tr>
+    <td>NOT_FOCUSED_LOCKED</td>
+    <td>AF_TRIGGER</td>
+    <td>NOT_FOCUSED_LOCKED</td>
+    <td>No effect</td>
+  </tr>
+  <tr>
+    <td>NOT_FOCUSED_LOCKED</td>
+    <td>AF_CANCEL</td>
+    <td>INACTIVE</td>
+    <td>Restart AF scan</td>
+  </tr>
+  <tr>
+    <td colspan="4"><h4>mode = AF_MODE_CONTINUOUS_PICTURE</h4></td>
+  </tr>
+  <tr>
+    <th scope="col">State</th>
+    <th scope="col">Transformation cause</th>
+    <th scope="col">New state</th>
+    <th scope="col">Notes</th>
+  </tr>
+  <tr>
+    <td>INACTIVE</td>
+    <td>HAL initiates new scan</td>
+    <td>PASSIVE_SCAN</td>
+    <td>Start AF scan<br />
+      Lens now moving</td>
+  </tr>
+  <tr>
+    <td>INACTIVE</td>
+    <td>AF_TRIGGER</td>
+    <td>NOT_FOCUSED_LOCKED</td>
+    <td>AF state query<br />
+    Lens now locked</td>
+  </tr>
+  <tr>
+    <td>PASSIVE_SCAN</td>
+    <td>HAL completes current scan</td>
+    <td>PASSIVE_FOCUSED</td>
+    <td>End AF scan<br />
+      Lens now locked</td>
+  </tr>
+  <tr>
+    <td>PASSIVE_SCAN</td>
+    <td>AF_TRIGGER</td>
+    <td>FOCUSED_LOCKED</td>
+    <td>Eventual transformation once focus good<br />
+    Lens now locked</td>
+  </tr>
+  <tr>
+    <td>PASSIVE_SCAN</td>
+    <td>AF_TRIGGER</td>
+    <td>NOT_FOCUSED_LOCKED</td>
+    <td>Eventual transformation if cannot focus<br />
+Lens now locked</td>
+  </tr>
+  <tr>
+    <td>PASSIVE_SCAN</td>
+    <td>AF_CANCEL</td>
+    <td>INACTIVE</td>
+    <td>Reset lens position<br />
+      Lens now locked</td>
+  </tr>
+  <tr>
+    <td>PASSIVE_FOCUSED</td>
+    <td>HAL initiates new scan</td>
+    <td>PASSIVE_SCAN</td>
+    <td>Start AF scan<br />
+Lens now moving</td>
+  </tr>
+  <tr>
+    <td>PASSIVE_FOCUSED</td>
+    <td>AF_TRIGGER</td>
+    <td>FOCUSED_LOCKED</td>
+    <td>Immediate transformation if focus is good<br />
+Lens now locked</td>
+  </tr>
+  <tr>
+    <td>PASSIVE_FOCUSED</td>
+    <td>AF_TRIGGER</td>
+    <td>NOT_FOCUSED_LOCKED</td>
+    <td>Immediate transformation if focus is bad<br />
+Lens now locked</td>
+  </tr>
+  <tr>
+    <td>FOCUSED_LOCKED</td>
+    <td>AF_TRIGGER</td>
+    <td>FOCUSED_LOCKED</td>
+    <td>No effect</td>
+  </tr>
+  <tr>
+    <td>FOCUSED_LOCKED</td>
+    <td>AF_CANCEL</td>
+    <td>INACTIVE</td>
+    <td>Restart AF scan</td>
+  </tr>
+  <tr>
+    <td>NOT_FOCUSED_LOCKED</td>
+    <td>AF_TRIGGER</td>
+    <td>NOT_FOCUSED_LOCKED</td>
+    <td>No effect</td>
+  </tr>
+  <tr>
+    <td>NOT_FOCUSED_LOCKED</td>
+    <td>AF_CANCEL</td>
+    <td>INACTIVE</td>
+    <td>Restart AF scan</td>
+  </tr>
+</table>
+<h3 id="aeawb-state">AE and AWB state machines</h3>
+<p>The AE and AWB state machines are mostly identical. AE has additional
+FLASH_REQUIRED and PRECAPTURE states. So rows below that refer to those two
+states should be ignored for the AWB state machine.</p>
+<table width="100%" border="1">
+  <tr>
+    <td colspan="4" scope="col"><h4>mode = AE_MODE_OFF / AWB mode not
+AUTO</h4></td>
+  </tr>
+  <tr>
+    <th scope="col">State</th>
+    <th scope="col">Transformation cause</th>
+    <th scope="col">New state</th>
+    <th scope="col">Notes</th>
+  </tr>
+  <tr>
+    <td>INACTIVE</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>AE/AWB disabled</td>
+  </tr>
+  <tr>
+    <td colspan="4"><h4>mode = AE_MODE_ON_* / AWB_MODE_AUTO</h4></td>
+  </tr>
+  <tr>
+    <th scope="col">State</th>
+    <th scope="col">Transformation cause</th>
+    <th scope="col">New state</th>
+    <th scope="col">Notes</th>
+  </tr>
+  <tr>
+    <td>INACTIVE</td>
+    <td>HAL initiates AE/AWB scan</td>
+    <td>SEARCHING</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>INACTIVE</td>
+    <td>AE/AWB_LOCK on</td>
+    <td>LOCKED</td>
+    <td>Values locked</td>
+  </tr>
+  <tr>
+    <td>SEARCHING</td>
+    <td>HAL finishes AE/AWB scan</td>
+    <td>CONVERGED</td>
+    <td>Good values, not changing</td>
+  </tr>
+  <tr>
+    <td>SEARCHING</td>
+    <td>HAL finishes AE scan</td>
+    <td>FLASH_REQUIRED</td>
+    <td>Converged but too dark without flash</td>
+  </tr>
+  <tr>
+    <td>SEARCHING</td>
+    <td>AE/AWB_LOCK on</td>
+    <td>LOCKED</td>
+    <td>Values locked</td>
+  </tr>
+  <tr>
+    <td>CONVERGED</td>
+    <td>HAL initiates AE/AWB scan</td>
+    <td>SEARCHING</td>
+    <td>Values locked</td>
+  </tr>
+  <tr>
+    <td>CONVERGED</td>
+    <td>AE/AWB_LOCK on</td>
+    <td>LOCKED</td>
+    <td>Values locked</td>
+  </tr>
+  <tr>
+    <td>FLASH_REQUIRED</td>
+    <td>HAL initiates AE/AWB scan</td>
+    <td>SEARCHING</td>
+    <td>Values locked</td>
+  </tr>
+  <tr>
+    <td>FLASH_REQUIRED</td>
+    <td>AE/AWB_LOCK on</td>
+    <td>LOCKED</td>
+    <td>Values locked</td>
+  </tr>
+  <tr>
+    <td>LOCKED</td>
+    <td>AE/AWB_LOCK off</td>
+    <td>SEARCHING</td>
+    <td>Values not good after unlock</td>
+  </tr>
+  <tr>
+    <td>LOCKED</td>
+    <td>AE/AWB_LOCK off</td>
+    <td>CONVERGED</td>
+    <td>Values  good after unlock</td>
+  </tr>
+  <tr>
+    <td>LOCKED</td>
+    <td>AE_LOCK off</td>
+    <td>FLASH_REQUIRED</td>
+    <td>Exposure good, but too dark</td>
+  </tr>
+  <tr>
+    <td>All AE states </td>
+    <td> PRECAPTURE_START</td>
+    <td>PRECAPTURE</td>
+    <td>Start precapture sequence</td>
+  </tr>
+  <tr>
+    <td>PRECAPTURE</td>
+    <td>Sequence done, AE_LOCK off </td>
+    <td>CONVERGED</td>
+    <td>Ready for high-quality capture</td>
+  </tr>
+  <tr>
+    <td>PRECAPTURE</td>
+    <td>Sequence done, AE_LOCK on </td>
+    <td>LOCKED</td>
+    <td>Ready for high-quality capture</td>
+  </tr>
+</table>
+
+<h2 id="output">Output streams</h2>
+
+<p>Unlike the old camera subsystem, which has 3-4 different ways of producing data from the camera (ANativeWindow-based preview operations, preview callbacks, video callbacks, and takePicture callbacks), the new subsystem operates solely on the ANativeWindow-based pipeline for all resolutions and output formats.  Multiple such streams can be configured at once, to send a single frame to many targets such as the GPU, the video encoder, RenderScript, or app-visible buffers (RAW Bayer, processed YUV buffers, or JPEG-encoded buffers).
+</p>
+
+<p>As an optimization, these output streams must be configured ahead of time, and only a limited number may exist at once. This allows for pre-allocation of memory buffers and configuration of the camera hardware, so that when requests are submitted with multiple or varying output pipelines listed, there won’t be delays or latency in fulfilling the request.
+</p>
+
+<p>
+To support backwards compatibility with the current camera API, at least 3 simultaneous YUV output streams must be supported, plus one JPEG stream. This is required for video snapshot support with the application also receiving YUV buffers: 
+
+<ul>
+  <li>One stream to the GPU/SurfaceView (opaque YUV format) for preview</li>
+  <li>One stream to the video encoder (opaque YUV format) for recording</li>
+  <li>One stream to the application (known YUV format) for preview frame callbacks
+  <li>One stream to the application (JPEG) for video snapshots.</li>
+</ul>
+
+<p> In addition, at least one RAW Bayer output must be supported at the same time for the new camera subsystem.
+This means that the minimum output stream count is five (one RAW, three YUV, and one JPEG).
+</p>
+<h2 id="cropping">Cropping</h2>
+<p>Cropping of the full pixel array (for digital zoom and other use cases where
+  a smaller FOV is desirable) is communicated through the
+  ANDROID_SCALER_CROP_REGION setting. This is a per-request setting, and can
+  change on a per-request basis, which is critical for implementing smooth
+  digital zoom.</p>
+<p>The region is defined as a rectangle (x, y, width, height), with (x, y)
+  describing the top-left corner of the rectangle. The rectangle is defined on
+  the coordinate system of the sensor active pixel array, with (0,0) being the
+  top-left pixel of the active pixel array. Therefore, the width and height
+  cannot be larger than the dimensions reported in the
+  ANDROID_SENSOR_ACTIVE_PIXEL_ARRAY static info field. The minimum allowed
+  width and height are reported by the HAL through the
+  ANDROID_SCALER_MAX_DIGITAL_ZOOM static info field, which describes the
+  maximum supported zoom factor. Therefore, the minimum crop region width and
+  height are:</p>
+<pre>
+{width, height} =
+   { floor(ANDROID_SENSOR_ACTIVE_PIXEL_ARRAY[0] /
+       ANDROID_SCALER_MAX_DIGITAL_ZOOM),
+     floor(ANDROID_SENSOR_ACTIVE_PIXEL_ARRAY[1] /
+       ANDROID_SCALER_MAX_DIGITAL_ZOOM) }
+</pre>
+<p>If the crop region needs to fulfill specific requirements (for example, it
+  needs to start on even coordinates, and its width/height needs to be even),
+  the HAL must do the necessary rounding and write out the final crop region
+  used in the output result metadata. Similarly, if the HAL implements video
+  stabilization, it must adjust the result crop region to describe the region
+  actually included in the output after video stabilization is applied. In
+  general, a camera-using application must be able to determine the field of
+  view it is receiving based on the crop region, the dimensions of the image
+  sensor, and the lens focal length.</p>
+<p>Since the crop region applies to all streams, which may have different aspect
+  ratios than the crop region, the exact sensor region used for each stream may
+  be smaller than the crop region. Specifically, each stream should maintain
+  square pixels and its aspect ratio by minimally further cropping the defined
+  crop region. If the stream's aspect ratio is wider than the crop region, the
+  stream should be further cropped vertically, and if the stream's aspect ratio
+  is narrower than the crop region, the stream should be further cropped
+  horizontally.</p>
+<p>In all cases, the stream crop must be centered within the full crop region,
+  and each stream is only either cropped horizontally or vertical relative to
+  the full crop region, never both.</p>
+<p>For example, if two streams are defined, a 640x480 stream (4:3 aspect), and a
+  1280x720 stream (16:9 aspect), below demonstrates the expected output regions
+  for each stream for a few sample crop regions, on a hypothetical 3 MP (2000 x
+  1500 pixel array) sensor.</p>
+<p>Crop region: (500, 375, 1000, 750) (4:3 aspect ratio)</p>
+<blockquote>
+  <p> 640x480 stream crop: (500, 375, 1000, 750) (equal to crop region)<br />
+  1280x720 stream crop: (500, 469, 1000, 562) (marked with =)</p>
+</blockquote>
+<pre>0                   1000               2000
+  +---------+---------+---------+----------+
+  | Active pixel array                     |
+  |                                        |
+  |                                        |
+  +         +-------------------+          + 375
+  |         |                   |          |
+  |         O===================O          |
+  |         I 1280x720 stream   I          |
+  +         I                   I          + 750
+  |         I                   I          |
+  |         O===================O          |
+  |         |                   |          |
+  +         +-------------------+          + 1125
+  |          Crop region, 640x480 stream   |
+  |                                        |
+  |                                        |
+  +---------+---------+---------+----------+ 1500</pre>
+<p>(TODO: Recreate these in Omnigraffle and replace.)</p>
+<p>Crop region: (500, 375, 1333, 750) (16:9 aspect ratio)</p>
+<blockquote>
+  <p> 640x480 stream crop: (666, 375, 1000, 750) (marked with =)<br />
+    1280x720 stream crop: (500, 375, 1333, 750) (equal to crop region)</p>
+</blockquote>
+<pre>0                   1000               2000
+  +---------+---------+---------+----------+
+  | Active pixel array                     |
+  |                                        |
+  |                                        |
+  +         +---O==================O---+   + 375
+  |         |   I 640x480 stream   I   |   |
+  |         |   I                  I   |   |
+  |         |   I                  I   |   |
+  +         |   I                  I   |   + 750
+  |         |   I                  I   |   |
+  |         |   I                  I   |   |
+  |         |   I                  I   |   |
+  +         +---O==================O---+   + 1125
+  |          Crop region, 1280x720 stream  |
+  |                                        |
+  |                                        |
+  +---------+---------+---------+----------+ 1500
+</pre>
+<p>Crop region: (500, 375, 750, 750) (1:1 aspect ratio)</p>
+<blockquote>
+  <p> 640x480 stream crop: (500, 469, 750, 562) (marked with =)<br />
+    1280x720 stream crop: (500, 543, 750, 414) (marged with #)</p>
+</blockquote>
+<pre>0                   1000               2000
+  +---------+---------+---------+----------+
+  | Active pixel array                     |
+  |                                        |
+  |                                        |
+  +         +--------------+               + 375
+  |         O==============O               |
+  |         ################               |
+  |         #              #               |
+  +         #              #               + 750
+  |         #              #               |
+  |         ################ 1280x720      |
+  |         O==============O 640x480       |
+  +         +--------------+               + 1125
+  |          Crop region                   |
+  |                                        |
+  |                                        |
+  +---------+---------+---------+----------+ 1500
+</pre>
+<p>And a final example, a 1024x1024 square aspect ratio stream instead of the
+  480p stream:</p>
+<p>Crop region: (500, 375, 1000, 750) (4:3 aspect ratio)</p>
+<blockquote>
+  <p> 1024x1024 stream crop: (625, 375, 750, 750) (marked with #)<br />
+    1280x720 stream crop: (500, 469, 1000, 562) (marked with =)</p>
+</blockquote>
+<pre>0                   1000               2000
+  +---------+---------+---------+----------+
+  | Active pixel array                     |
+  |                                        |
+  |              1024x1024 stream          |
+  +         +--###############--+          + 375
+  |         |  #             #  |          |
+  |         O===================O          |
+  |         I 1280x720 stream   I          |
+  +         I                   I          + 750
+  |         I                   I          |
+  |         O===================O          |
+  |         |  #             #  |          |
+  +         +--###############--+          + 1125
+  |          Crop region                   |
+  |                                        |
+  |                                        |
+  +---------+---------+---------+----------+ 1500
+</pre>
+<h2 id="reprocessing">Reprocessing</h2>
+
+<p>Additional support for DNGs is provided by reprocessing support for RAW Bayer data.
+This support allows the camera pipeline to process a previously captured RAW buffer and metadata
+(an entire frame that was recorded previously), to produce a new rendered YUV or JPEG output.
+</p>
+<h2 id="errors">Error management</h2>
+<p>Camera HAL device ops functions that have a return value will all return
+  -ENODEV / NULL in case of a serious error. This means the device cannot
+  continue operation, and must be closed by the framework. Once this error is
+  returned by some method, or if notify() is called with ERROR_DEVICE, only
+  the close() method can be called successfully. All other methods will return
+  -ENODEV / NULL.</p>
+<p>If a device op is called in the wrong sequence, for example if the framework
+  calls configure_streams() is called before initialize(), the device must
+  return -ENOSYS from the call, and do nothing.</p>
+<p>Transient errors in image capture must be reported through notify() as follows:</p>
+<ul>
+  <li>The failure of an entire capture to occur must be reported by the HAL by
+    calling notify() with ERROR_REQUEST. Individual errors for the result
+    metadata or the output buffers must not be reported in this case.</li>
+  <li>If the metadata for a capture cannot be produced, but some image buffers
+    were filled, the HAL must call notify() with ERROR_RESULT.</li>
+  <li>If an output image buffer could not be filled, but either the metadata was
+    produced or some other buffers were filled, the HAL must call notify() with
+    ERROR_BUFFER for each failed buffer.</li>
+</ul>
+<p>In each of these transient failure cases, the HAL must still call
+  process_capture_result, with valid output buffer_handle_t. If the result
+  metadata could not be produced, it should be NULL. If some buffers could not
+  be filled, their sync fences must be set to the error state.</p>
+<p>Invalid input arguments result in -EINVAL from the appropriate methods. In
+  that case, the framework must act as if that call had never been made.</p>
+<h2 id="stream-mgmt">Stream management</h2>
+<h3 id="configure-streams">configure_streams</h3>
+<p>Reset the HAL camera device processing pipeline and set up new input and
+  output streams. This call replaces any existing stream configuration with
+  the streams defined in the stream_list. This method will be called at
+  least once after initialize() before a request is submitted with
+  process_capture_request().</p>
+<p>The stream_list must contain at least one output-capable stream, and may
+  not contain more than one input-capable stream.</p>
+<p>The stream_list may contain streams that are also in the currently-active
+  set of streams (from the previous call to configure_stream()). These
+  streams will already have valid values for usage, max_buffers, and the
+  private pointer. If such a stream has already had its buffers registered,
+  register_stream_buffers() will not be called again for the stream, and
+  buffers from the stream can be immediately included in input requests.</p>
+<p>If the HAL needs to change the stream configuration for an existing
+  stream due to the new configuration, it may rewrite the values of usage
+  and/or max_buffers during the configure call. The framework will detect
+  such a change, and will then reallocate the stream buffers, and call
+  register_stream_buffers() again before using buffers from that stream in
+  a request.</p>
+<p>If a currently-active stream is not included in stream_list, the HAL may
+  safely remove any references to that stream. It will not be reused in a
+  later configure() call by the framework, and all the gralloc buffers for
+  it will be freed after the configure_streams() call returns.</p>
+<p>The stream_list structure is owned by the framework, and may not be
+  accessed once this call completes. The address of an individual
+  camera3_stream_t structure will remain valid for access by the HAL until
+  the end of the first configure_stream() call which no longer includes
+  that camera3_stream_t in the stream_list argument. The HAL may not change
+  values in the stream structure outside of the private pointer, except for
+  the usage and max_buffers members during the configure_streams() call
+  itself.</p>
+<p>If the stream is new, the usage, max_buffer, and private pointer fields
+  of the stream structure will all be set to 0. The HAL device must set
+  these fields before the configure_streams() call returns. These fields
+  are then used by the framework and the platform gralloc module to
+  allocate the gralloc buffers for each stream.</p>
+<p>Before such a new stream can have its buffers included in a capture
+  request, the framework will call register_stream_buffers() with that
+  stream. However, the framework is not required to register buffers for
+  _all_ streams before submitting a request. This allows for quick startup
+  of (for example) a preview stream, with allocation for other streams
+  happening later or concurrently.</p>
+<h4>Preconditions</h4>
+<p>The framework will only call this method when no captures are being
+  processed. That is, all results have been returned to the framework, and
+  all in-flight input and output buffers have been returned and their
+  release sync fences have been signaled by the HAL. The framework will not
+  submit new requests for capture while the configure_streams() call is
+  underway.</p>
+<h4>Postconditions</h4>
+<p>The HAL device must configure itself to provide maximum possible output
+  frame rate given the sizes and formats of the output streams, as
+  documented in the camera device's static metadata.</p>
+<h4>Performance expectations</h4>
+<p>This call is expected to be heavyweight and possibly take several hundred
+  milliseconds to complete, since it may require resetting and
+  reconfiguring the image sensor and the camera processing pipeline.
+  Nevertheless, the HAL device should attempt to minimize the
+  reconfiguration delay to minimize the user-visible pauses during
+  application operational mode changes (such as switching from still
+  capture to video recording).</p>
+<h4>Return values</h4>
+<ul>
+  <li>0:      On successful stream configuration<br />
+  </li>
+  <li>-EINVAL: If the requested stream configuration is invalid. Some examples
+    of invalid stream configurations include:
+    <ul>
+      <li>Including more than 1 input-capable stream (INPUT or
+        BIDIRECTIONAL)</li>
+      <li>Not including any output-capable streams (OUTPUT or
+        BIDIRECTIONAL)</li>
+      <li>Including streams with unsupported formats, or an unsupported
+        size for that format.</li>
+      <li>Including too many output streams of a certain format.<br />
+        Note that the framework submitting an invalid stream
+        configuration is not normal operation, since stream
+        configurations are checked before configure. An invalid
+        configuration means that a bug exists in the framework code, or
+        there is a mismatch between the HAL's static metadata and the
+        requirements on streams.</li>
+    </ul>
+  </li>
+  <li>-ENODEV: If there has been a fatal error and the device is no longer
+    operational. Only close() can be called successfully by the
+    framework after this error is returned.</li>
+</ul>
+<h3 id="register-buffers">register_stream_buffers</h3>
+<p>Register buffers for a given stream with the HAL device. This method is
+  called by the framework after a new stream is defined by
+  configure_streams, and before buffers from that stream are included in a
+  capture request. If the same stream is listed in a subsequent
+  configure_streams() call, register_stream_buffers will _not_ be called
+  again for that stream.</p>
+<p>The framework does not need to register buffers for all configured
+  streams before it submits the first capture request. This allows quick
+  startup for preview (or similar use cases) while other streams are still
+  being allocated.</p>
+<p>This method is intended to allow the HAL device to map or otherwise
+  prepare the buffers for later use. The buffers passed in will already be
+  locked for use. At the end of the call, all the buffers must be ready to
+  be returned to the stream.  The buffer_set argument is only valid for the
+  duration of this call.</p>
+<p>If the stream format was set to HAL_PIXEL_FORMAT_IMPLEMENTATION_DEFINED,
+  the camera HAL should inspect the passed-in buffers here to determine any
+  platform-private pixel format information.</p>
+<h4>Return values</h4>
+<ul>
+  <li>0:      On successful registration of the new stream buffers</li>
+  <li>-EINVAL: If the stream_buffer_set does not refer to a valid active
+    stream, or if the buffers array is invalid.</li>
+  <li>-ENOMEM: If there was a failure in registering the buffers. The framework
+    must consider all the stream buffers to be unregistered, and can
+    try to register again later.</li>
+  <li>-ENODEV: If there is a fatal error, and the device is no longer
+    operational. Only close() can be called successfully by the
+    framework after this error is returned.</li>
+</ul>
+<h2 id="request-creation">Request creation and submission</h2>
+<h3 id="default-settings">construct_default_request_settings</h3>
+<p>Create capture settings for standard camera use cases. The device must return a settings buffer that is configured to meet the
+  requested use case, which must be one of the CAMERA3_TEMPLATE_*
+enums. All request control fields must be included.</p>
+<p>The HAL retains ownership of this structure, but the pointer to the
+  structure must be valid until the device is closed. The framework and the
+  HAL may not modify the buffer once it is returned by this call. The same
+  buffer may be returned for subsequent calls for the same template, or for
+  other templates.</p>
+<h4>Return values</h4>
+<ul>
+  <li>Valid metadata: On successful creation of a default settings
+    buffer.</li>
+  <li>NULL:           In case of a fatal error. After this is returned, only
+    the close() method can be called successfully by the
+    framework.  </li>
+</ul>
+<h3 id="process-capture">process_capture_request</h3>
+<p>Send a new capture request to the HAL. The HAL should not return from
+  this call until it is ready to accept the next request to process. Only
+  one call to process_capture_request() will be made at a time by the
+  framework, and the calls will all be from the same thread. The next call
+  to process_capture_request() will be made as soon as a new request and
+  its associated buffers are available. In a normal preview scenario, this
+  means the function will be called again by the framework almost
+  instantly.</p>
+<p>The actual request processing is asynchronous, with the results of
+  capture being returned by the HAL through the process_capture_result()
+  call. This call requires the result metadata to be available, but output
+  buffers may simply provide sync fences to wait on. Multiple requests are
+  expected to be in flight at once, to maintain full output frame rate.</p>
+<p>The framework retains ownership of the request structure. It is only
+  guaranteed to be valid during this call. The HAL device must make copies
+  of the information it needs to retain for the capture processing. The HAL
+  is responsible for waiting on and closing the buffers' fences and
+  returning the buffer handles to the framework.</p>
+<p>The HAL must write the file descriptor for the input buffer's release
+  sync fence into input_buffer-&gt;release_fence, if input_buffer is not
+  NULL. If the HAL returns -1 for the input buffer release sync fence, the
+  framework is free to immediately reuse the input buffer. Otherwise, the
+  framework will wait on the sync fence before refilling and reusing the
+  input buffer.</p>
+<h4>Return values</h4>
+<ul>
+  <li>0:      On a successful start to processing the capture request</li>
+  <li>-EINVAL: If the input is malformed (the settings are NULL when not
+    allowed, there are 0 output buffers, etc) and capture processing
+    cannot start. Failures during request processing should be
+    handled by calling camera3_callback_ops_t.notify(). In case of
+    this error, the framework will retain responsibility for the
+    stream buffers' fences and the buffer handles; the HAL should
+    not close the fences or return these buffers with
+    process_capture_result.</li>
+  <li>-ENODEV: If the camera device has encountered a serious error. After this
+    error is returned, only the close() method can be successfully
+    called by the framework.</li>
+</ul>
+<h2 id="misc-methods">Miscellaneous methods</h2>
+<h3 id="get-metadata">get_metadata_vendor_tag_ops</h3>
+<p>Get methods to query for vendor extension metadata tag information. The
+  HAL should fill in all the vendor tag operation methods, or leave ops
+  unchanged if no vendor tags are defined.
+  
+  The definition of vendor_tag_query_ops_t can be found in
+  system/media/camera/include/system/camera_metadata.h.</p>
+<h3 id="dump">dump</h3>
+<p>Print out debugging state for the camera device. This will be called by
+  the framework when the camera service is asked for a debug dump, which
+  happens when using the dumpsys tool, or when capturing a bugreport.
+  
+  The passed-in file descriptor can be used to write debugging text using
+  dprintf() or write(). The text should be in ASCII encoding only.</p>
+<h3 id="flush">flush</h3>
+<p>Flush all currently in-process captures and all buffers in the pipeline
+  on the given device. The framework will use this to dump all state as
+  quickly as possible in order to prepare for a configure_streams() call.</p>
+<p>No buffers are required to be successfully returned, so every buffer
+  held at the time of flush() (whether sucessfully filled or not) may be
+  returned with CAMERA3_BUFFER_STATUS_ERROR. Note the HAL is still allowed
+  to return valid (STATUS_OK) buffers during this call, provided they are
+  succesfully filled.</p>
+<p>All requests currently in the HAL are expected to be returned as soon as
+  possible.  Not-in-process requests should return errors immediately. Any
+  interruptible hardware blocks should be stopped, and any uninterruptible
+  blocks should be waited on.</p>
+<p>flush() should only return when there are no more outstanding buffers or
+  requests left in the HAL.  The framework may call configure_streams (as
+  the HAL state is now quiesced) or may issue new requests.</p>
+<p>A flush() call should only take 100ms or less. The maximum time it can
+  take is 1 second.</p>
+<h4>Version information</h4>
+<p>This is available only if device version &gt;= CAMERA_DEVICE_API_VERSION_3_1.</p>
+<h4>Return values</h4>
+<ul>
+  <li>0:      On a successful flush of the camera HAL.</li>
+  <li>-EINVAL: If the input is malformed (the device is not valid).<br />
+    -ENODEV: If the camera device has encountered a serious error. After this
+    error is returned, only the close() method can be successfully
+    called by the framework.</li>
+</ul>
