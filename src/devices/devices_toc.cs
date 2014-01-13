@@ -105,6 +105,12 @@
               </a>
             </li>
             <li>
+              <a href="<?cs var:toroot
+?>devices/tech/security/enhancements44.html">
+                <span class="en">Security Enhancements in Android 4.4</span>
+              </a>
+            </li>
+            <li>
               <a href="<?cs var:toroot ?>devices/tech/security/se-linux.html">
                 <span class="en">Security-Enhanced Linux</span>
               </a>
