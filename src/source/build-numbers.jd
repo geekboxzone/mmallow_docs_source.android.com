@@ -516,12 +516,24 @@ following table:</p>
 <tr>
 <td>JSS15Q</td>
 <td>android-4.3_r2.2</td>
-<td>Latest Jelly Bean version, Nexus 7 (flo/deb)</td>
+<td>Jelly Bean version, Nexus 7 (flo)</td>
+</tr>
+
+<tr>
+<td>JSS15R</td>
+<td>android-4.3_r2.3</td>
+<td>Latest Jelly Bean version, Nexus 7 (flo)</td>
 </tr>
 
 <tr>
 <td>JLS36C</td>
 <td>android-4.3_r3</td>
+<td>Jelly Bean version, Nexus 7 (deb)</td>
+</tr>
+
+<tr>
+<td>JLS36G</td>
+<td>android-4.3_r3.1</td>
 <td>Latest Jelly Bean version, Nexus 7 (deb)</td>
 </tr>
 

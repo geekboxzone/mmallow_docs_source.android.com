@@ -194,12 +194,12 @@ the lunch menu, accessed when running the <code>lunch</code> command with no arg
 <tbody>
 <tr>
 <td>flo</td>
-<td>android-4.3_r2.2</td>
+<td>android-4.3_r2.3</td>
 <td>aosp_flo-userdebug</td>
 </tr>
 <tr>
 <td>deb</td>
-<td>android-4.3_r3</td>
+<td>android-4.3_r3.1</td>
 <td>aosp_deb-userdebug</td>
 </tr>
 <tr>
