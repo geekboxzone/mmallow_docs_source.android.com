@@ -127,7 +127,7 @@ API levels and NDK releases provided for convenience:</p>
 </tr>
 <tr>
 <td>Jelly Bean</td>
-<td>4.3</td>
+<td>4.3.x</td>
 <td>API level 18</td>
 </tr>
 </tbody>
@@ -532,8 +532,8 @@ following table:</p>
 </tr>
 
 <tr>
-<td>JLS36G</td>
-<td>android-4.3_r3.1</td>
+<td>JLS36I</td>
+<td>android-4.3.1_r1</td>
 <td>Latest Jelly Bean version, Nexus 7 (deb)</td>
 </tr>
 

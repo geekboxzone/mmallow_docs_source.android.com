@@ -199,7 +199,7 @@ the lunch menu, accessed when running the <code>lunch</code> command with no arg
 </tr>
 <tr>
 <td>deb</td>
-<td>android-4.3_r3.1</td>
+<td>android-4.3.1_r1</td>
 <td>aosp_deb-userdebug</td>
 </tr>
 <tr>
