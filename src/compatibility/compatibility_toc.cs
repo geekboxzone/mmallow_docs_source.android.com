@@ -26,7 +26,7 @@
       <li><a href="<?cs var:toroot ?>compatibility/overview.html">Overview</a></li>
       <li><a href="<?cs var:toroot ?>compatibility/cts-intro.html">Compatibility Test Suite</a></li>
       <li><a href="<?cs var:toroot ?>compatibility/cts-development.html">CTS Development</a></li>
-      <li><a href="<?cs var:toroot ?>compatibility/android-4.3-cdd.pdf">Compatibility Definition Document (CDD)</a></li>
+      <li><a href="<?cs var:toroot ?>compatibility/android-cdd.pdf">Compatibility Definition Document (CDD)</a></li>
       <li><a href="<?cs var:toroot ?>compatibility/downloads.html">Downloads</a></li>
       <li><a href="<?cs var:toroot ?>compatibility/contact-us.html">Contact Us</a></li>
     </ul>

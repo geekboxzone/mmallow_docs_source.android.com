@@ -25,6 +25,8 @@ you access to key documents and information about the program.</p>
 KitKat. Source code for Android 4.4 is found in the
 'android-cts-4.4_r1' branch in the open-source tree.</p>
 <ul>
+<li><a href="4.4/android-4.4-cdd.pdf">Android 4.4 Compatibility Definition
+Document (CDD)</a></li>
 <li><a
 href="https://dl.google.com/dl/android/cts/android-cts-4.4_r1-linux_x86-arm.zip">Android
 4.4 R1 Compatibility Test Suite (CTS)</a></li>
