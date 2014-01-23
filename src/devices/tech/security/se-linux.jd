@@ -133,10 +133,10 @@ subdirectory once created, like so:
 </p>
 
 <pre>
-BOARD_SEPOLICY_DIRS := \
+BOARD_SEPOLICY_DIRS += \
         &lt;root&gt;/device/manufacturer/device-name/sepolicy
 
-BOARD_SEPOLICY_UNION := \
+BOARD_SEPOLICY_UNION += \
         genfs_contexts \ 
         file_contexts \ 
         sepolicy.te 
