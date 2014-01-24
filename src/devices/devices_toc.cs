@@ -46,6 +46,7 @@
             </ul>
           </li>
           <li><a href="<?cs var:toroot ?>devices/audio_avoiding_pi.html">Priority Inversion</a></li>
+          <li><a href="<?cs var:toroot ?>devices/audio_src.html">Sample Rate Conversion</a></li>
           <li><a href="<?cs var:toroot ?>devices/audio_terminology.html">Terminology</a></li>
         </ul>
       </li>
