@@ -55,7 +55,7 @@ Layer (HAL) <code>write()</code> takes to stabilize.
   the hardware itself might have its own power logic beyond the three seconds that AudioFlinger has.</li>
   <li>Press Home, and you should hear a click sound.</li>
   <li>Run the following command to receive the measured warmup:
-  <pre>adb shell dumpsys media.audio_flinger | grep measuredWarmup</code></pre>
+  <br /><code>adb shell dumpsys media.audio_flinger | grep measuredWarmup</code>
 
 <p>
 You should see output like this:
@@ -78,8 +78,8 @@ sampleRate=44100 frameCount=256 measuredWarmup=X ms, warmupCycles=X
 <li>
   Take five measurements and record them all, as well as the mean.
   If they are not all approximately the same,
-  then it’s likely that a measurement is incorrect.
-  For example, if you don’t wait long enough after the audio has been off,
+  then it's likely that a measurement is incorrect.
+  For example, if you don't wait long enough after the audio has been off,
   you will see a lower warmup time than the mean value.
 </li>
 </ol>
@@ -106,6 +106,7 @@ sampleRate=44100 frameCount=256 measuredWarmup=X ms, warmupCycles=X
   <li>Leaving circuits powered on or not reconfiguring clocks (increases idle power consumption)
   <li>Caching computed parameters</li>
   </ul>
+<p>
   However, beware of excessive optimization. You may find that you
   need to tradeoff between low warmup time versus
   lack of popping at power transitions.

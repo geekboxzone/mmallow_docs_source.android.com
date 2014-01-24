@@ -98,7 +98,6 @@ audio_hw_modules {
 
   <p>AudioFlinger's mixer downmixes the content to stereo
     automatically when sent to an audio device that does not support multichannel audio.</p>
-</p>
 
 <h3 id="codecs">Media codecs</h3>
 
@@ -193,7 +192,6 @@ href="http://developer.android.com/reference/android/media/audiofx/AutomaticGain
   <li><a
 href="http://developer.android.com/reference/android/media/audiofx/NoiseSuppressor.html">Noise Suppression</a></li>
 </ul>
-</p>
 
 
 <p>Pre-processing effects are always paired with the use case mode in which the pre-processing is requested. In Android
@@ -203,14 +201,14 @@ The Android Audio Policy Manager maps an <code>AudioSource</code> to the actual 
 inputSource)</code>. The following sources are exposed to developers:
 </p>
 <ul>
-<code><li>android.media.MediaRecorder.AudioSource.CAMCORDER</li></code>
-<code><li>android.media.MediaRecorder.AudioSource.VOICE_COMMUNICATION</li></code>
-<code><li>android.media.MediaRecorder.AudioSource.VOICE_CALL</li></code>
-<code><li>android.media.MediaRecorder.AudioSource.VOICE_DOWNLINK</li></code>
-<code><li>android.media.MediaRecorder.AudioSource.VOICE_UPLINK</li></code>
-<code><li>android.media.MediaRecorder.AudioSource.VOICE_RECOGNITION</li></code>
-<code><li>android.media.MediaRecorder.AudioSource.MIC</li></code>
-<code><li>android.media.MediaRecorder.AudioSource.DEFAULT</li></code>
+<li><code>android.media.MediaRecorder.AudioSource.CAMCORDER</code></li>
+<li><code>android.media.MediaRecorder.AudioSource.VOICE_COMMUNICATION</code></li>
+<li><code>android.media.MediaRecorder.AudioSource.VOICE_CALL</code></li>
+<li><code>android.media.MediaRecorder.AudioSource.VOICE_DOWNLINK</code></li>
+<li><code>android.media.MediaRecorder.AudioSource.VOICE_UPLINK</code></li>
+<li><code>android.media.MediaRecorder.AudioSource.VOICE_RECOGNITION</code></li>
+<li><code>android.media.MediaRecorder.AudioSource.MIC</code></li>
+<li><code>android.media.MediaRecorder.AudioSource.DEFAULT</code></li>
 </ul>
 
 <p>The default pre-processing effects that are applied for each <code>AudioSource</code> are
