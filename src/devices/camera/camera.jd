@@ -112,7 +112,7 @@ These parameters are set with the function pointed to by
   <li>Create an <code>Android.mk</code> file to build the shared library. Ensure that the Makefile contains the following lines:
 <pre>
 LOCAL_MODULE := camera.&lt;device_name&gt;
-LOCAL_MODULE_PATH := $(TARGET_OUT_SHARED_LIBRARIES)/hw
+LOCAL_MODULE_RELATIVE_PATH := hw
 </pre>
 <p>Notice that your library must be named <code>camera.&lt;device_name&gt;</code> (<code>.so</code> is appended automatically),
 so that Android can correctly load the library. For an example, see the Makefile
