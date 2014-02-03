@@ -566,10 +566,8 @@ Specific stream types are listed at
 
 <dt>tee sink</dt>
 <dd>
-An AudioFlinger debugging feature, available in custom builds only,
-for retaining a short fragment of recent audio for later analysis.
-This permits comparison between what was actually played or recorded
-vs. what was expected.
+See the separate article on tee sink in
+<a href="audio_debugging.html#teeSink">Audio Debugging</a>.
 </dd>
 
 <dt>tinyalsa</dt>

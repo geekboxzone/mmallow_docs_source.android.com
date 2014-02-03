@@ -1,0 +1,153 @@
+page.title=Audio Debugging
+@jd:body
+
+<div id="qv-wrapper">
+  <div id="qv">
+    <h2>In this document</h2>
+    <ol id="auto-toc">
+    </ol>
+  </div>
+</div>
+
+<p>
+This article describes some tips and tricks for debugging Android audio.
+</p>
+
+<h2 id="teeSink">Tee Sink</h2>
+
+<p>
+The "tee sink" is
+an AudioFlinger debugging feature, available in custom builds only,
+for retaining a short fragment of recent audio for later analysis.
+This permits comparison between what was actually played or recorded
+vs. what was expected.
+</p>
+
+<p>
+For privacy the tee sink is disabled by default, at both compile-time and
+run-time.  To use the tee sink, you will need to enable it by re-compiling,
+and also by setting a property.  Be sure to disable this feature after you are
+done debugging; the tee sink should not be left enabled in production builds.
+</p>
+
+<p>
+The instructions in the remainder of this section are for Android 4.4,
+and may require changes for other versions.
+</p>
+
+<h3>Compile-time setup</h3>
+
+<ol>
+<li><code>cd frameworks/av/services/audioflinger</code></li>
+<li>edit <code>Configuration.h</code></li>
+<li>uncomment <code>#define TEE_SINK</code></li>
+<li>re-build <code>libaudioflinger.so</code></li>
+<li><code>adb root</code></li>
+<li><code>adb remount</code></li>
+<li>push or sync the new <code>libaudioflinger.so</code> to the device's <code>/system/lib</code></li>
+</ol>
+
+<h3>Run-time setup</h3>
+
+<ol>
+<li><code>adb shell getprop | grep ro.debuggable</code>
+<br />Confirm that the output is: <code>[ro.debuggable]: [1]</code>
+</li>
+<li><code>adb shell</code></li>
+<li><code>ls -ld /data/misc/media</code>
+<br />
+<p>
+Confirm that the output is:
+</p>
+<pre>
+drwx------ media media ... media
+</pre>
+<br />
+<p>
+If the directory does not exist, create it as follows:
+</p>
+<code>
+mkdir /data/misc/media
+chown media:media /data/misc/media
+</code>
+</li>
+<li><code>echo af.tee=# &gt; /data/local.prop</code>
+<br />where the <code>af.tee</code> value is a number described below
+</li>
+<li><code>chmod 644 /data/local.prop</code></li>
+<li><code>reboot</code></li>
+</ol>
+
+<h4>Values for <code>af.tee</code> property</h4>
+
+<p>
+The value of <code>af.tee</code> is a number between 0 and 7, expressing
+the sum of several bits, one per feature.
+See the code at <code>AudioFlinger::AudioFlinger()</code> in <code>AudioFlinger.cpp</code>
+for an explanation of each bit, but briefly:
+</p>
+<ul>
+<li>1 = input</li>
+<li>2 = FastMixer output</li>
+<li>4 = per-track AudioRecord and AudioTrack</li>
+</ul>
+
+<p>
+There is no bit for deep buffer or normal mixer yet,
+but you can get similar results using "4."
+</p>
+
+<h3>Test and acquire data</h3>
+
+<ol>
+<li>Run your audio test</li>
+<li><code>adb shell dumpsys media.audio_flinger</code></li>
+<li>Look for a line in dumpsys output such as this:<br />
+<code>tee copied to /data/misc/media/20131010101147_2.wav</code>
+<br />This is a PCM .wav file</br>
+</li>
+<li><code>adb pull</code> any <code>/data/misc/media/*.wav</code> files of interest;
+note that track-specific dump filenames do not appear in the dumpsys output,
+but are still saved to <code>/data/misc/media</code> upon track closure
+</li>
+<li>Review the dump files for privacy concerns before sharing with others</li>
+</ol>
+
+<h4>Suggestions</h4>
+
+<p>Try these ideas for more useful results:</p>
+
+<ul>
+<li>Disable touch sounds and key clicks</li>
+<li>Maximize all volumes</li>
+<li>Disable apps that make sound or record from microphone,
+if they are not of interest to your test
+</li>
+<li>Track-specific dumps are only saved when the track is closed;
+you may need to force close an app in order to dump its track-specific data
+<li>Do the <code>dumpsys</code> immediately after test;
+there is a limited amount of recording space available</li>
+<li>To make sure you don't lose your dump files,
+upload them to your host periodically.
+Only a limited number of dump files are preserved;
+older dumps are removed after that limit is reached.</li>
+</ul>
+
+<h3>Restore</h3>
+
+<p>
+As noted above, the tee sink feature should not be left enabled.
+Restore your build and device as follows:
+</p>
+<ol>
+<li>Revert the source code changes to <code>Configuration.h</code></li>
+<li>Re-build <code>libaudioflinger.so</code></li>
+<li>Push or sync the restored <code>libaudioflinger.so</code>
+to the device's <code>/system/lib</code>
+</li>
+<li><code>adb shell</code></li>
+<li><code>rm /data/local.prop</code></li>
+<li><code>rm /data/misc/media/*.wav</code></li>
+<li><code>reboot</code></li>
+</ol>
+
