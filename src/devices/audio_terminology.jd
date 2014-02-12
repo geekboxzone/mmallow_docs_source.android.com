@@ -443,9 +443,8 @@ target="_android">android.media.AudioRecord</a>.
 
 <dt>AudioResampler</dt>
 <dd>
-The module within AudioFlinger responsible for sample-rate conversion. See Wikipedia article
-<a class="external-link" href="http://en.wikipedia.org/wiki/Resampling_(audio)" target="_android">Resampling (audio)</a>
-for the generic definition.
+The module within AudioFlinger responsible for
+<a href="audio_src.html">sample rate conversion</a>.
 </dd>
 
 <dt>AudioTrack</dt>
@@ -610,4 +609,11 @@ operate in volume indices rather than absolute attenuation factors.
 </dd>
 
 </dl>
+
+<h2 id="srcTerms">Sample Rate Conversion</h2>
+
+<p>
+For terms related to sample rate conversion, see the separate article
+<a href="audio_src.html">Sample Rate Conversion</a>.
+</p>
 
