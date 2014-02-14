@@ -563,7 +563,13 @@ following table:</p>
 <tr>
 <td>KOT49H</td>
 <td>android-4.4.2_r1</td>
-<td>Latest KitKat version, Nexus 5, Nexus 7 (flo/deb/grouper/tilapia), Nexus 4, Nexus 10</td>
+<td>KitKat version, Nexus 5, Nexus 7 (flo/deb/grouper/tilapia), Nexus 4, Nexus 10</td>
+</tr>
+
+<tr>
+<td>KVT49L</td>
+<td>android-4.4.2_r2</td>
+<td>Latest KitKat version, Nexus 7 (deb Verizon)</td>
 </tr>
 
 </tbody>
