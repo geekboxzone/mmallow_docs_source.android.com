@@ -166,7 +166,7 @@ sound position beyond stereo left and right.
 To increase the number of channels, e.g. from mono to stereo, or from stereo to surround sound.
 This can be accomplished by duplication, panning, or more advanced signal processing.
 Compare to "downmixing".
-</dl>
+</dd>
 
 <dt>virtualizer</dt>
 <dd>
@@ -178,6 +178,8 @@ simulate more speakers, or give the illusion that various sound sources have pos
 <dd>
 Loudness, the subjective strength of an audio signal.
 </dd>
+
+</dl>
 
 <h3 id="hardwareTerms">Hardware and Accessories</h3>
 
@@ -294,6 +296,8 @@ These terms are related to the signal path that audio data follows from
 an application to the transducer, or vice-versa.
 </p>
 
+<dl>
+
 <dt>ADC</dt>
 <dd>
 Analog to digital converter, a module that converts an analog signal
@@ -364,7 +368,7 @@ See Wikipedia article
 target="_android">Pulse-width modulation</a>.
 </dd>
 
-</p>
+</dl>
 
 <h2 id="androidSpecificTerms">Android-Specific Terms</h2>
 
@@ -435,7 +439,6 @@ input device such as microphone.  The data is usually in pulse-code modulation
 The API is defined at
 <a href="http://developer.android.com/reference/android/media/AudioRecord.html"
 target="_android">android.media.AudioRecord</a>.
-</dd>
 </dd>
 
 <dt>AudioResampler</dt>
@@ -535,7 +538,6 @@ The API is defined at
 <a href="http://developer.android.com/reference/android/media/SoundPool.html"
 target="_android">android.media.SoundPool</a>.
 </dd>
-</dd>
 
 <dt>Stagefright</dt>
 <dd>
@@ -608,6 +610,4 @@ operate in volume indices rather than absolute attenuation factors.
 </dd>
 
 </dl>
-
-</p>
 

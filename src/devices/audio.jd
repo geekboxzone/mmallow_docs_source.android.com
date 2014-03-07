@@ -27,7 +27,7 @@ page.title=Audio
   source code that is involved in the implementation:
 </p>
 <p>
-  <img src="images/audio_hal.png">
+  <img src="images/audio_hal.png" alt="Audio architecture">
 </p>
 <dl>
   <dt>
