@@ -34,8 +34,8 @@ page.title=Graphics
   <a href="http://developer.android.com/reference/android/graphics/Canvas.html">android.graphics.Canvas</a>
   is a 2D graphics API and is the most widely used graphics API by
   developers. Canvas operations draw all the stock <a href="http://developer.android.com/reference/android/view/View.html">android.view.View</a>s
-  and custom <a href="http://developer.android.com/reference/android/view/View.html">android.view.View</a>s in Android. Prior to Android 3.0, Canvas used the Skia 2D drawing library to
-  draw, which could not take advantage of hardware acceleration.
+  and custom <a href="http://developer.android.com/reference/android/view/View.html">android.view.View</a>s in Android. Prior to Android 3.0, Canvas always
+  used the non-hardware accelerated Skia 2D drawing library to draw.
 </p>
 <p>
   Introduced in Android 3.0, hardware acceleration for Canvas APIs uses a new drawing library
@@ -45,12 +45,8 @@ page.title=Graphics
   supports OpenGL ES 2.0 is mandatory for Android 4.0 devices.
 </p>
 <p>
-  The OpenGLRenderer does not interact with Skia, so we
-  anticipate Skia to be slowly phased out without adverse effects to developers. Skia is currently
-  deprecated and in maintenance mode but will be neccessary for a while because most apps published
-  today still rely on non-hardware accelerated Canvas operations. In addition, not all Skia
-  operations are supported by OpenGL, so some operations are still done in software with Skia, even
-  with hardware acceleration turned on.
+  Additionally, the <a href="https://developer.android.com/guide/topics/graphics/hardware-accel.html">Hardware Acceleration guide</a>
+  explains how the hardware-accelerated drawing path works and identifies the differences in behavior from the software drawing path.
 </p>
 <p>
   The other main way that developers render graphics is by using OpenGL ES 1.x or 2.0 to directly
