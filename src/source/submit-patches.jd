@@ -29,19 +29,19 @@ reviewing and tracking changes with <a href="https://android-review.googlesource
 <h2 id="prerequisites">Prerequisites</h2>
 <ul>
 <li>
-<p>Before you follow the instructions on this page, you need to <a href="">initialize your
-build environment</a> and <a href="{@docRoot}source/downloading.html">download the source</a>.</p>
+<p>Before you follow the instructions on this page, you need to <a href="{@docRoot}source/initializing.html">
+initialize your build environment</a> and <a href="{@docRoot}source/downloading.html">download the source</a>.</p>
 </li>
 <li>
-<p>For details about Repo and Git, see the <a href="version-control.html">Developing</a> section.</p>
+<p>For details about Repo and Git, see the <a href="{@docRoot}source/developing.html">Developing</a> section.</p>
 </li>
 <li>
 <p>For information about the different roles you can play within the Android
-Open Source community, see <a href="/source/roles.html">Project roles</a>.</p>
+Open Source community, see <a href="{@docRoot}source/roles.html">Project roles</a>.</p>
 </li>
 <li>
 <p>If you plan to contribute code to the Android platform, be sure to read
-the <a href="/source/licenses.html">AOSP's licensing information</a>.</p>
+the <a href="{@docRoot}source/licenses.html">AOSP's licensing information</a>.</p>
 </li>
 <li>
 <p>Note that changes to some of the upstream projects used by Android should be
@@ -68,16 +68,22 @@ password in <code>~/.netrc</code>. If there are two password lines, copy both.</
 <p>For each change you intend to make, start a new branch within the relevant git repository:</p>
 <pre><code>$ repo start NAME .
 </code></pre>
-<p>You can start several independent branches at the same time in the same repository. The branch NAME is local to your workspace and will not be included on gerrit or the final source tree.</p>
+<p>You can start several independent branches at the same time in the same
+repository. The branch NAME is local to your workspace and will not be included
+on gerrit or the final source tree.</p>
 <h2 id="make-your-change">Make your change</h2>
-<p>Once you have modified the source files (and validated them, please) commit the changes to your local repository:</p>
+<p>Once you have modified the source files (and validated them, please) commit
+the changes to your local repository:</p>
 <pre><code>$ git add -A
 $ git commit -s
 </code></pre>
-<p>Provide a detailed description of the change in your commit message. This description will be pushed to the public AOSP repository, so please follow our guidelines for writing changelist descriptions: </p>
+<p>Provide a detailed description of the change in your commit message. This
+description will be pushed to the public AOSP repository, so please follow our
+guidelines for writing changelist descriptions: </p>
 <ul>
 <li>
-<p>Start with a one-line summary (60 characters max), followed by a blank line. This format is used by git and gerrit for various displays. </p>
+<p>Start with a one-line summary (60 characters max), followed by a blank line.
+This format is used by git and gerrit for various displays. </p>
 <pre><code>short description on first line
 
 more detailed description of your patch,
@@ -163,13 +169,13 @@ $ git commit --amend
 <p>A submission that has been verified and merged will be downloaded with the next <code>repo sync</code>. If you wish to download a specific change that has not yet been approved, run</p>
 <pre><code>$ repo download TARGET CHANGE
 </code></pre>
-<p>where TARGET is the local directory into which the change should be downloaded and CHANGE is the 
+<p>where TARGET is the local directory into which the change should be downloaded and CHANGE is the
 change number as listed in <a href="https://android-review.googlesource.com/">Gerrit</a>. For more information,
-see the <a href="/source/using-repo.html">Repo reference</a>.</p>
+see the <a href="{@docRoot}source/using-repo.html">Repo reference</a>.</p>
 <h2 id="how-do-i-become-a-verifier-or-approver">How do I become a Verifier or Approver?</h2>
 <p>In short, contribute high-quality code to one or more of the Android projects.
 For details about the different roles in the Android Open Source community and
-who plays them, see <a href="/source/roles.html">Project Roles</a>.</p>
+who plays them, see <a href="{@docRoot}source/roles.html">Project Roles</a>.</p>
 <h2 id="diffs-and-comments">Diffs and comments</h2>
 <p>To open the details of the change within Gerrit, click on the "Id number" or "Subject" of a change. To compare the established code with the updated code, click the file name under "Side-by-side diffs."</p>
 <h2 id="adding-comments">Adding comments</h2>
@@ -179,7 +185,7 @@ who plays them, see <a href="/source/roles.html">Project Roles</a>.</p>
 <p><a name="upstream-projects"></a></p>
 <h1 id="upstream-projects">Upstream Projects</h1>
 <p>Android makes use of a number of other open-source projects, such as the Linux kernel and WebKit, as described in
-<a href="/source/code-lines.html">Codelines, Branches, and Releases</a>. For most projects under <code>external/</code>, changes should be made upstream and then the Android maintainers informed of the new upstream release containing these changes. It may also be useful to upload patches that move us to track a new upstream release, though these can be difficult changes to make if the project is widely used within Android like most of the larger ones mentioned below, where we tend to upgrade with every release.</p>
+<a href="{@docRoot}source/code-lines.html">Codelines, Branches, and Releases</a>. For most projects under <code>external/</code>, changes should be made upstream and then the Android maintainers informed of the new upstream release containing these changes. It may also be useful to upload patches that move us to track a new upstream release, though these can be difficult changes to make if the project is widely used within Android like most of the larger ones mentioned below, where we tend to upgrade with every release.</p>
 <p>One interesting special case is bionic. Much of the code there is from BSD, so unless the change is to code that's new to bionic, we'd much rather see an upstream fix and then pull a whole new file from the appropriate BSD. (Sadly we have quite a mix of different BSDs at the moment, but we hope to address that in future, and get into a position where we track upstream much more closely.)</p>
 <h2 id="icu4c">ICU4C</h2>
 <p>All changes to the ICU4C project at <code>external/icu4c</code> should be made upstream at
