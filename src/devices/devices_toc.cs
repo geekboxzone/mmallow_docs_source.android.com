@@ -1,5 +1,5 @@
 <!--
-    Copyright 2013 The Android Open Source Project
+    Copyright 2014 The Android Open Source Project
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -70,7 +70,6 @@
       </li>
 
       <li><a href="<?cs var:toroot ?>devices/drm.html">DRM</a></li>
-      <li><a href="<?cs var:toroot ?>devices/tech/encryption/index.html">Encryption</a></li>
       <li class="nav-section">
         <div class="nav-section-header">
           <a href="<?cs var:toroot ?>devices/tech/storage/index.html">
@@ -110,28 +109,27 @@
               <span class="en">Security</span>
             </a>
           </div>
-          <ul>
-            <li>
-              <a href="<?cs var:toroot
-?>devices/tech/security/enhancements42.html">
-                <span class="en">Security Enhancements in Android 4.2</span>
+        <ul>
+          <li class="nav-section">
+            <div class="nav-section-header">
+              <a href="<?cs var:toroot ?>devices/tech/security/enhancements.html">
+                <span class="en">Enhancements</span>
               </a>
-            </li>
-            <li>
-              <a href="<?cs var:toroot
-?>devices/tech/security/enhancements43.html">
-                <span class="en">Security Enhancements in Android 4.3</span>
-              </a>
-            </li>
-            <li>
-              <a href="<?cs var:toroot
-?>devices/tech/security/enhancements44.html">
-                <span class="en">Security Enhancements in Android 4.4</span>
-              </a>
-            </li>
+            </div>
+            <ul>
+              <li><a href="<?cs var:toroot ?>devices/tech/security/enhancements44.html">Android 4.4</a></li>
+              <li><a href="<?cs var:toroot ?>devices/tech/security/enhancements43.html">Android 4.3</a></li>
+              <li><a href="<?cs var:toroot ?>devices/tech/security/enhancements42.html">Android 4.2</a></li>
+            </ul>
+          </li>
             <li>
               <a href="<?cs var:toroot ?>devices/tech/security/dm-verity.html">
                 <span class="en">dm-verity on boot</span>
+              </a>
+            </li>
+            <li>
+              <a href="<?cs var:toroot ?>devices/tech/encryption/index.html">
+                <span class="en">Encryption</span>
               </a>
             </li>
             <li>
@@ -139,7 +137,6 @@
                 <span class="en">Security-Enhanced Linux</span>
               </a>
             </li>
-
           </ul>
       </li>
      <li class="nav-section">
