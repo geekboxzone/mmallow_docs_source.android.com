@@ -123,6 +123,11 @@
             </ul>
           </li>
             <li>
+              <a href="<?cs var:toroot ?>devices/tech/security/best-practices.html">
+                <span class="en">Best practices</span>
+              </a>
+            </li>
+            <li>
               <a href="<?cs var:toroot ?>devices/tech/security/dm-verity.html">
                 <span class="en">dm-verity on boot</span>
               </a>
