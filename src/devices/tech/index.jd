@@ -60,7 +60,7 @@ about debugging at the platform level.</p>
 <p>Android's Hardware Abstraction Layer (HAL) provides the interface between
 software APIs and hardware drivers. This section contains the commented code
 files of the HAL.</p>
-<p><a href="{@docRoot}devices/reference/files.html">&raquo; HAL Reference</a></p>
+<p><a href="{@docRoot}devices/halref/files.html">&raquo; HAL Reference</a></p>
 
 <h2 id="kernel-technical-information">Kernel Technical Information</h2>
 <p>The kernel configuration settings in this document are meant to be used as a base
