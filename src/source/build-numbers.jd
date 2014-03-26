@@ -2,7 +2,7 @@ page.title=Codenames, Tags, and Build Numbers
 @jd:body
 
 <!--
-    Copyright 2013 The Android Open Source Project
+    Copyright 2014 The Android Open Source Project
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -156,421 +156,469 @@ build re-use the same date code as that existing build.</p>
 
 <h2 id="source-code-tags-and-builds">Source Code Tags and Builds</h2>
 <p>Starting with Donut, the exact list of tags and builds is in the
-following table:</p>
+following table. Factory images and binaries for Nexus devices can be downloaded from:</p>
+<p><a href="https://developers.google.com/android/nexus/images">https://developers.google.com/android/nexus/images</a></p>
+<p><a href="https://developers.google.com/android/nexus/drivers">https://developers.google.com/android/nexus/drivers</a></p>
 <table>
-<thead>
+  <thead>
 <tr>
-<th>Build</th>
-<th>Tag</th>
-<th>Notes</th>
+  <th>Build</th>
+<th>Branch</th>
+<th>Version</th>
+<th>Supported devices</th>
+</tr>
+<tr>
+  <td>KVT49L</td>
+  <td>android-4.4.2_r2</td>
+  <td>KitKat</td>
+  <td>Nexus 7 (deb Verizon)</td>
+</tr>
+<tr>
+  <td>KOT49H</td>
+  <td>android-4.4.2_r1</td>
+  <td>KitKat</td>
+  <td> Nexus 5, Nexus 7 (flo/deb/grouper/tilapia), Nexus 4, Nexus 10</td>
+</tr>
+<tr>
+  <td>KOT49E</td>
+  <td>android-4.4.1_r1</td>
+  <td>KitKat</td>
+  <td>Nexus 5, Nexus 7 (flo/deb/grouper/tilapia), Nexus 4, Nexus 10</td>
+</tr>
+<tr>
+  <td>KRT16S</td>
+  <td>android-4.4_r1.2</td>
+  <td>KitKat</td>
+  <td>Nexus 7 (flo/deb/grouper/tilapia), Nexus 4, Nexus 10</td>
+</tr>
+<tr>
+  <td>KRT16M</td>
+  <td>android-4.4.2_r1</td>
+  <td>KitKat</td>
+  <td>Nexus 5 (hammerhead)</td>
+</tr>
+<tr>
+  <td>JLS36I</td>
+  <td>android-4.3.1_r1</td>
+  <td>Jelly Bean</td>
+  <td>Nexus 7 (deb)</td>
+</tr>
+<tr>
+  <td>JLS36C</td>
+  <td>android-4.3_r3</td>
+  <td>Jelly Bean</td>
+  <td> Nexus 7 (deb)</td>
+</tr>
+<tr>
+  <td>JSS15R</td>
+  <td>android-4.3_r2.3</td>
+  <td>Jelly Bean</td>
+  <td>Nexus 7 (flo)</td>
+</tr>
+<tr>
+  <td>JSS15Q</td>
+  <td>android-4.3_r2.2</td>
+  <td>Jelly Bean</td>
+  <td>Nexus 7 (flo)</td>
+</tr>
+<tr>
+  <td>JSS15J</td>
+  <td>android-4.3_r2.1</td>
+  <td>Jelly Bean</td>
+  <td>Nexus 7 (flo/deb)</td>
+</tr>
+<tr>
+  <td>JSR78D</td>
+  <td>android-4.3_r2</td>
+  <td>Jelly Bean</td>
+  <td>Nexus 7 (deb)</td>
+</tr>
+<tr>
+  <td>JWR66Y</td>
+  <td>android-4.3_r1.1</td>
+  <td>Jelly Bean</td>
+  <td>Galaxy Nexus, Nexus 7 (grouper/tilapia), Nexus 4, Nexus 10</td>
+</tr>
+<tr>
+  <td>JWR66V</td>
+  <td>android-4.3_r1</td>
+  <td>Jelly Bean</td>
+  <td>Galaxy Nexus, Nexus 7 (grouper/tilapia), Nexus 4, Nexus 10</td>
+</tr>
+<tr>
+  <td>JWR66N</td>
+  <td>android-4.3_r0.9.1</td>
+  <td>Jelly Bean</td>
+  <td>Galaxy Nexus, Nexus 7 (grouper/tilapia/flo), Nexus 4, Nexus 10</td>
+</tr>
+<tr>
+  <td>JWR66L</td>
+  <td>android-4.3_r0.9</td>
+  <td>Jelly Bean</td>
+  <td>Nexus 7</td>
+</tr>
+<tr>
+  <td>JDQ39E</td>
+  <td>android-4.2.2_r1.2</td>
+  <td>Jelly Bean</td>
+  <td>Nexus 4</td>
+</tr>
+<tr>
+  <td>JDQ39B</td>
+  <td>android-4.2.2_r1.1</td>
+  <td>Jelly Bean</td>
+  <td>Nexus 7</td>
+</tr>
+<tr>
+  <td>JDQ39</td>
+  <td>android-4.2.2_r1</td>
+  <td>Jelly Bean</td>
+  <td>Galaxy Nexus, Nexus 7, Nexus 4, Nexus 10</td>
+</tr>
+<tr>
+  <td>JOP40G</td>
+  <td>android-4.2.1_r1.2</td>
+  <td>Jelly Bean</td>
+  <td>Nexus 4</td>
+</tr>
+<tr>
+  <td>JOP40F</td>
+  <td>android-4.2.1_r1.1</td>
+  <td>Jelly Bean</td>
+  <td>Nexus 10</td>
+</tr>
+<tr>
+  <td>JOP40D</td>
+  <td>android-4.2.1_r1</td>
+  <td>Jelly Bean</td>
+  <td>Galaxy Nexus, Nexus 7, Nexus 4, Nexus 10</td>
+</tr>
+<tr>
+  <td>JOP40C</td>
+  <td>android-4.2_r1</td>
+  <td>Jelly Bean</td>
+  <td>Galaxy Nexus, Nexus 7, Nexus 4, Nexus 10</td>
+</tr>
+<tr>
+  <td>JZO54M</td>
+  <td>android-4.1.2_r2.1</td>
+  <td>Jelly Bean</td>
+  <td></td>
+</tr>
+<tr>
+  <td>JZO54L</td>
+  <td>android-4.1.2_r2</td>
+  <td>Jelly Bean</td>
+  <td></td>
+</tr>
+<tr>
+  <td>JZO54K</td>
+  <td>android-4.1.2_r1</td>
+  <td>Jelly Bean</td>
+  <td>Nexus S, Galaxy Nexus, Nexus 7</td>
+</tr>
+<tr>
+  <td>JRO03S</td>
+  <td>android-4.1.1_r6.1</td>
+  <td>Jelly Bean</td>
+  <td>Nexus 7</td>
+</tr>
+<tr>
+  <td>JRO03R</td>
+  <td>android-4.1.1_r6</td>
+  <td>Jelly Bean</td>
+  <td>Nexus S 4G</td>
+</tr>
+<tr>
+  <td>JRO03O</td>
+  <td>android-4.1.1_r5</td>
+  <td>Jelly Bean</td>
+  <td>Galaxy Nexus</td>
+</tr>
+<tr>
+  <td>JRO03L</td>
+  <td>android-4.1.1_r4</td>
+  <td>Jelly Bean</td>
+  <td>Nexus S</td>
+</tr>
+<tr>
+  <td>JRO03H</td>
+  <td>android-4.1.1_r3</td>
+  <td>Jelly Bean</td>
+  <td></td>
+</tr>
+<tr>
+  <td>JRO03E</td>
+  <td>android-4.1.1_r2</td>
+  <td>Jelly Bean</td>
+  <td>Nexus S</td>
+</tr>
+<tr>
+  <td>JRO03D</td>
+  <td>android-4.1.1_r1.1</td>
+  <td>Jelly Bean</td>
+  <td>Nexus 7</td>
+</tr>
+<tr>
+  <td>JRO03C</td>
+  <td>android-4.1.1_r1</td>
+  <td>Jelly Bean</td>
+  <td>Galaxy Nexus</td>
+</tr>
+<tr>
+  <td>IMM76L</td>
+  <td>android-4.0.4_r2.1</td>
+  <td>Ice Cream Sandwich</td>
+  <td>&nbsp;</td>
+</tr>
+<tr>
+  <td>IMM76K</td>
+  <td>android-4.0.4_r2</td>
+  <td>Ice Cream Sandwich</td>
+  <td>Galaxy Nexus</td>
+</tr>
+<tr>
+  <td>IMM76I</td>
+  <td>android-4.0.4_r1.2</td>
+  <td>Ice Cream Sandwich</td>
+  <td>Galaxy Nexus</td>
+</tr>
+<tr>
+  <td>IMM76D</td>
+  <td>android-4.0.4_r1.1</td>
+  <td>Ice Cream Sandwich</td>
+  <td>Nexus S, Nexus S 4G, Galaxy Nexus</td>
+</tr>
+<tr>
+  <td>IMM76</td>
+  <td>android-4.0.4_r1</td>
+  <td>Ice Cream Sandwich</td>
+  <td></td>
+</tr>
+<tr>
+  <td>IML77</td>
+  <td>android-4.0.3_r1.1</td>
+  <td>Ice Cream Sandwich</td>
+  <td></td>
+</tr>
+<tr>
+  <td>IML74K</td>
+  <td>android-4.0.3_r1</td>
+  <td>Ice Cream Sandwich</td>
+  <td>Nexus S</td>
+</tr>
+<tr>
+  <td>ICL53F</td>
+  <td>android-4.0.2_r1</td>
+  <td>Ice Cream Sandwich</td>
+  <td>Galaxy Nexus</td>
+</tr>
+<tr>
+  <td>ITL41F</td>
+  <td>android-4.0.1_r1.2</td>
+  <td>Ice Cream Sandwich</td>
+  <td>Galaxy Nexus</td>
+</tr>
+<tr>
+  <td>ITL41D</td>
+  <td>android-4.0.1_r1.1</td>
+  <td>Ice Cream Sandwich</td>
+  <td>Galaxy Nexus</td>
+</tr>
+<tr>
+  <td>ITL41D</td>
+  <td>android-4.0.1_r1</td>
+  <td>Ice Cream Sandwich</td>
+  <td>Galaxy Nexus</td>
+</tr>
+<tr>
+  <td>GWK74</td>
+  <td>android-2.3.7_r1</td>
+  <td>Gingerbread</td>
+  <td>Nexus S 4G</td>
+</tr>
+<tr>
+  <td>GRK39F</td>
+  <td>android-2.3.6_r1</td>
+  <td>Gingerbread</td>
+  <td>Nexus One, Nexus S</td>
+</tr>
+<tr>
+  <td>GRK39C</td>
+  <td>android-2.3.6_r0.9</td>
+  <td>Gingerbread</td>
+  <td>Nexus S</td>
+</tr>
+<tr>
+  <td>GRJ90</td>
+  <td>android-2.3.5_r1</td>
+  <td>Gingerbread</td>
+  <td>Nexus S 4G</td>
+</tr>
+<tr>
+  <td>GRJ22</td>
+  <td>android-2.3.4_r1</td>
+  <td>Gingerbread</td>
+  <td>Nexus One, Nexus S, Nexus S 4G</td>
+</tr>
+<tr>
+  <td>GRJ06D</td>
+  <td>android-2.3.4_r0.9</td>
+  <td>Gingerbread</td>
+  <td>Nexus S 4G</td>
+</tr>
+<tr>
+  <td>GRI54</td>
+  <td>android-2.3.3_r1.1</td>
+  <td>Gingerbread</td>
+  <td>Nexus S</td>
+</tr>
+<tr>
+  <td>GRI40</td>
+  <td>android-2.3.3_r1</td>
+  <td>Gingerbread</td>
+  <td>Nexus One, Nexus S</td>
+</tr>
+<tr>
+  <td>GRH78C</td>
+  <td>android-2.3.2_r1</td>
+  <td>Gingerbread</td>
+  <td>Nexus S</td>
+</tr>
+<tr>
+  <td>GRH78</td>
+  <td>android-2.3.1_r1</td>
+  <td>Gingerbread</td>
+  <td>Nexus S</td>
+</tr>
+<tr>
+  <td>GRH55</td>
+  <td>android-2.3_r1</td>
+  <td>Gingerbread</td>
+  <td>earliest Gingerbread version, Nexus S</td>
+</tr>
+<tr>
+  <td>FRK76C</td>
+  <td>android-2.2.3_r2</td>
+  <td>Froyo</td>
+  <td>&nbsp;</td>
+</tr>
+<tr>
+  <td>FRK76</td>
+  <td>android-2.2.3_r1</td>
+  <td>Froyo</td>
+  <td></td>
+</tr>
+<tr>
+  <td>FRG83G</td>
+  <td>android-2.2.2_r1</td>
+  <td>Froyo</td>
+  <td>Nexus One</td>
+</tr>
+<tr>
+  <td>FRG83D</td>
+  <td>android-2.2.1_r2</td>
+  <td>Froyo</td>
+  <td>Nexus One</td>
+</tr>
+<tr>
+  <td>FRG83</td>
+  <td>android-2.2.1_r1</td>
+  <td>Froyo</td>
+  <td>Nexus One</td>
+</tr>
+<tr>
+  <td>FRG22D</td>
+  <td>android-2.2_r1.3</td>
+  <td>Froyo</td>
+  <td></td>
+</tr>
+<tr>
+  <td>FRG01B</td>
+  <td>android-2.2_r1.2</td>
+  <td>Froyo</td>
+  <td></td>
+</tr>
+<tr>
+  <td>FRF91</td>
+  <td>android-2.2_r1.1</td>
+  <td>Froyo</td>
+  <td>Nexus One</td>
+</tr>
+<tr>
+  <td>FRF85B</td>
+  <td>android-2.2_r1</td>
+  <td>Froyo</td>
+  <td>Nexus One</td>
+</tr>
+<tr>
+  <td>EPF21B</td>
+  <td>android-2.1_r2.1p2</td>
+  <td>Eclair</td>
+  <td>&nbsp;</td>
+</tr>
+<tr>
+  <td>ESE81</td>
+  <td>android-2.1_r2.1s</td>
+  <td>Eclair</td>
+  <td></td>
+</tr>
+<tr>
+  <td>EPE54B</td>
+  <td>android-2.1_r2.1p</td>
+  <td>Eclair</td>
+  <td>Nexus One</td>
+</tr>
+<tr>
+  <td>ERE27</td>
+  <td>android-2.1_r2</td>
+  <td>Eclair</td>
+  <td>Nexus One</td>
+</tr>
+<tr>
+  <td>ERD79</td>
+  <td>android-2.1_r1</td>
+  <td>Eclair</td>
+  <td>Nexus One</td>
+</tr>
+<tr>
+  <td>ESD56</td>
+  <td>android-2.0.1_r1</td>
+  <td>Eclair</td>
+  <td></td>
+</tr>
+<tr>
+  <td>ESD20</td>
+  <td>android-2.0_r1</td>
+  <td>Eclair</td>
+  <td>&nbsp;</td>
+</tr>
+<tr>
+  <td>DMD64</td>
+  <td>android-1.6_r1.5</td>
+  <td>Donut</td>
+  <td>&nbsp;</td>
+</tr>
+<tr>
+  <td>DRD20</td>
+  <td>android-1.6_r1.4</td>
+  <td></td>
+  <td></td>
+</tr>
+<tr>
+  <td>DRD08</td>
+  <td>android-1.6_r1.3</td>
+  <td></td>
+  <td></td>
+</tr>
+<tr>
+  <td>DRC92</td>
+  <td>android-1.6_r1.2</td>
+  <td></td>
+  <td></td>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td>DRC83</td>
-<td>android-1.6_r1.1</td>
-<td>earliest Donut version, ADP1, ADP2</td>
-</tr>
-<tr>
-<td>DRC92</td>
-<td>android-1.6_r1.2</td>
-<td></td>
-</tr>
-<tr>
-<td>DRD08</td>
-<td>android-1.6_r1.3</td>
-<td></td>
-</tr>
-<tr>
-<td>DRD20</td>
-<td>android-1.6_r1.4</td>
-<td></td>
-</tr>
-<tr>
-<td>DMD64</td>
-<td>android-1.6_r1.5</td>
-<td>latest Donut version</td>
-</tr>
-<tr>
-<td>ESD20</td>
-<td>android-2.0_r1</td>
-<td>earliest Eclair version</td>
-</tr>
-<tr>
-<td>ESD56</td>
-<td>android-2.0.1_r1</td>
-<td></td>
-</tr>
-<tr>
-<td>ERD79</td>
-<td>android-2.1_r1</td>
-<td>Nexus One</td>
-</tr>
-<tr>
-<td>ERE27</td>
-<td>android-2.1_r2</td>
-<td>Nexus One</td>
-</tr>
-<tr>
-<td>EPE54B</td>
-<td>android-2.1_r2.1p</td>
-<td>Nexus One</td>
-</tr>
-<tr>
-<td>ESE81</td>
-<td>android-2.1_r2.1s</td>
-<td></td>
-</tr>
-<tr>
-<td>EPF21B</td>
-<td>android-2.1_r2.1p2</td>
-<td>latest Eclair version</td>
-</tr>
-<tr>
-<td>FRF85B</td>
-<td>android-2.2_r1</td>
-<td>earliest Froyo version, Nexus One</td>
-</tr>
-<tr>
-<td>FRF91</td>
-<td>android-2.2_r1.1</td>
-<td>Nexus One</td>
-</tr>
-<tr>
-<td>FRG01B</td>
-<td>android-2.2_r1.2</td>
-<td></td>
-</tr>
-<tr>
-<td>FRG22D</td>
-<td>android-2.2_r1.3</td>
-<td></td>
-</tr>
-<tr>
-<td>FRG83</td>
-<td>android-2.2.1_r1</td>
-<td>Nexus One</td>
-</tr>
-<tr>
-<td>FRG83D</td>
-<td>android-2.2.1_r2</td>
-<td>Nexus One</td>
-</tr>
-<tr>
-<td>FRG83G</td>
-<td>android-2.2.2_r1</td>
-<td>Nexus One</td>
-</tr>
-<tr>
-<td>FRK76</td>
-<td>android-2.2.3_r1</td>
-<td></td>
-</tr>
-<tr>
-<td>FRK76C</td>
-<td>android-2.2.3_r2</td>
-<td>latest Froyo version</td>
-</tr>
-<tr>
-<td>GRH55</td>
-<td>android-2.3_r1</td>
-<td>earliest Gingerbread version, Nexus S</td>
-</tr>
-<tr>
-<td>GRH78</td>
-<td>android-2.3.1_r1</td>
-<td>Nexus S</td>
-</tr>
-<tr>
-<td>GRH78C</td>
-<td>android-2.3.2_r1</td>
-<td>Nexus S</td>
-</tr>
-<tr>
-<td>GRI40</td>
-<td>android-2.3.3_r1</td>
-<td>Nexus One, Nexus S</td>
-</tr>
-<tr>
-<td>GRI54</td>
-<td>android-2.3.3_r1.1</td>
-<td>Nexus S</td>
-</tr>
-<tr>
-<td>GRJ06D</td>
-<td>android-2.3.4_r0.9</td>
-<td>Nexus S 4G</td>
-</tr>
-<tr>
-<td>GRJ22</td>
-<td>android-2.3.4_r1</td>
-<td>Nexus One, Nexus S, Nexus S 4G</td>
-</tr>
-<tr>
-<td>GRJ90</td>
-<td>android-2.3.5_r1</td>
-<td>Nexus S 4G</td>
-</tr>
-<tr>
-<td>GRK39C</td>
-<td>android-2.3.6_r0.9</td>
-<td>Nexus S</td>
-</tr>
-<tr>
-<td>GRK39F</td>
-<td>android-2.3.6_r1</td>
-<td>Nexus One, Nexus S</td>
-</tr>
-<tr>
-<td>GWK74</td>
-<td>android-2.3.7_r1</td>
-<td>latest Gingerbread version, Nexus S 4G</td>
-</tr>
-<tr>
-<td>ITL41D</td>
-<td>android-4.0.1_r1</td>
-<td>earliest Ice Cream Sandwich version, Galaxy Nexus</td>
-</tr>
-<tr>
-<td>ITL41D</td>
-<td>android-4.0.1_r1.1</td>
-<td>Galaxy Nexus</td>
-</tr>
-<tr>
-<td>ITL41F</td>
-<td>android-4.0.1_r1.2</td>
-<td>Galaxy Nexus</td>
-</tr>
-<tr>
-<td>ICL53F</td>
-<td>android-4.0.2_r1</td>
-<td>Galaxy Nexus</td>
-</tr>
-<tr>
-<td>IML74K</td>
-<td>android-4.0.3_r1</td>
-<td>Nexus S</td>
-</tr>
-<tr>
-<td>IML77</td>
-<td>android-4.0.3_r1.1</td>
-<td></td>
-</tr>
-<tr>
-<td>IMM76</td>
-<td>android-4.0.4_r1</td>
-<td></td>
-</tr>
-<tr>
-<td>IMM76D</td>
-<td>android-4.0.4_r1.1</td>
-<td>Nexus S, Nexus S 4G, Galaxy Nexus</td>
-</tr>
-<tr>
-<td>IMM76I</td>
-<td>android-4.0.4_r1.2</td>
-<td>Galaxy Nexus</td>
-</tr>
-<tr>
-<td>IMM76K</td>
-<td>android-4.0.4_r2</td>
-<td>Galaxy Nexus</td>
-</tr>
-<tr>
-<td>IMM76L</td>
-<td>android-4.0.4_r2.1</td>
-<td>latest Ice Cream Sandwich version</td>
-</tr>
-<tr>
-<td>JRO03C</td>
-<td>android-4.1.1_r1</td>
-<td>earliest Jelly Bean version, Galaxy Nexus</td>
-</tr>
-<tr>
-<td>JRO03D</td>
-<td>android-4.1.1_r1.1</td>
-<td>Nexus 7</td>
-</tr>
-<tr>
-<td>JRO03E</td>
-<td>android-4.1.1_r2</td>
-<td>Nexus S</td>
-</tr>
-<tr>
-<td>JRO03H</td>
-<td>android-4.1.1_r3</td>
-<td></td>
-</tr>
-<tr>
-<td>JRO03L</td>
-<td>android-4.1.1_r4</td>
-<td>Nexus S</td>
-</tr>
-<tr>
-<td>JRO03O</td>
-<td>android-4.1.1_r5</td>
-<td>Galaxy Nexus</td>
-</tr>
-<tr>
-<td>JRO03R</td>
-<td>android-4.1.1_r6</td>
-<td>Nexus S 4G</td>
-</tr>
-<tr>
-<td>JRO03S</td>
-<td>android-4.1.1_r6.1</td>
-<td>Nexus 7</td>
-</tr>
-
-<tr>
-<td>JZO54K</td>
-<td>android-4.1.2_r1</td>
-<td>Nexus S, Galaxy Nexus, Nexus 7</td>
-</tr>
-
-<tr>
-<td>JZO54L</td>
-<td>android-4.1.2_r2</td>
-<td></td>
-</tr>
-
-<tr>
-<td>JZO54M</td>
-<td>android-4.1.2_r2.1</td>
-<td></td>
-</tr>
-
-<tr>
-<td>JOP40C</td>
-<td>android-4.2_r1</td>
-<td>Galaxy Nexus, Nexus 7, Nexus 4, Nexus 10</td>
-</tr>
-
-<tr>
-<td>JOP40D</td>
-<td>android-4.2.1_r1</td>
-<td>Galaxy Nexus, Nexus 7, Nexus 4, Nexus 10</td>
-</tr>
-
-<tr>
-<td>JOP40F</td>
-<td>android-4.2.1_r1.1</td>
-<td>Nexus 10</td>
-</tr>
-
-<tr>
-<td>JOP40G</td>
-<td>android-4.2.1_r1.2</td>
-<td>Nexus 4</td>
-</tr>
-
-<tr>
-<td>JDQ39</td>
-<td>android-4.2.2_r1</td>
-<td>Galaxy Nexus, Nexus 7, Nexus 4, Nexus 10</td>
-</tr>
-
-<tr>
-<td>JDQ39B</td>
-<td>android-4.2.2_r1.1</td>
-<td>Nexus 7</td>
-</tr>
-
-<tr>
-<td>JDQ39E</td>
-<td>android-4.2.2_r1.2</td>
-<td>Nexus 4</td>
-</tr>
-
-<tr>
-<td>JWR66L</td>
-<td>android-4.3_r0.9</td>
-<td>Nexus 7</td>
-</tr>
-
-<tr>
-<td>JWR66N</td>
-<td>android-4.3_r0.9.1</td>
-<td>Galaxy Nexus, Nexus 7 (grouper/tilapia/flo), Nexus 4, Nexus 10</td>
-</tr>
-
-<tr>
-<td>JWR66V</td>
-<td>android-4.3_r1</td>
-<td>Galaxy Nexus, Nexus 7 (grouper/tilapia), Nexus 4, Nexus 10</td>
-</tr>
-
-<tr>
-<td>JWR66Y</td>
-<td>android-4.3_r1.1</td>
-<td>Galaxy Nexus, Nexus 7 (grouper/tilapia), Nexus 4, Nexus 10</td>
-</tr>
-
-<tr>
-<td>JSR78D</td>
-<td>android-4.3_r2</td>
-<td>Nexus 7 (deb)</td>
-</tr>
-
-<tr>
-<td>JSS15J</td>
-<td>android-4.3_r2.1</td>
-<td>Jelly Bean version, Nexus 7 (flo/deb)</td>
-</tr>
-
-<tr>
-<td>JSS15Q</td>
-<td>android-4.3_r2.2</td>
-<td>Jelly Bean version, Nexus 7 (flo)</td>
-</tr>
-
-<tr>
-<td>JSS15R</td>
-<td>android-4.3_r2.3</td>
-<td>Latest Jelly Bean version, Nexus 7 (flo)</td>
-</tr>
-
-<tr>
-<td>JLS36C</td>
-<td>android-4.3_r3</td>
-<td>Jelly Bean version, Nexus 7 (deb)</td>
-</tr>
-
-<tr>
-<td>JLS36I</td>
-<td>android-4.3.1_r1</td>
-<td>Latest Jelly Bean version, Nexus 7 (deb)</td>
-</tr>
-
-<tr>
-<td>KRT16M</td>
-<td>android-4.4_r1</td>
-<td>Initial KitKat version, Nexus 5 (hammerhead)</td>
-</tr>
-
-<tr>
-<td>KRT16S</td>
-<td>android-4.4_r1.2</td>
-<td>KitKat version, Nexus 7 (flo/deb/grouper/tilapia), Nexus 4, Nexus 10</td>
-</tr>
-
-<tr>
-<td>KOT49E</td>
-<td>android-4.4.1_r1</td>
-<td>KitKat version, Nexus 5, Nexus 7 (flo/deb/grouper/tilapia), Nexus 4, Nexus 10</td>
-</tr>
-
-<tr>
-<td>KOT49H</td>
-<td>android-4.4.2_r1</td>
-<td>KitKat version, Nexus 5, Nexus 7 (flo/deb/grouper/tilapia), Nexus 4, Nexus 10</td>
-</tr>
-
-<tr>
-<td>KVT49L</td>
-<td>android-4.4.2_r2</td>
-<td>Latest KitKat version, Nexus 7 (deb Verizon)</td>
-</tr>
 
 </tbody>
 </table>
@@ -586,6 +634,7 @@ tested.</p>
 <p>For Honeycomb, the entire platform source code isn't available.
 However, the parts of Honeycomb licensed under the GPL and LGPL
 are available under the following tags:</p>
+
 <table>
 <thead>
 <tr>
