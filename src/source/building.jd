@@ -49,8 +49,11 @@ distributions.</p>
   </li>
 
   <li>
-  JDK 6 if you wish to build Gingerbread or newer; JDK 5 for Froyo or older.
-  You can download both from <a href="http://java.sun.com/javase/downloads/">java.sun.com</a>.</p>
+  JDK 7 to build the latest version of Android in the <a
+  href="https://android.googlesource.com/">Android Open Source Project
+  (AOSP)</a>; JDK 6 to build Gingerbread through KitKat; JDK 5 for Cupcake through
+  Froyo. See <a href="initializing.html">Initializing a Build Environment</a>
+  for installation instructions by operating system.</p>
   </li>
 
   <li>
