@@ -133,7 +133,7 @@ the fastest builds are made with commands between <code>make -j16</code> and
 <p>The emulator is added to your path automatically by the build process. To run the emulator, type</p>
 <pre><code>$ emulator
 </code></pre>
-<h1 id="using-ccache">Using ccache</h1>
+<h2 id="using-ccache">Using ccache</h2>
 <p>ccache is a compiler cache for C and C++ that can help make builds faster.
 In the root of the source tree, do the following:</p>
 <pre><code>$ export USE_CCACHE=1
@@ -147,10 +147,10 @@ $ prebuilts/misc/linux-x86/ccache/ccache -M 50G
 <p>On OSX, you should replace <code>linux-x86</code> with <code>darwin-x86</code>.</p>
 <p>When using Ice Cream Sandwich (4.0.x) or older, you should replace
 <code>prebuilts/misc</code> with <code>prebuilt</code>.</p>
-<h1 id="troubleshooting-common-build-errors">Troubleshooting Common Build Errors</h1>
-<h2 id="wrong-java-version">Wrong Java Version</h2>
-<p>If you are attempting to build froyo or earlier with Java 1.6, or gingerbread or later
-with Java 1.5, <code>make</code> will abort with a message such as</p>
+<h2 id="troubleshooting-common-build-errors">Troubleshooting Common Build Errors</h2>
+<h3 id="wrong-java-version">Wrong Java Version</h3>
+<p>If you are attempting to build a version of Android inconsistent with your
+version of Java, <code>make</code> will abort with a message such as</p>
 <pre><code>************************************************************
 You are attempting to build with the incorrect version
 of java.
@@ -165,7 +165,7 @@ Please follow the machine setup instructions at
 <p>This may be caused by</p>
 <ul>
 <li>
-<p>failing to install the correct JDK as specified in <a href="initializing.html">Initializing the Build Environment</a>. Building Android requires Sun JDK 5 or 6 depending on which release you are building.  </p>
+<p>failing to install the correct JDK as specified in <a href="initializing.html">Initializing the Build Environment</a>.</p>
 </li>
 <li>
 <p>another JDK that you previously installed appearing in your path.  You can remove the offending JDK from your path with:</p>
@@ -173,11 +173,11 @@ Please follow the machine setup instructions at
 </code></pre>
 </li>
 </ul>
-<h2 id="python-version-3">Python Version 3</h2>
+<h3 id="python-version-3">Python Version 3</h3>
 <p>Repo is built on particular functionality from Python 2.x and is unfortunately incompatible with Python 3.  In order to use repo, please install Python 2.x:</p>
 <pre><code>$ apt-get install python
 </code></pre>
-<h2 id="case-insensitive-filesystem">Case Insensitive Filesystem</h2>
+<h3 id="case-insensitive-filesystem">Case Insensitive Filesystem</h3>
 <p>If you are building on an HFS filesystem on Mac OS X, you may encounter an error such as</p>
 <pre><code>************************************************************
 You are building on a case-insensitive filesystem.
@@ -185,7 +185,7 @@ Please move your source tree to a case-sensitive filesystem.
 ************************************************************
 </code></pre>
 <p>Please follow the instructions in <a href="initializing.html">Initializing the Build Environment</a> for creating a case-sensitive disk image.</p>
-<h2 id="no-usb-permission">No USB Permission</h2>
+<h3 id="no-usb-permission">No USB Permission</h3>
 <p>On most Linux systems, unprivileged users cannot access USB ports by default. If you see a permission denied error, follow the instructions
 <a href="initializing.html">Initializing the Build Environment</a> for configuring USB access.  </p>
 <p>If adb was already running and cannot connect to the device after
