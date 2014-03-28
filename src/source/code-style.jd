@@ -262,8 +262,9 @@ property "Foo" means, you should document it.</p>
 <p>Every method you write, whether public or otherwise, would benefit from
 Javadoc. Public methods are part of an API and therefore require Javadoc.</p>
 <p>Android does not currently enforce a specific style for writing Javadoc
-comments, but you should follow the 
-<a href="http://java.sun.com/j2se/javadoc/writingdoccomments/">Sun Javadoc conventions</a>.</p>
+comments, but you should follow the <a
+href="http://www.oracle.com/technetwork/java/codeconv-138413.html">Code
+Conventions for the Java Programming Language</a>.</p>
 <h3 id="write-short-methods">Write Short Methods</h3>
 <p>To the extent that it is feasible, methods should be kept small and
 focused. It is, however, recognized that long methods are sometimes
