@@ -24,12 +24,15 @@ page.title=Initializing a Build Environment
   </div>
 </div>
 
-<p>This section describes how to set up your local work environment to build the Android source files. You will need to use Linux or Mac OS. Building under Windows is not currently supported.</p>
-<p><em>Note: The source download is approximately 8.5GB in size.
+<p>This section describes how to set up your local work environment to build
+the Android source files. You will need to use Linux or Mac OS. Building under
+Windows is not currently supported.</p>
+<p><strong>Note</strong>: The source download is approximately 8.5GB in size.
 You will need over 30GB free to complete a single build, and
 up to 100GB (or more) for a full set of builds.</em></p>
-<p>For an overview of the entire code-review and code-update process, see <a href="life-of-a-patch.html">Life of a Patch</a>.</p>
-<h1 id="choosing-a-branch">Choosing a Branch</h1>
+<p>For an overview of the entire code-review and code-update process, see <a
+href="life-of-a-patch.html">Life of a Patch</a>.</p>
+<h2 id="choosing-a-branch">Choosing a Branch</h2>
 <p>Some of the requirements for your build environment are determined by which
 version of the source code you plan to compile. See
 <a href="build-numbers.html">Build Numbers</a> for a full listing of branches you may
@@ -38,7 +41,7 @@ choose from. You may also choose to download and build the latest source code
 when you initialize the repository.</p>
 <p>Once you have selected a branch, follow the appropriate instructions below to
 set up your build environment.</p>
-<h1 id="setting-up-a-linux-build-environment">Setting up a Linux build environment</h1>
+<h2 id="setting-up-a-linux-build-environment">Setting up a Linux build environment</h2>
 <p>These instructions apply to all branches, including master.</p>
 <p>The Android build is routinely tested in house on recent versions of
 Ubuntu LTS (10.04), but most distributions should have the required
@@ -47,42 +50,37 @@ distributions are welcome.</p>
 <p>For Gingerbread (2.3.x) and newer versions, including the master
 branch, a 64-bit environment is required. Older versions can be
 compiled on 32-bit systems.</p>
-<p><em>Note: It is also possible to build Android in a virtual machine.
+<p><strong>Note</strong>: It is also possible to build Android in a virtual machine.
 If you are running Linux in a virtual machine, you will need at
 least 16GB of RAM/swap and 30GB or more of disk space in order to
-build the Android tree.</em></p>
-<p>Detailed instructions for Ubuntu and MacOS follow. In general you will need:</p>
-<ul>
-<li>
-<p>Python 2.6 -- 2.7, which you can download from <a href="http://www.python.org/download/">python.org</a>.</p>
-</li>
-<li>
-<p>GNU Make 3.81 -- 3.82, which you can download from <a href="http://ftp.gnu.org/gnu/make/">gnu.org</a>,</p>
-</li>
-<li>
-<p>JDK 6 if you wish to build Gingerbread or newer; JDK 5 for Froyo or older.  You can download both from <a href="http://java.sun.com/javase/downloads/">java.sun.com</a>.</p>
-</li>
-<li>
-<p>Git 1.7 or newer. You can find it at <a href="http://git-scm.com/download">git-scm.com</a>.</p>
-</li>
-</ul>
-<h2 id="installing-the-jdk">Installing the JDK</h2>
-<p>The Sun JDK is no longer in Ubuntu's main package repository.  In order to download it, you need to add the appropriate repository and indicate to the system which JDK should be used.</p>
-<p>Java 6: for Gingerbread and newer</p>
-<pre><code>$ sudo add-apt-repository "deb http://archive.canonical.com/ lucid partner"
-$ sudo apt-get update
-$ sudo apt-get install sun-java6-jdk
-</code></pre>
-<p>Java 5: for Froyo and older</p>
-<pre><code>$ sudo add-apt-repository "deb http://archive.ubuntu.com/ubuntu hardy main multiverse"
-$ sudo add-apt-repository "deb http://archive.ubuntu.com/ubuntu hardy-updates main multiverse"
-$ sudo apt-get update
-$ sudo apt-get install sun-java5-jdk
-</code></pre>
-<p><em>Note: The <code>lunch</code> command in the build step will ensure that the Sun JDK is
-used instead of any previously installed JDK.</em></p>
+build the Android tree.</p>
+<p>See the <a href="building.html">Downloading and Building</a> page for the
+list of hardware and software requirements. Then follow the detailed
+instructions for Ubuntu and MacOS below.</p>
 
-<h2 id="installing-required-packages-ubuntu-1204">Installing required packages (Ubuntu 12.04)</h2>
+<h3 id="installing-the-jdk">Installing the JDK</h3>
+<p>The latest version of Android in the <a
+href="https://android.googlesource.com/">Android Open Source Project (AOSP)</a>
+requires Java 7. On Ubuntu, use <a href="http://openjdk.java.net/install/">OpenJDK</a>.</p>
+<p>Java 7: For the latest version of Android</p>
+<pre><code>$ sudo apt-get update
+$ sudo apt-get install openjdk-7-jdk
+</code></pre>
+
+<p>Optionally, update the default Java version by running:</p>
+<pre><code>$ sudo update-alternatives --config java
+$ sudo update-alternatives --config javac
+</code></pre>
+
+<p>To develop older versions of Android, download and install the corresponding version of the <a
+href="http://www.oracle.com/technetwork/java/javase/archive-139210.html">Java JDK</a>:<br/>
+Java 6: for Gingerbread through KitKat<br/>
+Java 5: for Cupcake through Froyo</p>
+
+<p><strong>Note</strong>: The <code>lunch</code> command in the build step will ensure that the Sun JDK is
+used instead of any previously installed JDK.</p>
+
+<h3 id="installing-required-packages-ubuntu-1204">Installing required packages (Ubuntu 12.04)</h3>
 <p>You will need a 64-bit version of Ubuntu.  Ubuntu 12.04 is recommended.
 Building using an older version of Ubuntu is not supported on master or recent releases.</p>
 <pre><code>$ sudo apt-get install git gnupg flex bison gperf build-essential \
@@ -93,7 +91,7 @@ Building using an older version of Ubuntu is not supported on master or recent r
 $ sudo ln -s /usr/lib/i386-linux-gnu/mesa/libGL.so.1 /usr/lib/i386-linux-gnu/libGL.so
 </code></pre>
 
-<h2 id="installing-required-packages-ubuntu-1004-1110">Installing required packages (Ubuntu 10.04 -- 11.10)</h2>
+<h3 id="installing-required-packages-ubuntu-1004-1110">Installing required packages (Ubuntu 10.04 -- 11.10)</h3>
 <p>Building on Ubuntu 10.04-11.10 is no longer supported, but may be useful for building older
 releases of AOSP.</p>
 <pre><code>$ sudo apt-get install git-core gnupg flex bison gperf build-essential \
@@ -108,7 +106,7 @@ releases of AOSP.</p>
 <p>On Ubuntu 11.10:</p>
 <pre><code>$ sudo apt-get install libx11-dev:i386
 </code></pre>
-<h2 id="configuring-usb-access">Configuring USB Access</h2>
+<h3 id="configuring-usb-access">Configuring USB Access</h3>
 <p>Under GNU/linux systems (and specifically under Ubuntu systems),
 regular users can't directly access USB devices by default. The
 system needs to be configured to allow such access.</p>
@@ -159,7 +157,7 @@ back into the computer.</p>
 Lucid Lynx (10.04.x LTS). Other versions of Ubuntu or other
 variants of GNU/linux might require different configurations.</p>
 <p><a name="ccache"></a></p>
-<h2 id="setting-up-ccache">Setting up ccache</h2>
+<h3 id="setting-up-ccache">Setting up ccache</h3>
 <p>You can optionally tell the build to use the ccache compilation tool.
 Ccache acts as a compiler cache that can be used to speed-up rebuilds.
 This works very well if you do "make clean" often, or if you frequently
@@ -182,7 +180,7 @@ a different location:</p>
 <pre><code>prebuilt/linux-x86/ccache/ccache -M 50G
 </code></pre>
 <p>This setting is stored in the CCACHE_DIR and is persistent.</p>
-<h2 id="using-a-separate-output-directory">Using a separate output directory</h2>
+<h3 id="using-a-separate-output-directory">Using a separate output directory</h3>
 <p>By default, the output of each build is stored in the out/
 subdirectory of the matching source tree.</p>
 <p>On some machines with multiple storage devices, builds are
@@ -208,7 +206,7 @@ as those would end up sharing an output directory, with
 unpredictable results.</p>
 <p>This is only supported on Jelly Bean (4.1) and newer,
 including the master branch.</p>
-<h1 id="setting-up-a-mac-os-x-build-environment">Setting up a Mac OS X build environment</h1>
+<h2 id="setting-up-a-mac-os-x-build-environment">Setting up a Mac OS X build environment</h2>
 <p>In a default installation, OS X runs on a case-preserving but case-insensitive
 filesystem. This type of filesystem is not supported by git and will cause some
 git commands (such as "git status") to behave abnormally. Because of this, we
@@ -232,22 +230,26 @@ saves space while allowing to grow later as the need arises. Be sure to select
 function mountAndroid { hdiutil attach ~/android.dmg -mountpoint /Volumes/android; }
 </code></pre>
 <p>Once mounted, you'll do all your work in the "android" volume. You can eject it (unmount it) just like you would with an external drive.</p>
-<h2 id="master-branch">Master branch</h2>
+<h3 id="master-branch">Master branch</h3>
 <p>To build the latest source in a Mac OS environment, you will need an Intel/x86
 machine running MacOS 10.8 (Mountain Lion), along with Xcode
 4.5.2 and Command Line Tools.</p>
-<h2 id="branch-40x-and-all-earlier-branches">Branch 4.2.x and earlier branches</h2>
+<p>You will also need the <a
+href="http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html">Java 7 JDK</a>.
+Select the file: jdk-7u51-macosx-x64.dmg</p>
+
+<h3 id="branch-40x-and-all-earlier-branches">Branch 4.2.x and earlier branches</h3>
 <p>To build 4.2.x and earlier source in a Mac OS environment, you will need an Intel/x86
 machine running MacOS 10.6 (Snow Leopard) or MacOS 10.7 (Lion), along with Xcode
 4.2 (Apple's Developer Tools). Although Lion does not come with a JDK, it should
 install automatically when you attempt to build the source.</p>
 <p>The remaining sections for Mac OS X only apply to those who wish to build
 earlier branches.</p>
-<h2 id="branch-40x-and-all-earlier-branches">Branch 4.0.x and all earlier branches</h2>
+<h3 id="branch-40x-and-all-earlier-branches">Branch 4.0.x and all earlier branches</h3>
 <p>To build android-4.0.x and earlier branches in a Mac OS environment, you need an
 Intel/x86 machine running MacOS 10.5 (Leopard) or MacOS 10.6 (Snow Leopard). You
 will need the MacOS 10.5 SDK.</p>
-<h3 id="installing-required-packages">Installing required packages</h3>
+<h4 id="installing-required-packages">Installing required packages</h4>
 <ul>
 <li>
 <p>Install Xcode from <a href="http://developer.apple.com/">the Apple developer site</a>.
@@ -272,7 +274,7 @@ create an Apple ID in order to download.</p>
 </code></pre>
 </li>
 </ul>
-<h3 id="reverting-from-make-382">Reverting from make 3.82</h3>
+<h4 id="reverting-from-make-382">Reverting from make 3.82</h4>
 <p>For versions of Android before ICS, there is a bug in gmake 3.82 that prevents android from building.  You can install version 3.81 using MacPorts by taking the following steps:</p>
 <ul>
 <li>
@@ -299,12 +301,12 @@ create an Apple ID in order to download.</p>
 </code></pre>
 </li>
 </ul>
-<h3 id="setting-a-file-descriptor-limit">Setting a file descriptor limit</h3>
+<h4 id="setting-a-file-descriptor-limit">Setting a file descriptor limit</h4>
 <p>On MacOS the default limit on the number of simultaneous file descriptors open is too low and a highly parallel build process may exceed this limit.<br />
 </p>
 <p>To increase the cap, add the following lines to your <code>~/.bash_profile</code>: </p>
 <pre><code># set the number of open files to be 1024
 ulimit -S -n 1024
 </code></pre>
-<h1 id="next-download-the-source">Next: Download the source</h1>
-<p>Your build environment is good to go!  Proceed to <a href="downloading.html">downloading the source</a>....</p>
+<h2 id="next-download-the-source">Next: Download the source</h2>
+<p>Your build environment is good to go! Proceed to <a href="downloading.html">downloading the source</a>.</p>
