@@ -17,7 +17,7 @@ page.title=Downloading and Building
     limitations under the License.
 -->
 <p>The Android build is routinely tested in-house on recent versions of
-Ubuntu LTS (10.04), but most distributions should have the required
+Ubuntu LTS (12.04), but most distributions should have the required
 build tools available. We welcome reports of successes or failures on other
 distributions.</p>
 
