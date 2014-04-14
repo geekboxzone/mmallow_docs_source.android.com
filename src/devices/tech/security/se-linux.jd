@@ -436,5 +436,4 @@ resolve them.  </p> <h2 id="help">Help</h2> Device manufacturers are strongly
 encouraged to work with their Android account managers to analyze SELinux
 results and improve policy settings. Over time, Android intends to support
 common manufacturer additions in its default SELinux policy. For more
-information, contact <a
-href="mailto:security@google.com?subject=se-linux">security@android.com</a>.
+information, contact security@android.com.
