@@ -81,7 +81,16 @@
           <li><a href="<?cs var:toroot ?>devices/tech/storage/config-example.html">Typical Configuration Examples</a></li>
         </ul>
       </li>
-      <li><a href="<?cs var:toroot ?>devices/graphics.html">Graphics</a></li>
+      <li class="nav-section">
+        <div class="nav-section-header">
+          <a href="<?cs var:toroot ?>devices/graphics.html">
+            <span class="en">Graphics</span>
+          </a>
+        </div>
+        <ul>
+          <li><a href="<?cs var:toroot ?>devices/graphics/architecture.html">System-Level Architecture</a></li>
+        </ul>
+      </li>
       <li class="nav-section">
         <div class="nav-section-header">
           <a href="<?cs var:toroot ?>devices/tech/input/index.html">
