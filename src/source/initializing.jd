@@ -59,7 +59,7 @@ list of hardware and software requirements. Then follow the detailed
 instructions for Ubuntu and MacOS below.</p>
 
 <h3 id="installing-the-jdk">Installing the JDK</h3>
-<p>The latest version of Android in the <a
+<p>The master branch of Android in the <a
 href="https://android.googlesource.com/">Android Open Source Project (AOSP)</a>
 requires Java 7. On Ubuntu, use <a href="http://openjdk.java.net/install/">OpenJDK</a>.</p>
 <p>Java 7: For the latest version of Android</p>
@@ -71,6 +71,10 @@ $ sudo apt-get install openjdk-7-jdk
 <pre><code>$ sudo update-alternatives --config java
 $ sudo update-alternatives --config javac
 </code></pre>
+
+<p>If you encounter version errors for Java, set its
+path as described in the <a href="building-running.html#wrong-java-version">Wrong
+Java Version</a> section.</p>
 
 <p>To develop older versions of Android, download and install the corresponding version of the <a
 href="http://www.oracle.com/technetwork/java/javase/archive-139210.html">Java JDK</a>:<br/>
