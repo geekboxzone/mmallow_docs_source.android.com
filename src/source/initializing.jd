@@ -44,7 +44,7 @@ set up your build environment.</p>
 <h2 id="setting-up-a-linux-build-environment">Setting up a Linux build environment</h2>
 <p>These instructions apply to all branches, including master.</p>
 <p>The Android build is routinely tested in house on recent versions of
-Ubuntu LTS (10.04), but most distributions should have the required
+Ubuntu LTS (12.04), but most distributions should have the required
 build tools available. Reports of successes or failures on other
 distributions are welcome.</p>
 <p>For Gingerbread (2.3.x) and newer versions, including the master
