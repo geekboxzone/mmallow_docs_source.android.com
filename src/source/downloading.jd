@@ -55,7 +55,7 @@ $ PATH=~/bin:$PATH
       Download the Repo tool and ensure that it is executable:
     </p>
     <pre>
-$ curl http://commondatastorage.googleapis.com/git-repo-downloads/repo &gt; ~/bin/repo
+$ curl http://storage.googleapis.com/git-repo-downloads/repo &gt; ~/bin/repo
 $ chmod a+x ~/bin/repo
 </pre>
   </li>
