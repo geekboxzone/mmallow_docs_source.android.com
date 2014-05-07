@@ -184,87 +184,89 @@ build needs to be deleted with</p>
 <pre><code>$ make clobber
 </code></pre>
 <h2 id="picking-and-building-the-configuration-that-matches-a-device">Picking and building the configuration that matches a device</h2>
-<p>The steps to configure and build the Android Open-Source Project
-are described in the page about <a href="building.html">Building</a>.</p>
+<p>The steps to configure and build the Android Open Source Project
+are described in the <a href="building.html">Building</a> page.</p>
 <p>The recommended builds for the various devices are available through
-the lunch menu, accessed when running the <code>lunch</code> command with no arguments:</p>
+the lunch menu, accessed when running the <code>lunch</code> command with no arguments. Factory images and binaries for Nexus devices can be downloaded from:</p>
+<p><a href="https://developers.google.com/android/nexus/images">https://developers.google.com/android/nexus/images</a></p>
+<p><a href="https://developers.google.com/android/nexus/drivers">https://developers.google.com/android/nexus/drivers</a></p>
 <table>
 <thead>
 <tr>
-<th>Device</th>
-<th>Branch</th>
+  <th>Device</th>
+<th>Code name</th>
 <th>Build configuration</th>
 </tr>
 </thead>
 <tbody>
 <tr>
+  <td>Nexus 5 (GSM/LTE)</td>
 <td>hammerhead</td>
-<td>android-4.4_r1</td>
 <td>aosp_hammerhead-userdebug</td>
 </tr>
 <tr>
-<td>flo</td>
-<td>android-4.3_r2.3</td>
+  <td>Nexus 7 (Wi-Fi)</td>
+<td>razor (flo)</td>
 <td>aosp_flo-userdebug</td>
 </tr>
 <tr>
-<td>deb</td>
-<td>android-4.3.1_r1</td>
+  <td>Nexus 7 (Mobile)</td>
+<td>razorg (deb)</td>
 <td>aosp_deb-userdebug</td>
 </tr>
 <tr>
-<td>manta</td>
-<td>android-4.2.2_r1</td>
+  <td>Nexus 10</td>
+<td>mantaray (manta)</td>
 <td>full_manta-userdebug</td>
 </tr>
 <tr>
-<td>mako</td>
-<td>android-4.3_r1.1</td>
+  <td>Nexus 4</td>
+<td>occam (mako)</td>
 <td>full_mako-userdebug</td>
 </tr>
 <tr>
-<td>grouper</td>
-<td>android-4.3_r1.1</td>
+  <td>Nexus 7 (Wi-Fi)</td>
+<td>nakasi (grouper)</td>
 <td>full_grouper-userdebug</td>
 </tr>
 <tr>
-<td>tilapia</td>
-<td>android-4.3_r1.1</td>
+  <td>Nexus 7 (Mobile)</td>
+<td>nakasig (tilapia)</td>
 <td>full_tilapia-userdebug</td>
 </tr>
 <tr>
-<td>maguro</td>
-<td>android-4.3_r1.1</td>
+  <td>Galaxy Nexus (GSM/HSPA+)</td>
+<td>yakju (maguro)</td>
 <td>full_maguro-userdebug</td>
 </tr>
 <tr>
-<td>toro</td>
-<td>android-4.3_r1 or master</td>
+  <td>Galaxy Nexus (Verizon)</td>
+<td>mysid (toro)</td>
 <td>aosp_toro-userdebug</td>
 </tr>
 <tr>
-<td>toroplus</td>
-<td>master</td>
+  <td>Galaxy Nexus (Experimental)</td>
+<td>mysidspr (toroplus)</td>
 <td>aosp_toroplus-userdebug</td>
 </tr>
 <tr>
+  <td>PandaBoard (Archived)</td>
 <td>panda</td>
-<td>master</td>
 <td>aosp_panda-userdebug</td>
 </tr>
 <tr>
+  <td>Motorola Xoom (U.S. Wi-Fi)</td>
 <td>wingray</td>
-<td>android-4.1.2_r1</td>
 <td>full_wingray-userdebug</td>
 </tr>
 <tr>
-<td>crespo</td>
-<td>android-4.1.2_r1</td>
+  <td>Nexus S</td>
+<td>soju (crespo)</td>
 <td>full_crespo-userdebug</td>
 </tr>
 <tr>
-<td>crespo4g</td>
-<td>android-4.1.2_r1</td>
+  <td>Nexus S 4G</td>
+<td>sojus (crespo4g)</td>
 <td>full_crespo4g-userdebug</td>
 </tr>
 </tbody>
