@@ -630,6 +630,22 @@ by Google. They might contain a variety of changes in addition to
 the official tagged releases, and those haven't been as thoroughly
 tested.</p>
 
+<p>To differentiate between releases, you may obtain a list of changes
+associated with each project by issuing the following command and passing it
+the two branch tags:</p>
+
+<pre><code>$ repo forall -pc 'git log --no-merges --oneline branch-1..branch-2'</pre></code>
+
+<p>For example:</p>
+
+<pre><code>$ repo forall -pc 'git log --no-merges --oneline android-4.4.2_r2..android-4.4.2_r1'</pre></code>
+
+<p>And to output to a text file:</p>
+
+<pre><code>repo forall -pc 'git log --no-merges --oneline android-4.4.2_r2..android-4.4.2_r1' > /tmp/android-4.4.2_r2-android-4.4.2_r1-diff.txt</pre></code>
+
+</p>
+
 <h2 id="honeycomb-gpl-modules">Honeycomb GPL Modules</h2>
 <p>For Honeycomb, the entire platform source code isn't available.
 However, the parts of Honeycomb licensed under the GPL and LGPL
