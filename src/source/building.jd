@@ -49,7 +49,7 @@ distributions.</p>
   </li>
 
   <li>
-  JDK 7 to build the latest version of Android in the <a
+  JDK 7 to build the master branch of Android in the <a
   href="https://android.googlesource.com/">Android Open Source Project
   (AOSP)</a>; JDK 6 to build Gingerbread through KitKat; JDK 5 for Cupcake through
   Froyo. See <a href="initializing.html">Initializing a Build Environment</a>
