@@ -644,8 +644,6 @@ the two branch tags:</p>
 
 <pre><code>repo forall -pc 'git log --no-merges --oneline android-4.4.2_r2..android-4.4.2_r1' > /tmp/android-4.4.2_r2-android-4.4.2_r1-diff.txt</pre></code>
 
-</p>
-
 <h2 id="honeycomb-gpl-modules">Honeycomb GPL Modules</h2>
 <p>For Honeycomb, the entire platform source code isn't available.
 However, the parts of Honeycomb licensed under the GPL and LGPL
