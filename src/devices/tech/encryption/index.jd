@@ -21,8 +21,8 @@ detailed description below of how it is tied into the Android system and what mu
 be done on a new device to get this feature working.</p>
 
 <h2 id="quick-summary-for-3rd-parties">Quick summary for 3rd parties.</h2>
-<p>If you want to enable encryption on your device based on Android 3.0
-aka Honeycomb, there are only a few requirements:</p>
+<p>If you want to enable encryption on your device based on Android 4.x
+aka Lemon Meringue Pie, there are only a few requirements:</p>
 <ol>
 <li>
 <p>The /data filesystem must be on a device that presents a block device
@@ -56,6 +56,12 @@ with the command "setprop vold.post_fs_data_done 1".  If your
 init.<device>.rc file does not have a post-fs-data Action, then the
 post-fs-data Action in the main init.rc file must end with the command
 "setprop vold.post_fs_data_done 1".</p>
+</li>
+<li>
+<p>Encryption can be optional or mandatory. This is determined by the fstab
+    flag. If the /encryptable= flag is used, the drive can optionally be
+    encrypted. If the /forceencrypt= flag is used, the drive will be encrypted
+    on first boot.</p>
 </li>
 </ol>
 <h2 id="how-android-encryption-works">How Android encryption works</h2>
@@ -111,28 +117,55 @@ class_start was used on its class.</p>
 <h2 id="booting-an-encrypted-system">Booting an encrypted system.</h2>
 <ol>
 <li>
-<p>When init fails to mount /data, it assumes the filesystem  is encrypted,
-    and sets several properties:
-      ro.crypto.state = "encrypted"
-      vold.decrypt = 1
-    It then mounts a /data on a tmpfs ramdisk, using parameters it picks
-    up from ro.crypto.tmpfs_options, which is set in init.rc.</p>
-<p>If init was able to mount /data, it sets ro.crypto.state to "unencrypted".</p>
-<p>In either case, init then sets 5 properties to save the initial mount
+<p>When init tries to mount /data, there are three possible cases:
+<ol type=i>
+<li>Success, and no /forceencrypt flag
+<p>Drive is not encrypted. Set
+<p>&nbsp; ro.crypto.state = "unencrypted"
+<p>and execute the 'on nonencrypted' init trigger to continue booting.
+</li>
+<li>Failure, and either /forceencrypt or /encryptable is set. Init assumes
+the filesystem is encrypted and sets two properties:
+<p>&nbsp; ro.crypto.state = "encrypted"
+<p>&nbsp; vold.decrypt = "trigger_default_encryption"
+<p>Init then mounts a /data on a tmpfs ramdisk, using parameters it picks
+   up from ro.crypto.tmpfs_options, which is set in init.rc.</p>
+<p>trigger_default_encryption starts the defaultcrypto service. This checks
+   the encryption type to see if it encrypted but with no password.
+<p>If this is the case, we decrypt /data, unmount the tmpfs, mount the now
+   decrypted data partition and set vold to trigger_restart_framework,
+   which continues the usual boot process.
+<p>If this is not the case, vold knows that /data is encrypted with a password.
+   vold sets vold.decrypt to trigger_restart_min_framework. This then continues
+   the boot process as described below.
+</li>
+<li>Success, but /forceencrypt is set
+<p>Drive is not encrypted but needs to be. Unmount /data and set
+<p>&nbsp; ro.crypto.state = "unencrypted"
+<p>&nbsp; vold.decrypt = "trigger_encryption"
+<p>This triggers init.rc to start the encryption service, which will kick off
+vold to encrypt /data, and start the main service group to show UI while this
+is ongoing. Once this is complete, vold will reboot the system, which should
+then trigger the encrypted with no password mode above.
+</li>
+</ol>
+<p>In any case, init then sets five properties to save the initial mount
 options given for /data in these properties:
-    ro.crypto.fs_type
-    ro.crypto.fs_real_blkdev
-    ro.crypto.fs_mnt_point
-    ro.crypto.fs_options
-    ro.crypto.fs_flags (saved as an ascii 8 digit hex number preceded by 0x)</p>
+<p>&nbsp; ro.crypto.fs_type
+<p>&nbsp; ro.crypto.fs_real_blkdev
+<p>&nbsp; ro.crypto.fs_mnt_point
+<p>&nbsp; ro.crypto.fs_options
+<p>&nbsp; ro.crypto.fs_flags (saved as an ascii 8-digit hex number preceded by
+          0x)
 </li>
 <li>
-<p>The framework starts up, and sees that vold.decrypt is set to "1".  This
-    tells the framework that it is booting on a tmpfs /data disk, and it needs
-    to get the user password.  First, however, it needs to make sure that the
+<p>The framework starts up, and sees that vold.decrypt is set to
+    "trigger_restart_min_framework". This tells the framework that it is booting
+    on a tmpfs /data disk, and it needs to get the user password.  First,
+    however, it needs to make sure that the
     disk was properly encrypted.  It sends the command "cryptfs cryptocomplete"
     to vold, and vold returns 0 if encryption was completed successfully, or -1
-    on internal error, or -2 if encryption was not completed successfully. 
+    on internal error, or -2 if encryption was not completed successfully.
     Vold determines this by looking in the crypto footer for the
     CRYPTO_ENCRYPTION_IN_PROGRESS flag.  If it's set, the encryption process
     was interrupted, and there is no usable data on the device.  If vold returns
@@ -222,16 +255,25 @@ Kbytes of the partition, and the /data filesystem cannot extend into that
 part of the partition.</p>
 </li>
 <li>
-<p>If told was to enable encryption with wipe, vold invokes the command
+<p>If vold was to enable encryption with wipe, vold invokes the command
     "make_ext4fs" on the crypto block device, taking care to not include
     the last 16 Kbytes of the partition in the filesystem.</p>
 <p>If the command was to enable inplace, vold starts a loop to read each sector
-of the real block device, and then write it to the crypto block device.
+of the real block device, and then write it to the crypto block device. Note
+that vold checks to see if a sector is in use before reading and writing it,
+which makes encryption a lot faster on a new device.
 This takes about an hour on a 30 Gbyte partition on the Motorola Xoom.
 This will vary on other hardware.  The loop updates the property
 vold.encrypt_progress every time it encrypts another 1 percent of the
 partition.  The UI checks this property every 5 seconds and updates
 the progress bar when it changes.</p>
+<p>While encryption is ongoing, vold writes out the last block encrypted to
+the crypto footer. It also checks power levels every 30 seconds. If power
+falls below 5%, we write out the footer and power down the device. On
+subsequent reboot, we detect this scenario and continue the encryption from
+where we were. Note, though, that we now encrypt every sector, since it is
+not possible to read the ext4 data reliably from a partially encrypted device.
+</p>
 </li>
 <li>
 <p>When either encryption method has finished successfully, vold clears the
@@ -264,8 +306,13 @@ key with the new password.</p>
 <h2 id="summary-of-related-properties">Summary of related properties</h2>
 <p>Here is a table summarizing the various properties, their possible values,
 and what they mean:</p>
-<pre><code>vold.decrypt  1                               Set by init to tell the UI to ask
-                                              for the disk pw
+<pre><code>vold.decrypt  trigger_encryption              Encrypt the drive with no password
+
+vold.decrypt  trigger_default_encryption      Check the drive to see if it is
+                                              encrypted with no password. If it
+                                              is, decrypt and mount it, else set
+                                              vold.decrypt to
+                                              trigger_restart_min_framework
 
 vold.decrypt  trigger_reset_main              Set by vold to shutdown the UI
                                               asking for the disk password
@@ -280,9 +327,11 @@ vold.decrypt  trigger_shutdown_framework      Set by vold to shutdown the full
                                               framework to start encryption
 
 vold.decrypt  trigger_restart_min_framework   Set by vold to start the progress
-                                              bar UI for encryption.
+                                              bar UI for encryption or prompt
+                                              for password, depending on the
+                                              value of ro.crypto.state
 
-vold.enrypt_progress                          When the framework starts up, if
+vold.encrypt_progress                         When the framework starts up, if
                                               this property is set, enter the
                                               progress bar UI mode.
 
@@ -309,7 +358,7 @@ vold.encrypt_progress  error_not_encrypted    The progress bar UI should display
                                               reboot the system.
 
 vold.encrypt_progress  error_shutting_down    The progress bar UI is not
-                                              running, so it's unclear who
+                                              running, so it is unclear who
                                               will respond to this error,
                                               and it should never happen
                                               anyway.
@@ -351,4 +400,6 @@ on property:vold.decrypt=trigger_post_fs_data
 on property:vold.decrypt=trigger_restart_min_framework
 on property:vold.decrypt=trigger_restart_framework
 on property:vold.decrypt=trigger_shutdown_framework
+on property:vold.decrypt=trigger_encryption
+on property:vold.decrypt=trigger_default_encryption
 </code></pre>
