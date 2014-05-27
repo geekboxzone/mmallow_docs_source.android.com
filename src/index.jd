@@ -41,19 +41,42 @@ header.hide=1
 
   <div class="landing-docs">
     <div class="col-8">
-    <h3>Updates</h3>
-      <a href="{@docRoot}source/index.html">
-        <h4>Source Code Available for Android</h4></a>
-        <p>Android is an open-source software stack for a wide array of mobile devices with different form factors.
-<img border="0" src="images/Android_Robot_100.png" alt="Android Partner icon" style="display:inline;float:right;margin:5px 10px"> 
-        We created Android in response to our own experiences launching mobile apps. We wanted to make sure there was 
-        no central point of failure so no industry player can restrict or control the innovations of any other. That's 
-        why we created Android and made its source code open.</p>
-      <a href="{@docRoot}compatibility/index.html">
-        <h4>Compatibility Definition for Android</h4></a>
-        <p>Android's purpose is to establish an open platform for developers to build innovative apps. The Android 
-        Compatibility program defines the technical details of the Android platform and provides tools for device manufacturers to 
-        ensure developers' apps run on a variety of devices.</p>
+    <h3>What's New</h3>
+
+<a href="{@docRoot}devices/graphics/architecture.html">
+ <h4>Graphics architecture document published</h4></a>
+	<p>Android engineering describes the system-level <strong><a
+href="{@docRoot}devices/graphics/architecture.html">Graphics
+Architecture</a></strong> in great detail.</p>
+
+<img border="0" src="images/Android_Robot_100.png" alt="Android Partner icon" style="display:inline;float:right;margin:5px 10px">
+
+<a href="{@docRoot}source/building.html">
+        <h4>Build information updated and improved</h4></a>
+<p>The recommended version of Java is now 7 and Ubuntu is now 12.04, as noted on <strong><a
+href="{@docRoot}source/building.html">Downloading and Building</a></strong> and <strong><a
+href="{@docRoot}source/initializing.html">Initializing a Build
+Environment</a></strong>. And the subdomain to download Repo is now
+"storage.googleapis.com" on <strong><a
+href="{@docRoot}source/downloading.html">Downloading the
+Source</a></strong>.</p>
+
+	<p>The lists of Android devices and associated builds have been
+reordered and made unique. See <strong><a
+href="{@docRoot}source/build-numbers.html#source-code-tags-and-builds">Source
+Code Tags and Builds</a></strong> and <strong><a
+href="{@docRoot}source/building-devices.html#picking-and-building-the-configuration-that-matches-a-device">Picking
+and building the configuration that matches a device</a></strong>.</p>
+
+<a href="{@docRoot}devices/tech/security/best-practices.html">
+        <h4>Security best practices published, SELinux improved</h4></a>
+	<p>The Android security team lays out its recommendations for
+optimizing security within your Android devices in new <strong><a
+href="{@docRoot}devices/tech/security/best-practices.html">Best
+Practices</a></strong>. And <strong><a
+href="{@docRoot}devices/tech/security/se-linux.html">Validating
+Security-Enhanced Linux in Android</a></strong> has been revised
+significantly.</p>
     </div>
 
     <div class="col-8">
@@ -61,7 +84,10 @@ header.hide=1
       <a href="{@docRoot}source/index.html">
         <h4>Explore the Source</h4></a>
         <p>Get the complete Android platform and modify and build it to suit your needs. You can
-        also contribute to the Open Source Project to make your changes available to everyone else in
+	also <strong><a
+href="https://android-review.googlesource.com/#/q/status:open">contribute to</a></strong> the <strong><a
+href="https://android.googlesource.com/">Android Open Source Project
+repository</a></strong> to make your changes available to everyone else in
         the Android ecosystem.</p>
       <a href="{@docRoot}devices/index.html">
         <h4>Port Android to Devices</h4></a>
