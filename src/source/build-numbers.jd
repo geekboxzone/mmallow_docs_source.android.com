@@ -132,7 +132,7 @@ API levels and NDK releases provided for convenience:</p>
 </tr>
 <tr>
 <td>KitKat</td>
-<td>4.4 - 4.4.2</td>
+<td>4.4 - 4.4.3</td>
 <td>API level 19</td>
 </tr>
 </tbody>
@@ -167,6 +167,17 @@ following table. Factory images and binaries for Nexus devices can be downloaded
 <th>Version</th>
 <th>Supported devices</th>
 </tr>
+<tr>
+  <td>KTU49M</td>
+  <td>android-4.4.3_r1.1</td>
+  <td>KitKat</td>
+  <td>Nexus 5 (hammerhead)</td>
+</tr>
+<tr>
+  <td>KTU49L</td>
+  <td>android-4.4.3_r1</td>
+  <td>KitKat</td>
+  <td>Nexus 7 (flo/grouper/tilapia), Nexus 4, Nexus 10</td>
 <tr>
   <td>KVT49L</td>
   <td>android-4.4.2_r2</td>
