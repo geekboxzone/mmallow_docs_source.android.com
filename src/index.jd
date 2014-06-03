@@ -36,20 +36,26 @@ header.hide=1
 
 </div>
 
-
 <div class="wrap">
 
   <div class="landing-docs">
     <div class="col-8">
     <h3>What's New</h3>
 
-<a href="{@docRoot}devices/graphics/architecture.html">
- <h4>Graphics architecture document published</h4></a>
-	<p>Android engineering describes the system-level <strong><a
-href="{@docRoot}devices/graphics/architecture.html">Graphics
-Architecture</a></strong> in great detail.</p>
+<a href="{@docRoot}source/build-numbers.html">
+        <h4>Android 4.4.3 released</h4></a>
+	<p>Builds for Android 4.4.3 have been released. See the <strong><a
+href="{@docRoot}source/build-numbers.html#source-code-tags-and-builds">Source
+Code Tags and Builds</a></strong> table on <strong>Codenames, Tags, and Build
+Numbers</strong> for the new builds, tags, and devices supported.</p>
 
 <img border="0" src="images/Android_Robot_100.png" alt="Android Partner icon" style="display:inline;float:right;margin:5px 10px">
+
+<a href="{@docRoot}devices/graphics/architecture.html">
+ <h4>Graphics architecture document published</h4></a>
+        <p>Android engineering describes the system-level <strong><a
+href="{@docRoot}devices/graphics/architecture.html">Graphics
+Architecture</a></strong> in great detail.</p>
 
 <a href="{@docRoot}source/building.html">
         <h4>Build information updated and improved</h4></a>
@@ -67,16 +73,6 @@ href="{@docRoot}source/build-numbers.html#source-code-tags-and-builds">Source
 Code Tags and Builds</a></strong> and <strong><a
 href="{@docRoot}source/building-devices.html#picking-and-building-the-configuration-that-matches-a-device">Picking
 and building the configuration that matches a device</a></strong>.</p>
-
-<a href="{@docRoot}devices/tech/security/best-practices.html">
-        <h4>Security best practices published, SELinux improved</h4></a>
-	<p>The Android security team lays out its recommendations for
-optimizing security within your Android devices in new <strong><a
-href="{@docRoot}devices/tech/security/best-practices.html">Best
-Practices</a></strong>. And <strong><a
-href="{@docRoot}devices/tech/security/se-linux.html">Validating
-Security-Enhanced Linux in Android</a></strong> has been revised
-significantly.</p>
     </div>
 
     <div class="col-8">
