@@ -165,12 +165,16 @@ $ fastboot format userdata
 <p>The Android Open-Source Project can't be used
 from pure source code only, and requires additional hardware-related proprietary
 libraries to run, specifically for hardware graphics acceleration.</p>
-<p>Official binaries for the supported devices can be downloaded from
-<a href="https://developers.google.com/android/nexus/drivers">Google's Nexus driver page</a>,
-which add access to additional hardware capabilities with non-Open-Source code.</p>
+<p>Official binaries for the supported devices running tagged AOSP release
+branches can be downloaded from <a
+href="https://developers.google.com/android/nexus/drivers">Google's Nexus
+driver page</a>. These add access to additional hardware capabilities with
+non-open-source code. To instead build the AOSP master branch, use the <a
+href="https://developers.google.com/android/nexus/blobs-preview">Binaries
+Preview for Nexus Devices</a>.</p>
 <p>When building the master branch for a device, the binaries for the most
-recent numbered release or with the most recent date
-are the ones that should be used.</p>
+recent numbered release or with the most recent date are the ones that should
+be used.</p>
 <h3 id="extracting-the-proprietary-binaries">Extracting the proprietary binaries</h3>
 <p>Each set of binaries comes as a self-extracting script in a compressed archive.
 After uncompressing each archive, run the included self-extracting script
