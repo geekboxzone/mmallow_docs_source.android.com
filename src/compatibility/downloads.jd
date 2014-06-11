@@ -57,12 +57,13 @@ Jelly Bean-MR1. Source code for Android 4.2 is found in the 'android-4.2.2_r1' b
 <li><a href="https://dl.google.com/dl/android/cts/android-cts-verifier-4.2_r5-linux_x86-arm.zip">Android 4.2 R5 CTS Verifier</a></li>
 </ul>
 <h2 id="android-41">Android 4.1</h2>
-<p>Android 4.1.1 is the release of the development milestone code-named
-Jelly Bean. Source code for Android 4.1.1 is found in the 'android-4.1.1_r1' branch in the open-source tree.</p>
+<p>Android 4.1 is the release of the development milestone code-named Jelly
+Bean. The source code of the Compatibility Test Suite revisions below is
+available at the 'android-cts-4.1_r4' tag in the open-source tree.</p>
 <ul>
 <li><a href="4.1/android-4.1-cdd.pdf">Android 4.1 Compatibility Definition Document (CDD)</a></li>
-<li><a href="https://dl.google.com/dl/android/cts/android-cts-4.1_r3-linux_x86-arm.zip">Android 4.1 R3 Compatibility Test Suite (CTS)</a></li>
-<li><a href="https://dl.google.com/dl/android/cts/android-cts-verifier-4.1_r6-linux_x86-arm.zip">Android 4.1 R6 CTS Verifier</a></li>
+<li><a href="https://dl.google.com/dl/android/cts/android-cts-4.1_r4-linux_x86-arm.zip">Android 4.1 R4 Compatibility Test Suite (CTS)</a></li>
+<li><a href="https://dl.google.com/dl/android/cts/android-cts-verifier-4.1_r7-linux_x86-arm.zip">Android 4.1 R7 CTS Verifier</a></li>
 </ul>
 <h2 id="android-403">Android 4.0.3</h2>
 <p>Android 4.0.3 is the release of the development milestone code-named
