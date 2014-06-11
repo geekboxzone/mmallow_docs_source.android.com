@@ -28,16 +28,25 @@ page.title=Base sensors and trigger modes
 <p>Sensors can report events in different ways called trigger modes; each sensor 
   type has one and only one trigger mode associated to it. Four trigger modes 
   exist:</p>
+
 <h3 id="continuous">Continuous</h3>
 <p>Events are reported at a constant rate defined by setDelay(). Example sensors 
   using the continuous trigger mode are accelerometers and gyroscopes.</p>
+
 <h3 id="on-change">On-change</h3>
-<p>Events are reported only if the sensor's value has changed. setDelay() is used 
-  to set a lower limit to the reporting period, meaning the minimum time between 
-  consecutive events. Activating the sensor also triggers an event. The HAL must 
-  return an event immediately when an on-change sensor is activated. Example 
-  sensors using the on-change trigger mode are the step counter and proximity 
-  sensor types.</p>
+<p>Events are reported only if the sensor's value has changed. Activating the
+sensor also triggers an event, meaning the HAL must return an event immediately
+when an on-change sensor is activated. Example sensors using the on-change
+trigger mode are the step counter and proximity sensor types.</p>
+
+<p>Here is how the <code>period_ns</code> parameter affects setDelay(...) and
+batch(...). The <code>period_ns</code> parameter is used to set a lower limit
+to the reporting period, meaning the minimum time between consecutive events.
+Here is an example: If activating the step counter with period_ns = 10 seconds,
+walking for 1 minute, and then not walking for 1 minute, the events will
+be generated every 10 seconds during the first minute, and no event will be
+generated in the second minute.</p>
+
 <h3 id="one-shot">One-shot</h3>
 <p>Upon detection of an event, the sensor deactivates itself and then sends a 
   single event. Order matters to avoid race conditions. No other event is sent 
