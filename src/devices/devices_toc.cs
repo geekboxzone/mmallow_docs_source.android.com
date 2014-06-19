@@ -119,6 +119,12 @@
             </a>
           </div>
         <ul>
+            <li>
+              <a href="<?cs var:toroot ?>devices/tech/security/acknowledgements.html">
+                <span class="en">Acknowledgements</span>
+              </a>
+            </li>
+          
           <li class="nav-section">
             <div class="nav-section-header">
               <a href="<?cs var:toroot ?>devices/tech/security/enhancements.html">
