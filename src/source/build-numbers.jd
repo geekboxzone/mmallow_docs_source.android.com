@@ -183,7 +183,7 @@ following table. Factory images and binaries for Nexus devices can be downloaded
   <td>KTU84L</td>
   <td>android-4.4.3_r1</td>
   <td>KitKat</td>
-  <td>Nexus 7 (flo/grouper/tilapia), Nexus 4, Nexus 10</td>
+  <td>Nexus 7 (deb/flo/grouper/tilapia), Nexus 4, Nexus 10</td>
 </tr>
 <tr>
   <td>KVT49L</td>
