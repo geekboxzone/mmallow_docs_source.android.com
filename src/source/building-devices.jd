@@ -292,16 +292,11 @@ optimally, and it is strongly recommended to re-create them through recovery</p>
 </code></pre>
 <p>Once in recovery, open the menu (press Power + Volume Up), wipe the cache
 partition, then wipe data.</p>
-<h2 id="restoring-a-device-to-its-original-factory-state">Restoring a device to its original factory state</h2>
-<p>Factory images
-for Nexus 10,
-for Nexus 4,
-for Nexus Q,
-for Nexus 7,
-for Galaxy Nexus (GSM/HSPA+ "yakju" and "takju",
-and CDMA/LTE "mysid" and "mysidspr"),
-and
-for Nexus S and Nexus S 4G
-are available from
-<a href="https://developers.google.com/android/nexus/images">Google's factory image page</a>.</p>
+<h2 id="restoring-a-device-to-its-original-factory-state">Restoring a device to
+its original factory state</h2>
+<p>Factory images for Nexus 5, Nexus 10, Nexus 4, Nexus Q, Nexus 7, Galaxy
+Nexus (GSM/HSPA+ "yakju" and "takju",
+and CDMA/LTE "mysid" and "mysidspr"), Nexus S, and Nexus S 4G are available
+from <a href="https://developers.google.com/android/nexus/images">Google's
+factory image</a> page.</p>
 <p>Factory images for the Motorola Xoom are distributed directly by Motorola.</p>
