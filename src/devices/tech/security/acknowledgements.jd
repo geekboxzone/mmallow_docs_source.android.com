@@ -27,21 +27,21 @@ Rewards</a> program.</p>
 
 <h2>2014</h2>
 
+<div style="LINE-HEIGHT:25px;">
 <p>Jeff Forristal of <a href="http://www.bluebox.com/blog/">Bluebox
 Security</a></p>
 
-<p>Aaron Mangeli of <a href="https://banno.com/">Banno</a> (<a
+<p>Aaron Mangel of <a href="https://banno.com/">Banno</a> (<a
 href="mailto:amangel@gmail.com">amangel@gmail.com</a>)</p>
 
 <p><a href="http://www.linkedin.com/in/tonytrummer/">Tony Trummer</a> of <a
-href="http://www.themeninthemiddle.com">The Men in the Middle</a> (<a
+href="http://www.themeninthemiddle.com">The Men in the Middle</a> <br>(<a
 href="https://twitter.com/SecBro1">@SecBro1</a>)</p>
 
 <p><a href="http://www.samsung.com">Samsung Mobile</a></p>
 
 <p>Henry Hoggard of <a href="https://labs.mwrinfosecurity.com/">MWR Labs</a> (<a
 href="https://twitter.com/henryhoggard">@HenryHoggard</a>)</p>
-<p></p>
 
 <p><a href="http://www.androbugs.com">Yu-Cheng Lin 林禹成</a> (<a
 href="https://twitter.com/AndroBugs">@AndroBugs</a>)</p>
@@ -52,12 +52,12 @@ Rasthofer</a> of <a href="http://sseblog.ec-spride.de/">Secure Software
 Engineering Group</a>, EC SPRIDE Technische Universität Darmstadt (<a
 href="mailto:siegfried.rasthofer@gmail.com">siegfried.rasthofer@gmail.com</a>)</p>
 
-<p>Steven Artz of <a href="http://sseblog.ec-spride.de/">Secure Software
+<p>Steven Arzt of <a href="http://sseblog.ec-spride.de/">Secure Software
 Engineering Group</a>, EC SPRIDE Technische Universität Darmstadt (<a
 href="mailto:Steven.Arzt@ec-spride.de">Steven.Arzt@ec-spride.de</a>)</p>
 
 <p><a href="http://blog.redfern.me/">Joseph Redfern</a> of <a
-href="https://labs.mwrinfosecurity.com/">MWR Labs</a> (<a
+href="https://labs.mwrinfosecurity.com/">MWR Labs</a> <br>(<a
 href="https://twitter.com/JosephRedfern">@JosephRedfern</a>)</p>
 
 <p><a href="https://plus.google.com/u/0/109528607786970714118">Valera
@@ -70,7 +70,8 @@ href="https://twitter.com/luanderock">@luanderock</a>)</p>
 
 <p>Stephan Huber of Testlab Mobile Security, <a
 href="https://www.sit.fraunhofer.de/">Fraunhofer SIT</a> (<a
-href="mailto:Stephan.Huber@sit.fraunhofer.de">Stephan.Huber@sit.fraunhofer.de</a>)</p>
+href="mailto:Stephan.Huber@sit.fraunhofer.de">Stephan.Huber@sit.fraunhofer.de</a>)
+</p>
 
 <p><a href="http://www.corkami.com">Ange Albertini</a> (<a
 href="https://twitter.com/angealbertini">@angealbertini</a>)</p>
@@ -84,7 +85,7 @@ href="https://twitter.com/tushardalvi">@tushardalvi</a>)</p>
 href="mailto:litongxin1991@gmail.com">litongxin1991@gmail.com</a>)</p>
 
 <p><a href="https://www.facebook.com/zhou.xiaoyong">Xiaoyong Zhou</a> of <a
-href="http://www.cs.indiana.edu/~zhou/">Indiana University Bloomington</a> (<a
+href="http://www.cs.indiana.edu/~zhou/">Indiana University Bloomington</a> <br>(<a
 href="https://twitter.com/xzhou">@xzhou</a>, <a
 href="mailto:zhou.xiaoyong@gmail.com">zhou.xiaoyong@gmail.com</a>)</p>
 
@@ -228,7 +229,6 @@ William Roberts</a> (<a href="mailto:bill.c.roberts@gmail.com">bill.c.roberts@gm
 <img style="vertical-align:middle" src="images/tiny-robot.png"
 alt="Patch Symbol" title="This person contributed code that improved Android security"></a></p>
 
-
 <p><a href="http://thejh.net/">Jann Horn</a></p>
 
 <p><a href="http://web.ict.kth.se/~rbbo/ussdvul.html">Ravishankar
@@ -260,4 +260,5 @@ Borgaonkar</a> of TU Berlin
 </div>
 
 <br>
-<p><small>If you have reported a vulnerability prior to 2014 and want to be included on this list, or to report a vulnerability in Android, contact <a href="mailto:security@android.com">security@android.com</a></small></p>
+<p><small>If you have reported a vulnerability prior to 2014 and want to be
+included on this list, or to report a vulnerability in Android, contact <a href="mailto:security@android.com">security@android.com</a></small></p>
