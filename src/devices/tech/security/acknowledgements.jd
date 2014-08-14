@@ -132,6 +132,10 @@ alt="Patch Symbol" title="This person contributed code that improved Android sec
 
 <p><a href="http://www.cs.utah.edu/~rsas/">Raimondas Sasnauskas</a> of University of Utah</p>
 
+<p><a href="http://www.subodh.io">Subodh Iyengar</a> of <a href="https://www.facebook.com">Facebook</a></p>
+
+<p><a href="http://www.shackleton.io/">Will Shackleton</a> of <a href="https://www.facebook.com">Facebook</a></p>
+
 </div>
 
 <h2>2013</h2>
@@ -150,7 +154,7 @@ alt="Patch Rewards Symbol" title="This person qualified for the Patch Rewards pr
 <p>Ruben Santamarta of IOActive
 (<a href="https://twitter.com/reversemode">@reversemode</a>)</p>
 
-<p>Lucas Yangi (amadoh4ck) of
+<p>Lucas Yang (amadoh4ck) of
 <a href="http://raonsecurity.com/">RaonSecurity</a>
 (<a href="mailto:amadoh4ck@gmail.com">amadoh4ck@gmail.com</a>)</p>
 
@@ -188,6 +192,16 @@ Trusted Systems Research Group</a>, US National Security Agency
 <img style="vertical-align:middle" src="images/tiny-robot.png"
 alt="Patch Symbol" title="This person contributed code that improved Android security"></a></p>
 
+<p><a href="http://www.linkedin.com/in/billcroberts">
+William Roberts</a> (<a href="mailto:bill.c.roberts@gmail.com">bill.c.roberts@gmail.com</a>)
+<a href=
+"https://android-review.googlesource.com/#/q/owner:bill.c.roberts%2540gmail.com+status:merged">
+<img style="vertical-align:middle" src="images/tiny-robot.png"
+alt="Patch Symbol" title="This person contributed code that improved Android security"></a></p>
+
+<p><a href="http://roeehay.blogspot.com/">Roee Hay</a>
+<br>(<a href="https://twitter.com/roeehay">@roeehay</a>,
+<a href="mailto:roeehay@gmail.com">roeehay@gmail.com</a>)</p>
 
 </div>
 <h2>2012</h2>
@@ -207,7 +221,41 @@ Trusted Systems Research Group</a>, US National Security Agency
 <img style="vertical-align:middle" src="images/tiny-robot.png"
 alt="Patch Symbol" title="This person contributed code that improved Android security"></a></p>
 
+<p><a href="http://www.linkedin.com/in/billcroberts">
+William Roberts</a> (<a href="mailto:bill.c.roberts@gmail.com">bill.c.roberts@gmail.com</a>)
+<a href=
+"https://android-review.googlesource.com/#/q/owner:bill.c.roberts%2540gmail.com+status:merged">
+<img style="vertical-align:middle" src="images/tiny-robot.png"
+alt="Patch Symbol" title="This person contributed code that improved Android security"></a></p>
+
+
 <p><a href="http://thejh.net/">Jann Horn</a></p>
+
+<p><a href="http://web.ict.kth.se/~rbbo/ussdvul.html">Ravishankar
+Borgaonkar</a> of TU Berlin
+(<a href="https://twitter.com/raviborgaonkar">@raviborgaonkar</a>)</p>
+
+<p><a href="http://roeehay.blogspot.com/">Roee Hay</a>
+<br>(<a href="https://twitter.com/roeehay">@roeehay</a>,
+<a href="mailto:roeehay@gmail.com">roeehay@gmail.com</a>)</p>
+
+</div>
+
+<h2>2011</h2>
+
+<div style="LINE-HEIGHT:25px;">
+
+<p>Collin Mulliner of <a href="http://www.mulliner.org/collin/academic">MUlliNER.ORG</a> (<a href="https://twitter.com/collinrm">@collinrm</a>)</p>
+
+</div>
+
+<h2>2009</h2>
+
+<div style="LINE-HEIGHT:25px;">
+
+<p>Collin Mulliner of <a href="http://www.mulliner.org/collin/academic">MUlliNER.ORG</a> (<a href="https://twitter.com/collinrm">@collinrm</a>)</p>
+
+<p>Charlie Miller (<a href="https://twitter.com/0xcharlie">@0xcharlie</a>)</p>
 
 </div>
 
