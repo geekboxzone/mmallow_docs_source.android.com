@@ -49,6 +49,7 @@
           <li><a href="<?cs var:toroot ?>devices/audio_src.html">Sample Rate Conversion</a></li>
           <li><a href="<?cs var:toroot ?>devices/audio_terminology.html">Terminology</a></li>
           <li><a href="<?cs var:toroot ?>devices/audio_debugging.html">Debugging</a></li>
+          <li><a href="<?cs var:toroot ?>devices/audio_usb.html">USB Digital Audio</a></li>
         </ul>
       </li>
       <li><a href="<?cs var:toroot ?>devices/bluetooth.html">Bluetooth</a></li>
