@@ -88,7 +88,8 @@
           </a>
         </div>
         <ul>
-          <li><a href="<?cs var:toroot ?>devices/graphics/architecture.html">System-Level Architecture</a></li>
+          <li><a href="<?cs var:toroot ?>devices/graphics/architecture.html">Architecture</a></li>
+          <li><a href="<?cs var:toroot ?>devices/graphics/implement.html">Implementation</a></li>
         </ul>
       </li>
       <li class="nav-section">
