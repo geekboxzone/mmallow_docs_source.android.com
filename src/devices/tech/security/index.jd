@@ -124,7 +124,7 @@ the air (OTA).</p>
 cloud capabilities such as (<a href="https://developer.android.com/guide/topics/data/backup.html">backing
 up</a>) application
 data and settings and cloud-to-device messaging
-(<a href="https://code.google.com/android/c2dm/index.html">C2DM</a>)
+(<a href="https://developers.google.com/android/c2dm/">C2DM</a>)
 for push messaging.</p>
 </li>
 </ul>
