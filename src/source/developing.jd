@@ -76,13 +76,15 @@ For information about using repo to download source, see <a href="{@docRoot}sour
 <p>To start a topic branch using Repo, navigate into the project to be modified and issue: </p>
 <pre><code>$ repo start BRANCH_NAME .
 </code></pre>
-<p>To verify that your new branch was created:</p>
-<pre><code>$ repo status
+<p>Please note, the period represents the project in the current working directory. To verify your new branch was created:</p>
+<pre><code>$ repo status .
 </code></pre>
 <h2 id="using-topic-branches">Using topic branches</h2>
 <p>To assign the branch to a particular project:</p>
-<pre><code>$ repo start BRANCH_NAME PROJECT
+<pre><code>$ repo start BRANCH_NAME PROJECT_NAME
 </code></pre>
+<p>See <a href="https://android.googlesource.com/">android.googlesource.com</a> for a list of all projects. Again, if you've already navigated into a particular project directory, you may simply pass a period to represent the current project.</p>
+
 <p>To switch to another branch that you have created in your local work environment:</p>
 <pre><code>$ git checkout BRANCH_NAME
 </code></pre>
