@@ -2,7 +2,7 @@ page.title=Audio Terminology
 @jd:body
 
 <!--
-    Copyright 2013 The Android Open Source Project
+    Copyright 2014 The Android Open Source Project
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -216,23 +216,21 @@ may need to be aware of these, as well as the end user.
 <dd>
 A short range wireless technology.
 The major audio-related
-<a class="external-link" href="http://en.wikipedia.org/wiki/Bluetooth_profile"
+<a href="http://en.wikipedia.org/wiki/Bluetooth_profile"
 target="_android">Bluetooth profiles</a>
 and
-<a class="external-link" href="http://en.wikipedia.org/wiki/Bluetooth_protocols"
+<a href="http://en.wikipedia.org/wiki/Bluetooth_protocols"
 target="_android">Bluetooth protocols</a>
 are described at these Wikipedia articles:
 
 <ul>
 
-<li><a class="external-link"
-href="http://en.wikipedia.org/wiki/Bluetooth_profile#Advanced_Audio_Distribution_Profile_.28A2DP.29"
+<li><a href="http://en.wikipedia.org/wiki/Bluetooth_profile#Advanced_Audio_Distribution_Profile_.28A2DP.29"
 target="_android">A2DP</a>
 for music
 </li>
 
-<li><a class="external-link"
-href="http://en.wikipedia.org/wiki/Bluetooth_protocols#Synchronous_connection-oriented_.28SCO.29_link"
+<li><a href="http://en.wikipedia.org/wiki/Bluetooth_protocols#Synchronous_connection-oriented_.28SCO.29_link"
 target="_android">SCO</a>
 for telephony
 </li>
@@ -272,14 +270,14 @@ An adapter from micro-USB to HDMI.
 <dt>S/PDIF</dt>
 <dd>
 Sony/Philips Digital Interface Format is an interconnect for uncompressed PCM.
-See Wikipedia article <a class="external-link" href="http://en.wikipedia.org/wiki/S/PDIF"
+See Wikipedia article <a href="http://en.wikipedia.org/wiki/S/PDIF"
 target="_android">S/PDIF</a>.
 </dd>
 
 <dt>USB</dt>
 <dd>
 Universal Serial Bus.
-See Wikipedia article <a class="external-link" href="http://en.wikipedia.org/wiki/USB" target="_android">USB</a>.
+See Wikipedia article <a href="http://en.wikipedia.org/wiki/USB" target="_android">USB</a>.
 </dd>
 
 </dl>
@@ -294,13 +292,13 @@ implementor may need to be aware of these, but not the end user.
 
 See these Wikipedia articles:
 <ul>
-<li><a class="external-link" href="http://en.wikipedia.org/wiki/General-purpose_input/output"
+<li><a href="http://en.wikipedia.org/wiki/General-purpose_input/output"
 target="_android">GPIO</a></li>
-<li><a class="external-link" href="http://en.wikipedia.org/wiki/I%C2%B2C" target="_android">I²C</a></li>
-<li><a class="external-link" href="http://en.wikipedia.org/wiki/I%C2%B2S" target="_android">I²S</a></li>
-<li><a class="external-link" href="http://en.wikipedia.org/wiki/McASP" target="_android">McASP</a></li>
-<li><a class="external-link" href="http://en.wikipedia.org/wiki/SLIMbus" target="_android">SLIMbus</a></li>
-<li><a class="external-link" href="http://en.wikipedia.org/wiki/Serial_Peripheral_Interface_Bus"
+<li><a href="http://en.wikipedia.org/wiki/I%C2%B2C" target="_android">I²C</a></li>
+<li><a href="http://en.wikipedia.org/wiki/I%C2%B2S" target="_android">I²S</a></li>
+<li><a href="http://en.wikipedia.org/wiki/McASP" target="_android">McASP</a></li>
+<li><a href="http://en.wikipedia.org/wiki/SLIMbus" target="_android">SLIMbus</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Serial_Peripheral_Interface_Bus"
 target="_android">SPI</a></li>
 </ul>
 
@@ -322,7 +320,7 @@ sample-and-hold followed by a quantizer, although it does not have to
 be implemented that way.  An ADC is usually preceded by a low-pass filter
 to remove any high frequency components that are not representable using
 the desired sample rate.  See Wikipedia article
-<a class="external-link" href="http://en.wikipedia.org/wiki/Analog-to-digital_converter"
+<a href="http://en.wikipedia.org/wiki/Analog-to-digital_converter"
 target="_android">Analog-to-digital_converter</a>.
 </dd>
 
@@ -338,7 +336,7 @@ from one representation to another.  Typically this is analog to PCM, or PCM to 
 Strictly, the term "codec" is reserved for modules that both encode and decode,
 however it can also more loosely refer to only one of these.
 See Wikipedia article
-<a class="external-link" href="http://en.wikipedia.org/wiki/Audio_codec" target="_android">Audio codec</a>.
+<a href="http://en.wikipedia.org/wiki/Audio_codec" target="_android">Audio codec</a>.
 </dd>
 
 <dt>DAC</dt>
@@ -349,7 +347,7 @@ Digital to analog converter, a module that converts a digital signal
 a low-pass filter to remove any high frequency components introduced
 by digital quantization.
 See Wikipedia article
-<a class="external-link" href="http://en.wikipedia.org/wiki/Digital-to-analog_converter"
+<a href="http://en.wikipedia.org/wiki/Digital-to-analog_converter"
 target="_android">Digital-to-analog converter</a>.
 </dd>
 
@@ -368,7 +366,7 @@ is a form of modulation used to represent an analog signal by a digital signal,
 where the relative density of 1s versus 0s indicates the signal level.
 It is commonly used by digital to analog converters.
 See Wikipedia article
-<a class="external-link" href="http://en.wikipedia.org/wiki/Pulse-density_modulation"
+<a href="http://en.wikipedia.org/wiki/Pulse-density_modulation"
 target="_android">Pulse-density modulation</a>.
 </dd>
 
@@ -379,9 +377,52 @@ is a form of modulation used to represent an analog signal by a digital signal,
 where the relative width of a digital pulse indicates the signal level.
 It is commonly used by analog to digital converters.
 See Wikipedia article
-<a class="external-link" href="http://en.wikipedia.org/wiki/Pulse-width_modulation"
+<a href="http://en.wikipedia.org/wiki/Pulse-width_modulation"
 target="_android">Pulse-width modulation</a>.
 </dd>
+
+</dl>
+
+<h3 id="srcTerms">Sample Rate Conversion</h3>
+
+<dl>
+
+<dt>downsample</dt>
+<dd>To resample, where sink sample rate &lt; source sample rate.</dd>
+
+<dt>Nyquist frequency</dt>
+<dd>
+The Nyquist frequency, equal to 1/2 of a given sample rate, is the
+maximum frequency component that can be represented by a discretized
+signal at that sample rate.  For example, the human hearing range is
+typically assumed to extend up to approximately 20 kHz, and so a digital
+audio signal must have a sample rate of at least 40 kHz to represent that
+range.  In practice, sample rates of 44.1 kHz and 48 kHz are commonly
+used, with Nyquist frequencies of 22.05 kHz and 24 kHz respectively.
+See
+<a href="http://en.wikipedia.org/wiki/Nyquist_frequency" target="_android">Nyquist frequency</a>
+and
+<a href="http://en.wikipedia.org/wiki/Hearing_range" target="_android">Hearing range</a>
+for more information.
+</dd>
+
+<dt>resampler</dt>
+<dd>Synonym for sample rate converter.</dd>
+
+<dt>resampling</dt>
+<dd>The process of converting sample rate.</dd>
+
+<dt>sample rate converter</dt>
+<dd>A module that resamples.</dd>
+
+<dt>sink</dt>
+<dd>The output of a resampler.</dd>
+
+<dt>source</dt>
+<dd>The input to a resampler.</dd>
+
+<dt>upsample</dt>
+<dd>To resample, where sink sample rate &gt; source sample rate.</dd>
 
 </dl>
 
@@ -399,7 +440,7 @@ may have a special meaning within Android beyond their general meaning.
 Advanced Linux Sound Architecture.  As the name suggests, it is an audio
 framework primarily for Linux, but it has influenced other systems.
 See Wikipedia article
-<a class="external-link" href="http://en.wikipedia.org/wiki/Advanced_Linux_Sound_Architecture" target="_android">ALSA</a>
+<a href="http://en.wikipedia.org/wiki/Advanced_Linux_Sound_Architecture" target="_android">ALSA</a>
 for the general definition. As used within Android, it refers primarily
 to the kernel audio framework and drivers, not to the user-mode API. See
 tinyalsa.
@@ -416,7 +457,7 @@ and input (pre-processing) effects.  The API is defined at
 <dd>
 The sound server implementation for Android. AudioFlinger
 runs within the mediaserver process. See Wikipedia article
-<a class="external-link" href="http://en.wikipedia.org/wiki/Sound_server" target="_android">Sound server</a>
+<a href="http://en.wikipedia.org/wiki/Sound_server" target="_android">Sound server</a>
 for the generic definition.
 </dd>
 
@@ -433,7 +474,7 @@ Focus</a> and the focus-related methods and constants of
 The module within AudioFlinger responsible for
 combining multiple tracks and applying attenuation
 (volume) and certain effects. The Wikipedia article
-<a class="external-link" href="http://en.wikipedia.org/wiki/Audio_mixing_(recorded_music)" target="_android">Audio mixing (recorded music)</a>
+<a href="http://en.wikipedia.org/wiki/Audio_mixing_(recorded_music)" target="_android">Audio mixing (recorded music)</a>
 may be useful for understanding the generic
 concept. But that article describes a mixer more as a hardware device
 or a software application, rather than a software module within a system.
@@ -595,7 +636,7 @@ for use in HAL implementations.
 <dd>
 A higher-level client API than AudioTrack, used for playing DTMF signals.
 See the Wikipedia article
-<a class="external-link" href="http://en.wikipedia.org/wiki/Dual-tone_multi-frequency_signaling"
+<a href="http://en.wikipedia.org/wiki/Dual-tone_multi-frequency_signaling"
 target="_android">Dual-tone multi-frequency signaling</a>,
 and the API definition at
 <a href="http://developer.android.com/reference/android/media/ToneGenerator.html"
@@ -622,11 +663,3 @@ operate in volume indices rather than absolute attenuation factors.
 </dd>
 
 </dl>
-
-<h2 id="srcTerms">Sample Rate Conversion</h2>
-
-<p>
-For terms related to sample rate conversion, see the separate article
-<a href="audio_src.html">Sample Rate Conversion</a>.
-</p>
-
