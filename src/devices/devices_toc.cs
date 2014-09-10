@@ -31,6 +31,7 @@
         </a>
       </div>
         <ul>
+          <li><a href="<?cs var:toroot ?>devices/audio_terminology.html">Terminology</a></li>
           <li><a href="<?cs var:toroot ?>devices/audio_implement.html">Implementation</a></li>
           <li><a href="<?cs var:toroot ?>devices/audio_warmup.html">Warmup</a></li>
           <li class="nav-section">
@@ -47,7 +48,6 @@
           </li>
           <li><a href="<?cs var:toroot ?>devices/audio_avoiding_pi.html">Priority Inversion</a></li>
           <li><a href="<?cs var:toroot ?>devices/audio_src.html">Sample Rate Conversion</a></li>
-          <li><a href="<?cs var:toroot ?>devices/audio_terminology.html">Terminology</a></li>
           <li><a href="<?cs var:toroot ?>devices/audio_debugging.html">Debugging</a></li>
         </ul>
       </li>
