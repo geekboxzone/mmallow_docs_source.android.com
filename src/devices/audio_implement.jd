@@ -244,7 +244,7 @@ pre_processing {
 <p>For <code>AudioSource</code> tuning, there are no explicit requirements on audio gain or audio processing
 with the exception of voice recognition (<code>VOICE_RECOGNITION</code>).</p>
 
-<p>The following are the requirements for voice recognition:</p>
+<p>The requirements for voice recognition are:</p>
 
 <ul>
 <li>"flat" frequency response (+/- 3dB) from 100Hz to 4kHz</li>
