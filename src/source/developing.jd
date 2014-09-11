@@ -72,10 +72,9 @@ For information about using repo to download source, see <a href="{@docRoot}sour
 <pre><code>$ repo sync PROJECT0 PROJECT1 PROJECT2 ...
 </code></pre>
 <h2 id="creating-topic-branches">Creating topic branches</h2>
-<p>Start a topic branch in your local work environment whenever you begin a change, for example when you begin work on a bug or new feature. A topic branch is not a copy of the original files; it is a pointer to a particular commit. This makes creating local branches and switching among them a light-weight operation. By using branches, you can isolate one aspect of your work from the others. For an interesting article about using topic branches, see <a href="http://www.kernel.org/pub/software/scm/git/docs/howto/separating-topic-branches.txt">Separating topic branches</a>.
-<img src="{@docRoot}images/external-link.png" alt=""></p>
-<p>To start a topic branch using Repo: </p>
-<pre><code>$ repo start BRANCH_NAME
+<p>Start a topic branch in your local work environment whenever you begin a change, for example when you begin work on a bug or new feature. A topic branch is not a copy of the original files; it is a pointer to a particular commit. This makes creating local branches and switching among them a light-weight operation. By using branches, you can isolate one aspect of your work from the others. For an interesting article about using topic branches, see <a href="http://www.kernel.org/pub/software/scm/git/docs/howto/separating-topic-branches.txt">Separating topic branches</a>.</p>
+<p>To start a topic branch using Repo, navigate into the project to be modified and issue: </p>
+<pre><code>$ repo start BRANCH_NAME .
 </code></pre>
 <p>To verify that your new branch was created:</p>
 <pre><code>$ repo status
