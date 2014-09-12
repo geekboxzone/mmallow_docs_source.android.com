@@ -157,7 +157,7 @@ to the device's <code>/system/lib</code>.
 
 <p>
 The standard Java language logging API in Android SDK is
-<a class="external-link" href="http://developer.android.com/reference/android/util/Log.html" target="_android">android.util.Log</a>.
+<a href="http://developer.android.com/reference/android/util/Log.html">android.util.Log</a>.
 </p>
 
 <p>

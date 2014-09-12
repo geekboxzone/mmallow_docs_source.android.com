@@ -13,7 +13,7 @@ page.title=Sample Rate Conversion
 
 <p>
 See the Wikipedia article
-<a class="external-link" href="http://en.wikipedia.org/wiki/Resampling_(audio)" target="_android">Resampling (audio)</a>
+<a href="http://en.wikipedia.org/wiki/Resampling_(audio)">Resampling (audio)</a>
 for a generic definition of sample rate conversion, also known as "resampling."
 The remainder of this article describes resampling within Android.
 </p>
