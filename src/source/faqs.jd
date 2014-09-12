@@ -321,5 +321,7 @@ ways to help out Android.</p>
 implement the 'adb' debugging utility. This means that any compatible device
 -- including ones available at retail -- must be able to run the CTS
 tests.</p>
+<h3 id="are-codecs-verified">Are codecs verified by CTS?</h3>
+<p>Yes. All mandatory codecs are verified by CTS.</p>
 
 <a href="#top">Back to top</a>
