@@ -103,13 +103,6 @@ made of 4 floats, or 16 bytes.</td>
   using a cache large enough to hold two screens worth of 8-bit textures. For instance, on a 1280x800 display, a full screen buffer uses about 1 MB, so the cache should be at least 2 MB.</td>
 </tr>
 <tr>
-  <td><code>ro.hwui.fbo_cache_size</code></td>
-  <td><code>integer</code></td>
-  <td><code>16</code></td>
-  <td>Defines the number of FBO names the renderer can hold in the cache at any given time.
-  We recommend keeping this number low.</td>
-</tr>
-<tr>
   <td><code>ro.hwui.r_buffer_cache_size</code></td>
   <td><code>float</code></td>
   <td><code>2</code></td>
