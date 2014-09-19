@@ -167,18 +167,48 @@
           </div>
           <ul>
             <li>
-              <a href="<?cs var:toroot ?>devices/sensors/base_triggers.html">
-                <span class="en">Base sensors</span>
+              <a href="<?cs var:toroot ?>devices/sensors/sensor-stack.html">
+                <span class="en">Sensor stack</span>
               </a>
             </li>
             <li>
-              <a href="<?cs var:toroot ?>devices/sensors/composite_sensors.html">
-                <span class="en">Composite sensors</span>
+              <a href="<?cs var:toroot ?>devices/sensors/report-modes.html">
+                <span class="en">Reporting modes</span>
+              </a>
+            </li>
+            <li>
+              <a href="<?cs var:toroot ?>devices/sensors/suspend-mode.html">
+                <span class="en">Suspend mode</span>
+              </a>
+            </li>
+            <li>
+              <a href="<?cs var:toroot ?>devices/sensors/power-use.html">
+                <span class="en">Power consumption</span>
+              </a>
+            </li>
+            <li>
+              <a href="<?cs var:toroot ?>devices/sensors/interaction.html">
+                <span class="en">Interaction</span>
+              </a>
+            </li>
+            <li>
+              <a href="<?cs var:toroot ?>devices/sensors/hal-interface.html">
+                <span class="en">HAL interface</span>
               </a>
             </li>
             <li>
               <a href="<?cs var:toroot ?>devices/sensors/batching.html">
-                <span class="en">Batching results</span>
+                <span class="en">Batching</span>
+              </a>
+            </li>
+            <li>
+              <a href="<?cs var:toroot ?>devices/sensors/sensor-types.html">
+                <span class="en">Sensor types</span>
+              </a>
+            </li>
+            <li>
+              <a href="<?cs var:toroot ?>devices/sensors/versioning.html">
+                <span class="en">Version deprecation</span>
               </a>
             </li>
           </ul>
