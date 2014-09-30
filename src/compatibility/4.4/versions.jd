@@ -16,4 +16,7 @@ allowable by an Android 4.3-based system. The only permitted values for
 <ul>
 <li>4.4</li>
 <li>4.4.1</li>
+<li>4.4.2</li>
+<li>4.4.3</li>
+<li>4.4.4</li>
 </ul>
