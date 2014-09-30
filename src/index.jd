@@ -42,41 +42,39 @@ header.hide=1
     <div class="col-8">
     <h3>What's New</h3>
 
-<a href="{@docRoot}source/build-numbers.html">
-        <h4>Android 4.4.4 released</h4></a>
-        <p>Builds for Android 4.4.4 have been released. See the <strong><a
-href="{@docRoot}source/build-numbers.html#source-code-tags-and-builds">Source
-Code Tags and Builds</a></strong> table on <strong>Codenames, Tags, and Build
-Numbers</strong> for the new builds, tags, and devices supported.</p>
-
-<a href="{@docRoot}compatibility/downloads.html">
-        <h4>Android 4.4 CTS packages updated</h4></a>
-        <p>Revision 3 of the Android 4.4 Compatibility Test Suite (CTS) and
-Android 4.4 CTS Verifier have been added to Compatibility
-<strong><a
-href="{@docRoot}compatibility/downloads.html">Downloads</a></strong>. Packages
-for x86 architectures are included for the first time.</p>
+<a href="{@docRoot}devices/drm.html">
+        <h4>DRM page rewritten</h4></a>
+        <p>The description of the Android <strong><a
+        href="{@docRoot}devices/drm.html">DRM</a></strong> framework has been
+        completely rewritten and expanded.</p>
 
 <img border="0" src="images/Android_Robot_100.png" alt="Android Partner icon" style="display:inline;float:right;margin:5px 10px">
 
-<a href="{@docRoot}devices/tech/dalvik/art.html">
-        <h4>ART introduction completely revised</h4></a>
+<a href="{@docRoot}devices/tuning.html">
+        <h4>Performance tuning property removed</h4></a>
+        <p>The <code>ro.hwui.fbo_cache_size</code> property has been removed
+        from Android and the corresponding <strong><a
+href="{@docRoot}devices/tuning.html">Performance tuning</a></strong> list.</p>
+
+<a href="{@docRoot}compatibility/cts-intro.html">
+        <h4>Compatibility Test Suite manual revised</h4></a>
+        <p>The <strong><a
+        href="{@docRoot}compatibility/android-cts-manual.pdf">Compatibility Test Suite
+        (CTS) manual</a></strong> has been revised with additional details regarding location
+        settings and more.</p>
+
+<a href="{@docRoot}compatibility/4.4/versions.html">
+        <h4>New version strings added for 4.4</h4></a>
         <p><strong><a
-href="{@docRoot}devices/tech/dalvik/art.html">Introducing ART</a></strong> has been
-rewritten to reflect forthcoming changes and prepare developers and
-manufacturers for the runtime's adoption.</p>
+        href="{@docRoot}compatibility/4.4/versions.html">Permitted Version Strings for
+        Android 4.4</a></strong> have been updated.</p>
 
-<a href="{@docRoot}source/brands.html">
-        <h4>Brand guidelines published</h4></a>
-        <p>Manufacturers have their own set of <strong><a
-href="{@docRoot}source/brands.html">guidelines for Android brand use</a></strong>.</p>
-
-<a href="{@docRoot}devices/graphics/architecture.html">
- <h4>Graphics architecture document published</h4></a>
-        <p>Android engineering describes the system-level <strong><a
-href="{@docRoot}devices/graphics/architecture.html">Graphics
-Architecture</a></strong> in great detail.</p>
-
+<a href="{@docRoot}assets/images/sac_logo.png">
+        <h4>New Android logo throughout</h4></a>
+        <p>The <strong><a
+        href="{@docRoot}assets/images/sac_logo.png">Android</a></strong>
+        word mark has been enhanced throughout this site:</p>
+<img border="0" src="assets/images/sac_logo.png" alt="Android word mark">
     </div>
 
     <div class="col-8">
@@ -84,11 +82,12 @@ Architecture</a></strong> in great detail.</p>
       <a href="{@docRoot}source/index.html">
         <h4>Explore the Source</h4></a>
         <p>Get the complete Android platform and modify and build it to suit your needs. You can
-	also <strong><a
-href="https://android-review.googlesource.com/#/q/status:open">contribute to</a></strong> the <strong><a
-href="https://android.googlesource.com/">Android Open Source Project
-repository</a></strong> to make your changes available to everyone else in
-        the Android ecosystem.</p>
+        also <strong><a
+        href="https://android-review.googlesource.com/#/q/status:open">contribute
+        to</a></strong> the <strong><a
+        href="https://android.googlesource.com/">Android Open Source Project
+        repository</a></strong> to make your changes available to everyone else
+        in the Android ecosystem.</p>
       <a href="{@docRoot}devices/index.html">
         <h4>Port Android to Devices</h4></a>
         <p>Port the latest Android platform and
