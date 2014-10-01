@@ -63,18 +63,17 @@ href="{@docRoot}devices/tuning.html">Performance tuning</a></strong> list.</p>
         (CTS) manual</a></strong> has been revised with additional details regarding location
         settings and more.</p>
 
+<a href="{@docRoot}source/known-issues.html">
+        <h4>Known issues refined</h4></a>
+        <p>The list of <strong><a
+        href="{@docRoot}source/known-issues.html">Known Issues</a></strong>
+        has been updated and split into categories.</p>
+
 <a href="{@docRoot}compatibility/4.4/versions.html">
         <h4>New version strings added for 4.4</h4></a>
         <p><strong><a
         href="{@docRoot}compatibility/4.4/versions.html">Permitted Version Strings for
         Android 4.4</a></strong> have been updated.</p>
-
-<a href="{@docRoot}assets/images/sac_logo.png">
-        <h4>New Android logo throughout</h4></a>
-        <p>The <strong><a
-        href="{@docRoot}assets/images/sac_logo.png">Android</a></strong>
-        word mark has been enhanced throughout this site:</p>
-<img border="0" src="assets/images/sac_logo.png" alt="Android word mark">
     </div>
 
     <div class="col-8">
