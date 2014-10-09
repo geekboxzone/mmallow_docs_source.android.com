@@ -42,13 +42,20 @@ header.hide=1
     <div class="col-8">
     <h3>What's New</h3>
 
+<a href="{@docRoot}devices/graphics.html">
+        <h4>Graphics introduction and implementation rewritten</h4></a>
+        <p>The <strong><a
+        href="{@docRoot}devices/graphics.html">Graphics introduction</a></strong> and <strong><a
+	href="{@docRoot}devices/graphics/implement.html">implementation
+        instructions</a></strong> have been revised in entirety.</p>
+
+<img border="0" src="images/Android_Robot_100.png" alt="Android Partner icon" style="display:inline;float:right;margin:5px 10px">
+
 <a href="{@docRoot}devices/drm.html">
         <h4>DRM page rewritten</h4></a>
         <p>The description of the Android <strong><a
         href="{@docRoot}devices/drm.html">DRM</a></strong> framework has been
         completely rewritten and expanded.</p>
-
-<img border="0" src="images/Android_Robot_100.png" alt="Android Partner icon" style="display:inline;float:right;margin:5px 10px">
 
 <a href="{@docRoot}devices/tuning.html">
         <h4>Performance tuning property removed</h4></a>
@@ -68,12 +75,6 @@ href="{@docRoot}devices/tuning.html">Performance tuning</a></strong> list.</p>
         <p>The list of <strong><a
         href="{@docRoot}source/known-issues.html">Known Issues</a></strong>
         has been updated and split into categories.</p>
-
-<a href="{@docRoot}compatibility/4.4/versions.html">
-        <h4>New version strings added for 4.4</h4></a>
-        <p><strong><a
-        href="{@docRoot}compatibility/4.4/versions.html">Permitted Version Strings for
-        Android 4.4</a></strong> have been updated.</p>
     </div>
 
     <div class="col-8">
