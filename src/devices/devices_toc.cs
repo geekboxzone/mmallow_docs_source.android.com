@@ -152,11 +152,19 @@
                 <span class="en">Encryption</span>
               </a>
             </li>
-            <li>
+          <li class="nav-section">
+            <div class="nav-section-header">
               <a href="<?cs var:toroot ?>devices/tech/security/se-linux.html">
                 <span class="en">Security-Enhanced Linux</span>
               </a>
-            </li>
+            </div>
+            <ul>
+              <li><a href="<?cs var:toroot ?>devices/tech/security/selinux/concepts.html">Concepts</a></li>
+              <li><a href="<?cs var:toroot ?>devices/tech/security/selinux/implement.html">Implementation</a></li>
+              <li><a href="<?cs var:toroot ?>devices/tech/security/selinux/customize.html">Customization</a></li>
+              <li><a href="<?cs var:toroot ?>devices/tech/security/selinux/validate.html">Validation</a></li>
+            </ul>
+          </li>
           </ul>
       </li>
      <li class="nav-section">
