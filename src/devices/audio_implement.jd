@@ -25,7 +25,7 @@ page.title=Audio
 </div>
 
 <p>
-  This page exlains how to implement the audio Hardware Abstraction Layer (HAL)
+  This page explains how to implement the audio Hardware Abstraction Layer (HAL)
 and configure the shared library.
 </p>
 
@@ -194,7 +194,7 @@ href="http://developer.android.com/reference/android/media/audiofx/NoiseSuppress
 </ul>
 
 
-<p>Pre-processing effects are always paired with the use case mode in which the pre-processing is requested. In Android
+<p>Pre-processing effects are paired with the use case mode in which the pre-processing is requested. In Android
 app development, a use case is referred to as an <code>AudioSource</code>; and app developers
 request to use the <code>AudioSource</code> abstraction instead of the actual audio hardware device.
 The Android Audio Policy Manager maps an <code>AudioSource</code> to the actual hardware with <code>AudioPolicyManagerBase::getDeviceForInputSource(int 
@@ -211,11 +211,11 @@ inputSource)</code>. The following sources are exposed to developers:
 <li><code>android.media.MediaRecorder.AudioSource.DEFAULT</code></li>
 </ul>
 
-<p>The default pre-processing effects that are applied for each <code>AudioSource</code> are
+<p>The default pre-processing effects applied for each <code>AudioSource</code> are
 specified in the <code>/system/etc/audio_effects.conf</code> file. To specify
 your own default effects for every <code>AudioSource</code>, create a <code>/system/vendor/etc/audio_effects.conf</code> file
-and specify any pre-processing effects that you need to turn on. For an example, 
-see the implementation for the Nexus 10 in <code>device/samsung/manta/audio_effects.conf</code></p>
+and specify the pre-processing effects to turn on. For an example, 
+see the implementation for the Nexus 10 in <code>device/samsung/manta/audio_effects.conf</code>. AudioEffect instances acquire and release a session when created and destroyed, enabling the effects (such as the Loudness Enhancer) to persist throughout the duration of the session.<p>
 
 <p class="warning"><strong>Warning:</strong> For the <code>VOICE_RECOGNITION</code> use case, do not enable
 the noise suppression pre-processing effect. It should not be turned on by default when recording from this audio source,
