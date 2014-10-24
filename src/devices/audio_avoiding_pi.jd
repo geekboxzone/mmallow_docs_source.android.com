@@ -182,8 +182,8 @@ In practice, we've found that the retries are not a problem.
 </p>
 
 <p class="note"><strong>Note:</strong> Atomic operations and their interactions with memory barriers
-are notoriously badly misunderstood and used incorrectly. These methods are
-included here for completeness but recommend you also read the article
+are notoriously badly misunderstood and used incorrectly. We include these methods
+here for completeness but recommend you also read the article
 <a href="https://developer.android.com/training/articles/smp.html">
 SMP Primer for Android</a>
 for further information.
@@ -286,7 +286,7 @@ suitable for other purposes.
 </p>
 
 <p>
-For developers, some of the sample OpenSL ES application code may be updated to
+For developers, some of the sample OpenSL ES application code should be updated to
 use non-blocking algorithms or reference a non-Android open source library.
 </p>
 
