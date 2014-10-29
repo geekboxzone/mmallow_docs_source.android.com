@@ -67,6 +67,7 @@
           <li><a href="<?cs var:toroot ?>devices/camera/camera3_crop_reprocess.html">Output and Cropping</a></li>
           <li><a href="<?cs var:toroot ?>devices/camera/camera3_error_stream.html">Errors and Streams</a></li>
           <li><a href="<?cs var:toroot ?>devices/camera/camera3_requests_methods.html">Request Creation</a></li>
+          <li><a href="<?cs var:toroot ?>devices/camera/versioning.html">Version Support</a></li>
         </ul>
       </li>
 
