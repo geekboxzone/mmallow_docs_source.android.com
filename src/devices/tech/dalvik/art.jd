@@ -210,7 +210,7 @@ by including both Java and native stack information. </p>
 can be built using either or both runtimes. (You can dual boot from
 <strong>Developer options</strong> if both runtimes are installed.) See
 runtime_common.mk. That is included from build/target/product/runtime_libdvm.mk
-or build/target/product/runtime_libdvm.mk or both.</p>
+or build/target/product/runtime_libart.mk or both.</p>
 
 <p> The <code>dalvikvm</code> command line tool can run with either runtime now.
 It will default to using the runtime specified in <strong>developer
