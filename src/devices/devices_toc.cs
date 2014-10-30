@@ -226,6 +226,17 @@
             </li>
           </ul>
       </li>
+      <li class="nav-section">
+        <div class="nav-section-header">
+          <a href="<?cs var:toroot ?>devices/tv/index.html">
+            <span class="en">TV</span>
+          </a>
+        </div>
+        <ul>
+          <li><a href="<?cs var:toroot ?>devices/tv/HDMI-CEC.html">HDMI-CEC control service</a></li>
+        </ul>
+      </li>
+
     </ul>
   </li>
 <!-- End Porting Android -->
