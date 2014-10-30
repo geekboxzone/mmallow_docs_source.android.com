@@ -34,8 +34,17 @@
           <li><a href="<?cs var:toroot ?>accessories/aoa.html">Version 1.0</a></li>
         </ul>
       </li>
-      <li><a href="<?cs var:toroot ?>accessories/audio.html">Building Audio Accessories</a></li>
-      <li><a href="<?cs var:toroot ?>accessories/custom.html">Building Custom Accessories</a></li>
+      <li class="nav-section">
+        <div class="nav-section-header">
+          <a href="<?cs var:toroot ?>accessories/audio.html">
+            <span class="en">Audio Accessories</span>
+          </a>
+        </div>
+        <ul>
+          <li><a href="<?cs var:toroot ?>accessories/headset-spec.html">Headset specification</a></li>
+        </ul>
+      </li>
+      <li><a href="<?cs var:toroot ?>accessories/custom.html">Custom Accessories</a></li>
   </li>
   <!-- End Accessories -->
 </ul>
