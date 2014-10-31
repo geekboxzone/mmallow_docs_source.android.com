@@ -78,9 +78,9 @@ accessed through the operating system.</p>
 </li>
 <li>
 <p><strong>Android Application Runtime</strong>: Android applications are most often written
-in the Java programming language and run in the Dalvik virtual machine.
+in the Java programming language and run in the Android runtime (ART).
 However, many applications, including core Android services and applications
-are native applications or include native libraries. Both Dalvik and native
+are native applications or include native libraries. Both ART and native
 applications run within the same security environment, contained within the
 Application Sandbox. Applications get a dedicated part of the filesystem in
 which they can write private data, including databases and raw files.</p>
@@ -441,7 +441,7 @@ oper.android.com/guide/topics/admin/device-admin.html">https://developer.android
 <p>Android provides an open source platform and application environment for mobile
 devices. The core operating system is based on the Linux kernel. Android
 applications are most often written in the Java programming language and run in
-the Dalvik virtual machine. However, applications can also be written in native
+the ART runtime. However, applications can also be written in native
 code. Applications are installed from a single file with the .apk file
 extension.</p>
 <p>The main Android application building blocks are:</p>
@@ -767,7 +767,7 @@ is implemented in two architectural layers (see figure below):</p>
 <ul>
 <li>
 <p>A DRM framework API, which is exposed to applications through the Android
-application framework and runs through the Dalvik VM for standard applications.</p>
+application framework and runs through the ART runtime for standard applications.</p>
 </li>
 <li>
 <p>A native code DRM manager, which implements the DRM framework and exposes an

@@ -36,12 +36,12 @@ keyboards and custom hardware, through USB or Bluetooth. This document
 describes the Android Open Accessory protocol for accessory hardware builders.</p>
 <p><a href="{@docRoot}accessories/index.html">&raquo; Accessory Protocol Information</a></p>
 
-<h2 id="dalvik-technical-information">Dalvik Technical Information</h2>
-<p>The Dalvik Virtual Machine is the heart of Android. It's a fast, just-in-time
-compiled, optimized bytecode virtual machine. Android applications are
-compiled to Dalvik bytecode and run on the Dalvik VM. This section includes
-detailed information such as the Dalvik bytecode format specification,
-design information on the VM itself, and so on.</p>
+<h2 id="art-technical-information">ART Technical Information</h2>
+<p>The Android runtime (ART) is the heart of Android. It's a fast, ahead-of-time
+compiled runtime with modern garbage collection designed to scale. Android applications are
+compiled to Dalvik bytecode and run with ART. This section includes
+detailed information such as the Dalvik Executable format specification,
+and design information on the runtime itself.</p>
 <p><a href="{@docRoot}devices/tech/dalvik/index.html">&raquo; Dalvik Information</a></p>
 
 <h2 id="data-usage-technical-information">Data Usage Technical Information</h2>
