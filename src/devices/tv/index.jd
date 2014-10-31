@@ -78,7 +78,9 @@ identifies the state of TV Inputs for the TV App. See <em>TV Input Manager</em> 
 <h2 id=permissions>Permissions</h2>
 
 <ul>
-  <li>Only <code><a href="http://developer.android.com/guide/topics/manifest/permission-element.html#plevel">signatureOrSystem</a> T</code>V Inputs and TV App have full access to the TV Provider database and are able
+  <li>Only <code><a
+href="http://developer.android.com/guide/topics/manifest/permission-element.html#plevel">signatureOrSystem</a></code>
+TV Inputs and TV App have full access to the TV Provider database and are able
 to receive KeyEvents.
   <li>Only system TV Inputs can access the TV Input HAL through the TV Input Manager
 service. TV Inputs are accessed one-to-one via TV Input Manager sessions.

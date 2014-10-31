@@ -127,7 +127,7 @@ has a set password.
 
 <p>In addition to these flows, the device can also fail to encrypt <code>/data</code>. Each of the flows are explained in detail below.</p>
 
-<h3 id=encrypt_a_new_device_with_forceencrypt>Encrypt a new device with <code>/forceencrypt</code></h3>
+<h3 id=encrypt_a_new_device_with_forceencrypt>Encrypt a new device with /forceencrypt</h3>
 
 <p>This is the normal first boot for an Android 5.0 device. </p>
 
