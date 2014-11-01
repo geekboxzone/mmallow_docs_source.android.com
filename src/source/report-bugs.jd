@@ -93,7 +93,7 @@ Observed results:
 See above.
 </blockquote>
 <p>This is a poor bug report because it doesn't provide any context for the
-issue; is it a problem in the Dalvik virtual machine, the core framework, or
+issue; is it a problem in the ART runtime, the core framework, or
 something else? It also doesn't provide any code or hint on how to reproduce
 it. In other words, this bug report doesn't provide enough information for
 anyone to take action on, so it would be ignored.</p>
