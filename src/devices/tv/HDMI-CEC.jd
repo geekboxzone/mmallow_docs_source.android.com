@@ -95,8 +95,7 @@ between the devices. The HAL definition is available for device manufacturers
 to use to implement the HAL layer.</li>
 </ul>
 
-<p class="note">
-<p><strong>Note</strong>: Device manufacturers should add the following line into <code>PRODUCT_COPY_FILES</code> in <code>device.mk</code></p>
+<p class="note"><strong>Note</strong>: Device manufacturers should add the following line into <code>PRODUCT_COPY_FILES</code> in <code>device.mk</code>.</p>
 
 <pre>
 PRODUCT_COPY_FILES += \

@@ -24,6 +24,8 @@ page.title=Wired audio headset specification
   </div>
 </div>
 
+<p><em>Version 1.0</em></p>
+
 <p>This document specifies the requirements for headsets and mobile devices to
 function uniformly across the Android ecosystem. It is separated into two
 sections beginning with the specifications for the headset
