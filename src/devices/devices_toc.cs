@@ -20,7 +20,7 @@
   <li class="nav-section">
     <div class="nav-section-header">
       <a href="<?cs var:toroot ?>devices/index.html">
-        <span class="en">Porting</span>
+        <span class="en">Interfaces</span>
       </a>
     </div>
     <ul>
@@ -115,63 +115,7 @@
           <li><a href="<?cs var:toroot ?>devices/tech/input/validate-keymaps.html">Validate Keymaps</a></li>
         </ul>
       </li>
-      <li><a href="<?cs var:toroot ?>devices/low-ram.html">Low RAM</a></li>
       <li><a href="<?cs var:toroot ?>devices/media.html">Media</a></li>
-     <li class="nav-section">
-          <div class="nav-section-header">
-            <a href="<?cs var:toroot ?>devices/tech/security/index.html">
-              <span class="en">Security</span>
-            </a>
-          </div>
-        <ul>
-            <li>
-              <a href="<?cs var:toroot ?>devices/tech/security/acknowledgements.html">
-                <span class="en">Acknowledgements</span>
-              </a>
-            </li>
-          <li class="nav-section">
-            <div class="nav-section-header">
-              <a href="<?cs var:toroot ?>devices/tech/security/enhancements.html">
-                <span class="en">Enhancements</span>
-              </a>
-            </div>
-            <ul>
-              <li><a href="<?cs var:toroot ?>devices/tech/security/enhancements50.html">Android 5.0</a></li>
-              <li><a href="<?cs var:toroot ?>devices/tech/security/enhancements44.html">Android 4.4</a></li>
-              <li><a href="<?cs var:toroot ?>devices/tech/security/enhancements43.html">Android 4.3</a></li>
-              <li><a href="<?cs var:toroot ?>devices/tech/security/enhancements42.html">Android 4.2</a></li>
-            </ul>
-          </li>
-            <li>
-              <a href="<?cs var:toroot ?>devices/tech/security/best-practices.html">
-                <span class="en">Best practices</span>
-              </a>
-            </li>
-            <li>
-              <a href="<?cs var:toroot ?>devices/tech/security/dm-verity.html">
-                <span class="en">dm-verity on boot</span>
-              </a>
-            </li>
-            <li>
-              <a href="<?cs var:toroot ?>devices/tech/encryption/index.html">
-                <span class="en">Encryption</span>
-              </a>
-            </li>
-          <li class="nav-section">
-            <div class="nav-section-header">
-              <a href="<?cs var:toroot ?>devices/tech/security/se-linux.html">
-                <span class="en">Security-Enhanced Linux</span>
-              </a>
-            </div>
-            <ul>
-              <li><a href="<?cs var:toroot ?>devices/tech/security/selinux/concepts.html">Concepts</a></li>
-              <li><a href="<?cs var:toroot ?>devices/tech/security/selinux/implement.html">Implementation</a></li>
-              <li><a href="<?cs var:toroot ?>devices/tech/security/selinux/customize.html">Customization</a></li>
-              <li><a href="<?cs var:toroot ?>devices/tech/security/selinux/validate.html">Validation</a></li>
-            </ul>
-          </li>
-          </ul>
-      </li>
      <li class="nav-section">
           <div class="nav-section-header">
             <a href="<?cs var:toroot ?>devices/sensors/index.html">
@@ -246,7 +190,7 @@
   <li class="nav-section">
     <div class="nav-section-header">
       <a href="<?cs var:toroot ?>devices/tech/index.html">
-        <span class="en">Technical Information</span>
+        <span class="en">Core Technologies</span>
       </a>
     </div>
 
@@ -306,15 +250,76 @@
       </li>
 
       <li>
+          <a href="<?cs var:toroot ?>devices/low-ram.html">
+            <span class="en">Low RAM</span>
+          </a>
+      </li>
+
+      <li>
           <a href="<?cs var:toroot ?>devices/tech/power.html">
             <span class="en">Power</span>
           </a>
       </li>
 
+     <li class="nav-section">
+          <div class="nav-section-header">
+            <a href="<?cs var:toroot ?>devices/tech/security/index.html">
+              <span class="en">Security</span>
+            </a>
+          </div>
+        <ul>
+            <li>
+              <a href="<?cs var:toroot ?>devices/tech/security/acknowledgements.html">
+                <span class="en">Acknowledgements</span>
+              </a>
+            </li>
+          <li class="nav-section">
+            <div class="nav-section-header">
+              <a href="<?cs var:toroot ?>devices/tech/security/enhancements.html">
+                <span class="en">Enhancements</span>
+              </a>
+            </div>
+            <ul>
+              <li><a href="<?cs var:toroot ?>devices/tech/security/enhancements44.html">Android 4.4</a></li>
+              <li><a href="<?cs var:toroot ?>devices/tech/security/enhancements43.html">Android 4.3</a></li>
+              <li><a href="<?cs var:toroot ?>devices/tech/security/enhancements42.html">Android 4.2</a></li>
+            </ul>
+          </li>
+            <li>
+              <a href="<?cs var:toroot ?>devices/tech/security/best-practices.html">
+                <span class="en">Best practices</span>
+              </a>
+            </li>
+            <li>
+              <a href="<?cs var:toroot ?>devices/tech/security/dm-verity.html">
+                <span class="en">dm-verity on boot</span>
+              </a>
+            </li>
+            <li>
+              <a href="<?cs var:toroot ?>devices/tech/encryption/index.html">
+                <span class="en">Encryption</span>
+              </a>
+            </li>
+          <li class="nav-section">
+            <div class="nav-section-header">
+              <a href="<?cs var:toroot ?>devices/tech/security/se-linux.html">
+                <span class="en">Security-Enhanced Linux</span>
+              </a>
+            </div>
+            <ul>
+              <li><a href="<?cs var:toroot ?>devices/tech/security/selinux/concepts.html">Concepts</a></li>
+              <li><a href="<?cs var:toroot ?>devices/tech/security/selinux/implement.html">Implementation</a></li>
+              <li><a href="<?cs var:toroot ?>devices/tech/security/selinux/customize.html">Customization</a></li>
+              <li><a href="<?cs var:toroot ?>devices/tech/security/selinux/validate.html">Validation</a></li>
+            </ul>
+          </li>
+          </ul>
+      </li>
+
       <li class="nav-section">
         <div class="nav-section-header">
           <a href="<?cs var:toroot ?>devices/tech/test_infra/tradefed/index.html">
-            <span class="en">Trade Federation Testing Infrastructure</span>
+            <span class="en">Testing Infrastructure</span>
           </a>
         </div>
         <ul>
