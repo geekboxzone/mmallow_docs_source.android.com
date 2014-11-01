@@ -254,13 +254,12 @@
       <li class="nav-section">
         <div class="nav-section-header">
           <a href="<?cs var:toroot ?>devices/tech/dalvik/index.html">
-          <span class="en">Dalvik</span></a>
+          <span class="en">ART and Dalvik</span></a>
         </div>
         <ul>
           <li><a href="<?cs var:toroot ?>devices/tech/dalvik/dalvik-bytecode.html">Bytecode Format</a></li>
           <li><a href="<?cs var:toroot ?>devices/tech/dalvik/dex-format.html">.Dex Format</a></li>
           <li><a href="<?cs var:toroot ?>devices/tech/dalvik/instruction-formats.html">Instruction Formats</a></li>
-          <li><a href="<?cs var:toroot ?>devices/tech/dalvik/art.html">Introducing ART</a></li>
         </ul>
       </li>
 
