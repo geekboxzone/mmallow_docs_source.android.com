@@ -280,6 +280,7 @@
               </a>
             </div>
             <ul>
+              <li><a href="<?cs var:toroot ?>devices/tech/security/enhancements50.html">Android 5.0</a></li>
               <li><a href="<?cs var:toroot ?>devices/tech/security/enhancements44.html">Android 4.4</a></li>
               <li><a href="<?cs var:toroot ?>devices/tech/security/enhancements43.html">Android 4.3</a></li>
               <li><a href="<?cs var:toroot ?>devices/tech/security/enhancements42.html">Android 4.2</a></li>
