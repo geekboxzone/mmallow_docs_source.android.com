@@ -305,7 +305,7 @@ class to allow applications to use the system credential storage for private
 keys and certificate chains.
 </p>
 
-<h2>Memory Management Security Enhancements</h2>
+<h2 id="memory-mgmt">Memory Management Security Enhancements</h2>
 
 Android includes many features that make common security issues harder to
 exploit. The Android SDK, compilers, and OS use tools to make common memory
@@ -350,7 +350,7 @@ escalation (further enhanced in Android 4.1)</li>
 
 </dl>
 
-<h2>Rooting of Devices</h2>
+<h2 id="rooting">Rooting of Devices</h2>
 <p>
 By default, on Android only the kernel and a small subset of the core
 applications run with root permissions. Android does not prevent a user or
@@ -396,7 +396,7 @@ devices uses the device password to protect the encryption key, so modifying
 the bootloader or operating system is not sufficient to access user data
 without the user’s device password.
 </p>
-<h2>User Security Features</h2>
+<h2 id="user-sec">User Security Features</h2>
 
 <h3 id="filesystem-encryption">Filesystem Encryption</h3>
 
@@ -413,7 +413,7 @@ Android provides password complexity rules that can be set by the device
 administrator and enforced by the operating system. Filesystem encryption
 requires the use of a user password, pattern-based screen lock is not supported.</p>
 <p>More details on implementation of filesystem encryption are available at
-<a href="/devices/tech/encryption/android_crypto_implementation.html">https://source.android.com/devices/tech/encryption/android_crypto_implementation.html</a></p>
+<a href="{@docRoot}devices/tech/encryption/index.html">Encryption</a>.</p>
 
 <h2 id="password-protection">Password Protection</h2>
 <p>Android can be configured to verify a user-supplied password prior to providing
