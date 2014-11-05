@@ -35,7 +35,7 @@ accessory followed by the specifications for the mobile device.</p>
 
 <p>The requirements in the following section apply to the headset accessory.</p>
 
-<h2 id=functions>Functions</h2>
+<h3 id=functions>Functions</h3>
 
 <table>
  <tr>
@@ -72,7 +72,7 @@ accessory followed by the specifications for the mobile device.</p>
  </tr>
 </table>
 
-<h2 id=control-function_mapping>Control-Function Mapping</h2>
+<h3 id=control-function_mapping>Control-Function Mapping</h3>
 
 <table>
  <tr>
@@ -146,7 +146,7 @@ following pattern:
   </ul>
 </ul>
 
-<h2 id=mechanical>Mechanical</h2>
+<h3 id=mechanical>Mechanical</h3>
 
 <table>
  <tr>
@@ -204,7 +204,7 @@ following pattern:
  </tr>
 </table>
 
-<h2 id=electrical>Electrical</h2>
+<h3 id=electrical>Electrical</h3>
 
 <table>
  <tr>
@@ -284,30 +284,34 @@ current Android Compatibility Definition Document (CDD)</p>
  </tr>
 </table>
 
-<h2 id=reference_headset_test_circuit_1>Reference Headset Test Circuit 1</h2>
+<h3 id=reference_headset_test_circuit_1>Reference Headset Test Circuit 1</h3>
 
 <img src="images/headset-circuit1.png" alt="Reference Headset Test Circuit 1" />
 <p class="img-caption"><strong>Figure 1.</strong> Reference headset test circuit 1</p>
 
-<p class="note"><strong>Note:</strong> Four-segment plug shows CTIA pinout. For OMTP pinout, please swap MIC and
-GND segments</strong></p>
+<p class="note"><strong>Note:</strong> Four-segment plug shows CTIA pinout. For
+OMTP pinout, please swap MIC and GND segments.</p>
 
-<h2 id=reference_headset_test_circuit_2>Reference Headset Test Circuit 2</h2>
+<h3 id=reference_headset_test_circuit_2>Reference Headset Test Circuit 2</h3>
 
 <img src="images/headset-circuit2.png" alt="Reference Headset Test Circuit 2" />
 <p class="img-caption"><strong>Figure 2.</strong> Reference headset test circuit 2</p>
 
-<p><strong>Note</strong>: The second reference circuit above illustrates how the actual resistor values
-(R1 - R4) will change based on the microphone capsule resistance to achieve the
-equivalent impedance values as required by the specification. The example above
-assumes a 5 kOhm microphone impedance. Therefore, as an example, to achieve an
-equivalent R4 impedance of 135 Ohm, the actual R4 resistor value needs to be
-139 Ohms.</p>
+<p class="note"><strong>Note:</strong> The second reference circuit above
+illustrates how the actual resistor values (R1 - R4) will change based on the
+microphone capsule resistance to achieve the equivalent impedance values as
+required by the specification. The example above assumes a 5 kOhm microphone
+impedance. Therefore, as an example, to achieve an equivalent R4 impedance of
+135 Ohm, the actual R4 resistor value needs to be 139 Ohms.</p>
 
 <h2 id=mobile_device_jack_specifications>Mobile Device (Jack) Specifications</h2>
 
-<p>The requirements in the following section apply to the 3.5 mm jack on Android
-mobile devices.</p>
+<p class="caution"><strong>Caution:</strong> To achieve compatibility with the
+headset specification above, devices that include a 4 conductor 3.5mm audio
+jack must meet the following specifications. Please see the <em>Analog audio
+ports</em> section of the <a
+href="{@docRoot}compatibility/android-cdd.pdf">Android Compatibility Definition
+Document (CDD)</a> for Android compatibility requirements.</p>
 
 <p><strong>Headset Jack Functions</strong></p>
 <table>
@@ -345,7 +349,7 @@ mobile devices.</p>
  </tr>
 </table>
 
-<h2 id=software_mapping>Software mapping</h2>
+<h3 id=software_mapping>Software mapping</h3>
 
 <table>
  <tr>
@@ -468,7 +472,7 @@ mobile devices.</p>
  </tr>
 </table>
 
-<h2 id=mechanical11>Mechanical</h2>
+<h3 id=mechanical11>Mechanical</h3>
 
 <table>
  <tr>
@@ -526,9 +530,9 @@ detection due to slow insertion. </p>
  </tr>
 </table>
 
-<h2 id=electrical12>Electrical</h2>
+<h3 id=electrical12>Electrical</h3>
 
-<h3 id=general>General</h3>
+<h4 id=general>General</h4>
 
 <table>
  <tr>
@@ -581,7 +585,7 @@ related to their respective function</p>
  </tr>
 </table>
 
-<h3 id=function_impedance_and_threshold_detection>Function Impedance and Threshold Detection</h3>
+<h4 id=function_impedance_and_threshold_detection>Function Impedance and Threshold Detection</h4>
 
 <p>Devices must detect the following resistor ladder on the accessories. The
 accessories will be tested to the standardized circuit diagram in the diagram
