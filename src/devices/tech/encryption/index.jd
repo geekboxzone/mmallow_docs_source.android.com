@@ -358,13 +358,13 @@ against off-box attacks, we extend this algorithm by signing the resultant key w
 
 <ol>
   <li>Generate random 16-byte disk encryption key (DEK) and 16-byte salt.
-  <li>Apply scrypt to the user password and the salt to produce 16-byte intermediate
+  <li>Apply scrypt to the user password and the salt to produce 32-byte intermediate
 key 1 (IK1).
   <li>Pad IK1 with zero bytes to the size of the hardware-bound private key (HBK).
 Specifically, we pad as: 00 || IK1 || 00..00; one zero byte, 32 IK1 bytes, 223
 zero bytes.
   <li>Sign padded IK1 with HBK to produce 256-byte IK2.
-  <li>Apply scrypt to IK2 and salt (same salt as step 2) to produce 16-byte IK3.
+  <li>Apply scrypt to IK2 and salt (same salt as step 2) to produce 32-byte IK3.
   <li>Use the first 16 bytes of IK3 as KEK and the last 16 bytes as IV.
   <li>Encrypt DEK with AES_CBC, with key KEK, and initialization vector IV.
 </ol>
