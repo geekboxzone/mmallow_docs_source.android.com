@@ -2,7 +2,7 @@ page.title=TV Input Framework
 @jd:body
 
 <!--
-    Copyright 2013 The Android Open Source Project
+    Copyright 2014 The Android Open Source Project
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -32,16 +32,17 @@ create input modules for controlling Android TV. It also enables live TV search
 and recommendations via metadata published by the TV Input. The framework does
 not seek to implement TV standards or regional requirements.</p>
 
-<p>The Android TIF makes it easier for partners to meet regional digital TV
+<p>The Android TIF makes it easier for device manufacturers to meet regional digital TV
 broadcast standards without re-implementation. This document may also inform
 third-party app developers who would like to create custom TV Inputs.</p>
 
 <h2 id=components>Components</h2>
 
-<p>The Android TV Input Framework implementation includes a TV Input Manager and
-an example TV App that works with a special remote control to access built-in
-and IP tuner channels. The TV App communicates with TV Input modules supplied
-by the device manufacturer or other parties through the TV Input Manager.</p>
+<p>The Android TV Input Framework implementation includes a TV Input Manager.
+The TIF works with the TV App, a system app that can’t be replaced by a
+third-party app, to access built-in and IP tuner channels. The TV App
+communicates with TV Input modules supplied by the device manufacturer or other
+parties through the TV Input Manager.</p>
 
 <p>The TV Input Framework consists of:</p>
 
@@ -68,8 +69,7 @@ detailed view of the Android TV Input Framework architecture.</p>
 
 <ol>
   <li>The user sees and interacts with the TV App, a system app that can’t be
-replaced by a third-party app. The Android Open Source Project (AOSP) provides
-a reference TV App that manufacturers can extend to suit their needs.
+replaced by a third-party app.
   <li>The TV App displays the AV content from the TV Input.
   <li>The TV App cannot talk directly with the TV Inputs. The TV Input Manager
 identifies the state of TV Inputs for the TV App. See <em>TV Input Manager</em> below for more details about these limitations.
@@ -200,8 +200,8 @@ by displaying it as disconnected and preventing its selection.</p>
 
 <p>The TV Input Manager abstracts communication between the TV App and TV Inputs.
 The standard interface of TV Input Manager and TV Input allows multiple
-partners to create their own TV Apps while helping all third-party TV Inputs
-work on all TV Apps, thus creating an ecosystem. </p>
+device manufacturers to create their own TV Apps while helping all third-party TV Inputs
+work on all TV Apps.</p>
 
 <h2 id=tv_inputs>TV Inputs</h2>
 
@@ -303,26 +303,13 @@ available in the AOSP source tree and the vendor develops its implementation.</p
 
 <h2 id=tv_app>TV App</h2>
 
-<p>The Android TV Input Framework includes a reference implementation to help
-manufacturers create their own TV Apps more quickly.  Third-party developers
-cannot develop TV Apps as the APIs require system or signature permission.</p>
-
-<p>Partners are strongly encouraged to take the reference as a base implementation
-and extend it to add additional functionality. By building upon the reference
-implementation, bug fixes and improvements added to the reference will be more
-easily included in the partner’s variant. By extending the TV App in a
-structured way, it is easier to pick up new features and bug fixes made to the
-reference. Ideally, those extensions are submitted to the Android ecosystem so
-others may benefit from and be compatible with them.</p>
-
-<p>The TV App provides channel and program search results (via <code>com.android.tv.search.TvProviderSearch</code>) and passes keys, tune, and volume calls to TV Inputs through the TV Input
+<p>The TV App provides channel and program search results (via
+<code>com.android.tv.search.TvProviderSearch</code>) and passes keys, tune, and
+volume calls to TV Inputs through the TV Input
 Manager. Manufacturers must implement the TV App to ensure search functions
 work for their users. Otherwise, users will struggle to navigate the resulting
-Android TV.</p>
-
-<p>The example Android TV App lets manufacturers see how the TIF works and should
-expedite their own development by demonstrating a simple TV-watching
-experience. </p>
+Android TV. Third-party developers cannot develop TV Apps as the APIs require
+system or signature permission.</p>
 
 <p>As with the TIF in general, the TV App does not seek to implement device
 manufacturer or country-specific features. Instead, it handles these tasks by
@@ -362,18 +349,30 @@ TV Input Manager service, TV Provider, and TV Input. </p>
 
 <h3 id=tv_provider>TV Provider</h3>
 
-<p>Each channel row has a <code>COLUMN_LOCKED</code> field that is used to lock specific channels from viewing without entering a
-PIN code. The program field <code>COLUMN_CONTENT_RATING</code> is intended for display and is not used to enforce parental control.</p>
+<p>Each channel row has a <code>COLUMN_LOCKED</code> field that is used to lock
+specific channels from viewing without entering a PIN code. The program field
+<code>COLUMN_CONTENT_RATING</code> is intended for display and is not used to
+enforce parental control.</p>
 
 <h3 id=tv_input_manager>TV Input Manager</h3>
 
-<p>The TV Input Manager stores every blocked <code>TvContentRating</code> and responds to <code>isRatingBlocked()</code> to advise if content with the given rating should be blocked.</p>
+<p>The TV Input Manager stores every blocked <code>TvContentRating</code> and
+responds to <code>isRatingBlocked()</code> to advise if content with the given
+rating should be blocked.</p>
 
 <h3 id=tv_input>TV Input</h3>
 
-<p>The TV Input checks if the current content should be blocked by calling <code>isRatingBlocked()</code> on the TV Input Manager when the rating of the displayed content has changed
-(on program or channel change), or parental control settings have changed (on <code>ACTION_BLOCKED_RATINGS_CHANGED</code> and <code>ACTION_PARENTAL_CONTROLS_ENABLED_CHANGED</code>). If the content should be blocked, the TV Input disables the audio and video
-and notifies the TV app that the current content is blocked by calling <code>notifyContentBlocked(TvContentRating)</code>.</p>
+<p>The TV Input checks if the current content should be blocked by calling
+<code>isRatingBlocked()</code> on the TV Input Manager when the rating of the
+displayed content has changed
+(on program or channel change), or parental control settings have changed (on
+<code>ACTION_BLOCKED_RATINGS_CHANGED</code> and
+<code>ACTION_PARENTAL_CONTROLS_ENABLED_CHANGED</code>). If the content should
+be blocked, the TV Input disables the audio and video
+and notifies the TV app that the current content is blocked by calling
+<code>notifyContentBlocked(TvContentRating)</code>. If the content should not
+be blocked, the TV Input enables audio and video and notifies the TV App
+the current content is allowed by calling <code>notifyContentAllowed()</code>.</p>
 
 <h3 id=tv_app>TV App</h3>
 
@@ -382,8 +381,9 @@ is notified by a TV Input that the current content is blocked or when the user
 attempts to view a blocked channel.</p>
 
 <p>The TV App does not directly store the parental control settings. When the user
-changes the parental control settings, every blocked <code>TvContentRating</code> is stored by the TV Input Manager, and blocked channels are stored by the TV
-Provider.</p>
+changes the parental control settings, every blocked
+<code>TvContentRating</code> is stored by the TV Input Manager, and blocked
+channels are stored by the TV Provider.</p>
 
 <h2 id=hdmi-cec>HDMI-CEC</h2>
 
@@ -393,7 +393,7 @@ speed setup and allow distant control over various TV Inputs via the central TV
 App. For instance, it may switch inputs, power up or down devices, and more.</p>
 
 <p>The Android TIF implements HDMI-CEC as the HDMI Control Service so that
-partners merely need to develop low-level drivers that interact with the
+device manufacturers merely need to develop low-level drivers that interact with the
 lightweight Android TV HAL, skipping more complex business logic. In providing
 a standard implementation, Android seeks to mitigate compatibility issues by
 reducing fragmented implementations and selective feature support. The HDMI
@@ -436,7 +436,7 @@ the broadcast app, for example:</p>
   <li> HbbTV: webkit modification by Opera browser
 </ul>
 
-<p>In the Android L release, Android TV expects partners to use systems
+<p>In the Android L release, Android TV expects device manufacturers to use systems
 integrators or the Android solutions for regional TV stacks, pass the surface
 to TV software stacks, or pass the necessary key code to interact with legacy
 stacks.</p>
@@ -457,7 +457,7 @@ for voice search.</p>
 
 <h3 id=dvr>DVR</h3>
 
-<p>Android TV supports digital video recording (DVR) with partner development. The
+<p>Android TV supports digital video recording (DVR) with device manufacturer development. The
 DVR function works like so:</p>
 
 <ol>
