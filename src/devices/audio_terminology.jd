@@ -2,7 +2,7 @@ page.title=Audio Terminology
 @jd:body
 
 <!--
-    Copyright 2013 The Android Open Source Project
+    Copyright 2014 The Android Open Source Project
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -372,6 +372,49 @@ See Wikipedia article
 
 </dl>
 
+<h3 id="srcTerms">Sample Rate Conversion</h3>
+
+<dl>
+
+<dt>downsample</dt>
+<dd>To resample, where sink sample rate &lt; source sample rate.</dd>
+
+<dt>Nyquist frequency</dt>
+<dd>
+The Nyquist frequency, equal to 1/2 of a given sample rate, is the
+maximum frequency component that can be represented by a discretized
+signal at that sample rate.  For example, the human hearing range is
+typically assumed to extend up to approximately 20 kHz, and so a digital
+audio signal must have a sample rate of at least 40 kHz to represent that
+range.  In practice, sample rates of 44.1 kHz and 48 kHz are commonly
+used, with Nyquist frequencies of 22.05 kHz and 24 kHz respectively.
+See
+<a href="http://en.wikipedia.org/wiki/Nyquist_frequency" target="_android">Nyquist frequency</a>
+and
+<a href="http://en.wikipedia.org/wiki/Hearing_range" target="_android">Hearing range</a>
+for more information.
+</dd>
+
+<dt>resampler</dt>
+<dd>Synonym for sample rate converter.</dd>
+
+<dt>resampling</dt>
+<dd>The process of converting sample rate.</dd>
+
+<dt>sample rate converter</dt>
+<dd>A module that resamples.</dd>
+
+<dt>sink</dt>
+<dd>The output of a resampler.</dd>
+
+<dt>source</dt>
+<dd>The input to a resampler.</dd>
+
+<dt>upsample</dt>
+<dd>To resample, where sink sample rate &gt; source sample rate.</dd>
+
+</dl>
+
 <h2 id="androidSpecificTerms">Android-Specific Terms</h2>
 
 <p>
@@ -647,4 +690,3 @@ for more information.
 <dd>To resample, where sink sample rate &gt; source sample rate.</dd>
 
 </dl>
-
