@@ -81,10 +81,10 @@ drwx------ media media ... media
 <p>
 If the directory does not exist, create it as follows:
 </p>
-<code>
+<pre>
 mkdir /data/misc/media
 chown media:media /data/misc/media
-</code>
+</pre>
 </li>
 <li><code>echo af.tee=# &gt; /data/local.prop</code>
 <br />Where the <code>af.tee</code> value is a number described below.
