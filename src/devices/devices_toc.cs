@@ -44,7 +44,8 @@
             <ul>
               <li><a href="<?cs var:toroot ?>devices/audio_latency_measure.html">Measure</a></li>
               <li><a href="<?cs var:toroot ?>devices/latency_design.html">Design</a></li>
-              <li><a href="<?cs var:toroot ?>devices/testing_circuit.html">Testing Circuit</a></li>
+              <li><a href="<?cs var:toroot ?>devices/testing_circuit.html">Light Testing Circuit</a></li>
+              <li><a href="<?cs var:toroot ?>devices/funplug.html">FunPlug Audio Dongle</a></li>
             </ul>
           </li>
           <li><a href="<?cs var:toroot ?>devices/audio_avoiding_pi.html">Priority Inversion</a></li>
