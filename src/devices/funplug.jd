@@ -29,8 +29,8 @@ The diagram and photo below show an audio loopback
 <a href="http://en.wikipedia.org/wiki/Dongle">dongle</a>
 for the
 <a href="http://en.wikipedia.org/wiki/Phone_connector_(audio)">headset connector</a>
-that we call the "FunPlug".
-The Chrome hardware team designed this circuit and plug for functional testing,
+that we call the "FunPlug."
+The Chrome hardware team designed this circuit and plug for functional testing;
 however it has many other uses too.  The Android audio team uses it to measure
 <a href="audio_latency_measure.html#measuringRoundTrip">round-trip audio latency</a>,
 via the Larsen effect (feedback loop).
@@ -42,7 +42,7 @@ via the Larsen effect (feedback loop).
 
 <p>
 To ensure that the output signal will not overload the microphone input,
-we cut it down by about 20 dB.
+we cut it down by about 20dB.
 The resistor loads are there to tell the microphone polarity switch that
 it is a US/CTIA pinout plug.
 </p>
