@@ -17,7 +17,7 @@ page.title=Audio
     limitations under the License.
 -->
 <p>
-  Android's audio Hardware Abstraction Layer (HAL) connects the higher level, audio-specific
+  Android's audio Hardware Abstraction Layer (HAL) connects the higher-level, audio-specific
   framework APIs in <a href="http://developer.android.com/reference/android/media/package-summary.html">android.media</a>
   to the underlying audio driver and hardware. 
 </p>
@@ -78,7 +78,7 @@ page.title=Audio
     and that you must implement to have your audio hardware function correctly. The audio HAL
     interfaces are located in
 <code>hardware/libhardware/include/hardware</code>. See <a
-href="{@docRoot}devices/halref/audio_8h_source.html">audio.h</a> for additional details.
+href="{@docRoot}devices/halref/audio_8h_source.html">&lt;hardware/audio.h&gt;</a> for additional details.
   </dd>
   <dt>
     Kernel Driver
@@ -93,6 +93,13 @@ href="{@docRoot}devices/halref/audio_8h_source.html">audio.h</a> for additional 
 </p>
   </dd>
 </dl>
+<p>
+Not shown: Android native audio based on OpenSL ES.
+This API is exposed as part of
+<a href="https://developer.android.com/tools/sdk/ndk/index.html">Android NDK</a>,
+and is at the same architecture level as
+<a href="http://developer.android.com/reference/android/media/package-summary.html">android.media</a>.
+</p>
 
 <p>
    See the rest of the pages within the Audio section for implementation

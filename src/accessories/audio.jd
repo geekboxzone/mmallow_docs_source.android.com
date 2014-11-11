@@ -38,11 +38,11 @@ impedances and functions so a range of Android devices and headsets can inter-op
 <h2 id="audio-over-usb">Audio over USB</h2>
 <p>Android can use USB in several modes:</p>
   <ul>
-    <li>debug
+    <li>development
     <li>accessory
     <li>host
   </ul>
-<p>In the traditional debug mode, there is no audio capability.</p>
+<p>In the development mode, there is no audio capability.</p>
 <p>Accessory mode is provided by the Open Accessory (AOA) protocol version 2.0.
 There is limited audio capability in accessory mode, as described in <a
 href="custom.html#audio-over-usb">Connecting custom audio over USB</a>.</p>

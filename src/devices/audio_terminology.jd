@@ -313,7 +313,7 @@ sample-and-hold followed by a quantizer, although it does not have to
 be implemented that way.  An ADC is usually preceded by a low-pass filter
 to remove any high frequency components that are not representable using
 the desired sample rate.  See Wikipedia article
-<a href="http://en.wikipedia.org/wiki/Analog-to-digital_converter">Analog-to-digital_converter</a>.
+<a href="http://en.wikipedia.org/wiki/Analog-to-digital_converter">Analog-to-digital converter</a>.
 </dd>
 
 <dt>AP</dt>
@@ -389,9 +389,9 @@ audio signal must have a sample rate of at least 40 kHz to represent that
 range.  In practice, sample rates of 44.1 kHz and 48 kHz are commonly
 used, with Nyquist frequencies of 22.05 kHz and 24 kHz respectively.
 See
-<a href="http://en.wikipedia.org/wiki/Nyquist_frequency" target="_android">Nyquist frequency</a>
+<a href="http://en.wikipedia.org/wiki/Nyquist_frequency">Nyquist frequency</a>
 and
-<a href="http://en.wikipedia.org/wiki/Hearing_range" target="_android">Hearing range</a>
+<a href="http://en.wikipedia.org/wiki/Hearing_range">Hearing range</a>
 for more information.
 </dd>
 
@@ -473,7 +473,7 @@ or a software application, rather than a software module within a system.
 <dd>
 Service responsible for all actions that require a policy decision
 to be made first, such as opening a new I/O stream, re-routing after a
-change and stream volume management.
+change, and stream volume management.
 </dd>
 
 <dt>AudioRecord</dt>
@@ -522,7 +522,7 @@ and drives the primary output device.
 
 <dt>fast track</dt>
 <dd>
-An AudioTrack client with lower latency but fewer features, on some devices.
+An AudioTrack or AudioRecord client with lower latency but fewer features, on some devices.
 </dd>
 
 <dt>MediaPlayer</dt>
@@ -629,7 +629,7 @@ and the API definition at
 
 <dt>track</dt>
 <dd>
-An audio stream, controlled by the AudioTrack API.
+An audio stream, controlled by the AudioTrack or AudioRecord API.
 </dd>
 
 <dt>volume attenuation curve</dt>
