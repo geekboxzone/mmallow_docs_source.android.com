@@ -88,27 +88,51 @@ If your production device does not have an LED, you can install the
   on the order of one millisecond or less, which is sufficiently low enough
   to ignore.</p>
 
+<h2 id="measuringRoundTrip">Measuring Round-Trip Latency</h2>
+
+<p>
+  Round-trip latency is the sum of output latency and input latency.
+</p>
+
 <h3>Larsen test</h3>
 <p>
   One of the easiest latency tests is an audio feedback
   (Larsen effect) test. This provides a crude measure of combined output
   and input latency by timing an impulse response loop. This test is not very useful
+  for detailed analysis
   by itself because of the nature of the test, but it can be useful for calibrating 
-  other tests</p>
+  other tests, and for establishing an upper bound.</p>
 
 <p>To conduct this test:</p>
 <ol>
   <li>Run an app that captures audio from the microphone and immediately plays the
   captured data back over the speaker.</li>
   <li>Create a sound externally,
-  such as tapping a pencil by the microphone. This noise generates a feedback loop.</li>
+  such as tapping a pencil by the microphone. This noise generates a feedback loop.
+  Alternatively, one can inject an impulse into the loop using software.</li>
   <li>Measure the time between feedback pulses to get the sum of the output latency, input latency, and application overhead.</li>
 </ol>
 
   <p>This method does not break down the
   component times, which is important when the output latency
-  and input latency are independent. So this method is not recommended for measuring output latency, but might be useful
-  to help measure output latency.</p>
+  and input latency are independent. So this method is not recommended for measuring
+  precise output latency or input latency values in isolation, but might be useful
+  for establishing rough estimates.</p>
+
+<h3>FunPlug</h3>
+
+<p>
+  The <a href="funplug.html">FunPlug</a> dongle is handy for
+  measuring round-trip latency over the headset connector.
+  The image below demonstrates the result of injecting an impulse
+  into the loop once, and then allowing the feedback loop to oscillate.
+  The period of the oscillations is the round-trip latency.
+  The specific device, software release, and
+  test conditions are not specified here.  The results shown
+  should not be extrapolated.
+</p>
+
+<img src="audio/images/round_trip.png" alt="round-trip measurement" />
 
 <h2 id="measuringInput">Measuring Input Latency</h2>
 
