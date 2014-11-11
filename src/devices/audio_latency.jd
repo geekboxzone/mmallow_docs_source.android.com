@@ -62,7 +62,7 @@ surface-level contributors to audio latency are the following:
 <p>
   A better approach is to understand the causes of the
   underruns and then correct those.  This eliminates the
-  audible artifacts and may even permit even smaller or fewer buffers
+  audible artifacts and may permit even smaller or fewer buffers
   and thus reduce latency.
 </p>
 
