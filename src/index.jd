@@ -42,14 +42,22 @@ header.hide=1
     <div class="col-8">
     <h3>What's New</h3>
 
+<a href="{@docRoot}compatibility/downloads.html">
+        <h4>New CTS media files available for download</h4></a>
+	<p>Find <strong><a
+        href="https://dl.google.com/dl/android/cts/android-cts-media-1.1.zip">CTS media
+        files version 1.1</a></strong> for Android 5.0 media stress tests on <strong><a
+        href="{@docRoot}compatibility/downloads.html#cts-media-files">Compatibility
+        Downloads</a></strong>.</p>
+
+<img border="0" src="images/Android_Robot_100.png" alt="Android Partner icon" style="display:inline;float:right;margin:5px 10px">
+
 <a href="{@docRoot}source/brands.html#Questions">
         <h4>Android Partner Marketing offers brand guidance</h4></a>
         <p>The Android Partner Marketing team now offers an easy-to-use <strong><a
 	href="https://support.google.com/googleplay/contact/brand_developer">Partner
         Brand Inquiry Form</a></strong> for answers to branding questions and review
         of marketing materials.</p>
-
-<img border="0" src="images/Android_Robot_100.png" alt="Android Partner icon" style="display:inline;float:right;margin:5px 10px">
 
 <a href="{@docRoot}devices/audio.html">
         <h4>Audio gains attributes, USB, latency, and headset documentation</h4></a>
@@ -69,21 +77,6 @@ header.hide=1
         href="{@docRoot}devices/tech/security/se-linux.html">Security-Enhanced Linux</a></strong> have been
 	updated to describe the latest features of Android 5.0, such as default
         encryption and full enforcement of SELinux.</p>
-
-<a href="{@docRoot}devices/sensors/index.html">
-        <h4>Sensors and Power rewritten</h4></a>
-        <p><strong><a
-        href="{@docRoot}devices/sensors/index.html">Sensors</a></strong> and <strong><a
-	href="{@docRoot}devices/tech/power.html">Power</a></strong> have been
-	completely rewritten to reflect the latest Android release and include
-        new gesture sensors and tools for measuring power consumption.</p>
-
-<a href="{@docRoot}devices/tv/index.html">
-        <h4>TV Input Framework and more come to Android</h4></a>
-        <p>The <strong><a
-        href="{@docRoot}devices/tv/index.html">TV Input Framework</a></strong> and <strong><a
-        href="{@docRoot}devices/tv/HDMI-CEC.html">HDMI-CEC</a></strong> enable TV development, while <strong><a
-	href="{@docRoot}devices/audio_tv.html">TV Audio</a></strong> describes audio routing through televisions.</p>
     </div>
 
     <div class="col-8">
