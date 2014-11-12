@@ -173,6 +173,24 @@ following table. Factory images and binaries for Nexus devices can be downloaded
 <th>Supported devices</th>
 </tr>
 <tr>
+  <td>LRX21Q</td>
+  <td>android-5.0.0_r5</td>
+  <td>Lollipop</td>
+  <td>Nexus 9 (volantis)</td>
+</tr>
+<tr>
+  <td>LRX21P</td>
+  <td>android-5.0.0_r4/td>
+  <td>Lollipop</td>
+  <td>Nexus 7 (flo/grouper), Nexus 10</td>
+</tr>
+<tr>
+  <td>LRX21O</td>
+  <td>android-5.0.0_r3</td>
+  <td>Lollipop</td>
+  <td>Nexus 5 (hammerhead)</td>
+</tr>
+<tr>
   <td>LRX21M</td>
   <td>android-5.0.0_r2</td>
   <td>Lollipop</td>
