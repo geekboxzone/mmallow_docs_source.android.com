@@ -173,6 +173,12 @@ following table. Factory images and binaries for Nexus devices can be downloaded
 <th>Supported devices</th>
 </tr>
 <tr>
+  <td>LRX21T</td>
+  <td>android-5.0.0_r6</td>
+  <td>Lollipop</td>
+  <td>Nexus 4</td>
+</tr>
+<tr>
   <td>LRX21Q</td>
   <td>android-5.0.0_r5</td>
   <td>Lollipop</td>
