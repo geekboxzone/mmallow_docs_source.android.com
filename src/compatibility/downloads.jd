@@ -27,6 +27,25 @@ page.title=Android Compatibility Downloads
 <p>Thank you for your interest in Android Compatibility! The links below give
 you access to key documents and information about the program.</p>
 
+<h2 id="android-50">Android 5.0</h2>
+<p>Android 5.0 is the release of the development milestone code-named Lollipop.
+Source code for the below tests is found in the 'android-5.0.0_r6' branch in
+the open-source tree.</p>
+<ul>
+<li><a
+href="https://dl.google.com/dl/android/cts/android-cts-5.0_r1-linux_x86-arm.zip">Android
+5.0 R1 Compatibility Test Suite (CTS) - ARM</a></li>
+<li><a
+href="https://dl.google.com/dl/android/cts/android-cts-5.0_r1-linux_x86-x86.zip">Android
+5.0 R1 Compatibility Test Suite (CTS) - x86</a></li>
+<li><a
+href="https://dl.google.com/dl/android/cts/android-cts-verifier-5.0_r1-linux_x86-arm.zip">Android
+5.0 R1 CTS Verifier - ARM</a></li>
+<li><a
+href="https://dl.google.com/dl/android/cts/android-cts-verifier-5.0_r1-linux_x86-x86.zip">Android
+5.0 R1 CTS Verifier - x86</a></li>
+</ul>
+
 <h2 id="android-44">Android 4.4</h2>
 <p>Android 4.4 is the release of the development milestone code-named
 KitKat. Source code for Android 4.4 is found in the
