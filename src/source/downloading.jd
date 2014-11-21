@@ -151,9 +151,9 @@ $ repo init -u https://android.googlesource.com/platform/manifest -b android-4.0
   for each user, regardless of the IP address.
 </p>
 <p>
-  The first step is to create a password from <a href= 
-  "https://android.googlesource.com/new-password">the password generator</a> and to save it in
-  <code>~/.netrc</code> according to the instructions on that page.
+  The first step is to create a password with <a href=
+  "https://android.googlesource.com/new-password">the password generator</a>
+  and follow the instructions on the password generator page.
 </p>
 <p>
   The second step is to force authenticated access, by using the following manifest URI:
