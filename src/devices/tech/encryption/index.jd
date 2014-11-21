@@ -40,8 +40,10 @@ to avoid first boot taking a long time. Only ext4 and f2fs filesystems
 currently support fast encryption.
   <li>Added the <code>forceencrypt</code> flag to encrypt on first boot.
   <li>Added support for patterns and encryption without a password.
-  <li>Added hardware-backed storage of the encryption key. See <a
-       href="#storing_the_encrypted_key">Storing the encrypted key</a> for more details.
+  <li>Added hardware-backed storage of the encryption key using Trusted
+    Execution Environment’s (TEE) signing capability (such as in a TrustZone).
+    See <a href="#storing_the_encrypted_key">Storing the encrypted key</a> for more
+    details.
 </ul>
 
 <p class="caution"><strong>Caution:</strong> Devices upgraded to Android 5.0 and then
@@ -50,8 +52,10 @@ devices encrypted at first boot cannot be returned to an unencrypted state.</p>
 
 <h2 id=how_android_encryption_works>How Android encryption works</h2>
 
-<p>Android disk encryption is based on <code>dm-crypt</code>, which is a kernel feature that works at the block device layer. Because of
-this, encryption works with Embedded MultiMediaCard<strong> (</strong>eMMC) and similar flash devices that present themselves to the kernel as block
+<p>Android disk encryption is based on <code>dm-crypt</code>, which is a kernel
+feature that works at the block device layer. Because of
+this, encryption works with Embedded MultiMediaCard<strong> (</strong>eMMC) and
+similar flash devices that present themselves to the kernel as block
 devices. Encryption is not possible with YAFFS, which talks directly to a raw
 NAND flash chip. </p>
 
@@ -71,10 +75,14 @@ the key (with 256 being optional). </p>
   <li>pattern
 </ul>
 
-<p>Upon first boot, the device generates a 128-bit key. This key is then encrypted
-with a default password, and the encrypted key is stored in the crypto
-metadata. The 128-bit key generated is valid until the next factory reset. Upon
-factory reset, a new 128-bit key is generated.</p>
+<p>Upon first boot, the device creates a randomly generated 128-bit master key
+and then hashes it with a default password and stored salt. The default password is: "default_password"
+However, the resultant hash is also signed through a TEE (such as TrustZone),
+which uses a hash of the signature to encrypt the master key.</p>
+
+<p>You can find the default password defined in the Android Open Source Project <a
+href="https://android.googlesource.com/platform/system/vold/+/master/cryptfs.c">cryptfs.c</a>
+file.</p>
 
 <p>When the user sets the PIN/pass or password on the device, only the 128-bit key
 is re-encrypted and stored. (ie. user PIN/pass/pattern changes do NOT cause
