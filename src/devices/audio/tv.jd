@@ -36,7 +36,7 @@ AudioPort).</li>
 
 <p>The TIF then uses AudioPort information for the audio routing API.</p>
 
-<p><img src="audio/images/ape_audio_tv_tif.png" alt="Android TV Input Framework (TIF)" />
+<p><img src="images/ape_audio_tv_tif.png" alt="Android TV Input Framework (TIF)" />
 <p class="img-caption"><strong>Figure 1.</strong> TV Input Framework (TIF)</p>
 
 <h2 id="Requirements">Requirements</h2>
@@ -280,7 +280,7 @@ ffplay record_loopback.wav
 and the default output (e.g. the speaker). The tuner output does not require decoding, but final
 audio output is mixed with software output_stream.</p>
 
-<p><img src="audio/images/ape_audio_tv_tuner.png" alt="Android TV Tuner Audio Patch" />
+<p><img src="images/ape_audio_tv_tuner.png" alt="Android TV Tuner Audio Patch" />
 <p class="img-caption">
 <strong>Figure 2.</strong> Audio Patch for TV tuner with speaker output.</p>
 
@@ -291,6 +291,6 @@ audio output is mixed with software output_stream.</p>
 . The output device of all output_streams changes to the HDMI_OUT port, and the TIF manager changes
 the sink port of the existing tuner audio patch to the HDMI_OUT port.</p>
 
-<p><p><img src="audio/images/ape_audio_tv_hdmi_tuner.png" alt="Android TV HDMI-OUT Audio Patch" />
+<p><p><img src="images/ape_audio_tv_hdmi_tuner.png" alt="Android TV HDMI-OUT Audio Patch" />
 <p class="img-caption">
 <strong>Figure 3.</strong> Audio Patch for HDMI OUT from live TV.</p>
