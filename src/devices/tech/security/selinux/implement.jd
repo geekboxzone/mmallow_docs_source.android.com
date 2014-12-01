@@ -31,7 +31,7 @@ rules, types, classes, permissions, and more.  A full consideration of SELinux
 is out of the scope of this document, but an understanding of how to write
 policy rules is now essential when bringing up new Android devices. There is a
 great deal of information available regarding SELinux already. See <a
-href="{@docRoot}devices/tech/security/se-linux.html#supporting_documentation">Supporting
+href="{@docRoot}devices/tech/security/selinux/index.html#supporting_documentation">Supporting
 documentation</a> for suggested resources.</p>
 
 <h2 id=summary_of_steps>Summary of steps</h2>

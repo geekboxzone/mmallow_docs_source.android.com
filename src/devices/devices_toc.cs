@@ -261,7 +261,6 @@
             <span class="en">Power</span>
           </a>
       </li>
-
      <li class="nav-section">
           <div class="nav-section-header">
             <a href="<?cs var:toroot ?>devices/tech/security/index.html">
@@ -269,43 +268,54 @@
             </a>
           </div>
         <ul>
-            <li>
-              <a href="<?cs var:toroot ?>devices/tech/security/acknowledgements.html">
-                <span class="en">Acknowledgements</span>
-              </a>
-            </li>
-          <li class="nav-section">
+       <li class="nav-section">
             <div class="nav-section-header">
-              <a href="<?cs var:toroot ?>devices/tech/security/enhancements.html">
+              <a href="<?cs var:toroot ?>devices/tech/security/overview/index.html">
+                <span class="en">Overview</span>
+              </a>
+            </div>
+            <ul>
+              <li><a href="<?cs var:toroot ?>devices/tech/security/overview/kernel-security.html">Kernel security</a></li>
+              <li><a href="<?cs var:toroot ?>devices/tech/security/overview/app-security.html">App security</a></li>
+              <li><a href="<?cs var:toroot ?>devices/tech/security/overview/updates-resources.html">Updates and resources</a></li>
+                        <li class="nav-section">
+            <div class="nav-section-header">
+              <a href="<?cs var:toroot ?>devices/tech/security/enhancements/index.html">
                 <span class="en">Enhancements</span>
               </a>
             </div>
             <ul>
-              <li><a href="<?cs var:toroot ?>devices/tech/security/enhancements50.html">Android 5.0</a></li>
-              <li><a href="<?cs var:toroot ?>devices/tech/security/enhancements44.html">Android 4.4</a></li>
-              <li><a href="<?cs var:toroot ?>devices/tech/security/enhancements43.html">Android 4.3</a></li>
-              <li><a href="<?cs var:toroot ?>devices/tech/security/enhancements42.html">Android 4.2</a></li>
+              <li><a href="<?cs var:toroot ?>devices/tech/security/enhancements/enhancements50.html">Android 5.0</a></li>
+              <li><a href="<?cs var:toroot ?>devices/tech/security/enhancements/enhancements44.html">Android 4.4</a></li>
+              <li><a href="<?cs var:toroot ?>devices/tech/security/enhancements/enhancements43.html">Android 4.3</a></li>
+              <li><a href="<?cs var:toroot ?>devices/tech/security/enhancements/enhancements42.html">Android 4.2</a></li>
+              <li><a href="<?cs var:toroot ?>devices/tech/security/enhancements/enhancements41.html">Android 4.1</a></li>
             </ul>
           </li>
-            <li>
-              <a href="<?cs var:toroot ?>devices/tech/security/best-practices.html">
-                <span class="en">Best practices</span>
+            <li><a href="<?cs var:toroot ?>devices/tech/security/overview/acknowledgements.html">Acknowledgements</a></li>
+            </ul>
+          </li>
+        <li class="nav-section">
+            <div class="nav-section-header">
+              <a href="<?cs var:toroot ?>devices/tech/security/implement.html">
+                <span class="en">Implementation</span>
               </a>
-            </li>
+            </div>
+            <ul>
             <li>
-              <a href="<?cs var:toroot ?>devices/tech/security/dm-verity.html">
-                <span class="en">dm-verity on boot</span>
-              </a>
-            </li>
-            <li>
-              <a href="<?cs var:toroot ?>devices/tech/encryption/index.html">
+              <a href="<?cs var:toroot ?>devices/tech/security/encryption/index.html">
                 <span class="en">Encryption</span>
+              </a>
+            </li>
+            <li>
+              <a href="<?cs var:toroot ?>devices/tech/security/secureboot/index.html">
+                <span class="en">Secure Boot</span>
               </a>
             </li>
           <li class="nav-section">
             <div class="nav-section-header">
-              <a href="<?cs var:toroot ?>devices/tech/security/se-linux.html">
-                <span class="en">Security-Enhanced Linux</span>
+              <a href="<?cs var:toroot ?>devices/tech/security/selinux/index.html">
+                              <span class="en">Security-Enhanced Linux</span>
               </a>
             </div>
             <ul>
@@ -315,9 +325,9 @@
               <li><a href="<?cs var:toroot ?>devices/tech/security/selinux/validate.html">Validation</a></li>
             </ul>
           </li>
-          </ul>
+         </ul>
       </li>
-
+    </ul>
       <li class="nav-section">
         <div class="nav-section-header">
           <a href="<?cs var:toroot ?>devices/tech/test_infra/tradefed/index.html">

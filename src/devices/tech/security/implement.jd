@@ -1,4 +1,4 @@
-page.title=Security best practices
+page.title=Implementing Security
 @jd:body
 
 <!--
@@ -39,7 +39,7 @@ practices that are unique to those who are building or installing system-level
 software on devices.</p>
 
 <p>Where possible, the Android Security Team will incorporate tests into the
-<a href="http://source.android.com/compatibility/cts-intro.html">Android Compatibility Test
+<a href="{@docRoot}compatibility/cts-intro.html">Android Compatibility Test
 Suite</a> (CTS) and
 <a href="http://tools.android.com/tips/lint">Android Lint</a> to facilitate adoption of
 these best practices. We encourage partners to contribute tests that can help
