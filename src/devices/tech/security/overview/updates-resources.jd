@@ -1,0 +1,75 @@
+page.title= Security updates and resources
+@jd:body
+
+<!--
+    Copyright 2014 The Android Open Source Project
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+<div id="qv-wrapper">
+  <div id="qv">
+    <h3>In this document</h3>
+    <ol id="auto-toc">
+    </ol>
+  </div>
+</div>
+<h2 id="android-updates">Android Updates</h2>
+<p>Android provides system updates for both security and feature related purposes.</p>
+<p>There are two ways to update the code on most Android devices: over-the-air
+  (OTA updates) or side-loaded updates. OTA updates can be rolled out over a
+  defined time period or be pushed to all devices at once, depending on how the
+  OEM and/or carrier would like to push the updates. Side-loaded updates can be
+  provided from a central location for users to download as a zip file to their
+  local desktop machine or directly to their handset. Once the update is copied
+  or downloaded to the SD card on the device, Android will recognize the update,
+  verify its integrity and authenticity, and automatically update the device.</p>
+<p>If a dangerous vulnerability is discovered internally or responsibly reported
+  to Google or the Android Open Source Project, the Android security team will
+  start the following process.</p>
+<ol>
+  <li>The Android team will notify companies who have signed NDAs regarding the
+    problem and begin discussing the solution.</li>
+  <li>The owners of code will begin the fix.</li>
+  <li>The Android team will fix Android-related security issues.</li>
+  <li>When a patch is available, the fix is provided to the NDA companies.</li>
+  <li>The Android team will publish the patch in the Android Open Source Project</li>
+  <li>OEM/carrier will push an update to customers.</li>
+</ol>
+<p>The NDA is required to ensure that the security issue does not become public
+  prior to availabilty of a fix and put users at risk. Many OHA members run their
+  own code on Android devices such as the bootloader, wifi drivers, and the
+  radio. Once the Android Security team is notified of a security issue in this
+  partner code, they will consult with OHA partners to quickly find a fix for the
+  problem at hand and similar problems. However, the OHA member who wrote the
+  faulty code is ultimately responsible for fixing the problem.</p>
+<p>If a dangerous vulnerability is not responsibly disclosed (e.g., if it is
+  posted to a public forum without warning), then Google and/or the Android Open
+  Source Project will work as quickly as possible to create a patch. The patch
+  will released to the public (and any partners) when the patch is tested and
+  ready for use.</p>
+<p>At Google I/O 2011, many of the largest OHA partners committed to providing
+  updates to devices for 18 months after initial shipment. This will provide
+  users with access to the most recent Android features, as well as security
+  updates.</p>
+<p>Any developer, Android user, or security researcher can notify the Android
+  security team of potential security issues by sending email to
+  security@android.com. If desired, communication can be encrypted using the
+  Android security team PGP key available here: <a href="https://developer.android.com/security_at_android_dot_com.txt">https://developer.android.com/security_at_android_dot_com.txt</a>.</p>
+<h2 id="other-resources">Other Resources</h2>
+<p>Information for Android application developers is here: <a href="https://developer.android.com">https://developer.android.com</a>.</p>
+<p>The Android Security team can be reached at <a href="mailto:security@android.com">security@android.com</a>.</p>
+<p>Security information exists throughout the Android Open Source and Developer
+  Sites. A good place to start is here: <a href="https://developer.android.com/guide/topics/security/security.html">https://developer.android.com/guide/topics/security/security.html</a>.</p>
+<p>A Security FAQ for developers is located here: <a href="https://developer.android.com/resources/faq/security.html">https://developer.android.com/resources/faq/security.html</a>.</p>
+<p>Security Best Practices for developers is located here: <a href="https://developer.android.com/guide/practices/security.html">https://developer.android.com/guide/practices/security.html</a>.</p>
+<p>A community resource for discussion about Android security exists here: <a href="https://groups.google.com/forum/?fromgroups#!forum/android-security-discuss">https://groups.google.com/forum/?fromgroups#!forum/android-security-discuss</a>.</p>

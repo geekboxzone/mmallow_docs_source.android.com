@@ -1,4 +1,4 @@
-page.title=dm-verity on boot
+page.title=Secure Boot
 @jd:body
 
 <!--
@@ -48,7 +48,7 @@ configuration. It does this using a cryptographic hash tree. For every block
 modify any of the blocks would be equivalent to breaking the cryptographic hash. 
 See the following diagram for a depiction of this structure.</p>
 
-<p><img src="images/dm-verity-hash-table.png" alt="dm-verity-hash-table"/><br/>
+<p><img src="../images/dm-verity-hash-table.png" alt="dm-verity-hash-table"/><br/>
 A public key is included on the boot partition, which must be verified 
 externally by the OEM. That key is used to verify the signature for that hash 
 and confirm the device's system partition is protected and unchanged.</p>
@@ -133,11 +133,11 @@ relevant configuration option:<br/>
 
 <ol>
 <li>Generate an ext4 system image.</li>
-<li><a href="#heading=h.wiiuowe37q8h">Generate a hash tree</a> for that image.</li>
-<li><a href="#heading=h.cw7mesnrerea">Build a dm-verity table</a> for that hash tree.</li>
-<li><a href="#heading=h.maq6jfk4vx92">Sign that dm-verity table</a> to produce a table 
+<li><a href="#hash-tree">Generate a hash tree</a> for that image.</li>
+<li><a href="#mapping-table">Build a dm-verity table</a> for that hash tree.</li>
+<li><a href="#signing">Sign that dm-verity table</a> to produce a table 
 signature.</li>
-<li><a href="#heading=h.tkceh5wnx7z2">Bundle the table signature</a> and dm-verity table 
+<li><a href="#metadata">Bundle the table signature</a> and dm-verity table 
 into verity metadata.</li>
 <li>Concatenate the system image, the verity metadata, and the hash tree.</li>
 </ol>
@@ -148,7 +148,7 @@ for a detailed description of the hash tree and dm-verity table.</p>
 
 <h3 id="hash-tree">Generating the hash tree</h3>
 
-<p>As described in the <a href="#heading=h.q4z3ftrhbehy">Introduction</a>, the hash tree is 
+<p>As described in the <a href="#introduction">Introduction</a>, the hash tree is 
 integral to dm-verity. The 
 <a href="https://code.google.com/p/cryptsetup/wiki/DMVerity">cryptsetup</a> tool will 
 generate a hash tree for you. Alternatively, a compatible one is defined here:</p>
