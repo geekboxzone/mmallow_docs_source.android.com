@@ -96,7 +96,7 @@ that does not support multichannel audio.</p>
 <h3 id="codecs">Media codecs</h3>
 
 <p>Ensure the audio codecs your hardware and drivers support are properly declared for your
-product. For details on declaring supported codecs, see <a href="media.html#expose"> Exposing Codecs
+product. For details on declaring supported codecs, see <a href="{@docRoot}devices/media.html#expose">Exposing Codecs
 to the Framework</a>.</p>
 
 <h2 id="configuring">Configuring the shared library</h2>
@@ -227,7 +227,7 @@ to persist throughout the duration of the session. </p>
 not enable the noise suppression pre-processing effect. It should not be turned on by default when
 recording from this audio source, and you should not enable it in your own audio_effects.conf file.
 Turning on the effect by default will cause the device to fail the <a
-href="/compatibility/index.html"> compatibility requirement</a> regardless of whether this was on by
+href="{@docRoot}compatibility/index.html"> compatibility requirement</a> regardless of whether this was on by
 default due to configuration file , or the audio HAL implementation's default behavior.</p>
 
 <p>The following example enables pre-processing for the VoIP <code>AudioSource</code> and Camcorder

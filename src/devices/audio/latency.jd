@@ -27,7 +27,7 @@ page.title=Audio Latency
 <p>Audio latency is the time delay as an audio signal passes through a system.
   For a complete description of audio latency for the purposes of Android
   compatibility, see <em>Section 5.5 Audio Latency</em>
-  in the <a href="http://source.android.com/compatibility/index.html">Android CDD</a>.
+  in the <a href="{@docRoot}compatibility/index.html">Android CDD</a>.
   See <a href="latency_design.html">Design For Reduced Latency</a> for an 
   understanding of Android's audio latency-reduction efforts.
 </p>

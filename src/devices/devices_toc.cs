@@ -26,33 +26,33 @@
     <ul>
       <li class="nav-section">
       <div class="nav-section-header">
-        <a href="<?cs var:toroot ?>devices/audio.html">
+        <a href="<?cs var:toroot ?>devices/audio/index.html">
           <span class="en">Audio</span>
         </a>
       </div>
         <ul>
-          <li><a href="<?cs var:toroot ?>devices/audio_terminology.html">Terminology</a></li>
-          <li><a href="<?cs var:toroot ?>devices/audio_implement.html">Implementation</a></li>
-          <li><a href="<?cs var:toroot ?>devices/audio_attributes.html">Attributes</a></li>
-          <li><a href="<?cs var:toroot ?>devices/audio_warmup.html">Warmup</a></li>
+          <li><a href="<?cs var:toroot ?>devices/audio/terminology.html">Terminology</a></li>
+          <li><a href="<?cs var:toroot ?>devices/audio/implement.html">Implementation</a></li>
+          <li><a href="<?cs var:toroot ?>devices/audio/attributes.html">Attributes</a></li>
+          <li><a href="<?cs var:toroot ?>devices/audio/warmup.html">Warmup</a></li>
           <li class="nav-section">
             <div class="nav-section-header">
-              <a href="<?cs var:toroot ?>devices/audio_latency.html">
+              <a href="<?cs var:toroot ?>devices/audio/latency.html">
                 <span class="en">Latency</span>
               </a>
             </div>
             <ul>
-              <li><a href="<?cs var:toroot ?>devices/audio_latency_measure.html">Measure</a></li>
-              <li><a href="<?cs var:toroot ?>devices/latency_design.html">Design</a></li>
-              <li><a href="<?cs var:toroot ?>devices/testing_circuit.html">Light Testing Circuit</a></li>
-              <li><a href="<?cs var:toroot ?>devices/funplug.html">FunPlug Audio Dongle</a></li>
+              <li><a href="<?cs var:toroot ?>devices/audio/latency_measure.html">Measure</a></li>
+              <li><a href="<?cs var:toroot ?>devices/audio/latency_design.html">Design</a></li>
+              <li><a href="<?cs var:toroot ?>devices/audio/testing_circuit.html">Light Testing Circuit</a></li>
+              <li><a href="<?cs var:toroot ?>devices/audio/funplug.html">FunPlug Audio Dongle</a></li>
             </ul>
           </li>
-          <li><a href="<?cs var:toroot ?>devices/audio_avoiding_pi.html">Priority Inversion</a></li>
-          <li><a href="<?cs var:toroot ?>devices/audio_src.html">Sample Rate Conversion</a></li>
-          <li><a href="<?cs var:toroot ?>devices/audio_debugging.html">Debugging</a></li>
-          <li><a href="<?cs var:toroot ?>devices/audio_usb.html">USB Digital Audio</a></li>
-          <li><a href="<?cs var:toroot ?>devices/audio_tv.html">TV Audio</a></li>
+          <li><a href="<?cs var:toroot ?>devices/audio/avoiding_pi.html">Priority Inversion</a></li>
+          <li><a href="<?cs var:toroot ?>devices/audio/src.html">Sample Rate Conversion</a></li>
+          <li><a href="<?cs var:toroot ?>devices/audio/debugging.html">Debugging</a></li>
+          <li><a href="<?cs var:toroot ?>devices/audio/usb.html">USB Digital Audio</a></li>
+          <li><a href="<?cs var:toroot ?>devices/audio/tv.html">TV Audio</a></li>
         </ul>
       </li>
       <li><a href="<?cs var:toroot ?>devices/bluetooth.html">Bluetooth</a></li>
