@@ -488,7 +488,7 @@ The API is defined at
 <dt>AudioResampler</dt>
 <dd>
 The module within AudioFlinger responsible for
-<a href="audio_src.html">sample rate conversion</a>.
+<a href="src.html">sample rate conversion</a>.
 </dd>
 
 <dt>AudioTrack</dt>
@@ -609,7 +609,7 @@ Specific stream types are listed at
 <dt>tee sink</dt>
 <dd>
 See the separate article on tee sink in
-<a href="audio_debugging.html#teeSink">Audio Debugging</a>.
+<a href="debugging.html#teeSink">Audio Debugging</a>.
 </dd>
 
 <dt>tinyalsa</dt>

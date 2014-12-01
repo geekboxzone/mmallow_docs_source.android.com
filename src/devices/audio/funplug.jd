@@ -32,13 +32,13 @@ for the
 that we call the "FunPlug."
 The Chrome hardware team designed this circuit and plug for functional testing;
 however it has many other uses too.  The Android audio team uses it to measure
-<a href="audio_latency_measure.html#measuringRoundTrip">round-trip audio latency</a>,
+<a href="latency_measure.html#measuringRoundTrip">round-trip audio latency</a>,
 via the Larsen effect (feedback loop).
 </p>
 
 <h2 id="funplugCircuit">FunPlug circuit</h2>
 
-<img src="audio/images/funplug_circuit.png" alt="FunPlug circuit" />
+<img src="images/funplug_circuit.png" alt="FunPlug circuit" />
 
 <p>
 To ensure that the output signal will not overload the microphone input,
@@ -49,5 +49,5 @@ it is a US/CTIA pinout plug.
 
 <h2 id="funplugAssembled">FunPlug assembled</h2>
 
-<img src="audio/images/funplug_assembled.jpg" alt="FunPlug fully assembled" />
+<img src="images/funplug_assembled.jpg" alt="FunPlug fully assembled" />
 
