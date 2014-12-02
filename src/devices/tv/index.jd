@@ -258,7 +258,7 @@ the TV while the manufacturer-provided HDMI TV Input renders the video.</p>
 specific TV Input for picture in picture (PIP) display. Those button presses
 are interpreted by the hardware driver supplied by the device manufacturer,
 converting hardware scancodes to Android keycodes and passing them to the
-standard Android <a href="http://source.android.com/devices/tech/input/overview.html">input pipeline</a> <code>InputReader</code> and <code>InputDispatcher</code> functions as <a href="http://developer.android.com/reference/android/view/KeyEvent.html">KeyEvents</a>. These in turn trigger events on the TV App if it is in focus. </p>
+standard Android <a href="{@docRoot}devices/input/overview.html">input pipeline</a> <code>InputReader</code> and <code>InputDispatcher</code> functions as <a href="http://developer.android.com/reference/android/view/KeyEvent.html">KeyEvents</a>. These in turn trigger events on the TV App if it is in focus. </p>
 
 <p>Only system TV Inputs are eligible to receive <code>InputEvents</code>, and only if they have the <code>RECEIVE_INPUT_EVENT</code> system permission. The TV Input is responsible to determine which InputEvents
 to consume and should allow the TV App to handle the keys it does not need to
