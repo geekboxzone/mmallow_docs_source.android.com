@@ -73,7 +73,7 @@ composited onto the display by SurfaceFlinger.</p>
 
 <p>The following diagram shows how the key components work together:</p>
 
-<img src="graphics/images/graphics_surface.png" alt="image-rendering components">
+<img src="images/graphics_surface.png" alt="image-rendering components">
 
 <p class="img-caption"><strong>Figure 1.</strong> How surfaces are rendered</p>
 
@@ -135,7 +135,7 @@ information.</p>
 <p>See the following diagram for a depiction of the Android graphics
 pipeline:</p>
 
-<img src="graphics/images/graphics_pipeline.png" alt="graphics data flow">
+<img src="images/graphics_pipeline.png" alt="graphics data flow">
 
 <p class="img-caption"><strong>Figure 2.</strong> How graphic data flow through
 Android</p>
@@ -153,7 +153,7 @@ SurfaceFlinger is responsible for compositing everything onto the display.</p>
 
 <p>See the following diagram for the BufferQueue communication process.</p>
 
-<img src="graphics/images/bufferqueue.png" alt="BufferQueue communication process">
+<img src="images/bufferqueue.png" alt="BufferQueue communication process">
 
 <p class="img-caption"><strong>Figure 3.</strong> BufferQueue communication
 process</p>
