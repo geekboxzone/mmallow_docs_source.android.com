@@ -58,7 +58,7 @@
       <li><a href="<?cs var:toroot ?>devices/bluetooth.html">Bluetooth</a></li>
       <li class="nav-section">
         <div class="nav-section-header">
-          <a href="<?cs var:toroot ?>devices/camera/camera.html">
+          <a href="<?cs var:toroot ?>devices/camera/index.html">
             <span class="en">Camera</span>
           </a>
         </div>
@@ -77,18 +77,18 @@
       <li><a href="<?cs var:toroot ?>devices/drm.html">DRM</a></li>
       <li class="nav-section">
         <div class="nav-section-header">
-          <a href="<?cs var:toroot ?>devices/tech/storage/index.html">
+          <a href="<?cs var:toroot ?>devices/storage/index.html">
             <span class="en">External Storage</span>
           </a>
         </div>
         <ul>
-          <li><a href="<?cs var:toroot ?>devices/tech/storage/config.html">Device Specific Configuration</a></li>
-          <li><a href="<?cs var:toroot ?>devices/tech/storage/config-example.html">Typical Configuration Examples</a></li>
+          <li><a href="<?cs var:toroot ?>devices/storage/config.html">Device Specific Configuration</a></li>
+          <li><a href="<?cs var:toroot ?>devices/storage/config-example.html">Typical Configuration Examples</a></li>
         </ul>
       </li>
       <li class="nav-section">
         <div class="nav-section-header">
-          <a href="<?cs var:toroot ?>devices/graphics.html">
+          <a href="<?cs var:toroot ?>devices/graphics/index.html">
             <span class="en">Graphics</span>
           </a>
         </div>
@@ -99,21 +99,21 @@
       </li>
       <li class="nav-section">
         <div class="nav-section-header">
-          <a href="<?cs var:toroot ?>devices/tech/input/index.html">
+          <a href="<?cs var:toroot ?>devices/input/index.html">
             <span class="en">Input</span>
           </a>
         </div>
         <ul>
-          <li><a href="<?cs var:toroot ?>devices/tech/input/overview.html">Overview</a></li>
-          <li><a href="<?cs var:toroot ?>devices/tech/input/key-layout-files.html">Key Layout Files</a></li>
-          <li><a href="<?cs var:toroot ?>devices/tech/input/key-character-map-files.html">Key Character Map Files</a></li>
-          <li><a href="<?cs var:toroot ?>devices/tech/input/input-device-configuration-files.html">Input Device Configuration Files</a></li>
-          <li><a href="<?cs var:toroot ?>devices/tech/input/migration-guide.html">Migration Guide</a></li>
-          <li><a href="<?cs var:toroot ?>devices/tech/input/keyboard-devices.html">Keyboard Devices</a></li>
-          <li><a href="<?cs var:toroot ?>devices/tech/input/touch-devices.html">Touch Devices</a></li>
-          <li><a href="<?cs var:toroot ?>devices/tech/input/dumpsys.html">Dumpsys</a></li>
-          <li><a href="<?cs var:toroot ?>devices/tech/input/getevent.html">Getevent</a></li>
-          <li><a href="<?cs var:toroot ?>devices/tech/input/validate-keymaps.html">Validate Keymaps</a></li>
+          <li><a href="<?cs var:toroot ?>devices/input/overview.html">Overview</a></li>
+          <li><a href="<?cs var:toroot ?>devices/input/key-layout-files.html">Key Layout Files</a></li>
+          <li><a href="<?cs var:toroot ?>devices/input/key-character-map-files.html">Key Character Map Files</a></li>
+          <li><a href="<?cs var:toroot ?>devices/input/input-device-configuration-files.html">Input Device Configuration Files</a></li>
+          <li><a href="<?cs var:toroot ?>devices/input/migration-guide.html">Migration Guide</a></li>
+          <li><a href="<?cs var:toroot ?>devices/input/keyboard-devices.html">Keyboard Devices</a></li>
+          <li><a href="<?cs var:toroot ?>devices/input/touch-devices.html">Touch Devices</a></li>
+          <li><a href="<?cs var:toroot ?>devices/input/dumpsys.html">Dumpsys</a></li>
+          <li><a href="<?cs var:toroot ?>devices/input/getevent.html">Getevent</a></li>
+          <li><a href="<?cs var:toroot ?>devices/input/validate-keymaps.html">Validate Keymaps</a></li>
         </ul>
       </li>
       <li><a href="<?cs var:toroot ?>devices/media.html">Media</a></li>
@@ -226,13 +226,13 @@
       </li>
       <li class="nav-section">
         <div class="nav-section-header">
-          <a href="<?cs var:toroot ?>devices/debugtune.html">
+          <a href="<?cs var:toroot ?>devices/tech/debug/index.html">
             <span class="en">Debugging and Tuning</span>
           </a>
         </div>
         <ul>
-          <li><a href="<?cs var:toroot ?>devices/tuning.html">Performance Tuning</a></li>
-          <li><a href="<?cs var:toroot ?>devices/native-memory.html">Native Memory Usage</a></li>
+          <li><a href="<?cs var:toroot ?>devices/tech/debug/tuning.html">Performance Tuning</a></li>
+          <li><a href="<?cs var:toroot ?>devices/tech/debug/native-memory.html">Native Memory Usage</a></li>
         </ul>
       </li>
 
@@ -251,7 +251,7 @@
       </li>
 
       <li>
-          <a href="<?cs var:toroot ?>devices/low-ram.html">
+          <a href="<?cs var:toroot ?>devices/tech/low-ram.html">
             <span class="en">Low RAM</span>
           </a>
       </li>
