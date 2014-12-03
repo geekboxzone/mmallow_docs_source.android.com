@@ -592,7 +592,7 @@ The audio Hardware Abstraction Layer (HAL)
 implementation for USB audio is located here:
 <pre>hardware/libhardware/modules/usbaudio/</pre>
 The USB audio HAL relies heavily on
-<i>tinyalsa</i>, described at <a href="audio_terminology.html">Audio Terminology</a>.
+<i>tinyalsa</i>, described at <a href="terminology.html">Audio Terminology</a>.
 Though USB audio relies on isochronous transfers,
 this is abstracted away by the ALSA implementation.
 So the USB audio HAL and tinyalsa do not need to concern
