@@ -173,50 +173,56 @@ following table. Factory images and binaries for Nexus devices can be downloaded
 <th>Supported devices</th>
 </tr>
 <tr>
+  <td>LRX22C</td>
+  <td>android-5.0.1_r1</td>
+  <td>Lollipop</td>
+  <td>Nexus 7 (flo), Nexus 9 (volantis), Nexus 10</td>
+</tr>
+<tr>
   <td>LRX21V</td>
-  <td>android-5.0.0_r7</td>
+  <td>android-5.0.0_r7.0.1</td>
   <td>Lollipop</td>
   <td>Nexus Player (fugu)</td>
 </tr>
 <tr>
   <td>LRX21T</td>
-  <td>android-5.0.0_r6</td>
+  <td>android-5.0.0_r6.0.1</td>
   <td>Lollipop</td>
   <td>Nexus 4</td>
 </tr>
 <tr>
   <td>LRX21R</td>
-  <td>android-5.0.0_r5.1</td>
+  <td>android-5.0.0_r5.1.0.1</td>
   <td>Lollipop</td>
   <td>Nexus 9 (volantis)</td>
 </tr>
 <tr>
   <td>LRX21Q</td>
-  <td>android-5.0.0_r5</td>
+  <td>android-5.0.0_r5.0.1</td>
   <td>Lollipop</td>
   <td>Nexus 9 (volantis)</td>
 </tr>
 <tr>
   <td>LRX21P</td>
-  <td>android-5.0.0_r4</td>
+  <td>android-5.0.0_r4.0.1</td>
   <td>Lollipop</td>
   <td>Nexus 7 (flo/grouper), Nexus 10</td>
 </tr>
 <tr>
   <td>LRX21O</td>
-  <td>android-5.0.0_r3</td>
+  <td>android-5.0.0_r3.0.1</td>
   <td>Lollipop</td>
   <td>Nexus 5 (hammerhead), Nexus 6 (shamu)</td>
 </tr>
 <tr>
   <td>LRX21M</td>
-  <td>android-5.0.0_r2</td>
+  <td>android-5.0.0_r2.0.1</td>
   <td>Lollipop</td>
   <td>Nexus Player (fugu)</td>
 </tr>
 <tr>
   <td>LRX21L</td>
-  <td>android-5.0.0_r1</td>
+  <td>android-5.0.0_r1.0.1</td>
   <td>Lollipop</td>
   <td>Nexus 9 (volantis)</td>
 </tr>
