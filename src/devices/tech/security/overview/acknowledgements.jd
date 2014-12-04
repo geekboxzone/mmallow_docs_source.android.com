@@ -103,7 +103,7 @@ href="mailto:xw7@indiana.edu">xw7@indiana.edu</a>)</p>
 href="mailto:hanxinhui@pku.edu.cn">hanxinhui@pku.edu.cn</a>)</p>
 
 <p><a href="http://thejh.net/">Jann Horn</a> <a href="https://android-review.googlesource.com/#/c/98197/">
-<img style="vertical-align:middle;" src="images/tiny-robot.png"
+<img style="vertical-align:middle;" src="../images/tiny-robot.png"
 alt="Green Droid Patch Symbol"
 title="This person contributed code that improved Android security">
 </a></p>
@@ -111,21 +111,21 @@ title="This person contributed code that improved Android security">
 <p>Robert Craig of <a href="https://www.nsa.gov/research/ia_research/">
 Trusted Systems Research Group</a>, US National Security Agency
 <a href="https://android-review.googlesource.com/#/q/owner:%22Robert+Craig+%253Crpcraig%2540tycho.ncsc.mil%253E%22+status:merged">
-<img style="vertical-align:middle" src="images/tiny-robot.png" alt="Patch Symbol"
+<img style="vertical-align:middle" src="../images/tiny-robot.png" alt="Patch Symbol"
 title="This person contributed code that improved Android security"></a></p>
 
 <p>Stephen Smalley of <a href="https://www.nsa.gov/research/ia_research/">
 Trusted Systems Research Group</a>, US National Security Agency
 <a href=
 "https://android-review.googlesource.com/#/q/owner:%22Stephen+Smalley+%253Csds%2540tycho.nsa.gov%253E%22+status:merged">
-<img style="vertical-align:middle" src="images/tiny-robot.png"
+<img style="vertical-align:middle" src="../images/tiny-robot.png"
 alt="Patch Symbol" title="This person contributed code that improved Android security"></a></p>
 
 <p><a href="http://www.linkedin.com/in/billcroberts">
 William Roberts</a> (<a href="mailto:bill.c.roberts@gmail.com">bill.c.roberts@gmail.com</a>)
 <a href=
 "https://android-review.googlesource.com/#/q/owner:bill.c.roberts%2540gmail.com+status:merged">
-<img style="vertical-align:middle" src="images/tiny-robot.png"
+<img style="vertical-align:middle" src="../images/tiny-robot.png"
 alt="Patch Symbol" title="This person contributed code that improved Android security"></a></p>
 
 <p>Scotty Bauer of University of Utah (<a href="mailto:sbauer@eng.utah.edu">sbauer@eng.utah.edu</a>)</p>
@@ -164,7 +164,7 @@ alt="Patch Symbol" title="This person contributed code that improved Android sec
 <p>Joshua J. Drake of <a href="http://www.accuvant.com/">Accuvant LABS
 </a> (<a href="https://twitter.com/jduck">@jduck</a>)
 <a href="https://android-review.googlesource.com/#/q/change:72228+OR+change:72229">
-<img style="vertical-align:middle" src="images/patchreward.png"
+<img style="vertical-align:middle" src="../images/patchreward.png"
 alt="Patch Rewards Symbol" title="This person qualified for the Patch Rewards program!"></a></p>
 
 <p>Ruben Santamarta of IOActive
@@ -198,21 +198,21 @@ at Urbana-Champaign</a>
 <p>Robert Craig of <a href="https://www.nsa.gov/research/ia_research/">
 Trusted Systems Research Group</a>, US National Security Agency
 <a href="https://android-review.googlesource.com/#/q/owner:%22Robert+Craig+%253Crpcraig%2540tycho.ncsc.mil%253E%22+status:merged">
-<img style="vertical-align:middle" src="images/tiny-robot.png" alt="Patch Symbol"
+<img style="vertical-align:middle" src="../images/tiny-robot.png" alt="Patch Symbol"
 title="This person contributed code that improved Android security"></a></p>
 
 <p>Stephen Smalley of <a href="https://www.nsa.gov/research/ia_research/">
 Trusted Systems Research Group</a>, US National Security Agency
 <a href=
 "https://android-review.googlesource.com/#/q/owner:%22Stephen+Smalley+%253Csds%2540tycho.nsa.gov%253E%22+status:merged">
-<img style="vertical-align:middle" src="images/tiny-robot.png"
+<img style="vertical-align:middle" src="../images/tiny-robot.png"
 alt="Patch Symbol" title="This person contributed code that improved Android security"></a></p>
 
 <p><a href="http://www.linkedin.com/in/billcroberts">
 William Roberts</a> (<a href="mailto:bill.c.roberts@gmail.com">bill.c.roberts@gmail.com</a>)
 <a href=
 "https://android-review.googlesource.com/#/q/owner:bill.c.roberts%2540gmail.com+status:merged">
-<img style="vertical-align:middle" src="images/tiny-robot.png"
+<img style="vertical-align:middle" src="../images/tiny-robot.png"
 alt="Patch Symbol" title="This person contributed code that improved Android security"></a></p>
 
 <p><a href="http://roeehay.blogspot.com/">Roee Hay</a>
@@ -227,21 +227,21 @@ alt="Patch Symbol" title="This person contributed code that improved Android sec
 <p>Robert Craig of <a href="https://www.nsa.gov/research/ia_research/">
 Trusted Systems Research Group</a>, US National Security Agency
 <a href="https://android-review.googlesource.com/#/q/owner:%22Robert+Craig+%253Crpcraig%2540tycho.ncsc.mil%253E%22+status:merged">
-<img style="vertical-align:middle" src="images/tiny-robot.png" alt="Patch Symbol"
+<img style="vertical-align:middle" src="../images/tiny-robot.png" alt="Patch Symbol"
 title="This person contributed code that improved Android security"></a></p>
 
 <p>Stephen Smalley of <a href="https://www.nsa.gov/research/ia_research/">
 Trusted Systems Research Group</a>, US National Security Agency
 <a href=
 "https://android-review.googlesource.com/#/q/owner:%22Stephen+Smalley+%253Csds%2540tycho.nsa.gov%253E%22+status:merged">
-<img style="vertical-align:middle" src="images/tiny-robot.png"
+<img style="vertical-align:middle" src="../images/tiny-robot.png"
 alt="Patch Symbol" title="This person contributed code that improved Android security"></a></p>
 
 <p><a href="http://www.linkedin.com/in/billcroberts">
 William Roberts</a> (<a href="mailto:bill.c.roberts@gmail.com">bill.c.roberts@gmail.com</a>)
 <a href=
 "https://android-review.googlesource.com/#/q/owner:bill.c.roberts%2540gmail.com+status:merged">
-<img style="vertical-align:middle" src="images/tiny-robot.png"
+<img style="vertical-align:middle" src="../images/tiny-robot.png"
 alt="Patch Symbol" title="This person contributed code that improved Android security"></a></p>
 
 <p><a href="http://thejh.net/">Jann Horn</a></p>
