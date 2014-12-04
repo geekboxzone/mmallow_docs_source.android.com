@@ -18,11 +18,11 @@ page.title=System and kernel security
 -->
 <div id="qv-wrapper">
   <div id="qv">
-    <h3>In this document</h3>
-    <ol id="auto-toc">
-    </ol>
+    <h2>In this document</h2>
+    <ol id="auto-toc"></ol>
   </div>
 </div>
+
 <p>At the operating system level, the Android platform provides the security of
   the Linux kernel, as well as a secure inter-process communication (IPC)
   facility to enable secure communication between applications running in
