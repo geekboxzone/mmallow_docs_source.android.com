@@ -25,7 +25,7 @@ the Android source tree, compile it, then run:</p>
 <pre><code>$ mmm frameworks/base/tools/validatekeymaps
 </code></pre>
 <p>This command should compile a host tool called validatekeymaps into the
-<code>out/host/&amp;lt;os&amp;gt;/bin</code> directory.</p>
+<code>out/host/&lt;os&gt;/bin</code> directory.</p>
 <h2 id="usage">Usage</h2>
 <p>If you ran <code>envsetup.sh</code> to set up your development environment, then the
 <code>validatekeymaps</code> tool should already be on your path.  You can verify
