@@ -17,11 +17,11 @@ page.title=Security
 -->
 <div id="qv-wrapper">
   <div id="qv">
-    <h3>In this document</h3>
-    <ol id="auto-toc">
-    </ol>
+    <h2>In this document</h2>
+    <ol id="auto-toc"></ol>
   </div>
 </div>
+
 <h2 id="introduction">Introduction</h2>
 <p>Android is a modern mobile platform that was designed to be truly open. Android
   applications make use of advanced hardware and software, as well as local and
