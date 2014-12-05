@@ -18,11 +18,11 @@ page.title=Application security
 -->
 <div id="qv-wrapper">
   <div id="qv">
-    <h3>In this document</h3>
-    <ol id="auto-toc">
-    </ol>
+    <h2>In this document</h2>
+    <ol id="auto-toc"></ol>
   </div>
 </div>
+
 <h2 id="elements-of-applications">Elements of Applications</h2>
 <p>Android provides an open source platform and application environment for mobile
   devices. The core operating system is based on the Linux kernel. Android

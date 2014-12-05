@@ -18,11 +18,11 @@ page.title= Security updates and resources
 -->
 <div id="qv-wrapper">
   <div id="qv">
-    <h3>In this document</h3>
-    <ol id="auto-toc">
-    </ol>
+    <h2>In this document</h2>
+    <ol id="auto-toc"></ol>
   </div>
 </div>
+
 <h2 id="android-updates">Android Updates</h2>
 <p>Android provides system updates for both security and feature related purposes.</p>
 <p>There are two ways to update the code on most Android devices: over-the-air
