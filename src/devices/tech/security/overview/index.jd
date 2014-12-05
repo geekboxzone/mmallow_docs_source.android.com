@@ -17,11 +17,11 @@ page.title=Security overview
 -->
 <div id="qv-wrapper">
   <div id="qv">
-    <h3>In this document</h3>
-    <ol id="auto-toc">
-    </ol>
+    <h2>In this document</h2>
+    <ol id="auto-toc"></ol>
   </div>
 </div>
+
 <h2 id="android-security-program-overview">Security Program Overview</h2>
 <p>Early on in development, the core Android development team recognized that a
   robust security model was required to enable a vigorous ecosystem of
