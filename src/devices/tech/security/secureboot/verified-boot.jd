@@ -1,0 +1,435 @@
+page.title=Verified boot
+@jd:body
+
+<!--
+    Copyright 2014 The Android Open Source Project
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+<div id="qv-wrapper">
+  <div id="qv">
+    <h2>In this document</h2>
+    <ol id="auto-toc">
+    </ol>
+  </div>
+</div>
+<h2 id=introduction>Introduction</h2>
+
+<p>This document introduces and describes the process of establishing a
+verified boot flow, which is integral to security measures such as <a
+href="index.html">Secure Boot</a>.</p>
+
+<h2 id=terms>Terms</h2>
+
+<p>Become familiar with the following terms to carry out the implementation
+described later.</p>
+
+<p><strong>Keystore</strong></p>
+
+<p>A keystore is a signed collection of public keys.</p>
+
+<p><strong>OEM key</strong></p>
+
+<p>The OEM key is a fixed key available to the bootloader that must be used to
+verify the keystore.</p>
+
+<p><strong>OEM keystore</strong></p>
+
+<p>The OEM keystore is a fixed keystore available to the bootloader that must
+be used to verify the boot image when a user keystore is not present.</p>
+
+<p><strong>User keystore</strong></p>
+
+<p>The user keystore is a keystore flashed to the device via <code>fastboot
+flash keystore <path></code>. Note this keystore must also support being
+signed with the OEM key for verification purposes.</p>
+
+<p><strong>Hardware-backed keystore</strong></p>
+
+<p>A keystore that employs cryptographic-enabled hardware to decouple Android
+from the actual device security hardware.</p>
+
+<p><strong>Boot state</strong></p>
+
+<p>The boot state of the device describes the level of protection provided to
+the end user if the device boots. Boot states are GREEN, YELLOW, ORANGE, and
+RED.</p>
+
+<p><strong>Device state</strong></p>
+
+<p>The device state indicates whether a device is locked, unlocked, or
+verified.</p>
+
+<h2 id=boot_sequence>Boot sequence</h2>
+
+<h3 id=logical_overview>Logical overview</h3>
+
+<p>A verified device will ultimately boot into one of four states during each
+boot attempt:</p>
+
+<ul>
+  <li>GREEN, indicating a full chain of trust extending from the bootloader
+to the system partition, including the bootloader, keystore, boot partition,
+and system partition.
+  <li>YELLOW, indicating a chain of trust from starting
+at a user-provided keystore and extending up. To enable users to acquire trust
+in their keystore, bootloaders are required to display a partial hash of the
+verifying keystore during boot and prompt the user for confirmation. Rejecting
+this hash leads to the RED state and a reboot into recovery.
+  <li>ORANGE, indicating that a device may be freely modified. Device integrity is left to
+the user to verify out-of-band, and the user can acknowledge this
+before booting. A timer will allow 30 seconds for the user to respond; If the user
+does not respond, the device will continue booting. If the user explicitly
+stops the booting sequence, the device goes into the RED state and reboots into
+recovery.
+  <li>RED, indicating the device has failed
+verification. This must display an error to the user and reboot into recovery.
+If recovery cannot be verified, the device must display an error and fail to
+boot.
+</ul>
+
+<p>The recovery partition must also be verified, and should be verified in the
+exact same way.</p>
+
+<img src="../images/verified_boot.png" alt="Verified boot flow">
+<p class="img-caption"><strong>Figure 1.</strong> Verified boot flow</p>
+
+<h3 id=selecting_a_keystore>Selecting a keystore</h3>
+
+<p>If a user-provided keystore is present, it must be selected for later. If no
+user-provided keystore is present, then the original factory keystore must be
+selected instead. Selection of a keystore is independent of validation of that
+keystore.</p>
+
+<h3 id=booting_into_recovery>Booting into recovery</h3>
+
+<p>The recovery image should be verified in exactly the same manner as the boot
+image prior to booting recovery. If the recovery image does not validate, the
+device must not boot.</p>
+
+<h2 id=device_state>Device state</h2>
+
+<p>The device is required to be in one of three states at all times:</p>
+
+<ul>
+  <li>LOCKED, indicating the device cannot currently be flashed. In
+the image above, a LOCKED device must boot into the GREEN state, YELLOW state,
+or RED state during any attempted boot. It must not be possible to alter the
+OEM key, OEM keystore, or user keystore in the LOCKED state.
+ <li>VERIFIED, indicating someone in physical control of the device may perform limited
+actions intended to change the state of the device but may not break its
+current chain of trust. In Figure 1 above, a VERIFIED device must boot into
+the GREEN state, YELLOW state, or RED state during each attempted boot. It must
+not be possible to alter the OEM key, OEM keystore, or user keystore in the
+VERIFIED state.<br/>
+It must be possible to:
+    <ol>
+      <li>Flash the following partitions:
+        <ul>
+          <li>bootloader
+          <li>boot
+          <li>system
+          <li>vendor
+          <li>recovery
+        </ul>
+      <li>Erase the following partitions:
+        <ul>
+          <li>userdata
+          <li> cache
+        </ul>
+      <li>Flash freely a device in an UNLOCKED state as it is not intended to be verified.
+    </ol>
+</ul>
+
+<p>See an illustration of the transitions between these states in the next
+section.</p>
+
+<h3 id=changing_device_state>Changing device state</h3>
+
+<p>Device state (LOCKED, UNLOCKED, VERIFIED) and boot state (GREEN, YELLOW,
+ORANGE, RED) can usually change independently of one another (with the exception
+being UNLOCKED -&gt; LOCKED | VERIFIED). This section describes how those
+transitions occur. See the diagram below for a depiction of these changes.</p>
+
+<p><strong>Important</strong>: Note <strong>all</strong> state transitions
+require a data wipe.</p>
+
+<img src="../images/device_states.png" alt="Changing device states">
+<p class="img-caption"><strong>Figure 2.</strong> Changing device states</p>
+
+<ul>
+  <li>The UNLOCKED to LOCKED transition requires a data wipe and is done
+via: <code>fastboot oem lock</code> This is anticipated when a user buys a used
+development device. As a result of locking the device, the user should have
+confidence that it is in a state produced by the OEM.
+  <li>The LOCKED to UNLOCKED transition requires a data wipe and is done via: <code>fastboot oem
+unlock</code> This is expected in the case where a developer wishes to disable
+verification on the device.
+  <li>The LOCKED to VERIFIED transition requires a
+data wipe and is done via: <code>fastboot oem verified</code> This is expected
+in the case where a developer wishes to conduct development on the device and
+doesn’t want to wipe data frequently in the process.
+  <li>The VERIFIED to LOCKED transition requires a data wipe and is done via:
+<code>fastboot oem lock</code> This operation is idempotent with the above.
+  <li>The UNLOCKED to VERIFIED transition requires a data wipe and is done via: <code>fastboot oem
+verified</code> This is anticipated when a user wishes to put a development
+device in a more secure state but may not want to prevent themselves from
+flashing new system images.
+  <li>The VERIFIED to UNLOCKED transition requires a data wipe and is done via:
+<code>fastboot oem unlock</code> This operation is idempotent with the above.
+</ul>
+
+<h3 id=changing_boot_state>Changing boot state</h3>
+
+<p>The chart below provides the typical flow for transitioning from each boot
+state in the left column to the boot state in the first row.</p>
+
+<table>
+  <tr>
+    <td></td>
+    <td><p><strong>GREEN</strong></p></td>
+    <td><p><strong>YELLOW</strong></p></td>
+    <td><p><strong>RED</strong></p></td>
+  </tr>
+  <tr>
+    <td><p><strong>GREEN</strong></p></td>
+    <td><p>No change.</p></td>
+    <td><pre>fastboot oem &lt;verified|locked&gt;</pre>
+    <pre>fastboot flash keystore &lt;file&gt;</pre></td>
+    <td><p>Modify keystore or boot image without unlocking or the corresponding
+change.</p></td>
+  </tr>
+  <tr>
+    <td><p><strong>YELLOW</strong></p></td>
+    <td><pre>fastboot erase keystore</pre>
+    <pre>fastboot oem lock</pre></td>
+    <td><p>No change.</p></td>
+    <td><p>Modify keystore or boot image without unlocking or the corresponding
+change.</p></td>
+  </tr>
+  <tr>
+    <td><p><strong>RED</strong></p></td>
+    <td><pre>fastboot oem unlock</pre>
+      <p>If factory boot image:</p>
+      <pre> fastboot erase keystore</pre>
+      <p>To flash boot image:</p>
+      <pre> fastboot flash boot &lt;file&gt;</pre></td>
+    <td><pre>fastboot oem unlock</pre>
+      <p>If custom boot image:</p>
+      <pre>fastboot flash keystore &lt;file&gt;</pre>
+      <p>To flash boot image:</p>
+      <pre>fastboot flash boot &lt;file&gt;</pre></td>
+    <td><p>No change.</p></td>
+  </tr>
+</table>
+
+<h2 id=oem_bootloader_requirements>OEM bootloader requirements</h2>
+
+<h3 id=verification>Verification</h3>
+
+<p>Each bootloader stage is required to validate the subsequent stages against
+a tamper-protected key.</p>
+
+<h3 id=fastboot>Fastboot</h3>
+
+<h4 id=fastboot_oem_lock>fastboot oem lock</h4>
+
+<p><code>oem lock</code> is required to:</p>
+
+<ul>
+  <li>Wipe data
+  <li>Clear a write-protected bit indicating the device is unlocked
+  <li> Clear a write-protected bit indicating the device is verified
+</ul>
+
+<h4 id=fastboot_oem_unlock>fastboot oem unlock</h4>
+
+<p><code>oem unlock</code> is required to:</p>
+
+<ul>
+  <li>Wipe data
+  <li>Set the bit cleared by <code>oem lock</code>
+  <li>Clear the bit set by <code>oem verified</code>
+</ul>
+
+<h4 id=fastboot_oem_verified>fastboot oem verified</h4>
+
+<p><code>oem verified</code> is required to:</p>
+
+<ul>
+  <li>Wipe data
+  <li>Clear a write-protected bit indicating the device is unlocked
+  <li>Set a write-protected bit indicating the device is verified
+</ul>
+
+<h4 id=fastboot_flash_keystore>fastboot flash keystore</h4>
+
+<p><code>flash keystore &lt;filename&gt;</code> is required to:</p>
+
+<ul>
+  <li>Check the bit set by <code>oem unlock</code> and if not set, exit with an error
+  <li> Validate the given keystore against the format provided below
+  <li> Write the given keystore to the write-protected user keystore
+storage area (location to be determined by the OEM)
+</ul>
+
+<h4 id=fastboot_erase_keystore>fastboot erase keystore</h4>
+
+<p><code>erase keystore</code> is required to:</p>
+
+<ul>
+  <li>Check the bit set by <code>oem unlock</code> and if not set, exit with an error
+  <li>Erase the keystore stored in the write-protected user keystore storage area
+</ul>
+
+<p><code>erase keystore</code> must not erase the OEM keystore.</p>
+
+<h4 id=fastboot_flash_partition>fastboot flash &lt;partition&gt;</h4>
+
+<p><code>flash &lt;partition&gt; </code> is required to:</p>
+
+<ul>
+  <li>Check the bit set by <code>oem unlock</code>
+    <ul>
+      <li>If this bit is not set, check the bit set by <code>oem verified</code>
+        <ul>
+          <li>If this bit is not set, exit with an error
+	  <li>If this bit is set and &lt;partition&gt; is on the list provided
+above, flash the partition as normal
+        </ul>
+      <li>If this bit is set, flash the partition as normal
+    </ul>
+</ul>
+
+<h2 id=boot_state_user_experience>Boot state user experience</h2>
+
+<p>A user in the green state should see no additional user experience (UX)
+besides that required by their current verification state and normal device
+boot. Samples of UX for the other states follow:</p>
+
+<img src="../images/verified-boot-ui.png" alt="Interfaces of verified boot">
+<p class="img-caption"><strong>Figure 3.</strong> Interfaces of verified boot</p>
+
+<h2 id=implementation_details>Implementation details</h2>
+
+<h3 id=key_types_and_sizes>Key types and sizes</h3>
+
+<p>The OEM key is recommended to be an RSA key with a modulus of 2048 bits or
+higher and a public exponent of 65537 (F4). The OEM key is required to be of
+equivalent or greater strength than such a key.</p>
+
+<h3 id=image_format>Image format</h3>
+
+<p>The Android verifiable boot image format is very simple: given a boot image,
+0-pad it to the next page size boundary (if already aligned to a boundary, omit
+this step), generate a signature over the resulting image, and append that
+signature to the end of the image in the format specified below.</p>
+
+<h3 id=signature_format>Signature format</h3>
+
+<p>The signature on an Android-verifiable boot image is an ASN.1 DER-encoded
+message, which can be parsed with a decoder similar to the <a
+href="https://android.googlesource.com/platform/bootable/recovery/+/f4a6ab27b335b69fbc419a9c1ef263004b561265/asn1_decoder.cpp">asn1_decoder.cpp</a>.
+The message format itself is as follows:</p>
+
+<pre>
+AndroidVerifiedBootSignature DEFINITIONS ::=
+       BEGIN
+            FormatVersion ::= INTEGER
+            certificate ::= Certificate OPTIONAL
+            AlgorithmIdentifier  ::=  SEQUENCE {
+                   algorithm OBJECT IDENTIFIER,
+                   parameters ANY DEFINED BY algorithm OPTIONAL
+            }
+            AuthenticatedAttributes ::= SEQUENCE {
+	           target CHARACTER STRING,
+                   length INTEGER
+            }   
+
+            Signature ::= OCTET STRING
+END
+</pre>
+
+<p>The certificate field is the full X.509 certificate containing the public
+key used for signing, as defined by <a
+href="http://tools.ietf.org/html/rfc5280#section-4.1.1.2">RFC5280</a> section
+4.1. The remaining structure is similar to that defined by <a
+href="http://tools.ietf.org/html/rfc5280#section-4.1.1.2">RFC5280</a> sections
+4.1.1.2 and 4.1.1.3 with the exception of the <code>AuthenticatedAttributes</code> field.</p>
+
+<p>This field contains the length of the image to be verified as an integer and
+the partition (ie, boot, recovery, etc.) on which the image should be found.</p>
+
+<h3 id=signing_and_verifying_an_image>Signing and verifying an image</h3>
+
+<p>To produce a signed image:</p>
+
+<ol>
+  <li>Generate the unsigned image.
+  <li>0-pad the image to the next page size boundary. (Omit this step if already aligned.)
+  <li>Populate the fields of the <code>AuthenticatedAttributes</code> section
+above based on the padded image and desired target partition.
+  <li>Append the <code>AuthenticatedAttributes</code> structure above to the image.
+  <li>Sign the image.
+</ol>
+
+<p>To verify the image:</p>
+
+<ol>
+  <li>Determine the size of the image to be loaded including padding (eg, by
+reading a header).
+  <li>Read the signature located at the offset above.
+  <li>Validate the contents of the <code>AuthenticatedAttributes</code> field. If
+these values do not validate, treat the issue as a signature validation error.
+  <li>Verify the image and <code>AuthenticatedAttributes</code> sections.
+</ol>
+
+<h3 id=keystore_format>Keystore format</h3>
+
+<p>The Android verified boot keystore format is an ASN.1 DER-encoded document.
+Its specification follows:</p>
+
+<pre>
+AndroidVerifiedBootKeystore DEFINITIONS ::=
+       BEGIN
+            FormatVersion ::= INTEGER
+            KeyBag ::= SEQUENCE {
+                 Key  ::= SEQUENCE {
+                        AlgorithmIdentifier  ::=  SEQUENCE {
+                               algorithm OBJECT IDENTIFIER,
+                               parameters ANY DEFINED BY algorithm OPTIONAL
+                        }
+                        KeyMaterial ::= RSAPublicKey
+                 }
+            }
+            Signature ::= AndroidVerifiedBootSignature
+       END
+</pre>
+
+<p>Where RSAPublicKey, AlgorithmIdentifier, and parameters are as specified in
+<a href="http://tools.ietf.org/html/rfc3279#section-2.3.1">RFC3279</a>. Other
+key types specified in RFC3279 section 2.3 may optionally be supported. In
+this case the appropriate type for Key must be used.</p>
+
+<p>Note both OEM keystores and user keystores use this format. This allows
+user keystores to pass verification against the OEM key if they are correctly
+signed, leading to the GREEN state.</p>
+
+<h3 id=keystore_location>Keystore location</h3>
+
+<p>The location of the keystore is not specified here, but that location must
+be known to the bootloader and be both readable and writable by it. Reading should
+happen as per the above; writing a new keystore should be accomplished through
+<code>fastboot flash keystore &lt;path&gt;</code>. Sufficient storage must be
+provided for at least one key with storage for additional keys
+recommended.</p>

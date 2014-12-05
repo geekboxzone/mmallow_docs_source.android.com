@@ -307,11 +307,16 @@
                 <span class="en">Encryption</span>
               </a>
             </li>
-            <li>
+          <li class="nav-section">
+            <div class="nav-section-header">
               <a href="<?cs var:toroot ?>devices/tech/security/secureboot/index.html">
                 <span class="en">Secure Boot</span>
               </a>
-            </li>
+            </div>
+            <ul>
+              <li><a href="<?cs var:toroot ?>devices/tech/security/secureboot/verified-boot.html">Verified boot</a></li>
+            </ul>
+          </li>
           <li class="nav-section">
             <div class="nav-section-header">
               <a href="<?cs var:toroot ?>devices/tech/security/selinux/index.html">
