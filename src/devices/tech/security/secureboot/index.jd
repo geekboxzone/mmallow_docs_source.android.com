@@ -2,7 +2,7 @@ page.title=Secure Boot
 @jd:body
 
 <!--
-    Copyright 2013 The Android Open Source Project
+    Copyright 2014 The Android Open Source Project
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -26,7 +26,7 @@ page.title=Secure Boot
 
 <h2 id="introduction">Introduction</h2>
 
-<p>Android 4.4 supports verified boot through the optional device-mapper-verity 
+<p>Android 4.4 and later supports verified boot through the optional device-mapper-verity 
 (dm-verity) kernel feature, which provides transparent integrity checking of 
 block devices. dm-verity helps prevent persistent rootkits that can hold onto 
 root privileges and compromise devices. This experimental feature helps Android 
@@ -63,9 +63,9 @@ That key is not changeable once the device leaves the factory.</p>
 <p>Manufacturers use that key to verify the signature on the first-level 
 bootloader, which in turn verifies the signature on subsequent levels, the 
 application bootloader and eventually the kernel. Each manufacturer wishing to 
-take advantage of verified boot should have a method for verifying the integrity 
-of the kernel. Assuming the kernel has been verified, the kernel can look at a 
-block device and verify it as it is mounted.</p>
+take advantage of <a href="verified-boot.html">verified boot</a> should have a
+method for verifying the integrity of the kernel. Assuming the kernel has been
+verified, the kernel can look at a block device and verify it as it is mounted.</p>
 
 <p>One way of verifying a block device is to directly hash its contents and compare 
 them to a stored value. However, attempting to verify an entire block device can 
@@ -88,35 +88,14 @@ if the application cannot continue without the data, it will fail.</p>
 
 <h2 id="prerequisites">Prerequisites</h2>
 
+<h3 id="verified-boot">Establishing a verified boot flow</h3>
+<p>To greatly reduce the risk of compromise, verify the kernel using a key
+burned into the device. For details, see <a href="verified-boot.jd">Verified boot</a>.</p>
+
 <h3 id="block-otas">Switching to block-oriented OTAs</h3>
-
-<p>To enable dm-verity on your devices, you <strong>must</strong> move from file-based "over the 
-air" (OTA) updates to block-oriented OTAs. This is needed because during OTA, 
-Android attempts to change the contents of the system partition at the 
-filesystem layer.<br/>
-And since OTA works on a file-by-file basis, it is not guaranteed to write files 
-in a consistent order, have a consistent last modified time or superblock, or 
-even place the blocks in the same location on the block device. For this reason, 
-<em>file-based OTAs will fail on a dm-verity-enabled device.</em><strong>The device will 
-not boot after OTA.</strong></p>
-
-<p>So you must use block-oriented OTAs. With block-oriented OTAs, you serve the 
-device the difference between the two block images rather than the two sets of 
-files. Many manufacturers have already moved to block-oriented OTAs to make them 
-more reproducible and predictable.</p>
-
-<p>A block-oriented OTA checks a device build against the corresponding build 
-server at the block device level, below the filesystem. This can be done in a 
-couple of different ways, each with their own benefits and drawbacks:</p>
-
-<ul>
-<li><em>Copy the full system image to the device</em> - This is simple and makes patch 
-generation easy. But it also makes the application of those patches quite 
-expensive as the resulting images are large.</li>
-<li><em>Employ a binary differ</em> -  These tools, such as <code>bsdiff</code>, simplify patch 
-application as images are much smaller. But these tools tend to be memory 
-intensive and therefore expensive in generating the patches themselves.</li>
-</ul>
+<p>To enable dm-verity for a device, you must use block-based over-the-air
+(OTA) updates to ensure all devices use the same system partition. For details,
+see <a href="block-ota.html">Block-Based OTAs</a>.</p>
 
 <h3 id="config-dm-verity">Configuring dm-verity</h3>
 
@@ -308,7 +287,9 @@ resembles:<br/>
 
 <h2 id="supporting-docs">Supporting documentation</h2>
 
-<p><a href="https://code.google.com/p/cryptsetup/wiki/DMVerity">cryptsetup - dm-verity: device-mapper block integrity checking 
+<p><a href="verified-boot.html">Verified boot</a><br/>
+<a href="block-ota.html"></a><br/>
+<a href="https://code.google.com/p/cryptsetup/wiki/DMVerity">cryptsetup - dm-verity: device-mapper block integrity checking 
 target</a><br/>
 <a href="http://www.chromium.org/chromium-os/chromiumos-design-docs/verified-boot">The Chromium Projects - Verified 
 Boot</a><br/>
