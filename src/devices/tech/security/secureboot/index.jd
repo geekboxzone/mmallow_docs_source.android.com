@@ -90,7 +90,7 @@ if the application cannot continue without the data, it will fail.</p>
 
 <h3 id="verified-boot">Establishing a verified boot flow</h3>
 <p>To greatly reduce the risk of compromise, verify the kernel using a key
-burned into the device. For details, see <a href="verified-boot.jd">Verified boot</a>.</p>
+burned into the device. For details, see <a href="verified-boot.html">Verified boot</a>.</p>
 
 <h3 id="block-otas">Switching to block-oriented OTAs</h3>
 <p>To enable dm-verity for a device, you must use block-based over-the-air
@@ -288,7 +288,7 @@ resembles:<br/>
 <h2 id="supporting-docs">Supporting documentation</h2>
 
 <p><a href="verified-boot.html">Verified boot</a><br/>
-<a href="block-ota.html"></a><br/>
+<a href="block-ota.html">Block-based OTAs</a><br/>
 <a href="https://code.google.com/p/cryptsetup/wiki/DMVerity">cryptsetup - dm-verity: device-mapper block integrity checking 
 target</a><br/>
 <a href="http://www.chromium.org/chromium-os/chromiumos-design-docs/verified-boot">The Chromium Projects - Verified 
