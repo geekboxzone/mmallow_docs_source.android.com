@@ -263,7 +263,7 @@ Select the file: jdk-7u71-macosx-x64.dmg</p>
 install the Java 6 version of the <a
 href="http://support.apple.com/kb/dl1572">Java JDK</a>.</p>
 
-<h3 id="branch-40x-and-all-earlier-branches">Branch 4.2.x and earlier branches</h3>
+<h3 id="branch-42x-and-all-earlier-branches">Branch 4.2.x and earlier branches</h3>
 <p>To build 4.2.x and earlier source in a Mac OS environment, you will need an Intel/x86
 machine running MacOS 10.6 (Snow Leopard) or MacOS 10.7 (Lion), along with Xcode
 4.2 (Apple's Developer Tools). Although Lion does not come with a JDK, it should
