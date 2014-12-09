@@ -239,37 +239,35 @@ saves space while allowing to grow later as the need arises. Be sure to select
 function mountAndroid { hdiutil attach ~/android.dmg -mountpoint /Volumes/android; }
 </code></pre>
 <p>Once mounted, you'll do all your work in the "android" volume. You can eject it (unmount it) just like you would with an external drive.</p>
+
+<h3 id="installing-the-mac-jdk">Installing the JDK</h3>
+<p>The master and 5.0.x branches of Android in the <a
+href="https://android.googlesource.com/">Android Open Source Project (AOSP)</a>
+require Java 7. On OS X, use <a
+href="http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html">jdk-7u71-macosx-x64.dmg</a>.</p>
+
+<p>To develop for versions of Android Gingerbread through KitKat, download and
+install the Java 6 version of the <a
+href="http://support.apple.com/kb/dl1572">Java JDK</a>.</p>
+
 <h3 id="master-branch">Master branch</h3>
 <p>To build the latest source in a Mac OS environment, you will need an Intel/x86
 machine running MacOS 10.8 (Mountain Lion) or later, along with Xcode
 4.5.2 or later including the Command Line Tools.</p>
-
-<p>You will also need the <a
-href="http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html">Java 7 JDK</a>.
-Select the file: jdk-7u71-macosx-x64.dmg</p>
 
 <h3 id="branch-50x-and-all-earlier-branches">Branch 5.0.x and earlier branches</h3>
 <p>To build 5.0.x and earlier source in a Mac OS environment, you will need an Intel/x86
 machine running MacOS 10.8 (Mountain Lion), along with Xcode
 4.5.2 and Command Line Tools.</p>
 
-<p>You will also need the <a
-href="http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html">Java 7 JDK</a>.
-Select the file: jdk-7u71-macosx-x64.dmg</p>
-
 <h3 id="branch-44x-and-all-earlier-branches">Branch 4.4.x and earlier branches</h3>
-
-<p>To develop for versions of Android Gingerbread through KitKat, download and
-install the Java 6 version of the <a
-href="http://support.apple.com/kb/dl1572">Java JDK</a>.</p>
-
-<h3 id="branch-42x-and-all-earlier-branches">Branch 4.2.x and earlier branches</h3>
 <p>To build 4.2.x and earlier source in a Mac OS environment, you will need an Intel/x86
 machine running MacOS 10.6 (Snow Leopard) or MacOS 10.7 (Lion), along with Xcode
 4.2 (Apple's Developer Tools). Although Lion does not come with a JDK, it should
 install automatically when you attempt to build the source.</p>
 <p>The remaining sections for Mac OS X only apply to those who wish to build
 earlier branches.</p>
+
 <h3 id="branch-40x-and-all-earlier-branches">Branch 4.0.x and all earlier branches</h3>
 <p>To build android-4.0.x and earlier branches in a Mac OS environment, you need an
 Intel/x86 machine running MacOS 10.5 (Leopard) or MacOS 10.6 (Snow Leopard). You
