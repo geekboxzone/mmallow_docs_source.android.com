@@ -2,7 +2,7 @@ page.title=Initializing a Build Environment
 @jd:body
 
 <!--
-    Copyright 2013 The Android Open Source Project
+    Copyright 2014 The Android Open Source Project
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -27,9 +27,6 @@ page.title=Initializing a Build Environment
 <p>This section describes how to set up your local work environment to build
 the Android source files. You will need to use Linux or Mac OS. Building under
 Windows is not currently supported.</p>
-<p><strong>Note</strong>: The source download is approximately 8.5GB in size.
-You will need over 30GB free to complete a single build, and
-up to 100GB (or more) for a full set of builds.</em></p>
 <p>For an overview of the entire code-review and code-update process, see <a
 href="life-of-a-patch.html">Life of a Patch</a>.</p>
 <h2 id="choosing-a-branch">Choosing a Branch</h2>
