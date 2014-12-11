@@ -2,7 +2,7 @@ page.title=Downloading and Building
 @jd:body
 
 <!--
-    Copyright 2013 The Android Open Source Project
+    Copyright 2014 The Android Open Source Project
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -36,8 +36,8 @@ distributions.</p>
   branch. You can compile older versions on 32-bit systems.
   </li>
 
-  <li>30GB of free disk space to complete a single build and
-  up to 100GB or more for a full set of builds.  The source download is approximately 8.5GB in size.</p>
+  <li>At least 50GB of free disk space for a checkout, 100GB for a single
+build, and 150GB or more for multiple builds.</p>
   </li>
 
   <li>
