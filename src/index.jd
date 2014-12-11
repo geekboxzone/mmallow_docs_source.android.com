@@ -42,6 +42,16 @@ header.hide=1
     <div class="col-8">
     <h3>What's New</h3>
 
+<a href="{@docRoot}source/build-numbers.html">
+        <h4>Supported devices and version strings updated</h4></a>
+        <p>The list of <strong><a
+        href="{@docRoot}source/build-numbers.html#source-code-tags-and-builds">supported
+        devices, branch tags</a></strong> and <strong><a
+        href="{@docRoot}compatibility/5.0/versions.html">version
+        strings</a></strong> for Android 5.0 have been updated.</p>
+
+<img border="0" src="images/Android_Robot_100.png" alt="Android Partner icon" style="display:inline;float:right;margin:5px 10px">
+
 <a href="{@docRoot}compatibility/downloads.html">
         <h4>New CTS media files available for download</h4></a>
 	<p>Find <strong><a
@@ -49,8 +59,6 @@ header.hide=1
         files version 1.1</a></strong> for Android 5.0 media stress tests on <strong><a
         href="{@docRoot}compatibility/downloads.html#cts-media-files">Compatibility
         Downloads</a></strong>.</p>
-
-<img border="0" src="images/Android_Robot_100.png" alt="Android Partner icon" style="display:inline;float:right;margin:5px 10px">
 
 <a href="{@docRoot}source/brands.html#Questions">
         <h4>Android Partner Marketing offers brand guidance</h4></a>
@@ -69,14 +77,6 @@ header.hide=1
 	href="{@docRoot}accessories/headset-spec.html">Wired audio headset
         specification</a></strong> can now be found in the <strong><a
         href="{@docRoot}accessories/index.html">Accessories section</a></strong>.</p>
-
-<a href="{@docRoot}devices/tech/security/index.html">
-        <h4>Encryption and SELinux revised</h4></a>
-        <p><strong><a
-        href="{@docRoot}devices/tech/encryption/index.html">Encryption</a></strong> and <strong><a
-        href="{@docRoot}devices/tech/security/se-linux.html">Security-Enhanced Linux</a></strong> have been
-	updated to describe the latest features of Android 5.0, such as default
-        encryption and full enforcement of SELinux.</p>
     </div>
 
     <div class="col-8">
