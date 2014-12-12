@@ -37,7 +37,8 @@ distributions.</p>
   </li>
 
   <li>At least 50GB of free disk space for a checkout, 100GB for a single
-build, and 150GB or more for multiple builds.</p>
+  build, and 150GB or more for multiple builds. If you employ ccache, you will
+  need even more space.</p>
   </li>
 
   <li>
