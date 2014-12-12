@@ -176,7 +176,7 @@ following table. Factory images and binaries for Nexus devices can be downloaded
   <td>LRX22C</td>
   <td>android-5.0.1_r1</td>
   <td>Lollipop</td>
-  <td>Nexus 4, Nexus 6 (shamu), Nexus 7 (flo), Nexus 9 (volantis), Nexus 10</td>
+  <td>Nexus 4, Nexus 6 (shamu), Nexus 7 (flo), Nexus 9 (volantis/volantisg), Nexus 10</td>
 </tr>
 <tr>
   <td>LRX21V</td>
