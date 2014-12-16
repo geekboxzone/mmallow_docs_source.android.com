@@ -28,8 +28,8 @@ distributions.</p>
   <li>A Linux or Mac system. It is also possible
   to build Android in a virtual machine on unsupported systems such as Windows.
   If you are running Linux in a virtual machine, you need at
-  least 16GB of RAM/swap and 30GB or more of disk space in order to
-  build the Android tree.
+  least 16GB of RAM/swap and 50GB or more of disk space in order to
+  build the Android tree. See disk size requirements below.
   </li>
 
   <li>A 64-bit environment is required for Gingerbread (2.3.x) and newer versions, including the master
