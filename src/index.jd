@@ -48,8 +48,6 @@ header.hide=1
 	href="{@docRoot}source/building.html">Downloading and
         Building</a></strong> has been increased significantly.</p>
 
-<img border="0" src="images/Android_Robot_100.png" alt="Android Partner icon" style="display:inline;float:right;margin:5px 10px">
-
 <a href="{@docRoot}source/build-numbers.html">
         <h4>Supported devices and version strings updated</h4></a>
         <p>The list of <strong><a
@@ -58,9 +56,16 @@ header.hide=1
         href="{@docRoot}compatibility/5.0/versions.html">version
         strings</a></strong> for Android 5.0 have been updated.</p>
 
+<a href="{@docRoot}source/initializing.html">
+        <h4>JDK instructions updated for Mac</h4></a>
+        <p>A new <strong><a
+        href="{@docRoot}source/initializing.html#installing-the-mac-jdk">Installing the
+        JDK</a></strong> section has been developed to describe Java installation for
+        Mac OS.</p>
+
 <a href="{@docRoot}compatibility/downloads.html">
         <h4>New CTS media files available for download</h4></a>
-	<p>Find <strong><a
+        <p>Find <strong><a
         href="https://dl.google.com/dl/android/cts/android-cts-media-1.1.zip">CTS media
         files version 1.1</a></strong> for Android 5.0 media stress tests on <strong><a
         href="{@docRoot}compatibility/downloads.html#cts-media-files">Compatibility
@@ -69,7 +74,7 @@ header.hide=1
 <a href="{@docRoot}source/brands.html#Questions">
         <h4>Android Partner Marketing offers brand guidance</h4></a>
         <p>The Android Partner Marketing team now offers an easy-to-use <strong><a
-	href="https://support.google.com/googleplay/contact/brand_developer">Partner
+        href="https://support.google.com/googleplay/contact/brand_developer">Partner
         Brand Inquiry Form</a></strong> for answers to branding questions and review
         of marketing materials.</p>
     </div>
