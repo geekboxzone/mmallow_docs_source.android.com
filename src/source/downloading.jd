@@ -2,7 +2,7 @@ page.title=Downloading the Source
 @jd:body
 
 <!--
-    Copyright 2013 The Android Open Source Project
+    Copyright 2014 The Android Open Source Project
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -196,9 +196,8 @@ $ repo sync -j1
 </p>
 <p>
   These instructions assume that the mirror is created in <code>/usr/local/aosp/mirror</code>.
-  The first step is to create and sync the mirror itself, which uses close to 13GB of network
-  bandwidth and a similar amount of disk space. Notice the <code>--mirror</code> flag, which
-  can only be specified when creating a new client:
+  The first step is to create and sync the mirror itself. Notice the <code>--mirror</code> flag, which
+  can be specified only when creating a new client:
 </p>
 <pre>
 $ mkdir -p /usr/local/aosp/mirror

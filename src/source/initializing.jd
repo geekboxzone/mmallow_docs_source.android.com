@@ -47,13 +47,9 @@ distributions are welcome.</p>
 <p>For Gingerbread (2.3.x) and newer versions, including the master
 branch, a 64-bit environment is required. Older versions can be
 compiled on 32-bit systems.</p>
-<p><strong>Note</strong>: It is also possible to build Android in a virtual machine.
-If you are running Linux in a virtual machine, you will need at
-least 16GB of RAM/swap and 30GB or more of disk space in order to
-build the Android tree.</p>
-<p>See the <a href="building.html">Downloading and Building</a> page for the
-list of hardware and software requirements. Then follow the detailed
-instructions for Ubuntu and MacOS below.</p>
+<p><strong>Note</strong>: See the <a href="building.html">Downloading and
+Building</a> page for the list of hardware and software requirements. Then
+follow the detailed instructions for Ubuntu and Mac OS below.</p>
 
 <h3 id="installing-the-jdk">Installing the JDK</h3>
 <p>The master branch of Android in the <a
@@ -212,17 +208,17 @@ as those would end up sharing an output directory, with
 unpredictable results.</p>
 <p>This is only supported on Jelly Bean (4.1) and newer,
 including the master branch.</p>
-<h2 id="setting-up-a-mac-os-x-build-environment">Setting up a Mac OS X build environment</h2>
-<p>In a default installation, OS X runs on a case-preserving but case-insensitive
+<h2 id="setting-up-a-mac-os-x-build-environment">Setting up a Mac OS build environment</h2>
+<p>In a default installation, Mac OS runs on a case-preserving but case-insensitive
 filesystem. This type of filesystem is not supported by git and will cause some
 git commands (such as "git status") to behave abnormally. Because of this, we
 recommend that you always work with the AOSP source files on a case-sensitive
 filesystem. This can be done fairly easily using a disk image, discussed below.</p>
 <p>Once the proper filesystem is available, building the master branch in a modern
-OS X environment is very straightforward. Earlier branches, including ICS,
+Mac OS environment is very straightforward. Earlier branches, including ICS,
 require some additional tools and SDKs.</p>
 <h3 id="creating-a-case-sensitive-disk-image">Creating a case-sensitive disk image</h3>
-<p>You can create a case-sensitive filesystem within your existing OS X environment
+<p>You can create a case-sensitive filesystem within your existing Mac OS environment
 using a disk image. To create the image, launch Disk
 Utility and select "New Image".  A size of 25GB is the minimum to
 complete the build, larger numbers are more future-proof. Using sparse images
@@ -240,7 +236,7 @@ function mountAndroid { hdiutil attach ~/android.dmg -mountpoint /Volumes/androi
 <h3 id="installing-the-mac-jdk">Installing the JDK</h3>
 <p>The master and 5.0.x branches of Android in the <a
 href="https://android.googlesource.com/">Android Open Source Project (AOSP)</a>
-require Java 7. On OS X, use <a
+require Java 7. On Mac OS, use <a
 href="http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html">jdk-7u71-macosx-x64.dmg</a>.</p>
 
 <p>To develop for versions of Android Gingerbread through KitKat, download and
@@ -262,7 +258,7 @@ machine running MacOS 10.8 (Mountain Lion), along with Xcode
 machine running MacOS 10.6 (Snow Leopard) or MacOS 10.7 (Lion), along with Xcode
 4.2 (Apple's Developer Tools). Although Lion does not come with a JDK, it should
 install automatically when you attempt to build the source.</p>
-<p>The remaining sections for Mac OS X only apply to those who wish to build
+<p>The remaining sections for Mac OS apply only to those who wish to build
 earlier branches.</p>
 
 <h3 id="branch-40x-and-all-earlier-branches">Branch 4.0.x and all earlier branches</h3>
