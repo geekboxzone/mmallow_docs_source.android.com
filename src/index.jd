@@ -90,6 +90,7 @@ header.hide=1
         href="https://android.googlesource.com/">Android Open Source Project
         repository</a></strong> to make your changes available to everyone else
         in the Android ecosystem.</p>
+<a href="{@docRoot}source/index.html"><img border="0" src="images/android_framework_small.png" alt="Android framework summary" style="display:inline;float:left;margin:5px 10px"></a>
       <a href="{@docRoot}devices/index.html">
         <h4>Port Android to Devices</h4></a>
         <p>Port the latest Android platform and
