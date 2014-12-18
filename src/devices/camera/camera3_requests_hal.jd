@@ -94,7 +94,7 @@ page.title=HAL subsystem
   <li>All capture configuration and state (except for the 3A routines) is 
     encapsulated in the requests and results.</li>
 </ul>
-<p><img src="images/camera-hal-overview.png" alt="Camera HAL overview" id="figure3" />
+<img src="images/camera-hal-overview.png" alt="Camera HAL overview" id="figure3" />
 <p class="img-caption">
   <strong>Figure 3.</strong> Camera HAL overview
 </p>
