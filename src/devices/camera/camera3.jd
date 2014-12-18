@@ -67,7 +67,7 @@ controls. Roughly speaking, the old subsystem has three operating modes:</p>
 
 <p>Each mode has slightly different and overlapping capabilities. This made it hard 
 to implement new types of features, such as burst mode, since it would fall 
-between two of these modes.<br/>
+between two of these modes.</p>
 <img src="images/camera_block.png" alt="Camera block diagram" id="figure1" />
 <p class="img-caption">
   <strong>Figure 1.</strong> Camera components
