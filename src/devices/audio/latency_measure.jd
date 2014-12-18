@@ -132,7 +132,10 @@ If your production device does not have an LED, you can install the
   should not be extrapolated.
 </p>
 
-<img src="images/round_trip.png" alt="round-trip measurement" />
+<img src="images/round_trip.png" alt="round-trip measurement" id="figure1" />
+<p class="img-caption">
+  <strong>Figure 1.</strong> Round-trip measurement
+</p>
 
 <h2 id="measuringInput">Measuring Input Latency</h2>
 

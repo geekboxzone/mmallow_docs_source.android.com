@@ -260,7 +260,11 @@ The benefits of the <code>media.log</code> system are that it:
 The diagram below shows the relationship of the <code>mediaserver</code> process
 and the <code>init</code> process, before <code>media.log</code> is introduced:
 </p>
-<img src="images/medialog_before.png" alt="Architecture before media.log" />
+<img src="images/medialog_before.png" alt="Architecture before media.log" id="figure1" />
+<p class="img-caption">
+  <strong>Figure 1.</strong> Architecture before media.log
+</p>
+
 <p>
 Notable points:
 </p>
@@ -274,7 +278,11 @@ Notable points:
 The diagram below shows the new relationship of the components,
 after <code>media.log</code> is added to the architecture:
 </p>
-<img src="images/medialog_after.png" alt="Architecture after media.log" />
+<img src="images/medialog_after.png" alt="Architecture after media.log" id="figure2" />
+<p class="img-caption">
+  <strong>Figure 2.</strong> Architecture after media.log
+</p>
+
 <p>
 Important changes:
 </p>

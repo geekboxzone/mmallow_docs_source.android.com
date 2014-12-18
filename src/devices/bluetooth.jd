@@ -2,7 +2,7 @@ page.title=Bluetooth
 @jd:body
 
 <!--
-    Copyright 2013 The Android Open Source Project
+    Copyright 2014 The Android Open Source Project
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -32,7 +32,10 @@ Binder IPC. The system service provides developers access to various Bluetooth p
 diagram shows the general structure of the Bluetooth stack:
 </p>
 
-<p><img src="images/bt.png"></p>
+<img src="images/bt.png" alt="Android Bluetooth architecture" id="figure1" />
+<p class="img-caption">
+  <strong>Figure 1.</strong> Bluetooth architecture
+</p>
 
 <dl>
   <dt>Application framework</dt>

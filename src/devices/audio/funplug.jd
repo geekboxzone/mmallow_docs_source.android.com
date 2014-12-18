@@ -38,7 +38,10 @@ via the Larsen effect (feedback loop).
 
 <h2 id="funplugCircuit">FunPlug circuit</h2>
 
-<img src="images/funplug_circuit.png" alt="FunPlug circuit" />
+<img src="images/funplug_circuit.png" alt="FunPlug circuit" id="figure1" />
+<p class="img-caption">
+  <strong>Figure 1.</strong> FunPlug circuit diagram
+</p>
 
 <p>
 To ensure that the output signal will not overload the microphone input,
@@ -49,5 +52,7 @@ it is a US/CTIA pinout plug.
 
 <h2 id="funplugAssembled">FunPlug assembled</h2>
 
-<img src="images/funplug_assembled.jpg" alt="FunPlug fully assembled" />
-
+<img src="images/funplug_assembled.jpg" alt="FunPlug fully assembled" id="figure2" />
+<p class="img-caption">
+  <strong>Figure 2.</strong> Assembled FunPlug
+</p>

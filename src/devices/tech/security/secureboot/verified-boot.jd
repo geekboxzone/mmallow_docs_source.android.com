@@ -101,7 +101,7 @@ boot.
 <p>The recovery partition must also be verified, and should be verified in the
 exact same way.</p>
 
-<img src="../images/verified_boot.png" alt="Verified boot flow">
+<img src="../images/verified_boot.png" alt="Verified boot flow" id="figure1" />
 <p class="img-caption"><strong>Figure 1.</strong> Verified boot flow</p>
 
 <h3 id=selecting_a_keystore>Selecting a keystore</h3>
@@ -164,7 +164,7 @@ transitions occur. See the diagram below for a depiction of these changes.</p>
 <p><strong>Important</strong>: Note <strong>all</strong> state transitions
 require a data wipe.</p>
 
-<img src="../images/device_states.png" alt="Changing device states">
+<img src="../images/device_states.png" alt="Changing device states" id="figure2" />
 <p class="img-caption"><strong>Figure 2.</strong> Changing device states</p>
 
 <ul>
@@ -317,7 +317,7 @@ above, flash the partition as normal
 besides that required by their current verification state and normal device
 boot. Samples of UX for the other states follow:</p>
 
-<img src="../images/verified-boot-ui.png" alt="Interfaces of verified boot">
+<img src="../images/verified-boot-ui.png" alt="Interfaces of verified boot" id="figure3" />
 <p class="img-caption"><strong>Figure 3.</strong> Interfaces of verified boot</p>
 
 <h2 id=implementation_details>Implementation details</h2>

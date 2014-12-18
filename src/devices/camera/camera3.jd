@@ -2,7 +2,7 @@ page.title=Camera HAL v3 overview
 @jd:body
 
 <!--
-    Copyright 2013 The Android Open Source Project
+    Copyright 2014 The Android Open Source Project
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -68,8 +68,10 @@ controls. Roughly speaking, the old subsystem has three operating modes:</p>
 <p>Each mode has slightly different and overlapping capabilities. This made it hard 
 to implement new types of features, such as burst mode, since it would fall 
 between two of these modes.<br/>
-<img src="images/camera_block.png" alt="Camera block diagram"/><br/>
-<strong>Figure 1.</strong> Camera components</p>
+<img src="images/camera_block.png" alt="Camera block diagram" id="figure1" />
+<p class="img-caption">
+  <strong>Figure 1.</strong> Camera components
+</p>
 
 <h2 id="v3-enhance">Version 3 enhancements</h2>
 
@@ -122,8 +124,10 @@ to push image buffers into for this request (out of the total configured set). A
 request can be one-shot ( with capture() ), or it may be repeated indefinitely 
 (with setRepeatingRequest() ). Captures have priority over repeating
 requests.</p>
-<img src="images/camera_simple_model.png" alt="Camera data model"/>
-<p><strong>Figure 2.</strong> Camera core operation model</p>
+<img src="images/camera_simple_model.png" alt="Camera data model" id="figure2" />
+<p class="img-caption">
+  <strong>Figure 2.</strong> Camera core operation model
+</p>
 
 <h2 id="supported-version">Supported version</h2>
 
