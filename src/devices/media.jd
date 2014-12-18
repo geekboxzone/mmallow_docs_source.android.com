@@ -2,7 +2,7 @@ page.title=Media
 @jd:body
 
 <!--
-    Copyright 2013 The Android Open Source Project
+    Copyright 2014 The Android Open Source Project
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -36,8 +36,9 @@ page.title=Media
 Overview
 </h2>
 <p>The following diagram shows how media applications interact with the Android native multimedia framework.</p>
-<p>
-  <img src="images/media.png">
+  <img src="images/media.png" alt="Android media architecture" id="figure1" />
+<p class="img-caption">
+  <strong>Figure 1.</strong> Media architecture
 </p>
 <dl>
 <dt>Application Framework</dt>

@@ -151,7 +151,11 @@ an on-the-go (<a href="http://en.wikipedia.org/wiki/USB_On-The-Go">OTG</a>) adap
 such as this is usually required:
 </p>
 
-<img src="images/otg.jpg" style="image-orientation: 90deg;" height="50%" width="50%" alt="OTG">
+<img src="images/otg.jpg" style="image-orientation: 90deg;" height="50%" width="50%" alt="OTG" id="figure1" />
+<p class="img-caption">
+  <strong>Figure 1.</strong> On-the-go (OTG) adapter
+</p>
+
 
 <p>
 An Android device might not provide sufficient power to operate a
@@ -162,7 +166,10 @@ be significantly shortened.  For these situations, use a powered
 <a href="http://en.wikipedia.org/wiki/USB_hub">hub</a> such as this:
 </p>
 
-<img src="images/hub.jpg" alt="Powered hub">
+<img src="images/hub.jpg" alt="Powered hub" id="figure2" />
+<p class="img-caption">
+  <strong>Figure 2.</strong> Powered hub
+</p>
 
 <h3 id="accessoryMode">Accessory mode</h3>
 
@@ -434,7 +441,10 @@ mobile device with USB connected to external USB DAC and amplifier,
 also with headphones.
 </p>
 
-<img src="images/dac.png" alt="DAC comparison">
+<img src="images/dac.png" alt="DAC comparison" id="figure3" />
+<p class="img-caption">
+  <strong>Figure 3.</strong> Comparison of two DACs
+</p>
 
 <p>
 Which design is better?  The answer depends on your needs.
