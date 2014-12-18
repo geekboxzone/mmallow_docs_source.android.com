@@ -48,7 +48,12 @@ configuration. It does this using a cryptographic hash tree. For every block
 modify any of the blocks would be equivalent to breaking the cryptographic hash. 
 See the following diagram for a depiction of this structure.</p>
 
-<p><img src="../images/dm-verity-hash-table.png" alt="dm-verity-hash-table"/><br/>
+<img src="../images/dm-verity-hash-table.png" alt="dm-verity-hash-table" id="figure1"/>
+<p class="img-caption">
+  <strong>Figure 1.</strong> dm-verity hash table
+</p>
+
+<p>
 A public key is included on the boot partition, which must be verified 
 externally by the OEM. That key is used to verify the signature for that hash 
 and confirm the device's system partition is protected and unchanged.</p>

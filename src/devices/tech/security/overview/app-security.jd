@@ -159,16 +159,18 @@ per.android.com/guide/topics/security/security.html">https://developer.android.c
 <table>
   <tr>
     <td><strong>Permissions at Application Install -- Google Maps</strong></td>
-    <td><strong>Permissions of an Installed Application -- gMail</strong></td>
+    <td><strong>Permissions of an Installed Application -- Gmail</strong></td>
   </tr>
   <tr>
     <td><img alt="Permissions at Application Install -- Google Maps" width=250
-src="../images/image_install.png"/></td>
-    <td><img alt="Permissions of an Installed Application -- gMail" width=250
-src="../images/image_gmail_installed.png"/></td>
+src="../images/image_install.png" /></td>
+    <td><img alt="Permissions of an Installed Application -- Gmail" width=250
+src="../images/image_gmail_installed.png" id="figure1" /></td>
   </tr>
 </table>
-<p><em>Figure 2: Display of permissions for applications</em></p>
+<p class="img-caption">
+  <strong>Figure 1.</strong> Display of permissions for applications
+</p>
 <h2 id="interprocess-communication">Interprocess Communication</h2>
 <p>Processes can communicate using any of the traditional UNIX-type mechanisms.
   Examples include the filesystem, local sockets, or signals. However, the Linux
@@ -236,10 +238,11 @@ src="../images/image_gmail_installed.png"/></td>
   data within third-party applications installed by users.   Applications that
   choose to share this information can use Android OS permission checks to
   protect the data from third-party applications.</p>
-<p><img alt="Figure 3: Access to sensitive user data is only available through protected
-APIs" src="../images/image03.png" /></p>
-<p><em>Figure 3: Access to sensitive user data is only available through protected
-  APIs</em></p>
+<img alt="Access to sensitive user data available only through protected
+APIs" src="../images/image03.png" id="figure2" />
+<p class="img-caption">
+  <strong>Figure 2.</strong> Access to sensitive user data is available only through protected APIs
+</p>
 <p>System content providers that are likely to contain personal or personally
   identifiable information such as contacts and calendar have been created with
   clearly identified permissions. This granularity provides the user with clear
@@ -335,6 +338,8 @@ APIs" src="../images/image03.png" /></p>
       for various DRM schemes</p>
   </li>
 </ul>
-<p><img alt="Figure 4: Architecture of Digital Rights Management on Android
-platform" src="../images/image02.png" /></p>
-<p><em>Figure 4: Architecture of Digital Rights Management on Android platform</em></p>
+<p><img alt="Architecture of Digital Rights Management on Android
+platform" src="../images/image02.png" id="figure3" /></p>
+<p class="img-caption">
+  <strong>Figure 3.</strong> Architecture of Digital Rights Management on Android platform
+</p>
