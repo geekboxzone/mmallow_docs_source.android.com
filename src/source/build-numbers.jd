@@ -173,6 +173,12 @@ following table. Factory images and binaries for Nexus devices can be downloaded
 <th>Supported devices</th>
 </tr>
 <tr>
+  <td>LRX22G</td>
+  <td>android-5.0.2_r1</td>
+  <td>Lollipop</td>
+  <td>Nexus 7 (grouper)</td>
+</tr>
+<tr>
   <td>LRX22C</td>
   <td>android-5.0.1_r1</td>
   <td>Lollipop</td>
