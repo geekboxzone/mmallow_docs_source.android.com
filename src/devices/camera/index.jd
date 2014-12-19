@@ -2,7 +2,7 @@ page.title=Camera
 @jd:body
 
 <!--
-    Copyright 2013 The Android Open Source Project
+    Copyright 2014 The Android Open Source Project
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -29,7 +29,10 @@ camera framework APIs in <a href="http://developer.android.com/reference/android
 The following figure and list describe the components involved and where to find the source for each:
 </p>
 
-<p><img src="images/camera_hal.png"></p>
+<img src="images/camera_hal.png" alt="Android camera architecture" id="figure1" />
+<p class="img-caption">
+  <strong>Figure 1.</strong> Camera architecture
+</p>
 
 <dl>
   

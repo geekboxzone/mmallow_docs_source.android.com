@@ -2,7 +2,7 @@ page.title=Light Testing Circuit
 @jd:body
 
 <!--
-    Copyright 2013 The Android Open Source Project
+    Copyright 2014 The Android Open Source Project
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -64,17 +64,21 @@ We supply it to encourage your continued attention to audio performance.
 These photos show the circuit in action.
 </p>
 
-<img style="margin:1.5em auto" src="images/breadboard.jpg" alt="breadboard prototype" />
-<br />
-<center>Breadboard prototype</center>
+<img style="margin:1.5em auto" src="images/breadboard.jpg" alt="breadboard prototype" id="figure1" />
+<p class="img-caption">
+  <strong>Figure 1.</strong> Breadboard prototype
+</p>
 
-<img style="margin:1.5em auto" src="images/pcb.jpg" alt="an early run of the PCB" />
-<br />
-<center>An early run of the PCB</center>
+<img style="margin:1.5em auto" src="images/pcb.jpg" alt="an early run of the PCB" id="figure2" />
+<p class="img-caption">
+  <strong>Figure 2.</strong> An early run of the PCB
+</p>
 
-<img style="margin:1.5em auto" src="images/display.jpg" alt="example display">
-<br />
-<center>Example display</center>
+<img style="margin:1.5em auto" src="images/display.jpg" alt="example display" id="figure3" />
+<p class="img-caption">
+  <strong>Figure 3.</strong> Example display
+</p>
+
 <p>
 This image
 shows the scope display for an unspecified device, software release, and test conditions;
