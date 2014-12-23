@@ -46,8 +46,8 @@ via the Larsen effect (feedback loop).
 <p>
 To ensure that the output signal will not overload the microphone input,
 we cut it down by about 20dB.
-The resistor loads are there to tell the microphone polarity switch that
-it is a US/CTIA pinout plug.
+The resistor loads tell the microphone polarity switch that
+the FunPlug is a US/CTIA pinout Tip Ring Ring Shield (TRRS) plug.
 </p>
 
 <h2 id="funplugAssembled">FunPlug assembled</h2>
