@@ -38,7 +38,7 @@ page.title=Audio Latency
 see the <a href="testing_circuit.html">Testing circuit</a> for an example test environment.
 </p>
 
-<h3>LED and oscilloscope test</h3>
+<h3 id="ledTest">LED and oscilloscope test</h3>
 <p>
 This test measures latency in relation to the device's LED indicator.
 If your production device does not have an LED, you can install the
@@ -94,7 +94,7 @@ If your production device does not have an LED, you can install the
   Round-trip latency is the sum of output latency and input latency.
 </p>
 
-<h3>Larsen test</h3>
+<h3 id="larsenTest">Larsen test</h3>
 <p>
   One of the easiest latency tests is an audio feedback
   (Larsen effect) test. This provides a crude measure of combined output
@@ -119,7 +119,7 @@ If your production device does not have an LED, you can install the
   precise output latency or input latency values in isolation, but might be useful
   for establishing rough estimates.</p>
 
-<h3>FunPlug</h3>
+<h3 id="funplug">FunPlug</h3>
 
 <p>
   The <a href="funplug.html">FunPlug</a> dongle is handy for

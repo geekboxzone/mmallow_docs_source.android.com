@@ -51,7 +51,7 @@ a device affects perceived audio quality.
 <dd>
 A multiplicative factor less than or equal to 1.0,
 applied to an audio signal to decrease the signal level.
-Compare to "gain".
+Compare to "gain."
 </dd>
 
 <dt>bits per sample or bit depth</dt>
@@ -70,7 +70,7 @@ location of recording or playback.
 To decrease the number of channels, e.g. from stereo to mono, or from 5.1 to stereo.
 This can be accomplished by dropping some channels, mixing channels, or more advanced signal processing.
 Simple mixing without attenuation or limiting has the potential for overflow and clipping.
-Compare to "upmixing".
+Compare to "upmixing."
 </dd>
 
 <dt>duck</dt>
@@ -78,7 +78,7 @@ Compare to "upmixing".
 To temporarily reduce the volume of one stream, when another stream
 becomes active.  For example, if music is playing and a notification arrives,
 then the music stream could be ducked while the notification plays.
-Compare to "mute".
+Compare to "mute."
 </dd>
 
 <dt>frame</dt>
@@ -96,7 +96,7 @@ for example the audio HAL interface uses this concept.
 <dd>
 A multiplicative factor greater than or equal to 1.0,
 applied to an audio signal to increase the signal level.
-Compare to "attenuation".
+Compare to "attenuation."
 </dd>
 
 <dt>Hz</dt>
@@ -124,6 +124,20 @@ But that usage would be confusing.
 <dt>mute</dt>
 <dd>
 To (temporarily) force volume to be zero, independently from the usual volume controls.
+</dd>
+
+<dt>overrun</dt>
+<dd>
+An audible <a href="http://en.wikipedia.org/wiki/Glitch">glitch</a> caused by failure
+to accept supplied data in sufficient time.
+See Wikipedia article <a href="http://en.wikipedia.org/wiki/Buffer_underrun">buffer underrun</a>
+[sic; the article for "buffer overrun" describes an unrelated failure].
+Compare to "underrun."
+</dd>
+
+<dt>panning</dt>
+<dd>
+To direct a signal to a desired position within a stereo or multi-channel field.
 </dd>
 
 <dt>PCM</dt>
@@ -176,11 +190,19 @@ Various techniques for increasing the ability of a listener to perceive
 sound position beyond stereo left and right.
 </dd>
 
+<dt>underrun</dt>
+<dd>
+An audible <a href="http://en.wikipedia.org/wiki/Glitch">glitch</a> caused by failure
+to supply needed data in sufficient time.
+See Wikipedia article <a href="http://en.wikipedia.org/wiki/Buffer_underrun">buffer underrun</a>.
+Compare to "overrun."
+</dd>
+
 <dt>upmixing</dt>
 <dd>
 To increase the number of channels, e.g. from mono to stereo, or from stereo to surround sound.
 This can be accomplished by duplication, panning, or more advanced signal processing.
-Compare to "downmixing".
+Compare to "downmixing."
 </dd>
 
 <dt>virtualizer</dt>
@@ -229,6 +251,9 @@ for music
 
 <li><a href="http://en.wikipedia.org/wiki/Bluetooth_protocols#Synchronous_connection-oriented_.28SCO.29_link">SCO</a>
 for telephony
+</li>
+
+<li><a href="http://en.wikipedia.org/wiki/List_of_Bluetooth_profiles#Audio.2FVideo_Remote_Control_Profile_.28AVRCP.29">Audio/Video Remote Control Profile (AVRCP)</a>
 </li>
 
 </ul>
@@ -288,8 +313,8 @@ implementor may need to be aware of these, but not the end user.
 See these Wikipedia articles:
 <ul>
 <li><a href="http://en.wikipedia.org/wiki/General-purpose_input/output">GPIO</a></li>
-<li><a href="http://en.wikipedia.org/wiki/I%C2%B2C">I²C</a></li>
-<li><a href="http://en.wikipedia.org/wiki/I%C2%B2S">I²S</a></li>
+<li><a href="http://en.wikipedia.org/wiki/I%C2%B2C">I²C</a>, for control channel</li>
+<li><a href="http://en.wikipedia.org/wiki/I%C2%B2S">I²S</a>, for audio data</li>
 <li><a href="http://en.wikipedia.org/wiki/McASP">McASP</a></li>
 <li><a href="http://en.wikipedia.org/wiki/SLIMbus">SLIMbus</a></li>
 <li><a href="http://en.wikipedia.org/wiki/Serial_Peripheral_Interface_Bus">SPI</a></li>
@@ -368,6 +393,15 @@ where the relative width of a digital pulse indicates the signal level.
 It is commonly used by analog to digital converters.
 See Wikipedia article
 <a href="http://en.wikipedia.org/wiki/Pulse-width_modulation">Pulse-width modulation</a>.
+</dd>
+
+<dt>transducer</dt>
+<dd>
+A transducer converts variations in physical "real-world" quantities to electrical signals.
+In audio, the physical quantity is sound pressure,
+and the transducers are the loudspeaker and microphone.
+See Wikipedia article
+<a href="http://en.wikipedia.org/wiki/Transducer">Transducer</a>.
 </dd>
 
 </dl>
@@ -514,15 +548,21 @@ respect to audio, it is a layer between AudioFlinger and the kernel
 device driver with a C API, which replaces the earlier C++ libaudio.
 </dd>
 
+<dt>FastCapture</dt>
+<dd>
+A thread within AudioFlinger that sends audio data to lower latency "fast tracks"
+and drives the input device when configured for reduced latency.
+</dd>
+
 <dt>FastMixer</dt>
 <dd>
-A thread within AudioFlinger that services lower latency "fast tracks"
-and drives the primary output device.
+A thread within AudioFlinger that receives and mixes audio data from lower latency "fast tracks"
+and drives the primary output device when configured for reduced latency.
 </dd>
 
 <dt>fast track</dt>
 <dd>
-An AudioTrack or AudioRecord client with lower latency but fewer features, on some devices.
+An AudioTrack or AudioRecord client with lower latency but fewer features, on some devices and routes.
 </dd>
 
 <dt>MediaPlayer</dt>
@@ -561,9 +601,10 @@ its sub-mix into FastMixer via a pipe.
 
 <dt>OpenSL ES</dt>
 <dd>
-An audio API standard by The Khronos Group. Android versions since
-API level 9 support a native audio API which is based on a subset of
-OpenSL ES 1.0.1.
+An audio API standard by
+<a href="http://www.khronos.org/">The Khronos Group</a>. Android versions since
+API level 9 support a native audio API that is based on a subset of
+<a href="http://www.khronos.org/opensles/">OpenSL ES 1.0.1</a>.
 </dd>
 
 <dt>silent mode</dt>

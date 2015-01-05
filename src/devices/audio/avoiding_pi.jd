@@ -26,7 +26,7 @@ page.title=Avoiding Priority Inversion
 
 <p>
 This article explains how the Android's audio system attempts to avoid
-priority inversion, as of the Android 4.1 release,
+priority inversion,
 and highlights techniques that you can use too.
 </p>
 
@@ -45,8 +45,8 @@ evaluation and testing.
 <p>
 The Android AudioFlinger audio server and AudioTrack/AudioRecord
 client implementation are being re-architected to reduce latency.
-This work started in Android 4.1, continued in 4.2 and 4.3, and now more
-improvements exist in version 4.4.
+This work started in Android 4.1, and continued with further improvements
+in 4.2, 4.3, 4.4, and 5.0.
 </p>
 
 <p>
@@ -54,7 +54,7 @@ To achieve this lower latency, many changes were needed throughout the system. O
 important change is to assign CPU resources to time-critical
 threads with a more predictable scheduling policy. Reliable scheduling
 allows the audio buffer sizes and counts to be reduced while still
-avoiding artifacts due to underruns.
+avoiding underruns and overruns.
 </p>
 
 <h2 id="priorityInversion">Priority inversion</h2>
@@ -95,6 +95,11 @@ different priorities)
 </li>
 
 <li>
+between application callback thread for a fast AudioRecord and
+fast capture thread (similar to previous)
+</li>
+
+<li>
 within the audio Hardware Abstraction Layer (HAL) implementation, e.g. for telephony or echo cancellation
 </li>
 
@@ -103,16 +108,10 @@ within the audio driver in kernel
 </li>
 
 <li>
-between AudioTrack callback thread and other app threads (this is out of our control)
+between AudioTrack or AudioRecord callback thread and other app threads (this is out of our control)
 </li>
 
 </ul>
-
-<p>
-As of this writing, reduced latency for AudioRecord is planned but
-not yet implemented. The likely priority inversion spots will be
-similar to those for AudioTrack.
-</p>
 
 <h2 id="commonSolutions">Common solutions</h2>
 

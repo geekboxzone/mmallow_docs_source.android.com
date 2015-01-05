@@ -26,9 +26,10 @@ page.title=Design For Reduced Latency
 
 <p>
 The Android 4.1 release introduced internal framework changes for
-a lower latency audio output path. There were no public client API
+a <a href="http://en.wikipedia.org/wiki/Low_latency">lower latency</a>
+audio output path. There were minimal public client API
 or HAL API changes. This document describes the initial design,
-which is expected to evolve over time.
+which has continued to evolve over time.
 Having a good understanding of this design should help device OEM and
 SoC vendors implement the design correctly on their particular devices
 and chipsets.  This article is not intended for application developers.
@@ -43,9 +44,9 @@ The client can optionally set bit <code>AUDIO_OUTPUT_FLAG_FAST</code> in the
 </p>
 
 <ul>
-<li>OpenSL ES</li>
-<li>SoundPool</li>
-<li>ToneGenerator</li>
+<li>Android native audio based on OpenSL ES</li>
+<li><a href="http://developer.android.com/reference/android/media/SoundPool.html">android.media.SoundPool</a></li>
+<li><a href="http://developer.android.com/reference/android/media/ToneGenerator.html">android.media.ToneGenerator</a></li>
 </ul>
 
 <p>
@@ -118,7 +119,7 @@ Omitted features:
 
 <p>
 The fast mixer runs periodically, with a recommended period of two
-to three milliseconds (ms), or slightly higher if needed for scheduling stability.
+to three milliseconds (ms), or a slightly higher period of five ms if needed for scheduling stability.
 This number was chosen so that, accounting for the complete
 buffer pipeline, the total latency is on the order of 10 ms. Smaller
 values are possible but may result in increased power consumption
@@ -132,6 +133,9 @@ total latency and so should be avoided.
 <p>
 The fast mixer runs at elevated <code>SCHED_FIFO</code> priority. It needs very
 little CPU time, but must run often and with low scheduling jitter.
+<a href="http://en.wikipedia.org/wiki/Jitter">Jitter</a>
+expresses the variation in cycle time: it is the difference between the
+actual cycle time versus the expected cycle time.
 Running too late will result in glitches due to underrun. Running
 too early will result in glitches due to pulling from a fast track
 before the track has provided data.
@@ -143,6 +147,9 @@ before the track has provided data.
 Ideally the fast mixer thread never blocks, other than at HAL
 <code>write()</code>. Other occurrences of blocking within the fast mixer are
 considered bugs. In particular, mutexes are avoided.
+Instead, <a href="http://en.wikipedia.org/wiki/Non-blocking_algorithm">non-blocking algorithms</a>
+(also known as lock-free algorithms) are used.
+See <a href="avoiding_pi.html">Avoiding Priority Inversion</a> for more on this topic.
 </p>
 
 <h4>Relationship to other components</h4>
