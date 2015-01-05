@@ -38,7 +38,10 @@ and others seeking detailed understanding of USB digital audio internals on Andr
 </p>
 
 <p>
-End users should see the <a href="https://support.google.com/android/">Help Center</a> instead.
+End users of Nexus devices should see the article
+<a href="https://support.google.com/nexus/answer/6127700">Record and play back audio using USB host mode</a>
+at the
+<a href="https://support.google.com/nexus/">Nexus Help Center</a> instead.
 Though this article is not oriented towards end users,
 certain audiophile consumers may find portions of interest.
 </p>
@@ -486,7 +489,7 @@ opportunities for things to fail.  There is also additional latency
 from the USB controllers.
 </p>
 
-<h3 id="applications">Applications</h3>
+<h3 id="hostApplications">Host mode applications</h3>
 
 <p>
 Typical USB host mode audio applications include:
@@ -514,6 +517,16 @@ via the corresponding control in the Media section of
 <a href="http://developer.android.com/tools/index.html">Settings / Developer Options</a>.
 </p>
 
+<h3 id="hostDebugging">Debugging while in host mode</h3>
+
+<p>
+While in USB host mode, adb debugging over USB is unavailable.
+See section <a href="http://developer.android.com/tools/help/adb.html#wireless">Wireless usage</a>
+of
+<a href="http://developer.android.com/tools/help/adb.html">Android Debug Bridge</a>
+for an alternative.
+</p>
+
 <h2 id="compatibility">Implementing USB audio</h2>
 
 <h3 id="recommendationsPeripheral">Recommendations for audio peripheral vendors</h3>
@@ -538,6 +551,7 @@ In order to support USB digital audio, device OEMs and SoC vendors should:
 </p>
 
 <ul>
+<li>design hardware to support USB host mode</li>
 <li>enable all kernel features needed: USB host mode, USB audio, isochronous transfer mode</li>
 <li>keep up-to-date with recent kernel releases and patches;
 despite the noble goal of class compliance, there are extant audio peripherals
@@ -545,6 +559,7 @@ with <a href="http://en.wiktionary.org/wiki/quirk">quirks</a>,
 and recent kernels have workarounds for such quirks
 </li>
 <li>enable USB audio policy as described below</li>
+<li>add audio.usb.default to PRODUCT_PACKAGES in device.mk</li>
 <li>test for inter-operability with common USB audio peripherals</li>
 </ul>
 

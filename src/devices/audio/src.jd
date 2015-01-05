@@ -31,6 +31,7 @@ See the Wikipedia article
 <a href="http://en.wikipedia.org/wiki/Resampling_(audio)">Resampling (audio)</a>
 for a generic definition of sample rate conversion, also known as "resampling."
 The remainder of this article describes resampling within Android.
+See <a href="terminology.html#srcTerms">Sample Rate Conversion</a> for related terminology.
 </p>
 
 <p>

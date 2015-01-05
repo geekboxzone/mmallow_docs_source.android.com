@@ -46,7 +46,7 @@ done debugging; the tee sink should not be left enabled in production builds.
 </p>
 
 <p>
-The instructions in the remainder of this section are for Android 4.4,
+The instructions in the remainder of this section are for Android 5.0,
 and may require changes for other versions.
 </p>
 
@@ -212,7 +212,7 @@ if it is enabled.
 The underlying kernel system calls could block, possibly resulting in
 priority inversion and consequently measurement disturbances and
 inaccuracies.  This is of
-special concern to time-critical threads such as <code>FastMixer</code>.
+special concern to time-critical threads such as <code>FastMixer</code> and <code>FastCapture</code>.
 </li>
 <li>
 If a particular log is disabled to reduce log spam,
@@ -326,7 +326,7 @@ We encourage you to learn the new logging system for those
 occasions when it is indispensable.
 In particular, it is recommended for AudioFlinger threads that must
 run frequently, periodically, and without blocking such as the
-<code>FastMixer</code> thread.
+<code>FastMixer</code> and <code>FastCapture</code> threads.
 </p>
 
 <h3>How to use</h3>
@@ -338,7 +338,7 @@ First, you need to add logs to your code.
 </p>
 
 <p>
-In <code>FastMixer</code> thread, use code such as this:
+In <code>FastMixer</code> and <code>FastCapture</code> threads, use code such as this:
 </p>
 <pre>
 logWriter->log("string");
@@ -346,7 +346,8 @@ logWriter->logf("format", parameters);
 logWriter->logTimestamp();
 </pre>
 <p>
-As this <code>NBLog</code> timeline is used only by the <code>FastMixer</code> thread,
+As this <code>NBLog</code> timeline is used only by the <code>FastMixer</code> and
+<code>FastCapture</code> threads,
 there is no need for mutual exclusion.
 </p>
 
@@ -359,7 +360,7 @@ mNBLogWriter->logf("format", parameters);
 mNBLogWriter->logTimestamp();
 </pre>
 <p>
-For threads other than <code>FastMixer</code>,
+For threads other than <code>FastMixer</code> and <code>FastCapture</code>,
 the thread's <code>NBLog</code> timeline can be used by both the thread itself, and
 by binder operations.  <code>NBLog::Writer</code> does not provide any
 implicit mutual exclusion per timeline, so be sure that all logs occur

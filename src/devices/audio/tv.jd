@@ -274,7 +274,7 @@ ffplay record_loopback.wav
 
 <p>This section includes common use cases for TV audio.</p>
 
-<h3>TV tuner with speaker output</h3>
+<h3 id="tvSpeaker">TV tuner with speaker output</h3>
 
 <p>When a TV tuner becomes active, the audio routing API creates an audio patch between the tuner
 and the default output (e.g. the speaker). The tuner output does not require decoding, but final
@@ -285,7 +285,7 @@ audio output is mixed with software output_stream.</p>
 <strong>Figure 2.</strong> Audio Patch for TV tuner with speaker output.</p>
 
 
-<h3>HDMI OUT during live TV</h3>
+<h3 id="hdmiOut">HDMI OUT during live TV</h3>
 
 <p>A user is watching live TV then switches to the HDMI audio output (Intent.ACTION_HDMI_AUDIO_PLUG)
 . The output device of all output_streams changes to the HDMI_OUT port, and the TIF manager changes
