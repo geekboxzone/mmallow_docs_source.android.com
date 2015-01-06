@@ -6,7 +6,7 @@ header.hide=1
 @jd:body
 
 <!--
-    Copyright 2014 The Android Open Source Project
+    Copyright 2015 The Android Open Source Project
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -41,6 +41,17 @@ header.hide=1
   <div class="landing-docs">
     <div class="col-8">
     <h3>What's New</h3>
+
+<a href="{@docRoot}devices/audio/index.html">
+        <h4>Audio terminology, latency, and USB documentation improved</h4></a>
+        <p><strong><a
+        href="{@docRoot}devices/audio/latency.html">Audio Latency</a></strong>
+        now describes rate-monotonic scheduling, security kernels, and power,
+        performance and thermal management. <strong><a
+        href="{@docRoot}devices/audio/usb.html">USB Digital Audio
+        </a></strong> covers debugging in host mode, and <strong><a
+        href="{@docRoot}devices/audio/terminology.html">Audio Terminology
+        </a></strong> defines FastCapture, jitter, overrun, panning, and more.</p>
 
 <a href="{@docRoot}source/building.html">
         <h4>Disk size requirements increased</h4></a>
