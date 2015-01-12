@@ -96,7 +96,7 @@ environment.</p>
 <h3 id="installing-required-packages-ubuntu-1004-1110">Installing required packages (Ubuntu 10.04 -- 11.10)</h3>
 <p>Building on Ubuntu 10.04-11.10 is no longer supported, but may be useful for building older
 releases of AOSP.</p>
-<pre><code>$ sudo apt-get install git-core gnupg flex bison gperf build-essential \
+<pre><code>$ sudo apt-get install git gnupg flex bison gperf build-essential \
   zip curl zlib1g-dev libc6-dev lib32ncurses5-dev ia32-libs \
   x11proto-core-dev libx11-dev lib32readline5-dev lib32z-dev \
   libgl1-mesa-dev g++-multilib mingw32 tofrodos python-markdown \
@@ -231,7 +231,10 @@ saves space while allowing to grow later as the need arises. Be sure to select
 <pre><code># mount the android file image
 function mountAndroid { hdiutil attach ~/android.dmg -mountpoint /Volumes/android; }
 </code></pre>
-<p>Once mounted, you'll do all your work in the "android" volume. You can eject it (unmount it) just like you would with an external drive.</p>
+
+<p><strong>Note</strong>: If your system created a .dmg.sparsefile file, replace <code>~/android.dmg</code> with <code>~/android.dmg.sparsefile.</p>
+
+<p>Once you've mounted, the <code>android</code> volume, you'll do all your work there. You can eject it (unmount it) just like you would with an external drive.</p>
 
 <h3 id="installing-the-mac-jdk">Installing the JDK</h3>
 <p>The master and 5.0.x branches of Android in the <a
@@ -280,6 +283,9 @@ create an Apple ID in order to download.</p>
 <pre><code>export PATH=/opt/local/bin:$PATH
 </code></pre>
 <p><em>to your <code>~/.bash_profile</code>.</em></p>
+
+<p><strong>Note</strong>: If you do not have a <code>.bash_profile</code> file in your home directory, create one.</p>
+
 </li>
 <li>
 <p>Get make, git, and GPG packages from MacPorts: </p>
