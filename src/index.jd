@@ -52,7 +52,7 @@ header.hide=1
         <p>The <strong><a
         href="{@docRoot}source/building-kernels.html#id-version">Identifying
         kernel version</a></strong> instructions for Nexus 5 (hammerhead) have
-        been updated to repair an errror.</p>
+        been updated to repair an error.</p>
 
 <a href="{@docRoot}devices/audio/index.html">
         <h4>Audio terminology, latency, and USB documentation improved</h4></a>
