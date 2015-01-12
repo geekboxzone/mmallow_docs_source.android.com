@@ -41,6 +41,18 @@ header.hide=1
   <div class="landing-docs">
     <div class="col-8">
     <h3>What's New</h3>
+<a href="{@docRoot}compatibility/index.html">
+        <h4>Android 5.0 CDD released</h4></a>
+        <p>The <strong><a
+        href="{@docRoot}compatibility/android-cdd.pdf">5.0 version of the Android
+        Compatibility Definition Document (CDD)</a></strong> has been published.</p>
+
+<a href="{@docRoot}source/building-kernels.html">
+        <h4>Nexus 5 kernel instructions fixed</h4></a>
+        <p>The <strong><a
+        href="{@docRoot}source/building-kernels.html#id-version">Identifying
+        kernel version</a></strong> instructions for Nexus 5 (hammerhead) have
+        been updated to repair an errror.</p>
 
 <a href="{@docRoot}devices/audio/index.html">
         <h4>Audio terminology, latency, and USB documentation improved</h4></a>
@@ -56,7 +68,7 @@ header.hide=1
 <a href="{@docRoot}source/building.html">
         <h4>Disk size requirements increased</h4></a>
         <p>The amount of free disk space listed as required on <strong><a
-	href="{@docRoot}source/building.html">Downloading and
+        href="{@docRoot}source/building.html">Downloading and
         Building</a></strong> has been increased significantly.</p>
 
 <a href="{@docRoot}source/build-numbers.html">
@@ -66,28 +78,6 @@ header.hide=1
         devices, branch tags</a></strong> and <strong><a
         href="{@docRoot}compatibility/5.0/versions.html">version
         strings</a></strong> for Android 5.0 have been updated.</p>
-
-<a href="{@docRoot}source/initializing.html">
-        <h4>JDK instructions updated for Mac</h4></a>
-        <p>A new <strong><a
-        href="{@docRoot}source/initializing.html#installing-the-mac-jdk">Installing the
-        JDK</a></strong> section has been developed to describe Java installation for
-        Mac OS.</p>
-
-<a href="{@docRoot}compatibility/downloads.html">
-        <h4>New CTS media files available for download</h4></a>
-        <p>Find <strong><a
-        href="https://dl.google.com/dl/android/cts/android-cts-media-1.1.zip">CTS media
-        files version 1.1</a></strong> for Android 5.0 media stress tests on <strong><a
-        href="{@docRoot}compatibility/downloads.html#cts-media-files">Compatibility
-        Downloads</a></strong>.</p>
-
-<a href="{@docRoot}source/brands.html#Questions">
-        <h4>Android Partner Marketing offers brand guidance</h4></a>
-        <p>The Android Partner Marketing team now offers an easy-to-use <strong><a
-        href="https://support.google.com/googleplay/contact/brand_developer">Partner
-        Brand Inquiry Form</a></strong> for answers to branding questions and review
-        of marketing materials.</p>
     </div>
 
     <div class="col-8">
