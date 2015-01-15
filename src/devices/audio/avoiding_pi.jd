@@ -289,6 +289,18 @@ For developers, some of the sample OpenSL ES application code should be updated 
 use non-blocking algorithms or reference a non-Android open source library.
 </p>
 
+<p>
+We have published an example non-blocking FIFO implementation that is specifically designed for
+application code.  See these files located in the platform source directory
+<code>frameworks/av/audio_utils</code>:
+</p>
+<ul>
+  <li><a href="https://android.googlesource.com/platform/system/media/+/master/audio_utils/include/audio_utils/fifo.h">include/audio_utils/fifo.h</a>
+  <li><a href="https://android.googlesource.com/platform/system/media/+/master/audio_utils/fifo.c">fifo.c</a>
+  <li><a href="https://android.googlesource.com/platform/system/media/+/master/audio_utils/include/audio_utils/roundup.h">include/audio_utils/roundup.h</a>
+  <li><a href="https://android.googlesource.com/platform/system/media/+/master/audio_utils/roundup.c">roundup.c</a>
+</ul>
+
 <h2 id="tools">Tools</h2>
 
 <p>

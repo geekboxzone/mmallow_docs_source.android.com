@@ -533,6 +533,13 @@ The API is defined at
 <a href="http://developer.android.com/reference/android/media/AudioTrack.html">android.media.AudioTrack</a>.
 </dd>
 
+<dt>audio_utils</dt>
+<dd>
+An audio utility library for features such as PCM format conversion, WAV file I/O, and
+<a href="avoiding_pi.html#nonBlockingAlgorithms">non-blocking FIFO</a>,
+which is largely independent of the Android platform.
+</dd>
+
 <dt>client</dt>
 <dd>
 Usually same as application or app, but sometimes the "client" of
