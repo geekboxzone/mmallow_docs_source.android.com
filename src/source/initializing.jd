@@ -232,7 +232,7 @@ saves space while allowing to grow later as the need arises. Be sure to select
 function mountAndroid { hdiutil attach ~/android.dmg -mountpoint /Volumes/android; }
 </code></pre>
 
-<p><strong>Note</strong>: If your system created a .dmg.sparsefile file, replace <code>~/android.dmg</code> with <code>~/android.dmg.sparsefile.</p>
+<p><strong>Note</strong>: If your system created a .dmg.sparsefile file, replace <code>~/android.dmg</code> with <code>~/android.dmg.sparsefile</code>.</p>
 
 <p>Once you've mounted, the <code>android</code> volume, you'll do all your work there. You can eject it (unmount it) just like you would with an external drive.</p>
 
