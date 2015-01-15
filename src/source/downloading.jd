@@ -100,7 +100,7 @@ $ cd WORKING_DIRECTORY
 $ repo init -u https://android.googlesource.com/platform/manifest
 </pre>
     <p>
-      To check out a branch other than "master", specify it with -b:
+      To check out a branch other than "master", specify it with <code>-b</code>. For a list of branches, see <a href="https://source.android.com/source/build-numbers.html#source-code-tags-and-builds">Source Code Tags and Builds</a>.
     </p>
 <pre>
 $ repo init -u https://android.googlesource.com/platform/manifest -b android-4.0.1_r1
