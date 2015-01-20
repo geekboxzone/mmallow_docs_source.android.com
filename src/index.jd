@@ -41,6 +41,28 @@ header.hide=1
   <div class="landing-docs">
     <div class="col-8">
     <h3>What's New</h3>
+<a href="{@docRoot}devices/tech/dalvik/configure.html">
+        <h4>Guidelines offered for configuring ART</h4></a>
+        <p>Android engineering offers detailed guidelines for <strong><a
+        href="{@docRoot}devices/tech/dalvik/configure.html">configuring the Android runtime
+        (ART)</a></strong> with build and compilation options including compilation filters.</p>
+
+<a href="{@docRoot}devices/audio/avoiding_pi.html">
+        <h4>Audio introduces example FIFO implementation and latency test app</h4></a>
+        <p>The Audio team has added an <strong><a
+        href="{@docRoot}devices/audio/avoiding_pi.html#nonBlockingAlgorithms">example
+        non-blocking FIFO implementation</a></strong>
+        specifically designed for application code and an <strong><a
+        href="{@docRoot}devices/audio/latency_measure.html#larsenTest">
+        example implementation of the Larsen test</a></strong> called
+        <em>slesTestFeedback.cpp</em>.</p>
+
+<a href="{@docRoot}source/build-numbers.html">
+        <h4>Nexus 7 and Nexus 10 build tag updated</h4></a>
+        <p>The <strong><a
+        href="{@docRoot}source/build-numbers.html#source-code-tags-and-builds">LRX22G
+        build tag</a></strong> now applies to Nexus 10 and the flo variant of Nexus 7.</p>
+
 <a href="{@docRoot}compatibility/index.html">
         <h4>Android 5.0 CDD released</h4></a>
         <p>The <strong><a
@@ -53,31 +75,6 @@ header.hide=1
         href="{@docRoot}source/building-kernels.html#id-version">Identifying
         kernel version</a></strong> instructions for Nexus 5 (hammerhead) have
         been updated to repair an error.</p>
-
-<a href="{@docRoot}devices/audio/index.html">
-        <h4>Audio terminology, latency, and USB documentation improved</h4></a>
-        <p><strong><a
-        href="{@docRoot}devices/audio/latency.html">Audio Latency</a></strong>
-        now describes rate-monotonic scheduling, security kernels, and power,
-        performance and thermal management. <strong><a
-        href="{@docRoot}devices/audio/usb.html">USB Digital Audio
-        </a></strong> covers debugging in host mode, and <strong><a
-        href="{@docRoot}devices/audio/terminology.html">Audio Terminology
-        </a></strong> defines FastCapture, jitter, overrun, panning, and more.</p>
-
-<a href="{@docRoot}source/building.html">
-        <h4>Disk size requirements increased</h4></a>
-        <p>The amount of free disk space listed as required on <strong><a
-        href="{@docRoot}source/building.html">Downloading and
-        Building</a></strong> has been increased significantly.</p>
-
-<a href="{@docRoot}source/build-numbers.html">
-        <h4>Supported devices and version strings updated</h4></a>
-        <p>The list of <strong><a
-        href="{@docRoot}source/build-numbers.html#source-code-tags-and-builds">supported
-        devices, branch tags</a></strong> and <strong><a
-        href="{@docRoot}compatibility/5.0/versions.html">version
-        strings</a></strong> for Android 5.0 have been updated.</p>
     </div>
 
     <div class="col-8">
