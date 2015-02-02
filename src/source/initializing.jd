@@ -2,7 +2,7 @@ page.title=Initializing a Build Environment
 @jd:body
 
 <!--
-    Copyright 2014 The Android Open Source Project
+    Copyright 2015 The Android Open Source Project
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -240,7 +240,7 @@ function mountAndroid { hdiutil attach ~/android.dmg -mountpoint /Volumes/androi
 <p>The master and 5.0.x branches of Android in the <a
 href="https://android.googlesource.com/">Android Open Source Project (AOSP)</a>
 require Java 7. On Mac OS, use <a
-href="http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html">jdk-7u71-macosx-x64.dmg</a>.</p>
+href="https://www.oracle.com/technetwork/java/javase/downloads/java-archive-downloads-javase7-521261.html#jdk-7u71-oth-JPR">jdk-7u71-macosx-x64.dmg</a>.</p>
 
 <p>To develop for versions of Android Gingerbread through KitKat, download and
 install the Java 6 version of the <a
@@ -289,7 +289,7 @@ create an Apple ID in order to download.</p>
 </li>
 <li>
 <p>Get make, git, and GPG packages from MacPorts: </p>
-<pre><code>$ POSIXLY_CORRECT=1 sudo port install gmake libsdl git-core gnupg
+<pre><code>$ POSIXLY_CORRECT=1 sudo port install gmake libsdl git gnupg
 </code></pre>
 <p>If using Mac OS 10.4, also install bison:</p>
 <pre><code>$ POSIXLY_CORRECT=1 sudo port install bison
