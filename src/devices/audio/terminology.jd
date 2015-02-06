@@ -81,6 +81,15 @@ then the music stream could be ducked while the notification plays.
 Compare to "mute."
 </dd>
 
+<dt>FIFO</dt>
+<dd>
+A hardware module or software data structure that implements
+<a href="http://en.wikipedia.org/wiki/FIFO">First In, First Out</a>
+queueing of data.  In the context of audio, the data stored in the queue
+are typically audio frames.  A FIFO can be implemented by a
+<a href="http://en.wikipedia.org/wiki/Circular_buffer">circular buffer</a>.
+</dd>
+
 <dt>frame</dt>
 <dd>
 A set of samples, one per channel, at a point in time.
@@ -107,6 +116,32 @@ The units for sample rate or frame rate.
 <dt>latency</dt>
 <dd>
 Time delay as a signal passes through a system.
+</dd>
+
+<dt>lossless</dt>
+<dd>
+A <a href="http://en.wikipedia.org/wiki/Lossless_compression">lossless data compression</a>
+algorithm preserves bit accuracy across encoding and decoding.
+The result of decoding any previously encoded data is equivalent to the original data.
+Examples of lossless audio content distribution formats include
+<a href="http://en.wikipedia.org/wiki/Compact_disc">CDs</a>, PCM within
+<a href="http://en.wikipedia.org/wiki/WAV">WAV</a>, and
+<a href="http://en.wikipedia.org/wiki/FLAC">FLAC</a>.
+Note that the authoring process may reduce the bit depth or sample rate from that of the
+<a href="http://en.wikipedia.org/wiki/Audio_mastering">masters</a>.
+Distribution formats that preserve the resolution and bit accuracy of masters
+are the subject of "high-resolution audio".
+</dd>
+
+<dt>lossy</dt>
+<dd>
+A <a href="http://en.wikipedia.org/wiki/Lossy_compression">lossy data compression</a>
+algorithm attempts to preserve the most important features of media across
+encoding and decoding.  The result of decoding any previously encoded
+data is perceptually similar to the original data, but is not identical.
+Examples of lossy audio compression algorithms include MP3 and AAC.
+As analog values are from a continuous domain, whereas digital values are discrete,
+ADC and DAC are lossy conversions with respect to amplitude.  See also "transparency."
 </dd>
 
 <dt>mono</dt>
@@ -190,6 +225,14 @@ Various techniques for increasing the ability of a listener to perceive
 sound position beyond stereo left and right.
 </dd>
 
+<dt>transparency</dt>
+<dd>
+The ideal result of lossy data compression, as stated in the
+<a href="http://en.wikipedia.org/wiki/Transparency_%28data_compression%29">Transparency Wikipedia article</a>.
+A lossy data conversion is said to be transparent if it is perceptually indistinguishable from the
+original by a human subject.
+</dd>
+
 <dt>underrun</dt>
 <dd>
 An audible <a href="http://en.wikipedia.org/wiki/Glitch">glitch</a> caused by failure
@@ -271,6 +314,13 @@ High-Definition Multimedia Interface, an interface for transferring
 audio and video data.  For mobile devices, either a micro-HDMI (type D) or MHL connector is used.
 </dd>
 
+<dt>Intel HDA</dt>
+<dd>
+<a href="http://en.wikipedia.org/wiki/Intel_High_Definition_Audio">Intel High Definition Audio</a>
+(commonly shortened to HDA) is a specification for, among other things, a front-panel connector.
+Not to be confused with generic "high-definition audio" or "high-resolution audio."
+</dd>
+
 <dt>MHL</dt>
 <dd>
 Mobile High-Definition Link is a mobile audio/video interface, often
@@ -294,6 +344,12 @@ Sony/Philips Digital Interface Format is an interconnect for uncompressed PCM.
 See Wikipedia article <a href="http://en.wikipedia.org/wiki/S/PDIF">S/PDIF</a>.
 </dd>
 
+<dt>Thunderbolt</dt>
+<dd>
+<a href="http://en.wikipedia.org/wiki/Thunderbolt_%28interface%29">Thunderbolt</a>
+is a multimedia interface that competes with USB and HDMI for connecting to high-end peripherals.
+</dd>
+
 <dt>USB</dt>
 <dd>
 Universal Serial Bus.
@@ -310,7 +366,9 @@ device, and are not visible without disassembling the device.  The HAL
 implementor may need to be aware of these, but not the end user.
 </p>
 
+<p>
 See these Wikipedia articles:
+</p>
 <ul>
 <li><a href="http://en.wikipedia.org/wiki/General-purpose_input/output">GPIO</a></li>
 <li><a href="http://en.wikipedia.org/wiki/I%C2%B2C">I²C</a>, for control channel</li>
@@ -469,6 +527,11 @@ to the kernel audio framework and drivers, not to the user-mode API. See
 tinyalsa.
 </dd>
 
+<dt>audio device</dt>
+<dd>
+Any audio I/O end-point which is backed by a HAL implementation.
+</dd>
+
 <dt>AudioEffect</dt>
 <dd>
 An API and implementation framework for output (post-processing) effects
@@ -523,6 +586,13 @@ The API is defined at
 <dd>
 The module within AudioFlinger responsible for
 <a href="src.html">sample rate conversion</a>.
+</dd>
+
+<dt>audio source</dt>
+<dd>
+An <a href="http://developer.android.com/reference/android/media/MediaRecorder.AudioSource.html">audio source</a>
+is an enumeration of constants that indicates the desired use case for capturing audio input.
+As of API level 21 and above, <a href="attributes.html">audio attributes</a> are preferred.
 </dd>
 
 <dt>AudioTrack</dt>
