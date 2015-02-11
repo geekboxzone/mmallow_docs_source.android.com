@@ -123,7 +123,7 @@ page.title=Audio Latency
   see the Wikipedia article
   <a href="http://en.wikipedia.org/wiki/Rate-monotonic_scheduling">Rate-monotonic scheduling</a> (RMS).
   A key point is that fixed priorities should be allocated strictly based on period,
-  with higher priorities assigned to threads of shorter periods, not based on perceived "importance".
+  with higher priorities assigned to threads of shorter periods, not based on perceived "importance."
   Non-periodic threads may be modeled as periodic threads, using the maximum frequency of execution
   and maximum computation per execution.  If a non-periodic thread cannot be modeled as
   a periodic thread (for example it could execute with unbounded frequency or unbounded computation

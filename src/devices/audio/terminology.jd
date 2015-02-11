@@ -137,7 +137,7 @@ Compare to "attenuation."
 
 <dt>HD audio</dt>
 <dd>
-High Definition audio, a synonym for "high-resolution audio".
+High Definition audio, a synonym for "high-resolution audio."
 Not to be confused with Intel High Definition Audio.
 </dd>
 
@@ -151,7 +151,7 @@ The units for sample rate or frame rate.
 There is no standard definition, but high-resolution usually means any representation
 with greater bit-depth and sample rate than CDs (which are stereo 16-bit PCM at 44.1 kHz),
 and with no lossy data compression applied.
-Equivalent to "HD audio".  See the Wikipedia article
+Equivalent to "HD audio."  See the Wikipedia article
 <a href="http://en.wikipedia.org/wiki/High-resolution_audio">high-resolution audio</a>
 for more information.
 </dd>
@@ -173,7 +173,7 @@ Examples of lossless audio content distribution formats include
 Note that the authoring process may reduce the bit depth or sample rate from that of the
 <a href="http://en.wikipedia.org/wiki/Audio_mastering">masters</a>.
 Distribution formats that preserve the resolution and bit accuracy of masters
-are the subject of "high-resolution audio".
+are the subject of "high-resolution audio."
 </dd>
 
 <dt>lossy</dt>
@@ -194,7 +194,7 @@ One channel.
 
 <dt>multichannel</dt>
 <dd>
-See "surround sound".
+See "surround sound."
 Strictly, since stereo is more than one channel, it is also "multi" channel.
 But that usage would be confusing.
 </dd>
