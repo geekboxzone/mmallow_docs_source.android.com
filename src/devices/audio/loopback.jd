@@ -36,7 +36,7 @@ however it has many other uses too.  The Android audio team uses it to measure
 via the Larsen effect (feedback loop).
 </p>
 
-<h2 id="funplugCircuit">Circuit</h2>
+<h2 id="loopbackCircuit">Circuit</h2>
 
 <img src="images/loopback_circuit.png" alt="circuit" id="figure1" />
 <p class="img-caption">
@@ -50,7 +50,7 @@ The resistor loads tell the microphone polarity switch that
 the audio loopback dongle is a US/CTIA pinout Tip Ring Ring Shield (TRRS) plug.
 </p>
 
-<h2 id="funplugAssembled">Assembled</h2>
+<h2 id="loopbackAssembled">Assembled</h2>
 
 <img src="images/loopback_assembled.jpg" alt="fully assembled" id="figure2" />
 <p class="img-caption">
