@@ -167,7 +167,7 @@ page.title=Audio Latency
   and reduce power consumption while optimizing performance.
   <a href="http://en.wikipedia.org/wiki/Thermal_management_of_electronic_devices_and_systems">Thermal management</a>
   and <a href="http://en.wikipedia.org/wiki/Computer_cooling">computer cooling</a>
-  are similar, but seek to measure and control heat to avoid damage due to excess heat.
+  are similar but seek to measure and control heat to avoid damage due to excess heat.
   In the Linux kernel, the CPU
   <a href="http://en.wikipedia.org/wiki/Governor_%28device%29">governor</a>
   is responsible for low-level policy, while user mode configures high-level policy.
