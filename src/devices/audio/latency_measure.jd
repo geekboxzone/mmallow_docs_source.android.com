@@ -129,10 +129,10 @@ You will also need the <a href="avoiding_pi.html#nonBlockingAlgorithms">non-bloc
 located in the <code>audio_utils</code> library.
 </p>
 
-<h3 id="funplug">FunPlug</h3>
+<h3 id="funplug">Audio Loopback Dongle</h3>
 
 <p>
-  The <a href="funplug.html">FunPlug</a> dongle is handy for
+  The <a href="funplug.html">Dr. Rick O'Rang audio loopback dongle</a> is handy for
   measuring round-trip latency over the headset connector.
   The image below demonstrates the result of injecting an impulse
   into the loop once, and then allowing the feedback loop to oscillate.
