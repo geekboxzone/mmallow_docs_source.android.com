@@ -76,21 +76,53 @@ files within the /device/manufacturer/device-name/sepolicy directory.</p>
 <p>Here are the files you must create or edit in order to implement SELinux:</p>
 
 <ul>
-  <li><em>New SELinux policy source (*.te) files</em> - Located in the <root>/device/manufacturer/device-name/sepolicy directory. These files define domains and their labels. The new policy files get
+  <li><em>New SELinux policy source (*.te) files</em> - Located in the
+<root>/device/manufacturer/device-name/sepolicy directory. These files define
+domains and their labels. The new policy files get
 concatenated with the existing policy files during compilation into a single
 SELinux kernel policy file.
-<p class="caution"><strong>Important:</strong> Do not alter the app.te file provided by the Android Open Source Project.
+<p class="caution"><strong>Important:</strong> Do not alter the app.te file
+provided by the Android Open Source Project.
 Doing so risks breaking all third-party applications.</p>
-  <li><em>Updated BoardConfig.mk makefile</em> - Located in the <device-name> directory containing the sepolicy subdirectory. It must be updated to reference the sepolicy subdirectory once created if it
+  <li><em>Updated BoardConfig.mk makefile</em> - Located in the <device-name>
+directory containing the sepolicy subdirectory. It must be updated to reference
+the sepolicy subdirectory once created if it
 wasn’t in initial implementation.
-  <li><em>file_contexts</em> - Located in the sepolicy subdirectory. This file assigns labels to files and
-is used by various userspace components. As you create new policies, create or update this file to
-assign new labels to files. In order to apply new file_contexts, you must rebuild the filesystem image or run <code>restorecon</code> on the file to be relabeled.  On upgrades, changes to file_contexts are automatically applied to the system and userdata partitions as part of the upgrade.  Changes can also be automatically applied on upgrade to other partitions by adding restorecon_recursive calls to your init.<em>board</em>.rc file after the partition has been mounted read-write.
-  <li><em>genfs_contexts</em> - Located in the sepolicy subdirectory. This file assigns labels to filesystems such as proc or vfat that do not support extended attributes.  This configuration is loaded as part of the kernel policy but changes may not take effect for in-core inodes, requiring a reboot or unmounting and re-mounting the filesystem to fully apply the change.  Specific labels may also be assigned to specific mounts such as vfat using the context= mount option.
-  <li><em>property_contexts</em> - Located in the sepolicy subdirectory. This file assigns labels to Android system properties to control what processes can set them.  This configuration is read by the init process during startup and whenever the selinux.reload_policy property is set to 1.
-  <li><em>service_contexts</em> - Located in the sepolicy subdirectory. This file assigns labels to Android binder services to control what processes can add (register) and find (lookup) a binder reference for the service.  This configuration is read by the servicemanager process during startup and whenever the selinux.reload_policy property is set to 1.
-  <li><em>seapp_contexts</em> - Located in the sepolicy subdirectory. This file assigns labels to app processes and /data/data directories.  This configuration is read by the zygote process on each app launch and by installd during startup and whenever the selinux.reload_policy property is set to 1.
-  <li><em>mac_permissions.xml</em> - Located in the sepolicy subdirectory. This file assigns a seinfo tag to apps based on their signature and optionally their package name.  The seinfo tag can then used as a key in the seapp_contexts file to assign a specific label to all apps with that seinfo tag.  This configuration is read by system_server during startup.
+  <li><em>file_contexts</em> - Located in the sepolicy subdirectory. This file
+assigns labels to files and is used by various userspace components. As you
+create new policies, create or update this file to
+assign new labels to files. In order to apply new file_contexts, you must
+rebuild the filesystem image or run <code>restorecon</code> on the file to be
+relabeled.  On upgrades, changes to file_contexts are automatically applied to
+the system and userdata partitions as part of the upgrade.  Changes can also be
+automatically applied on upgrade to other partitions by adding
+restorecon_recursive calls to your init.<em>board</em>.rc file after the
+partition has been mounted read-write.
+  <li><em>genfs_contexts</em> - Located in the sepolicy subdirectory. This file
+assigns labels to filesystems such as proc or vfat that do not support extended
+attributes.  This configuration is loaded as part of the kernel policy but
+changes may not take effect for in-core inodes, requiring a reboot or
+unmounting and re-mounting the filesystem to fully apply the change.  Specific
+labels may also be assigned to specific mounts such as vfat using the context=
+mount option.
+  <li><em>property_contexts</em> - Located in the sepolicy subdirectory. This
+file assigns labels to Android system properties to control what processes can
+set them.  This configuration is read by the init process during startup and
+whenever the selinux.reload_policy property is set to 1.
+  <li><em>service_contexts</em> - Located in the sepolicy subdirectory. This
+file assigns labels to Android binder services to control what processes can
+add (register) and find (lookup) a binder reference for the service.  This
+configuration is read by the servicemanager process during startup and whenever
+the selinux.reload_policy property is set to 1.
+  <li><em>seapp_contexts</em> - Located in the sepolicy subdirectory. This file
+assigns labels to app processes and /data/data directories.  This configuration
+is read by the zygote process on each app launch and by installd during startup
+and whenever the selinux.reload_policy property is set to 1.
+  <li><em>mac_permissions.xml</em> - Located in the sepolicy subdirectory. This
+file assigns a seinfo tag to apps based on their signature and optionally their
+package name.  The seinfo tag can then be used as a key in the seapp_contexts
+file to assign a specific label to all apps with that seinfo tag.  This
+configuration is read by system_server during startup.
 </ul>
 
 <p>Then just update your BoardConfig.mk makefile - located in the directory
