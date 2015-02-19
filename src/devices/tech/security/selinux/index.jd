@@ -85,15 +85,19 @@ indicates that device needs a special domain
 
 <p><a href="https://www.codeproject.com/Articles/806904/Android-Security-Customization-with-SEAndroid">https://www.codeproject.com/Articles/806904/Android-Security-Customization-with-SEAndroid</a></p>
 
-<p><a href="https://www.nsa.gov/research/_files/publications/implementing_selinux.pdf">https://www.nsa.gov/research/_files/publications/implementing_selinux.pdf</a></p>
-
 <p><a href="https://events.linuxfoundation.org/sites/events/files/slides/abs2014_seforandroid_smalley.pdf">https://events.linuxfoundation.org/sites/events/files/slides/abs2014_seforandroid_smalley.pdf</a></p>
 
 <p><a href="https://www.internetsociety.org/sites/default/files/02_4.pdf">https://www.internetsociety.org/sites/default/files/02_4.pdf</a></p>
 
-<p><a href="https://www.gnu.org/software/m4/manual/index.html">https://www.gnu.org/software/m4/manual/index.html</a></p>
-
 <p><a href="http://freecomputerbooks.com/books/The_SELinux_Notebook-4th_Edition.pdf">http://freecomputerbooks.com/books/The_SELinux_Notebook-4th_Edition.pdf</a></p>
+
+<p><a href="http://selinuxproject.org/page/ObjectClassesPerms">http://selinuxproject.org/page/ObjectClassesPerms</a></p>
+
+<p><a href="https://www.nsa.gov/research/_files/publications/implementing_selinux.pdf">https://www.nsa.gov/research/_files/publications/implementing_selinux.pdf</a></p>
+
+<p><a href="https://www.nsa.gov/research/_files/publications/selinux_configuring_policy.pdf">https://www.nsa.gov/research/_files/publications/selinux_configuring_policy.pdf</a></p>
+
+<p><a href="https://www.gnu.org/software/m4/manual/index.html">https://www.gnu.org/software/m4/manual/index.html</a></p>
 
 <h2 id=help>Help</h2>
 
