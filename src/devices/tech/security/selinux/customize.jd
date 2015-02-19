@@ -100,7 +100,7 @@ should supply the modifications to the default SELinux policy as a <a href="{@do
 
 <p>First, note SELinux is based upon the <a href="https://www.gnu.org/software/m4/manual/index.html">M4</a> computer language and therefore supports a variety of macros to save time.</p>
 
-<p>In the following example, all domains are granted access to read or write to <code>/dev/null</code> and read from <code>/dev/0</code>.</p>
+<p>In the following example, all domains are granted access to read from or write to <code>/dev/null</code> and read from <code>/dev/zero</code>.</p>
 
 <pre>
 # Allow read / write access to /dev/null
@@ -181,10 +181,10 @@ not create or open them.</p>
 <table>
  <tr>
     <td>
-<p><strong>Domain</strong></p>
+<p><strong>Class</strong></p>
 </td>
     <td>
-<p><strong>Capability</strong></p>
+<p><strong>Permission</strong></p>
 </td>
  </tr>
  <tr>
