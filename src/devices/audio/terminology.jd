@@ -187,21 +187,6 @@ As analog values are from a continuous domain, whereas digital values are discre
 ADC and DAC are lossy conversions with respect to amplitude.  See also "transparency."
 </dd>
 
-<dt>lossless</dt>
-<dd>
-A <a href="http://en.wikipedia.org/wiki/Lossless_compression">lossless data compression</a>
-algorithm preserves bit accuracy across encoding and decoding.
-The result of decoding any previously encoded data is equivalent to the original data.
-Examples of lossless audio content distribution formats include
-<a href="http://en.wikipedia.org/wiki/Compact_disc">CDs</a>, PCM within
-<a href="http://en.wikipedia.org/wiki/WAV">WAV</a>, and
-<a href="http://en.wikipedia.org/wiki/FLAC">FLAC</a>.
-Note that the authoring process may reduce the bit depth or sample rate from that of the
-<a href="http://en.wikipedia.org/wiki/Audio_mastering">masters</a>.
-Distribution formats that preserve the resolution and bit accuracy of masters
-are the subject of "high-resolution audio".
-</dd>
-
 <dt>mono</dt>
 <dd>
 One channel.
