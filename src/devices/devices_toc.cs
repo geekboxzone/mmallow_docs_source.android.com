@@ -45,7 +45,7 @@
               <li><a href="<?cs var:toroot ?>devices/audio/latency_measure.html">Measure</a></li>
               <li><a href="<?cs var:toroot ?>devices/audio/latency_design.html">Design</a></li>
               <li><a href="<?cs var:toroot ?>devices/audio/testing_circuit.html">Light Testing Circuit</a></li>
-              <li><a href="<?cs var:toroot ?>devices/audio/funplug.html">Loopback Audio Dongle</a></li>
+              <li><a href="<?cs var:toroot ?>devices/audio/loopback.html">Loopback Audio Dongle</a></li>
             </ul>
           </li>
           <li><a href="<?cs var:toroot ?>devices/audio/avoiding_pi.html">Priority Inversion</a></li>

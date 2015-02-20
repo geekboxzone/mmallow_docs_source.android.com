@@ -555,7 +555,7 @@ In order to support USB digital audio, device OEMs and SoC vendors should:
 <li>enable generic USB host support at the framework level
 via the <code>android.hardware.usb.host.xml</code> feature flag</li>
 <li>enable all kernel features needed: USB host mode, USB audio, isochronous transfer mode;
-see <a href="{@docRoot}/devices/tech/kernel.html">Android Kernel Configuration</a></li>
+see <a href="{@docRoot}devices/tech/kernel.html">Android Kernel Configuration</a></li>
 <li>keep up-to-date with recent kernel releases and patches;
 despite the noble goal of class compliance, there are extant audio peripherals
 with <a href="http://en.wiktionary.org/wiki/quirk">quirks</a>,
