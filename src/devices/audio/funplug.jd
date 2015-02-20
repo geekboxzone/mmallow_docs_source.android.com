@@ -1,4 +1,4 @@
-page.title=FunPlug Audio Dongle
+page.title=Audio Loopback Dongle
 @jd:body
 
 <!--
@@ -29,30 +29,30 @@ The diagram and photo below show an audio loopback
 <a href="http://en.wikipedia.org/wiki/Dongle">dongle</a>
 for the
 <a href="http://en.wikipedia.org/wiki/Phone_connector_(audio)">headset connector</a>
-that we call the "FunPlug."
+that we call the "Dr. Rick O'Rang audio loopback dongle."
 The Chrome hardware team designed this circuit and plug for functional testing;
 however it has many other uses too.  The Android audio team uses it to measure
 <a href="latency_measure.html#measuringRoundTrip">round-trip audio latency</a>,
 via the Larsen effect (feedback loop).
 </p>
 
-<h2 id="funplugCircuit">FunPlug circuit</h2>
+<h2 id="funplugCircuit">Circuit</h2>
 
-<img src="images/funplug_circuit.png" alt="FunPlug circuit" id="figure1" />
+<img src="images/loopback_circuit.png" alt="circuit" id="figure1" />
 <p class="img-caption">
-  <strong>Figure 1.</strong> FunPlug circuit diagram
+  <strong>Figure 1.</strong> circuit diagram
 </p>
 
 <p>
 To ensure that the output signal will not overload the microphone input,
 we cut it down by about 20dB.
 The resistor loads tell the microphone polarity switch that
-the FunPlug is a US/CTIA pinout Tip Ring Ring Shield (TRRS) plug.
+the audio loopback dongle is a US/CTIA pinout Tip Ring Ring Shield (TRRS) plug.
 </p>
 
-<h2 id="funplugAssembled">FunPlug assembled</h2>
+<h2 id="funplugAssembled">Assembled</h2>
 
-<img src="images/funplug_assembled.jpg" alt="FunPlug fully assembled" id="figure2" />
+<img src="images/loopback_assembled.jpg" alt="fully assembled" id="figure2" />
 <p class="img-caption">
-  <strong>Figure 2.</strong> Assembled FunPlug
+  <strong>Figure 2.</strong> Assembled
 </p>
