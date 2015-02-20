@@ -101,8 +101,8 @@ If your production device does not have an LED, you can install the
   (Larsen effect) test. This provides a crude measure of combined output
   and input latency by timing an impulse response loop. This test is not very useful
   for detailed analysis
-  by itself because of the nature of the test, but it can be useful for calibrating 
-  other tests, and for establishing an upper bound.</p>
+  by itself because of the nature of the test, but it can be useful for
+  calibrating other tests, and for establishing an upper bound.</p>
 
 <p>To conduct this test:</p>
 <ol>
@@ -129,10 +129,10 @@ You will also need the <a href="avoiding_pi.html#nonBlockingAlgorithms">non-bloc
 located in the <code>audio_utils</code> library.
 </p>
 
-<h3 id="funplug">Audio Loopback Dongle</h3>
+<h3 id="loopback">Audio Loopback Dongle</h3>
 
 <p>
-  The <a href="funplug.html">Dr. Rick O'Rang audio loopback dongle</a> is handy for
+  The <a href="loopback.html">Dr. Rick O'Rang audio loopback dongle</a> is handy for
   measuring round-trip latency over the headset connector.
   The image below demonstrates the result of injecting an impulse
   into the loop once, and then allowing the feedback loop to oscillate.

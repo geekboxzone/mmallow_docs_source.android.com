@@ -84,7 +84,7 @@ Compare to "upmixing."
 
 <dt>DSD</dt>
 <dd>
-A proprietary audio encoding based on
+Direct Stream Digital, a proprietary audio encoding based on
 <a href="http://en.wikipedia.org/wiki/Pulse-density_modulation">pulse-density modulation</a>.
 Whereas PCM encodes a waveform as a sequence of individual audio samples of multiple bits,
 DSD encodes a waveform as a sequence of bits at a very high sample rate.
@@ -94,7 +94,7 @@ DSD is better suited to content distribution than as an internal representation 
 as it can be difficult to apply traditional DSP algorithms to DSD.
 DSD is used in
 <a href="http://en.wikipedia.org/wiki/Super_Audio_CD">Super Audio CD</a>
-(SACD), and in DSD over PCM (DoP) for USB.
+(SACD) and in DSD over PCM (DoP) for USB.
 See the Wikipedia article
 <a href="http://en.wikipedia.org/wiki/Direct_Stream_Digital">Digital Stream Digital<a/>
 for more information.
@@ -137,7 +137,7 @@ Compare to "attenuation."
 
 <dt>HD audio</dt>
 <dd>
-High Definition audio, a synonym for "high-resolution audio."
+High-Definition audio, a synonym for "high-resolution audio."
 Not to be confused with Intel High Definition Audio.
 </dd>
 
@@ -181,7 +181,7 @@ are the subject of "high-resolution audio."
 A <a href="http://en.wikipedia.org/wiki/Lossy_compression">lossy data compression</a>
 algorithm attempts to preserve the most important features of media across
 encoding and decoding.  The result of decoding any previously encoded
-data is perceptually similar to the original data, but is not identical.
+data is perceptually similar to the original data, but it is not identical.
 Examples of lossy audio compression algorithms include MP3 and AAC.
 As analog values are from a continuous domain, whereas digital values are discrete,
 ADC and DAC are lossy conversions with respect to amplitude.  See also "transparency."
@@ -286,7 +286,7 @@ sound position beyond stereo left and right.
 <dt>transparency</dt>
 <dd>
 The ideal result of lossy data compression, as stated in the
-<a href="http://en.wikipedia.org/wiki/Transparency_%28data_compression%29">Transparency Wikipedia article</a>.
+<a href="http://en.wikipedia.org/wiki/Transparency_%28data_compression%29">Transparency</a> Wikipedia article.
 A lossy data conversion is said to be transparent if it is perceptually indistinguishable from the
 original by a human subject.
 </dd>
@@ -587,7 +587,7 @@ tinyalsa.
 
 <dt>audio device</dt>
 <dd>
-Any audio I/O end-point which is backed by a HAL implementation.
+Any audio I/O end-point that is backed by a HAL implementation.
 </dd>
 
 <dt>AudioEffect</dt>
