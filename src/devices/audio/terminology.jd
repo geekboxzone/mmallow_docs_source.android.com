@@ -54,6 +54,15 @@ applied to an audio signal to decrease the signal level.
 Compare to "gain."
 </dd>
 
+<dt>audiophile</dt>
+<dd>
+An <a href="http://en.wikipedia.org/wiki/Audiophile">audiophile</a>
+is an individual who is concerned with a superior music
+reproduction experience, especially someone willing to make tradeoffs
+(of expense, component size, room design, etc.) beyond what an ordinary
+person might choose.
+</dd>
+
 <dt>bits per sample or bit depth</dt>
 <dd>
 Number of bits of information per sample.
@@ -71,6 +80,24 @@ To decrease the number of channels, e.g. from stereo to mono, or from 5.1 to ste
 This can be accomplished by dropping some channels, mixing channels, or more advanced signal processing.
 Simple mixing without attenuation or limiting has the potential for overflow and clipping.
 Compare to "upmixing."
+</dd>
+
+<dt>DSD</dt>
+<dd>
+A proprietary audio encoding based on
+<a href="http://en.wikipedia.org/wiki/Pulse-density_modulation">pulse-density modulation</a>.
+Whereas PCM encodes a waveform as a sequence of individual audio samples of multiple bits,
+DSD encodes a waveform as a sequence of bits at a very high sample rate.
+For DSD, there is no concept of "samples" in the conventional PCM sense.
+Both PCM and DSD represent multiple channels by independent sequences.
+DSD is better suited to content distribution than as an internal representation for processing,
+as it can be difficult to apply traditional DSP algorithms to DSD.
+DSD is used in
+<a href="http://en.wikipedia.org/wiki/Super_Audio_CD">Super Audio CD</a>
+(SACD), and in DSD over PCM (DoP) for USB.
+See the Wikipedia article
+<a href="http://en.wikipedia.org/wiki/Direct_Stream_Digital">Digital Stream Digital<a/>
+for more information.
 </dd>
 
 <dt>duck</dt>
@@ -99,14 +126,45 @@ applied to an audio signal to increase the signal level.
 Compare to "attenuation."
 </dd>
 
+<dt>HD audio</dt>
+<dd>
+High Definition audio, a synonym for "high-resolution audio".
+Not to be confused with Intel High Definition Audio.
+</dd>
+
 <dt>Hz</dt>
 <dd>
 The units for sample rate or frame rate.
 </dd>
 
+<dt>high-resolution audio</dt>
+<dd>
+There is no standard definition, but high-resolution usually means any representation
+with greater bit-depth and sample rate than CDs (which are stereo 16-bit PCM at 44.1 kHz),
+and with no lossy data compression applied.
+Equivalent to "HD audio".  See the Wikipedia article
+<a href="http://en.wikipedia.org/wiki/High-resolution_audio">high-resolution audio</a>
+for more information.
+</dd>
+
 <dt>latency</dt>
 <dd>
 Time delay as a signal passes through a system.
+</dd>
+
+<dt>lossless</dt>
+<dd>
+A <a href="http://en.wikipedia.org/wiki/Lossless_compression">lossless data compression</a>
+algorithm preserves bit accuracy across encoding and decoding.
+The result of decoding any previously encoded data is equivalent to the original data.
+Examples of lossless audio content distribution formats include
+<a href="http://en.wikipedia.org/wiki/Compact_disc">CDs</a>, PCM within
+<a href="http://en.wikipedia.org/wiki/WAV">WAV</a>, and
+<a href="http://en.wikipedia.org/wiki/FLAC">FLAC</a>.
+Note that the authoring process may reduce the bit depth or sample rate from that of the
+<a href="http://en.wikipedia.org/wiki/Audio_mastering">masters</a>.
+Distribution formats that preserve the resolution and bit accuracy of masters
+are the subject of "high-resolution audio".
 </dd>
 
 <dt>mono</dt>
