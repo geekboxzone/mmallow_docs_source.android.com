@@ -91,7 +91,8 @@ If your production device does not have an LED, you can install the
 <h2 id="measuringRoundTrip">Measuring Round-Trip Latency</h2>
 
 <p>
-  Round-trip latency is the sum of output latency and input latency.
+  <a href="http://en.wikipedia.org/wiki/Round-trip_delay_time">Round-trip latency</a>
+  is the sum of output latency and input latency.
 </p>
 
 <h3 id="larsenTest">Larsen test</h3>
