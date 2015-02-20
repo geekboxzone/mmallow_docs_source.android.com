@@ -41,40 +41,46 @@ header.hide=1
   <div class="landing-docs">
     <div class="col-8">
     <h3>What's New</h3>
-<a href="{@docRoot}devices/tech/dalvik/configure.html">
-        <h4>Guidelines offered for configuring ART</h4></a>
-        <p>Android engineering offers detailed guidelines for <strong><a
-        href="{@docRoot}devices/tech/dalvik/configure.html">configuring the Android runtime
-        (ART)</a></strong> with build and compilation options including compilation filters.</p>
-
-<a href="{@docRoot}devices/audio/avoiding_pi.html">
-        <h4>Audio introduces example FIFO implementation and latency test app</h4></a>
-        <p>The Audio team has added an <strong><a
-        href="{@docRoot}devices/audio/avoiding_pi.html#nonBlockingAlgorithms">example
-        non-blocking FIFO implementation</a></strong>
-        specifically designed for application code and an <strong><a
-        href="{@docRoot}devices/audio/latency_measure.html#larsenTest">
-        example implementation of the Larsen test</a></strong> called
-        <em>slesTestFeedback.cpp</em>.</p>
-
-<a href="{@docRoot}source/build-numbers.html">
-        <h4>Nexus 7 and Nexus 10 build tag updated</h4></a>
-        <p>The <strong><a
-        href="{@docRoot}source/build-numbers.html#source-code-tags-and-builds">LRX22G
-        build tag</a></strong> now applies to Nexus 10 and the flo variant of Nexus 7.</p>
+<a href="{@docRoot}devices/tech/security/selinux/index.html">
+        <h4>SELinux instructions revised</h4></a>
+        <p>The entire set of <strong><a
+        href="{@docRoot}devices/tech/security/selinux/index.html">Security-Enhanced
+        Linux</a></strong> instructions have been revised thanks to open source
+        contributions.</p>
 
 <a href="{@docRoot}compatibility/index.html">
-        <h4>Android 5.0 CDD released</h4></a>
-        <p>The <strong><a
-        href="{@docRoot}compatibility/android-cdd.pdf">5.0 version of the Android
-        Compatibility Definition Document (CDD)</a></strong> has been published.</p>
+        <h4>Compatibility manual and CTS updated, CDD source made available</h4></a>
+        <p> New versions of the <strong><a
+        href="{@docRoot}compatibility/downloads.html">Compatibility Test Suite
+        (5.0_r2)</a></strong> and the <strong><a
+        href="{@docRoot}compatibility/android-cts-manual.pdf">CTS Manual</a></strong>
+        have been uploaded to the site. HTML versions of the <strong><a
+        href="https://android.googlesource.com/platform/docs/source.android.com/+/master/src/compatibility/">5.0
+        and 4.4 Compatibility Definition Documents (CDD)</a></strong> have been
+        uploaded to AOSP for easy diffing.</p>
 
-<a href="{@docRoot}source/building-kernels.html">
-        <h4>Nexus 5 kernel instructions fixed</h4></a>
+<a href="{@docRoot}devices/audio/terminology.html">
+        <h4>Audio terminology enhanced</h4></a>
+        <p><strong><a
+        href="{@docRoot}devices/audio/terminology.html">Audio Terminology</a></strong>
+        has been updated to include definitions for <em>FIFO</em>,
+        <em>lossy</em>, <em>transparency</em>, and more.</p>
+
+<a href="{@docRoot}source/using-repo.html">
+        <h4>Using Repo and Mac OS initializing instructions fixed</h4></a>
+        <p>The <code>POSIXLY_CORRECT</code> entry and Java 7 link within the <strong><a
+        href="{@docRoot}source/initializing.html#setting-up-a-mac-os-x-build-environment">Mac
+        OS initializing instructions</a></strong> have been updated. And the
+        <strong><a href="{@docRoot}source/using-repo.html">Repo
+        command reference</a></strong> has been revised to remove the
+        <code>replace</code> option and point to <code>help</code> for the latest
+        instructions.</p>
+
+<a href="{@docRoot}source/build-numbers.html">
+        <h4>Nexus 7 build tag updated</h4></a>
         <p>The <strong><a
-        href="{@docRoot}source/building-kernels.html#id-version">Identifying
-        kernel version</a></strong> instructions for Nexus 5 (hammerhead) have
-        been updated to repair an error.</p>
+        href="{@docRoot}source/build-numbers.html#source-code-tags-and-builds">LRX22G
+        build tag</a></strong> now applies to the deb and tilapia variants of Nexus 7.</p>
     </div>
 
     <div class="col-8">
