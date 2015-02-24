@@ -199,11 +199,12 @@ This is only for initial development of policy for the device.  Once you have
 an initial bootstrap policy, remove this parameter so that your device is
 enforcing or it will fail CTS.
   <li>Boot up the system in permissive and see what denials are encountered on boot:<br/>
+On Ubuntu 14.04 or newer:
+<br/>
+<code>adb shell su -c dmesg | grep denied | audit2allow -p out/target/product/<em>board</em>/root/sepolicy</code>
+<br/>
 On Ubuntu 12.04:
 <code>adb shell su -c dmesg | grep denied | audit2allow</code>
-<br/>
-On Ubuntu 14.04 or newer:
-<code>adb shell su -c dmesg | grep denied | audit2allow -p out/target/product/<em>board</em>/root/sepolicy</code>
   <li>Evaluate the output. See <a href="validate.html">Validation</a> for instructions and tools.
   <li>Identify devices, and other new files that need labeling.
   <li>Use existing or new labels for your objects.
