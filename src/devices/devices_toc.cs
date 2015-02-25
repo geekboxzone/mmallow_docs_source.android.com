@@ -205,6 +205,7 @@
           <li><a href="<?cs var:toroot ?>devices/tech/dalvik/dalvik-bytecode.html">Bytecode Format</a></li>
           <li><a href="<?cs var:toroot ?>devices/tech/dalvik/dex-format.html">.Dex Format</a></li>
           <li><a href="<?cs var:toroot ?>devices/tech/dalvik/instruction-formats.html">Instruction Formats</a></li>
+          <li><a href="<?cs var:toroot ?>devices/tech/dalvik/constraints.html">Constraints</a></li>
           <li><a href="<?cs var:toroot ?>devices/tech/dalvik/configure.html">Configuration</a></li>
         </ul>
       </li>
