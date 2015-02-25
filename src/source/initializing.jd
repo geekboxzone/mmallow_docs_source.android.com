@@ -41,7 +41,7 @@ set up your build environment.</p>
 <h2 id="setting-up-a-linux-build-environment">Setting up a Linux build environment</h2>
 <p>These instructions apply to all branches, including master.</p>
 <p>The Android build is routinely tested in house on recent versions of
-Ubuntu LTS (12.04), but most distributions should have the required
+Ubuntu LTS (14.04), but most distributions should have the required
 build tools available. Reports of successes or failures on other
 distributions are welcome.</p>
 <p>For Gingerbread (2.3.x) and newer versions, including the master
@@ -77,9 +77,12 @@ Java 5: for Cupcake through Froyo</p>
 <p><strong>Note</strong>: The <code>lunch</code> command in the build step will ensure that the Sun JDK is
 used instead of any previously installed JDK.</p>
 
+<h3 id="installing-required-packages-ubuntu-1404">Installing required packages (Ubuntu 14.04)</h3>
+<p>You will need a 64-bit version of Ubuntu. Ubuntu 14.04 is recommended.</p>
+<pre><code>$ sudo apt-get install bison g++-multilib git gperf libxml2-utils</code></pre>
+
 <h3 id="installing-required-packages-ubuntu-1204">Installing required packages (Ubuntu 12.04)</h3>
-<p>You will need a 64-bit version of Ubuntu.  Ubuntu 12.04 is recommended.
-Building using an older version of Ubuntu is not supported on master or recent releases.</p>
+<p>You may use Ubuntu 12.04 to build older versions of Android. Version 12.04 is not supported on master or recent releases.</p>
 <pre><code>$ sudo apt-get install git gnupg flex bison gperf build-essential \
   zip curl libc6-dev libncurses5-dev:i386 x11proto-core-dev \
   libx11-dev:i386 libreadline6-dev:i386 libgl1-mesa-glx:i386 \
@@ -87,11 +90,6 @@ Building using an older version of Ubuntu is not supported on master or recent r
   python-markdown libxml2-utils xsltproc zlib1g-dev:i386
 $ sudo ln -s /usr/lib/i386-linux-gnu/mesa/libGL.so.1 /usr/lib/i386-linux-gnu/libGL.so
 </code></pre>
-
-<h3 id="installing-required-packages-ubuntu-1404">Installing required packages (Ubuntu 14.04)</h3>
-<p>Building on Ubuntu 14.04 is experimental at the moment but will eventually become the recommended
-environment.</p>
-<pre><code>$ sudo apt-get install bison g++-multilib git gperf libxml2-utils</code></pre>
 
 <h3 id="installing-required-packages-ubuntu-1004-1110">Installing required packages (Ubuntu 10.04 -- 11.10)</h3>
 <p>Building on Ubuntu 10.04-11.10 is no longer supported, but may be useful for building older
