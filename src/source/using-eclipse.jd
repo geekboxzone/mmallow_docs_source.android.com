@@ -73,7 +73,7 @@ chmod u+w .classpath
 <p>Pick a project name, "android" or anything you like.</p>
 </li>
 <li>
-<p>Select "Create project from existing source", enter the path to your Android root directory, and click Finish.</p>
+<p>Uncheck use default location, enter the path to your Android root directory, and click Finish.</p>
 </li>
 <li>
 <p>Wait while it sets up the project. (You'll see a subtle progress meter in the lower right corner.)</p>
