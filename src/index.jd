@@ -41,6 +41,31 @@ header.hide=1
   <div class="landing-docs">
     <div class="col-8">
     <h3>What's New</h3>
+<a href="{@docRoot}source/64-bit-builds.html">
+        <h4>64-bit build instructions added</h4></a>
+        <p>Detailed instructions for building Android on a <strong><a
+        href="{@docRoot}source/64-bit-builds.html">64-bit
+        architecture</a></strong> have been added to the <em>Source</em> section of the
+        site. These instructions cover product configuration, module definition, the
+        install path, and more.</p>
+
+<a href="{@docRoot}devices/graphics/DeqpUserGuide.pdf">
+        <h4>OpenGL ES graphics diagnostics documented</h4></a>
+        <p>The site now contains a <strong><a
+        href="{@docRoot}devices/graphics/DeqpUserGuide.pdf">user guide for the
+        GPU testing suite drawElements Quality Program (deqp)</a></strong>. The
+        guide offers an overview of the suite and instructions for porting and building
+        the test modules.</p>
+
+<a href="{@docRoot}source/building.html">
+        <h4>Ubuntu version and Eclipse instructions updated</h4></a>
+        <p>The recommended version of <strong><a
+        href="{@docRoot}source/initializing.html#installing-required-packages-ubuntu-1404">Ubuntu
+        LTS</a></strong> has been increased from 12.04 to 14.04. Similarly, the
+        <strong><a href="{@docRoot}source/using-eclipse.html#create-project">Creating a
+        project section of Using Eclipse</a></strong> has been revised to replace an
+        outdated step.</p>
+
 <a href="{@docRoot}devices/tech/security/selinux/index.html">
         <h4>SELinux instructions revised</h4></a>
         <p>The entire set of <strong><a
@@ -55,9 +80,9 @@ header.hide=1
         (5.0_r2)</a></strong> and the <strong><a
         href="{@docRoot}compatibility/android-cts-manual.pdf">CTS Manual</a></strong>
         have been uploaded to the site. HTML versions of the <strong><a
-        href="https://android.googlesource.com/platform/docs/source.android.com/+/master/src/compatibility/">5.0
-        and 4.4 Compatibility Definition Documents (CDD)</a></strong> have been
-        uploaded to AOSP for easy diffing.</p>
+        href="https://android.googlesource.com/platform/docs/source.android.com/+/master/src/compatibility/">Compatibility
+        Definition Documents (CDD)</a></strong> have been uploaded to AOSP for easy
+        diffing.</p>
 
 <a href="{@docRoot}devices/audio/terminology.html">
         <h4>Audio terminology enhanced</h4></a>
@@ -65,22 +90,6 @@ header.hide=1
         href="{@docRoot}devices/audio/terminology.html">Audio Terminology</a></strong>
         has been updated to include definitions for <em>FIFO</em>,
         <em>lossy</em>, <em>transparency</em>, and more.</p>
-
-<a href="{@docRoot}source/using-repo.html">
-        <h4>Using Repo and Mac OS initializing instructions fixed</h4></a>
-        <p>The <code>POSIXLY_CORRECT</code> entry and Java 7 link within the <strong><a
-        href="{@docRoot}source/initializing.html#setting-up-a-mac-os-x-build-environment">Mac
-        OS initializing instructions</a></strong> have been updated. And the
-        <strong><a href="{@docRoot}source/using-repo.html">Repo
-        command reference</a></strong> has been revised to remove the
-        <code>replace</code> option and point to <code>help</code> for the latest
-        instructions.</p>
-
-<a href="{@docRoot}source/build-numbers.html">
-        <h4>Nexus 7 build tag updated</h4></a>
-        <p>The <strong><a
-        href="{@docRoot}source/build-numbers.html#source-code-tags-and-builds">LRX22G
-        build tag</a></strong> now applies to the deb and tilapia variants of Nexus 7.</p>
     </div>
 
     <div class="col-8">
@@ -91,7 +100,7 @@ header.hide=1
         also <strong><a
         href="https://android-review.googlesource.com/#/q/status:open">contribute
         to</a></strong> the <strong><a
-        href="https://android.googlesource.com/">Android Open Source Project
+        href="https://android.googlesource.com/">Android Open Source Project (AOSP)
         repository</a></strong> to make your changes available to everyone else
         in the Android ecosystem.</p>
 <a href="{@docRoot}source/index.html"><img border="0" src="images/android_framework_small.png" alt="Android framework summary" style="display:inline;float:left;margin:5px 10px"></a>
@@ -109,6 +118,13 @@ header.hide=1
         <p>Being Android-compatible lets you offer custom features but still give users and developers a consistent
           and standard experience across all Android-powered devices. Android provides guidance
           and a test suite to verify your Android compatibility.</p>
+
+      <a href="https://android.googlesource.com/platform/docs/source.android.com/">
+        <h4>Help this Site</h4></a>
+        <p>Please note, source.android.com is maintained in the Android Open Source Project. See the <strong><a
+        href="https://android.googlesource.com/platform/docs/source.android.com/+log/master">docs/source.android.com
+        project log in AOSP</a></strong> for the complete list of changes to this site.
+        Contribute your own updates to that same project and help maintain source.android.com.</p>
     </div>
 
   </div>
