@@ -41,6 +41,12 @@ header.hide=1
   <div class="landing-docs">
     <div class="col-8">
     <h3>What's New</h3>
+<a href="{@docRoot}devices/tech/dalvik/constraints.html">
+        <h4>Dalvik constraints published</h4></a>
+        <p>The Android Runtime (ART) team has released a list of syntactical and semantical <strong><a
+        href="{@docRoot}devices/tech/dalvik/constraints.html">constraints</a></strong>
+        to help construct valid <code>.dex</code> files supported by the runtime.</p>
+
 <a href="{@docRoot}source/64-bit-builds.html">
         <h4>64-bit build instructions added</h4></a>
         <p>Detailed instructions for building Android on a <strong><a
@@ -83,13 +89,6 @@ header.hide=1
         href="https://android.googlesource.com/platform/docs/source.android.com/+/master/src/compatibility/">Compatibility
         Definition Documents (CDD)</a></strong> have been uploaded to AOSP for easy
         diffing.</p>
-
-<a href="{@docRoot}devices/audio/terminology.html">
-        <h4>Audio terminology enhanced</h4></a>
-        <p><strong><a
-        href="{@docRoot}devices/audio/terminology.html">Audio Terminology</a></strong>
-        has been updated to include definitions for <em>FIFO</em>,
-        <em>lossy</em>, <em>transparency</em>, and more.</p>
     </div>
 
     <div class="col-8">
