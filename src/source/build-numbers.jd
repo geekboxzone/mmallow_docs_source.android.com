@@ -42,8 +42,8 @@ API levels and NDK releases provided for convenience:</p>
 <tbody>
 <tr>
 <td>Lollipop</td>
-<td>5.0</td>
-<td>API level 21</td>
+<td>5.0 - 5.1</td>
+<td>API level 21, 22</td>
 </tr>
 <tr>
 <td>KitKat</td>
@@ -171,6 +171,12 @@ following table. Factory images and binaries for Nexus devices can be downloaded
 <th>Branch</th>
 <th>Version</th>
 <th>Supported devices</th>
+</tr>
+<tr>
+  <td>LMY47D</td>
+  <td>android-5.1.0_r1</td>
+  <td>Lollipop</td>
+  <td>Nexus 5, Nexus 7 (grouper), Nexus 10</td>
 </tr>
 <tr>
   <td>LRX22G</td>
