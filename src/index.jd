@@ -41,6 +41,14 @@ header.hide=1
   <div class="landing-docs">
     <div class="col-8">
     <h3>What's New</h3>
+<a href="{@docRoot}source/build-numbers.html">
+        <h4>Lollipop API level, build tag updated</h4></a>
+        <p>The latest <strong><a
+        href="{@docRoot}source/build-numbers.html#platform-code-names-versions-api-levels-and-ndk-releases">Lollipop
+        API level</a></strong> and <strong><a
+        href="{@docRoot}source/build-numbers.html#source-code-tags-and-builds">build
+        tag</a></strong> have been updated to 22 and LMY47D, respectively.</p>
+
 <a href="{@docRoot}compatibility/contact-us.html">
         <h4>Google Mobile Services inquiry form added</h4></a>
         <p>Prospective Google Mobile Services (GMS) partners now have an online <strong><a
@@ -77,13 +85,6 @@ header.hide=1
         <strong><a href="{@docRoot}source/using-eclipse.html#create-project">Creating a
         project section of Using Eclipse</a></strong> has been revised to replace an
         outdated step.</p>
-
-<a href="{@docRoot}devices/tech/security/selinux/index.html">
-        <h4>SELinux instructions revised</h4></a>
-        <p>The entire set of <strong><a
-        href="{@docRoot}devices/tech/security/selinux/index.html">Security-Enhanced
-        Linux</a></strong> instructions have been revised thanks to open source
-        contributions.</p>
     </div>
 
     <div class="col-8">
