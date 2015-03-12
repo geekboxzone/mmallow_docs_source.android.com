@@ -317,8 +317,8 @@
               </a>
             </div>
             <ul>
-              <li><a href="<?cs var:toroot ?>devices/tech/security/secureboot/verified-boot.html">Verified boot</a></li>
-              <li><a href="<?cs var:toroot ?>devices/tech/security/secureboot/block-ota.html">Block-based OTA</a></li>
+              <li><a href="<?cs var:toroot ?>devices/tech/security/secureboot/verified-boot.html">Verifying boot</a></li>
+              <li><a href="<?cs var:toroot ?>devices/tech/security/secureboot/dm-verity.html">Implementing dm-verity</a></li>
             </ul>
           </li>
           <li class="nav-section">
