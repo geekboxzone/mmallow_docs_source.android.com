@@ -2,7 +2,7 @@ page.title=Submitting Patches
 @jd:body
 
 <!--
-    Copyright 2013 The Android Open Source Project
+    Copyright 2015 The Android Open Source Project
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -115,7 +115,7 @@ $ git commit --amend
 </code></pre>
 <p>This command first fetches the updates from the source server, then attempts to automatically rebase your HEAD onto the new remote HEAD.</p>
 <p>If the automatic rebase is unsuccessful, you will have to perform a manual rebase.</p>
-<pre><code>$ git rebase master
+<pre><code>$ repo rebase
 </code></pre>
 <p>Using <code>git mergetool</code> may help you deal with the rebase conflict. Once you have successfully merged the conflicting files,</p>
 <pre><code>$ git rebase --continue
