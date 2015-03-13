@@ -2,7 +2,7 @@ page.title=Audio
 @jd:body
 
 <!--
-    Copyright 2014 The Android Open Source Project
+    Copyright 2015 The Android Open Source Project
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -16,17 +16,26 @@ page.title=Audio
     See the License for the specific language governing permissions and
     limitations under the License.
 -->
+
+<div id="qv-wrapper">
+  <div id="qv">
+    <h2>In this document</h2>
+    <ol id="auto-toc">
+    </ol>
+  </div>
+</div>
+
+<img style="float: right; margin: 0px 15px 15px 0px;" src="images/ape_fwk_hal_audio.png" alt="Android Audio HAL icon" width="175" />
 <p>
   Android's audio Hardware Abstraction Layer (HAL) connects the higher-level, audio-specific
-  framework APIs in <a href="http://developer.android.com/reference/android/media/package-summary.html">android.media</a>
-  to the underlying audio driver and hardware. 
+  framework APIs in <a href="http://developer.android.com/reference/android/media/package-summary.html">android.media</a> to the underlying audio driver and hardware. This section includes implementation instructions and tips for improving performance.</p>
 </p>
-
+<h2 id="Architecture">Audio Architecture</h2>
 <p>
   The following figure and list describe how audio functionality is implemented and the relevant
   source code that is involved in the implementation:
 </p>
-  <img src="images/audio_hal.png" alt="Audio architecture" id="figure1" />
+  <img src="images/ape_fwk_audio.png" alt="Audio architecture" id="figure1" />
 <p class="img-caption">
   <strong>Figure 1.</strong> Android audio architecture
 </p>
@@ -100,9 +109,4 @@ This API is exposed as part of
 <a href="https://developer.android.com/tools/sdk/ndk/index.html">Android NDK</a>,
 and is at the same architecture level as
 <a href="http://developer.android.com/reference/android/media/package-summary.html">android.media</a>.
-</p>
-
-<p>
-   See the rest of the pages within the Audio section for implementation
-   instructions and ways to improve performance.
 </p>

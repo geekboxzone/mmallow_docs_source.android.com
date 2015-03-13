@@ -2,7 +2,7 @@ page.title=External Storage
 @jd:body
 
 <!--
-    Copyright 2014 The Android Open Source Project
+    Copyright 2015 The Android Open Source Project
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@ page.title=External Storage
     limitations under the License.
 -->
 
+<img style="float: right; margin: 0px 15px 15px 0px;" src="images/ape_fwk_hal_extstor.png" alt="Android external storage HAL icon" width="175" />
 
 <p>Android supports devices with external storage, which is defined to be a
 case-insensitive filesystem with immutable POSIX permission classes and

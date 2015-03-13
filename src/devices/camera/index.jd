@@ -2,7 +2,7 @@ page.title=Camera
 @jd:body
 
 <!--
-    Copyright 2014 The Android Open Source Project
+    Copyright 2015 The Android Open Source Project
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -24,12 +24,16 @@ page.title=Camera
   </div>
 </div>
 
+<img style="float: right; margin: 0px 15px 15px 0px;" src="images/ape_fwk_hal_camera.png" alt="Android Camera HAL icon" width="175" />
+
 <p>Android's camera HAL connects the higher level
-camera framework APIs in <a href="http://developer.android.com/reference/android/hardware/package-summary.html">android.hardware</a> to your underlying camera driver and hardware.
-The following figure and list describe the components involved and where to find the source for each:
+camera framework APIs in <a href="http://developer.android.com/reference/android/hardware/package-summary.html">android.hardware</a> to your underlying camera driver and hardware.</p>
+
+<h2 id="architecture">Architecture</h2>
+<p>The following figure and list describe the components involved and where to find the source for each:
 </p>
 
-<img src="images/camera_hal.png" alt="Android camera architecture" id="figure1" />
+<img src="images/ape_fwk_camera.png" alt="Android camera architecture" id="figure1" />
 <p class="img-caption">
   <strong>Figure 1.</strong> Camera architecture
 </p>
