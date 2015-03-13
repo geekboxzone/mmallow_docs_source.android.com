@@ -2,7 +2,7 @@ page.title=Input Technical Information
 @jd:body
 
 <!--
-    Copyright 2013 The Android Open Source Project
+    Copyright 2015 The Android Open Source Project
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -16,7 +16,9 @@ page.title=Input Technical Information
     See the License for the specific language governing permissions and
     limitations under the License.
 -->
+
+<img style="float: right; margin: 0px 15px 15px 0px;" src="images/ape_fwk_hal_input.png" alt="Android Input HAL icon" width="175" />
+
 <p>The Android input subsystem supports many different device classes,
-including keyboard, joystick, trackball, mouse and touch screen.</p>
-<p>The documentation in this section describes how to configure,
+including keyboard, joystick, trackball, mouse, and touch screen. The documentation in this section describes how to configure,
 calibrate, test, and write drivers for input devices.</p>
