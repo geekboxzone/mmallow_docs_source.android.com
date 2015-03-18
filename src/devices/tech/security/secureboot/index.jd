@@ -67,7 +67,7 @@ burned into the device. For details, see <a href="verified-boot.html">Verified b
 <h3 id="block-otas">Switching to block-oriented OTAs</h3>
 <p>To enable dm-verity for a device, you must use block-based over-the-air
 (OTA) updates to ensure all devices use the same system partition. For details,
-see <a href="../ota/block.html">Block-Based OTAs</a>.</p>
+see <a href="{@docRoot}devices/tech/ota/block.html">Block-Based OTAs</a>.</p>
 
 <h3 id="config-dm-verity">Configuring dm-verity</h3>
 
@@ -80,7 +80,7 @@ relevant configuration option:<br/>
 
 <h2 id="supporting-docs">Supporting documentation</h2>
 <p><a href="verified-boot.html">Verifying Boot</a><br/>
-<a href="../ota/block.html">Block-Based OTA</a><br/>
+<a href="{@docRoot}devices/tech/ota/block.html">Block-Based OTA</a><br/>
 <a href="dm-verity.html">Implementing dm-verity</a><br/>
 <a href="https://code.google.com/p/cryptsetup/wiki/DMVerity">cryptsetup - dm-verity: device-mapper block integrity checking 
 target</a><br/>
