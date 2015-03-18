@@ -251,8 +251,6 @@ themselves from flashing new system images.
 </ol>
 
 <p>Requirements for <code>fastboot</code> commands that alter device state are listed in the table below:</p>
-<p class="table-caption" id="table1">
-  <strong>Table 1.</strong> Requirements for <code>fastboot</code> commands that alter device state.</p>
 <table>
  <tr>
     <td>
@@ -264,8 +262,8 @@ themselves from flashing new system images.
  </tr>
  <tr>
     <td>
-<pre>
-flashing lock</pre></td>
+<code>
+flashing lock</code></td>
     <td>
 <ul>
   <li>Wipe data after asking the user for confirmation     
@@ -276,8 +274,8 @@ flashing lock</pre></td>
  </tr>
  <tr>
     <td>
-<pre>
-flashing unlock</pre></td>
+<code>
+flashing unlock</code></td>
     <td>
 <ul>
   <li>Wipe data after asking the user for confirmation     
@@ -288,8 +286,8 @@ flashing unlock</pre></td>
  </tr>
  <tr>
     <td>
-<pre>
-flashing verified</pre></td>
+<code>
+flashing verified</code></td>
     <td>
 <ul>
   <li>Wipe data after asking the user for confirmation     
@@ -302,8 +300,6 @@ flashing verified</pre></td>
 
 <p>When altering partition contents, the bootloader must check the bits set by
 the above commands as described in the following table:</p>
-<p class="table-caption" id="table2">
-  <strong>Table 2.</strong> Bootloader verification.</p>
 <table>
  <tr>
     <td>
@@ -315,8 +311,8 @@ the above commands as described in the following table:</p>
  </tr>
  <tr>
     <td>
-<pre>
-flash &lt;partition&gt;</pre></td>
+<code>
+flash &lt;partition&gt;</code></td>
     <td>
 <ul>
   <li>If the bit set by <code>flashing unlock</code> is set, flash the partition as normal    
@@ -349,8 +345,6 @@ signature.</p>
 
 <p>Requirements for <code>fastboot</code> commands used to manage the user-provided keystore are listed in the table
 below:</p>
-<p class="table-caption" id="table3">
-  <strong>Table 3.</strong> Commands to manage the user-provided keystore.</p>
 <table>
  <tr>
     <td>
@@ -362,8 +356,8 @@ below:</p>
  </tr>
  <tr>
     <td>
-<pre>
-flash keystore &lt;filename&gt;</pre></td>
+<code>
+flash keystore &lt;filename&gt;</code></td>
     <td>
 <ul>
   <li>Check the bit set by <code>flashing unlock</code>; if not set, exit with an error 
@@ -376,8 +370,8 @@ flash keystore &lt;filename&gt;</pre></td>
  </tr>
  <tr>
     <td>
-<pre>
-erase keystore</pre></td>
+<code>
+erase keystore</code></td>
     <td>
 <ul>
   <li>Check the bit set by <code>flashing unlock</code>; if not set, exit with an error
@@ -592,8 +586,6 @@ warning for at least five seconds. Should the user interact with the device duri
 this time, the warning should remain visible until the user agrees to continue.</p>
 
 <p>Sample user interaction screens for other states are shown in the following table:</p>
-<p class="table-caption" id="table4">
-  <strong>Table 4.</strong> Sample user interaction screens.</p>
 <table>
  <tr>
     <td>
