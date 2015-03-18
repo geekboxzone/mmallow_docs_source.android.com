@@ -25,7 +25,9 @@ page.title=Graphics
   </div>
 </div>
 
-<img style="float: right; margin: 0px 15px 15px 0px;" src="images/ape_fwk_hal_graphics.png" alt="Android Graphics HAL icon" width="175" />
+<img style="float: right; margin: 0px 15px 15px 0px;"
+src="images/ape_fwk_hal_graphics.png" alt="Android Graphics HAL icon"
+width="175" />
 
 <p>The Android framework offers a variety of graphics rendering APIs for 2D and
 3D that interact with manufacturer implementations of graphics drivers, so it
@@ -50,22 +52,23 @@ to OpenGL operations so they can execute on the GPU.</p>
 
 <p>Beginning in Android 4.0, hardware-accelerated Canvas is enabled by default.
 Consequently, a hardware GPU that supports OpenGL ES 2.0 is mandatory for
-Android 4.0 and later devices. See the <a
-href="https://developer.android.com/guide/topics/graphics/hardware-accel.html">Hardware
-Acceleration guide</a> for an explanation of how the hardware-accelerated
-drawing path works and the differences in its behavior from that of the
-software drawing path.</p>
+Android 4.0 and later devices. See the
+<a href="https://developer.android.com/guide/topics/graphics/hardware-accel.html">Hardware Acceleration guide</a> for an explanation of how the
+hardware-accelerated drawing path works and the differences in its behavior
+from that of the software drawing path.</p>
 
 <p>In addition to Canvas, the other main way that developers render graphics is
 by using OpenGL ES to directly render to a surface. Android provides OpenGL ES
-interfaces in the <a
-href="http://developer.android.com/reference/android/opengl/package-summary.html">android.opengl</a>
+interfaces in the
+<a href="http://developer.android.com/reference/android/opengl/package-summary.html">android.opengl</a>
 package that developers can use to call into their GL implementations with the
 SDK or with native APIs provided in the <a
 href="https://developer.android.com/tools/sdk/ndk/index.html">Android
 NDK</a>.</p>
 
-<p>Android implementers can test OpenGL ES functionality using the <a href="DeqpUserGuide.pdf">drawElements Quality Program</a>, also known as deqp.</p>
+<p>Android implementers can test OpenGL ES functionality using the
+<a href="DeqpUserGuide.pdf">drawElements Quality Program</a>, also known as
+deqp.</p>
 
 <h2 id="android_graphics_components">Android graphics components</h2>
 
@@ -124,8 +127,9 @@ the central point for all Android graphics rendering. Hardware Composer must
 support events, one of which is VSYNC. Another is hotplug for plug-and-play
 HDMI support.</p>
 
-<p>See the <a href="{@docRoot}devices/graphics.html#hardware_composer_hal">Hardware Composer
-HAL</a> section for more information.</p>
+<p>See the
+<a href="{@docRoot}devices/graphics.html#hardware_composer_hal">Hardware
+Composer HAL</a> section for more information.</p>
 
 <h3 id="gralloc">Gralloc</h3>
 
@@ -141,7 +145,7 @@ pipeline:</p>
 
 <img src="images/graphics_pipeline.png" alt="graphics data flow">
 
-<p class="img-caption"><strong>Figure 2.</strong> How graphic data flow through
+<p class="img-caption"><strong>Figure 2.</strong> Graphic data flow through
 Android</p>
 
 <p>The objects on the left are renderers producing graphics buffers, such as
@@ -157,7 +161,8 @@ SurfaceFlinger is responsible for compositing everything onto the display.</p>
 
 <p>See the following diagram for the BufferQueue communication process.</p>
 
-<img src="images/bufferqueue.png" alt="BufferQueue communication process">
+<img src="images/graphics_bufferqueue.png"
+alt="BufferQueue communication process">
 
 <p class="img-caption"><strong>Figure 3.</strong> BufferQueue communication
 process</p>
