@@ -95,7 +95,21 @@
         <ul>
           <li><a href="<?cs var:toroot ?>devices/graphics/architecture.html">Architecture</a></li>
           <li><a href="<?cs var:toroot ?>devices/graphics/implement.html">Implementation</a></li>
-          <li><a href="<?cs var:toroot ?>devices/graphics/DeqpUserGuide.pdf">OpenGL ES Testing</a></li>
+         <li class="nav-section">
+            <div class="nav-section-header">
+              <a href="<?cs var:toroot ?>devices/graphics/testing.html">
+                <span class="en">OpenGL ES Testing</span>
+              </a>
+            </div>
+            <ul>
+              <li><a href="<?cs var:toroot ?>devices/graphics/build-tests.html">Building test programs</a></li>
+              <li><a href="<?cs var:toroot ?>devices/graphics/port-tests.html">Porting the test framework</a></li>
+              <li><a href="<?cs var:toroot ?>devices/graphics/run-tests.html">Running the tests</a></li>
+              <li><a href="<?cs var:toroot ?>devices/graphics/automate-tests.html">Automating the tests</a></li>
+              <li><a href="<?cs var:toroot ?>devices/graphics/test-groups.html">Using special test groups</a></li>
+              <li><a href="<?cs var:toroot ?>devices/graphics/cts-integration.html">Integrating with Android CTS</a></li>
+            </ul>
+         </li>
         </ul>
       </li>
       <li class="nav-section">
