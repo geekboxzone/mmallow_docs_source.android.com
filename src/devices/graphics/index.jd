@@ -159,7 +159,7 @@ SurfaceFlinger is responsible for compositing everything onto the display.</p>
 
 <p>See the following diagram for the BufferQueue communication process.</p>
 
-<img src="images/graphics_bufferqueue.png"
+<img src="images/bufferqueue.png"
 alt="BufferQueue communication process">
 
 <p class="img-caption"><strong>Figure 3.</strong> BufferQueue communication
