@@ -66,9 +66,7 @@ SDK or with native APIs provided in the <a
 href="https://developer.android.com/tools/sdk/ndk/index.html">Android
 NDK</a>.</p>
 
-<p>Android implementers can test OpenGL ES functionality using the
-<a href="DeqpUserGuide.pdf">drawElements Quality Program</a>, also known as
-deqp.</p>
+<p>Android implementers can test OpenGL ES functionality using the <a href="testing.html">drawElements Quality Program</a>, also known as deqp.</p>
 
 <h2 id="android_graphics_components">Android graphics components</h2>
 
