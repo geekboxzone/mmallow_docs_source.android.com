@@ -341,13 +341,13 @@
             </li>
           <li class="nav-section">
             <div class="nav-section-header">
-              <a href="<?cs var:toroot ?>devices/tech/security/secureboot/index.html">
-                <span class="en">Secure Boot</span>
+              <a href="<?cs var:toroot ?>devices/tech/security/verifiedboot/index.html">
+                <span class="en">Verified Boot</span>
               </a>
             </div>
             <ul>
-              <li><a href="<?cs var:toroot ?>devices/tech/security/secureboot/verified-boot.html">Verifying boot</a></li>
-              <li><a href="<?cs var:toroot ?>devices/tech/security/secureboot/dm-verity.html">Implementing dm-verity</a></li>
+              <li><a href="<?cs var:toroot ?>devices/tech/security/verifiedboot/verified-boot.html">Verifying boot</a></li>
+              <li><a href="<?cs var:toroot ?>devices/tech/security/verifiedboot/dm-verity.html">Implementing dm-verity</a></li>
             </ul>
           </li>
           <li class="nav-section">
