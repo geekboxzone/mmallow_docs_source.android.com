@@ -79,7 +79,7 @@ used instead of any previously installed JDK.</p>
 
 <h3 id="installing-required-packages-ubuntu-1404">Installing required packages (Ubuntu 14.04)</h3>
 <p>You will need a 64-bit version of Ubuntu. Ubuntu 14.04 is recommended.</p>
-<pre><code>$ sudo apt-get install bison g++-multilib git gperf libxml2-utils</code></pre>
+<pre><code>$ sudo apt-get install bison g++-multilib git gperf libxml2-utils make zlib1g-dev:i386 zip</code></pre>
 
 <h3 id="installing-required-packages-ubuntu-1204">Installing required packages (Ubuntu 12.04)</h3>
 <p>You may use Ubuntu 12.04 to build older versions of Android. Version 12.04 is not supported on master or recent releases.</p>
