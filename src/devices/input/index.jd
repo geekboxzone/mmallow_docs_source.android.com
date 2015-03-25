@@ -17,7 +17,7 @@ page.title=Input Technical Information
     limitations under the License.
 -->
 
-<img style="float: right; margin: 0px 15px 15px 0px;" src="images/ape_fwk_hal_input.png" alt="Android Input HAL icon" width="175" />
+<img style="float: right; margin: 0px 135px 15px 15px;" src="images/ape_fwk_hal_input.png" alt="Android Input HAL icon"/>
 
 <p>The Android input subsystem supports many different device classes,
 including keyboard, joystick, trackball, mouse, and touch screen. The documentation in this section describes how to configure,
