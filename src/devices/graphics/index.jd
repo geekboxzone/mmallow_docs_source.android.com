@@ -25,9 +25,8 @@ page.title=Graphics
   </div>
 </div>
 
-<img style="float: right; margin: 0px 15px 15px 0px;"
-src="images/ape_fwk_hal_graphics.png" alt="Android Graphics HAL icon"
-width="175" />
+<img style="float: right; margin: 0px 15px 15px 15px;"
+src="images/ape_fwk_hal_graphics.png" alt="Android Graphics HAL icon"/>
 
 <p>The Android framework offers a variety of graphics rendering APIs for 2D and
 3D that interact with manufacturer implementations of graphics drivers, so it

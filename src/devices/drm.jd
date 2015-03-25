@@ -25,7 +25,7 @@ page.title=DRM
   </div>
 </div>
 
-<img style="float: right; margin: 0px 15px 15px 0px;" src="images/ape_fwk_hal_drm.png" alt="Android DRM HAL icon" width="175" />
+<img style="float: right; margin: 0px 15px 15px 15px;" src="images/ape_fwk_hal_drm.png" alt="Android DRM HAL icon"/>
 
 <p>This document provides an overview of the Android DRM framework, and
 introduces the interfaces a DRM plug-in must implement. This document does not
