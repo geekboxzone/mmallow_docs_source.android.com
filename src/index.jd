@@ -41,8 +41,38 @@ header.hide=1
   <div class="landing-docs">
     <div class="col-8">
     <h3>What's New</h3>
+<a href="{@docRoot}devices/tech/ota/index.html">
+        <h4>OTA Updates</h4></a>
+        <p>An entire suite of documentation has been added describing the <strong><a
+        href="{@docRoot}devices/tech/ota/index.html">over-the-air (OTA)
+        update process</a></strong> including <strong><a
+        href="{@docRoot}devices/tech/ota/tools.html">available tools</a></strong>, <strong><a
+        href="{@docRoot}devices/tech/ota/block.html">block-based OTAs</a></strong>, and
+        <strong><a
+        href="{@docRoot}devices/tech/ota/device_code.html">device-specific code</a></strong> for customizing updates.</p>
+
+<a href="{@docRoot}devices/tech/security/verifiedboot/index.html">
+        <h4>Verified Boot</h4></a>
+        <p>The <strong><a
+        href="{@docRoot}devices/tech/security/verifiedboot/index.html">Verified
+        Boot</a></strong> section of the site has been augmented with additional
+        information for <strong><a
+        href="{@docRoot}devices/tech/security/verifiedboot/verified-boot.html">verifying
+        boot</a></strong> and <strong><a
+        href="{@docRoot}devices/tech/security/verifiedboot/index.html">implementing
+        dm-verity</a></strong>.</p>
+
+<a href="{@docRoot}devices/graphics/testing.html">
+        <h4>OpenGL ES Graphics Diagnostics</h4></a>
+        <p>The graphics diagnostics user guide has been converted to an <strong><a
+        href="{@docRoot}devices/graphics/testing.html">OpenGL ES
+        testing</a></strong> section of the site for easy access to information for <strong><a
+        href="{@docRoot}devices/graphics/build-tests.html">building test programs</a></strong>, <strong><a
+        href="{@docRoot}devices/graphics/run-tests.html">running the tests</a></strong>, <strong><a
+        href="{@docRoot}devices/graphics/test-groups.html">using special test groups</a></strong>, and more.</p>
+
 <a href="{@docRoot}devices/index.html">
-        <h4>Devices diagrams and other figures</h4></a>
+        <h4>Devices Diagrams and Other Figures</h4></a>
         <p>Diagrams and other figures within <strong><a
         href="{@docRoot}devices/index.html">Devices</a></strong> have been redesigned
         to become more clear and adhere to Android’s material design theme.</p>
@@ -56,7 +86,7 @@ header.hide=1
         rebase</code></p>
 
 <a href="{@docRoot}source/build-numbers.html">
-        <h4>Lollipop API level, build tag</h4></a>
+        <h4>Lollipop API level, Build Tag</h4></a>
         <p>The latest <strong><a
         href="{@docRoot}source/build-numbers.html#platform-code-names-versions-api-levels-and-ndk-releases">Lollipop
         API level</a></strong> and <strong><a
@@ -64,33 +94,10 @@ header.hide=1
         tag</a></strong> have been updated to 22 and LMY47D, respectively.</p>
 
 <a href="{@docRoot}compatibility/contact-us.html">
-        <h4>Google Mobile Services inquiry form</h4></a>
+        <h4>Google Mobile Services Inquiry Form</h4></a>
         <p>Prospective Google Mobile Services (GMS) partners now have an online <strong><a
         href="https://docs.google.com/a/google.com/forms/d/1qAHuR-MbmXeYuJ1aBd3neaUjNGxnnnCd2kzb0MEJpGQ/viewform"
         target="_blank">inquiry form</a></strong> to request a GMS license.</p>
-
-<a href="{@docRoot}devices/tech/dalvik/constraints.html">
-        <h4>Dalvik constraints</h4></a>
-        <p>The Android Runtime (ART) team has released a list of syntactical and semantical <strong><a
-        href="{@docRoot}devices/tech/dalvik/constraints.html">constraints</a></strong>
-        to help construct valid <code>.dex</code> files supported by the runtime.</p>
-
-<a href="{@docRoot}source/64-bit-builds.html">
-        <h4>64-bit build instructions</h4></a>
-        <p>Detailed instructions for building Android on a <strong><a
-        href="{@docRoot}source/64-bit-builds.html">64-bit
-        architecture</a></strong> have been added to the <strong><a
-        href="{@docRoot}source/index.html">Source</a></strong> tab of the
-        site. These instructions cover product configuration, module definition, the
-        install path, and more.</p>
-
-<a href="{@docRoot}devices/graphics/DeqpUserGuide.pdf">
-        <h4>OpenGL ES graphics diagnostics</h4></a>
-        <p>The site now contains a <strong><a
-        href="{@docRoot}devices/graphics/DeqpUserGuide.pdf">user guide for the
-        GPU testing suite drawElements Quality Program (deqp)</a></strong>. The
-        guide offers an overview of the suite and instructions for porting and building
-        the test modules.</p>
     </div>
 
     <div class="col-8">
