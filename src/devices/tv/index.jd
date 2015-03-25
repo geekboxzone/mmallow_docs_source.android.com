@@ -24,7 +24,7 @@ page.title=TV Input Framework
   </div>
 </div>
 
-<img style="float: right; margin: 0px 15px 15px 0px;" src="images/ape_fwk_hal_tv.png" alt="Android TV HAL icon" width="175" />
+<img style="float: right; margin: 0px 15px 15px 15px;" src="images/ape_fwk_hal_tv.png" alt="Android TV HAL icon"/>
 
 <p>The Android TV Input Framework (TIF) simplifies delivery of live content to Android TV. The Android TIF provides a standard API for manufacturers to create input modules for controlling Android TV, and enables live TV search and recommendations via metadata published by the TV Input.</p>
 <p>The framework does not seek to implement TV standards or regional requirements, but does makes it easier for device manufacturers to meet regional digital TV broadcast standards without re-implementation. Documentation in this section might also be useful to third-party app developers who want to create custom TV Inputs.</p>

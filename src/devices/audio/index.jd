@@ -25,7 +25,7 @@ page.title=Audio
   </div>
 </div>
 
-<img style="float: right; margin: 0px 15px 15px 0px;" src="images/ape_fwk_hal_audio.png" alt="Android Audio HAL icon" width="175" />
+<img style="float: right; margin: 0px 15px 15px 15px;" src="images/ape_fwk_hal_audio.png" alt="Android Audio HAL icon"/>
 <p>
   Android's audio Hardware Abstraction Layer (HAL) connects the higher-level, audio-specific
   framework APIs in <a href="http://developer.android.com/reference/android/media/package-summary.html">android.media</a> to the underlying audio driver and hardware. This section includes implementation instructions and tips for improving performance.</p>

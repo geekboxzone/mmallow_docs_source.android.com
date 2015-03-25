@@ -24,10 +24,10 @@ page.title=Camera
   </div>
 </div>
 
-<img style="float: right; margin: 0px 15px 15px 0px;" src="images/ape_fwk_hal_camera.png" alt="Android Camera HAL icon" width="175" />
+<img style="float: right; margin: 0px 15px 15px 15px;" src="images/ape_fwk_hal_camera.png" alt="Android Camera HAL icon"/>
 
-<p>Android's camera HAL connects the higher level
-camera framework APIs in <a href="http://developer.android.com/reference/android/hardware/package-summary.html">android.hardware</a> to your underlying camera driver and hardware.</p>
+<p>Android's camera Hardware Abstraction Layer (HAL) connects the higher level
+camera framework APIs in <a href="http://developer.android.com/reference/android/hardware/package-summary.html">android.hardware</a> to your underlying camera driver and hardware. The camera subsystem includes implementations for camera pipeline components while the camera HAL provides interfaces for use in implementing your version of these components.</p>
 
 <h2 id="architecture">Architecture</h2>
 <p>The following figure and list describe the components involved and where to find the source for each:
