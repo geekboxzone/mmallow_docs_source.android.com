@@ -24,7 +24,7 @@ page.title=Bluetooth
   </div>
 </div>
 
-<img style="float: right; margin: 0px 15px 15px 0px;" src="images/ape_fwk_hal_bluetooth.png" alt="Android Bluetooth HAL icon" width="175" />
+<img style="float: right; margin: 0px 15px 15px 15px;" src="images/ape_fwk_hal_bluetooth.png" alt="Android Bluetooth HAL icon"/>
 
 <p>Android provides a default Bluetooth stack, BlueDroid, that is divided into two layers: The Bluetooth Embedded System (BTE), which implements the core Bluetooth functionality and the Bluetooth Application Layer (BTA), which communicates with Android framework applications.</p>
 

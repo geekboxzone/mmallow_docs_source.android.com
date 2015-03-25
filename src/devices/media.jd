@@ -24,7 +24,7 @@ page.title=Media
   </div>
 </div>
 
-<img style="float: right; margin: 0px 15px 15px 0px;" src="images/ape_fwk_hal_media.png" alt="Android Media HAL icon" width="175" />
+<img style="float: right; margin: 0px 15px 15px 15px;" src="images/ape_fwk_hal_media.png" alt="Android Media HAL icon"/>
 
 <p>
   Android provides a media playback engine at the native level called Stagefright that comes built-in with software-based codecs for several popular media formats. Stagefright features for audio and video playback include integration with OpenMAX codecs, session management, time-synchronized rendering, transport control, and DRM.</p>

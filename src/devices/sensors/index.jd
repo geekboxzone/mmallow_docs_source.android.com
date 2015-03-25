@@ -23,7 +23,7 @@ page.title=Sensors
     </ol>
   </div>
 </div>
-<img style="float: right; margin: 0px 15px 15px 0px;" src="images/ape_fwk_hal_sensors.png" alt="Android Sensors HAL icon" width="175" />
+<img style="float: right; margin: 0px 15px 15px 15px;" src="images/ape_fwk_hal_sensors.png" alt="Android Sensors HAL icon"/>
 
 <p>Android sensors give applications access to a mobile device's underlying physical sensors. They are data-providing virtual devices defined by <a href="{@docRoot}devices/halref/sensors_8h.html">sensors.h</a>, the sensor Hardware Abstraction Layer (HAL).</p>
 
