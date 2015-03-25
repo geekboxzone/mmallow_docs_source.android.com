@@ -59,7 +59,7 @@ header.hide=1
         information for <strong><a
         href="{@docRoot}devices/tech/security/verifiedboot/verified-boot.html">verifying
         boot</a></strong> and <strong><a
-        href="{@docRoot}devices/tech/security/verifiedboot/index.html">implementing
+        href="{@docRoot}devices/tech/security/verifiedboot/dm-verity.html">implementing
         dm-verity</a></strong>.</p>
 
 <a href="{@docRoot}devices/graphics/testing.html">
