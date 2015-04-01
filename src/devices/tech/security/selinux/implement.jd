@@ -220,8 +220,8 @@ that label will be needed, as well.
 These should
 be given domains EARLY in order to avoid adding rules to init or otherwise
 confusing <code>init</code> accesses with ones that are in their own policy.
-  <li>Set up <code>BOARD_CONFIG.mk</code> to use <code>BOARD_SEPOLICY_UNION</code> and <code>BOARD_SEPOLICY_DIRS</code>. See
-the README in /sepolicy for details on setting this up.
+  <li>Set up <code>BOARD_CONFIG.mk</code> to use <code>BOARD_SEPOLICY_*</code> variables. See
+the README in external/sepolicy for details on setting this up.
   <li> Examine the init.&lt;device&gt;.rc and fstab.&lt;device&gt; file and make sure every use of “mount”
 corresponds to a properly labeled filesystem or that a context= mount option is specified.
   <li> Go through each denial and create SELinux policy to properly handle each. See
