@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <head>
-<title>Android 5.0 Compatibility Definition</title>
+<title>Android 5.1 Compatibility Definition</title>
 <link rel="stylesheet" type="text/css" href="cdd.css"/>
 </head>
 <body>
 <div><img src="header.jpg" alt="Android logo"/></div>
-<h1>Android 5.0 Compatibility Definition</h1>
+<h1>Android 5.1 Compatibility Definition</h1>
 <!--
 <span style="color: red; font-weight: bold;"><h2>Revision 1</h2></span><br/>
 <span style="color: red;">Last updated: July 23, 2013</span>
@@ -307,18 +307,18 @@ Last updated: January 12, 2015
 
 
 <p>This document enumerates the requirements that must be met in order for devices
-to be compatible with Android 5.0.</p>
+to be compatible with Android 5.1.</p>
 
 <p>The use of "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD",
 "SHOULD NOT", "RECOMMENDED", "MAY" and "OPTIONAL" is per the IETF standard
 defined in RFC2119 [<a href="http://www.ietf.org/rfc/rfc2119.txt">Resources, 1</a>].</p>
 
 <p>As used in this document, a "device implementer" or "implementer" is a person
-or organization developing a hardware/software solution running Android 5.0. A
+or organization developing a hardware/software solution running Android 5.1. A
 "device implementation" or "implementation" is the hardware/software solution
 so developed.</p>
 
-<p>To be considered compatible with Android 5.0, device implementations MUST meet
+<p>To be considered compatible with Android 5.1, device implementations MUST meet
 the requirements presented in this Compatibility Definition, including any
 documents incorporated via reference.</p>
 
@@ -383,7 +383,7 @@ perhaps on the wrist, and:</p>
 </ul>
 
 <p>All Android device implementations that do not fit into any of the above device
-types still MUST meet all requirements in this document to be Android 5.0
+types still MUST meet all requirements in this document to be Android 5.1
 compatible, unless the requirement is explicitly described to be only
 applicable to a specific Android device type. </p>
 
@@ -692,7 +692,7 @@ implementations MUST conform.</p>
 </td>
     <td>
 <p>The version of the currently-executing Android system, in human-readable
-format. This field MUST have one of the string values defined in [<a href="http://source.android.com/compatibility/5.0/versions.html">Resources, 8]</a>.</p>
+format. This field MUST have one of the string values defined in [<a href="http://source.android.com/compatibility/5.1/versions.html">Resources, 8]</a>.</p>
 </td>
  </tr>
  <tr>
@@ -701,8 +701,8 @@ format. This field MUST have one of the string values defined in [<a href="http:
 </td>
     <td>
 <p>The version of the currently-executing Android system, in a format accessible
-to third-party application code. For Android 5.0, this field MUST have the
-integer value 21.</p>
+to third-party application code. For Android 5.1, this field MUST have the
+integer value 22.</p>
 </td>
  </tr>
  <tr>
@@ -711,8 +711,8 @@ integer value 21.</p>
 </td>
     <td>
 <p>The version of the currently-executing Android system, in a format accessible
-to third-party application code. For Android 5.0, this field MUST have the
-integer value 21.</p>
+to third-party application code. For Android 5.1, this field MUST have the
+integer value 22.</p>
 </td>
  </tr>
  <tr>
@@ -818,7 +818,7 @@ human-readable. It MUST follow this template:</p>
 
 <p>For example:</p>
 
-<p>acme/myproduct/mydevice:5.0/LRWXX/3359:userdebug/test-keys</p>
+<p>acme/myproduct/mydevice:5.1/LMYXX/3359:userdebug/test-keys</p>
 
 <p>The fingerprint MUST NOT include whitespace characters. If other fields
 included in the template above have whitespace characters, they MUST be
@@ -1143,12 +1143,12 @@ Chromium in the WebView implementation. Specifically:</p>
 
 <ul>
   <li> Device android.webkit.WebView implementations MUST be based on the Chromium
-build from the upstream Android Open Source Project for Android 5.0. This build
+build from the upstream Android Open Source Project for Android 5.1. This build
 includes a specific set of functionality and security fixes for the WebView [<a href="http://www.chromium.org/">Resources, 13</a>].
   <li> The user agent string reported by the WebView MUST be in this format: 
 </ul>
 
-<p>Mozilla/5.0 (Linux; Android $(VERSION); $(MODEL) Build/$(BUILD))
+<p>Mozilla/5.1 (Linux; Android $(VERSION); $(MODEL) Build/$(BUILD))
 AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 $(CHROMIUM_VER) Mobile
 Safari/537.36</p>
   <ul>
@@ -1661,7 +1661,7 @@ application developers to use if they want to match the Holo theme look and
 feel as defined by the Android SDK [<a href="http://developer.android.com/guide/topics/ui/themes.html">Resources, 28</a>]. Device implementations MUST NOT alter any of the Holo theme attributes
 exposed to applications [<a href="http://developer.android.com/reference/android/R.style.html">Resources, 29</a>].</p>
 
-<p>Android 5.0 includes a “Material” theme family as a set of defined styles for
+<p>Android includes a “Material” theme family as a set of defined styles for
 application developers to use if they want to match the design theme’s look and
 feel across the wide variety of different Android device types. Device
 implementations MUST support the “Material” theme family and MUST NOT alter any
@@ -1781,7 +1781,7 @@ implementations include an IME, devices MUST provide an input method to the
 user for the Emoji characters defined in Unicode 6.1 [<a href="http://www.unicode.org/versions/Unicode6.1.0/">Resources, 38</a>]. All devices MUST be capable of rendering these emoji characters in color
 glyph.</p>
 
-<p>Android 5.0 includes support for Roboto 2 font with different
+<p>Android includes support for Roboto 2 font with different
 weights—sans-serif-thin, sans-serif-light, sans-serif-medium, sans-serif-black,
 sans-serif-condensed, sans-serif-condensed-light—which MUST all be included for
 the languages available on the device and full Unicode 7.0 coverage of Latin,
@@ -3615,7 +3615,7 @@ icon unless hidden together with other navigation functions in full-screen mode
 or when the uiMode UI_MODE_TYPE_MASK is set to UI_MODE_TYPE_WATCH.</p>
 
 <p>The Menu function is deprecated in favor of action bar since Android 4.0.
-Therefore the new device implementations shipping with Android 5.0 MUST NOT
+Therefore the new device implementations shipping with Android 5.0 and later MUST NOT
 implement a dedicated physical button for the Menu function. Older device
 implementations SHOULD NOT implement a dedicated physical button for the Menu
 function, but if the physical Menu button is implemented and the device is
@@ -3624,7 +3624,7 @@ running applications with targetSdkVersion > 10, the device implementation:</p>
 <ul>
   <li> MUST display the action overflow button on the action bar when it is visible
 and the resulting action overflow menu popup is not empty. For a device
-implementation launched before Android 4.4 but upgrading to Android 5.0, this
+implementation launched before Android 4.4 but upgrading to Android 5.1, this
 is RECOMMENDED.
   <li> MUST NOT modify the position of the action overflow popup displayed by
 selecting the overflow button in the action bar
@@ -3697,7 +3697,7 @@ approximates a subset of touchscreen capabilities. For example, a mouse or
 remote control that drives an on-screen cursor approximates touch, but requires
 the user to first point or focus then click. Numerous input devices like the
 mouse, trackpad, gyro-based air mouse, gyro-pointer, joystick, and multi-touch
-trackpad can support fake touch interactions. Android 5.0 includes the feature
+trackpad can support fake touch interactions. Android includes the feature
 constant android.hardware.faketouch, which corresponds to a high-fidelity
 non-touch (pointer-based) input device such as a mouse or trackpad that can
 adequately emulate touch-based input (including basic gesture support), and
@@ -4426,7 +4426,7 @@ active and the lock-screen unlocked
 <p>(Note that publicly available links are not available for the JIS, ISO, and NFC
 Forum specifications cited above.)</p>
 
-<p>Android 5.0 includes support for NFC Host Card Emulation (HCE) mode. If a
+<p>Android includes support for NFC Host Card Emulation (HCE) mode. If a
 device implementation does include an NFC controller capable of HCE and
 Application ID (AID) routing, then it:</p>
 
@@ -5287,7 +5287,7 @@ reimplementations of parts of the reference source code.</p>
 <p>The CTS is designed to be run on an actual device. Like any software, the CTS
 may itself contain bugs. The CTS will be versioned independently of this
 Compatibility Definition, and multiple revisions of the CTS may be released for
-Android 5.0. Device implementations MUST pass the latest CTS version available
+Android 5.1. Device implementations MUST pass the latest CTS version available
 at the time the device software is completed.</p>
 
 <h2 id=10_2_cts_verifier>10.2. CTS Verifier</h2>
@@ -5339,11 +5339,11 @@ is, the update mechanism MUST preserve application private data and application
 shared data. Note that the upstream Android software includes an update
 mechanism that satisfies this requirement.</p>
 
-<p>For device implementations that are launching with Android 5.0 and later, the
+<p>For device implementations that are launching with Android 5.1 and later, the
 update mechanism SHOULD support verifying that the system image is binary
 identical to expected result following an OTA. The block-based OTA
 implementation in the upstream Android Open Source Project, added since Android
-5.0, satisfies this requirement.</p>
+5.1, satisfies this requirement.</p>
 
 <p>If an error is found in a device implementation after it has been released but
 within its reasonable product lifetime that is determined in consultation with
@@ -5964,7 +5964,7 @@ does not cover.</p>
 
 <p>7. android.os.Build reference: <a href="http://developer.android.com/reference/android/os/Build.html">http://developer.android.com/reference/android/os/Build.html</a></p>
 
-<p>8. Android 5.0 allowed version strings: <a href="http://source.android.com/compatibility/5.0/versions.html">http://source.android.com/compatibility/5.0/versions.html</a></p>
+<p>8. Android 5.1 allowed version strings: <a href="http://source.android.com/compatibility/5.1/versions.html">http://source.android.com/compatibility/5.1/versions.html</a></p>
 
 <p>9. Telephony Provider: <a href="http://developer.android.com/reference/android/provider/Telephony.html">http://developer.android.com/reference/android/provider/Telephony.html</a></p>
 
