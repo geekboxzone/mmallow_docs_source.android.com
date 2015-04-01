@@ -72,9 +72,8 @@ recommend proceeding:</p>
   <li>Put those policies in *.te files (the extension for SELinux policy source
 files) within the <code>/device/manufacturer/device-name/sepolicy</code> directory and use
 <code>BOARD_SEPOLICY</code> variables to include them in your build.
-  <li>Make new domains permissive initially. In Android 4.4 and earlier, this is done
-using a permissive declaration. In later versions of Android, per-domain
-permissive mode is specified using the <code>permissive_or_unconfined()</code> macro.
+  <li>Make new domains permissive initially. This is done by
+using a permissive declaration in the domain's .te file.
   <li>Analyze results and refine your domain definitions.
   <li>Remove the permissive declaration when no further denials appear in userdebug
 builds.
@@ -127,7 +126,7 @@ allow domain zero_device:chr_file r_file_perms;
 
 <pre>
 type dhcp, domain;
-permissive_or_unconfined(dhcp)
+permissive dhcp;
 type dhcp_exec, exec_type, file_type;
 type dhcp_data_file, file_type, data_file_type;
 
@@ -162,7 +161,7 @@ netlink_nflog_socket } { read write };
 security policy (<code>domain</code>). From the previous statement examples, we know DHCP can read from and write
 to <code>/dev/null.</code></p>
 
-<p>In the second line, DHCP is identified as an experimental domain (<code>permissive_or_unconfined</code>) with only minimal rules enforced.</p>
+<p>In the second line, DHCP is identified as a permissive domain.</p>
 
 <p>In the <code>init_daemon_domain(dhcp)</code> line, the policy states DHCP is spawned from <code>init</code> and is allowed to communicate with it.</p>
 
