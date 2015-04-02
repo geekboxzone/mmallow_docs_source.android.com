@@ -1,5 +1,5 @@
 <!--
-    Copyright 2014 The Android Open Source Project
+    Copyright 2015 The Android Open Source Project
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -126,7 +126,7 @@
           <li><a href="<?cs var:toroot ?>devices/input/migration-guide.html">Migration Guide</a></li>
           <li><a href="<?cs var:toroot ?>devices/input/keyboard-devices.html">Keyboard Devices</a></li>
           <li><a href="<?cs var:toroot ?>devices/input/touch-devices.html">Touch Devices</a></li>
-          <li><a href="<?cs var:toroot ?>devices/input/dumpsys.html">Dumpsys</a></li>
+          <li><a href="<?cs var:toroot ?>devices/input/diagnostics.html">Diagnostics</a></li>
           <li><a href="<?cs var:toroot ?>devices/input/getevent.html">Getevent</a></li>
           <li><a href="<?cs var:toroot ?>devices/input/validate-keymaps.html">Validate Keymaps</a></li>
         </ul>
@@ -250,6 +250,8 @@
         <ul>
           <li><a href="<?cs var:toroot ?>devices/tech/debug/tuning.html">Performance Tuning</a></li>
           <li><a href="<?cs var:toroot ?>devices/tech/debug/native-memory.html">Native Memory Usage</a></li>
+          <li><a href="<?cs var:toroot ?>devices/tech/debug/dumpsys.html">Dumpsys</a></li>
+
         </ul>
       </li>
 
@@ -278,13 +280,13 @@
               <a href="<?cs var:toroot ?>devices/tech/ota/index.html">
                 <span class="en">OTA Updates</span>
               </a>
-	    </div>
-	    <ul>
+    </div>
+            <ul>
               <li><a href="<?cs var:toroot ?>devices/tech/ota/tools.html">OTA Tools</a></li>
               <li><a href="<?cs var:toroot ?>devices/tech/ota/block.html">Block-based OTA</a></li>
-	      <li><a href="<?cs var:toroot ?>devices/tech/ota/inside_packages.html">Inside OTA Packages</a></li>
-	      <li><a href="<?cs var:toroot ?>devices/tech/ota/device_code.html">Device-Specific Code</a></li>
-	      <li><a href="<?cs var:toroot ?>devices/tech/ota/sign_builds.html">Signing Builds for Release</a></li>
+              <li><a href="<?cs var:toroot ?>devices/tech/ota/inside_packages.html">Inside OTA Packages</a></li>
+              <li><a href="<?cs var:toroot ?>devices/tech/ota/device_code.html">Device-Specific Code</a></li>
+              <li><a href="<?cs var:toroot ?>devices/tech/ota/sign_builds.html">Signing Builds for Release</a></li>
             </ul>
       </li>
 
