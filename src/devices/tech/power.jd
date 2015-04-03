@@ -2,7 +2,7 @@ page.title=Power Profiles for Android
 @jd:body
 
 <!--
-    Copyright 2014 The Android Open Source Project
+    Copyright 2015 The Android Open Source Project
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -144,7 +144,7 @@ and state of charge readings for a normal system, and may also provide convenien
 connecting to external power supplies. Alternatively, you can modify the system to ignore the
 invalid data from the missing battery.</p>
 
-<a name="control-suspend"><h3 id="control-suspend">Controlling System Suspend</h3></a>
+<h3 id="control-suspend">Controlling System Suspend</h3>
 
 <p>This section describes how to avoid system suspend state when you don’t want it to interfere with
 other measurements, and how to measure the power draw of system suspend state when you do want to
@@ -191,7 +191,7 @@ suspend).</li>
 </li>
 </ul>
 
-<a name="control-cpu"><h3 id="control-cpu">Controlling CPU Speeds</h3></a>
+<h3 id="control-cpu">Controlling CPU Speeds</h3>
 
 <p>Active CPUs can be brought online or put offline, have their clock speeds and associated voltages
 changed (possibly also affecting memory bus speeds and other system core power states), and
@@ -251,14 +251,15 @@ temperature measurement (i.e. after running CPUs at high speeds for sustained pe
 such limiting, either using the system console output when taking measurements or by checking the
 kernel log after measuring.</p>
 
-<p>For the <code>cpu.active</code> value, measure the power consumed when the system is not in
+<p>For the <code>cpu.awake</code> value, measure the power consumed when the system is not in
 suspend and not executing tasks. The CPU should be in a low-power scheduler <em>idle loop
-</em>, possibly executing an ARM Wait For Event instruction or in an SoC-specific low power state
-with a fast exit latency suitable for idle use. Your platform might have more than one idle state in
-use with differing levels of power consumption; choose a representative idle state for
-longer periods of scheduler idle (several milliseconds). Examine the power graph on your measurement
-equipment and choose samples where the CPU is at its lowest consumption, discarding higher samples
-where the CPU exited idle.</p>
+</em>, possibly executing an ARM Wait For Event instruction or in an SoC-specific low-power state
+with a fast-exit latency suitable for idle use.</p>
+
+<p>For the <code>cpu.active</code> value, power needs to be measured when the
+system is not in suspend mode and not executing tasks. One of the CPU (usually
+the primary CPU) should be running the task, and all the other CPUs should be in
+an idle state.</p>
 
 <h3 id="screen-power">Measuring Screen Power</h3>
 
@@ -302,7 +303,7 @@ system suspend (sleep) state with Wi-Fi enabled vs. disabled.</p>
 
 <p>The <code>wifi.scan</code> value measures the power consumed during a Wi-Fi scan for access
 points. Applications can trigger Wi-Fi scans using the WifiManager class
-<a href = "http://developer.android.com/reference/android/net/wifi/WifiManager.html">
+<a href ="http://developer.android.com/reference/android/net/wifi/WifiManager.html">
 <code>startScan()</code>API</a>. You can also open Settings &gt; Wi-Fi, which performs access point
 scans every few seconds with an apparent jump in power consumption, but you must subtract screen
 power from these measurements.</p>
@@ -409,9 +410,9 @@ noise at 33uA) for a 6 minute test window.</li>
 with variation inherent in the loading, consider using a longer test window.</li>
 </ul>
 
-<a name="nexus-devices"><h3>Supported Nexus Devices</h3></a>
+<h3 id="nexus-devices">Supported Nexus Devices</h3>
 
-<h5><a name="nexus-5">Nexus 5</a></h5>
+<h5 id="nexus-5">Nexus 5</h5>
 
 <table>
 <tbody>
@@ -436,7 +437,7 @@ resolution of %/256 (1/256th of a percent of full battery capacity).</td>
 </table>
 
 
-<h5><a name="nexus-6">Nexus 6</a></h5>
+<h5 id="nexus-6">Nexus 6</h5>
 
 <table>
 <tbody>
@@ -471,7 +472,7 @@ ENERGY_COUNTER is CHARGE_COUNTER_EXT at nominal voltage of 3.7V.</td>
 </table>
 
 
-<h5><a name="nexus-9">Nexus 9</a></h5>
+<h5 id="nexus-9">Nexus 9</h5>
 
 <table>
 <tbody>
@@ -506,7 +507,7 @@ ADC sampled at 175ms quantization with a 4ms sample period. Can adjust duty cycl
 </table>
 
 
-<h5><a name="nexus-10">Nexus 10</a></h5>
+<h5 id="nexus-10">Nexus 10</h5>
 
 <table>
 <tbody>
@@ -691,7 +692,11 @@ visualizations of power-related events from logs.</p>
   <td>Additional power used when CPUs are in scheduling idle state (kernel idle loop); system is not
   in system suspend state.</td>
   <td>50mA</td>
-  <td></td>
+  <td>Your platform might have more than one idle state in use with differing
+levels of power consumption; choose a representative idle state for longer
+periods of scheduler idle (several milliseconds). Examine the power graph on
+your measurement equipment and choose samples where the CPU is at its lowest
+consumption, discarding higher samples where the CPU exited idle.</td>
 </tr>
 
 <tr>
