@@ -2,7 +2,7 @@ page.title=Audio
 @jd:body
 
 <!--
-    Copyright 2014 The Android Open Source Project
+    Copyright 2015 The Android Open Source Project
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -47,9 +47,15 @@ be applied to audio such as downmixing, echo, or noise suppression.</li>
 <code>device/&lt;company_name&gt;/&lt;device_name&gt;/audio/audio_policy.conf</code> file that
 declares the audio devices present on your product. For an example, see the file for the Galaxy
 Nexus audio hardware in <code>device/samsung/tuna/audio/audio_policy.conf</code>. Also, see the
-<code>system/core/include/system/audio.h</code> and
-<code>system/core/include/system/audio_policy.h</code> header files for a reference of the
-properties that you can define.</p>
+audio header files for a reference of the properties that you can define.</p>
+
+<p>In the Android M release and later, the paths are:<br>
+<code>system/media/audio/include/system/audio.h</code><br>
+<code>system/media/audio/include/system/audio_policy.h</code></p>
+
+<p>In Android 5.1 and earlier, the paths are:<br>
+<code>system/core/include/system/audio.h</code><br>
+<code>system/core/include/system/audio_policy.h</code></p>
 
 <h3 id="multichannel">Multi-channel support</h3>
 
