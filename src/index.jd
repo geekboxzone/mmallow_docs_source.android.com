@@ -41,6 +41,43 @@ header.hide=1
   <div class="landing-docs">
     <div class="col-8">
     <h3>What's New</h3>
+<a href="{@docRoot}source/initializing.html">
+        <h4>Initializing Improvements</h4></a>
+        <p>Build environment <strong><a
+        href="{@docRoot}source/initializing.html#setting-up-a-mac-os-x-build-environment">Initializing</a></strong>
+        instructions now explain how to resize and unmount Mac OS sparse
+        images. And the ccache section has been moved to an optional <strong><a
+        href="{@docRoot}source/initializing.html#optimizing-a-build-environment">Optimizing
+        a build environment</a></strong> section.</p>
+
+<a href="{@docRoot}devices/tech/security/selinux/index.html">
+        <h4>SELinux Permissive Declarations</h4></a>
+        <p>SELinux <strong><a
+        href="{@docRoot}devices/tech/security/selinux/customize.html">Customizing</a></strong>
+        and <strong><a
+        href="{@docRoot}devices/tech/security/selinux/implement.html">Implementing</a></strong>
+        instructions have been updated to recommend using permissive declarations
+        directly as <code>permissive_or_unconfined()</code> has been deprecated.
+        Similarly, <code>BOARD_SEPOLICY_UNION</code> has been removed, so
+        <code>BOARD_SEPOLICY_*</code> variables are suggested insead.</p>
+
+<a href="{@docRoot}devices/input/diagnostics.html">
+        <h4>Dumpsys Input and System Diagnostics</h4></a>
+        <p>Dumpsys contents have been completely rewritten with fresh output
+        examples and split into <strong><a
+        href="{@docRoot}devices/input/diagnostics.html">Input Diagnostics</a></strong>
+        and <strong><a href="{@docRoot}devices/tech/debug/dumpsys.html">System
+        Diagnostics</a></strong>.</p>
+
+<a href="{@docRoot}devices/bluetooth.html">
+        <h4>Android 5.0 Bluetooth HCI Requirements</h4></a>
+        <p><strong><a
+        href="{@docRoot}devices/Android-5.0-Bluetooth-HCI-Reqs.pdf">Bluetooth
+        Host Controller Interface (HCI) requirements</a></strong> to leverage
+        the Bluetooth Low Energy APIs in Android 5.0 have
+        been published and linked from the <strong><a
+        href="{@docRoot}devices/bluetooth.html">Bluetooth</a></strong> introduction.</p>
+
 <a href="{@docRoot}devices/tech/ota/index.html">
         <h4>OTA Updates</h4></a>
         <p>An entire suite of documentation has been added describing the <strong><a
@@ -61,43 +98,6 @@ header.hide=1
         boot</a></strong> and <strong><a
         href="{@docRoot}devices/tech/security/verifiedboot/dm-verity.html">implementing
         dm-verity</a></strong>.</p>
-
-<a href="{@docRoot}devices/graphics/testing.html">
-        <h4>OpenGL ES Graphics Diagnostics</h4></a>
-        <p>The graphics diagnostics user guide has been converted to an <strong><a
-        href="{@docRoot}devices/graphics/testing.html">OpenGL ES
-        testing</a></strong> section of the site for easy access to information for <strong><a
-        href="{@docRoot}devices/graphics/build-tests.html">building test programs</a></strong>, <strong><a
-        href="{@docRoot}devices/graphics/run-tests.html">running the tests</a></strong>, <strong><a
-        href="{@docRoot}devices/graphics/test-groups.html">using special test groups</a></strong>, and more.</p>
-
-<a href="{@docRoot}devices/index.html">
-        <h4>Devices Diagrams and Other Figures</h4></a>
-        <p>Diagrams and other figures within <strong><a
-        href="{@docRoot}devices/index.html">Devices</a></strong> have been redesigned
-        to become more clear and adhere to Android’s material design theme.</p>
-
-<a href="{@docRoot}source/submit-patches.html">
-        <h4>Submitting Patches</h4></a>
-        <p>The <strong><a
-        href="{@docRoot}source/submit-patches.html#resolving-sync-conflicts">Resolving
-        sync conflicts section of Submitting Patches</a></strong> has been updated to
-        replace an outdated <code>git rebase</code> command with: <code>repo
-        rebase</code></p>
-
-<a href="{@docRoot}source/build-numbers.html">
-        <h4>Lollipop API level, Build Tag</h4></a>
-        <p>The latest <strong><a
-        href="{@docRoot}source/build-numbers.html#platform-code-names-versions-api-levels-and-ndk-releases">Lollipop
-        API level</a></strong> and <strong><a
-        href="{@docRoot}source/build-numbers.html#source-code-tags-and-builds">build
-        tag</a></strong> have been updated to 22 and LMY47D, respectively.</p>
-
-<a href="{@docRoot}compatibility/contact-us.html">
-        <h4>Google Mobile Services Inquiry Form</h4></a>
-        <p>Prospective Google Mobile Services (GMS) partners now have an online <strong><a
-        href="https://docs.google.com/a/google.com/forms/d/1qAHuR-MbmXeYuJ1aBd3neaUjNGxnnnCd2kzb0MEJpGQ/viewform"
-        target="_blank">inquiry form</a></strong> to request a GMS license.</p>
     </div>
 
     <div class="col-8">
