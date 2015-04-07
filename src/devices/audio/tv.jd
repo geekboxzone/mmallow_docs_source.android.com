@@ -2,7 +2,7 @@ page.title=TV Audio
 @jd:body
 
 <!--
-    Copyright 2014 The Android Open Source Project
+    Copyright 2015 The Android Open Source Project
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -74,7 +74,10 @@ of all the TV output (11Khz, 16bit mono or 48Khz, 16bit mono). Used only for aud
 
 <p>Android supports the following audio devices for TV audio input/output.</p>
 
-<h4>system/core/include/system/audio.h</h4>
+<h4>system/media/audio/include/system/audio.h</h4>
+
+<p class="note"><strong>Note:</strong> In Android 5.1 and earlier, the path to
+this file is: <code>system/core/include/system/audio.h</code></p>
 
 <pre>
 /* output devices */
@@ -99,7 +102,10 @@ AUDIO_DEVICE_IN_LOOPBACK    = AUDIO_DEVICE_BIT_IN | 0x40000,
 
 <p>The Audio HAL extension for the audio routing API is defined by following:</p>
 
-<h4>system/core/include/system/audio.h</h4>
+<h4>system/media/audio/include/system/audio.h</h4>
+
+<p class="note"><strong>Note:</strong> In Android 5.1 and earlier, the path to
+this file is: <code>system/core/include/system/audio.h</code></p>
 
 <pre>
 /* audio port configuration structure used to specify a particular configuration of an audio port */
