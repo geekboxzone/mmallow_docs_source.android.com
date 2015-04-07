@@ -15,9 +15,7 @@
 -->
 <?cs # Table of contents for devices.?>
 <ul id="nav">
-
-<!-- Porting Android -->
-  <li class="nav-section">
+  <li class="nav-section">  <!-- Begin nav section, Device Interfaces -->
     <div class="nav-section-header">
       <a href="<?cs var:toroot ?>devices/index.html">
         <span class="en">Interfaces</span>
@@ -110,8 +108,7 @@
               <li><a href="<?cs var:toroot ?>devices/graphics/cts-integration.html">Integrating with Android CTS</a></li>
             </ul>
          </li>
-        </ul>
-      </li>
+        </ul> </li>
       <li class="nav-section">
         <div class="nav-section-header">
           <a href="<?cs var:toroot ?>devices/input/index.html">
@@ -132,59 +129,23 @@
         </ul>
       </li>
       <li><a href="<?cs var:toroot ?>devices/media.html">Media</a></li>
-     <li class="nav-section">
-          <div class="nav-section-header">
-            <a href="<?cs var:toroot ?>devices/sensors/index.html">
-              <span class="en">Sensors</span>
-            </a>
-          </div>
-          <ul>
-            <li>
-              <a href="<?cs var:toroot ?>devices/sensors/sensor-stack.html">
-                <span class="en">Sensor stack</span>
-              </a>
-            </li>
-            <li>
-              <a href="<?cs var:toroot ?>devices/sensors/report-modes.html">
-                <span class="en">Reporting modes</span>
-              </a>
-            </li>
-            <li>
-              <a href="<?cs var:toroot ?>devices/sensors/suspend-mode.html">
-                <span class="en">Suspend mode</span>
-              </a>
-            </li>
-            <li>
-              <a href="<?cs var:toroot ?>devices/sensors/power-use.html">
-                <span class="en">Power consumption</span>
-              </a>
-            </li>
-            <li>
-              <a href="<?cs var:toroot ?>devices/sensors/interaction.html">
-                <span class="en">Interaction</span>
-              </a>
-            </li>
-            <li>
-              <a href="<?cs var:toroot ?>devices/sensors/hal-interface.html">
-                <span class="en">HAL interface</span>
-              </a>
-            </li>
-            <li>
-              <a href="<?cs var:toroot ?>devices/sensors/batching.html">
-                <span class="en">Batching</span>
-              </a>
-            </li>
-            <li>
-              <a href="<?cs var:toroot ?>devices/sensors/sensor-types.html">
-                <span class="en">Sensor types</span>
-              </a>
-            </li>
-            <li>
-              <a href="<?cs var:toroot ?>devices/sensors/versioning.html">
-                <span class="en">Version deprecation</span>
-              </a>
-            </li>
-          </ul>
+      <li class="nav-section">
+        <div class="nav-section-header">
+          <a href="<?cs var:toroot ?>devices/sensors/index.html">
+            <span class="en">Sensors</span>
+          </a>
+        </div>
+        <ul>
+          <li><a href="<?cs var:toroot ?>devices/sensors/sensor-stack.html">Sensor stack</a></li>
+          <li><a href="<?cs var:toroot ?>devices/sensors/report-modes.html">Reporting modes</a></li>
+          <li><a href="<?cs var:toroot ?>devices/sensors/suspend-mode.html">Suspend mode</a></li>
+          <li><a href="<?cs var:toroot ?>devices/sensors/power-use.html">Power consumption</a></li>
+          <li><a href="<?cs var:toroot ?>devices/sensors/interaction.html">Interaction</span></a></li>
+          <li><a href="<?cs var:toroot ?>devices/sensors/hal-interface.html">HAL interface</a></li>
+          <li><a href="<?cs var:toroot ?>devices/sensors/batching.html">Batching</a></li>
+          <li><a href="<?cs var:toroot ?>devices/sensors/sensor-types.html">Sensor types</a></li>
+          <li><a href="<?cs var:toroot ?>devices/sensors/versioning.html">Version deprecation</a></li>
+        </ul>
       </li>
       <li class="nav-section">
         <div class="nav-section-header">
@@ -196,14 +157,11 @@
           <li><a href="<?cs var:toroot ?>devices/tv/HDMI-CEC.html">HDMI-CEC control service</a></li>
         </ul>
       </li>
-
     </ul>
-  </li>
-<!-- End Porting Android -->
-  </li>
+  </li> <!-- End nav-section, Device Interfaces-->
 
 
-  <li class="nav-section">
+  <li class="nav-section"> <!--Begin nav-section, Core Technologies-->
     <div class="nav-section-header">
       <a href="<?cs var:toroot ?>devices/tech/index.html">
         <span class="en">Core Technologies</span>
@@ -251,7 +209,6 @@
           <li><a href="<?cs var:toroot ?>devices/tech/debug/tuning.html">Performance Tuning</a></li>
           <li><a href="<?cs var:toroot ?>devices/tech/debug/native-memory.html">Native Memory Usage</a></li>
           <li><a href="<?cs var:toroot ?>devices/tech/debug/dumpsys.html">Dumpsys</a></li>
-
         </ul>
       </li>
 
@@ -263,31 +220,22 @@
         </div>
       </li>
 
-      <li>
-          <a href="<?cs var:toroot ?>devices/tech/kernel.html">
-            <span class="en">Kernel</span>
-          </a>
-      </li>
-
-      <li>
-          <a href="<?cs var:toroot ?>devices/tech/low-ram.html">
-            <span class="en">Low RAM</span>
-          </a>
-      </li>
+      <li><a href="<?cs var:toroot ?>devices/tech/kernel.html">Kernel</a></li>
+      <li><a href="<?cs var:toroot ?>devices/tech/low-ram.html">Low RAM</a></li>
 
       <li class="nav-section">
-            <div class="nav-section-header">
-              <a href="<?cs var:toroot ?>devices/tech/ota/index.html">
-                <span class="en">OTA Updates</span>
-              </a>
-    </div>
-            <ul>
-              <li><a href="<?cs var:toroot ?>devices/tech/ota/tools.html">OTA Tools</a></li>
-              <li><a href="<?cs var:toroot ?>devices/tech/ota/block.html">Block-based OTA</a></li>
-              <li><a href="<?cs var:toroot ?>devices/tech/ota/inside_packages.html">Inside OTA Packages</a></li>
-              <li><a href="<?cs var:toroot ?>devices/tech/ota/device_code.html">Device-Specific Code</a></li>
-              <li><a href="<?cs var:toroot ?>devices/tech/ota/sign_builds.html">Signing Builds for Release</a></li>
-            </ul>
+        <div class="nav-section-header">
+            <a href="<?cs var:toroot ?>devices/tech/ota/index.html">
+              <span class="en">OTA Updates</span>
+            </a>
+        </div>
+        <ul>
+          <li><a href="<?cs var:toroot ?>devices/tech/ota/tools.html">OTA Tools</a></li>
+          <li><a href="<?cs var:toroot ?>devices/tech/ota/block.html">Block-based OTA</a></li>
+          <li><a href="<?cs var:toroot ?>devices/tech/ota/inside_packages.html">Inside OTA Packages</a></li>
+          <li><a href="<?cs var:toroot ?>devices/tech/ota/device_code.html">Device-Specific Code</a></li>
+          <li><a href="<?cs var:toroot ?>devices/tech/ota/sign_builds.html">Signing Builds for Release</a></li>
+        </ul>
       </li>
 
       <li>
@@ -295,14 +243,14 @@
             <span class="en">Power</span>
           </a>
       </li>
-     <li class="nav-section">
-          <div class="nav-section-header">
+      <li class="nav-section">
+        <div class="nav-section-header">
             <a href="<?cs var:toroot ?>devices/tech/security/index.html">
               <span class="en">Security</span>
             </a>
-          </div>
+        </div>
         <ul>
-       <li class="nav-section">
+          <li class="nav-section">
             <div class="nav-section-header">
               <a href="<?cs var:toroot ?>devices/tech/security/overview/index.html">
                 <span class="en">Overview</span>
@@ -312,62 +260,58 @@
               <li><a href="<?cs var:toroot ?>devices/tech/security/overview/kernel-security.html">Kernel security</a></li>
               <li><a href="<?cs var:toroot ?>devices/tech/security/overview/app-security.html">App security</a></li>
               <li><a href="<?cs var:toroot ?>devices/tech/security/overview/updates-resources.html">Updates and resources</a></li>
-                        <li class="nav-section">
-            <div class="nav-section-header">
-              <a href="<?cs var:toroot ?>devices/tech/security/enhancements/index.html">
-                <span class="en">Enhancements</span>
-              </a>
-            </div>
-            <ul>
-              <li><a href="<?cs var:toroot ?>devices/tech/security/enhancements/enhancements50.html">Android 5.0</a></li>
-              <li><a href="<?cs var:toroot ?>devices/tech/security/enhancements/enhancements44.html">Android 4.4</a></li>
-              <li><a href="<?cs var:toroot ?>devices/tech/security/enhancements/enhancements43.html">Android 4.3</a></li>
-              <li><a href="<?cs var:toroot ?>devices/tech/security/enhancements/enhancements42.html">Android 4.2</a></li>
-              <li><a href="<?cs var:toroot ?>devices/tech/security/enhancements/enhancements41.html">Android 4.1</a></li>
+              <li class="nav-section">
+                <div class="nav-section-header">
+                  <a href="<?cs var:toroot ?>devices/tech/security/enhancements/index.html">
+                    <span class="en">Enhancements</span>
+                  </a>
+                </div>
+                <ul>
+                  <li><a href="<?cs var:toroot ?>devices/tech/security/enhancements/enhancements50.html">Android 5.0</a></li>
+                  <li><a href="<?cs var:toroot ?>devices/tech/security/enhancements/enhancements44.html">Android 4.4</a></li>
+                  <li><a href="<?cs var:toroot ?>devices/tech/security/enhancements/enhancements43.html">Android 4.3</a></li>
+                  <li><a href="<?cs var:toroot ?>devices/tech/security/enhancements/enhancements42.html">Android 4.2</a></li>
+                  <li><a href="<?cs var:toroot ?>devices/tech/security/enhancements/enhancements41.html">Android 4.1</a></li>
+                </ul>
+              </li>
+              <li><a href="<?cs var:toroot ?>devices/tech/security/overview/acknowledgements.html">Acknowledgements</a></li>
             </ul>
           </li>
-            <li><a href="<?cs var:toroot ?>devices/tech/security/overview/acknowledgements.html">Acknowledgements</a></li>
-            </ul>
-          </li>
-        <li class="nav-section">
+          <li class="nav-section">
             <div class="nav-section-header">
               <a href="<?cs var:toroot ?>devices/tech/security/implement.html">
                 <span class="en">Implementation</span>
               </a>
             </div>
             <ul>
-            <li>
-              <a href="<?cs var:toroot ?>devices/tech/security/encryption/index.html">
-                <span class="en">Encryption</span>
-              </a>
+              <li><a href="<?cs var:toroot ?>devices/tech/security/encryption/index.html">Encryption</a></li>
+              <li class="nav-section">
+                <div class="nav-section-header">
+                  <a href="<?cs var:toroot ?>devices/tech/security/verifiedboot/index.html">
+                    <span class="en">Verified Boot</span>
+                  </a>
+                </div>
+                <ul>
+                  <li><a href="<?cs var:toroot ?>devices/tech/security/verifiedboot/verified-boot.html">Verifying boot</a></li>
+                  <li><a href="<?cs var:toroot ?>devices/tech/security/verifiedboot/dm-verity.html">Implementing dm-verity</a></li>
+                </ul>
+              </li>
+            <li class="nav-section">
+              <div class="nav-section-header">
+                <a href="<?cs var:toroot ?>devices/tech/security/selinux/index.html">
+                  <span class="en">Security-Enhanced Linux</span>
+                </a>
+              </div>
+              <ul>
+                <li><a href="<?cs var:toroot ?>devices/tech/security/selinux/concepts.html">Concepts</a></li>
+                <li><a href="<?cs var:toroot ?>devices/tech/security/selinux/implement.html">Implementation</a></li>
+                <li><a href="<?cs var:toroot ?>devices/tech/security/selinux/customize.html">Customization</a></li>
+                <li><a href="<?cs var:toroot ?>devices/tech/security/selinux/validate.html">Validation</a></li>
+              </ul>
             </li>
-          <li class="nav-section">
-            <div class="nav-section-header">
-              <a href="<?cs var:toroot ?>devices/tech/security/verifiedboot/index.html">
-                <span class="en">Verified Boot</span>
-              </a>
-            </div>
-            <ul>
-              <li><a href="<?cs var:toroot ?>devices/tech/security/verifiedboot/verified-boot.html">Verifying boot</a></li>
-              <li><a href="<?cs var:toroot ?>devices/tech/security/verifiedboot/dm-verity.html">Implementing dm-verity</a></li>
-            </ul>
-          </li>
-          <li class="nav-section">
-            <div class="nav-section-header">
-              <a href="<?cs var:toroot ?>devices/tech/security/selinux/index.html">
-                              <span class="en">Security-Enhanced Linux</span>
-              </a>
-            </div>
-            <ul>
-              <li><a href="<?cs var:toroot ?>devices/tech/security/selinux/concepts.html">Concepts</a></li>
-              <li><a href="<?cs var:toroot ?>devices/tech/security/selinux/implement.html">Implementation</a></li>
-              <li><a href="<?cs var:toroot ?>devices/tech/security/selinux/customize.html">Customization</a></li>
-              <li><a href="<?cs var:toroot ?>devices/tech/security/selinux/validate.html">Validation</a></li>
-            </ul>
-          </li>
-         </ul>
-      </li>
-    </ul>
+          </ul>
+        </li>
+      </ul>
       <li class="nav-section">
         <div class="nav-section-header">
           <a href="<?cs var:toroot ?>devices/tech/test_infra/tradefed/index.html">
@@ -375,29 +319,21 @@
           </a>
         </div>
         <ul>
-          <li><a href="<?cs var:toroot ?>devices/tech/test_infra/tradefed/fundamentals/index.html"
-            >Start Here</a></li>
-          <li><a href="<?cs var:toroot ?>devices/tech/test_infra/tradefed/fundamentals/machine_setup.html"
-            >Machine Setup</a></li>
-          <li><a href="<?cs var:toroot ?>devices/tech/test_infra/tradefed/fundamentals/devices.html"
-            >Working with Devices</a></li>
-          <li><a href="<?cs var:toroot ?>devices/tech/test_infra/tradefed/fundamentals/lifecycle.html"
-            >Test Lifecycle</a></li>
-          <li><a href="<?cs var:toroot ?>devices/tech/test_infra/tradefed/fundamentals/options.html"
-            >Option Handling</a></li>
-          <li><a href="<?cs var:toroot ?>devices/tech/test_infra/tradefed/full_example.html"
-            >An End-to-End Example</a></li>
+          <li><a href="<?cs var:toroot ?>devices/tech/test_infra/tradefed/fundamentals/index.html">Start Here</a></li>
+          <li><a href="<?cs var:toroot ?>devices/tech/test_infra/tradefed/fundamentals/machine_setup.html">Machine Setup</a></li>
+          <li><a href="<?cs var:toroot ?>devices/tech/test_infra/tradefed/fundamentals/devices.html">Working with Devices</a></li>
+          <li><a href="<?cs var:toroot ?>devices/tech/test_infra/tradefed/fundamentals/lifecycle.html">Test Lifecycle</a></li>
+          <li><a href="<?cs var:toroot ?>devices/tech/test_infra/tradefed/fundamentals/options.html">Option Handling</a></li>
+          <li><a href="<?cs var:toroot ?>devices/tech/test_infra/tradefed/full_example.html">An End-to-End Example</a></li>
           <li id="tradefed-tree-list" class="nav-section">
             <div class="nav-section-header">
               <a href="<?cs var:toroot ?>reference/packages.html">
-            <span class="en">Package Index</span>
-          </a>
-        <div>
-      </li>
+                <span class="en">Package Index</span>
+              </a>
+            </div>
+          </li>
         </ul>
       </li>
-
     </ul>
-  </li>
-
-</ul>
+  </li> <!-- End nav-section, Core Technologies -->
+</ul> 
