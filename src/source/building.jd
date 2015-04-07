@@ -25,7 +25,7 @@ distributions.</p>
 
 <ul>
 
-  <li>A Linux or Mac system. It is also possible
+  <li>A Linux or Mac OS system. It is also possible
   to build Android in a virtual machine on unsupported systems such as Windows.
   If you are running Linux in a virtual machine, you need at
   least 16GB of RAM/swap and 50GB or more of disk space in order to
