@@ -140,6 +140,11 @@ BOARD_SEPOLICY_UNION += \
         sepolicy.te
 </pre>
 
+<p class="note"><strong>Note:</strong> As of the M release,
+BOARD_SEPOLICY_UNION is no longer required as all policy files found within any
+directory included in the BOARD_SEPOLICY_DIRS variable are joined with the
+base policy automatically.</p>
+
 <p>After rebuilding your device, it is enabled with SELinux. You can now either
 customize your SELinux policies to accommodate your own additions to the
 Android operating system as described in <a
