@@ -222,7 +222,18 @@
       </li>
 
       <li><a href="<?cs var:toroot ?>devices/tech/kernel.html">Kernel</a></li>
-      <li><a href="<?cs var:toroot ?>devices/tech/low-ram.html">Low RAM</a></li>
+
+      <li class="nav-section">
+        <div class="nav-section-header">
+            <a href="<?cs var:toroot ?>devices/tech/ram/index.html">
+              <span class="en">RAM</span>
+            </a>
+        </div>
+        <ul>
+          <li><a href="<?cs var:toroot ?>devices/tech/ram/low-ram.html">Low RAM</a></li>
+          <li><a href="<?cs var:toroot ?>devices/tech/ram/procstats.html">Viewing RAM Usage Data</a></li>
+        </ul>
+      </li>
 
       <li class="nav-section">
         <div class="nav-section-header">
