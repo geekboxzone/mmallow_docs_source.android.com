@@ -28,9 +28,9 @@ page.title=Power Profiles for Android
 <h2 id="usage-statistics">Battery Usage Statistics</h2>
 
 <p>The framework automatically determines battery usage statistics by tracking how long device
-components spend in different states. As components (WiFi chipset, Cellular Radio, Bluetooth, GPS,
-Display, CPU) change states (OFF/ON, idle/full power, low/high brightness, etc.), the controlling
-service reports to the framework BatteryStats service, which collects information over time and
+components spend in different states. As components (Wi-Fi chipset, cellular radio, Bluetooth, GPS,
+display, CPU) change states (OFF/ON, idle/full power, low/high brightness, etc.), the controlling
+service reports to the framework BatteryStats service. BatteryStats collects information over time and
 stores it for use across reboots. The service doesn’t track battery current draw directly,
 but instead collects timing information that can be used to approximate battery
 consumption by different components.</p>
@@ -59,9 +59,15 @@ modifications.</p>
 
 <h2 id="profile-values">Power Profile Values</h2>
 
-<p>Device manufacturers must provide a component power profile that defines the current
-consumption value for the component and the approximate the actual battery drain caused by the
-component over time. Within a power profile, power consumption is specified in milliamps (mA) of
+<p class="caution"><strong>Caution:</strong> Device manufacturers must
+provide a component power profile that defines the current consumption value
+for the component and the approximate battery drain caused by the component
+over time. This profile is defined in <a
+href="https://android.googlesource.com/platform/frameworks/base/+/master/core/res/res/xml/power_profile.xml">platform/frameworks/base/core/res/res/xml/power_profile.xml</a>.
+See the <a href="#power-values">Power Values</a> table for guidance on these
+settings.</p>
+
+<p>Within a power profile, power consumption is specified in milliamps (mA) of
 current draw at a nominal voltage and can be a fractional value specified in microamps (uA). The
 value should be the mA consumed at the battery and not a value applicable to a power rail that does
 not correspond to current consumed from the battery.</p>
@@ -564,6 +570,14 @@ visualizations of power-related events from logs.</p>
 
 
 <h2 id="power-values">Power Values</h2>
+
+<p>Device manufacturers must provide a component power profile defined in
+<em>&lt;device&gt;</em>/frameworks/base/core/res/res/xml/power_profile.xml. To
+determine these values, use hardware that measures the power being used by
+the device and perform the various operations for which information is needed.
+Measure the power use during those operations and compute the values (deriving
+differences from other base-line power uses as appropriate).</p>
+
 <table>
 <tr>
   <th>Name</th>
@@ -676,7 +690,7 @@ visualizations of power-related events from logs.</p>
 <tr>
   <td>cpu.speeds</td>
   <td>Multi-value entry that lists each possible CPU speed in KHz.</td>
-  <td>125000, 250000, 500000, 1000000, 1500000</td>
+  <td>125000KHz, 250000KHz, 500000KHz, 1000000KHz, 1500000KHz</td>
   <td>The number and order of entries must correspond to the mA entries in cpu.active.</td>
 </tr>
 
@@ -702,7 +716,7 @@ consumption, discarding higher samples where the CPU exited idle.</td>
 <tr>
   <td>cpu.active</td>
   <td>Additional power used by CPUs when running at different speeds.</td>
-  <td>100, 120, 140, 160, 200</td>
+  <td>100mA, 120mA, 140mA, 160mA, 200mA</td>
   <td>Set the max speed in the kernel to each of the allowed speeds and peg the CPU at that
 speed. The number of entries here correspond to the number of entries in cpu.speeds, in the
 same order.</td>
@@ -717,9 +731,6 @@ same order.</td>
 
 </table>
  
-<p>The power_profile.xml file is placed in an overlay in
-device///frameworks/base/core/res/res/xml/power_profile.xml</p>
-
 <h3 id="sample">Sample file</h3>
 
 <pre>
