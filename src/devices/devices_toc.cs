@@ -253,11 +253,15 @@
 
       <li><a href="<?cs var:toroot ?>devices/tech/netstats.html">Viewing Network Data</a></li>
 
-      <li>
-          <a href="<?cs var:toroot ?>devices/tech/power.html">
-            <span class="en">Power</span>
-          </a>
+      <li class="nav-section">
+        <div class="nav-section-header">
+          <a href="<?cs var:toroot ?>devices/tech/power/index.html"><span class="en">Power</span></a>
+        </div>
+        <ul>
+          <li><a href="<?cs var:toroot ?>devices/tech/power/batterystats.html">Viewing Battery Usage Data</a></li>
+        </ul>
       </li>
+
       <li class="nav-section">
         <div class="nav-section-header">
             <a href="<?cs var:toroot ?>devices/tech/security/index.html">
