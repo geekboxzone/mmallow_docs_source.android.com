@@ -95,11 +95,12 @@ a machine-friendly format.  </ul>
 following articles:</p>
 
 <ul>
-  <li> <a href="{@docRoot}devices/input/diagnostics.html">Input Diagnostics</a>
+  <li> <a
+  href="{@docRoot}devices/input/diagnostics.html">Viewing Input Diagnostics (dumpsys input)</a>
+  <li> <a href="{@docRoot}devices/tech/ram/procstats.html">Viewing RAM Usage Data (dumpsys procstats)</a>
+  <li> <a href="{@docRoot}devices/tech/netstats.html">Viewing Network Data (dumpsys netstats)</a>
 <!--  To add in upcoming CLs
-  <li> <a href="{@docRoot}devices/tech/ram/procstats.html">Procstats</a>
   <li> <a href="{@docRoot}devices/tech/power/batterystats.html">Batterystats</a>
-  <li> <a href="{@docRoot}devices/tech/datausage/netstats.html">Dumpsys Netstats</a>
 -->
 </ul>
 
