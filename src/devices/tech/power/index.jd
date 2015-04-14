@@ -550,24 +550,7 @@ Update period for all is 3.5 seconds.</td>
 
 <h2 id="viewing-usage">Viewing Battery Usage Data</h2>
 
-<p>The <code>dumpsys</code> <code>batterystats</code> command generates interesting statistical data
-about battery usage on a device, organized by unique application ID. You can view a history of
-battery-related events such as mobile radio state, Wi-Fi and Bluetooth power states, and wakelock
-reasons.</p>
-
-<p>Statistics include:</p>
-
-<ul>
-<li>History of battery-related events</li>
-<li>Global statistics for the device</li>
-<li>Approximate power use per UID and system component</li>
-<li>System UID aggregated statistics</li>
-</ul>
-
-<p>Use the output of the dumpsys command with the
-<a href="https://github.com/google/battery-historian">Battery Historian</a> tool to generate HTML
-visualizations of power-related events from logs.</p>
-
+See <a href="{@docRoot}devices/tech/power/batterystats.html">Viewing Battery Usage Data</a>.
 
 <h2 id="power-values">Power Values</h2>
 
