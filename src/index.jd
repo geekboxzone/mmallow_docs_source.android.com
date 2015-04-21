@@ -41,6 +41,32 @@ header.hide=1
   <div class="landing-docs">
     <div class="col-8">
     <h3>What's New</h3>
+<a href="{@docRoot}devices/tech/debug/dumpsys.html">
+        <h4>Example Dumpsys Diagnostic Output</h4></a>
+        <p>In addition to the aforementioned <strong><a
+        href="{@docRoot}devices/input/diagnostics.html">Input
+        Diagnostics</a></strong>, you can now find Dumpsys examples of usage
+        data for <strong><a href="{@docRoot}devices/tech/ram/procstats.html">RAM
+        (procstats)</a></strong>, <strong><a
+        href="{@docRoot}devices/tech/netstats.html">network (netstats)</a></strong>,
+        and <strong><a
+        href="{@docRoot}devices/tech/power/batterystats.html">battery (batterystats)</a></strong>.</p>
+
+<a href="{@docRoot}devices/audio/latency_measurements.html">
+        <h4>Audio Latency Measurements</h4></a>
+        <p>The Android audio team has published <strong><a
+        href="{@docRoot}devices/audio/latency_measurements.html">round-trip audio latency
+        measurements</a></strong> for select Nexus devices to help partners compare their
+        own devices and reduce latency further.</p>
+
+<a href="{@docRoot}devices/tech/power/index.html">
+        <h4>Power Profile Details</h4></a>
+        <p><strong><a
+        href="{@docRoot}devices/tech/power/index.html">Power</a></strong>
+        information has been moved and expanded to include details on
+        <code>cpu.awake</code> and <code>cpu.active</code>. The need to create a
+        <code>power_profile.xml</code> file is also emphasized throughout.</p>
+
 <a href="{@docRoot}source/initializing.html">
         <h4>Initializing Improvements</h4></a>
         <p>Build environment <strong><a
@@ -61,14 +87,6 @@ header.hide=1
         Similarly, <code>BOARD_SEPOLICY_UNION</code> has been removed, so
         <code>BOARD_SEPOLICY_*</code> variables are suggested insead.</p>
 
-<a href="{@docRoot}devices/input/diagnostics.html">
-        <h4>Dumpsys Input and System Diagnostics</h4></a>
-        <p>Dumpsys contents have been completely rewritten with fresh output
-        examples and split into <strong><a
-        href="{@docRoot}devices/input/diagnostics.html">Input Diagnostics</a></strong>
-        and <strong><a href="{@docRoot}devices/tech/debug/dumpsys.html">System
-        Diagnostics</a></strong>.</p>
-
 <a href="{@docRoot}devices/bluetooth.html">
         <h4>Android 5.0 Bluetooth HCI Requirements</h4></a>
         <p><strong><a
@@ -77,27 +95,6 @@ header.hide=1
         the Bluetooth Low Energy APIs in Android 5.0 have
         been published and linked from the <strong><a
         href="{@docRoot}devices/bluetooth.html">Bluetooth</a></strong> introduction.</p>
-
-<a href="{@docRoot}devices/tech/ota/index.html">
-        <h4>OTA Updates</h4></a>
-        <p>An entire suite of documentation has been added describing the <strong><a
-        href="{@docRoot}devices/tech/ota/index.html">over-the-air (OTA)
-        update process</a></strong> including <strong><a
-        href="{@docRoot}devices/tech/ota/tools.html">available tools</a></strong>, <strong><a
-        href="{@docRoot}devices/tech/ota/block.html">block-based OTAs</a></strong>, and
-        <strong><a
-        href="{@docRoot}devices/tech/ota/device_code.html">device-specific code</a></strong> for customizing updates.</p>
-
-<a href="{@docRoot}devices/tech/security/verifiedboot/index.html">
-        <h4>Verified Boot</h4></a>
-        <p>The <strong><a
-        href="{@docRoot}devices/tech/security/verifiedboot/index.html">Verified
-        Boot</a></strong> section of the site has been augmented with additional
-        information for <strong><a
-        href="{@docRoot}devices/tech/security/verifiedboot/verified-boot.html">verifying
-        boot</a></strong> and <strong><a
-        href="{@docRoot}devices/tech/security/verifiedboot/dm-verity.html">implementing
-        dm-verity</a></strong>.</p>
     </div>
 
     <div class="col-8">
