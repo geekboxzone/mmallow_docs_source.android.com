@@ -214,7 +214,7 @@ The test application uses the Android native audio API based on OpenSL ES.
 <tr>
   <td>Nexus 4</td>
   <td>5.1</td>
-  <td>LMY47R</td>
+  <td>LMY47O</td>
   <td>48000</td>
   <td>240</td>
   <td>5</td>
@@ -273,8 +273,8 @@ The test application uses the Android native audio API based on OpenSL ES.
 
 <tr>
   <td>Nexus 7<br />2013</td>
-  <td>5.1.1</td>
-  <td>LMY47W</td>
+  <td>5.1</td>
+  <td>LMY47O</td>
   <td>48000</td>
   <td>240</td>
   <td>5</td>
@@ -293,7 +293,7 @@ The test application uses the Android native audio API based on OpenSL ES.
 
 <tr>
   <td>Nexus 5</td>
-  <td>5.0.0_r3.0.1</td>
+  <td>5.0.0</td>
   <td>LRX21O</td>
   <td>48000</td>
   <td>240</td>
@@ -304,7 +304,7 @@ The test application uses the Android native audio API based on OpenSL ES.
 <tr>
   <td>Nexus 5</td>
   <td>5.1</td>
-  <td>LMY47M</td>
+  <td>LMY47I</td>
   <td>48000</td>
   <td>240</td>
   <td>5</td>
@@ -329,16 +329,6 @@ The test application uses the Android native audio API based on OpenSL ES.
   <td>256</td>
   <td>5.3</td>
   <td>38</td>
-</tr>
-
-<tr>
-  <td>Nexus 9</td>
-  <td>5.1.1</td>
-  <td>LMY47S</td>
-  <td>48000</td>
-  <td>256</td>
-  <td>5.3</td>
-  <td>32</td>
 </tr>
 
 <tr>
