@@ -178,6 +178,12 @@ following table. Factory images and binaries for Nexus devices can be downloaded
 <th>Supported devices</th>
 </tr>
 <tr>
+  <td>LMY47V</td>
+  <td>android-5.1.1_r1</td>
+  <td>Lollipop</td>
+  <td>Nexus Player</td>
+</tr>
+<tr>
   <td>LMY47O</td>
   <td>android-5.1.0_r5</td>
   <td>Lollipop</td>
