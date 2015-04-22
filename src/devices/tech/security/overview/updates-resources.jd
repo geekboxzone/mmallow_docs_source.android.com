@@ -23,6 +23,18 @@ page.title= Security updates and resources
   </div>
 </div>
 
+<h2 id="reporting-security-issues">Reporting Security Issues</h2>
+<p class="note"><strong>Note:</strong> The preferred way to report security
+issues is sending an email detailing the issue to security@android.com.</p>
+<p>Any developer, Android user, or security researcher can notify the Android
+security team of potential security issues. Your message can be encrypted
+using the Android security team PGP key <a href="https://developer.android.com/security_at_android_dot_com.txt">here</a>.</p> 
+<p>Sending an email to security@android.com is preferable to using the
+public Android bug tracker. Bugs marked as security issues are not externally
+visible, but they may eventually be made visible. If you plan to submit a
+patch to resolve a security issue, please contact security@android.com and
+wait for a response before submitting the patch to AOSP.</p>
+
 <h2 id="android-updates">Android Updates</h2>
 <p>Android provides system updates for both security and feature related purposes.</p>
 <p>There are two ways to update the code on most Android devices: over-the-air
