@@ -1,7 +1,7 @@
 page.title=Security
 @jd:body
 <!--
-    Copyright 2014 The Android Open Source Project
+    Copyright 2015 The Android Open Source Project
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -29,10 +29,12 @@ page.title=Security
   consumers. To protect that value, the platform must offer an application
   environment that ensures the security of users, data, applications, the device,
   and the network.</p>
-<p>Securing an open platform requires a robust security architecture and rigorous
-  security programs.  Android was designed with multi-layered security that
-  provides the flexibility required for an open platform, while providing
-  protection for all users of the platform.</p>
+<p>Securing an open platform requires a robust security architecture and
+  rigorous security programs.  Android was designed with multi-layered
+  security that provides the flexibility required for an open platform, while
+  providing protection for all users of the platform. For information about
+  reporting security issues and the update process, 
+  see <a href="{@docRoot}devices/tech/security/overview/updates-resources.html">Security Updates and Resources</a>.</p>
 <p>Android was designed with developers in mind. Security controls were designed
   to reduce the burden on developers. Security-savvy developers can easily work
   with and rely on flexible security controls.  Developers less familiar with
@@ -52,6 +54,7 @@ page.title=Security
   related to the browser or SMS application. Recommended best practices for
   building Android devices, deploying Android devices, or developing applications
   for Android are not the goal of this document and are provided elsewhere.</p>
+
 <h2 id="background">Background</h2>
 <p>Android provides an open source platform and application environment for mobile
   devices.</p>
@@ -87,7 +90,7 @@ page.title=Security
       which they can write private data, including databases and raw files.</p>
   </li>
 </ul>
-<p>Android applications extend the core Android operating system.  There are two
+<p>Android applications extend the core Android operating system. There are two
   primary sources for applications:</p>
 <ul>
   <li>
@@ -105,13 +108,13 @@ page.title=Security
   </li>
 </ul>
 <p>Google provides a set of cloud-based services that are available to any
-  compatible Android device.  The primary services are:</p>
+  compatible Android device. The primary services are:</p>
 <ul>
   <li>
     <p><strong>Google Play</strong>: Google Play is a collection of services that
       allow users to discover, install, and purchase applications from their Android
-      device or the web.  Google Play makes it easy for developers to reach Android
-      users and potential customers.   Google Play also provides community review,
+      device or the web. Google Play makes it easy for developers to reach Android
+      users and potential customers. Google Play also provides community review,
       application <a href="https://developer.android.com/guide/publishing/licensing.html">license
         verification</a>, application security scanning, and other security services.</p>
   </li>
@@ -130,6 +133,8 @@ page.title=Security
   </li>
 </ul>
 <p>These services are not part of the Android Open Source Project and are out
-  of scope for this document.  But they are relevant to the security of most
+  of scope for this document. But they are relevant to the security of most
   Android devices, so a related security document titled “Google Services for
   Android: Security Overview” is available.</p>
+
+
