@@ -108,7 +108,7 @@ a:active {
 }
 
 .small {
-    font-size: 80%;
+    font-size: 65%;
     font-weight: 700;
 }
 
@@ -118,14 +118,14 @@ a:active {
 
 h1 {
     color: #333;
-    font: 16pt/18pt Roboto, Arial, Helvetica, sans-serif;
+    font: 22pt/24pt Roboto, Arial, Helvetica, sans-serif;
     padding: 10pt 0pt 0pt 0pt;
     text-align: left;
 }
 
 h2 {
     color: #693;
-    font: 14pt/16pt Roboto, Arial, Helvetica, sans-serif;
+    font: 20pt/22pt Roboto, Arial, Helvetica, sans-serif;
     padding: 8pt 0pt 0pt 0pt;
     text-align: left;
     page-break-after: avoid;
@@ -133,15 +133,15 @@ h2 {
 
 h3 {
     color: #333;
-    font: bold 13pt/15pt Roboto, Arial, Helvetica, sans-serif;
+    font: bold 18pt/20pt Roboto, Arial, Helvetica, sans-serif;
     padding: 4pt 0pt 0pt 0pt;
     text-align: left;
     page-break-after: avoid;
 }
 
 h4 {
-    color: #666;
-    font: bold 12pt/14pt Roboto, Arial, Helvetica, sans-serif;
+    color: #607D8B;
+    font: bold 16pt/18pt Roboto, Arial, Helvetica, sans-serif;
     padding: 4pt 0pt 0pt 0pt;
     text-align: left;
     page-break-after: avoid;
@@ -150,7 +150,7 @@ h4 {
 
 h5 {
     color: #333;
-    font: italic 12pt/14pt Roboto, Arial, Helvetica, sans-serif;
+    font: italic 16pt/18pt Roboto, Arial, Helvetica, sans-serif;
     padding: 0pt 0pt 0pt 0pt;
     text-align: left;
     page-break-after: avoid;
@@ -175,21 +175,21 @@ h6 {
 
 body {
     color: #333;
-    font: 12pt/16pt Roboto, Arial, Helvetica, sans-serif;
+    font: 16pt/20pt Roboto, Arial, Helvetica, sans-serif;
     margin: 0;
     padding: 5pt 5pt 5pt 10pt;
 }
 
 p {
     color: #333;
-    font: 12pt/16pt Roboto, Arial, Helvetica, sans-serif;
+    font: 16pt/20pt Roboto, Arial, Helvetica, sans-serif;
     margin: 0;
     padding: 5pt 0pt 1pt 0pt;
 }
 
 li {
     color: #333;
-    font: 12pt/16pt Roboto, Arial, Helvetica, sans-serif;
+    font: 16pt/20pt Roboto, Arial, Helvetica, sans-serif;
     margin: 0;
     padding: 2pt 50pt 2pt 0pt;
 }
@@ -215,7 +215,7 @@ table {
 td {
     border: 1px solid gray;
     color: #333;
-    font: 12pt/16pt Roboto, Arial, Helvetica, sans-serif;
+    font: 16pt/20pt Roboto, Arial, Helvetica, sans-serif;
     padding: 5pt;
     overflow: visible;
 }
@@ -224,25 +224,29 @@ th {
     background-color: #CCC;
     border: 1px solid gray;
     color: #333;
-    font: bold 12pt/14pt Roboto, Arial, Helvetica, sans-serif;
+    font: bold 16pt/20pt Roboto, Arial, Helvetica, sans-serif;
     padding: 5pt;
     overflow: visible;
 }
 
 p.table_footnote {
     color: #333;
-    font: 10pt/12pt Roboto, Arial, Helvetica, sans-serif;
+    font: 14pt/16pt Roboto, Arial, Helvetica, sans-serif;
     margin: 0;
     padding: 5pt 5pt 5pt 5pt;
 }
 
 li.table_list {
     color: #333;
-    font: 12pt/16pt Roboto, Arial, Helvetica, sans-serif;
+    font: 16pt/20t Roboto, Arial, Helvetica, sans-serif;
     margin-left: -10pt;
     padding: 2pt 0pt 2pt 0pt;
 }
 
+
+/**
+* Used in the footer
+*/
 
 table.noborder {
     border: 0px;
@@ -253,7 +257,7 @@ table.noborder {
 td.noborder {
     border: 0px;
     color: #333;
-    font: 10pt/14pt Roboto, Arial, Helvetica, sans-serif;
+    font: 10pt/12pt Roboto, Arial, Helvetica, sans-serif;
     padding: 10px 0px 5px 0px;
 }
 
@@ -276,8 +280,7 @@ td.noborder {
  color: #99CC00;
 }
 
-#toc
- {
+#toc {
     width: 950px;
 }
 
@@ -299,31 +302,34 @@ td.noborder {
 
 p.toc_h1 {
     color: #99CC00;
-    font: 16pt/18pt Roboto, Arial, Helvetica, sans-serif;
-    padding: 10px 0px 0px 0px;
+    font: 20pt/22pt Roboto, Arial, Helvetica, sans-serif;
+    padding: 15px 0px 0px 0px;
 }
 
 p.toc_h2 {
     color: black;
-    font: 14pt/16pt Roboto, Arial, Helvetica, sans-serif;
+    font: 18pt/20pt Roboto, Arial, Helvetica, sans-serif;
     margin-left: 20px;
+    padding: 15px 0px 0px 0px;
 }
 
 p.toc_h3 {
     color: black;
-    font: 12pt/14pt Roboto, Arial, Helvetica, sans-serif;
+    font: 16pt/18pt Roboto, Arial, Helvetica, sans-serif;
     margin-left: 45px;
+    padding: 10px 0px 0px 0px;
 }
 
 p.toc_h4 {
     color: black;
-    font: 10pt/12pt Roboto, Arial, Helvetica, sans-serif;
+    font: 14pt/16pt Roboto, Arial, Helvetica, sans-serif;
     margin-left: 85px;
+    padding: 10px 0px 0px 0px;
 }
 
 p.toc_h5 {
     color: black;
-    font: 10pt/12pt Roboto, Arial, Helvetica, sans-serif;
+    font: 14pt/16pt Roboto, Arial, Helvetica, sans-serif;
     margin-left: 105px;
 }
 
