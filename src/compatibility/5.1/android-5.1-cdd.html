@@ -1237,8 +1237,13 @@ correctly implement the vibration APIs. If a device implementation lacks
 hardware, the corresponding APIs MUST be implemented as no-ops. This behavior
 is further detailed in <a href="#7_hardware_compatibility">section 7</a>.</p>
 
-<p>Additionally, the implementation MUST correctly render all resources (icons,
-sound files, etc.) provided for in the APIs [<a href="https://developer.android.com/guide/topics/resources/available-resources.html">Resources, 23</a>], or in the Status/System Bar icon style guide [<a href="http://developer.android.com/design/style/iconography.html">Resources, 24</a>]. Device implementers MAY provide an alternative user experience for
+<p>Additionally, the implementation MUST correctly render all resources (icons, animation files
+etc.) provided for in the APIs
+[<a href="https://developer.android.com/guide/topics/resources/available-resources.html">Resources, 23</a>],
+or in the Status/System Bar icon style guide
+[<a href="http://developer.android.com/design/style/iconography.html">Resources, 24</a>],
+which in the case of an Android Television device includes the possibility to not display the
+notifications. Device implementers MAY provide an alternative user experience for
 notifications than that provided by the reference Android Open Source
 implementation; however, such alternative notification systems MUST support
 existing notification resources, as above. </p>
@@ -1251,8 +1256,10 @@ existing notification resources, as above. </p>
   <li><strong>Lockscreen notifications</strong>. Notifications shown over a lock screen with granular control on visibility.</li>
 </ul>
 
-<p>Device implementations MUST properly display and execute these notifications,
-including the title/name, icon, text as documented in the Android APIs <a href="http://developer.android.com/design/patterns/notifications.html">[Resources, 25]</a>.</p>
+<p>Android device implementations, when such notifications are made visible, MUST properly execute
+Rich and Heads-up notifications and include the title/name, icon, text as documented in the Android
+APIs <a href="https://developer.android.com/design/patterns/notifications.html">[Resources, 25]</a>.
+</p>
 
 <p>Android includes Notification Listener Service APIs that allow apps (once
 explicitly enabled by the user) to receive a copy of all notifications as they
@@ -1387,8 +1394,10 @@ to the android.settings.INPUT_METHOD_SETTINGS intent.</p>
 
 <p>The Remote Control Client API is deprecated from Android 5.0 in favor of the
 Media Notification Template that allows media applications to integrate with
-playback controls that are displayed on the lock screen [<a href="http://developer.android.com/reference/android/app/Notification.MediaStyle.html">Resources, 35</a>]. Device implementations that support a lock screen in the device MUST support
-the Media Notification Template along with other notifications.</p>
+playback controls that are displayed on the lock screen [<a href="http://developer.android.com/reference/android/app/Notification.MediaStyle.html">Resources, 35</a>].
+Device implementations that support a lock screen, unless an Android Automotive or Watch
+implementation, MUST display the Lockscreen Notifications including the Media Notification
+Template.</p>
 
 <h3 id="3_8_11_dreams">3.8.11. Dreams</h3>
 
@@ -4306,7 +4315,8 @@ Devices.</td>
  </tr>
  <tr>
     <td>3.8.3. Notifications</td>
-    <td>Expanded definitions for types of supported notifications. </td>
+    <td>Expanded definitions for types of supported notifications. Added Android
+Watch and Automotive requirements.</td>
  </tr>
  <tr>
     <td>3.8.4. Search</td>
