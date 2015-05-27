@@ -3637,9 +3637,18 @@ table. (See <a href="#7_1_1_screen_configuration">section 7.1.1</a> for screen s
  </tr>
  <tr>
     <td><ul>
-    <li class="table_list">xhdpi or lower on small/normal screens</li>
-    <li class="table_list">hdpi or lower on large screens</li>
-    <li class="table_list">mdpi or lower on extra large screens</li></ul></td>
+    <li class="table_list">hdpi or lower on small/normal screens</li>
+    <li class="table_list">mdpi or lower on large screens</li>
+    <li class="table_list">ldpi or lower on extra large screens</li>
+    </ul></td>
+    <td>424MB</td>
+    <td>Not applicable</td>
+ </tr>
+ <tr>
+    <td><ul>
+    <li class="table_list">xhdpi or higher on small/normal screens</li>
+    <li class="table_list">hdpi or higher on large screens</li>
+    <li class="table_list">mdpi or higher on extra large screens</li></ul></td>
     <td>512MB</td>
     <td>832MB</td>
  </tr>
@@ -3665,6 +3674,10 @@ table. (See <a href="#7_1_1_screen_configuration">section 7.1.1</a> for screen s
 <p>The minimum memory values MUST be in addition to any memory space already
 dedicated to hardware components such as radio, video, and so on that is not
 under the kernel&rsquo;s control.</p>
+
+<p>Device implementations with less than 512MB of memory available to the kernel
+and userspace, unless an Android Watch, MUST return the value "true" for
+ActivityManager.isLowRamDevice().</p>
 
 <p>Android Television devices MUST have at least 5GB and other device
 implementations MUST have at least 1.5GB of non-volatile storage available for
