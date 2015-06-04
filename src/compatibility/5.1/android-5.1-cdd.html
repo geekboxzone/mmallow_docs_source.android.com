@@ -1475,16 +1475,24 @@ project [<a href="http://code.google.com/p/eyes-free/">Resources, 44</a>].</p>
 services [<a href="http://developer.android.com/reference/android/speech/tts/package-summary.html">Resources, 45</a>]. Device implementations reporting the feature android.hardware.audio.output
 MUST meet these requirements related to the Android TTS framework. </p>
 
-<p>Device implementations:</p>
+<p>Android Automotive implementations:</p>
+<ul>
+<li>MUST support the Android TTS framework APIs.</li>
+<li>MAY support installation of third-party TTS engines. If supported, partners
+MUST provide a user-accessible interface that allows the user to select a TTS
+engine for use at system level.</li>
+</ul>
+
+<p>All other device implementations:</p>
 
 <ul>
-  <li>MUST support the Android TTS framework APIs and SHOULD include a TTS engine
+  <li> MUST support the Android TTS framework APIs and SHOULD include a TTS engine
 supporting the languages available on the device. Note that the upstream
 Android open source software includes a full-featured TTS engine
-implementation.</li>
-  <li>MUST support installation of third-party TTS engines.</li>
-  <li>MUST provide a user-accessible interface that allows users to select a TTS
-engine for use at the system level.</li>
+implementation.
+  <li> MUST support installation of third-party TTS engines
+  <li> MUST provide a user-accessible interface that allows users to select a TTS
+engine for use at the system level
 </ul>
 
 <h2 id="3_12_tv_input_framework">3.12. TV Input Framework</h2>
@@ -4353,6 +4361,10 @@ Template</td>
  <tr>
     <td>3.8.13 Unicode and font</td>
     <td>MUST support Roboto 2 in addition to existing requirements.</td>
+ </tr>
+  <tr>
+    <td>3.11 Text-To-Speech</td>
+ <td>Added Android automotive requirements.</td>
  </tr>
  <tr>
     <td>3.12. TV Input Framework</td>
