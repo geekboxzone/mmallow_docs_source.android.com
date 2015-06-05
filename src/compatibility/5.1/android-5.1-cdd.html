@@ -3075,8 +3075,10 @@ sensor. If a device implementation does include a 3-axis accelerometer, it:</p>
 
 <ul>
   <li>MUST implement and report TYPE_ACCELEROMETER sensor [<a href="http://developer.android.com/reference/android/hardware/Sensor.html#TYPE_ACCELEROMETER">Resources, 78</a>].</li>
-  <li>MUST be able to report events up to a frequency of at least 100 Hz and SHOULD
-report events up to at least 200 Hz.</li>
+  <li>MUST be able to report events up to a frequency of at least 50 Hz for
+  Android Watch devices as such devices have a stricter power constraint and
+  100 Hz for all other device types.</li>
+  <li>SHOULD report events up to at least 200 Hz.</li>
   <li>MUST comply with the Android sensor coordinate system as detailed in the
 Android APIs [<a href="http://developer.android.com/reference/android/hardware/SensorEvent.html">Resources, 74</a>].</li>
   <li>MUST be capable of measuring from freefall up to four times the gravity (4g) or
@@ -3159,8 +3161,10 @@ also included. If a device implementation includes a gyroscope, it:</p>
 TYPE_GYROSCOPE_UNCALIBRATED sensor. Existing and new Android devices are
 strongly encouraged to implement the SENSOR_TYPE_GYROSCOPE_UNCALIBRATED sensor.</li>
   <li>MUST be capable of measuring orientation changes up to 1,000 degrees per second.</li>
-  <li>MUST be able to report events up to a frequency of at least 100 Hz and SHOULD
-report events up to at least 200 Hz.</li>
+  <li>MUST be able to report events up to a frequency of at least 50 Hz for
+  Android Watch devices as such devices have a stricter power constraint and 
+  100 Hz for all other device types.</li>
+  <li>SHOULD report events up to at least 200 Hz.</li>
   <li>MUST have a resolution of 12-bits or more and SHOULD have a resolution of
 16-bits or more.</li>
   <li>MUST be temperature compensated.</li>
