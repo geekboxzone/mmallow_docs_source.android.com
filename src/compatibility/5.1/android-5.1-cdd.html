@@ -1462,10 +1462,14 @@ all glyphs in the currency symbols block of Unicode 7.0.</p>
 <p>Android includes features that allow security-aware applications to perform
 device administration functions at the system level, such as enforcing password
 policies or performing remote wipe, through the Android Device Administration
-API [<a href="http://developer.android.com/guide/topics/admin/device-admin.html">Resources, 39</a>]. Device implementations MUST provide an implementation of the
-DevicePolicyManager class [<a href="http://developer.android.com/reference/android/app/admin/DevicePolicyManager.html">Resources, 40</a>]. Device implementations that include support for lock screen MUST support the
-full range of device administration policies defined in the Android SDK
-documentation [<a href="http://developer.android.com/guide/topics/admin/device-admin.html">Resources, 39</a>] and report the platform feature android.software.device_admin.</p>
+API [<a href="http://developer.android.com/guide/topics/admin/device-admin.html">Resources, 39</a>].
+Device implementations MUST provide an implementation of the DevicePolicyManager class
+[<a href="http://developer.android.com/reference/android/app/admin/DevicePolicyManager.html">Resources, 40</a>].
+Device implementations that include support for PIN (numeric) or PASSWORD
+(alphanumeric) based lock screens MUST support the full range of device
+administration policies defined in the Android SDK documentation
+[<a href="http://developer.android.com/guide/topics/admin/device-admin.html">Resources, 39</a>]
+and report the platform feature android.software.device_admin.</p>
 
 <p>Device implementations MAY have a preinstalled application performing device
 administration functions but this application MUST NOT be set out-of-the box as
@@ -4178,8 +4182,9 @@ MUST ask for the user's consent before enabling that mechanism.</p>
 </div>
 
 
-<p>If the device implementation has a lock screen, the device MUST support
-full-disk encryption of the application private data, (/data partition) as well
+<p>If the device implementation supports a lock screen with PIN (numeric) or
+PASSWORD (alphanumeric), the device MUST support full-disk encryption of the
+application private data (/data partition), as well
 as the SD card partition if it is a permanent, non-removable part of the device
 [<a href="http://source.android.com/devices/tech/security/encryption/index.html">Resources, 107</a>]. For devices supporting full-disk encryption, the full-disk encryption SHOULD
 be enabled all the time after the user has completed the out-of-box experience.
