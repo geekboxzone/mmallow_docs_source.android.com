@@ -4128,11 +4128,15 @@ the upstream Android Open Source Project.</p>
 
 <h2 id="9_8_privacy">9.8. Privacy</h2>
 
-
 <p>If the device implements functionality in the system that captures the contents
 displayed on the screen and/or records the audio stream played on the device,
 it MUST continuously notify the user whenever this functionality is enabled and
 actively capturing/recording.</p>
+
+<p>If a device implementation has a mechanism that routes network data traffic
+through a proxy server or VPN gateway by default (for example, preloading a VPN
+service with android.permission.CONTROL_VPN granted), the device implementation
+MUST ask for the user's consent before enabling that mechanism.</p>
 
 <h2 id="9_9_full-disk_encryption">9.9. Full-Disk Encryption</h2>
 
