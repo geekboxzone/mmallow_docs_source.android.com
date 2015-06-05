@@ -176,7 +176,7 @@
 
 <p class="toc_h3"><a href="#7_1_6_screen_technology">7.1.6. Screen Technology</a></p>
 
-<p class="toc_h3"><a href="#7_1_7_external_displays">7.1.7. External Displays</a></p>
+<p class="toc_h3"><a href="#7_1_7_external_displays">7.1.7. Secondary Displays</a></p>
 
 <p class="toc_h2"><a href="#7_2_input_devices">7.2. Input Devices</a></p>
 
@@ -404,7 +404,7 @@ uiMode = UI_MODE_TYPE_CAR [<a href="http://developer.android.com/reference/andro
 <p>All Android device implementations that do not fit into any of the above device
 types still MUST meet all requirements in this document to be Android 5.1
 compatible, unless the requirement is explicitly described to be only
-applicable to a specific Android device type. </p>
+applicable to a specific Android device type from above.</p>
 
 <h2 id="2_1_device_configurations">2.1 Device Configurations</h2>
 
@@ -942,9 +942,8 @@ non-ARM applications.</p>
 <h3 id="3_4_1_webview_compatibility">3.4.1. WebView Compatibility</h3>
 
 <div class="note">
-<p>The complete implementation of the android.webkit.Webview API MAY be provided
-on Android Watch devices but MUST be provided on all other types of device
-implementations.</p>
+<p>Android Watch devices MAY, but all other device implementations MUST provide
+a complete implementation of the android.webkit.Webview API.</p>
 </div>
 
 
@@ -2446,8 +2445,9 @@ of the display.</li>
   <li><strong>dots per inch (dpi)</strong>. The number of pixels encompassed by a linear horizontal or vertical span of
 1&rdquo;. Where dpi values are listed, both horizontal and vertical dpi must fall
 within the range.</li>
-  <li><strong>aspect ratio</strong>. The ratio of the longer dimension of the screen to the shorter dimension. For
-example, a display of 480x854 pixels would be 854/480 = 1.779, or roughly &ldquo;16:9&rdquo;.</li>
+  <li><strong>aspect ratio</strong>. The ratio of the pixels of the longer dimension
+  to the shorter dimension of the screen. For example, a display of 480x854 pixels
+  would be 854/480 = 1.779, or roughly &ldquo;16:9&rdquo;.</li>
   <li><strong>density-independent pixel (dp)</strong> The virtual pixel unit normalized to a 160 dpi screen, calculated as: pixels =
 dps * (density/160).</li>
 </ul>
@@ -2663,7 +2663,7 @@ and 1.15. That is, the pixel aspect ratio MUST be near square (1.0) with a 10 ~
 15% tolerance.</li>
 </ul>
 
-<h3 id="7_1_7_external_displays">7.1.7. External Displays</h3>
+<h3 id="7_1_7_external_displays">7.1.7. Secondary Displays</h3>
 
 
 <p>Android includes support for secondary display to enable media sharing
@@ -3840,9 +3840,8 @@ orientation) or enable software screen rotation for all apps (including home
 screen), so that the display draws correctly when the device is oriented with
 the port at bottom. Existing and new Android devices are <strong>very strongly encouraged to meet these requirements</strong> so they will be able to upgrade to future platform releases.</li>
   <li>It MUST allow a USB host connected with the Android device to access the
-contents of the shared storage volume using standard protocols such as USB mass
-storage or Media Transfer Protocol, if the device reports the android.hardware.feature.output
-feature or the android.hardware.camera feature.</li>
+contents of the shared storage volume using either USB mass storage or Media
+Transfer Protocol.</li>
   <li>It SHOULD implement the Android Open Accessory (AOA) API and specification as
 documented in the Android SDK documentation, and if it is an Android Handheld
 device it MUST implement the AOA API. Device implementations implementing the
