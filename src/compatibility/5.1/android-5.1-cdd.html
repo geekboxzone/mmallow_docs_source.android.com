@@ -3783,11 +3783,12 @@ package-specific directories on the secondary external storage, but SHOULD
 expose content from both storage paths transparently through Android&rsquo;s media
 scanner service and android.provider.MediaStore.</p>
 
-<p>Regardless of the form of shared storage used, device implementations MUST
-provide some mechanism to access the contents of shared storage from a host
-computer, such as USB mass storage (UMS) or Media Transfer Protocol (MTP).
-Device implementations MAY use USB mass storage, but SHOULD use Media Transfer
-Protocol. If the device implementation supports Media Transfer Protocol, it:</p>
+<p>Regardless of the form of shared storage used, if the device implementation
+has a USB port with USB peripheral mode support, it MUST provide some mechanism
+to access the contents of shared storage from a host computer. Device
+implementations MAY use USB mass storage, but SHOULD use Media Transfer Protocol
+to satisfy this requirement. If the device implementation supports Media
+Transfer Protocol, it:</p>
 
 <ul>
   <li>SHOULD be compatible with the reference Android MTP host, Android File Transfer
@@ -3795,10 +3796,6 @@ Protocol. If the device implementation supports Media Transfer Protocol, it:</p>
   <li>SHOULD report a USB device class of 0x00.</li>
   <li>SHOULD report a USB interface name of 'MTP'.</li>
 </ul>
-
-<p>If the device implementation lacks USB ports, it MUST provide a host computer
-with access to the contents of shared storage by some other means, such as a
-network file system.</p>
 
 <h2 id="7_7_usb">7.7. USB</h2>
 
@@ -3819,8 +3816,8 @@ orientation) or enable software screen rotation for all apps (including home
 screen), so that the display draws correctly when the device is oriented with
 the port at bottom. Existing and new Android devices are <strong>very strongly encouraged to meet these requirements</strong> so they will be able to upgrade to future platform releases.</li>
   <li>It MUST allow a USB host connected with the Android device to access the
-contents of the shared storage volume using either USB mass storage or Media
-Transfer Protocol, if the device reports the android.hardware.feature.output
+contents of the shared storage volume using standard protocols such as USB mass
+storage or Media Transfer Protocol, if the device reports the android.hardware.feature.output
 feature or the android.hardware.camera feature.</li>
   <li>It SHOULD implement the Android Open Accessory (AOA) API and specification as
 documented in the Android SDK documentation, and if it is an Android Handheld
