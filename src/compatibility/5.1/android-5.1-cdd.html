@@ -1494,20 +1494,29 @@ the default Device Owner app [<a href="http://developer.android.com/reference/an
 navigate their devices more easily. In addition, Android provides platform APIs
 that enable accessibility service implementations to receive callbacks for user
 and system events and generate alternate feedback mechanisms, such as
-text-to-speech, haptic feedback, and trackball/d-pad navigation [<a href="http://developer.android.com/reference/android/accessibilityservice/AccessibilityService.html">Resources, 42</a>]. Device implementations MUST provide an implementation of the Android
-accessibility framework consistent with the default Android implementation.
-Device implementations MUST meet the following requirements:</p>
+text-to-speech, haptic feedback, and trackball/d-pad navigation [<a href="http://developer.android.com/reference/android/accessibilityservice/AccessibilityService.html">Resources, 42</a>].</p>
+
+<p>Device implementations include the following requirements:</p>
 
 <ul>
-  <li>MUST support third-party accessibility service implementations through the
-android.accessibilityservice APIs [<a href="http://developer.android.com/reference/android/view/accessibility/package-summary.html">Resources, 43</a>].</li>
-  <li>MUST generate AccessibilityEvents and deliver these events to all registered
+<li>Android Automotive implementations SHOULD provide an implementation of the
+Android accessibility framework consistent with the default Android
+implementation.</li>
+<li>Device implementations (Android Automotive excluded) MUST provide an
+implementation of the Android accessibility framework consistent with the
+default Android implementation.</li>
+<li>Device implementations (Android Automotive excluded) MUST support
+third-party accessibility service implementations through the
+android.accessibilityservice APIs
+[<a href="http://developer.android.com/reference/android/view/accessibility/package-summary.html">Resources, 43</a>]</li>
+<li>Device implementations (Android Automotive excluded) MUST generate
+AccessibilityEvents and deliver these events to all registered
 AccessibilityService implementations in a manner consistent with the default
-Android implementation.</li>
-  <li>Unless an Android Watch device with no audio output, device implementations
-MUST provide a user-accessible mechanism to enable and disable accessibility
-services, and MUST display this interface in response to the
-android.provider.Settings.ACTION_ACCESSIBILITY_SETTINGS intent.</li>
+Android implementation</li>
+<li> Device implementations (Android Automotive and Android Watch devices with
+no audio output excluded), MUST provide a user-accessible mechanism to enable
+and disable accessibility services, and MUST display this interface in response
+to the android.provider.Settings.ACTION_ACCESSIBILITY_SETTINGS intent.</li>
 </ul>
 
 <p>Additionally, device implementations SHOULD provide an implementation of an
@@ -4427,9 +4436,13 @@ Template</td>
     <td>3.8.13. Unicode and font</td>
     <td>MUST support Roboto 2 in addition to existing requirements. Added Android automotive requirements.</td>
  </tr>
-  <tr>
+ <tr>
+    <td>3.10. Accessibility</td>
+    <td>Added Android automotive requirements.</td>
+ </tr>
+ <tr>
     <td>3.11. Text-To-Speech</td>
- <td>Added Android automotive requirements.</td>
+    <td>Added Android automotive requirements.</td>
  </tr>
  <tr>
     <td>3.12. TV Input Framework</td>
