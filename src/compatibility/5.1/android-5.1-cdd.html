@@ -42,7 +42,9 @@
 
 <p class="toc_h2"><a href="#3_3_native_api_compatibility">3.3. Native API Compatibility</a></p>
 
-<p class="toc_h3"><a href="#3_3_1_application_binary_interfaces">3.3.1 Application Binary Interfaces</a></p>
+<p class="toc_h3"><a href="#3_3_1_application_binary_interfaces">3.3.1. Application Binary Interfaces</a></p>
+
+<p class="toc_h3"><a href="#3_3_2_32-bit_arm_native_code_compatibility">3.3.2. 32-bit ARM Native Code Compatibility</a></p>
 
 <p class="toc_h2"><a href="#3_4_web_compatibility">3.4. Web Compatibility</a></p>
 
@@ -823,7 +825,7 @@ android.hardware.nfc.hce [<a href="http://developer.android.com/reference/androi
 <h2 id="3_3_native_api_compatibility">3.3. Native API Compatibility</h2>
 
 
-<h3 id="3_3_1_application_binary_interfaces">3.3.1 Application Binary Interfaces</h3>
+<h3 id="3_3_1_application_binary_interfaces">3.3.1. Application Binary Interfaces</h3>
 
 
 <p>Managed Dalvik bytecode can call into native code provided in the application
@@ -890,6 +892,37 @@ implemented.</p>
 <p>Native code compatibility is challenging. For this reason, device implementers
 are <strong>very strongly encouraged</strong> to use the implementations of the libraries listed above from the upstream
 Android Open Source Project. </p>
+
+<h3 id="3_3_2_32-bit_arm_native_code_compatibility">
+3.3.2. 32-bit ARM Native Code Compatibility
+</h3>
+
+<p>The ARMv8 architecture deprecates several CPU operations, including some
+operations used in existing native code.  On 64-bit ARM devices, the following
+deprecated operations MUST remain available to 32-bit native ARM code, either
+through native CPU support or through software emulation:</p>
+
+<ul>
+<li>SWP and SWPB instructions</li>
+<li>SETEND instruction</li>
+<li>CP15ISB, CP15DSB, and CP15DMB barrier operations</li>
+</ul>
+
+<p>Legacy versions of the Android NDK used /proc/cpuinfo to discover CPU features
+from 32-bit ARM native code. For compatibility with applications built using this
+NDK, devices MUST include the following lines in /proc/cpuinfo when it is read
+by 32-bit ARM applications:</p>
+
+<ul>
+<li>&quot;Features: &quot;, followed by a list of any optional ARMv7 CPU features
+supported by the device</li>
+<li>&quot;CPU architecture: &quot;, followed by an integer describing the device's
+highest supported ARM architecture (e.g., &quot;8&quot; for ARMv8 devices)</li>
+</ul>
+
+<p>These requirements only apply when /proc/cpuinfo is read by 32-bit ARM
+applications. Devices SHOULD not alter /proc/cpuinfo when read by 64-bit ARM or
+non-ARM applications.</p>
 
 <h2 id="3_4_web_compatibility">3.4. Web Compatibility</h2>
 
