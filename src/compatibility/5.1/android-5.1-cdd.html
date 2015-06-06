@@ -4292,14 +4292,20 @@ software preinstalled on the device. For instance, any of the following
 approaches will satisfy this requirement:</p>
 
 <ul>
-  <li>Over-the-air (OTA) downloads with offline update via reboot</li>
+  <li>&ldquo;Over-the-air (OTA)&rdquo; downloads with offline update via reboot</li>
   <li>&ldquo;Tethered&rdquo; updates over USB from a host PC</li>
   <li>&ldquo;Offline&rdquo; updates via a reboot and update from a file on removable storage</li>
 </ul>
 
 <p>However, if the device implementation includes support for an unmetered data
-connection such as 802.11 or Bluetooth PAN (Personal Area Network) profile, the
-device MUST support Over-the-air download with offline update via reboot.</p>
+connection such as 802.11 or Bluetooth PAN (Personal Area Network) profile:</p>
+
+<ul>
+<li>Android Automotive implementations SHOULD support OTA downloads with offline
+update via reboot.</li>
+<li>All other device implementations MUST support OTA downloads with offline
+update via reboot.</li>
+</ul>
 
 <p>The update mechanism used MUST support updates without wiping user data. That
 is, the update mechanism MUST preserve application private data and application
@@ -4649,7 +4655,9 @@ for device integrity.</td>
  <tr>
     <td>11. Updatable Software</td>
     <td>If a device supports 802.11 or Bluetooth PAN (Personal Area Network) profile,
-then it MUST support Over-the-air download with offline update via reboot.</td>
+then it MUST support over-the-air (OTA) download with offline update via reboot. Clarified
+the OTA download requirement is allowed but not mandatory for Android Automotive
+implementations.</td>
  </tr>
  <tr>
     <td>14. Resources</td>
