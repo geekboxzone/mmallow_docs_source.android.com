@@ -2706,7 +2706,7 @@ functions differ between device types as described in this section.</p>
 
 <p>The Home, Recents, and Back functions (mapped to the key events KEYCODE_HOME,
 KEYCODE_APP_SWITCH, KEYCODE_BACK, respectively) are essential to the Android
-navigation paradigm and therefore;</p>
+navigation paradigm and therefore:</p>
 
 <ul>
   <li>Android Handheld device implementations MUST provide the Home, Recents, and
@@ -2715,6 +2715,8 @@ Back functions.</li>
 functions.</li>
   <li>Android Watch device implementations MUST have the Home function available to
 the user, and the Back function except for when it is in UI_MODE_TYPE_WATCH.</li>
+  <li>Android Automotive implementations MUST provide the Home function and MAY
+provide Back and Recent functions.</li>
   <li>All other types of device implementations MUST provide the Home and Back
 functions.</li>
 </ul>
@@ -4498,11 +4500,12 @@ SHOULD only report that orientation. </td>
     <td>Android Television devices MUST support D-pad. </td>
  </tr>
  <tr>
-    <td>7.2.3. Navigation keys</td>
-    <td>Included language for support across different device types. </td>
+    <td>7.2.3. Navigation Keys</td>
+    <td>Included language for support across different device types. Added
+    Android Automotive requirements.</td>
  </tr>
  <tr>
-    <td>7.2.4. Touchscreen input</td>
+    <td>7.2.4. Touchscreen Input</td>
     <td>Android Watch devices MUST support touchscreen input. </td>
  </tr>
  <tr>
