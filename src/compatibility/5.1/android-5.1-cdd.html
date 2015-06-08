@@ -3984,17 +3984,17 @@ application after it has been launched MUST take less than 1 second.</li>
 <h2 id="8_2_file_i_o_access_performance">8.2. File I/O Access Performance</h2>
 
 
-<p>Device implementations MUST ensure file access performance consistency for read
+<p>Device implementations MUST ensure internal storage file access performance consistency for read
 and write operations. </p>
 
 <ul>
-  <li><strong>Sequential write</strong>. Device implementations MUST ensure a sequential write performance of 10MB/s
+  <li><strong>Sequential write</strong>. Device implementations MUST ensure a sequential write performance of at least 5MB/s
 for a 256MB file using 10MB write buffer.</li>
-  <li><strong>Random write</strong>. Device implementations MUST ensure a random write performance of 0.5MB/s for a
+  <li><strong>Random write</strong>. Device implementations MUST ensure a random write performance of at least 0.5MB/s for a
 256MB file using 4KB write buffer.</li>
-  <li><strong>Sequential read</strong>. Device implementations MUST ensure a sequential read performance of 15MB/s for
+  <li><strong>Sequential read</strong>. Device implementations MUST ensure a sequential read performance of at least 15MB/s for
 a 256MB file using 10MB write buffer.</li>
-  <li><strong>Random read</strong>. Device implementations MUST ensure a random read performance of 3.5MB/s for a
+  <li><strong>Random read</strong>. Device implementations MUST ensure a random read performance of at least 3.5MB/s for a
 256MB file using 4KB write buffer.</li>
 </ul>
 
