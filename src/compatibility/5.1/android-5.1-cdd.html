@@ -1793,9 +1793,7 @@ including Android Watch device implementations.</p>
 
 <h3 id="5_1_3_video_codecs">5.1.3. Video Codecs</h3>
 
-<div class="div">
 <p>Video codecs are optional for Android Watch device implementations.</p>
-</div>
 
 <table>
  <tr>
@@ -1803,7 +1801,7 @@ including Android Watch device implementations.</p>
     <th>Encoder</th>
     <th>Decoder</th>
     <th>Details</th>
-    <th>Supported File Types/Container Formats</th>
+    <th>Supported File Types/<br>Container Formats</th>
  </tr>
  <tr>
     <td>H.263</td>
@@ -1827,7 +1825,7 @@ including Android Watch device implementations.</p>
  <tr>
     <td>H.265 HEVC</td>
     <td></td>
-    <td>REQUIRED<sup>2</sup></td>
+    <td>REQUIRED<sup>5</sup></td>
     <td>See <a href="#5_3_video_decoding">section 5.3</a> for details</td>
     <td>MPEG-4 (.mp4)</td>
  </tr>
@@ -1873,6 +1871,8 @@ device implementations SHOULD use a hardware VP8 codec that meets the
 requirements in [<a href="http://www.webmproject.org/hardware/rtc-coding-requirements/">Resources, 51</a>].</p>
 
 <p class="table_footnote">4 Device implementations SHOULD support writing Matroska WebM files.</p>
+
+<p class="table_footnote">5 Strongly recommended for Android Automotive, optional for Android Watch, and required for all other device types.</p>
 
 <h2 id="5_2_video_encoding">5.2. Video Encoding</h2>
 
@@ -4486,6 +4486,10 @@ Framework.</td>
  <tr>
     <td>5.1. Media Codecs</td>
     <td>Added 3 sections for Audio, Image, and Video codecs.</td>
+ </tr>
+   <tr>
+    <td>5.1.3 Video Codecs</td>
+    <td>Added Android automotive requirements.</td>
  </tr>
  <tr>
     <td>5.4 Audio Recording</td>
