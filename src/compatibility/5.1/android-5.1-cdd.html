@@ -1581,7 +1581,13 @@ files from installing and running correctly on other compatible devices.</p>
 <p>Device implementations MUST support the core media formats specified in the
 Android SDK documentation [<a href="http://developer.android.com/guide/appendix/media-formats.html">Resources, 50</a>] except where explicitly permitted in this document. Specifically, device
 implementations MUST support the media formats, encoders, decoders, file types,
-and container formats defined in the tables below. All of these codecs are
+and container formats defined in the tables below and reported via MediaCodecList
+[<a href="http://developer.android.com/reference/android/media/MediaCodecList.html">Resources,112</a>].
+Device implementations MUST also be able to decode all profiles reported in its CamcorderProfile
+[<a href="http://developer.android.com/reference/android/media/CamcorderProfile.html">Resources,
+113</a>].
+
+All of these codecs are
 provided as software implementations in the preferred Android implementation
 from the Android Open Source Project.</p>
 
@@ -4929,6 +4935,10 @@ Android source code, at dalvik/docs</p>
 <p>110. WebM project: <a href="http://www.webmproject.org/">http://www.webmproject.org/</a>  </p>
 
 <p>111. Android Auto feature: <a href="http://developer.android.com/reference/android/content/res/Configuration.html#UI_MODE_TYPE_CAR">http://developer.android.com/reference/android/content/res/Configuration.html#UI_MODE_TYPE_CAR</a></p>
+
+<p>112. Android MediaCodecList API: <a href="http://developer.android.com/reference/android/media/MediaCodecList.html">http://developer.android.com/reference/android/media/MediaCodecList.html</a></p>
+
+<p>113. Android CamcorderProfile API: <a href="http://developer.android.com/reference/android/media/CamcorderProfile.html">http://developer.android.com/reference/android/media/CamcorderProfile.html</a></p>
 
 <p>Many of these resources are derived directly or indirectly from the Android
 SDK, and will be functionally identical to the information in that SDK&rsquo;s
