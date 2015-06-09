@@ -2641,11 +2641,16 @@ EGL_ANDROID_RECORDABLE extension [<a href="https://www.khronos.org/registry/egl/
 <p>Android specifies a &ldquo;compatibility mode&rdquo; in which the framework operates in a
 'normal' screen size equivalent (320dp width) mode for the benefit of legacy
 applications not developed for old versions of Android that pre-date
-screen-size independence. Device implementations MUST include support for
-legacy application compatibility mode as implemented by the upstream Android
-open source code. That is, device implementations MUST NOT alter the triggers
-or thresholds at which compatibility mode is activated, and MUST NOT alter the
-behavior of the compatibility mode itself.</p>
+screen-size independence.</p>
+
+<ul>
+<li>Android Automotive does not support legacy compatibility mode.</li>
+<li>All other device implementations MUST include support for legacy application
+compatibility mode as implemented by the upstream Android open source code. That
+is, device implementations MUST NOT alter the triggers or thresholds at which
+compatibility mode is activated, and MUST NOT alter the behavior of the
+compatibility mode itself.</li>
+</ul>
 
 <h3 id="7_1_6_screen_technology">7.1.6. Screen Technology</h3>
 
@@ -4506,6 +4511,10 @@ SHOULD only report that orientation. </td>
  <tr>
     <td>7.1.4. 2D and 3D Graphics Acceleration</td>
     <td>Added that Android devices MAY support the Android extension pack. </td>
+ </tr>
+ <tr>
+    <td>7.1.5. Legacy Application Compatibility Mode</td>
+    <td>Added Android automotive requirements.</td>
  </tr>
  <tr>
     <td>(old) 7.1.6. Screen Types</td>
