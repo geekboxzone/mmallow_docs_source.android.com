@@ -4235,13 +4235,27 @@ feature dm-crypt.</p>
 
 <h2 id="9_10_verified_boot">9.10. Verified Boot</h2>
 
+<p>
+Verified boot is a feature that guarantees the integrity of the device software.
+If a device implementation supports the feature, it MUST:
+<ul>
+<li>Declare the platform feature flag android.software.verified_boot</li>
+<li>Perform verification on every boot sequence</li>
+<li>Start verification from a hardware key that is the root of trust, and go
+all the way up to the system partition</li>
+<li>Implement each stage of verification to check the integrity and authenticity
+of all the bytes in the next stage before executing the code in the next stage</li>
+<li>Use verification algorithms as strong as current recommendations
+from NIST for hashing algorithms (SHA-256) and public key sizes (RSA-2048)</li>
+</ul>
+</p>
 
-<p>Device implementations SHOULD support verified boot for device integrity, and
-if the feature is supported it MUST declare the platform feature flag
-android.software.verified_boot. While this requirement is stated as SHOULD for
-this version of the Android platform, it is <strong>very strongly RECOMMENDED</strong> as we expect this to change to MUST in the future versions of Android. The
-upstream Android Open Source Project provides a preferred implementation of
-this feature based on the linux kernel feature dm-verity.</p>
+<p>Device implementations SHOULD support verified boot for device integrity.
+While this requirement is SHOULD for this version of the Android platform,
+it is <strong>strongly RECOMMENDED</strong> as we expect this to change to MUST
+in future versions of Android. The upstream Android Open Source Project provides
+a preferred implementation of this feature based on the linux kernel feature dm-verity.
+</p>
 
 <h1 id="10_software_compatibility_testing">10. Software Compatibility Testing</h1>
 
