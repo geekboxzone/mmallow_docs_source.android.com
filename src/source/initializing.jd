@@ -201,7 +201,7 @@ saves space while allowing to grow later as the need arises. Be sure to select
 <p>You can also create it from a shell with the following command:</p>
 <pre><code># hdiutil create -type SPARSE -fs 'Case-sensitive Journaled HFS+' -size 40g ~/android.dmg
 </code></pre>
-<p>This will create a <code>.dmg</code> (or possibly a <code>.dmg.sparsefile</code>) file which, once mounted, acts as a drive with the required formatting for Android development. 
+<p>This will create a <code>.dmg</code> (or possibly a <code>.dmg.sparseimage</code>) file which, once mounted, acts as a drive with the required formatting for Android development.
 <p>If you need a larger volume later, you can also resize the sparse image with the following command:</p>
 <pre><code># hdiutil resize -size &lt;new-size-you-want&gt;g ~/android.dmg.sparseimage
 </code></pre>
@@ -212,7 +212,7 @@ To mount the image when you execute <code>mountAndroid</code>:</p>
 <pre><code># mount the android file image
 function mountAndroid { hdiutil attach ~/android.dmg -mountpoint /Volumes/android; }
 </code></pre>
-<p><strong>Note</strong>: If your system created a <code>.dmg.sparsefile</code> file, replace <code>~/android.dmg</code> with <code>~/android.dmg.sparsefile</code>.</p>
+<p><strong>Note</strong>: If your system created a <code>.dmg.sparseimage</code> file, replace <code>~/android.dmg</code> with <code>~/android.dmg.sparseimage</code>.</p>
 </li>
 <li>
 <p>To unmount it when you execute <code>umountAndroid</code>:</p>
