@@ -2,7 +2,7 @@ page.title=Building Audio Accessories
 @jd:body
 
 <!--
-    Copyright 2014 The Android Open Source Project
+    Copyright 2015 The Android Open Source Project
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -24,53 +24,67 @@ page.title=Building Audio Accessories
   </div>
 </div>
 
-<p>In implementing an audio accessory, such as a headset, headphone amplifier,
-microphone, DAC/ADC, or dock, you should consider how your accessory will
-connect with Android devices. In particular, you should decide
-if your accessory will use wired a 3.5 mm headset connector, Universal Serial
-Bus (USB), or a Bluetooth connection to stream music or other audio content.</p>
+<p>When implementing an audio accessory such as a headset, headphone amplifier,
+microphone, DAC/ADC, or dock, consider how the accessory connects to Android
+devices. The following sections describe wired 3.5 mm headset connections,
+Universal Serial Bus (USB) connections, and Bluetooth connections for streaming
+music or other audio content.</p>
+
 <h2 id="audio-over-35mm">Audio over 3.5 mm headset connector</h2>
-<p>Many Android-based devices include a 3.5 mm (“mini”) headset connector. In
-addition to the traditional stereo output and mono input features, the <a
-href="headset-spec.html">Wired audio headset specification</a> defines standard
-impedances and functions so a range of Android devices and headsets can inter-operate.</p>
+<p>Many Android devices include a 3.5 mm (&#8220;mini&#8221;) headset connector.
+In addition to traditional stereo output and mono input features, the
+<a href="headset/specification.html">Wired audio headset specification</a>
+defines standard impedances and functions that enable interoperability between
+a range of Android devices and headsets.</p>
 
 <h2 id="audio-over-usb">Audio over USB</h2>
 <p>Android can use USB in several modes:</p>
   <ul>
-    <li>development
-    <li>accessory
-    <li>host
+    <li><strong>Development</strong>. Does not support audio. </li>
+    <li><strong>Accessory</strong>. Provided by Android Open Accessory (AOA) 2.0
+    and provides limited audio capability, as described in
+    <a href="custom.html#audio-over-usb">Connecting custom audio over USB</a>.
+    </li>
+    <li><strong>Host</strong>. Enables the Android device to drive the USB bus
+    and operate with a wide range of USB-based peripherals, including audio
+    interfaces. Host mode audio is described in
+    <a href="{@docRoot}devices/audio/usb.html">USB Digital Audio</a>.</li>
   </ul>
-<p>In the development mode, there is no audio capability.</p>
-<p>Accessory mode is provided by the Open Accessory (AOA) protocol version 2.0.
-There is limited audio capability in accessory mode, as described in <a
-href="custom.html#audio-over-usb">Connecting custom audio over USB</a>.</p>
-<p>Host mode enables the Android device to drive the USB bus and operate with a
-wide range of USB-based peripherals, including audio interfaces. Host mode
-audio is described in <a href="{@docRoot}devices/audio/usb.html">USB Digital Audio</a>
 
 <h2 id="audio-over-bluetooth">Audio over Bluetooth</h2>
-<p>An accessory that connects with Android over Bluetooth can use an Advanced Audio Distribution
-Profile (A2DP) connection stream music for playback. Playing audio over a Bluetooth with A2DP is
-supported on Android 1.5 (API Level 3) and higher. An Android user can connect to an accessory
-that supports this profile using the system Settings &gt; Bluetooth and play music directly to the
-accessory without the need for a secondary application.</p>
-<p><strong>Note:</strong> If you want to provide a custom application for output to your audio
-accessory, note that the Android 3.0 (API Level 11) allows applications to operate an A2DP
-connection using the
-<a href="http://developer.android.com/reference/android/bluetooth/BluetoothA2dp.html"><code>BluetoothA2dp</code></a>
-class.</p>
+<p>An accessory that connects with Android over Bluetooth can use an Advanced
+Audio Distribution Profile (A2DP) connection stream music for playback. Playing
+audio over a Bluetooth with A2DP is supported on Android 1.5 (API Level 3) and
+higher. An Android user can connect to an accessory that supports this profile
+using the system Settings &gt; Bluetooth and play music directly to the
+accessory without a secondary application.</p>
+
+<p>As of Android 3.0 (API Level 11), applications can operate an A2DP connection
+using the
+<a href="http://developer.android.com/reference/android/bluetooth/BluetoothA2dp.html">
+<code>BluetoothA2dp</code></a> class. To provide a custom application for
+output to an audio accessory, you must use Android 3.0 or higher.
+</p>
+
 <h3 id="next-steps_1">Next steps</h3>
-<p>To get started on building an audio accessory that uses a Bluetooth connection:</p>
+<p>To get started building an audio accessory that uses a Bluetooth connection:
+</p>
 <ul>
-<li>Select a hardware platform or build an hardware device that can support Bluetooth
-  communications and the A2DP connection profile.</li>
+<li>Select a hardware platform or build an hardware device that can support
+Bluetooth communications and the A2DP connection profile.</li>
 <li>Review the ADK 2012
-  <a href="http://developer.android.com/tools/adk/adk2.html#src-download">firmware source code</a>
-  (<code>&lt;adk-src&gt;/adk2012/board/library/ADK2/</code>), which includes an example implementation
-  of an audio playback accessory using a Bluetooth connection.</li>
+  <a href="http://developer.android.com/tools/adk/adk2.html#src-download">firmware
+  source code</a> (<code>&lt;adk-src&gt;/adk2012/board/library/ADK2/</code>),
+  which includes an example implementation of an audio playback accessory using
+  a Bluetooth connection.</li>
 </ul>
-<p><strong>Note:</strong> The ADK 2012 source code includes an open source Bluetooth stack that
-is built for the Texas Instruments CC2564 chip, but can work with any Bluetooth chip that
-implements a standard Host/Controller Interface (HCI).</p>
+
+<p class="note"><strong>Note:</strong> The ADK 2012 source code includes an open
+source Bluetooth stack built for the Texas Instruments CC2564 chip, but is
+designed to work with any Bluetooth chip that implements a standard
+Host/Controller Interface (HCI).</p>
+
+<h2 id="midi-over-usb">MIDI over USB and Bluetooth LE</h2>
+<p>Both USB and Bluetooth Low Energy can be used as transports for the
+<a href="http://en.wikipedia.org/wiki/MIDI">MIDI</a> protocol. For details, see
+<a href="{@docRoot}devices/audio/midi.html">MIDI</a>.</p>

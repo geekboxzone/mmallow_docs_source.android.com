@@ -1,5 +1,5 @@
 <!--
-    Copyright 2014 The Android Open Source Project
+    Copyright 2015 The Android Open Source Project
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -30,9 +30,20 @@
           </a>
         </div>
         <ul>
-          <li><a href="<?cs var:toroot ?>accessories/headset-spec.html">Headset specification</a></li>
+      <li class="nav-section">
+        <div class="nav-section-header">
+          <a href="<?cs var:toroot ?>accessories/headset/index.html">
+            <span class="en">Headset</span>
+          </a>
+        </div>
+        <ul>
+          <li><a href="<?cs var:toroot ?>accessories/headset/specification.html">Specification</a></li>
+          <li><a href="<?cs var:toroot ?>accessories/headset/requirements.html">Requirements</a></li>
+          <li><a href="<?cs var:toroot ?>accessories/headset/testing.html">Testing</a></li>
         </ul>
-      </li>    
+      </li>
+        </ul>
+      </li>
   <li class="nav-section">
 <div class="nav-section-header">
       <a href="<?cs var:toroot ?>accessories/custom.html">
@@ -45,8 +56,8 @@
         </a>
         </div>
         <ul>
-          <li><a href="<?cs var:toroot ?>accessories/aoa2.html">Version 2.0</a></li>
-          <li><a href="<?cs var:toroot ?>accessories/aoa.html">Version 1.0</a></li>
+          <li><a href="<?cs var:toroot ?>accessories/aoa2.html">AOA 2.0</a></li>
+          <li><a href="<?cs var:toroot ?>accessories/aoa.html">AOA 1.0</a></li>
         </ul>
         </li>
        </ul>
