@@ -81,7 +81,7 @@ new file mode 100644
 index 0000000..874195f
 --- /dev/null
 +++ b/android_filesystem_config.h
-@@ -0,0 +1,36 @@
+&#64;&#64; -0,0 +1,36 &#64;&#64;
 +/*
 + * Copyright (C) 2015 The Android Open Source Project
 + *
@@ -125,7 +125,7 @@ diff --git a/device.mk b/device.mk
 index 0c71d21..235c1a7 100644
 --- a/device.mk
 +++ b/device.mk
-@@ -18,7 +18,8 @@ PRODUCT_PACKAGES := \
+&#64;&#64; -18,7 +18,8 &#64;&#64; PRODUCT_PACKAGES := \
      libwpa_client \
      hostapd \
      wpa_supplicant \
