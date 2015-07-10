@@ -1079,7 +1079,7 @@ Google may do so. Similarly, Google MUST NOT add APIs to other companies'
 namespaces. Additionally, if a device implementation includes custom APIs
 outside the standard Android namespace, those APIs MUST be packaged in an
 Android shared library so that only apps that explicitly use them (via the
-<uses-library> mechanism) are affected by the increased memory usage of such
+&lt;uses-library&gt; mechanism) are affected by the increased memory usage of such
 APIs.</p>
 
 <p>If a device implementer proposes to improve one of the package namespaces above
@@ -1847,7 +1847,7 @@ including Android Watch device implementations.</p>
     <td>See <a href="#5_2_video_encoding">section 5.2</a> and <a href="#5_3_video_decoding">5.3</a> for details</td>
     <td><ul>
     <li class="table_list">WebM (.webm) [<a href="http://www.webmproject.org/">Resources, 110</a></li>
-    <li class="table_list">Matroska (.mkv, Android 4.0+)4</li></ul></td>
+    <li class="table_list">Matroska (.mkv, Android 4.0+)<sup>4</sup></li></ul></td>
  </tr>
  <tr>
     <td>VP9</td>
@@ -1856,7 +1856,7 @@ including Android Watch device implementations.</p>
     <td>See <a href="#5_3_video_decoding">section 5.3</a> for details</td>
     <td><ul>
     <li class="table_list">WebM (.webm) [<a href="http://www.webmproject.org/">Resources, 110</a>]</li>
-    <li class="table_list">Matroska (.mkv, Android 4.0+)4</li></ul></td>
+    <li class="table_list">Matroska (.mkv, Android 4.0+)<sup>4</sup></li></ul></td>
  </tr>
 </table>
 
@@ -2507,7 +2507,7 @@ screen, MUST have a screen at least 2.5 inches in physical diagonal size.</li>
 <p>Devices MUST NOT change their reported screen size at any time.</p>
 
 <p>Applications optionally indicate which screen sizes they support via the
-<supports-screens> attribute in the AndroidManifest.xml file. Device
+&lt;supports-screens&gt; attribute in the AndroidManifest.xml file. Device
 implementations MUST correctly honor applications' stated support for small,
 normal, large, and xlarge screens, as described in the Android SDK
 documentation.</p>
@@ -2597,7 +2597,7 @@ Android SDK documentation [<a href="http://developer.android.com/guide/topics/re
 OpenGL ES 1.0, OpenGL ES 2.0, OpenGL ES 3.0 or OpenGL 3.1. That is:</p>
 
 <ul>
-  <li>The managed APIs (such as via the GLES10.getString()method MUST report support
+  <li>The managed APIs (such as via the GLES10.getString() method) MUST report support
 for OpenGL ES 1.0 and OpenGL ES 2.0.</li>
   <li>The native C/C++ OpenGL APIs (APIs available to apps via libGLES_v1CM.so,
 libGLES_v2.so, or libEGL.so) MUST report support for OpenGL ES 1.0 and OpenGL
@@ -4067,7 +4067,7 @@ standard Android security model, as described elsewhere in <a href="#9_security_
 
 <p>Alternate runtimes MUST NOT be granted access to resources protected by
 permissions not requested in the runtime&rsquo;s AndroidManifest.xml file via the
-<uses-permission> mechanism.</p>
+&lt;uses-permission&gt; mechanism.</p>
 
 <p>Alternate runtimes MUST NOT permit applications to make use of features
 protected by Android permissions restricted to system applications.</p>
