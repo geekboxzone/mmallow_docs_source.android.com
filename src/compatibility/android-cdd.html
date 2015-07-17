@@ -960,7 +960,7 @@ Chromium in the WebView implementation. Specifically:</p>
 build from the upstream Android Open Source Project for Android ANDROID_VERSION. This build
 includes a specific set of functionality and security fixes for the WebView [<a href="http://www.chromium.org/">Resources, 13</a>].</li>
   <li>The user agent string reported by the WebView MUST be in this format:
-<p>Mozilla/5.1 (Linux; Android $(VERSION); $(MODEL) Build/$(BUILD)$(WEBVIEW))
+<p>Mozilla/5.0 (Linux; Android $(VERSION); $(MODEL) Build/$(BUILD)$(WEBVIEW))
 AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 $(CHROMIUM_VER) Mobile
 Safari/537.36</p>
   <ul>
@@ -1079,7 +1079,7 @@ Google may do so. Similarly, Google MUST NOT add APIs to other companies'
 namespaces. Additionally, if a device implementation includes custom APIs
 outside the standard Android namespace, those APIs MUST be packaged in an
 Android shared library so that only apps that explicitly use them (via the
-<uses-library> mechanism) are affected by the increased memory usage of such
+lt;uses-librarygt; mechanism) are affected by the increased memory usage of such
 APIs.</p>
 
 <p>If a device implementer proposes to improve one of the package namespaces above
@@ -1622,7 +1622,7 @@ shareware, may require patent licenses from the relevant patent holders.</p>
 <p>(AAC LC)</td>
     <td>REQUIRED<sup>1</sup></td>
     <td>REQUIRED</td>
-    <td>Support for mono/stereo/5.0/5.12 content with standard sampling rates from 8 to
+    <td>Support for mono/stereo/5.0/5.1<sup>2</sup> content with standard sampling rates from 8 to
 48 kHz.</td>
     <td>
     <ul>
@@ -1636,7 +1636,7 @@ supported)</li>
     <td>MPEG-4 HE AAC Profile (AAC+)</td>
     <td>REQUIRED<sup>1</sup><br>(Android 4.1+)</td>
     <td>REQUIRED</td>
-    <td>Support for mono/stereo/5.0/5.12 content with standard sampling rates from 16
+    <td>Support for mono/stereo/5.0/5.1<sup>2</sup> content with standard sampling rates from 16
 to 48 kHz.</td>
     <td></td>
  </tr>
@@ -1646,7 +1646,7 @@ to 48 kHz.</td>
 <p>Profile (enhanced AAC+)</td>
     <td> </td>
     <td>REQUIRED</td>
-    <td>Support for mono/stereo/5.0/5.12 content with standard sampling rates from 16
+    <td>Support for mono/stereo/5.0/5.1<sup>2</sup> content with standard sampling rates from 16
 to 48 kHz.</td>
     <td></td>
  </tr>
@@ -1837,7 +1837,7 @@ including Android Watch device implementations.</p>
     <td>3GPP (.3gp)</td>
  </tr>
  <tr>
-    <td>VP83</td>
+    <td>VP8<sup>3</sup></td>
     <td>REQUIRED<sup>2</sup></p>
 
 <p>(Android 4.3+)</td>
@@ -1847,7 +1847,7 @@ including Android Watch device implementations.</p>
     <td>See <a href="#5_2_video_encoding">section 5.2</a> and <a href="#5_3_video_decoding">5.3</a> for details</td>
     <td><ul>
     <li class="table_list">WebM (.webm) [<a href="http://www.webmproject.org/">Resources, 110</a></li>
-    <li class="table_list">Matroska (.mkv, Android 4.0+)4</li></ul></td>
+    <li class="table_list">Matroska (.mkv, Android 4.0+)<sup>4</sup></li></ul></td>
  </tr>
  <tr>
     <td>VP9</td>
@@ -1856,7 +1856,7 @@ including Android Watch device implementations.</p>
     <td>See <a href="#5_3_video_decoding">section 5.3</a> for details</td>
     <td><ul>
     <li class="table_list">WebM (.webm) [<a href="http://www.webmproject.org/">Resources, 110</a>]</li>
-    <li class="table_list">Matroska (.mkv, Android 4.0+)4</li></ul></td>
+    <li class="table_list">Matroska (.mkv, Android 4.0+)<sup>4</sup></li></ul></td>
  </tr>
 </table>
 
@@ -1965,7 +1965,8 @@ encoding profiles.</p>
 
 
 <p>Device implementations MUST support dynamic video resolution switching within
-the same stream for VP8, VP9, H.264, and H.265 codecs.</p>
+the same stream for all VP8, VP9, H.264, and H.265 codecs exposed through the
+standard Android APIs.</p>
 
 <p>Android device implementations with H.264 decoders, MUST support Baseline
 Profile Level 3 and the following SD video decoding profiles and SHOULD support
@@ -2507,7 +2508,7 @@ screen, MUST have a screen at least 2.5 inches in physical diagonal size.</li>
 <p>Devices MUST NOT change their reported screen size at any time.</p>
 
 <p>Applications optionally indicate which screen sizes they support via the
-<supports-screens> attribute in the AndroidManifest.xml file. Device
+&lt;supports-screens&gt; attribute in the AndroidManifest.xml file. Device
 implementations MUST correctly honor applications' stated support for small,
 normal, large, and xlarge screens, as described in the Android SDK
 documentation.</p>
@@ -2597,7 +2598,7 @@ Android SDK documentation [<a href="http://developer.android.com/guide/topics/re
 OpenGL ES 1.0, OpenGL ES 2.0, OpenGL ES 3.0 or OpenGL 3.1. That is:</p>
 
 <ul>
-  <li>The managed APIs (such as via the GLES10.getString()method MUST report support
+  <li>The managed APIs (such as via the GLES10.getString() method) MUST report support
 for OpenGL ES 1.0 and OpenGL ES 2.0.</li>
   <li>The native C/C++ OpenGL APIs (APIs available to apps via libGLES_v1CM.so,
 libGLES_v2.so, or libEGL.so) MUST report support for OpenGL ES 1.0 and OpenGL
@@ -2944,14 +2945,14 @@ mappings:</p>
     <td><a href="http://developer.android.com/reference/android/view/KeyEvent.html#KEYCODE_DPAD_UP">D-pad up</a><sup>1</sup></p>
 
 <p><a href="http://developer.android.com/reference/android/view/KeyEvent.html#KEYCODE_DPAD_DOWN">D-pad down</a><sup>1</sup></td>
-    <td>0x01 0x00393</td>
+    <td>0x01 0x0039<sup>3</sup></td>
     <td><a href="http://developer.android.com/reference/android/view/MotionEvent.html#AXIS_HAT_Y">AXIS_HAT_Y</a><sup>4</sup></td>
  </tr>
  <tr>
     <td><a href="http://developer.android.com/reference/android/view/KeyEvent.html#KEYCODE_DPAD_LEFT">D-pad left</a>1</p>
 
 <p><a href="http://developer.android.com/reference/android/view/KeyEvent.html#KEYCODE_DPAD_RIGHT">D-pad right</a><sup>1</sup></td>
-    <td>0x01 0x00393</td>
+    <td>0x01 0x0039<sup>3</sup></td>
     <td><a href="http://developer.android.com/reference/android/view/MotionEvent.html#AXIS_HAT_X">AXIS_HAT_X</a><sup>4</sup></td>
  </tr>
  <tr>
@@ -3729,12 +3730,12 @@ table. (See <a href="#7_1_1_screen_configuration">section 7.1.1</a> for screen s
  </tr>
  <tr>
     <td><ul>
-    <li class="table_list">hdpi or lower on small/normal screens</li>
+    <li class="table_list">280dpi or lower on small/normal screens</li>
     <li class="table_list">mdpi or lower on large screens</li>
     <li class="table_list">ldpi or lower on extra large screens</li>
     </ul></td>
     <td>424MB</td>
-    <td>Not applicable</td>
+    <td>704MB</td>
  </tr>
  <tr>
     <td><ul>
@@ -4067,7 +4068,7 @@ standard Android security model, as described elsewhere in <a href="#9_security_
 
 <p>Alternate runtimes MUST NOT be granted access to resources protected by
 permissions not requested in the runtime&rsquo;s AndroidManifest.xml file via the
-<uses-permission> mechanism.</p>
+&lt;uses-permission&gt; mechanism.</p>
 
 <p>Alternate runtimes MUST NOT permit applications to make use of features
 protected by Android permissions restricted to system applications.</p>
