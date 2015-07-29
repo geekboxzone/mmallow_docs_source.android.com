@@ -140,6 +140,8 @@
 
 <p class="toc_h2"><a href="#5_8_secure_media">5.8. Secure Media</a></p>
 
+<p class="toc_h2"><a href="#5_9_midi">5.9. Musical Instrument Digital Interface (MIDI)</a></p>
+
 <p class="toc_h1"><a href="#6_developer_tools_and_options_compatibility">6. Developer Tools and Options Compatibility</a></p>
 
 <p class="toc_h2"><a href="#6_1_developer_tools">6.1. Developer Tools</a></p>
@@ -2347,11 +2349,40 @@ lower resolutions. The upstream Android open source implementation includes
 support for wireless (Miracast) and wired (HDMI) displays that satisfies this
 requirement.</p>
 
+<h2 id="5_9_midi">5.9. Musical Instrument Digital Interface (MIDI)</h2>
+
+<p>
+If a device implementation supports the inter-app MIDI software transport
+(virtual MIDI devices), and it supports MIDI over
+<em>all</em> of the following MIDI-capable hardware transports
+for which it provides generic non-MIDI connectivity, it MAY report
+support for feature android.software.midi via the
+android.content.pm.PackageManager class
+[<a href="http://developer.android.com/reference/android/content/pm/PackageManager.html">Resources, 53</a>].
+</p>
+
+<p>The MIDI-capable hardware transports are:</p>
+<ul>
+  <li>USB host mode (section 7.7 USB)</li>
+  <li>USB peripheral mode (section 7.7 USB)</li>
+</ul>
+
+<p>
+Conversely, if the device implementation provides generic non-MIDI connectivity over a particular
+MIDI-capable hardware transport listed above, but does not support MIDI over that hardware transport,
+it MUST NOT report support for feature android.software.midi.
+</p>
+
+<p>
+MIDI over Bluetooth LE acting in central role (section 7.4.3 Bluetooth)
+is in trial use status.  A device implementation that reports
+feature android.software.midi, and which provides generic non-MIDI connectivity
+over Bluetooth LE, SHOULD support MIDI over Bluetooth LE.
+</p>
+
 <h1 id="6_developer_tools_and_options_compatibility">6. Developer Tools and Options Compatibility</h1>
 
-
 <h2 id="6_1_developer_tools">6.1. Developer Tools</h2>
-
 
 <p>Device implementations MUST support the Android Developer Tools provided in the
 Android SDK. Android compatible devices MUST be compatible with:</p>
