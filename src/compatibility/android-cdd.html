@@ -142,6 +142,8 @@
 
 <p class="toc_h2"><a href="#5_9_midi">5.9. Musical Instrument Digital Interface (MIDI)</a></p>
 
+<p class="toc_h2"><a href="#5_10_pro_audio">5.10. Professional Audio</a></p>
+
 <p class="toc_h1"><a href="#6_developer_tools_and_options_compatibility">6. Developer Tools and Options Compatibility</a></p>
 
 <p class="toc_h2"><a href="#6_1_developer_tools">6.1. Developer Tools</a></p>
@@ -2289,8 +2291,11 @@ audio input system has been idle and powered down prior to the request.</li>
   <li><strong>continuous input latency</strong>. The input latency for subsequent frames, while the device is capturing audio.</li>
   <li><strong>cold output jitter</strong>. The variance among separate measurements of cold output latency values.</li>
   <li><strong>cold input jitter</strong>. The variance among separate measurements of cold input latency values.</li>
-  <li><strong>continuous round-trip latency</strong>. The sum of continuous input latency plus continuous output latency plus 5
-milliseconds.</li>
+  <li><strong>continuous round-trip latency</strong>. The sum of continuous input latency plus continuous output latency plus
+  one buffer period.
+  The buffer period term allows processing time for the app and for the app to
+  mitigate phase difference between input and output streams.
+  </li>
   <li><strong>OpenSL ES PCM buffer queue API</strong>. The set of PCM-related OpenSL ES APIs within Android NDK; see
 NDK_root/docs/opensles/index.html.</li>
 </ul>
@@ -2379,6 +2384,60 @@ is in trial use status.  A device implementation that reports
 feature android.software.midi, and which provides generic non-MIDI connectivity
 over Bluetooth LE, SHOULD support MIDI over Bluetooth LE.
 </p>
+
+<h2 id="5_10_pro_audio">5.10. Professional Audio</h2>
+
+<p>
+If a device implementation meets <em>all</em> of the following requirements,
+it MAY report support for feature android.hardware.audio.pro via the
+android.content.pm.PackageManager class
+[<a href="http://developer.android.com/reference/android/content/pm/PackageManager.html">Resources, 53</a>].
+</p>
+
+<ul>
+
+<li>
+The device implementation MUST support android.hardware.audio.low_latency
+</li>
+
+<li> The continuous round-trip audio latency, as defined in section 5.6 Audio Latency,
+MUST be 20 milliseconds or less and SHOULD be 10 milliseconds or less over at least one
+supported path.
+</li>
+
+<li>
+If the device implementation includes a 4 conductor 3.5mm audio jack,
+the continuous round-trip audio latency MUST be 20 milliseconds or less over the audio jack path,
+and SHOULD be 10 milliseconds or less over at the audio jack path.
+</li>
+
+<li>
+The device implementation MUST include a USB port(s) supporting USB host mode and
+USB peripheral mode.
+</li>
+
+<li>
+The USB host mode MUST implement the USB audio class and handle concurrent input/output with
+a USB audio class-compliant peripheral having the following minimum capabilities:
+<ul>
+<li>4-channel input</li>
+<li>4-channel output</li>
+<li>24-bit depth PCM</li>
+<li>96 kHz sample rate</li>
+</ul>
+</li>
+
+<li>
+If the device includes an HDMI port, the device implementation
+MUST support output in stereo and 8 channels
+at 20-bit or 24-bit depth and 192 kHz without bit-depth loss or resampling.
+</li>
+
+<li>
+The device implementation MUST report support for feature android.software.midi.
+</li>
+
+</ul>
 
 <h1 id="6_developer_tools_and_options_compatibility">6. Developer Tools and Options Compatibility</h1>
 
