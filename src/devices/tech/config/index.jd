@@ -1,4 +1,4 @@
-page.title=RAM
+page.title=Configuration
 @jd:body
 
 <!--
@@ -17,5 +17,4 @@ page.title=RAM
     limitations under the License.
 -->
 
-<p> The following sections contain information, documentation, tips and tricks about Android memory managment and RAM diagnostics.</p>
-
+<p> The following sections contain information, documentation, tips and tricks for configuring Android components.</p>

@@ -77,17 +77,6 @@
       <li><a href="<?cs var:toroot ?>devices/drm.html">DRM</a></li>
       <li class="nav-section">
         <div class="nav-section-header">
-          <a href="<?cs var:toroot ?>devices/storage/index.html">
-            <span class="en">External Storage</span>
-          </a>
-        </div>
-        <ul>
-          <li><a href="<?cs var:toroot ?>devices/storage/config.html">Device Specific Configuration</a></li>
-          <li><a href="<?cs var:toroot ?>devices/storage/config-example.html">Typical Configuration Examples</a></li>
-        </ul>
-      </li>
-      <li class="nav-section">
-        <div class="nav-section-header">
           <a href="<?cs var:toroot ?>devices/graphics/index.html">
             <span class="en">Graphics</span>
           </a>
@@ -151,6 +140,17 @@
       </li>
       <li class="nav-section">
         <div class="nav-section-header">
+          <a href="<?cs var:toroot ?>devices/storage/index.html">
+            <span class="en">Storage</span>
+          </a>
+        </div>
+        <ul>
+          <li><a href="<?cs var:toroot ?>devices/storage/config.html">Device Specific Configuration</a></li>
+          <li><a href="<?cs var:toroot ?>devices/storage/config-example.html">Typical Configuration Examples</a></li>
+        </ul>
+      </li>
+      <li class="nav-section">
+        <div class="nav-section-header">
           <a href="<?cs var:toroot ?>devices/tv/index.html">
             <span class="en">TV</span>
           </a>
@@ -187,6 +187,20 @@
 
       <li class="nav-section">
         <div class="nav-section-header">
+            <a href="<?cs var:toroot ?>devices/tech/config/index.html">
+              <span class="en">Configuration</span>
+            </a>
+        </div>
+        <ul>
+          <li><a href="<?cs var:toroot ?>devices/tech/filesystem-config.html">File System Configuration</a></li>
+          <li><a href="<?cs var:toroot ?>devices/tech/config/kernel.html">Kernel</a></li>
+          <li><a href="<?cs var:toroot ?>devices/tech/config/low-ram.html">Low RAM</a></li>
+          <li><a href="<?cs var:toroot ?>devices/tech/config/renderer.html">OpenGLRenderer</a></li>
+        </ul>
+      </li>
+
+      <li class="nav-section">
+        <div class="nav-section-header">
           <a href="<?cs var:toroot ?>devices/tech/datausage/index.html">
             <span class="en">Data Usage</span>
           </a>
@@ -201,16 +215,18 @@
           <li><a href="<?cs var:toroot ?>devices/tech/datausage/kernel-changes.html">Kernel Changes</a></li>
         </ul>
       </li>
+
       <li class="nav-section">
         <div class="nav-section-header">
           <a href="<?cs var:toroot ?>devices/tech/debug/index.html">
-            <span class="en">Debugging and Tuning</span>
+            <span class="en">Debugging</span>
           </a>
         </div>
         <ul>
-          <li><a href="<?cs var:toroot ?>devices/tech/debug/tuning.html">Performance Tuning</a></li>
-          <li><a href="<?cs var:toroot ?>devices/tech/debug/native-memory.html">Native Memory Usage</a></li>
           <li><a href="<?cs var:toroot ?>devices/tech/debug/dumpsys.html">Dumpsys</a></li>
+          <li><a href="<?cs var:toroot ?>devices/tech/debug/native-memory.html">Native Memory Use</a></li>
+          <li><a href="<?cs var:toroot ?>devices/tech/debug/netstats.html">Network Use</a></li>
+          <li><a href="<?cs var:toroot ?>devices/tech/debug/procstats.html">RAM Use</a></li>
         </ul>
       </li>
 
@@ -241,7 +257,7 @@
           <a href="<?cs var:toroot ?>devices/tech/power/index.html"><span class="en">Power</span></a>
         </div>
         <ul>
-          <li><a href="<?cs var:toroot ?>devices/tech/power/batterystats.html">Battery Usage Data</a></li>
+          <li><a href="<?cs var:toroot ?>devices/tech/power/batterystats.html">Battery Use</a></li>
         </ul>
       </li>
 
@@ -314,29 +330,6 @@
           </ul>
         </li>
       </ul>
-
-      <li class="nav-section">
-        <div class="nav-section-header">
-            <a href="<?cs var:toroot ?>devices/tech/resources.html">
-              <span class="en">System Resources</span>
-            </a>
-        </div>
-        <ul>
-          <li><a href="<?cs var:toroot ?>devices/tech/filesystem-config.html">File System Configuration</a></li>
-          <li><a href="<?cs var:toroot ?>devices/tech/kernel.html">Kernel Configuration</a></li>
-          <li><a href="<?cs var:toroot ?>devices/tech/netstats.html">Network Usage Data</a></li>
-          <li class="nav-section">
-            <div class="nav-section-header">
-                <a href="<?cs var:toroot ?>devices/tech/ram/index.html">
-                  <span class="en">RAM</span>
-                </a>
-            </div>
-            <ul>
-              <li><a href="<?cs var:toroot ?>devices/tech/ram/low-ram.html">Low RAM Configuration</a></li>
-              <li><a href="<?cs var:toroot ?>devices/tech/ram/procstats.html">RAM Usage Data</a></li>
-            </ul>
-          </li>
-        </ul>
 
       <li class="nav-section">
         <div class="nav-section-header">
