@@ -257,7 +257,12 @@
           <a href="<?cs var:toroot ?>devices/tech/power/index.html"><span class="en">Power</span></a>
         </div>
         <ul>
-          <li><a href="<?cs var:toroot ?>devices/tech/power/batterystats.html">Battery Use</a></li>
+          <li><a href="<?cs var:toroot ?>devices/tech/power/component.html">Component Power</a></li>
+          <li><a href="<?cs var:toroot ?>devices/tech/power/device.html">Device Power</a>
+          </li>
+          <li><a href="<?cs var:toroot ?>devices/tech/power/values.html">Power Values</a></li>
+          <li><a href="<?cs var:toroot ?>devices/tech/power/batterystats.html">Battery Use</a>
+          </li>
         </ul>
       </li>
 
