@@ -3992,7 +3992,7 @@ ranges of equivalent impedance between the microphone and ground conductors on
 the audio plug:
   <ul>
     <li><strong>70 ohm or less</strong>: KEYCODE_HEADSETHOOK</li>
-    <li><strong>210&#45;290 Ohm</strong>:<strong> </strong>KEYCODE_VOLUME_UP</li>
+    <li><strong>210&#45;290 Ohm</strong>: KEYCODE_VOLUME_UP</li>
     <li><strong>360&#45;680 Ohm</strong>: KEYCODE_VOLUME_DOWN</li>
   </ul></li>
   <li>SHOULD support the detection and mapping to the keycode for the following range
@@ -4164,7 +4164,7 @@ android.app.admin.DevicePolicyManager APIs, and if supported, MUST declare the
 platform feature flag android.software.managed_users.
   <li>Device implementations that declare the feature flag
 android.software.managed_users MUST use the upstream AOSP icon badge to
-represent the managed applications and other badge UI elements like Recents &
+represent the managed applications and other badge UI elements like Recents &amp;
 Notifications.</li>
   <li>Each user instance on an Android device MUST have separate and isolated
 external storage directories. Device implementations MAY store multiple users'
@@ -4285,6 +4285,7 @@ feature dm-crypt.</p>
 <p>
 Verified boot is a feature that guarantees the integrity of the device software.
 If a device implementation supports the feature, it MUST:
+</p>
 <ul>
 <li>Declare the platform feature flag android.software.verified_boot</li>
 <li>Perform verification on every boot sequence</li>
@@ -4295,7 +4296,6 @@ of all the bytes in the next stage before executing the code in the next stage</
 <li>Use verification algorithms as strong as current recommendations
 from NIST for hashing algorithms (SHA-256) and public key sizes (RSA-2048)</li>
 </ul>
-</p>
 
 <p>Device implementations SHOULD support verified boot for device integrity.
 While this requirement is SHOULD for this version of the Android platform,
