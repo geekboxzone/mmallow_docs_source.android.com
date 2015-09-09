@@ -52,7 +52,7 @@
     </div>
     <ul>
       <li class="nav-section">
-        <div class="nav-section-header"><a href="<?cs var:toroot ?>accessories/protocol.html"><span class="en">Open Accessory Protocol</span>
+        <div class="nav-section-header"><a href="<?cs var:toroot ?>accessories/protocol.html"><span class="en">AOA</span>
         </a>
         </div>
         <ul>
@@ -60,6 +60,9 @@
           <li><a href="<?cs var:toroot ?>accessories/aoa.html">AOA 1.0</a></li>
         </ul>
         </li>
+        <div class="nav-section-header"><a href="<?cs var:toroot ?>accessories/stylus.html"><span class="en">Stylus</span>
+        </a>
+        </div>
        </ul>
      </li>
   </li>
