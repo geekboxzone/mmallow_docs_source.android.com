@@ -310,7 +310,20 @@
             </div>
             <ul>
               <li><a href="<?cs var:toroot ?>devices/tech/security/authentication/index.html">Authentication</a></li>
-              <li><a href="<?cs var:toroot ?>devices/tech/security/encryption/index.html">Encryption</a></li>
+              <li><a href="<?cs var:toroot ?>devices/tech/security/encryption/index.html">Full Disk Encryption</a></li>
+            <li class="nav-section">
+              <div class="nav-section-header">
+                <a href="<?cs var:toroot ?>devices/tech/security/selinux/index.html">
+                  <span class="en">SELinux</span>
+                </a>
+              </div>
+              <ul>
+                <li><a href="<?cs var:toroot ?>devices/tech/security/selinux/concepts.html">Concepts</a></li>
+                <li><a href="<?cs var:toroot ?>devices/tech/security/selinux/implement.html">Implementation</a></li>
+                <li><a href="<?cs var:toroot ?>devices/tech/security/selinux/customize.html">Customization</a></li>
+                <li><a href="<?cs var:toroot ?>devices/tech/security/selinux/validate.html">Validation</a></li>
+              </ul>
+            </li>
               <li class="nav-section">
                 <div class="nav-section-header">
                   <a href="<?cs var:toroot ?>devices/tech/security/verifiedboot/index.html">
@@ -322,19 +335,7 @@
                   <li><a href="<?cs var:toroot ?>devices/tech/security/verifiedboot/dm-verity.html">Implementing dm-verity</a></li>
                 </ul>
               </li>
-            <li class="nav-section">
-              <div class="nav-section-header">
-                <a href="<?cs var:toroot ?>devices/tech/security/selinux/index.html">
-                  <span class="en">Security-Enhanced Linux</span>
-                </a>
-              </div>
-              <ul>
-                <li><a href="<?cs var:toroot ?>devices/tech/security/selinux/concepts.html">Concepts</a></li>
-                <li><a href="<?cs var:toroot ?>devices/tech/security/selinux/implement.html">Implementation</a></li>
-                <li><a href="<?cs var:toroot ?>devices/tech/security/selinux/customize.html">Customization</a></li>
-                <li><a href="<?cs var:toroot ?>devices/tech/security/selinux/validate.html">Validation</a></li>
-              </ul>
-            </li>
+
           </ul>
         </li>
       </ul>
