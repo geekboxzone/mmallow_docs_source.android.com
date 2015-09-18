@@ -4129,6 +4129,13 @@ described in the SDK documentation; no permissions may be omitted, altered, or
 ignored. Implementations MAY add additional permissions, provided the new
 permission ID strings are not in the android.* namespace.</p>
 
+<p>Permissions with a protection level of dangerous are runtime permissions. Applications
+with targetSdkVersion > 22 request them at runtime. The system MUST show a dedicated UI for the
+user to decide whether to grant the requested runtime permissions and also provide a UI for the
+user to manage runtime permissions. On the system there MUST be one and only one
+implementation of both the UI for the user to accept runtime permissions and the UI for
+the user to manage runtime permissions.</p>
+
 <h2 id="9_2_uid_and_process_isolation">9.2. UID and Process Isolation</h2>
 
 
