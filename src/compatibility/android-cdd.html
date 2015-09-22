@@ -3493,23 +3493,24 @@ following NFC standards:
     <ul>
       <li>NfcA (ISO14443-3A)</li>
       <li>NfcB (ISO14443-3B)</li>
-      <li>NfcF (JIS 6319-4)</li>
+      <li>NfcF (JIS X 6319-4)</li>
       <li>IsoDep (ISO 14443-4)</li>
       <li>NFC Forum Tag Types 1, 2, 3, 4 (defined by the NFC Forum)</li>
     </ul>
-  <li>SHOULD be capable of reading and writing NDEF messages via the following NFC
-standards. Note that while the NFC standards below are stated as SHOULD, the
-Compatibility Definition for a future version is planned to change these to
-MUST. These standards are optional in this version but will be required in
-future versions. Existing and new devices that run this version of Android are <strong>very strongly encouraged</strong> to meet these requirements now so they will be able to upgrade to the future platform releases.</li>
+  <li>MUST be capable of reading and writing NDEF messages as well as raw
+      data via the following NFC standards:</li>
   <ul>
     <li>NfcV (ISO 15693)</li>
   </ul></li>
+  <li>SHOULD be capable of reading the barcode and URL (if encoded) of
+      Thinfilm NFC Barcode
+      [<a href="http://developer.android.com/reference/android/nfc/tech/NfcBarcode.html">Resources, XX</a>] products.
+  </li>
   <li>MUST be capable of transmitting and receiving data via the following
 peer-to-peer standards and protocols:
   <ul>
     <li>ISO 18092</li>
-    <li>LLCP 1.0 (defined by the NFC Forum)</li>
+    <li>LLCP 1.2 (defined by the NFC Forum)</li>
     <li>SDP 1.0 (defined by the NFC Forum)</li>
     <li>NDEF Push Protocol [<a href="http://static.googleusercontent.com/media/source.android.com/en/us/compatibility/ndef-push-protocol.pdf">Resources, 84</a>]</li>
     <li>SNEP 1.0 (defined by the NFC Forum)</li>
@@ -3580,8 +3581,8 @@ implementation supports MIFARE in the reader/writer role, it:</p>
 <ul>
   <li>MUST implement the corresponding Android APIs as documented by the Android SDK.</li>
   <li>MUST report the feature com.nxp.mifare from the
-android.content.pm.PackageManager.hasSystemFeature() meth<a href="http://developer.android.com/reference/android/content/pm/PackageManager.html">od [Resources, 53]</a>. Note that this is not a standard Android feature and as such does not appear
-as a constant on the PackageManager class.</li>
+android.content.pm.PackageManager.hasSystemFeature() method <a href="http://developer.android.com/reference/android/content/pm/PackageManager.html">[Resources, 53]</a>. Note that this is not a standard Android feature and as such does not appear
+as a constant in the android.content.pm.PackageManager class.</li>
   <li>MUST NOT implement the corresponding Android APIs nor report the com.nxp.mifare
 feature unless it also implements general NFC support as described in this
 section.</li>
