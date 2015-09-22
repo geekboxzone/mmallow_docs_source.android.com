@@ -119,7 +119,17 @@
           <li><a href="<?cs var:toroot ?>devices/input/validate-keymaps.html">Validate Keymaps</a></li>
         </ul>
       </li>
-      <li><a href="<?cs var:toroot ?>devices/media.html">Media</a></li>
+      <li class="nav-section">
+        <div class="nav-section-header">
+          <a href="<?cs var:toroot ?>devices/media/index.html">
+            <span class="en">Media</span>
+          </a>
+        </div>
+        <ul>
+          <li><a href="<?cs var:toroot ?>devices/media/soc.html">SoC Dependencies</a></li>
+          <li><a href="<?cs var:toroot ?>devices/media/oem.html">OEM Dependencies</a></li>
+        </ul>
+      </li>
       <li class="nav-section">
         <div class="nav-section-header">
           <a href="<?cs var:toroot ?>devices/sensors/index.html">
