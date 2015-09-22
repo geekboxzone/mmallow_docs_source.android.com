@@ -46,7 +46,7 @@ state with the keystore service via an authenticated channel.</p>
   <li><strong>The keystore service and Keymaster.</strong> Cryptographic services,
    including hardware-backed cryptography for key storage,
    which might include a Trusted Execution Environment (TEE).</li>
-  <li><strong>Gatekeeper</strong>. Components for PIN, pattern, and password authentication.</li>
+  <li><a href="gatekeeper.html"><strong>Gatekeeper</strong></a>. Components for PIN, pattern, and password authentication.</li>
   <li><strong>Fingerprint.</strong> Components for fingerprint authentication.</li>
 </ul>
 
