@@ -864,9 +864,13 @@ by the device, via the android.os.Build.SUPPORTED_ABIS,
 android.os.Build.SUPPORTED_32_BIT_ABIS, and
 android.os.Build.SUPPORTED_64_BIT_ABIS parameters, each a comma separated list
 of ABIs ordered from the most to the least preferred one</li>
-  <li>MUST report, via the above parameters, only those ABIs documented in the latest
-version of the Android NDK, &ldquo;NDK Programmer&rsquo;s Guide | ABI Management&rdquo; in docs/
-directory</li>
+  <li>MUST report, via the above parameters, only those ABIs documented and
+described in the latest version of the Android NDK ABI Management documentation
+[<a href="https://developer.android.com/ndk/guides/abis.html">Resources, XX</a>],
+and MUST include support for the Advanced SIMD (a.k.a. NEON)
+[<a href="http://infocenter.arm.com/help/index.jsp?topic=/com.arm.doc.ddi0388f/Beijfcja.html">Resources,XX</a>]
+extension
+  </li>
   <li>SHOULD be built using the source code and header files available in the
 upstream Android Open Source Project</li>
 </ul>
