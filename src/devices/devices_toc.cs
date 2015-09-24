@@ -145,8 +145,10 @@
           </a>
         </div>
         <ul>
-          <li><a href="<?cs var:toroot ?>devices/storage/config.html">Device Specific Configuration</a></li>
-          <li><a href="<?cs var:toroot ?>devices/storage/config-example.html">Typical Configuration Examples</a></li>
+          <li><a href="<?cs var:toroot ?>devices/storage/traditional.html">Traditional Storage</a></li>
+          <li><a href="<?cs var:toroot ?>devices/storage/adoptable.html">Adoptable Storage</a></li>
+          <li><a href="<?cs var:toroot ?>devices/storage/config.html">Device Configuration</a></li>
+          <li><a href="<?cs var:toroot ?>devices/storage/config-example.html">Configuration Examples</a></li>
         </ul>
       </li>
       <li class="nav-section">
