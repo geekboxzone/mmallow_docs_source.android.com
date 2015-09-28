@@ -4385,7 +4385,7 @@ encryption key. If the device provides a hardware-backed keystore, the password
 stretching algorithm MUST be cryptographically bound to that keystore. The
 encryption key MUST NOT be sent off the device (even when wrapped with the user
 passcode and/or hardware bound key). The upstream Android Open Source project
-provides a preferred implementation of this feature based on the linux kernel
+provides a preferred implementation of this feature based on the Linux kernel
 feature dm-crypt.</p>
 
 <h2 id="9_10_verified_boot">9.10. Verified Boot</h2>
@@ -4397,20 +4397,22 @@ If a device implementation supports the feature, it MUST:
 <ul>
 <li>Declare the platform feature flag android.software.verified_boot</li>
 <li>Perform verification on every boot sequence</li>
-<li>Start verification from a hardware key that is the root of trust, and go
-all the way up to the system partition</li>
+<li>Start verification from an immutable hardware key that is the root of trust, 
+and go all the way up to the system partition</li>
 <li>Implement each stage of verification to check the integrity and authenticity
 of all the bytes in the next stage before executing the code in the next stage</li>
 <li>Use verification algorithms as strong as current recommendations
 from NIST for hashing algorithms (SHA-256) and public key sizes (RSA-2048)</li>
 </ul>
 
-<p>Device implementations SHOULD support verified boot for device integrity.
-While this requirement is SHOULD for this version of the Android platform,
-it is <strong>strongly RECOMMENDED</strong> as we expect this to change to MUST
-in future versions of Android. The upstream Android Open Source Project provides
-a preferred implementation of this feature based on the linux kernel feature dm-verity.
-</p>
+<p>The upstream Android Open Source Project provides a preferred implementation of this 
+feature based on the Linux kernel feature dm-verity.</p>
+
+<p>Starting from Android 6.0, device implementations with Advanced Encryption Standard (AES)
+crypto perfomance above 50MiB/seconds MUST support verified boot for device integrity.
+If a device implementation is already launched without supporting verified boot on an earlier
+version of Android, such a device can not add support for this feature with a system software
+update and thus are exempted from the requirement.</p>
 
 <h1 id="10_software_compatibility_testing">10. Software Compatibility Testing</h1>
 
