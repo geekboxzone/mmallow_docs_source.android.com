@@ -96,6 +96,12 @@
 
 <p class="toc_h2"><a href="#3_9_device_administration">3.9. Device Administration</a></p>
 
+<p class="toc_h3"><a href="#3_9_1_device_provisioning">3.9.1 Device Provisioning</a></p>
+
+<p class="toc_h4"><a href="#3_9_1_2_device_owner_provisioning">3.9.1.1 Device Owner provisioning</a></p>
+
+<p class="toc_h4"><a href="#3_9_1_2_managed_profile_provisioning">3.9.1.2 Managed profile provisioning</a></p>
+
 <p class="toc_h2"><a href="#3_10_accessibility">3.10. Accessibility</a></p>
 
 <p class="toc_h2"><a href="#3_11_text-to-speech">3.11. Text-to-Speech</a></p>
@@ -1487,7 +1493,6 @@ all glyphs in the currency symbols block of Unicode 7.0.</p>
 
 <h2 id="3_9_device_administration">3.9. Device Administration</h2>
 
-
 <p>Android includes features that allow security-aware applications to perform
 device administration functions at the system level, such as enforcing password
 policies or performing remote wipe, through the Android Device Administration
@@ -1500,9 +1505,40 @@ administration policies defined in the Android SDK documentation
 [<a href="http://developer.android.com/guide/topics/admin/device-admin.html">Resources, 39</a>]
 and report the platform feature android.software.device_admin.</p>
 
-<p>Device implementations MAY have a preinstalled application performing device
-administration functions but this application MUST NOT be set out-of-the box as
-the default Device Owner app [<a href="http://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#isDeviceOwnerApp(java.lang.String)">Resources, 41</a>].</p>
+<h3 id="3_9_1_device_provisioning">3.9.1 Device Provisioning</h3>
+<h4 id="3_9_1_1_device_owner_provisioning">3.9.1.1 Device owner provisioning</h4>
+<p>If a device implementation declares the android.software.device_admin feature,
+the out of box setup flow MUST make it possible to enroll a Device Policy
+Controller (DPC) application as the Device Owner app
+[<a href="http://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#isDeviceOwnerApp(java.lang.String)">
+Resources, XX</a>]. Device implementations MAY have a preinstalled application
+performing device administration functions but this application MUST NOT be set
+as the Device Owner app without explicit consent or action from the user or the
+administrator of the device.</p>
+
+<p>The device owner provisioning process (the flow initiated by
+android.app.action.PROVISION_MANAGED_DEVICE
+[<a href="http://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#ACTION_PROVISION_MANAGED_DEVICE">
+Resources, XX</a>]) user experience MUST align with the AOSP implementation</p>
+
+<p>If the device implementation reports android.hardware.nfc, it MUST have NFC
+enabled, even during the out-of-box setup flow, in order to allow for NFC
+provisioning of Device owners
+<a href="https://source.android.com/devices/tech/admin/provision.html#device_owner_provisioning_via_nfc">[Resources, XX]</a>.
+</p>
+
+<h4 id="3_9_1_2_managed_profile_provisioning">3.9.1.2 Managed profile provisioning</h4>
+<p>If a device implementation declares the android.software.managed_users,
+it MUST be possible to enroll a Device Policy Controller (DPC) application
+as the owner of a new Managed Profile
+[<a href="http://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#isProfileOwnerApp(java.lang.String)">
+Resources, XX</a>]</p>
+
+<p>The managed profile provisioning process (the flow initiated by
+android.app.action.PROVISION_MANAGED_PROFILE
+[<a href="http://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#ACTION_PROVISION_MANAGED_PROFILE">
+Resources, XX</a>]) user experience MUST align with the AOSP implementation
+</p>
 
 <h2 id="3_10_accessibility">3.10. Accessibility</h2>
 
@@ -4708,6 +4744,19 @@ Android source code, at dalvik/docs</p>
 <p>41. Android Device Owner App:</p>
 
 <p><a href="http://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#isDeviceOwnerApp(java.lang.String)">http://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#isDeviceOwnerApp(java.lang.String)</a></p>
+<p>XX. Android Device Owner Provisioning Flow:</p>
+
+<p><a href="http://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#ACTION_PROVISION_MANAGED_DEVICE">http://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#ACTION_PROVISION_MANAGED_DEVICE</a></p>
+<p>XX. Device Owner Provisioning via NFC:</p>
+
+<p><a href="https://source.android.com/devices/tech/admin/provision.html#device_owner_provisioning_via_nfc">https://source.android.com/devices/tech/admin/provision.html#device_owner_provisioning_via_nfc</a></p>
+<p>XX. Android Managed Profile Provisioning flow:</p>
+
+<p><a href="http://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#ACTION_PROVISION_MANAGED_PROFILE">http://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#ACTION_PROVISION_MANAGED_PROFILE</a></p>
+
+<p>XX. Android Profile Owner App:</p>
+
+<p><a href="http://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#isProfileOwnerApp(java.lang.String)">http://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#isProfileOwnerApp(java.lang.String)</a></p>
 
 <p>42. Android Accessibility Service APIs: <a href="http://developer.android.com/reference/android/accessibilityservice/AccessibilityService.html">http://developer.android.com/reference/android/accessibilityservice/AccessibilityService.html</a></p>
 
