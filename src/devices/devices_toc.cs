@@ -310,8 +310,29 @@
               </a>
             </div>
             <ul>
-              <li><a href="<?cs var:toroot ?>devices/tech/security/authentication/index.html">Authentication</a></li>
-              <li><a href="<?cs var:toroot ?>devices/tech/security/encryption/index.html">Full Disk Encryption</a></li>
+            <li class="nav-section">
+              <div class="nav-section-header">
+                <a href="<?cs var:toroot ?>devices/tech/security/authentication/index.html">
+                  <span class="en">Authentication</span>
+                </a>
+              </div>
+              <ul>
+                <li><a href="<?cs var:toroot ?>devices/tech/security/authentication/fingerprint-hal.html">Fingerprint HAL</a></li>
+                <li><a href="<?cs var:toroot ?>devices/tech/security/authentication/gatekeeper.html">Gatekeeper</a></li>
+                <li class="nav-section">
+                  <div class="nav-section-header">
+                    <a href="<?cs var:toroot ?>devices/tech/security/authentication/keymaster.html">
+                      <span class="en">Keymaster</span>
+                    </a>
+                  </div>
+                  <ul>
+                    <li><a href="<?cs var:toroot ?>devices/tech/security/authentication/km-features.html">Features</a></li>
+                    <li><a href="<?cs var:toroot ?>devices/tech/security/authentication/km-implementer.html">Implementer's Reference</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li><a href="<?cs var:toroot ?>devices/tech/security/encryption/index.html">Full Disk Encryption</a></li>
             <li class="nav-section">
               <div class="nav-section-header">
                 <a href="<?cs var:toroot ?>devices/tech/security/selinux/index.html">
