@@ -2341,7 +2341,7 @@ audio input system has been idle and powered down prior to the request.</li>
 NDK_root/docs/opensles/index.html.</li>
 </ul>
 
-<p>Device implementations that declare android.hardware.audio.output SHOULD meet
+<p>Device implementations that declare android.hardware.audio.output are STRONGLY ENCOURAGED to meet
 or exceed these audio output requirements:</p>
 
 <ul>
@@ -2358,7 +2358,7 @@ the feature android.hardware.audio.low_latency via the
 android.content.pm.PackageManager class [<a href="http://developer.android.com/reference/android/content/pm/PackageManager.html">Resources, 53</a>]. Conversely, if the device implementation does not meet these requirements it
 MUST NOT report support for low-latency audio.</p>
 
-<p>Device implementations that include android.hardware.microphone SHOULD meet
+<p>Device implementations that include android.hardware.microphone are STRONGLY ENCOURAGED to meet
 these input audio requirements:</p>
 
 <ul>
@@ -2438,7 +2438,7 @@ android.content.pm.PackageManager class
 <ul>
 
 <li>
-The device implementation MUST support android.hardware.audio.low_latency
+The device implementation MUST report support for feature android.hardware.audio.low_latency.
 </li>
 
 <li> The continuous round-trip audio latency, as defined in section 5.6 Audio Latency,
@@ -2447,7 +2447,7 @@ supported path.
 </li>
 
 <li>
-If the device implementation includes a 4 conductor 3.5mm audio jack,
+If the device includes a 4 conductor 3.5mm audio jack,
 the continuous round-trip audio latency MUST be 20 milliseconds or less over the audio jack path,
 and SHOULD be 10 milliseconds or less over at the audio jack path.
 </li>
@@ -2463,12 +2463,20 @@ The USB host mode MUST implement the USB audio class.
 
 <li>
 If the device includes an HDMI port, the device implementation
-MUST support output in stereo and 8 channels
+MUST support output in stereo and eight channels
 at 20-bit or 24-bit depth and 192 kHz without bit-depth loss or resampling.
 </li>
 
 <li>
 The device implementation MUST report support for feature android.software.midi.
+</li>
+
+<li>
+If the device includes a 4 conductor 3.5mm audio jack,
+the device implementation is STRONGLY ENCOURAGED to comply with section
+<a href="https://source.android.com/accessories/headset/specification.html#mobile_device_jack_specifications">Mobile device (jack) specifications</a>
+of the
+<a href="https://source.android.com/accessories/headset/specification.html">Wired Audio Headset Specification (v1.1)</a>.
 </li>
 
 </ul>
