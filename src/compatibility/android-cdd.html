@@ -350,7 +350,7 @@ documents incorporated via reference.</p>
 implementer to ensure compatibility with existing implementations.</p>
 
 <p>For this reason, the Android Open Source Project [<a href="http://source.android.com/">Resources, 2</a>] is both the reference and preferred implementation of Android. Device
-implementers are strongly encouraged to base their implementations to the
+implementers are STRONGLY RECOMMENDED to base their implementations to the
 greatest extent possible on the &ldquo;upstream&rdquo; source code available from the
 Android Open Source Project. While some components can hypothetically be
 replaced with alternate implementations this practice is strongly discouraged,
@@ -917,7 +917,7 @@ versions and extensions actually supported by the device must be fully
 implemented.</p>
 
 <p>Native code compatibility is challenging. For this reason, device implementers
-are <strong>very strongly encouraged</strong> to use the implementations of the libraries listed above from the upstream
+are <strong>STRONGLY RECOMMENDED</strong> to use the implementations of the libraries listed above from the upstream
 Android Open Source Project. </p>
 
 <h3 id="3_3_2_32-bit_arm_native_code_compatibility">
@@ -1433,7 +1433,7 @@ implementations including the recents function navigation key as detailed in <a 
 interacts with screens.</li>
 </ul>
 
-<p>Device implementations are STRONGLY ENCOURAGED to use the upstream Android user
+<p>Device implementations are STRONGLY RECOMMENDED to use the upstream Android user
 interface (or a similar thumbnail-based interface) for the overview screen.</p>
 
 <h3 id="3_8_9_input_management">3.8.9. Input Management</h3>
@@ -1723,8 +1723,8 @@ to 48 kHz.</td>
     <td></td>
     <td>REQUIRED <br>(Android 3.1+)</td>
     <td>Mono/Stereo (no multichannel). Sample rates up to 48 kHz (but up to 44.1 kHz is
-recommended on devices with 44.1 kHz output, as the 48 to 44.1 kHz downsampler
-does not include a low-pass filter). 16-bit recommended; no dither applied for
+RECOMMENDED on devices with 44.1 kHz output, as the 48 to 44.1 kHz downsampler
+does not include a low-pass filter). 16-bit RECOMMENDED; no dither applied for
 24-bit.</td>
     <td>FLAC (.flac) only</td>
  </tr>
@@ -1915,7 +1915,7 @@ requirements in [<a href="http://www.webmproject.org/hardware/rtc-coding-require
 
 <p class="table_footnote">4 Device implementations SHOULD support writing Matroska WebM files.</p>
 
-<p class="table_footnote">5 Strongly recommended for Android Automotive, optional for Android Watch, and required for all other device types.</p>
+<p class="table_footnote">5 STRONGLY RECOMMENDED for Android Automotive, optional for Android Watch, and required for all other device types.</p>
 
 <h2 id="5_2_video_encoding">5.2. Video Encoding</h2>
 
@@ -2191,7 +2191,7 @@ hardware.</p>
 
 <p>While some of the requirements outlined in this section are stated as SHOULD
 since Android 4.3, the Compatibility Definition for a future version is planned
-to change these to MUST. Existing and new Android devices are <strong>very strongly encouraged</strong> to meet these requirements, or they will not be able to attain Android
+to change these to MUST. Existing and new Android devices are <strong>STRONGLY RECOMMENDED</strong> to meet these requirements, or they will not be able to attain Android
 compatibility when upgraded to the future version.</p>
 
 <h3 id="5_4_1_raw_audio_capture">5.4.1. Raw Audio Capture</h3>
@@ -2339,7 +2339,7 @@ audio input system has been idle and powered down prior to the request.</li>
 NDK_root/docs/opensles/index.html.</li>
 </ul>
 
-<p>Device implementations that declare android.hardware.audio.output are STRONGLY ENCOURAGED to meet
+<p>Device implementations that declare android.hardware.audio.output are STRONGLY RECOMMENDED to meet
 or exceed these audio output requirements:</p>
 
 <ul>
@@ -2356,7 +2356,7 @@ the feature android.hardware.audio.low_latency via the
 android.content.pm.PackageManager class [<a href="http://developer.android.com/reference/android/content/pm/PackageManager.html">Resources, 53</a>]. Conversely, if the device implementation does not meet these requirements it
 MUST NOT report support for low-latency audio.</p>
 
-<p>Device implementations that include android.hardware.microphone are STRONGLY ENCOURAGED to meet
+<p>Device implementations that include android.hardware.microphone are STRONGLY RECOMMENDED to meet
 these input audio requirements:</p>
 
 <ul>
@@ -2471,7 +2471,7 @@ The device implementation MUST report support for feature android.software.midi.
 
 <li>
 If the device includes a 4 conductor 3.5mm audio jack,
-the device implementation is STRONGLY ENCOURAGED to comply with section
+the device implementation is STRONGLY RECOMMENDED to comply with section
 <a href="https://source.android.com/accessories/headset/specification.html#mobile_device_jack_specifications">Mobile device (jack) specifications</a>
 of the
 <a href="https://source.android.com/accessories/headset/specification.html">Wired Audio Headset Specification (v1.1)</a>.
@@ -3209,7 +3209,7 @@ documentation [<a href="http://developer.android.com/reference/android/hardware/
   <li>SHOULD report the event time in nanoseconds as defined in the Android SDK
 documentation, representing the time the event happened and synchronized with
 the SystemClock.elapsedRealtimeNano() clock. Existing and new Android devices
-are <strong>very strongly encouraged</strong> to meet these requirement so they will be able to upgrade to the future
+are <strong>STRONGLY RECOMMENDED</strong> to meet these requirement so they will be able to upgrade to the future
 platform releases where this might become a REQUIRED component. The
 synchronization error SHOULD be below 100 milliseconds [<a href="http://developer.android.com/reference/android/hardware/SensorEvent.html#timestamp">Resources, 75</a>].</li>
 </ul>
@@ -3244,7 +3244,7 @@ exceed the sum of the individual sensor&rsquo;s reported power consumption.</p>
 
 
 <p>Device implementations SHOULD include a 3-axis accelerometer. Android Handheld
-devices and Android Watch devices are strongly encouraged to include this
+devices and Android Watch devices are STRONGLY RECOMMENDED to include this
 sensor. If a device implementation does include a 3-axis accelerometer, it:</p>
 
 <ul>
@@ -3268,14 +3268,14 @@ deviation should be calculated on a per axis basis on samples collected over a
 period of at least 3 seconds at the fastest sampling rate.</li>
   <li>SHOULD implement the TYPE_SIGNIFICANT_MOTION, TYPE_TILT_DETECTOR,
 TYPE_STEP_DETECTOR, TYPE_STEP_COUNTER composite sensors as described in the
-Android SDK document. Existing and new Android devices are <strong>very strongly encouraged</strong> to implement the TYPE_SIGNIFICANT_MOTION composite sensor. If any of these
+Android SDK document. Existing and new Android devices are <strong>STRONGLY RECOMMENDED</strong> to implement the TYPE_SIGNIFICANT_MOTION composite sensor. If any of these
 sensors are implemented, the sum of their power consumption MUST always be less
 than 4 mW and SHOULD each be below 2 mW and 0.5 mW for when the device is in a
 dynamic or static condition.</li>
   <li>If a gyroscope sensor is included, MUST implement the TYPE_GRAVITY and
 TYPE_LINEAR_ACCELERATION composite sensors and SHOULD implement the
 TYPE_GAME_ROTATION_VECTOR composite sensor. Existing and new Android devices
-are strongly encouraged to implement the TYPE_GAME_ROTATION_VECTOR sensor.</li>
+are STRONGLY RECOMMENDED to implement the TYPE_GAME_ROTATION_VECTOR sensor.</li>
   <li>SHOULD implement a TYPE_ROTATION_VECTOR composite sensor, if a gyroscope sensor
 and a magnetometer sensor is also included.</li>
 </ul>
@@ -3289,7 +3289,7 @@ device does include a 3-axis magnetometer, it:</p>
 <ul>
   <li>MUST implement the TYPE_MAGNETIC_FIELD sensor and SHOULD also implement
 TYPE_MAGNETIC_FIELD_UNCALIBRATED sensor. Existing and new Android devices are
-strongly encouraged to implement the TYPE_MAGNETIC_FIELD_UNCALIBRATED sensor.</li>
+STRONGLY RECOMMENDED to implement the TYPE_MAGNETIC_FIELD_UNCALIBRATED sensor.</li>
   <li>MUST be able to report events up to a frequency of at least 10 Hz and SHOULD
 report events up to at least 50 Hz.</li>
   <li>MUST comply with the Android sensor coordinate system as detailed in the
@@ -3333,7 +3333,7 @@ also included. If a device implementation includes a gyroscope, it:</p>
 <ul>
   <li>MUST implement the TYPE_GYROSCOPE sensor and SHOULD also implement
 TYPE_GYROSCOPE_UNCALIBRATED sensor. Existing and new Android devices are
-strongly encouraged to implement the SENSOR_TYPE_GYROSCOPE_UNCALIBRATED sensor.</li>
+STRONGLY RECOMMENDED to implement the SENSOR_TYPE_GYROSCOPE_UNCALIBRATED sensor.</li>
   <li>MUST be capable of measuring orientation changes up to 1,000 degrees per second.</li>
   <li>MUST be able to report events up to a frequency of at least 50 Hz for
   Android Watch devices as such devices have a stricter power constraint and 
@@ -3353,7 +3353,7 @@ sensor and a magnetometer sensor is also included.</li>
   <li>If an accelerometer sensor is included, MUST implement the TYPE_GRAVITY and
 TYPE_LINEAR_ACCELERATION composite sensors and SHOULD implement the
 TYPE_GAME_ROTATION_VECTOR composite sensor. Existing and new Android devices
-are strongly encouraged to implement the TYPE_GAME_ROTATION_VECTOR sensor.</li>
+are STRONGLY RECOMMENDED to implement the TYPE_GAME_ROTATION_VECTOR sensor.</li>
 </ul>
 
 <h3 id="7_3_5_barometer">7.3.5. Barometer</h3>
@@ -3907,7 +3907,7 @@ ActivityManager.isLowRamDevice().</p>
 implementations MUST have at least 1.5GB of non-volatile storage available for
 application private data. That is, the /data partition MUST be at least 5GB for
 Android Television devices and at least 1.5GB for other device implementations.
-Device implementations that run Android are <strong>very strongly encouraged</strong> to have at least 3GB of non-volatile storage for application private data so
+Device implementations that run Android are <strong>STRONGLY RECOMMENDED</strong> to have at least 3GB of non-volatile storage for application private data so
 they will be able to upgrade to the future platform releases.</p>
 
 <p>The Android APIs include a Download Manager that applications MAY use to
@@ -3985,12 +3985,12 @@ USB host mode.</p>
   <li>The port MUST be connectable to a USB host that has a standard type-A or type
 -C USB port.</li>
   <li>The port SHOULD use micro-A, micro-AB or type-C USB form factor. Existing and
-new Android devices are <strong>very strongly encouraged to meet these requirements</strong> so they will be able to upgrade to the future platform releases.</li>
+new Android devices are <strong>STRONGLY RECOMMENDED to meet these requirements</strong> so they will be able to upgrade to the future platform releases.</li>
   <li>The port SHOULD be centered in the middle of an edge. Device implementations
 SHOULD either locate the port on the bottom of the device (according to natural
 orientation) or enable software screen rotation for all apps (including home
 screen), so that the display draws correctly when the device is oriented with
-the port at bottom. Existing and new Android devices are <strong>very strongly encouraged to meet these requirements</strong> so they will be able to upgrade to future platform releases.</li>
+the port at bottom. Existing and new Android devices are <strong>STRONGLY RECOMMENDED to meet these requirements</strong> so they will be able to upgrade to future platform releases.</li>
   <li>It MUST allow a USB host connected with the Android device to access the
 contents of the shared storage volume using either USB mass storage or Media
 Transfer Protocol.</li>
@@ -4004,7 +4004,7 @@ AOA specification:
 documentation [<a href="http://developer.android.com/reference/android/hardware/usb/UsbConstants.html#USB_CLASS_AUDIO">Resources, 98</a>].</li>
   </ul></li>
   <li>It SHOULD implement support to draw 1.5 A current during HS chirp and traffic
-as specified in the USB battery charging specification [<a href="http://www.usb.org/developers/docs/devclass_docs/USB_Battery_Charging_1.2.pdf">Resources, 99</a>]. Existing and new Android devices are <strong>very strongly encouraged to meet these requirements</strong> so they will be able to upgrade to the future platform releases.</li>
+as specified in the USB battery charging specification [<a href="http://www.usb.org/developers/docs/devclass_docs/USB_Battery_Charging_1.2.pdf">Resources, 99</a>]. Existing and new Android devices are <strong>STRONGLY RECOMMENDED to meet these requirements</strong> so they will be able to upgrade to the future platform releases.</li>
   <li>The value of iSerialNumber in USB standard device descriptor MUST be equal to
 the value of android.os.Build.SERIAL.</li>
 </ul>
@@ -4419,7 +4419,7 @@ update and thus are exempted from the requirement.</p>
 <p>Device implementations MUST pass all tests described in this section.</p>
 
 <p>However, note that no software test package is fully comprehensive. For this
-reason, device implementers are <strong>very strongly encouraged</strong> to make the minimum number of changes as possible to the reference and
+reason, device implementers are <strong>STRONGLY RECOMMENDED</strong> to make the minimum number of changes as possible to the reference and
 preferred implementation of Android available from the Android Open Source
 Project. This will minimize the risk of introducing bugs that create
 incompatibilities requiring rework and potential device updates.</p>
