@@ -327,7 +327,7 @@
                   </div>
                   <ul>
                     <li><a href="<?cs var:toroot ?>devices/tech/security/authentication/km-features.html">Features</a></li>
-                    <li><a href="<?cs var:toroot ?>devices/tech/security/authentication/km-implementer.html">Implementer's Reference</a></li>
+                    <li><a href="<?cs var:toroot ?>devices/tech/security/authentication/km-implementer-ref.html">Implementer's Reference</a></li>
                   </ul>
                 </li>
               </ul>

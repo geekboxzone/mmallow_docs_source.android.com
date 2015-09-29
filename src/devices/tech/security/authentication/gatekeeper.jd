@@ -38,8 +38,8 @@ secret to sign an authentication attestation to
 send to <a href="keymaster.html">Keymaster</a>. That is, a
 Gatekeeper attestation notifies Keymaster that authentication-bound keys (for
 example, keys that apps have created) can be released for use by apps.</p>
-link
-<h2 id=architecture>Architecture </h2>
+
+<h2 id=architecture>Architecture</h2>
 
 <p>Gatekeeper involves three main components:</p>
 
@@ -66,7 +66,7 @@ keys, as well as for computing signatures.
 See <a href="#trusty_and_other_implementations">Trusty and other implementations</a>.
 </ul>
 
-<p>As shown in the following diagram, the LockSettingsService makes a request (via
+<p>As shown in the following diagram, the <code>LockSettingsService</code> makes a request (via
 Binder) that reaches the <code>gatekeeperd</code> daemon in the Android OS. The <code>gatekeeperd</code>
 daemon makes a request that reaches its counterpart (Gatekeeper) in the TEE.</p>
 
@@ -180,8 +180,7 @@ elapsed. GateKeeper should not service requests if there is a pending timeout.</
 the password verification succeeds, the failure counter should be cleared. This
 prevents attacks that prevent throttling by disabling the embedded MMC (eMMC)
 after issuing a <code>verify</code> call. The <code>enroll</code> function also verifies
-the user password (if provided) and so must be
-throttled in the same way.</p>
+the user password (if provided) and so must be throttled in the same way.</p>
 
 <p>If supported by the device, it is highly recommended that the failure counter
 be written to secure storage. If the device does not support
