@@ -4358,6 +4358,10 @@ through a proxy server or VPN gateway by default (for example, preloading a VPN
 service with android.permission.CONTROL_VPN granted), the device implementation
 MUST ask for the user's consent before enabling that mechanism.</p>
 
+<p>If a device implementation has a USB port with USB peripheral mode support,
+it MUST present a user interface asking for the user's consent before allowing
+access to the contents of the shared storage over the USB port.</p>
+
 <h2 id="9_9_full-disk_encryption">9.9. Full-Disk Encryption</h2>
 
 <div class="note">
