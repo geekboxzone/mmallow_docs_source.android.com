@@ -201,6 +201,7 @@
           <li><a href="<?cs var:toroot ?>devices/tech/config/renderer.html">OpenGLRenderer</a></li>
           <li><a href="<?cs var:toroot ?>devices/tech/config/runtime_perms.html">Runtime Permissions</a></li>
           <li><a href="<?cs var:toroot ?>devices/tech/config/uicc.html">UICC</a></li>
+          <li><a href="<?cs var:toroot ?>devices/tech/config/voicemail.html">Visual Voicemail</a></li>
         </ul>
       </li>
 
