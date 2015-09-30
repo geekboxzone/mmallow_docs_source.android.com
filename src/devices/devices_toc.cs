@@ -262,6 +262,8 @@
           <a href="<?cs var:toroot ?>devices/tech/power/index.html"><span class="en">Power</span></a>
         </div>
         <ul>
+          <li><a href="<?cs var:toroot ?>devices/tech/power/mgmt.html">Power Management</a>
+          </li>
           <li><a href="<?cs var:toroot ?>devices/tech/power/component.html">Component Power</a></li>
           <li><a href="<?cs var:toroot ?>devices/tech/power/device.html">Device Power</a>
           </li>
