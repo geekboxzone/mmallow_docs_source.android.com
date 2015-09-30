@@ -225,6 +225,8 @@
 
 <p class="toc_h3"><a href="#7_3_8_proximity_sensor">7.3.8. Proximity Sensor</a></p>
 
+<p class="toc_h3"><a href="#7_3_9_hifi_sensors">7.3.9. High Fidelity Sensors</a></p>
+
 <p class="toc_h2"><a href="#7_4_data_connectivity">7.4. Data Connectivity</a></p>
 
 <p class="toc_h3"><a href="#7_4_1_telephony">7.4.1. Telephony</a></p>
@@ -3360,6 +3362,9 @@ the SystemClock.elapsedRealtimeNano() clock. Existing and new Android devices
 are <strong>STRONGLY RECOMMENDED</strong> to meet these requirement so they will be able to upgrade to the future
 platform releases where this might become a REQUIRED component. The
 synchronization error SHOULD be below 100 milliseconds [<a href="http://developer.android.com/reference/android/hardware/SensorEvent.html#timestamp">Resources, 75</a>].</li>
+  <li>MUST report sensor data with a maximum latency of 100 milliseconds + 2 * sample_time for the case of a sensor streamed
+    with a minimum required latency of 5 ms + 2 * sample_time when the application processor is active. This delay does not include any filtering delays.</li>
+  <li>MUST report the first sensor sample within 400 milliseconds + 2 * sample_time of the sensor being activated. It is acceptable for this sample to have an accuracy of 0.</li>
 </ul>
 
 <p>The list above is not comprehensive; the documented behavior of the Android SDK
@@ -3549,6 +3554,132 @@ screen, as the primary intent of this sensor type is to detect a phone in use
 by the user. If a device implementation includes a proximity sensor with any
 other orientation, it MUST NOT be accessible through this API.</li>
   <li>MUST have 1-bit of accuracy or more.</li>
+</ul>
+
+
+<h3 id="7_3_9_hifi_sensors">7.3.9. High Fidelity Sensors</h3>
+
+<p>Device implementations supporting a set of higher quality sensors that can meet all
+the requirements listed in this section MUST identify the support through the
+<code>android.hardware.sensor.hifi_sensors</code> feature flag.</p>
+
+<p>A device declaring android.hardware.sensor.hifi_sensors MUST support all of the following
+sensor types meeting the quality requirements as below:</p>
+
+<ul>
+  <li>SENSOR_TYPE_ACCELEROMETER
+  <ul>
+    <li>MUST have a measurement range between at least -8g and +8g</li>
+    <li>MUST have a measurement resolution of at least 1024 LSB/G</li>
+    <li>MUST have a minimum measurement frequency of 12.5 Hz or lower</li>
+    <li>MUST have a maxmium measurement frequency of 200 Hz or higher</li>
+    <li>MUST have a measurement noise not above 400uG/√Hz</li>
+    <li>MUST implement a non-wake-up form of this sensor with a buffering capability of at least 3000 sensor events</li>
+    <li>MUST have a batching power consumption not worse than 3 mW</li>
+  </ul>
+  </li>
+  <li>SENSOR_TYPE_GYROSCOPE
+  <ul>
+    <li>MUST have a measurement range between at least -1000 and +1000 dps</li>
+    <li>MUST have a measurement resolution of at least 16 LSB/dps</li>
+    <li>MUST have a minimum measurement frequency of 12.5 Hz or lower</li>
+    <li>MUST have a maxmium measurement frequency of 200 Hz or higher</li>
+    <li>MUST have a measurement noise not above 0.014°/s/√Hz</li>
+  </ul>
+  </li>
+  <li>SENSOR_TYPE_GYROSCOPE_UNCALIBRATED with the same quality requirements as
+    SENSOR_TYPE_GYROSCOPE</li>
+  <li>SENSOR_TYPE_GEOMAGNETIC_FIELD
+  <ul>
+    <li>MUST have a measurement range between at least -900 and +900 uT</li>
+    <li>MUST have a measurement resolution of at least 5 LSB/uT</li>
+    <li>MUST have a minimum measurement frequency of 5 Hz or lower</li>
+    <li>MUST have a maxmium measurement frequency of 50 Hz or higher</li>
+    <li>MUST have a measurement noise not above 0.5 uT</li>
+  </ul>
+  </li>
+  <li>SENSOR_TYPE_MAGNETIC_FIELD_UNCALIBRATED with the same quality requirements as
+    SENSOR_TYPE_GEOMAGNETIC_FIELD and in addition:
+  <ul>
+    <li>MUST implement a non-wake-up form of this sensor with a buffering capability of at least 600 sensor events</li>
+  </ul>
+  </li>
+  <li>SENSOR_TYPE_PRESSURE
+  <ul>
+    <li>MUST have a measurement range between at least 300 and 1100 hPa</li>
+    <li>MUST have a measurement resolution of at least 80 LSB/hPa</li>
+    <li>MUST have a minimum measurement frequency of 1 Hz or lower</li>
+    <li>MUST have a maximum measurement frequency of 10 Hz or higher</li>
+    <li>MUST have a measurement noise not above 2 Pa/√Hz</li>
+    <li>MUST implement a non-wake-up form of this sensor with a buffering capability of at least 300 sensor events</li>
+    <li>MUST have a batching power consumption not worse than 2 mW</li>
+  </ul>
+  </li>
+  <li>SENSOR_TYPE_ROTATION_VECTOR
+  <ul>
+    <li>MUST have a batching power consumption not worse than 4 mW</li>
+  </ul>
+  </li>
+  <li>SENSOR_TYPE_GAME_ROTATION_VECTOR MUST implement a non-wake-up form of this sensor with a buffering capability of at least 300 sensor events</li>
+  <li>SENSOR_TYPE_SIGNIFICANT_MOTION
+  <ul>
+    <li>MUST have a power consumption not worse than 0.5 mW when device is static
+      and 1.5 mW when device is moving</li>
+  </ul>
+  </li>
+  <li>SENSOR_TYPE_STEP_DETECTOR
+  <ul>
+    <li>MUST implement a non-wake-up form of this sensor with a buffering capability of at least 100 sensor events</li>
+    <li>MUST have a power consumption not worse than 0.5 mW when device is static
+      and 1.5 mW when device is moving</li>
+    <li>MUST have a batching power consumption not worse than 4 mW</li>
+  </ul>
+  </li>
+  <li>SENSOR_TYPE_STEP_COUNTER
+  <ul>
+    <li>MUST have a power consumption not worse than 0.5 mW when device is static
+      and 1.5 mW when device is moving</li>
+  </ul>
+  </li>
+  <li>SENSOR_TILT_DETECTOR
+  <ul>
+    <li>MUST have a power consumption not worse than 0.5 mW when device is static
+      and 1.5 mW when device is moving</li>
+  </ul>
+  </li>
+</ul>
+
+<p>Also such a device MUST meet the following sensor subsystem requirements:</p>
+
+<ul>
+  <li>The event timestamp of the same physical event reported by the Accelerometer, Gyroscope
+    sensor and Magnetometer MUST be within 2.5 milliseconds of each other.</li>
+  <li>The Gyroscope sensor event timestamps MUST be on the same time base as the camera
+    subsystem and within 1 millisconds of error.</li>
+  <li>The latency of delivery of samples to the HAL SHOULD be below 5 milliseconds from
+    the instant the data is available on the physical sensor hardware.</li>
+  <li>The power consumption MUST not be higher than 0.5 mW when device is static and 2.0 mW
+    when device is moving when any combination of the following sensors are enabled:
+  <ul>
+    <li>SENSOR_TYPE_SIGNIFICANT_MOTION</li>
+    <li>SENSOR_TYPE_STEP_DETECTOR</li>
+    <li>SENSOR_TYPE_STEP_COUNTER</li>
+    <li>SENSOR_TILT_DETECTORS</li>
+  </ul>
+  </li>
+</ul>
+
+<p>Note that all power consumption requirements in this section do not include the power
+  consumption of the Application Processor. It is inclusive of the power drawn by the entire
+  sensor chain - the sensor, any supporting circuitry, any dedicated sensor processing system,
+  etc.</p>
+
+<p>The following sensor types MAY also be supported on a device implementation declaring
+  android.hardware.sensor.hifi_sensors, but if these sensor types are present they MUST meet the
+  following minimum buffering capability requirement:</p>
+
+<ul>
+  <li>SENSOR_TYPE_PROXIMITY: 100 sensor events</li>
 </ul>
 
 <h2 id="7_4_data_connectivity">7.4. Data Connectivity</h2>
