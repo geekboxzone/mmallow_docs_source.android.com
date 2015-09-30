@@ -175,7 +175,7 @@ available at <a href="http://b.android.com">http://b.android.com</a>,  with the 
 setting one variable, as follows:</p>
 
 <pre class=prettyprint>
-$ export ANDROID_JACK_EXTRA_ARGS= "--verbose debug \ --sanity-checks on -D
+$ export ANDROID_JACK_EXTRA_ARGS= "--verbose debug --sanity-checks on -D
 sched.runner=single-threaded"
 </pre>
 
