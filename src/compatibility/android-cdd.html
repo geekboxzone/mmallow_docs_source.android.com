@@ -3333,7 +3333,7 @@ sensor. If a device implementation does include a 3-axis accelerometer, it:</p>
 Android APIs [<a href="http://developer.android.com/reference/android/hardware/SensorEvent.html">Resources, 74</a>].</li>
   <li>MUST be capable of measuring from freefall up to four times the gravity (4g) or
 more on any axis.</li>
-  <li>MUST have a resolution of at least 8-bits and SHOULD have a resolution of at
+  <li>MUST have a resolution of at least 12-bits and SHOULD have a resolution of at
 least 16-bits.</li>
   <li>SHOULD be calibrated while in use if the characteristics changes over the life
 cycle and compensated, and preserve the compensation parameters between device
@@ -3352,7 +3352,7 @@ dynamic or static condition.</li>
 TYPE_LINEAR_ACCELERATION composite sensors and SHOULD implement the
 TYPE_GAME_ROTATION_VECTOR composite sensor. Existing and new Android devices
 are STRONGLY RECOMMENDED to implement the TYPE_GAME_ROTATION_VECTOR sensor.</li>
-  <li>SHOULD implement a TYPE_ROTATION_VECTOR composite sensor, if a gyroscope sensor
+  <li>MUST implement a TYPE_ROTATION_VECTOR composite sensor, if a gyroscope sensor
 and a magnetometer sensor is also included.</li>
 </ul>
 
@@ -3385,7 +3385,7 @@ while in use or during the production of the device.</li>
   <li>SHOULD have a standard deviation, calculated on a per axis basis on samples
 collected over a period of at least 3 seconds at the fastest sampling rate, no
 greater than 0.5 &micro;T.</li>
-  <li>SHOULD implement a TYPE_ROTATION_VECTOR composite sensor, if an accelerometer
+  <li>MUST implement a TYPE_ROTATION_VECTOR composite sensor, if an accelerometer
 sensor and a gyroscope sensor is also included.</li>
   <li>MAY implement the TYPE_GEOMAGNETIC_ROTATION_VECTOR sensor if an accelerometer
 sensor is also implemented. However if implemented, it MUST consume less than
@@ -3424,7 +3424,7 @@ parameters between device reboots.</li>
 or rad^2 / s). The variance is allowed to vary with the sampling rate, but must
 be constrained by this value. In other words, if you measure the variance of
 the gyro at 1 Hz sampling rate it should be no greater than 1e-7 rad^2/s^2.</li>
-  <li>SHOULD implement a TYPE_ROTATION_VECTOR composite sensor, if an accelerometer
+  <li>MUST implement a TYPE_ROTATION_VECTOR composite sensor, if an accelerometer
 sensor and a magnetometer sensor is also included.</li>
   <li>If an accelerometer sensor is included, MUST implement the TYPE_GRAVITY and
 TYPE_LINEAR_ACCELERATION composite sensors and SHOULD implement the
