@@ -1374,14 +1374,17 @@ feel of the device theme as defined by the device implementer. Device
 implementations MAY modify the Device Default theme attributes exposed to
 applications [<a href="http://developer.android.com/reference/android/R.style.html">Resources, 29</a>].</p>
 
-<p>Android supports a new variant theme with translucent system bars, which allows
+<p>Android supports a variant theme with translucent system bars, which allows
 application developers to fill the area behind the status and navigation bar
 with their app content. To enable a consistent developer experience in this
 configuration, it is important the status bar icon style is maintained across
 different device implementations. Therefore, Android device implementations
 MUST use white for system status icons (such as signal strength and battery
 level) and notifications issued by the system, unless the icon is indicating a
-problematic status [<a href="http://developer.android.com/reference/android/R.style.html">Resources, 29</a>].</p>
+problematic status or an app requests a light status bar using the
+SYSTEM_UI_FLAG_LIGHT_STATUS_BAR flag. When an app requests a light status bar,
+Android device implementations MUST change the color of the system status icons
+to black [<a href="http://developer.android.com/reference/android/R.style.html">Resources, 29</a>].</p>
 
 <h3 id="3_8_7_live_wallpapers">3.8.7. Live Wallpapers</h3>
 
