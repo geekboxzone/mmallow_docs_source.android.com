@@ -3523,6 +3523,8 @@ device implementations MUST support Bluetooth and Bluetooth LE. </p>
   <li>MUST declare the hardware feature android.hardware.bluetooth_le.</li>
   <li>MUST enable the GATT (generic attribute profile) based Bluetooth APIs as
 described in the SDK documentation and [<a href="http://developer.android.com/reference/android/bluetooth/package-summary.html">Resources, 82</a>].</li>
+  <li>MUST implement a Resolvable Private Address (RPA) timeout no longer than
+15 minutes, and rotate the address at timeout to protect user privacy.</li>
   <li>SHOULD support offloading of the filtering logic to the bluetooth chipset when
 implementing the ScanFilter API [<a href="https://developer.android.com/reference/android/bluetooth/le/ScanFilter.html">Resources, 83</a>], and MUST report the correct value of where the filtering logic is implemented whenever queried via the
 android.bluetooth.BluetoothAdapter.isOffloadedFilteringSupported() method.</li>
