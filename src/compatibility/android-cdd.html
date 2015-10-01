@@ -1925,6 +1925,7 @@ requirements in [<a href="http://www.webmproject.org/hardware/rtc-coding-require
 <p>Video codecs are optional for Android Watch device implementations.</p>
 </div>
 
+<p>Android device implementations with H.263 encoders, MUST support Baseline Profile Level 45.</p>
 
 <p>Android device implementations with H.264 codec support, MUST support Baseline
 Profile Level 3 and the following SD (Standard Definition) video encoding
@@ -2008,14 +2009,19 @@ encoding profiles.</p>
 <p>Video codecs are optional for Android Watch device implementations.</p>
 </div>
 
-
 <p>Device implementations MUST support dynamic video resolution switching within
 the same stream for all VP8, VP9, H.264, and H.265 codecs exposed through the
 standard Android APIs.</p>
 
-<p>Android device implementations with H.264 decoders, MUST support Baseline
-Profile Level 3 and the following SD video decoding profiles and SHOULD support
-the HD decoding profiles. Android Television devices MUST support High Profile
+<p>Android device implementations with H.263 decoders, MUST support Baseline
+Profile Level 30.</p>
+
+<p>Android device implementations with MPEG-4 decoders, MUST support Simple
+Profile Level 3.</p>
+
+<p>Android device implementations with H.264 decoders, MUST support Main Profile
+Level 3 and the following SD video decoding profiles and SHOULD support the
+HD decoding profiles. Android Television devices MUST support High Profile
 Level 4.2 and the HD 1080p decoding profile.</p>
 <table>
  <tr>
