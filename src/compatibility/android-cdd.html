@@ -4002,7 +4002,11 @@ AOA specification:
     <li>MUST declare support for the hardware feature android.hardware.usb.accessory [<a href="http://developer.android.com/guide/topics/connectivity/usb/accessory.html">Resources, 97</a>].</li>
     <li>MUST implement the USB audio class as documented in the Android SDK
 documentation [<a href="http://developer.android.com/reference/android/hardware/usb/UsbConstants.html#USB_CLASS_AUDIO">Resources, 98</a>].</li>
-  </ul></li>
+    <li>And also the USB mass storage class, MUST include the string "android"
+at the end of the interface description <code>iInterface</code> string of the
+USB mass storage</li>
+  </ul>
+  </li>
   <li>It SHOULD implement support to draw 1.5 A current during HS chirp and traffic
 as specified in the USB battery charging specification [<a href="http://www.usb.org/developers/docs/devclass_docs/USB_Battery_Charging_1.2.pdf">Resources, 99</a>]. Existing and new Android devices are <strong>STRONGLY RECOMMENDED to meet these requirements</strong> so they will be able to upgrade to the future platform releases.</li>
   <li>The value of iSerialNumber in USB standard device descriptor MUST be equal to
