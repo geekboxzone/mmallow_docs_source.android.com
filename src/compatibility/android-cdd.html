@@ -4585,6 +4585,13 @@ the Android Compatibility Team to affect the compatibility of third-party
 applications, the device implementer MUST correct the error via a software
 update available that can be applied per the mechanism just described.</p>
 
+<p>Android includes features that allow the Device Owner app (if present) to control the
+installation of system updates. To facilitate this, the system update subsystem
+for devices that report android.software.device_admin MUST implement the behavior
+described in the SystemUpdatePolicy class
+[<a href="http://developer.android.com/reference/android/app/admin/SystemUpdatePolicy.html">
+Resources, XX</a>].</p>
+
 <h1 id="12_document_changelog">12. Document Changelog</h1>
 
 <p>The following table contains a summary of the changes to the Compatibility
