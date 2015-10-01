@@ -268,6 +268,8 @@
 
 <p class="toc_h4"><a href="#7_8_2_1_analog_audio_ports">7.8.2.1. Analog Audio Ports</a></p>
 
+<p class="toc_h3"><a href="#7_8_3_near_ultrasound">7.8.3. Near-Ultrasound</a></p>
+
 <p class="toc_h1"><a href="#8_performance_compatibility">8. Performance Compatibility</a></p>
 
 <p class="toc_h2"><a href="#8_1_user_experience_consistency">8.1. User Experience Consistency</a></p>
@@ -1710,14 +1712,14 @@ to 48 kHz.</td>
     <td>AMR-NB</td>
     <td>REQUIRED<sup>3</sup></td>
     <td>REQUIRED<sup>3</sup></td>
-    <td>4.75 to 12.2 kbps sampled @ 8kHz</td>
+    <td>4.75 to 12.2 kbps sampled @ 8 kHz</td>
     <td>3GPP (.3gp)</td>
  </tr>
  <tr>
     <td>AMR-WB</td>
     <td>REQUIRED<sup>3</sup></td>
     <td>REQUIRED<sup>3</sup></td>
-    <td>9 rates from 6.60 kbit/s to 23.85 kbit/s sampled @ 16kHz</td>
+    <td>9 rates from 6.60 kbit/s to 23.85 kbit/s sampled @ 16 kHz</td>
     <td></td>
  </tr>
  <tr>
@@ -2199,8 +2201,9 @@ hardware.</p>
 
 <p>While some of the requirements outlined in this section are stated as SHOULD
 since Android 4.3, the Compatibility Definition for a future version is planned
-to change these to MUST. Existing and new Android devices are <strong>STRONGLY RECOMMENDED</strong> to meet these requirements, or they will not be able to attain Android
-compatibility when upgraded to the future version.</p>
+to change these to MUST. Existing and new Android devices are <strong>STRONGLY ENCOURAGED</strong>
+to meet these requirements, or they will not be able to attain Android compatibility when upgraded
+to the future version.</p>
 
 <h3 id="5_4_1_raw_audio_capture">5.4.1. Raw Audio Capture</h3>
 
@@ -2214,6 +2217,9 @@ capture of raw audio content with the following characteristics:</p>
   <li><strong>Channels</strong>: Mono
 </ul>
 
+<p>The capture for the above sample rates MUST be done without up-sampling, and
+any down-sampling MUST include an appropriate anti-aliasing filter.</p>
+
 <p>Device implementations that declare android.hardware.microphone SHOULD allow
 capture of raw audio content with the following characteristics:</p>
 
@@ -2222,6 +2228,11 @@ capture of raw audio content with the following characteristics:</p>
   <li><strong>Sampling rates</strong>: 22050, 48000
   <li><strong>Channels</strong>: Stereo
 </ul>
+
+<p>If capture for the above sample rates is supported,
+then the capture MUST be done without up-sampling at any ratio higher than 16000:22050
+or 44100:48000.
+Any up-sampling or down-sampling MUST include an appropriate anti-aliasing filter.</p>
 
 <h3 id="5_4_2_capture_for_voice_recognition">5.4.2. Capture for Voice Recognition</h3>
 
@@ -2237,7 +2248,7 @@ characteristics: specifically, ±3 dB, from 100 Hz to 4000 Hz.
 source at 1000 Hz yields RMS of 2500 for 16-bit samples.
   <li>PCM amplitude levels SHOULD linearly track input SPL changes over at least a 30
 dB range from -18 dB to +12 dB re 90 dB SPL at the microphone.
-  <li>Total harmonic distortion SHOULD be less than 1% for 1Khz at 90 dB SPL input
+  <li>Total harmonic distortion SHOULD be less than 1% for 1 kHz at 90 dB SPL input
 level at the microphone.
   <li>Noise reduction processing, if present, MUST be disabled.
   <li>Automatic gain control, if present, MUST be disabled
@@ -4052,12 +4063,15 @@ microphone.</p>
 <p>Device implementations MAY omit a microphone. However, if a device
 implementation omits a microphone, it MUST NOT report the
 android.hardware.microphone feature constant, and MUST implement the audio
-recording API at least as no-ops, per <a href="#7_hardware_compatibility">section 7</a>. Conversely, device implementations that do possess a microphone:</p>
+recording API at least as no-ops, per <a href="#7_hardware_compatibility">section 7</a>.
+Conversely, device implementations that do possess a microphone:</p>
 
 <ul>
-  <li>MUST report the android.hardware.microphone feature constant
-  <li>MUST meet the audio recording requirements in <a href="#5_4_audio_recording">section 5.4</a>
-  <li>MUST meet the audio latency requirements in <a href="#5_6_audio_latency">section 5.6</a>
+  <li>MUST report the android.hardware.microphone feature constant</li>
+  <li>MUST meet the audio recording requirements in <a href="#5_4_audio_recording">section 5.4</a></li>
+  <li>MUST meet the audio latency requirements in <a href="#5_6_audio_latency">section 5.6</a></li>
+  <li>STRONGLY RECOMMENDED to support near-ultrasound recording as described in
+    <a href="#7_8_3_near_ultrasound">section 7.8.3</a></li>
 </ul>
 
 <h3 id="7_8_2_audio_output">7.8.2. Audio Output</h3>
@@ -4073,6 +4087,8 @@ port for an audio output peripheral as a headset or an external speaker:</p>
   <li>MUST report the android.hardware.audio.output feature constant.</li>
   <li>MUST meet the audio playback requirements in <a href="#5_5_audio_playback">section 5.5</a>.</li>
   <li>MUST meet the audio latency requirements in <a href="#5_6_audio_latency">section 5.6</a>.</li>
+  <li>STRONGLY RECOMMENDED to support near-ultrasound playback as described in
+    <a href="#7_8_3_near_ultrasound">section 7.8.3</a></li>
 </ul>
 
 <p>Conversely, if a device implementation does not include a speaker or audio
@@ -4119,6 +4135,32 @@ contacts on plug are touching their relevant segments on the jack.</li>
   <li>MUST be capable of driving at least 150mV +/- 10% of output voltage on a 32 Ohm
 speaker impedance.</li>
   <li>MUST have a microphone bias voltage between 1.8V ~ 2.9V.</li>
+</ul>
+
+<h3 id="7_8_3_near_ultrasound">7.8.3. Near-Ultrasound </h3>
+
+<p>Near-Ultrasound audio is the 18.5 kHz to 20 kHz band.
+Device implementations MUST correctly report the support
+of near-ultrasound audio capability via the
+<a href="http://developer.android.com/reference/android/media/AudioManager.html#getProperty(java.lang.String)">AudioManager.getProperty</a>
+API as follows:
+</p>
+
+<ul>
+  <li>If
+  <a href="http://developer.android.com/reference/android/media/AudioManager.html#PROPERTY_SUPPORT_MIC_NEAR_ULTRASOUND">PROPERTY_SUPPORT_MIC_NEAR_ULTRASOUND</a>
+  is "true", then
+  <ul>
+    <li>The microphone's mean power response in the 18.5 kHz to 20 kHz band MUST be no more than
+    15 dB below the response at 2 kHz.</li>
+    <li>The signal to noise ratio of the microphone MUST be no lower than 80 dB.</li>
+  </ul>
+  </li>
+  <li>If
+  <a href="http://developer.android.com/reference/android/media/AudioManager.html#PROPERTY_SUPPORT_SPEAKER_NEAR_ULTRASOUND">PROPERTY_SUPPORT_SPEAKER_NEAR_ULTRASOUND</a>
+  is "true", then the speaker's mean response in 18.5 kHz - 20 kHz MUST be no lower than 40 dB
+  below the response at 2 kHz.
+  </li>
 </ul>
 
 <h1 id="8_performance_compatibility">8. Performance Compatibility</h1>
