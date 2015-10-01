@@ -4435,16 +4435,24 @@ access to the contents of the shared storage over the USB port.</p>
 <p>Optional for Android device implementations without a lock screen.</p>
 </div>
 
+<p>If the device implementation supports a secure lock screen reporting "<code>true</code>"
+for KeyguardManager.isDeviceSecure()
+[<a href="http://developer.android.com/reference/android/app/KeyguardManager.html#isDeviceSecure()">Resources, XX</a>],
+and is not a device with restricted memory as reported through the
+ActivityManager.isLowRamDevice() method, then the device MUST support full-disk encryption
+[<a href="http://source.android.com/devices/tech/security/encryption/index.html">Resources, 107</a>]
+of the application private data (/data partition), as well as the application
+shared storage partition (/sdcard partition) if it is a permanent, non-removable
+part of the device.</p>
 
-<p>If the device implementation supports a lock screen with PIN (numeric) or
-PASSWORD (alphanumeric), the device MUST support full-disk encryption of the
-application private data (/data partition), as well
-as the SD card partition if it is a permanent, non-removable part of the device
-[<a href="http://source.android.com/devices/tech/security/encryption/index.html">Resources, 107</a>]. For devices supporting full-disk encryption, the full-disk encryption SHOULD
-be enabled all the time after the user has completed the out-of-box experience.
-While this requirement is stated as SHOULD for this version of the Android
-platform, it is <strong>very strongly RECOMMENDED</strong> as we expect this to change to MUST in the future versions of Android.
-Encryption MUST use AES with a key of 128-bits (or greater) and a mode designed
+<p>For device implementations supporting full-disk encryption and with Advanced
+Encryption Standard (AES) crypto performance above 50MiB/sec, the full-disk
+encryption MUST be enabled by default at the time the user has completed the out-of-box
+setup experience. If a device implementation is already launched on an earlier Android
+version with full-disk encryption disabled by default, such a device cannot
+meet the requirement through a system software update and thus MAY be exempted.</p>
+
+<p>Encryption MUST use AES with a key of 128-bits (or greater) and a mode designed
 for storage (for example, AES-XTS, AES-CBC-ESSIV). The encryption key MUST NOT
 be written to storage at any time without being encrypted. Other than when in
 active use, the encryption key SHOULD be AES encrypted with the lockscreen
