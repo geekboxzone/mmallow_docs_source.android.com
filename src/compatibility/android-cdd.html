@@ -4226,11 +4226,21 @@ ignored. Implementations MAY add additional permissions, provided the new
 permission ID strings are not in the android.* namespace.</p>
 
 <p>Permissions with a protection level of dangerous are runtime permissions. Applications
-with targetSdkVersion > 22 request them at runtime. The system MUST show a dedicated UI for the
-user to decide whether to grant the requested runtime permissions and also provide a UI for the
-user to manage runtime permissions. On the system there MUST be one and only one
-implementation of both the UI for the user to accept runtime permissions and the UI for
-the user to manage runtime permissions.</p>
+with targetSdkVersion > 22 request them at runtime. Device implementations:</p>
+
+<ul>
+<li>MUST show a dedicated interface for the user to decide whether to grant the
+requested runtime permissions and also provide an interface for the user to manage
+runtime permissions.</li>
+<li>MUST have one and only one implementation of both user interfaces.</li>
+<li>MUST NOT grant any runtime permissions to preinstalled apps unless:
+  <ul>
+    <li>the user's consent can be obtained before the application uses it</li>
+    <li>the runtime permissions are associated with an intent pattern for which the preinstalled
+    application is set as the default handler</li>
+  </ul>
+</li>
+</ul>
 
 <h2 id="9_2_uid_and_process_isolation">9.2. UID and Process Isolation</h2>
 
