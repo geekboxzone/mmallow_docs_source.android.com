@@ -98,6 +98,9 @@
 
 <p class="toc_h4"><a href="#3_9_1_2_managed_profile_provisioning">3.9.1.2 Managed profile provisioning</a></p>
 
+<p class="toc_h3"><a href="#3_9_2_managed_profile_support">3.9.2. Managed Profile Support</a></p>
+
+
 <p class="toc_h2"><a href="#3_10_accessibility">3.10. Accessibility</a></p>
 
 <p class="toc_h2"><a href="#3_11_text-to-speech">3.11. Text-to-Speech</a></p>
@@ -1541,6 +1544,52 @@ android.app.action.PROVISION_MANAGED_PROFILE
 [<a href="http://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#ACTION_PROVISION_MANAGED_PROFILE">
 Resources, XX</a>]) user experience MUST align with the AOSP implementation
 </p>
+
+
+<h2 id="3_9_2_managed_profile_support">3.9.2 Managed Profile Support</h2>
+
+<p>Managed profile capable devices are those devices that:</p>
+<ul>
+  <li>Declare android.software.device_admin (see <a href="#3_9_device_administration">section 3.9 Device Administration)</a></li>
+  <li>Are not low RAM devices (see <a href="#7_6_1_minimum_memory_and_storage">section 7.6.1</a></li>
+  <li>Allocate internal (non-removable) storage as shared storage (see
+    <a href="#7_6_2_application_shared_storage">section 7.6.2</a>)</li>
+</ul>
+<p>Managed profile capable devices MUST:</p>
+<ul>
+  <li>Declare the platform feature flag android.software.managed_users.</li>
+  <li>Support managed profiles via the android.app.admin.DevicePolicyManager APIs</li>
+  <li>Allow a managed profile to be created [<a href="http://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#ACTION_PROVISION_MANAGED_PROFILE"> Resources, XX</a>]</li>
+  <li>Use an icon badge (similar to the AOSP upstream work badge) to represent
+the managed applications and widgets and other badged UI elements like Recents
+&amp; Notifications</li>
+  <li>Display a notification icon (similar to the AOSP upstream work badge) to
+indicate when user is within a managed profile application</li>
+  <li>Display a toast indicating that the user is in the managed profile if and when the
+device wakes up (ACTION_USER_PRESENT) and the foreground application is within
+the managed profile</li>
+  <li>Where a managed profile exists, show a visual affordance in the Intent
+'Chooser' to allow the user to forward the intent from the managed to the personal
+profiles or vice versa, if enabled by the Device Policy Controller</li>
+  <li>Expose the following user affordances for both primary and managed profiles
+(when they exist):
+    <ul>
+      <li>Separate accounting for battery, location, mobile data and storage usage
+      for the primary and managed profiles</li>
+      <li>Independent management of VPN Applications installed within the primary
+      or managed profiles</li>
+      <li>Independent management of applications installed within the primary or
+      managed profiles</li>
+      <li>Independent management of user accounts within the primary or managed
+      profiles</li>
+    </ul>
+  </li>
+  <li>Ensure the default dialer can look up caller information from the managed
+profile (if one exists) alongside those from the primary profile</li>
+  <li>Ensure that all the security requirements for multi user (see
+<a href="#9_5_multi-user_support">section 9.5<a/>) apply to
+managed profiles.</li>
+</ul>
 
 <h2 id="3_10_accessibility">3.10. Accessibility</h2>
 
@@ -4333,13 +4382,6 @@ voice calls and SMS.</li>
   <li>Device implementations MUST, for each user, implement a security model
 consistent with the Android platform security model as defined in Security and
 Permissions reference document in the APIs [<a href="http://developer.android.com/guide/topics/security/permissions.html">Resources, 102</a>].</li>
-  <li>Device implementations MAY support creating users and managed profiles via the
-android.app.admin.DevicePolicyManager APIs, and if supported, MUST declare the
-platform feature flag android.software.managed_users.
-  <li>Device implementations that declare the feature flag
-android.software.managed_users MUST use the upstream AOSP icon badge to
-represent the managed applications and other badge UI elements like Recents &amp;
-Notifications.</li>
   <li>Each user instance on an Android device MUST have separate and isolated
 external storage directories. Device implementations MAY store multiple users'
 data on the same volume or filesystem. However, the device implementation MUST
@@ -4716,6 +4758,10 @@ Android source code, at dalvik/docs</p>
 <p>XX. Android Profile Owner App:</p>
 
 <p><a href="http://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#isProfileOwnerApp(java.lang.String)">http://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#isProfileOwnerApp(java.lang.String)</a></p>
+
+<p>XX. Managed profile provisioning intent</p>
+
+<p><a href="http://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#ACTION_PROVISION_MANAGED_PROFILE">http://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#ACTION_PROVISION_MANAGED_PROFILE</a></p>
 
 <p>42. Android Accessibility Service APIs: <a href="http://developer.android.com/reference/android/accessibilityservice/AccessibilityService.html">http://developer.android.com/reference/android/accessibilityservice/AccessibilityService.html</a></p>
 
