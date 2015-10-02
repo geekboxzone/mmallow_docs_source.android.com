@@ -663,11 +663,11 @@ and match the regular expression &ldquo;^[a-zA-Z0-9_-]+$&rdquo;.</td>
     <td>FINGERPRINT</td>
     <td>A string that uniquely identifies this build. It SHOULD be reasonably
 human-readable. It MUST follow this template:</p>
-
-<p class="small">$(BRAND)/$(PRODUCT)/$(DEVICE):$(VERSION.RELEASE)/$(ID)/$(VERSION.INCREMENTAL):$(TYPE)/$(TAGS)</p>
-
-<p>For example: acme/myproduct/mydevice:ANDROID_VERSION/LMYXX/3359:userdebug/test-keys</p>
-
+<p class="small">$(BRAND)/$(PRODUCT)/<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;$(DEVICE):$(VERSION.RELEASE)/$(ID)/$(VERSION.INCREMENTAL):$(TYPE)/$(TAGS)</p>
+<p>For example:</p>
+<p class="small">acme/myproduct/<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;mydevice:ANDROID_VERSION/LMYXX/3359:userdebug/test-keys</p>
 <p>The fingerprint MUST NOT include whitespace characters. If other fields
 included in the template above have whitespace characters, they MUST be
 replaced in the build fingerprint with another character, such as the
