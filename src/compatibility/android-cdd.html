@@ -1889,8 +1889,6 @@ including Android Watch device implementations.</p>
 
 <h3 id="5_1_3_video_codecs">5.1.3. Video Codecs</h3>
 
-<p>Video codecs are optional for Android Watch device implementations.</p>
-
 <table>
  <tr>
     <th>Format/Codec</th>
@@ -1916,7 +1914,7 @@ including Android Watch device implementations.</p>
     <td><ul>
     <li class="table_list">3GPP (.3gp)</li>
     <li class="table_list">MPEG-4 (.mp4)</li>
-    <li class="table_list">MPEG-TS (.ts, AAC audio only, not seekable, Android 3.0+)</li></ul></td>
+    <li class="table_list">MPEG-2 TS (.ts, AAC audio only, not seekable, Android 3.0+)</li></ul></td>
  </tr>
  <tr>
     <td>H.265 HEVC</td>
@@ -1925,6 +1923,13 @@ including Android Watch device implementations.</p>
     <td>See <a href="#5_3_video_decoding">section 5.3</a> for details</td>
     <td>MPEG-4 (.mp4)</td>
  </tr>
+<tr>
+  <td>MPEG-2</td>
+  <td></td>  
+  <td>STRONGLY RECOMMENDED<sup>6</sup></td>
+  <td>Main Profile</td>
+  <td>MPEG2-TS</td>
+</tr>
  <tr>
     <td>MPEG-4 SP</td>
     <td></td>
@@ -1970,6 +1975,8 @@ requirements in [<a href="http://www.webmproject.org/hardware/rtc-coding-require
 
 <p class="table_footnote">5 STRONGLY RECOMMENDED for Android Automotive, optional for Android Watch, and required for all other device types.</p>
 
+<p class="table_footnote">6 Applies only to Android Television device implementations.</p>
+
 <h2 id="5_2_video_encoding">5.2. Video Encoding</h2>
 
 <div class="note">
@@ -1988,8 +1995,8 @@ RECOMMENDED to encode HD 1080p video at 30 fps.</p>
     <th></th>
     <th>SD (Low quality)</th>
     <th>SD (High quality)</th>
-    <th>HD 720p1</th>
-    <th>HD 1080p1</th>
+    <th>HD 720p<sup>1</sup></th>
+    <th>HD 1080p<sup>1</sup></th>
  </tr>
  <tr>
     <th>Video resolution</th>
@@ -2026,8 +2033,8 @@ encoding profiles.</p>
     <th></th>
     <th>SD (Low quality)</th>
     <th>SD (High quality)</th>
-    <th>HD 720p1</th>
-    <th>HD 1080p1</th>
+    <th>HD 720p<sup>1</sup></th>
+    <th>HD 1080p<sup>1</sup></th>
  </tr>
  <tr>
     <th>Video resolution</th>
@@ -2079,8 +2086,8 @@ Level 4.2 and the HD 1080p decoding profile.</p>
     <th></th>
     <th>SD (Low quality)</th>
     <th>SD (High quality)</th>
-    <th>HD 720p1</th>
-    <th>HD 1080p1</th>
+    <th>HD 720p<sup>1</sup></th>
+    <th>HD 1080p<sup>1</sup></th>
  </tr>
  <tr>
     <th>Video resolution</th>
@@ -2093,8 +2100,8 @@ Level 4.2 and the HD 1080p decoding profile.</p>
     <th>Video frame rate</th>
     <td>30 fps</td>
     <td>30 fps</td>
-    <td>30 fps / 60 fps2</td>
-    <td>30 fps / 60 fps2</td>
+    <td>60 fps</td>
+    <td>30 fps / 60 fps<sup>2</sup></td>
  </tr>
  <tr>
     <th>Video bitrate</th>
@@ -2119,8 +2126,8 @@ decoding profile.  </p>
     <th></th>
     <th>SD (Low quality)</th>
     <th>SD (High quality)</th>
-    <th>HD 720p1</th>
-    <th>HD 1080p1</th>
+    <th>HD 720p<sup>1</sup></th>
+    <th>HD 1080p<sup>1</sup></th>
  </tr>
  <tr>
     <th>Video resolution</th>
@@ -2133,8 +2140,8 @@ decoding profile.  </p>
     <th>Video frame rate</th>
     <td>30 fps</td>
     <td>30 fps</td>
-    <td>30 fps / 60 fps2</td>
-    <td>30 / 60 fps2</td>
+    <td>30 fps / 60 fps<sup>2</sup></td>
+    <td>30 / 60 fps<sup>2</sup></td>
  </tr>
  <tr>
     <th>Video bitrate</th>
@@ -2154,16 +2161,16 @@ devices only when supported by hardware.</p>
 <p>Android device implementations, when supporting VP9 codec as described in <a href="#5_1_3_video_codecs">section 5.1.3</a>, MUST support the following SD video decoding profiles and SHOULD support the
 HD decoding profiles. Android Television devices are STRONGLY RECOMMENDED to
 support the HD 1080p decoding profile and SHOULD support the UHD decoding
-profile. When the UHD video decoding profile is supported, it MUST support 8
-bit color depth.</p>
+profile. When the UHD video decoding profile is supported, it MUST support 8-bit
+color depth and SHOULD support VP9 Profile 2 (10-bit).</p>
 <table>
  <tr>
     <th></th>
     <th>SD (Low quality)</th>
     <th>SD (High quality)</th>
-    <th>HD 720p 1</th>
-    <th>HD 1080p 2</th>
-    <th>UHD 2</th>
+    <th>HD 720p<sup>1</sup></th>
+    <th>HD 1080p<sup>2</sup></th>
+    <th>UHD<sup>2</sup></th>
  </tr>
  <tr>
     <th>Video resolution</th>
@@ -2178,8 +2185,55 @@ bit color depth.</p>
     <td>30 fps</td>
     <td>30 fps</td>
     <td>30 fps</td>
+    <td>60 fps</td>
+    <td>60 fps</td>
+ </tr>
+ <tr>
+    <th>Video bitrate</th>
+    <td>600 Kbps</td>
+    <td>1.6 Mbps</td>
+    <td>4 Mbps</td>
+    <td>10 Mbps</td>
+    <td>20 Mbps</td>
+ </tr>
+</table>
+
+
+<p class="table_footnote">1 Required for Android Television device implementations, but for other type of
+devices only when supported by hardware.</p>
+
+<p class="table_footnote">2 STRONGLY RECOMMENDED for existing Android Television device implementations when
+supported by hardware.</p>
+
+<p>Android device implementations, when supporting H.265 codec as described in <a href="#5_1_3_video_codecs">section 5.1.3</a>, MUST support the Main Profile Level 3 Main tier and the following SD video
+decoding profiles and SHOULD support the HD decoding profiles. Android
+Television devices MUST support the Main Profile Level 4.1 Main tier and the HD
+1080p decoding profile and SHOULD support Main10 Level 5 Main Tier profile and
+the UHD decoding profile.</p>
+<table>
+ <tr>
+    <th></th>
+    <th>SD (Low quality)</th>
+    <th>SD (High quality)</th>
+    <th>HD 720p<sup>1</sup></td>
+    <th>HD 1080p<sup>1</sup></td>
+    <th>UHD<sup>2</sup></td>
+ </tr>
+ <tr>
+    <th>Video resolution</th>
+    <td>352 x 288 px</td>
+    <td>640 x 360 px</td>
+    <td>1280 x 720 px</td>
+    <td>1920 x 1080 px</td>
+    <td>3840 x 2160 px</td>
+ </tr>
+ <tr>
+    <th>Video frame rate</th>
     <td>30 fps</td>
     <td>30 fps</td>
+    <td>30 fps</td>
+    <td>60 fps<sup>2</sup></td>
+    <td>60 fps</td>
  </tr>
  <tr>
     <th>Video bitrate</th>
@@ -2195,55 +2249,8 @@ bit color depth.</p>
 <p class="table_footnote">1 Required for Android Television device implementations, but for other type of
 devices only when supported by hardware.</p>
 
-<p class="table_footnote">2 STRONGLY RECOMMENDED for Android Television device implementations when
-supported by hardware.</p>
-
-<p>Android device implementations, when supporting H.265 codec as described in <a href="#5_1_3_video_codecs">section 5.1.3</a>, MUST support the Main Profile Level 3 Main tier and the following SD video
-decoding profiles and SHOULD support the HD decoding profiles. Android
-Television devices MUST support the Main Profile Level 4.1 Main tier and the HD
-1080p decoding profile and SHOULD support Main10 Level 5 Main Tier profile and
-the UHD decoding profile.</p>
-<table>
- <tr>
-    <th></th>
-    <th>SD (Low quality)</th>
-    <th>SD (High quality)</th>
-    <th>HD 720p </strong>1 </td>
-    <th>HD 1080p </strong>1 </td>
-    <th>UHD </strong>2</td>
- </tr>
- <tr>
-    <th>Video resolution</th>
-    <td>352 x 288 px</td>
-    <td>640 x 360 px</td>
-    <td>1280 x 720 px</td>
-    <td>1920 x 1080 px</td>
-    <td>3840 x 2160 px</td>
- </tr>
- <tr>
-    <th>Video frame rate</th>
-    <td>30 fps</td>
-    <td>30 fps</td>
-    <td>30 fps</td>
-    <td>30 fps</td>
-    <td>30 fps</td>
- </tr>
- <tr>
-    <th>Video bitrate</th>
-    <td>600 Kbps </td>
-    <td>1.6 Mbps</td>
-    <td>4 Mbps</td>
-    <td>10 Mbps</td>
-    <td>20 Mbps</td>
- </tr>
-</table>
-
-
-<p class="table_footnote">1 Required for Android Television device implementation, but for other type of
-devices only when supported by hardware.</p>
-
-<p class="table_footnote">2 Required for Android Television device implementations when supported by
-hardware.</p>
+<p class="table_footnote">2 STRONGLY RECOMMENDED
+for existing Android Television device implementations when supported by hardware.</p>
 
 <h2 id="5_4_audio_recording">5.4. Audio Recording</h2>
 
