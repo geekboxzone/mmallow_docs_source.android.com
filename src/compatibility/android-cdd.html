@@ -313,6 +313,8 @@
 
 <p class="toc_h2"><a href="#9_11_keys_and_credentials">9.11. Keys and Credentials</a></p>
 
+<p class="toc_h2"><a href="#9_12_data_deletion">9.12. Data Deletion</a></p>
+
 <p class="toc_h1"><a href="#10_software_compatibility_testing">10. Software Compatibility Testing</a></p>
 
 <p class="toc_h2"><a href="#10_1_compatibility_test_suite">10.1. Compatibility Test Suite</a></p>
@@ -4817,6 +4819,16 @@ than 8,192 keys to be imported.</li>
 <p>Note that if a device implementation is already launched on an earlier Android version and has
   not implemented a trusted operating system on the secure hardware, such a device cannot meet
   the above TEE-related requirements through a system software update and thus is exempted from these TEE-related requirements.</p>
+
+<h2 id="9_12_data_deletion">9.12. Data Deletion</h2>
+
+<p>Devices MUST provide users with a mechanism to perform a "Factory Data Reset"
+that allows logical and physical deletion of all data. This MUST satisfy relevant
+industry standards for data deletion such as NIST SP800-88. This MUST be used for
+the implementation of the wipeData() API (part of the Android Device Administration API)
+described in <a href="#3_9_device_administration">section 3.9 Device Administration.</p>
+
+<p>Devices MAY provide a fast data wipe that conducts a logical data erase.</p>
 
 <h1 id="10_software_compatibility_testing">10. Software Compatibility Testing</h1>
 
