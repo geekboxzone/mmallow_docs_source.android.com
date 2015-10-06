@@ -4419,9 +4419,9 @@ Project provides an implementation that satisfies this requirement.</p>
 <h2 id="9_7_kernel_security_features">9.7. Kernel Security Features</h2>
 
 
-<p>The Android Sandbox includes features that can use the Security-Enhanced Linux
+<p>The Android Sandbox includes features that use the Security-Enhanced Linux
 (SELinux) mandatory access control (MAC) system and other security features in
-the Linux kernel. SELinux or any other security features, if implemented below
+the Linux kernel. SELinux or any other security features implemented below
 the Android framework:</p>
 
 <ul>
@@ -4436,31 +4436,28 @@ unblocked security violation occurs resulting in a successful exploit.</li>
 affect another application (such as a Device Administration API), the API MUST
 NOT allow configurations that break compatibility.</p>
 
-<p>Devices MUST implement SELinux or an equivalent mandatory access control system
-if using a kernel other than Linux and meet the following requirements, which
-are satisfied by the reference implementation in the upstream Android Open
-Source Project.</p>
+<p>Devices MUST implement SELinux or, if using a kernel other than Linux, an
+equivalent mandatory access control system. Devices MUST also meet the
+following requirements, which are satisfied by the reference implementation
+in the upstream Android Open Source Project.</p>
 
 <p>Device implementations:</p>
 
 <ul>
-  <li>MUST support a SELinux policy that allows the SELinux mode to be set on a
-per-domain basis, and MUST configure all domains in enforcing mode. No
-permissive mode domains are allowed, including domains specific to a
-device/vendor.</li>
-  <li>SHOULD load policy from /sepolicy file on the device.</li>
+  <li>MUST set SELinux to global enforcing mode.</li>
+  <li>MUST configure all domains in enforcing mode. No permissive mode domains
+are allowed, including domains specific to a device/vendor.</li>
   <li>MUST NOT modify, omit, or replace the neverallow rules present within the
-sepolicy file provided in the upstream Android Open Source Project (AOSP) and
-the policy MUST compile with all neverallow present, for both AOSP SELinux
+external/sepolicy folder provided in the upstream Android Open Source Project (AOSP) and
+the policy MUST compile with all neverallow rules present, for both AOSP SELinux
 domains as well as device/vendor specific domains.</li>
-  <li>MUST support dynamic updates of the SELinux policy file without requiring a
-system image update.</li>
 </ul>
 
 <p>Device implementations SHOULD retain the default SELinux policy provided in the
-upstream Android Open Source Project, until they have first audited their
-additions to the SELinux policy. Device implementations MUST be compatible with
-the upstream Android Open Source Project.</p>
+external/sepolicy folder of the upstream Android Open Source Project and only
+further add to this policy for their own device-specific configuration. Device
+implementations MUST be compatible with the upstream Android Open Source Project.
+</p>
 
 <h2 id="9_8_privacy">9.8. Privacy</h2>
 
