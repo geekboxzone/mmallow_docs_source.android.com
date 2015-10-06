@@ -307,6 +307,8 @@
 
 <p class="toc_h2"><a href="#9_10_verified_boot">9.10. Verified Boot</a></p>
 
+<p class="toc_h2"><a href="#9_11_keys_and_credentials">9.11. Keys and Credentials</a></p>
+
 <p class="toc_h1"><a href="#10_software_compatibility_testing">10. Software Compatibility Testing</a></p>
 
 <p class="toc_h2"><a href="#10_1_compatibility_test_suite">10.1. Compatibility Test Suite</a></p>
@@ -4607,6 +4609,44 @@ crypto perfomance above 50MiB/seconds MUST support verified boot for device inte
 If a device implementation is already launched without supporting verified boot on an earlier
 version of Android, such a device can not add support for this feature with a system software
 update and thus are exempted from the requirement.</p>
+
+<h2 id="9_11_keys_and_credentials">9.11. Keys and Credentials</h2>
+
+<p>The Android Keystore System
+[<a href="https://developer.android.com/training/articles/keystore.html">Resources, XX</a>]
+allows app developers to store cryptographic keys in a container and use them in cryptographic
+operations through the KeyChain API
+[<a href="https://developer.android.com/reference/android/security/KeyChain.html">Resources, XX</a>]
+or the Keystore API
+  [<a href="https://developer.android.com/reference/java/security/KeyStore.html">Resources, XX</a>].
+</p>
+
+<p>All Android device implementations MUST meet the following requirements:</p>
+
+<ul>
+<li>SHOULD not limit the number of keys that can be generated, and MUST at least allow more
+than 8,192 keys to be imported.</li>
+<li>The lock screen authentication MUST rate limit attempts and SHOULD have an exponential
+  backoff algorithm as implemented in the Android Open Source Project.</li>
+<li>When the device implementation supports a secure lock screen and has a secure hardware
+  such as a Secure Element (SE) where a Trusted Execution Environment (TEE) can be implemented,
+  then it:
+  <ul>
+  <li>MUST back up the keystore implementation with the secure hardware. The upstream Android
+    Open Source Project provides the Keymaster Hardware Abstraction Layer (HAL) implementation
+    that can be used to satisfy this requirement.</li>
+  <li>MUST perform the lock screen authentication in the secure hardware and only when successful
+    allow the authentication-bound keys to be used. The upstream Android Open Source Project
+    provides the Gatekeeper Hardware Abstraction Layer (HAL) that can be used to satisfy this
+    requirement
+    [<a href="http://source.android.com/devices/tech/security/authentication/gatekeeper.html">Resources, XX</a>].</li>
+  </ul>
+</li>
+</ul>
+
+<p>Note that if a device implementation is already launched on an earlier Android version and has
+  not implemented a trusted operating system on the secure hardware, such a device cannot meet
+  the above TEE-related requirements through a system software update and thus is exempted from these TEE-related requirements.</p>
 
 <h1 id="10_software_compatibility_testing">10. Software Compatibility Testing</h1>
 
