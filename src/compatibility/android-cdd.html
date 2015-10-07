@@ -227,6 +227,8 @@
 
 <p class="toc_h3"><a href="#7_3_9_hifi_sensors">7.3.9. High Fidelity Sensors</a></p>
 
+<p class="toc_h3"><a href="#7_3_10_fingerprint">7.3.10. Fingerprint Sensor</a></p>
+
 <p class="toc_h2"><a href="#7_4_data_connectivity">7.4. Data Connectivity</a></p>
 
 <p class="toc_h3"><a href="#7_4_1_telephony">7.4.1. Telephony</a></p>
@@ -3680,6 +3682,43 @@ sensor types meeting the quality requirements as below:</p>
 
 <ul>
   <li>SENSOR_TYPE_PROXIMITY: 100 sensor events</li>
+</ul>
+
+<h3 id="7_3_10_fingeprint">7.3.10. Fingerprint Sensor</h3>
+
+<p>Device implementations with a secure lock screen SHOULD include a fingerprint sensor.
+If a device implementation includes a fingerprint sensor and has a corresponding API for
+third-party developers, it:</p>
+
+<ul>
+  <li>MUST declare support for the android.hardware.fingerprint feature.</li>
+  <li>MUST fully implement the corresponding API as described in the Android SDK documentation
+[<a href="https://developer.android.com/reference/android/hardware/fingerprint/package-summary.html">Resources, XX</a>].
+  </li>
+  <li>MUST have a false acceptance rate not higher than 0.002%.</li>
+  <li>Is STRONGLY RECOMMENDED to have a false rejection rate not higher than 10%, and a
+    latency from when the fingerprint sensor is touched until the screen is unlocked below
+    1 second, for 1 enrolled finger.</li>
+  <li>MUST rate limit attempts for at least 30 seconds after 5 false trials for fingerprint
+    verification.</li>
+  <li>MUST have a hardware-backed keystore implementation, and perform the fingerprint matching
+    in a Trusted Execution Environment (TEE) or on a chip with a secure channel to the TEE.
+  </li>
+  <li>MUST have all identifiable fingerprint data encrypted and cryptographically
+    authenticated such that they cannot be acquired, read or altered outside of the
+    Trusted Execution Environment (TEE) as documented in the implementation guidelines
+    on the Android Open Source Project site
+    [<a href="https://source.android.com/devices/tech/security/authentication/fingerprint-hal.html">Resources, XX</a>].
+  </li>
+  <li>MUST prevent adding a fingerprint without first establishing a chain of trust by
+    having the user confirm existing or add a new device credential (PIN/pattern/password)
+    using the TEE as implemented in the Android Open Source project.</li>
+  <li>MUST NOT enable 3rd-party applications to distinguish between individual fingerprints.
+  </li>
+  <li>MUST honor the DevicePolicyManager.KEYGUARD_DISABLE_FINGERPRINT flag.</li>
+  <li>MUST, when upgraded from a version earlier than Android 6.0, have the fingerprint
+    data securely migrated to meet the above requirements or removed.</li>
+  <li>SHOULD use the Android Fingerprint icon provided in the Android Open Source Project.</li>
 </ul>
 
 <h2 id="7_4_data_connectivity">7.4. Data Connectivity</h2>
