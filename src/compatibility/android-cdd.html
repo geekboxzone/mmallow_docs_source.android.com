@@ -273,6 +273,8 @@
 
 <p class="toc_h3"><a href="#7_6_2_application_shared_storage">7.6.2. Application Shared Storage</a></p>
 
+<p class="toc_h3"><a href="#7_6_3_adoptable_storage">7.6.3. Adoptable Storage</a></p>
+
 <p class="toc_h2"><a href="#7_7_usb">7.7. USB</a></p>
 
 <p class="toc_h2"><a href="#7_8_audio">7.8. Audio</a></p>
@@ -4385,6 +4387,21 @@ Transfer Protocol, it:</p>
   <li>SHOULD report a USB device class of 0x00.</li>
   <li>SHOULD report a USB interface name of 'MTP'.</li>
 </ul>
+
+<h3 id="7_6_3_adoptable_storage">7.6.3. Adoptable Storage</h3>
+
+<p>Device implementations are STRONGLY RECOMMENDED to implement adoptable
+storage if the removable storage device port is in a long-term stable location,
+such as within the battery compartment or other protective cover
+[<a
+href="http://source.android.com/devices/storage/adoptable.html">Resources,
+XX</a>].</p>
+
+<p>Device implementations such as a television, MAY enable adoption through USB
+ports as the device is expected to be static and not mobile. But for other
+device implementations that are mobile in nature, it is STRONGLY RECOMMENDED to
+implement the adoptable storage in a long-term stable location, since accidentally
+disconnecting them can cause data loss/corruption.</p>
 
 <h2 id="7_7_usb">7.7. USB</h2>
 
