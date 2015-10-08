@@ -3869,8 +3869,11 @@ Android API and:</p>
   <li>MUST report the hardware feature flag android.hardware.wifi.</li>
   <li>MUST implement the multicast API as described in the SDK documentation [<a href="http://developer.android.com/reference/android/net/wifi/WifiManager.MulticastLock.html">Resources, 79</a>].</li>
   <li>MUST support multicast DNS (mDNS) and MUST NOT filter mDNS packets
-(224.0.0.251) at any time of operation including when the screen is not in an
-active state.</li>
+(224.0.0.251) at any time of operation including:
+    <ul>
+      <li>Even when the screen is not in an active state.</li>
+      <li>For Android Television device implementations, even when in standby power states.</li>
+    </ul>
 </ul>
 
 <h4 id="7_4_2_1_wi-fi_direct">7.4.2.1. Wi-Fi Direct</h4>
