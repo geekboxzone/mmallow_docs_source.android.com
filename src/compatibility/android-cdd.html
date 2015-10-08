@@ -351,7 +351,7 @@
 <p>This document enumerates the requirements that must be met in order for devices
 to be compatible with Android ANDROID_VERSION.</p>
 
-<p>The use of &ldquo;MUST&rdquo;, &ldquo;MUST NOT&rdquo;, &ldquo;REQUIRED&rdquo;, &ldquo;SHALL&rdquo;, &ldquo;SHALL NOT&rdquo;, &ldquo;SHOULD&rdquo;,&ldquo;SHOULD NOT&rdquo;, &ldquo;RECOMMENDED&rdquo;, &ldquo;MAY&rdquo;, and &ldquo;OPTIONAL&rdquo; is per the IETF standard
+<p>The use of &ldquo;MUST&rdquo;, &ldquo;MUST NOT&rdquo;, &ldquo;REQUIRED&rdquo;, &ldquo;SHALL&rdquo;, &ldquo;SHALL NOT&rdquo;, &ldquo;SHOULD&rdquo;, &ldquo;SHOULD NOT&rdquo;, &ldquo;RECOMMENDED&rdquo;, &ldquo;MAY&rdquo;, and &ldquo;OPTIONAL&rdquo; is per the IETF standard
 defined in RFC2119 [<a href="http://www.ietf.org/rfc/rfc2119.txt">Resources, 1</a>].</p>
 
 <p>As used in this document, a &ldquo;device implementer&rdquo; or &ldquo;implementer&rdquo; is a person
@@ -370,7 +370,7 @@ implementer to ensure compatibility with existing implementations.</p>
 implementers are STRONGLY RECOMMENDED to base their implementations to the
 greatest extent possible on the &ldquo;upstream&rdquo; source code available from the
 Android Open Source Project. While some components can hypothetically be
-replaced with alternate implementations this practice is strongly discouraged,
+replaced with alternate implementations, it is STRONGLY RECOMMENDED to not follow this practice,
 as passing the software tests will become substantially more difficult. It is
 the implementer&rsquo;s responsibility to ensure full behavioral compatibility with
 the standard Android implementation, including and beyond the Compatibility
@@ -1355,7 +1355,7 @@ supported on Android Handheld devices.</p>
 
 
 <p>Android defines a component type and corresponding API and lifecycle that
-allows applications to expose an &ldquo;AppWidget&rdquo; to the end user [<a href="http://developer.android.com/guide/practices/ui_guidelines/widget_design.html">Resources, 21</a>] a feature that is strongly RECOMMENDED to be supported on Handheld Device
+allows applications to expose an &ldquo;AppWidget&rdquo; to the end user [<a href="http://developer.android.com/guide/practices/ui_guidelines/widget_design.html">Resources, 21</a>] a feature that is STRONGLY RECOMMENDED to be supported on Handheld Device
 implementations. Device implementations that support embedding widgets on the
 home screen MUST meet the following requirements and declare support for
 platform feature android.software.app_widgets.</p>
@@ -2134,8 +2134,8 @@ requirements in [<a href="http://www.webmproject.org/hardware/rtc-coding-require
 <p>Android device implementations with H.264 codec support, MUST support Baseline
 Profile Level 3 and the following SD (Standard Definition) video encoding
 profiles and SHOULD support Main Profile Level 4 and the following HD (High
-Definition) video encoding profiles. Android Television devices are STRONGLY
-RECOMMENDED to encode HD 1080p video at 30 fps.</p>
+Definition) video encoding profiles. Android Television devices are STRONGLY RECOMMENDED
+to encode HD 1080p video at 30 fps.</p>
 <table>
  <tr>
     <th></th>
@@ -2403,7 +2403,7 @@ for existing Android Television device implementations when supported by hardwar
 
 <p>While some of the requirements outlined in this section are stated as SHOULD
 since Android 4.3, the Compatibility Definition for a future version is planned
-to change these to MUST. Existing and new Android devices are <strong>STRONGLY ENCOURAGED</strong>
+to change these to MUST. Existing and new Android devices are <strong>STRONGLY RECOMMENDED</strong>
 to meet these requirements, or they will not be able to attain Android compatibility when upgraded
 to the future version.</p>
 
@@ -4413,7 +4413,7 @@ the value of android.os.Build.SERIAL.</li>
 cables adapting the port to a standard type-A or type-C USB port.</li>
   <li>MAY use a micro-AB USB port, but if so SHOULD ship with a cable or cables
 adapting the port to a standard type-A or type-C USB port.</li>
-  <li>is <strong>very strongly RECOMMENDED</strong> to implement the USB audio class as documented in the Android SDK
+  <li>is <strong>STRONGLY RECOMMENDED</strong> to implement the USB audio class as documented in the Android SDK
 documentation [<a href="http://developer.android.com/reference/android/hardware/usb/UsbConstants.html#USB_CLASS_AUDIO">Resources, 98</a>].</li>
   <li>MUST implement the Android USB host API as documented in the Android SDK, and
 MUST declare support for the hardware feature android.hardware.usb.host [<a href="http://developer.android.com/guide/topics/connectivity/usb/host.html">Resources, 100</a>].</li>
