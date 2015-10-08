@@ -767,6 +767,20 @@ typical Android runtime configurations: user, userdebug, or eng.</td>
 There are no requirements on the specific format of this field, except that it
 MUST NOT be null or the empty string ("").</td>
  </tr>
+ <tr>
+    <td>SECURITY_PATCH</td>
+    <td>An value indicating the security patch level of a build. It MUST signify that the
+build includes all security patches issued up through the designated Android Public
+Security Bulletin. It MUST be in the format, [YYYY-MM-DD], matching the Public Security
+Bulletin's broadcast date, for example [2015-10-01].</td>
+ </tr>
+ <tr>
+    <td>BASE_OS</td>
+    <td>An value representing the FINGERPRINT parameter of the build that is otherwise
+      identical to this build except for the patches provided in the Android Public
+      Security Bulletin. It MUST report the correct value and if such a build does not
+      exist, report an emtpy string ("").</td>
+ </tr>
 </table>
 
 
