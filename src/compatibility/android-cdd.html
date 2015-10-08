@@ -2502,7 +2502,7 @@ or exceed these audio output requirements:</p>
 <p>If a device implementation meets the requirements of this section after any
 initial calibration when using the OpenSL ES PCM buffer queue API, for
 continuous output latency and cold output latency over at least one supported
-audio output device, it MAY report support for low-latency audio, by reporting
+audio output device, it is STRONGLY RECOMMENDED to report support for low-latency audio, by reporting
 the feature android.hardware.audio.low_latency via the
 android.content.pm.PackageManager class [<a href="http://developer.android.com/reference/android/content/pm/PackageManager.html">Resources, 53</a>]. Conversely, if the device implementation does not meet these requirements it
 MUST NOT report support for low-latency audio.</p>
@@ -2550,7 +2550,7 @@ requirement.</p>
 If a device implementation supports the inter-app MIDI software transport
 (virtual MIDI devices), and it supports MIDI over
 <em>all</em> of the following MIDI-capable hardware transports
-for which it provides generic non-MIDI connectivity, it MAY report
+for which it provides generic non-MIDI connectivity, it is STRONGLY RECOMMENDED to report
 support for feature android.software.midi via the
 android.content.pm.PackageManager class
 [<a href="http://developer.android.com/reference/android/content/pm/PackageManager.html">Resources, 53</a>].
@@ -2579,7 +2579,7 @@ over Bluetooth LE, SHOULD support MIDI over Bluetooth LE.
 
 <p>
 If a device implementation meets <em>all</em> of the following requirements,
-it MAY report support for feature android.hardware.audio.pro via the
+it is STRONGLY RECOMMENDED to report support for feature android.hardware.audio.pro via the
 android.content.pm.PackageManager class
 [<a href="http://developer.android.com/reference/android/content/pm/PackageManager.html">Resources, 53</a>].
 </p>
