@@ -425,8 +425,15 @@ perhaps on the wrist, and:</p>
 
 <p><strong>Android Automotive implementation</strong> refers to a vehicle head
 unit running Android as an operating system for part or all of the system and/or
-infotainment functionality. Android Automotive implementations MUST support
-uiMode = UI_MODE_TYPE_CAR [<a href="http://developer.android.com/reference/android/content/res/Configuration.html#UI_MODE_TYPE_CAR">Resources, 111</a>].</p>
+infotainment functionality. Android Automotive implementations:</p>
+
+<ul>
+  <li>MUST declare the feature android.hardware.type.automotive.</li>
+  <li>MUST support
+uiMode = UI_MODE_TYPE_CAR [<a
+href="http://developer.android.com/reference/android/content/res/Configuration.html#UI_MODE_TYPE_CAR">Resources,
+    111</a>].</li>
+<ul>
 
 <p>All Android device implementations that do not fit into any of the above device
 types still MUST meet all requirements in this document to be Android ANDROID_VERSION
