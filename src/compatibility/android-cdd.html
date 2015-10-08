@@ -1680,7 +1680,9 @@ Resources, XX</a>]) user experience MUST align with the AOSP implementation
 <ul>
   <li>Declare the platform feature flag android.software.managed_users.</li>
   <li>Support managed profiles via the android.app.admin.DevicePolicyManager APIs</li>
-  <li>Allow a managed profile to be created [<a href="http://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#ACTION_PROVISION_MANAGED_PROFILE"> Resources, XX</a>]</li>
+  <li>Allow one and only one managed profile to be created [<a
+href="http://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#ACTION_PROVISION_MANAGED_PROFILE">Resources,
+XX</a>]</li>
   <li>Use an icon badge (similar to the AOSP upstream work badge) to represent
 the managed applications and widgets and other badged UI elements like Recents
 &amp; Notifications</li>
@@ -1690,26 +1692,28 @@ indicate when user is within a managed profile application</li>
 device wakes up (ACTION_USER_PRESENT) and the foreground application is within
 the managed profile</li>
   <li>Where a managed profile exists, show a visual affordance in the Intent
-'Chooser' to allow the user to forward the intent from the managed to the personal
-profiles or vice versa, if enabled by the Device Policy Controller</li>
-  <li>Expose the following user affordances for both primary and managed profiles
-(when they exist):
+'Chooser' to allow the user to forward the intent from the managed profile to
+the primary user or vice versa, if enabled by the Device Policy Controller</li>
+  <li>Where a managed profile exists, expose the following user affordances for both
+the primary user and the managed profile:
     <ul>
       <li>Separate accounting for battery, location, mobile data and storage usage
-      for the primary and managed profiles</li>
+      for the primary user and managed profile.</li>
       <li>Independent management of VPN Applications installed within the primary
-      or managed profiles</li>
-      <li>Independent management of applications installed within the primary or
-      managed profiles</li>
-      <li>Independent management of user accounts within the primary or managed
-      profiles</li>
+      user or managed profile.</li>
+      <li>Independent management of applications installed within the primary user
+      user or managed profile.</li>
+      <li>Independent management of accounts within the primary user or managed
+      profile.</li>
     </ul>
   </li>
   <li>Ensure the default dialer can look up caller information from the managed
-profile (if one exists) alongside those from the primary profile</li>
-  <li>Ensure that all the security requirements for multi user (see
-<a href="#9_5_multi-user_support">section 9.5</a>) apply to
-managed profiles.</li>
+profile (if one exists) alongside those from the primary profile, if the Device
+Policy Controller permits it.</li>
+  <li>MUST ensure that it satisfies all the security requirements applicable for a device
+    with multiple users enabled (see <a href="#9_5_multi-user_support">section 9.5</a>),
+    even though the managed profile is not counted as another user in addition to the
+    primary user.</li>
 </ul>
 
 <h2 id="3_10_accessibility">3.10. Accessibility</h2>
