@@ -1760,13 +1760,14 @@ files from installing and running correctly on other compatible devices.</p>
 
 
 <p>Device implementations MUST support the core media formats specified in the
-Android SDK documentation [<a href="http://developer.android.com/guide/appendix/media-formats.html">Resources, 50</a>] except where explicitly permitted in this document. Specifically, device
+Android SDK documentation [<a href="http://developer.android.com/guide/appendix/media-formats.html">Resources, 50</a>]
+except where explicitly permitted in this document. Specifically, device
 implementations MUST support the media formats, encoders, decoders, file types,
 and container formats defined in the tables below and reported via MediaCodecList
 [<a href="http://developer.android.com/reference/android/media/MediaCodecList.html">Resources,112</a>].
 Device implementations MUST also be able to decode all profiles reported in its CamcorderProfile
 [<a href="http://developer.android.com/reference/android/media/CamcorderProfile.html">Resources,
-113</a>].
+113</a>] and MUST be able to decode all formats it can encode.
 
 All of these codecs are
 provided as software implementations in the preferred Android implementation
