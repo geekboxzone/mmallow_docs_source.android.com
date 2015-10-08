@@ -439,7 +439,7 @@ infotainment functionality. Android Automotive implementations:</p>
   <li>MUST support
 uiMode = UI_MODE_TYPE_CAR [<a
 href="http://developer.android.com/reference/android/content/res/Configuration.html#UI_MODE_TYPE_CAR">Resources,
-    111</a>].</li>
+    5</a>].</li>
 <ul>
 
 <p>All Android device implementations that do not fit into any of the above device
@@ -581,7 +581,7 @@ Android applications. The Android application programming interface (API) is
 the set of Android platform interfaces exposed to applications running in the
 managed runtime environment. Device implementations MUST provide complete
 implementations, including all documented behaviors, of any documented API
-exposed by the Android SDK [<a href="http://developer.android.com/reference/packages.html">Resources, 5</a>] or any API decorated with the &ldquo;@SystemApi&rdquo; marker in the upstream Android
+exposed by the Android SDK [<a href="http://developer.android.com/reference/packages.html">Resources, 6</a>] or any API decorated with the &ldquo;@SystemApi&rdquo; marker in the upstream Android
 source code. </p>
 
 <p>Device implementations MUST NOT omit any managed APIs, alter API interfaces or
@@ -603,12 +603,12 @@ applications that cannot be enforced at application compile time.</p>
 
 
 <p>Device implementers MUST support and enforce all permission constants as
-documented by the Permission reference page [<a href="http://developer.android.com/reference/android/Manifest.permission.html">Resources, 6]</a>. Note that <a href="#9_security_model_compatibility">section 9</a> lists additional requirements related to the Android security model.</p>
+documented by the Permission reference page [<a href="http://developer.android.com/reference/android/Manifest.permission.html">Resources, 7</a>]. Note that <a href="#9_security_model_compatibility">section 9</a> lists additional requirements related to the Android security model.</p>
 
 <h3 id="3_2_2_build_parameters">3.2.2. Build Parameters</h3>
 
 
-<p>The Android APIs include a number of constants on the android.os.Build class [<a href="http://developer.android.com/reference/android/os/Build.html">Resources, 7</a>] that are intended to describe the current device. To provide consistent,
+<p>The Android APIs include a number of constants on the android.os.Build class [<a href="http://developer.android.com/reference/android/os/Build.html">Resources, 8</a>] that are intended to describe the current device. To provide consistent,
 meaningful values across device implementations, the table below includes
 additional restrictions on the formats of these values to which device
 implementations MUST conform.</p>
@@ -620,7 +620,7 @@ implementations MUST conform.</p>
  <tr>
     <td>VERSION.RELEASE</td>
     <td>The version of the currently-executing Android system, in human-readable
-format. This field MUST have one of the string values defined in [<a href="http://source.android.com/compatibility/ANDROID_VERSION/versions.html">Resources, 8]</a>.</td>
+format. This field MUST have one of the string values defined in [<a href="http://source.android.com/compatibility/ANDROID_VERSION/versions.html">Resources, 9</a>].</td>
  </tr>
  <tr>
     <td>VERSION.SDK</td>
@@ -880,14 +880,14 @@ documentation as below.</p>
 <ul>
   <li>MUST honor the android.settings.HOME_SETTINGS intent to show a default app
 settings menu for Home Screen, if the device implementation reports
-android.software.home_screen [<a href="http://developer.android.com/reference/android/provider/Settings.html">Resources, 10]</a></li>
+android.software.home_screen [<a href="http://developer.android.com/reference/android/provider/Settings.html">Resources, 10</a>]</li>
   <li>MUST provide a settings menu that will call the
 android.provider.Telephony.ACTION_CHANGE_DEFAULT intent to show a dialog to
 change the default SMS application, if the device implementation reports
-android.hardware.telephony [<a href="http://developer.android.com/reference/android/provider/Telephony.Sms.Intents.html">Resources, 9</a>]</li>
+android.hardware.telephony [<a href="http://developer.android.com/reference/android/provider/Telephony.Sms.Intents.html">Resources, 11</a>]</li>
   <li>MUST honor the android.settings.NFC_PAYMENT_SETTINGS intent to show a default
 app settings menu for Tap and Pay, if the device implementation reports
-android.hardware.nfc.hce [<a href="http://developer.android.com/reference/android/provider/Settings.html">Resources, 10]</a></li>
+android.hardware.nfc.hce [<a href="http://developer.android.com/reference/android/provider/Settings.html">Resources, 10</a>]</li>
 </ul>
 
 <h2 id="3_3_native_api_compatibility">3.3. Native API Compatibility</h2>
@@ -918,9 +918,9 @@ android.os.Build.SUPPORTED_64_BIT_ABIS parameters, each a comma separated list
 of ABIs ordered from the most to the least preferred one</li>
   <li>MUST report, via the above parameters, only those ABIs documented and
 described in the latest version of the Android NDK ABI Management documentation
-[<a href="https://developer.android.com/ndk/guides/abis.html">Resources, XX</a>],
+[<a href="https://developer.android.com/ndk/guides/abis.html">Resources, 12</a>],
 and MUST include support for the Advanced SIMD (a.k.a. NEON)
-[<a href="http://infocenter.arm.com/help/index.jsp?topic=/com.arm.doc.ddi0388f/Beijfcja.html">Resources,XX</a>]
+[<a href="http://infocenter.arm.com/help/index.jsp?topic=/com.arm.doc.ddi0388f/Beijfcja.html">Resources, 13</a>]
 extension
   </li>
   <li>SHOULD be built using the source code and header files available in the
@@ -956,7 +956,7 @@ predefined ABI, it MUST NOT report support for any ABIs at all.</p>
 
 <p>Note that device implementations MUST include libGLESv3.so and it MUST symlink
 (symbolic link) to libGLESv2.so. in turn, MUST export all the OpenGL ES 3.1 and
-Android Extension Pack [<a href="http://developer.android.com/guide/topics/graphics/opengl.html#aep">Resources, 11</a>] function symbols as defined in the NDK release android-21. Although all the
+Android Extension Pack [<a href="http://developer.android.com/guide/topics/graphics/opengl.html#aep">Resources, 14</a>] function symbols as defined in the NDK release android-21. Although all the
 symbols must be present, only the corresponding functions for OpenGL ES
 versions and extensions actually supported by the device must be fully
 implemented.</p>
@@ -1014,14 +1014,14 @@ a complete implementation of the android.webkit.Webview API.</p>
 that provides a complete implementation of the android.webkit.WebView API, and
 MUST NOT be reported on devices without a complete implementation of the API.
 The Android Open Source implementation uses code from the Chromium Project to
-implement the android.webkit.WebView [<a href="http://developer.android.com/reference/android/webkit/WebView.html">Resources, 12</a>]. Because it is not feasible to develop a comprehensive test suite for a web
+implement the android.webkit.WebView [<a href="http://developer.android.com/reference/android/webkit/WebView.html">Resources, 15</a>]. Because it is not feasible to develop a comprehensive test suite for a web
 rendering system, device implementers MUST use the specific upstream build of
 Chromium in the WebView implementation. Specifically:</p>
 
 <ul>
   <li>Device android.webkit.WebView implementations MUST be based on the Chromium
 build from the upstream Android Open Source Project for Android ANDROID_VERSION. This build
-includes a specific set of functionality and security fixes for the WebView [<a href="http://www.chromium.org/">Resources, 13</a>].</li>
+includes a specific set of functionality and security fixes for the WebView [<a href="http://www.chromium.org/">Resources, 16</a>].</li>
   <li>The user agent string reported by the WebView MUST be in this format:
 <p>Mozilla/5.0 (Linux; Android $(VERSION); $(MODEL) Build/$(BUILD); wv)
 AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 $(CHROMIUM_VER) Mobile
@@ -1040,7 +1040,7 @@ upstream Android Open Source Project.</li>
 
 <p>The WebView component SHOULD include support for as many HTML5 features as
 possible and if it supports the feature SHOULD conform to the HTML5
-specification [<a href="http://html.spec.whatwg.org/multipage/">Resources, 14</a>].</p>
+specification [<a href="http://html.spec.whatwg.org/multipage/">Resources, 17</a>].</p>
 
 <h3 id="3_4_2_browser_compatibility">3.4.2. Browser Compatibility</h3>
 
@@ -1062,17 +1062,17 @@ application.</p>
 
 <p>The standalone Browser application (whether based on the upstream WebKit
 Browser application or a third-party replacement) SHOULD include support for as
-much of HTML5 [<a href="http://html.spec.whatwg.org/multipage/">Resources, 14</a>] as possible. Minimally, device implementations MUST support each of these
+much of HTML5 [<a href="http://html.spec.whatwg.org/multipage/">Resources, 17</a>] as possible. Minimally, device implementations MUST support each of these
 APIs associated with HTML5:</p>
 
 <ul>
-  <li>application cache/offline operation [<a href="http://www.w3.org/html/wg/drafts/html/master/browsers.html#offline">Resources, 15</a>]</li>
-  <li>the &#60;video&#62; tag [<a href="http://www.w3.org/html/wg/drafts/html/master/semantics.html#video">Resources, 16</a>]</li>
-  <li>geolocation [<a href="http://www.w3.org/TR/geolocation-API/">Resources, 17</a>]</li>
+  <li>application cache/offline operation [<a href="http://www.w3.org/html/wg/drafts/html/master/browsers.html#offline">Resources, 18</a>]</li>
+  <li>the &#60;video&#62; tag [<a href="http://www.w3.org/html/wg/drafts/html/master/semantics.html#video">Resources, 19</a>]</li>
+  <li>geolocation [<a href="http://www.w3.org/TR/geolocation-API/">Resources, 20</a>]</li>
 </ul>
 
 <p>Additionally, device implementations MUST support the HTML5/W3C webstorage API
-[<a href="http://www.w3.org/TR/webstorage/">Resources, 18</a>], and SHOULD support the HTML5/W3C IndexedDB API [<a href="http://www.w3.org/TR/IndexedDB/">Resources, 19</a>]. Note that as the web development standards bodies are transitioning to favor
+[<a href="http://www.w3.org/TR/webstorage/">Resources, 21</a>], and SHOULD support the HTML5/W3C IndexedDB API [<a href="http://www.w3.org/TR/IndexedDB/">Resources, 22</a>]. Note that as the web development standards bodies are transitioning to favor
 IndexedDB over webstorage, IndexedDB is expected to become a required component
 in a future version of Android.</p>
 
@@ -1157,7 +1157,7 @@ Definition.</p>
 
 
 <p>Device implementations MUST support the full Dalvik Executable (DEX) format and
-Dalvik bytecode specification and semantics [<a href="https://android.googlesource.com/platform/dalvik/+/lollipop-release/docs/">Resources, 20</a>]. Device implementers SHOULD use ART, the reference upstream implementation of
+Dalvik bytecode specification and semantics [<a href="https://android.googlesource.com/platform/dalvik/">Resources, 23</a>]. Device implementers SHOULD use ART, the reference upstream implementation of
 the Dalvik Executable Format, and the reference implementation&rsquo;s package
 management system.</p>
 
@@ -1383,7 +1383,7 @@ supported on Android Handheld devices.</p>
 
 
 <p>Android defines a component type and corresponding API and lifecycle that
-allows applications to expose an &ldquo;AppWidget&rdquo; to the end user [<a href="http://developer.android.com/guide/practices/ui_guidelines/widget_design.html">Resources, 21</a>] a feature that is STRONGLY RECOMMENDED to be supported on Handheld Device
+allows applications to expose an &ldquo;AppWidget&rdquo; to the end user [<a href="http://developer.android.com/guide/practices/ui_guidelines/widget_design.html">Resources, 24</a>] a feature that is STRONGLY RECOMMENDED to be supported on Handheld Device
 implementations. Device implementations that support embedding widgets on the
 home screen MUST meet the following requirements and declare support for
 platform feature android.software.app_widgets.</p>
@@ -1394,7 +1394,7 @@ interface affordances to add, configure, view, and remove AppWidgets directly
 within the Launcher.</li>
   <li>Device implementations MUST be capable of rendering widgets that are 4 x 4 in
 the standard grid size. See the App Widget Design Guidelines in the Android SDK
-documentation [<a href="http://developer.android.com/guide/practices/ui_guidelines/widget_design.html">Resources, 21</a>] for details.</li>
+documentation [<a href="http://developer.android.com/guide/practices/ui_guidelines/widget_design.html">Resources, 24</a>] for details.</li>
   <li>Device implementations that include support for lock screen MAY support
 application widgets on the lock screen.</li>
 </ul>
@@ -1402,7 +1402,7 @@ application widgets on the lock screen.</li>
 <h3 id="3_8_3_notifications">3.8.3. Notifications</h3>
 
 
-<p>Android includes APIs that allow developers to notify users of notable events [<a href="http://developer.android.com/guide/topics/ui/notifiers/notifications.html">Resources, 22</a>], using hardware and software features of the device.</p>
+<p>Android includes APIs that allow developers to notify users of notable events [<a href="http://developer.android.com/guide/topics/ui/notifiers/notifications.html">Resources, 25</a>], using hardware and software features of the device.</p>
 
 <p>Some APIs allow applications to perform notifications or attract attention
 using hardware&#8212;specifically sound, vibration, and light. Device implementations
@@ -1415,9 +1415,9 @@ is further detailed in <a href="#7_hardware_compatibility">section 7</a>.</p>
 
 <p>Additionally, the implementation MUST correctly render all resources (icons, animation files
 etc.) provided for in the APIs
-[<a href="https://developer.android.com/guide/topics/resources/available-resources.html">Resources, 23</a>],
+[<a href="https://developer.android.com/guide/topics/resources/available-resources.html">Resources, 26</a>],
 or in the Status/System Bar icon style guide
-[<a href="http://developer.android.com/design/style/iconography.html">Resources, 24</a>],
+[<a href="http://developer.android.com/design/style/iconography.html">Resources, 27</a>],
 which in the case of an Android Television device includes the possibility to not display the
 notifications. Device implementers MAY provide an alternative user experience for
 notifications than that provided by the reference Android Open Source
@@ -1434,7 +1434,7 @@ existing notification resources, as above. </p>
 
 <p>Android device implementations, when such notifications are made visible, MUST properly execute
 Rich and Heads-up notifications and include the title/name, icon, text as documented in the Android
-APIs <a href="https://developer.android.com/design/patterns/notifications.html">[Resources, 25]</a>.
+APIs [<a href="https://developer.android.com/design/patterns/notifications.html">Resources, 28</a>].
 </p>
 
 <p>Android includes Notification Listener Service APIs that allow apps (once
@@ -1446,7 +1446,7 @@ services, including any and all metadata attached to the Notification object.</p
 <h3 id="3_8_4_search">3.8.4. Search</h3>
 
 
-<p>Android includes APIs [<a href="http://developer.android.com/reference/android/app/SearchManager.html">Resources, 26</a>] that allow developers to incorporate search into their applications, and
+<p>Android includes APIs [<a href="http://developer.android.com/reference/android/app/SearchManager.html">Resources, 29</a>] that allow developers to incorporate search into their applications, and
 expose their application&rsquo;s data into the global system search. Generally
 speaking, this functionality consists of a single, system-wide user interface
 that allows users to enter queries, displays suggestions as users type, and
@@ -1467,12 +1467,12 @@ behavior SHOULD be to display web search engine results and suggestions.</p>
 <p>Android device implementations SHOULD implement an assistant on the device
 to handle the Assist action [<a
 href="http://developer.android.com/reference/android/content/Intent.html#ACTION_ASSIST">Resources,
-69</a>].</p>
+30</a>].</p>
 
 <p>Android also includes the Assist APIs to allow applications to elect how much
 information of the current context is shared with the assistant on the device [<a
 href="https://developer.android.com/reference/android/app/assist/package-summary.html">Resources,
-XX</a>]. Device implementations supporting the Assist action MUST indicate clearly to
+31</a>]. Device implementations supporting the Assist action MUST indicate clearly to
 the end user when the the context is shared by displaying a white light around
 the edges of the screen. To ensure clear visibility to the end user, the indication MUST
 meet or exceed the duration and brightness of the Android Open Source Project
@@ -1482,7 +1482,7 @@ implementation.</p>
 
 
 <p>Applications can use the &ldquo;Toast&rdquo; API to display short non-modal strings to the
-end user, that disappear after a brief period of time [<a href="http://developer.android.com/reference/android/widget/Toast.html">Resources, 27</a>]. Device implementations MUST display Toasts from applications to end users in
+end user, that disappear after a brief period of time [<a href="http://developer.android.com/reference/android/widget/Toast.html">Resources, 32</a>]. Device implementations MUST display Toasts from applications to end users in
 some high-visibility manner.</p>
 
 <h3 id="3_8_6_themes">3.8.6. Themes</h3>
@@ -1493,20 +1493,20 @@ across an entire Activity or application.</p>
 
 <p>Android includes a &ldquo;Holo&rdquo; theme family as a set of defined styles for
 application developers to use if they want to match the Holo theme look and
-feel as defined by the Android SDK [<a href="http://developer.android.com/guide/topics/ui/themes.html">Resources, 28</a>]. Device implementations MUST NOT alter any of the Holo theme attributes
-exposed to applications [<a href="http://developer.android.com/reference/android/R.style.html">Resources, 29</a>].</p>
+feel as defined by the Android SDK [<a href="http://developer.android.com/guide/topics/ui/themes.html">Resources, 33</a>]. Device implementations MUST NOT alter any of the Holo theme attributes
+exposed to applications [<a href="http://developer.android.com/reference/android/R.style.html">Resources, 34</a>].</p>
 
 <p>Android includes a &ldquo;Material&rdquo; theme family as a set of defined styles for
 application developers to use if they want to match the design theme&rsquo;s look and
 feel across the wide variety of different Android device types. Device
 implementations MUST support the &ldquo;Material&rdquo; theme family and MUST NOT alter any
-of the Material theme attributes or their assets exposed to applications [<a href="http://developer.android.com/reference/android/R.style.html#Theme_Material">Resources, 30</a>].</p>
+of the Material theme attributes or their assets exposed to applications [<a href="http://developer.android.com/reference/android/R.style.html#Theme_Material">Resources, 35</a>].</p>
 
 <p>Android also includes a &ldquo;Device Default&rdquo; theme family as a set of defined
 styles for application developers to use if they want to match the look and
 feel of the device theme as defined by the device implementer. Device
 implementations MAY modify the Device Default theme attributes exposed to
-applications [<a href="http://developer.android.com/reference/android/R.style.html">Resources, 29</a>].</p>
+applications [<a href="http://developer.android.com/reference/android/R.style.html">Resources, 34</a>].</p>
 
 <p>Android supports a variant theme with translucent system bars, which allows
 application developers to fill the area behind the status and navigation bar
@@ -1518,13 +1518,13 @@ level) and notifications issued by the system, unless the icon is indicating a
 problematic status or an app requests a light status bar using the
 SYSTEM_UI_FLAG_LIGHT_STATUS_BAR flag. When an app requests a light status bar,
 Android device implementations MUST change the color of the system status icons
-to black [<a href="http://developer.android.com/reference/android/R.style.html">Resources, 29</a>].</p>
+to black [<a href="http://developer.android.com/reference/android/R.style.html">Resources, 34</a>].</p>
 
 <h3 id="3_8_7_live_wallpapers">3.8.7. Live Wallpapers</h3>
 
 
 <p>Android defines a component type and corresponding API and lifecycle that
-allows applications to expose one or more &ldquo;Live Wallpapers&rdquo; to the end user [<a href="http://developer.android.com/reference/android/service/wallpaper/WallpaperService.html">Resources, 31</a>]. Live wallpapers are animations, patterns, or similar images with limited
+allows applications to expose one or more &ldquo;Live Wallpapers&rdquo; to the end user [<a href="http://developer.android.com/reference/android/service/wallpaper/WallpaperService.html">Resources, 36</a>]. Live wallpapers are animations, patterns, or similar images with limited
 input capabilities that display as a wallpaper, behind other applications.</p>
 
 <p>Hardware is considered capable of reliably running live wallpapers if it can
@@ -1551,7 +1551,7 @@ Android Watch devices.</p>
 </div>
 
 
-<p>The upstream Android source code includes the overview screen [<a href="http://developer.android.com/guide/components/recents.html">Resources, 32</a>], a system-level user interface for task switching and displaying recently
+<p>The upstream Android source code includes the overview screen [<a href="http://developer.android.com/guide/components/recents.html">Resources, 37</a>], a system-level user interface for task switching and displaying recently
 accessed activities and tasks using a thumbnail image of the application&rsquo;s
 graphical state at the moment the user last left the application. Device
 implementations including the recents function navigation key as detailed in <a href="#7_2_3_navigation_keys">section 7.2.3</a>, MAY alter the interface but MUST meet the following requirements:</p>
@@ -1561,7 +1561,7 @@ implementations including the recents function navigation key as detailed in <a 
   <li>MUST support at least up to 20 displayed activities.</li>
   <li>MUST at least display the title of 4 activities at a time.</li>
   <li>SHOULD display highlight color, icon, screen title in recents.</li>
-  <li>MUST implement the screen pinning behavior [<a href="http://developer.android.com/about/versions/android-5.0.html#ScreenPinning">Resources, 33</a>] and provide the user with a settings menu to toggle the feature.</li>
+  <li>MUST implement the screen pinning behavior [<a href="http://developer.android.com/about/versions/android-5.0.html#ScreenPinning">Resources, 38</a>] and provide the user with a settings menu to toggle the feature.</li>
   <li>SHOULD display a closing affordance ("x") but MAY delay this until user
 interacts with screens.</li>
 </ul>
@@ -1573,7 +1573,7 @@ interface (or a similar thumbnail-based interface) for the overview screen.</p>
 
 
 <p>Android includes support for Input Management and support for third-party input
-method editors [<a href="http://developer.android.com/guide/topics/text/creating-input-method.html">Resources, 34</a>]. Device implementations that allow users to use third-party input methods on
+method editors [<a href="http://developer.android.com/guide/topics/text/creating-input-method.html">Resources, 39</a>]. Device implementations that allow users to use third-party input methods on
 the device MUST declare the platform feature android.software.input_methods and
 support IME APIs as defined in the Android SDK documentation.</p>
 
@@ -1587,7 +1587,7 @@ to the android.settings.INPUT_METHOD_SETTINGS intent.</p>
 
 <p>The Remote Control Client API is deprecated from Android 5.0 in favor of the
 Media Notification Template that allows media applications to integrate with
-playback controls that are displayed on the lock screen [<a href="http://developer.android.com/reference/android/app/Notification.MediaStyle.html">Resources, 35</a>].
+playback controls that are displayed on the lock screen [<a href="http://developer.android.com/reference/android/app/Notification.MediaStyle.html">Resources, 40</a>].
 Device implementations that support a lock screen, unless an Android Automotive or Watch
 implementation, MUST display the Lockscreen Notifications including the Media Notification
 Template.</p>
@@ -1595,7 +1595,7 @@ Template.</p>
 <h3 id="3_8_11_dreams">3.8.11. Dreams</h3>
 
 
-<p>Android includes support for interactive screensavers called Dreams [<a href="http://developer.android.com/reference/android/service/dreams/DreamService.html">Resources, 36</a>]. Dreams allows users to interact with applications when a device connected to
+<p>Android includes support for interactive screensavers called Dreams [<a href="http://developer.android.com/reference/android/service/dreams/DreamService.html">Resources, 41</a>]. Dreams allows users to interact with applications when a device connected to
 a power source is idle or docked in a desk dock. Android Watch devices MAY
 implement Dreams, but other types of device implementations SHOULD include
 support for Dreams and provide a settings option for users to configure Dreams
@@ -1606,14 +1606,14 @@ in response to the android.settings.DREAM_SETTINGS intent.</p>
 
 <p>When a device has a hardware sensor (e.g. GPS) that is capable of providing the
 location coordinates, location modes MUST be displayed in the Location menu
-within Settings [<a href="http://developer.android.com/reference/android/provider/Settings.Secure.html#LOCATION_MODE">Resources, 37</a>].</p>
+within Settings [<a href="http://developer.android.com/reference/android/provider/Settings.Secure.html#LOCATION_MODE">Resources, 42</a>].</p>
 
 <h3 id="3_8_13_unicode_and_font">3.8.13. Unicode and Font</h3>
 
 
 <p>Android includes support for color emoji characters. When Android device
 implementations include an IME, devices SHOULD provide an input method to the
-user for the Emoji characters defined in Unicode 6.1 [<a href="http://www.unicode.org/versions/Unicode6.1.0/">Resources, 38</a>]. All devices MUST be capable of rendering these emoji characters in color glyph.</p>
+user for the Emoji characters defined in Unicode 6.1 [<a href="http://www.unicode.org/versions/Unicode6.1.0/">Resources, 43</a>]. All devices MUST be capable of rendering these emoji characters in color glyph.</p>
 
 <p>Android includes support for Roboto 2 font with different
 weights&mdash;sans-serif-thin, sans-serif-light, sans-serif-medium, sans-serif-black,
@@ -1627,13 +1627,13 @@ all glyphs in the currency symbols block of Unicode 7.0.</p>
 <p>Android includes features that allow security-aware applications to perform
 device administration functions at the system level, such as enforcing password
 policies or performing remote wipe, through the Android Device Administration
-API [<a href="http://developer.android.com/guide/topics/admin/device-admin.html">Resources, 39</a>].
+API [<a href="http://developer.android.com/guide/topics/admin/device-admin.html">Resources, 44</a>].
 Device implementations MUST provide an implementation of the DevicePolicyManager class
-[<a href="http://developer.android.com/reference/android/app/admin/DevicePolicyManager.html">Resources, 40</a>].
+[<a href="http://developer.android.com/reference/android/app/admin/DevicePolicyManager.html">Resources, 45</a>].
 Device implementations that include support for PIN (numeric) or PASSWORD
 (alphanumeric) based lock screens MUST support the full range of device
 administration policies defined in the Android SDK documentation
-[<a href="http://developer.android.com/guide/topics/admin/device-admin.html">Resources, 39</a>]
+[<a href="http://developer.android.com/guide/topics/admin/device-admin.html">Resources, 44</a>]
 and report the platform feature android.software.device_admin.</p>
 
 <h3 id="3_9_1_device_provisioning">3.9.1 Device Provisioning</h3>
@@ -1642,7 +1642,7 @@ and report the platform feature android.software.device_admin.</p>
 the out of box setup flow MUST make it possible to enroll a Device Policy
 Controller (DPC) application as the Device Owner app
 [<a href="http://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#isDeviceOwnerApp(java.lang.String)">
-Resources, XX</a>]. Device implementations MAY have a preinstalled application
+Resources, 46</a>]. Device implementations MAY have a preinstalled application
 performing device administration functions but this application MUST NOT be set
 as the Device Owner app without explicit consent or action from the user or the
 administrator of the device.</p>
@@ -1650,12 +1650,12 @@ administrator of the device.</p>
 <p>The device owner provisioning process (the flow initiated by
 android.app.action.PROVISION_MANAGED_DEVICE
 [<a href="http://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#ACTION_PROVISION_MANAGED_DEVICE">
-Resources, XX</a>]) user experience MUST align with the AOSP implementation</p>
+Resources, 47</a>]) user experience MUST align with the AOSP implementation</p>
 
 <p>If the device implementation reports android.hardware.nfc, it MUST have NFC
 enabled, even during the out-of-box setup flow, in order to allow for NFC
 provisioning of Device owners
-<a href="https://source.android.com/devices/tech/admin/provision.html#device_owner_provisioning_via_nfc">[Resources, XX]</a>.
+[<a href="https://source.android.com/devices/tech/admin/provision.html#device_owner_provisioning_via_nfc">Resources, 48</a>].
 </p>
 
 <h4 id="3_9_1_2_managed_profile_provisioning">3.9.1.2 Managed profile provisioning</h4>
@@ -1663,12 +1663,12 @@ provisioning of Device owners
 it MUST be possible to enroll a Device Policy Controller (DPC) application
 as the owner of a new Managed Profile
 [<a href="http://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#isProfileOwnerApp(java.lang.String)">
-Resources, XX</a>]</p>
+Resources, 49</a>]</p>
 
 <p>The managed profile provisioning process (the flow initiated by
 android.app.action.PROVISION_MANAGED_PROFILE
 [<a href="http://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#ACTION_PROVISION_MANAGED_PROFILE">
-Resources, XX</a>]) user experience MUST align with the AOSP implementation
+Resources, 50</a>]) user experience MUST align with the AOSP implementation
 </p>
 
 
@@ -1687,7 +1687,7 @@ Resources, XX</a>]) user experience MUST align with the AOSP implementation
   <li>Support managed profiles via the android.app.admin.DevicePolicyManager APIs</li>
   <li>Allow one and only one managed profile to be created [<a
 href="http://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#ACTION_PROVISION_MANAGED_PROFILE">Resources,
-XX</a>]</li>
+50</a>]</li>
   <li>Use an icon badge (similar to the AOSP upstream work badge) to represent
 the managed applications and widgets and other badged UI elements like Recents
 &amp; Notifications</li>
@@ -1728,7 +1728,7 @@ Policy Controller permits it.</li>
 navigate their devices more easily. In addition, Android provides platform APIs
 that enable accessibility service implementations to receive callbacks for user
 and system events and generate alternate feedback mechanisms, such as
-text-to-speech, haptic feedback, and trackball/d-pad navigation [<a href="http://developer.android.com/reference/android/accessibilityservice/AccessibilityService.html">Resources, 42</a>].</p>
+text-to-speech, haptic feedback, and trackball/d-pad navigation [<a href="http://developer.android.com/reference/android/accessibilityservice/AccessibilityService.html">Resources, 51</a>].</p>
 
 <p>Device implementations include the following requirements:</p>
 
@@ -1742,7 +1742,7 @@ default Android implementation.</li>
 <li>Device implementations (Android Automotive excluded) MUST support
 third-party accessibility service implementations through the
 android.accessibilityservice APIs
-[<a href="http://developer.android.com/reference/android/view/accessibility/package-summary.html">Resources, 43</a>]</li>
+[<a href="http://developer.android.com/reference/android/view/accessibility/package-summary.html">Resources, 52</a>]</li>
 <li>Device implementations (Android Automotive excluded) MUST generate
 AccessibilityEvents and deliver these events to all registered
 AccessibilityService implementations in a manner consistent with the default
@@ -1757,14 +1757,14 @@ to the android.provider.Settings.ACTION_ACCESSIBILITY_SETTINGS intent.</li>
 accessibility service on the device, and SHOULD provide a mechanism for users
 to enable the accessibility service during device setup. An open source
 implementation of an accessibility service is available from the Eyes Free
-project [<a href="http://code.google.com/p/eyes-free/">Resources, 44</a>].</p>
+project [<a href="http://code.google.com/p/eyes-free/">Resources, 53</a>].</p>
 
 <h2 id="3_11_text-to-speech">3.11. Text-to-Speech</h2>
 
 
 <p>Android includes APIs that allow applications to make use of text-to-speech
 (TTS) services and allows service providers to provide implementations of TTS
-services [<a href="http://developer.android.com/reference/android/speech/tts/package-summary.html">Resources, 45</a>]. Device implementations reporting the feature android.hardware.audio.output
+services [<a href="http://developer.android.com/reference/android/speech/tts/package-summary.html">Resources, 54</a>]. Device implementations reporting the feature android.hardware.audio.output
 MUST meet these requirements related to the Android TTS framework. </p>
 
 <p>Android Automotive implementations:</p>
@@ -1794,7 +1794,7 @@ engine for use at the system level
 content to Android Television devices. TIF provides a standard API to create
 input modules that control Android Television devices. Android Television
 device implementations MUST support TV Input Framework
-[<a href="http://source.android.com/devices/tv/index.html">Resources, 46</a>].</p>
+[<a href="http://source.android.com/devices/tv/index.html">Resources, 55</a>].</p>
 
 <p>Device implementations that support TIF MUST declare the platform feature
 android.software.live_tv.</p>
@@ -1806,16 +1806,16 @@ installed TV application (TV App). The Android Open Source Project provides an i
 App.</p>
 
 <p>The TV App MUST provide facilities to install and use TV Channels
-[<a href="http://developer.android.com/reference/android/media/tv/TvContract.Channels.html">Resources, XX</a>]
+[<a href="http://developer.android.com/reference/android/media/tv/TvContract.Channels.html">Resources, 56</a>]
  and meet the following requirements:</p>
 
 <ul>
   <li>Device implementations MUST allow third-party TIF-based inputs (third-party inputs)
-[<a href="https://source.android.com/devices/tv/index.html#third-party_input_example">Resources, XX</a>]
+[<a href="https://source.android.com/devices/tv/index.html#third-party_input_example">Resources, 57</a>]
  to be installed and managed.
   <li>Device implementations MAY provide visual separation between pre-installed
  TIF-based inputs (installed inputs)
-[<a href="https://source.android.com/devices/tv/index.html#tv_inputs">Resources, XX</a>]
+[<a href="https://source.android.com/devices/tv/index.html#tv_inputs">Resources, 58</a>]
  and third-party inputs.
   <li>The device implementations MUST NOT display the third-party inputs more than a
 single navigation action away from the TV App (i.e. expanding a list of
@@ -1827,7 +1827,7 @@ third-party inputs from the TV App).
 <p>Android Television device implementations MUST show an informational and
 interactive overlay, which MUST include an electronic program guide (EPG)
 generated from the values in the TvContract.Programs fields
-[<a href="https://developer.android.com/reference/android/media/tv/TvContract.Programs.html">Resources, XX</a>].
+[<a href="https://developer.android.com/reference/android/media/tv/TvContract.Programs.html">Resources, 59</a>].
  The EPG MUST meet the following requirements:</p>
 
 <ul>
@@ -1856,16 +1856,16 @@ live TV channels when there is no actionable section on the screen.</p>
 <p>Android Television device implementations MUST support TV input app linking,
 which allows all inputs to provide activity links from the current activity to
 another activity (i.e. a link from live programming to related content)
-[<a href="http://developer.android.com/reference/android/media/tv/TvContract.Channels.html#COLUMN_APP_LINK_INTENT_URI">Resources, XX</a>].
+[<a href="http://developer.android.com/reference/android/media/tv/TvContract.Channels.html#COLUMN_APP_LINK_INTENT_URI">Resources, 60</a>].
  The TV App MUST show TV input app linking when it is provided.</p>
 
 <h1 id="4_application_packaging_compatibility">4. Application Packaging Compatibility</h1>
 
 
 <p>Device implementations MUST install and run Android &ldquo;.apk&rdquo; files as generated
-by the &ldquo;aapt&rdquo; tool included in the official Android SDK [<a href="http://developer.android.com/tools/help/index.html">Resources, 47</a>].</p>
+by the &ldquo;aapt&rdquo; tool included in the official Android SDK [<a href="http://developer.android.com/tools/help/index.html">Resources, 61</a>].</p>
 
-<p>Devices implementations MUST NOT extend either the .apk [<a href="http://developer.android.com/guide/components/fundamentals.html">Resources, 48</a>], Android Manifest [<a href="http://developer.android.com/guide/topics/manifest/manifest-intro.html">Resources, 49</a>], Dalvik bytecode [<a href="https://android.googlesource.com/platform/dalvik/+/lollipop-release/docs/">Resources, 20</a>], or RenderScript bytecode formats in such a way that would prevent those
+<p>Devices implementations MUST NOT extend either the .apk [<a href="http://developer.android.com/guide/components/fundamentals.html">Resources, 62</a>], Android Manifest [<a href="http://developer.android.com/guide/topics/manifest/manifest-intro.html">Resources, 49</a>], Dalvik bytecode [<a href="https://android.googlesource.com/platform/dalvik/">Resources, 23</a>], or RenderScript bytecode formats in such a way that would prevent those
 files from installing and running correctly on other compatible devices.</p>
 
 <h1 id="5_multimedia_compatibility">5. Multimedia Compatibility</h1>
@@ -1875,14 +1875,14 @@ files from installing and running correctly on other compatible devices.</p>
 
 
 <p>Device implementations MUST support the core media formats specified in the
-Android SDK documentation [<a href="http://developer.android.com/guide/appendix/media-formats.html">Resources, 50</a>]
+Android SDK documentation [<a href="http://developer.android.com/guide/appendix/media-formats.html">Resources, 64</a>]
 except where explicitly permitted in this document. Specifically, device
 implementations MUST support the media formats, encoders, decoders, file types,
 and container formats defined in the tables below and reported via MediaCodecList
-[<a href="http://developer.android.com/reference/android/media/MediaCodecList.html">Resources,112</a>].
+[<a href="http://developer.android.com/reference/android/media/MediaCodecList.html">Resources, 65</a>].
 Device implementations MUST also be able to decode all profiles reported in its CamcorderProfile
 [<a href="http://developer.android.com/reference/android/media/CamcorderProfile.html">Resources,
-113</a>] and MUST be able to decode all formats it can encode.
+66</a>] and MUST be able to decode all formats it can encode.
 
 All of these codecs are
 provided as software implementations in the preferred Android implementation
@@ -2139,7 +2139,7 @@ including Android Watch device implementations.</p>
 (Android 2.3.3+)</td>
     <td>See <a href="#5_2_video_encoding">section 5.2</a> and <a href="#5_3_video_decoding">5.3</a> for details</td>
     <td><ul>
-    <li class="table_list">WebM (.webm) [<a href="http://www.webmproject.org/">Resources, 110</a></li>
+    <li class="table_list">WebM (.webm) [<a href="http://www.webmproject.org/">Resources, 67</a></li>
     <li class="table_list">Matroska (.mkv, Android 4.0+)<sup>4</sup></li></ul></td>
  </tr>
  <tr>
@@ -2148,7 +2148,7 @@ including Android Watch device implementations.</p>
     <td>REQUIRED<sup>2</sup><br> (Android 4.4+)</td>
     <td>See <a href="#5_3_video_decoding">section 5.3</a> for details</td>
     <td><ul>
-    <li class="table_list">WebM (.webm) [<a href="http://www.webmproject.org/">Resources, 110</a>]</li>
+    <li class="table_list">WebM (.webm) [<a href="http://www.webmproject.org/">Resources, 67</a>]</li>
     <li class="table_list">Matroska (.mkv, Android 4.0+)<sup>4</sup></li></ul></td>
  </tr>
 </table>
@@ -2161,7 +2161,7 @@ android.hardware.camera or android.hardware.camera.front.</p>
 
 <p class="table_footnote">3 For acceptable quality of web video streaming and video-conference services,
 device implementations SHOULD use a hardware VP8 codec that meets the
-requirements in [<a href="http://www.webmproject.org/hardware/rtc-coding-requirements/">Resources, 51</a>].</p>
+requirements in [<a href="http://www.webmproject.org/hardware/rtc-coding-requirements/">Resources, 68</a>].</p>
 
 <p class="table_footnote">4 Device implementations SHOULD support writing Matroska WebM files.</p>
 
@@ -2551,7 +2551,7 @@ characteristics:</p>
 <h3 id="5_5_2_audio_effects">5.5.2. Audio Effects</h3>
 
 
-<p>Android provides an API for audio effects for device implementations [<a href="http://developer.android.com/reference/android/media/audiofx/AudioEffect.html">Resources, 52</a>]. Device implementations that declare the feature
+<p>Android provides an API for audio effects for device implementations [<a href="http://developer.android.com/reference/android/media/audiofx/AudioEffect.html">Resources, 69</a>]. Device implementations that declare the feature
 android.hardware.audio.output:</p>
 
 <ul>
@@ -2620,7 +2620,7 @@ initial calibration when using the OpenSL ES PCM buffer queue API, for
 continuous output latency and cold output latency over at least one supported
 audio output device, it is STRONGLY RECOMMENDED to report support for low-latency audio, by reporting
 the feature android.hardware.audio.low_latency via the
-android.content.pm.PackageManager class [<a href="http://developer.android.com/reference/android/content/pm/PackageManager.html">Resources, 53</a>]. Conversely, if the device implementation does not meet these requirements it
+android.content.pm.PackageManager class [<a href="http://developer.android.com/reference/android/content/pm/PackageManager.html">Resources, 70</a>]. Conversely, if the device implementation does not meet these requirements it
 MUST NOT report support for low-latency audio.</p>
 
 <p>Device implementations that include android.hardware.microphone are STRONGLY RECOMMENDED to meet
@@ -2637,12 +2637,12 @@ these input audio requirements:</p>
 
 
 <p>Devices MUST support the media network protocols for audio and video playback
-as specified in the Android SDK documentation [<a href="http://developer.android.com/guide/appendix/media-formats.html">Resources, 50</a>]. Specifically, devices MUST support the following media network protocols:</p>
+as specified in the Android SDK documentation [<a href="http://developer.android.com/guide/appendix/media-formats.html">Resources, 64</a>]. Specifically, devices MUST support the following media network protocols:</p>
 
 <ul>
   <li>RTSP (RTP, SDP)</li>
   <li>HTTP(S) progressive streaming</li>
-  <li>HTTP(S) Live Streaming draft protocol, Version 3 [<a href="http://tools.ietf.org/html/draft-pantos-http-live-streaming-03">Resources, 54</a>]</li>
+  <li>HTTP(S) Live Streaming draft protocol, Version 3 [<a href="http://tools.ietf.org/html/draft-pantos-http-live-streaming-03">Resources, 71</a>]</li>
 </ul>
 
 <h2 id="5_8_secure_media">5.8. Secure Media</h2>
@@ -2669,7 +2669,7 @@ If a device implementation supports the inter-app MIDI software transport
 for which it provides generic non-MIDI connectivity, it is STRONGLY RECOMMENDED to report
 support for feature android.software.midi via the
 android.content.pm.PackageManager class
-[<a href="http://developer.android.com/reference/android/content/pm/PackageManager.html">Resources, 53</a>].
+[<a href="http://developer.android.com/reference/android/content/pm/PackageManager.html">Resources, 70</a>].
 </p>
 
 <p>The MIDI-capable hardware transports are:</p>
@@ -2697,7 +2697,7 @@ over Bluetooth LE, SHOULD support MIDI over Bluetooth LE.
 If a device implementation meets <em>all</em> of the following requirements,
 it is STRONGLY RECOMMENDED to report support for feature android.hardware.audio.pro via the
 android.content.pm.PackageManager class
-[<a href="http://developer.android.com/reference/android/content/pm/PackageManager.html">Resources, 53</a>].
+[<a href="http://developer.android.com/reference/android/content/pm/PackageManager.html">Resources, 70</a>].
 </p>
 
 <ul>
@@ -2754,7 +2754,7 @@ of the
 Android SDK. Android compatible devices MUST be compatible with:</p>
 
 <ul>
-  <li><strong>Android Debug Bridge (adb)</strong> [<a href="http://developer.android.com/tools/help/adb.html">Resources, 55</a>]</li>
+  <li><strong>Android Debug Bridge (adb)</strong> [<a href="http://developer.android.com/tools/help/adb.html">Resources, 72</a>]</li>
 </ul>
 
 <p>Device implementations MUST support all adb functions as documented in the
