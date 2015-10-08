@@ -2250,9 +2250,10 @@ encoding profiles.</p>
 <p>Video codecs are optional for Android Watch device implementations.</p>
 </div>
 
-<p>Device implementations MUST support dynamic video resolution switching within
-the same stream for all VP8, VP9, H.264, and H.265 codecs exposed through the
-standard Android APIs.</p>
+<p>Device implementations MUST support dynamic video resolution and frame rate
+switching through the standard Android APIs within the same stream for all VP8,
+VP9, H.264, and H.265 codecs in real time and up to the maximum resolution
+supported on the device.</p>
 
 <p>Android device implementations with H.263 decoders, MUST support Baseline
 Profile Level 30.</p>
@@ -2261,7 +2262,7 @@ Profile Level 30.</p>
 Profile Level 3.</p>
 
 <p>Android device implementations with H.264 decoders, MUST support Main Profile
-Level 3 and the following SD video decoding profiles and SHOULD support the
+Level 3.1 and the following SD video decoding profiles and SHOULD support the
 HD decoding profiles. Android Television devices MUST support High Profile
 Level 4.2 and the HD 1080p decoding profile.</p>
 <table>
@@ -2296,10 +2297,10 @@ Level 4.2 and the HD 1080p decoding profile.</p>
 </table>
 
 
-<p class="table_footnote">1 Required for Android Television device implementations, but for other device
-types only when supported by hardware.</p>
+<p class="table_footnote">1 REQUIRED for when the height as reported by the
+Display.getSupportedModes() method is not smaller than the video resolution.</p>
 
-<p class="table_footnote">2 Required for Android Television device implementations.</p>
+<p class="table_footnote">2 REQUIRED for Android Television device implementations.</p>
 
 <p>Android device implementations when supporting VP8 codec as described in <a href="#5_1_3_video_codecs">section 5.1.3</a>, MUST support the following SD decoding profiles and SHOULD support the HD
 decoding profiles. Android Television devices MUST support the HD 1080p
@@ -2335,11 +2336,10 @@ decoding profile.  </p>
  </tr>
 </table>
 
+<p class="table_footnote">1 REQUIRED for when the height as reported by the
+Display.getSupportedModes() method is not smaller than the video resolution.</p>
 
-<p class="table_footnote">1 Required for Android Television device implementations, but for other type of
-devices only when supported by hardware.</p>
-
-<p class="table_footnote">2 Required for Android Television device implementations.</p>
+<p class="table_footnote">2 REQUIRED for Android Television device implementations.</p>
 
 <p>Android device implementations, when supporting VP9 codec as described in <a href="#5_1_3_video_codecs">section 5.1.3</a>, MUST support the following SD video decoding profiles and SHOULD support the
 HD decoding profiles. Android Television devices are STRONGLY RECOMMENDED to
