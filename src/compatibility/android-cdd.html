@@ -107,6 +107,14 @@
 
 <p class="toc_h2"><a href="#3_12_tv_input_framework">3.12. TV Input Framework</a></p>
 
+<p class="toc_h3"><a href="#3_12_1_tv_app">3.12.1. TV App</a></p>
+
+<p class="toc_h4"><a href="#3_12_1_1_electronic_program_guide">3.12.1.1. Electronic Program Guide</a></p>
+
+<p class="toc_h4"><a href="#3_12_1_2_navigation">3.12.1.2. Navigation</a></p>
+
+<p class="toc_h4"><a href="#3_12_1_3_tv_input_app_linking">3.12.1.3. TV input app linking</a></p>
+
 <p class="toc_h1"><a href="#4_application_packaging_compatibility">4. Application Packaging Compatibility</a></p>
 
 <p class="toc_h1"><a href="#5_multimedia_compatibility">5. Multimedia Compatibility</a></p>
@@ -1739,10 +1747,71 @@ engine for use at the system level
 <p>The Android Television Input Framework (TIF) simplifies the delivery of live
 content to Android Television devices. TIF provides a standard API to create
 input modules that control Android Television devices. Android Television
-device implementations MUST support Television Input Framework [<a href="http://source.android.com/devices/tv/index.html">Resources, 46</a>].</p>
+device implementations MUST support TV Input Framework
+[<a href="http://source.android.com/devices/tv/index.html">Resources, 46</a>].</p>
 
 <p>Device implementations that support TIF MUST declare the platform feature
 android.software.live_tv.</p>
+
+<h3 id="3_12_1_tv_app">3.12.1. TV App</h3>
+
+<p>Any device implementation that declares support for Live TV MUST have an
+installed TV application (TV App). The Android Open Source Project provides an implementation of the TV
+App.</p>
+
+<p>The TV App MUST provide facilities to install and use TV Channels
+[<a href="http://developer.android.com/reference/android/media/tv/TvContract.Channels.html">Resources, XX</a>]
+ and meet the following requirements:</p>
+
+<ul>
+  <li>Device implementations MUST allow third-party TIF-based inputs (third-party inputs)
+[<a href="https://source.android.com/devices/tv/index.html#third-party_input_example">Resources, XX</a>]
+ to be installed and managed.
+  <li>Device implementations MAY provide visual separation between pre-installed
+ TIF-based inputs (installed inputs)
+[<a href="https://source.android.com/devices/tv/index.html#tv_inputs">Resources, XX</a>]
+ and third-party inputs.
+  <li>The device implementations MUST NOT display the third-party inputs more than a
+single navigation action away from the TV App (i.e. expanding a list of
+third-party inputs from the TV App).
+</ul>
+
+<h4 id="3_12_1_1_electronic_program_guide">3.12.1.1. Electronic Program Guide</h4>
+
+<p>Android Television device implementations MUST show an informational and
+interactive overlay, which MUST include an electronic program guide (EPG)
+generated from the values in the TvContract.Programs fields
+[<a href="https://developer.android.com/reference/android/media/tv/TvContract.Programs.html">Resources, XX</a>].
+ The EPG MUST meet the following requirements:</p>
+
+<ul>
+  <li>The EPG MUST display information from all installed inputs and third-party
+inputs.
+  <li>The EPG MAY provide visual separation between the installed inputs and
+third-party inputs.
+  <li>The EPG is STRONGLY RECOMMENDED to display installed inputs and third-party
+inputs with equal prominence. The EPG MUST NOT display the third-party inputs
+more than a single navigation action away from the installed inputs on the EPG.
+  <li>On channel change, device implementations MUST display EPG data for the
+currently playing program.
+</ul>
+
+<h4 id="3_12_1_2_navigation">3.12.1.2. Navigation</h4>
+
+<p>Android Television device input devices (i.e. remote control, remote control
+application, or game controller) MUST allow navigation to all actionable
+sections of the screen via the D-pad. D-pad up and down MUST be used to change
+live TV channels when there is no actionable section on the screen.</p>
+
+<p>The TV App SHOULD pass key events to HDMI inputs through CEC.</p>
+
+<h4 id="3_12_1_3_tv_input_app_linking">3.12.1.3. TV input app linking</h4>
+
+<p>Android Television device implementations MUST support TV input app linking,
+which allows all inputs to provide activity links from the current activity to
+another activity (i.e. a link from live programming to related content)
+[<a href="http://developer.android.com/reference/android/media/tv/TvContract.Channels.html#COLUMN_APP_LINK_INTENT_URI">Resources, XX</a>].
+ The TV App MUST show TV input app linking when it is provided.</p>
 
 <h1 id="4_application_packaging_compatibility">4. Application Packaging Compatibility</h1>
 
