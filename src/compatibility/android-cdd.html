@@ -288,7 +288,7 @@
 
 <p class="toc_h3"><a href="#7_8_3_near_ultrasound">7.8.3. Near-Ultrasound</a></p>
 
-<p class="toc_h1"><a href="#8_performance_compatibility">8. Performance Compatibility</a></p>
+<p class="toc_h1"><a href="#8_performance_power">8. Performance and Power</a></p>
 
 <p class="toc_h2"><a href="#8_1_user_experience_consistency">8.1. User Experience Consistency</a></p>
 
@@ -440,7 +440,7 @@ infotainment functionality. Android Automotive implementations:</p>
 uiMode = UI_MODE_TYPE_CAR [<a
 href="http://developer.android.com/reference/android/content/res/Configuration.html#UI_MODE_TYPE_CAR">Resources,
     5</a>].</li>
-<ul>
+</ul>
 
 <p>All Android device implementations that do not fit into any of the above device
 types still MUST meet all requirements in this document to be Android ANDROID_VERSION
@@ -2491,7 +2491,7 @@ android.media.MediaRecorder.AudioSource.VOICE_RECOGNITION audio source:</p>
 
 <ul>
   <li>The device SHOULD exhibit approximately flat amplitude versus frequency
-characteristics: specifically, ±3 dB, from 100 Hz to 4000 Hz.
+characteristics: specifically, &plusmn;3 dB, from 100 Hz to 4000 Hz.
   <li>Audio input sensitivity SHOULD be set such that a 90 dB sound power level (SPL)
 source at 1000 Hz yields RMS of 2500 for 16-bit samples.
   <li>PCM amplitude levels SHOULD linearly track input SPL changes over at least a 30
@@ -2758,7 +2758,7 @@ Android SDK. Android compatible devices MUST be compatible with:</p>
 </ul>
 
 <p>Device implementations MUST support all adb functions as documented in the
-Android SDK including dumpsys [<a href="https://source.android.com/devices/input/diagnostics.html">Resources, 56</a>]. The device-side adb daemon MUST be inactive by default and there MUST be a
+Android SDK including dumpsys [<a href="https://source.android.com/devices/input/diagnostics.html">Resources, 73</a>]. The device-side adb daemon MUST be inactive by default and there MUST be a
 user-accessible mechanism to turn on the Android Debug Bridge. If a device
 implementation omits USB peripheral mode, it MUST implement the Android Debug
 Bridge via local-area network (such as Ethernet or 802.11). </p>
@@ -2767,7 +2767,7 @@ Bridge via local-area network (such as Ethernet or 802.11). </p>
 authenticated hosts. Device implementations MUST support secure adb.</p>
 
 <ul>
-  <li><strong>Dalvik Debug Monitor Service (ddms)</strong> [<a href="http://developer.android.com/tools/debugging/ddms.html">Resources, 57</a>]</li>
+  <li><strong>Dalvik Debug Monitor Service (ddms)</strong> [<a href="http://developer.android.com/tools/debugging/ddms.html">Resources, 74</a>]</li>
 </ul>
 
 <p>Device implementations MUST support all ddms features as documented in the
@@ -2776,14 +2776,14 @@ but MUST be supported whenever the user has activated the Android Debug Bridge,
 as above.</p>
 
 <ul>
-  <li><strong>Monkey</strong> [<a href="http://developer.android.com/tools/help/monkey.html">Resources, 58</a>]</li>
+  <li><strong>Monkey</strong> [<a href="http://developer.android.com/tools/help/monkey.html">Resources, 75</a>]</li>
 </ul>
 
 <p>Device implementations MUST include the Monkey framework, and make it available
 for applications to use.</p>
 
 <ul>
-  <li><strong>SysTrace</strong> [<a href="http://developer.android.com/tools/help/systrace.html">Resources, 59</a>]</li>
+  <li><strong>SysTrace</strong> [<a href="http://developer.android.com/tools/help/systrace.html">Resources, 76</a>]</li>
 </ul>
 
 <p>Device implementations MUST support systrace tool as documented in the Android
@@ -2807,7 +2807,7 @@ Windows 7, Windows 8 and Windows 10 in both 32-bit and 64-bit versions.
 <p>Android includes support for developers to configure application
 development-related settings. Device implementations MUST honor the
 android.settings.APPLICATION_DEVELOPMENT_SETTINGS intent to show application
-development-related settings [<a href="http://developer.android.com/reference/android/provider/Settings.html#ACTION_APPLICATION_DEVELOPMENT_SETTINGS">Resources, 60</a>]. The upstream Android implementation hides the Developer Options menu by
+development-related settings [<a href="http://developer.android.com/reference/android/provider/Settings.html#ACTION_APPLICATION_DEVELOPMENT_SETTINGS">Resources, 77</a>]. The upstream Android implementation hides the Developer Options menu by
 default and enables users to launch Developer Options after pressing seven (7)
 times on the <strong>Settings</strong> > <strong>About Device</strong> > <strong>Build Number</strong> menu item. Device implementations MUST provide a consistent experience for
 Developer Options. Specifically, device implementations MUST hide Developer
@@ -2840,14 +2840,14 @@ no-ops.</p>
 <p>Device implementations MUST consistently report accurate hardware configuration
 information via the getSystemAvailableFeatures() and hasSystemFeature(String)
 methods on the android.content.pm.PackageManager class for the same build
-fingerprint. [<a href="http://developer.android.com/reference/android/content/pm/PackageManager.html">Resources, 53]</a></p>
+fingerprint. [<a href="http://developer.android.com/reference/android/content/pm/PackageManager.html">Resources, 70</a>]</p>
 
 <h2 id="7_1_display_and_graphics">7.1. Display and Graphics</h2>
 
 
 <p>Android includes facilities that automatically adjust application assets and UI
 layouts appropriately for the device, to ensure that third-party applications
-run well on a variety of hardware configurations [<a href="http://developer.android.com/guide/practices/screens_support.html">Resources, 61</a>]. Devices MUST properly implement these APIs and behaviors, as detailed in
+run well on a variety of hardware configurations [<a href="http://developer.android.com/guide/practices/screens_support.html">Resources, 78</a>]. Devices MUST properly implement these APIs and behaviors, as detailed in
 this section.</p>
 
 <p>The units referenced by the requirements in this section are defined as
@@ -2879,7 +2879,7 @@ dps * (density/160).</li>
 allows applications to query the device screen size (aka &ldquo;screen layout") via
 android.content.res.Configuration.screenLayout with the SCREENLAYOUT_SIZE_MASK.
 Device implementations MUST report the correct screen size as defined in the
-Android SDK documentation [<a href="http://developer.android.com/guide/practices/screens_support.html">Resources, 61</a>] and determined by the upstream Android platform. Specifically, device
+Android SDK documentation [<a href="http://developer.android.com/guide/practices/screens_support.html">Resources, 78</a>] and determined by the upstream Android platform. Specifically, device
 implementations MUST report the correct screen size according to the following
 logical density-independent pixel (dp) screen dimensions.</p>
 
@@ -2960,7 +2960,7 @@ report the next lowest standard Android framework density.</p>
 
 
 <p>Device implementations MUST report correct values for all display metrics
-defined in android.util.DisplayMetrics [<a href="http://developer.android.com/reference/android/util/DisplayMetrics.html">Resources, 62</a>] and MUST report the same values regardless of whether the embedded or
+defined in android.util.DisplayMetrics [<a href="http://developer.android.com/reference/android/util/DisplayMetrics.html">Resources, 79</a>] and MUST report the same values regardless of whether the embedded or
 external screen is used as the default display.</p>
 
 <h3 id="7_1_3_screen_orientation">7.1.3. Screen Orientation</h3>
@@ -2992,7 +2992,7 @@ orientation.</p>
 detailed in the Android SDK documentations. Device implementations SHOULD
 support OpenGL ES 3.0 or 3.1 on devices capable of supporting it. Device
 implementations MUST also support Android RenderScript, as detailed in the
-Android SDK documentation [<a href="http://developer.android.com/guide/topics/renderscript/">Resources, 63</a>].</p>
+Android SDK documentation [<a href="http://developer.android.com/guide/topics/renderscript/">Resources, 80</a>].</p>
 
 <p>Device implementations MUST also correctly identify themselves as supporting
 OpenGL ES 1.0, OpenGL ES 2.0, OpenGL ES 3.0 or OpenGL 3.1. That is:</p>
@@ -3011,7 +3011,7 @@ OpenGL ES 2.0 function symbols.</li>
 </ul>
 
 <p>In addition to OpenGL ES 3.1, Android provides an extension pack with Java
-interfaces [<a href="https://developer.android.com/reference/android/opengl/GLES31Ext.html">Resources, 64</a>] and native support for advanced graphics functionality such as tessellation
+interfaces [<a href="https://developer.android.com/reference/android/opengl/GLES31Ext.html">Resources, 81</a>] and native support for advanced graphics functionality such as tessellation
 and the ASTC texture compression format. Android device implementations MAY
 support this extension pack, and&mdash;only if fully implemented&mdash;MUST identify the
 support through the android.hardware.opengles.aep feature flag.</p>
@@ -3031,7 +3031,7 @@ getString() method in the OpenGL API.</p>
 <p>Android includes a mechanism for applications to declare that they want to
 enable hardware acceleration for 2D graphics at the Application, Activity,
 Window, or View level through the use of a manifest tag
-android:hardwareAccelerated or direct API calls [<a href="http://developer.android.com/guide/topics/graphics/hardware-accel.html">Resources, 65</a>].</p>
+android:hardwareAccelerated or direct API calls [<a href="http://developer.android.com/guide/topics/graphics/hardware-accel.html">Resources, 82</a>].</p>
 
 <p>Device implementations MUST enable hardware acceleration by default, and MUST
 disable hardware acceleration if the developer so requests by setting
@@ -3039,7 +3039,7 @@ android:hardwareAccelerated="false&rdquo; or disabling hardware acceleration dir
 through the Android View APIs.</p>
 
 <p>In addition, device implementations MUST exhibit behavior consistent with the
-Android SDK documentation on hardware acceleration [<a href="http://developer.android.com/guide/topics/graphics/hardware-accel.html">Resources, 65</a>].</p>
+Android SDK documentation on hardware acceleration [<a href="http://developer.android.com/guide/topics/graphics/hardware-accel.html">Resources, 82</a>].</p>
 
 <p>Android includes a TextureView object that lets developers directly integrate
 hardware-accelerated OpenGL ES textures as rendering targets in a UI hierarchy.
@@ -3049,7 +3049,7 @@ consistent behavior with the upstream Android implementation.</p>
 <p>Android includes support for EGL_ANDROID_RECORDABLE, an EGLConfig attribute
 that indicates whether the EGLConfig supports rendering to an ANativeWindow
 that records images to a video. Device implementations MUST support
-EGL_ANDROID_RECORDABLE extension [<a href="https://www.khronos.org/registry/egl/extensions/ANDROID/EGL_ANDROID_recordable.txt">Resources, 66</a>].</p>
+EGL_ANDROID_RECORDABLE extension [<a href="https://www.khronos.org/registry/egl/extensions/ANDROID/EGL_ANDROID_recordable.txt">Resources, 83</a>].</p>
 
 <h3 id="7_1_5_legacy_application_compatibility_mode">7.1.5. Legacy Application Compatibility Mode</h3>
 
@@ -3091,7 +3091,7 @@ and 1.15. That is, the pixel aspect ratio MUST be near square (1.0) with a 10 ~
 capabilities and developer APIs for accessing external displays. If a device
 supports an external display either via a wired, wireless, or an embedded
 additional display connection then the device implementation MUST implement the
-display manager API as described in the Android SDK documentation [<a href="http://developer.android.com/reference/android/hardware/display/DisplayManager.html">Resources, 67</a>].</p>
+display manager API as described in the Android SDK documentation [<a href="http://developer.android.com/reference/android/hardware/display/DisplayManager.html">Resources, 84</a>].</p>
 
 <h2 id="7_2_input_devices">7.2. Input Devices</h2>
 
@@ -3118,7 +3118,7 @@ size makes it less reasonable to have a soft keyboard.</li>
   <li>MAY include additional soft keyboard implementations.</li>
   <li>MAY include a hardware keyboard.</li>
   <li>MUST NOT include a hardware keyboard that does not match one of the formats
-specified in android.content.res.Configuration.keyboard [<a href="http://developer.android.com/reference/android/content/res/Configuration.html">Resources, 68</a>] (QWERTY or 12-key).</li>
+specified in android.content.res.Configuration.keyboard [<a href="http://developer.android.com/reference/android/content/res/Configuration.html">Resources, 85</a>] (QWERTY or 12-key).</li>
 </ul>
 
 <h3 id="7_2_2_non-touch_navigation">7.2.2. Non-touch Navigation</h3>
@@ -3133,7 +3133,7 @@ specified in android.content.res.Configuration.keyboard [<a href="http://develop
   <li>MAY omit a non-touch navigation option (trackball, d-pad, or wheel) if the
 device implementation is not an Android Television device.</li>
   <li>MUST report the correct value for android.content.res.Configuration.navigation
-[<a href="http://developer.android.com/reference/android/content/res/Configuration.html">Resources, 68</a>].</li>
+[<a href="http://developer.android.com/reference/android/content/res/Configuration.html">Resources, 85</a>].</li>
   <li>MUST provide a reasonable alternative user interface mechanism for the
 selection and editing of text, compatible with Input Management Engines. The
 upstream Android open source implementation includes a selection mechanism
@@ -3205,7 +3205,7 @@ unless hidden together with other navigation functions.</p>
 
 <p>Android device implementations with the support of the Assist action [<a
 href="http://developer.android.com/reference/android/content/Intent.html#ACTION_ASSIST">Resources,
-69</a>] MUST make this accessisble with a single action (e.g. tap, double-click,
+30</a>] MUST make this accessisble with a single action (e.g. tap, double-click,
 or gesture) when other navigation keys are visible, and are STRONGLY RECOMMENDED to
 use the long-press on the Home button or software key as the single action.</p>
 
@@ -3243,12 +3243,12 @@ include a pointer input system:</p>
 <ul>
   <li>SHOULD support fully independently tracked pointers, if the device input system
 supports multiple pointers.</li>
-  <li>MUST report the value of android.content.res.Configuration.touchscreen [<a href="http://developer.android.com/reference/android/content/res/Configuration.html">Resources, 68</a>] corresponding to the type of the specific touchscreen on the device.</li>
+  <li>MUST report the value of android.content.res.Configuration.touchscreen [<a href="http://developer.android.com/reference/android/content/res/Configuration.html">Resources, 85</a>] corresponding to the type of the specific touchscreen on the device.</li>
 </ul>
 
 <p>Android includes support for a variety of touchscreens, touch pads, and fake
 touch input devices. Touchscreen based device implementations are associated
-with a display [<a href="http://source.android.com/devices/tech/input/touch-devices.html">Resources, 70</a>] such that the user has the impression of directly manipulating items on
+with a display [<a href="http://source.android.com/devices/tech/input/touch-devices.html">Resources, 86</a>] such that the user has the impression of directly manipulating items on
 screen. Since the user is directly touching the screen, the system does not
 require any additional affordances to indicate the objects being manipulated.
 In contrast, a fake touch interface provides a user input system that
@@ -3281,14 +3281,14 @@ meet the fake touch requirements in <a href="#7_2_5_fake_touch_input">section 7.
 
 <ul>
   <li>MUST report the absolute X and Y screen positions of the pointer location and
-display a visual pointer on the screen [<a href="http://developer.android.com/reference/android/view/MotionEvent.html">Resources, 71</a>].</li>
+display a visual pointer on the screen [<a href="http://developer.android.com/reference/android/view/MotionEvent.html">Resources, 87</a>].</li>
   <li>MUST report touch event with the action code that specifies the state change
-that occurs on the pointer going down or up on the screen [<a href="http://developer.android.com/reference/android/view/MotionEvent.html">Resources, 71</a>].</li>
+that occurs on the pointer going down or up on the screen [<a href="http://developer.android.com/reference/android/view/MotionEvent.html">Resources, 87</a>].</li>
   <li>MUST support pointer down and up on an object on the screen, which allows users
 to emulate tap on an object on the screen.</li>
   <li>MUST support pointer down, pointer up, pointer down then pointer up in the same
 place on an object on the screen within a time threshold, which allows users to
-emulate double tap on an object on the screen [<a href="http://developer.android.com/reference/android/view/MotionEvent.html">Resources, 71</a>].</li>
+emulate double tap on an object on the screen [<a href="http://developer.android.com/reference/android/view/MotionEvent.html">Resources, 87</a>].</li>
   <li>MUST support pointer down on an arbitrary point on the screen, pointer move to
 any other arbitrary point on the screen, followed by a pointer up, which allows
 users to emulate a touch drag.</li>
@@ -3386,7 +3386,7 @@ mappings:</p>
 </table>
 
 
-<p class="table_footnote">1 [<a href="http://developer.android.com/reference/android/view/KeyEvent.html">Resources, 72</a>]</p>
+<p class="table_footnote">1 [<a href="http://developer.android.com/reference/android/view/KeyEvent.html">Resources, 88</a>]</p>
 
 <p class="table_footnote">2 The above HID usages must be declared within a Game pad CA (0x01 0x0005).</p>
 
@@ -3397,7 +3397,7 @@ away from the vertical axis; for example, a logical value of 0 represents no
 rotation and the up button being pressed, while a logical value of 1 represents
 a rotation of 45 degrees and both the up and left keys being pressed.</p>
 
-<p class="table_footnote">4 [<a href="http://developer.android.com/reference/android/view/MotionEvent.html">Resources, 71</a>]</p>
+<p class="table_footnote">4 [<a href="http://developer.android.com/reference/android/view/MotionEvent.html">Resources, 87</a>]</p>
 
 <table>
  <tr>
@@ -3436,7 +3436,7 @@ AXIS_RZ</td>
 </table>
 
 
-<p class="table_footnote">1 [<a href="http://developer.android.com/reference/android/view/MotionEvent.html">Resources, 71</a>]</p>
+<p class="table_footnote">1 [<a href="http://developer.android.com/reference/android/view/MotionEvent.html">Resources, 87</a>]</p>
 
 <h3 id="7_2_7_remote_control">7.2.7. Remote Control</h3>
 
@@ -3449,7 +3449,7 @@ or tablet. The remote control MUST meet the requirements defined below.</p>
 <ul>
   <li><strong>Search affordance</strong>. Device implementations MUST fire KEYCODE_SEARCH when the user invokes voice search either on the physical or software-based remote.</li>
   <li><strong>Navigation</strong>. All Android Television remotes MUST include Back, Home, and Select buttons and
-support for D-pad events [<a href="http://developer.android.com/reference/android/view/KeyEvent.html">Resources, 72</a>].</li>
+support for D-pad events [<a href="http://developer.android.com/reference/android/view/KeyEvent.html">Resources, 88</a>].</li>
 </ul>
 
 <h2 id="7_3_sensors">7.3. Sensors</h2>
@@ -3460,11 +3460,11 @@ implementations generally MAY omit these sensors, as provided for in the
 following subsections. If a device includes a particular sensor type that has a
 corresponding API for third-party developers, the device implementation MUST
 implement that API as described in the Android SDK documentation and the
-Android Open Source documentation on sensors [<a href="http://source.android.com/devices/sensors/">Resources, 73</a>]. For example, device implementations:</p>
+Android Open Source documentation on sensors [<a href="http://source.android.com/devices/sensors/">Resources, 89</a>]. For example, device implementations:</p>
 
 <ul>
   <li>MUST accurately report the presence or absence of sensors per the
-android.content.pm.PackageManager class [<a href="http://developer.android.com/reference/android/content/pm/PackageManager.html">Resources, 53]</a>.</li>
+android.content.pm.PackageManager class [<a href="http://developer.android.com/reference/android/content/pm/PackageManager.html">Resources, 70]</a>.</li>
   <li>MUST return an accurate list of supported sensors via the
 SensorManager.getSensorList() and similar methods.</li>
   <li>MUST behave reasonably for all other sensor APIs (for example, by returning
@@ -3473,32 +3473,32 @@ not calling sensor listeners when the corresponding sensors are not present;
 etc.).</li>
   <li>MUST report all sensor measurements using the relevant International System of
 Units (metric) values for each sensor type as defined in the Android SDK
-documentation [<a href="http://developer.android.com/reference/android/hardware/SensorEvent.html">Resources, 74</a>].</li>
+documentation [<a href="http://developer.android.com/reference/android/hardware/SensorEvent.html">Resources, 90</a>].</li>
   <li>SHOULD report the event time in nanoseconds as defined in the Android SDK
 documentation, representing the time the event happened and synchronized with
 the SystemClock.elapsedRealtimeNano() clock. Existing and new Android devices
 are <strong>STRONGLY RECOMMENDED</strong> to meet these requirement so they will be able to upgrade to the future
 platform releases where this might become a REQUIRED component. The
-synchronization error SHOULD be below 100 milliseconds [<a href="http://developer.android.com/reference/android/hardware/SensorEvent.html#timestamp">Resources, 75</a>].</li>
+synchronization error SHOULD be below 100 milliseconds [<a href="http://developer.android.com/reference/android/hardware/SensorEvent.html#timestamp">Resources, 91</a>].</li>
   <li>MUST report sensor data with a maximum latency of 100 milliseconds + 2 * sample_time for the case of a sensor streamed
     with a minimum required latency of 5 ms + 2 * sample_time when the application processor is active. This delay does not include any filtering delays.</li>
   <li>MUST report the first sensor sample within 400 milliseconds + 2 * sample_time of the sensor being activated. It is acceptable for this sample to have an accuracy of 0.</li>
 </ul>
 
 <p>The list above is not comprehensive; the documented behavior of the Android SDK
-and the Android Open Source Documentations on Sensors [<a href="http://source.android.com/devices/sensors/">Resources, 73</a>] is to be considered authoritative.</p>
+and the Android Open Source Documentations on Sensors [<a href="http://source.android.com/devices/sensors/">Resources, 89</a>] is to be considered authoritative.</p>
 
 <p>Some sensor types are composite, meaning they can be derived from data provided
 by one or more other sensors. (Examples include the orientation sensor, and the
 linear acceleration sensor.) Device implementations SHOULD implement these
 sensor types, when they include the prerequisite physical sensors as described
-in [<a href="https://source.android.com/devices/sensors/sensor-types.html">Resources, 76</a>].
+in [<a href="https://source.android.com/devices/sensors/sensor-types.html">Resources, 92</a>].
 If a device implementation includes a composite sensor it MUST implement the
 sensor as described in the Android Open Source documentation on composite
-sensors [<a href="https://source.android.com/devices/sensors/sensor-types.html#composite_sensor_type_summary">Resources, 76</a>].</p>
+sensors [<a href="https://source.android.com/devices/sensors/sensor-types.html#composite_sensor_type_summary">Resources, 92</a>].</p>
 
 <p>Some Android sensors support a &ldquo;continuous&rdquo; trigger mode, which returns data
-continuously [<a href="https://source.android.com/devices/sensors/report-modes.html#continuous">Resources, 77</a>]. For any API indicated by the Android SDK documentation to be a continuous
+continuously [<a href="https://source.android.com/devices/sensors/report-modes.html#continuous">Resources, 93</a>]. For any API indicated by the Android SDK documentation to be a continuous
 sensor, device implementations MUST continuously provide periodic data samples
 that SHOULD have a jitter below 3%, where jitter is defined as the standard
 deviation of the difference of the reported timestamp values between
@@ -3519,13 +3519,13 @@ devices and Android Watch devices are STRONGLY RECOMMENDED to include this
 sensor. If a device implementation does include a 3-axis accelerometer, it:</p>
 
 <ul>
-  <li>MUST implement and report TYPE_ACCELEROMETER sensor [<a href="http://developer.android.com/reference/android/hardware/Sensor.html#TYPE_ACCELEROMETER">Resources, 78</a>].</li>
+  <li>MUST implement and report TYPE_ACCELEROMETER sensor [<a href="http://developer.android.com/reference/android/hardware/Sensor.html#TYPE_ACCELEROMETER">Resources, 94</a>].</li>
   <li>MUST be able to report events up to a frequency of at least 50 Hz for
   Android Watch devices as such devices have a stricter power constraint and
   100 Hz for all other device types.</li>
   <li>SHOULD report events up to at least 200 Hz.</li>
   <li>MUST comply with the Android sensor coordinate system as detailed in the
-Android APIs [<a href="http://developer.android.com/reference/android/hardware/SensorEvent.html">Resources, 74</a>].</li>
+Android APIs [<a href="http://developer.android.com/reference/android/hardware/SensorEvent.html">Resources, 90</a>].</li>
   <li>MUST be capable of measuring from freefall up to four times the gravity (4g) or
 more on any axis.</li>
   <li>MUST have a resolution of at least 12-bits and SHOULD have a resolution of at
@@ -3564,7 +3564,7 @@ STRONGLY RECOMMENDED to implement the TYPE_MAGNETIC_FIELD_UNCALIBRATED sensor.</
   <li>MUST be able to report events up to a frequency of at least 10 Hz and SHOULD
 report events up to at least 50 Hz.</li>
   <li>MUST comply with the Android sensor coordinate system as detailed in the
-Android APIs [<a href="http://developer.android.com/reference/android/hardware/SensorEvent.html">Resources, 74</a>].</li>
+Android APIs [<a href="http://developer.android.com/reference/android/hardware/SensorEvent.html">Resources, 90</a>].</li>
   <li>MUST be capable of measuring between -900 &micro;T and +900 &micro;T on each axis before
 saturating.</li>
   <li>MUST have a hard iron offset value less than 700 &micro;T and SHOULD have a value
@@ -3691,7 +3691,7 @@ sensor types meeting the quality requirements as below:</p>
     <li>MUST have a measurement resolution of at least 1024 LSB/G</li>
     <li>MUST have a minimum measurement frequency of 12.5 Hz or lower</li>
     <li>MUST have a maxmium measurement frequency of 200 Hz or higher</li>
-    <li>MUST have a measurement noise not above 400uG/√Hz</li>
+    <li>MUST have a measurement noise not above 400uG/&radic;Hz</li>
     <li>MUST implement a non-wake-up form of this sensor with a buffering capability of at least 3000 sensor events</li>
     <li>MUST have a batching power consumption not worse than 3 mW</li>
   </ul>
@@ -3702,7 +3702,7 @@ sensor types meeting the quality requirements as below:</p>
     <li>MUST have a measurement resolution of at least 16 LSB/dps</li>
     <li>MUST have a minimum measurement frequency of 12.5 Hz or lower</li>
     <li>MUST have a maxmium measurement frequency of 200 Hz or higher</li>
-    <li>MUST have a measurement noise not above 0.014°/s/√Hz</li>
+    <li>MUST have a measurement noise not above 0.014&deg;/s/&radic;Hz</li>
   </ul>
   </li>
   <li>SENSOR_TYPE_GYROSCOPE_UNCALIBRATED with the same quality requirements as
@@ -3728,7 +3728,7 @@ sensor types meeting the quality requirements as below:</p>
     <li>MUST have a measurement resolution of at least 80 LSB/hPa</li>
     <li>MUST have a minimum measurement frequency of 1 Hz or lower</li>
     <li>MUST have a maximum measurement frequency of 10 Hz or higher</li>
-    <li>MUST have a measurement noise not above 2 Pa/√Hz</li>
+    <li>MUST have a measurement noise not above 2 Pa/&radic;Hz</li>
     <li>MUST implement a non-wake-up form of this sensor with a buffering capability of at least 300 sensor events</li>
     <li>MUST have a batching power consumption not worse than 2 mW</li>
   </ul>
@@ -3809,7 +3809,7 @@ third-party developers, it:</p>
 <ul>
   <li>MUST declare support for the android.hardware.fingerprint feature.</li>
   <li>MUST fully implement the corresponding API as described in the Android SDK documentation
-[<a href="https://developer.android.com/reference/android/hardware/fingerprint/package-summary.html">Resources, XX</a>].
+[<a href="https://developer.android.com/reference/android/hardware/fingerprint/package-summary.html">Resources, 95</a>].
   </li>
   <li>MUST have a false acceptance rate not higher than 0.002%.</li>
   <li>Is STRONGLY RECOMMENDED to have a false rejection rate not higher than 10%, and a
@@ -3824,7 +3824,7 @@ third-party developers, it:</p>
     authenticated such that they cannot be acquired, read or altered outside of the
     Trusted Execution Environment (TEE) as documented in the implementation guidelines
     on the Android Open Source Project site
-    [<a href="https://source.android.com/devices/tech/security/authentication/fingerprint-hal.html">Resources, XX</a>].
+    [<a href="https://source.android.com/devices/tech/security/authentication/fingerprint-hal.html">Resources, 96</a>].
   </li>
   <li>MUST prevent adding a fingerprint without first establishing a chain of trust by
     having the user confirm existing or add a new device credential (PIN/pattern/password)
@@ -3876,7 +3876,7 @@ Android API and:</p>
 
 <ul>
   <li>MUST report the hardware feature flag android.hardware.wifi.</li>
-  <li>MUST implement the multicast API as described in the SDK documentation [<a href="http://developer.android.com/reference/android/net/wifi/WifiManager.MulticastLock.html">Resources, 79</a>].</li>
+  <li>MUST implement the multicast API as described in the SDK documentation [<a href="http://developer.android.com/reference/android/net/wifi/WifiManager.MulticastLock.html">Resources, 97</a>].</li>
   <li>MUST support multicast DNS (mDNS) and MUST NOT filter mDNS packets
 (224.0.0.251) at any time of operation including:
     <ul>
@@ -3891,7 +3891,7 @@ Android API and:</p>
 <p>Device implementations SHOULD include support for Wi-Fi Direct (Wi-Fi
 peer-to-peer). If a device implementation does include support for Wi-Fi
 Direct, it MUST implement the corresponding Android API as described in the SDK
-documentation [<a href="http://developer.android.com/reference/android/net/wifi/p2p/WifiP2pManager.html">Resources, 80</a>]. If a device implementation includes support for Wi-Fi Direct, then it:</p>
+documentation [<a href="http://developer.android.com/reference/android/net/wifi/p2p/WifiP2pManager.html">Resources, 98</a>]. If a device implementation includes support for Wi-Fi Direct, then it:</p>
 
 <ul>
   <li>MUST report the hardware feature android.hardware.wifi.direct.</li>
@@ -3910,7 +3910,7 @@ Tunneled Direct Link Setup (TDLS).</p>
 <p>Android Television device implementations MUST include support for Wi-Fi
 Tunneled Direct Link Setup (TDLS) and other types of Android device
 implementations SHOULD include support for Wi-Fi TDLS as described in the
-Android SDK Documentation [<a href="http://developer.android.com/reference/android/net/wifi/WifiManager.html">Resources, 81</a>]. If a device implementation does include support for TDLS and TDLS is enabled
+Android SDK Documentation [<a href="http://developer.android.com/reference/android/net/wifi/WifiManager.html">Resources, 99</a>]. If a device implementation does include support for TDLS and TDLS is enabled
 by the WiFiManager API, the device:</p>
 
 <ul>
@@ -3927,7 +3927,7 @@ Television implementations MUST support Bluetooth and Bluetooth LE.</p>
 </div>
 
 
-<p>Android includes support for Bluetooth and Bluetooth Low Energy [<a href="http://developer.android.com/reference/android/bluetooth/package-summary.html">Resources, 82</a>]. Device implementations that include support for Bluetooth and Bluetooth Low
+<p>Android includes support for Bluetooth and Bluetooth Low Energy [<a href="http://developer.android.com/reference/android/bluetooth/package-summary.html">Resources, 100</a>]. Device implementations that include support for Bluetooth and Bluetooth Low
 Energy MUST declare the relevant platform features (android.hardware.bluetooth
 and android.hardware.bluetooth_le respectively) and implement the platform
 APIs. Device implementations SHOULD implement relevant Bluetooth profiles such
@@ -3939,11 +3939,11 @@ device implementations MUST support Bluetooth and Bluetooth LE. </p>
 <ul>
   <li>MUST declare the hardware feature android.hardware.bluetooth_le.</li>
   <li>MUST enable the GATT (generic attribute profile) based Bluetooth APIs as
-described in the SDK documentation and [<a href="http://developer.android.com/reference/android/bluetooth/package-summary.html">Resources, 82</a>].</li>
+described in the SDK documentation and [<a href="http://developer.android.com/reference/android/bluetooth/package-summary.html">Resources, 100</a>].</li>
   <li>MUST implement a Resolvable Private Address (RPA) timeout no longer than
 15 minutes, and rotate the address at timeout to protect user privacy.</li>
   <li>SHOULD support offloading of the filtering logic to the bluetooth chipset when
-implementing the ScanFilter API [<a href="https://developer.android.com/reference/android/bluetooth/le/ScanFilter.html">Resources, 83</a>], and MUST report the correct value of where the filtering logic is implemented whenever queried via the
+implementing the ScanFilter API [<a href="https://developer.android.com/reference/android/bluetooth/le/ScanFilter.html">Resources, 101</a>], and MUST report the correct value of where the filtering logic is implemented whenever queried via the
 android.bluetooth.BluetoothAdapter.isOffloadedFilteringSupported() method.</li>
   <li>SHOULD support offloading of the batched scanning to the bluetooth chipset, but
 if not supported, MUST report &lsquo;false&rsquo; whenever queried via the
@@ -3962,7 +3962,7 @@ hardware and plans to make it available to third-party apps, then it:</p>
 
 <ul>
   <li>MUST report the android.hardware.nfc feature from the
-android.content.pm.PackageManager.hasSystemFeature() method [<a href="http://developer.android.com/reference/android/content/pm/PackageManager.html">Resources, 53</a>].</li>
+android.content.pm.PackageManager.hasSystemFeature() method [<a href="http://developer.android.com/reference/android/content/pm/PackageManager.html">Resources, 70</a>].</li>
   <li>MUST be capable of reading and writing NDEF messages via the following NFC
 standards:
   <ul>
@@ -3988,7 +3988,7 @@ following NFC standards:
   </ul></li>
   <li>SHOULD be capable of reading the barcode and URL (if encoded) of
       Thinfilm NFC Barcode
-      [<a href="http://developer.android.com/reference/android/nfc/tech/NfcBarcode.html">Resources, XX</a>] products.
+      [<a href="http://developer.android.com/reference/android/nfc/tech/NfcBarcode.html">Resources, 102</a>] products.
   </li>
   <li>MUST be capable of transmitting and receiving data via the following
 peer-to-peer standards and protocols:
@@ -3996,17 +3996,17 @@ peer-to-peer standards and protocols:
     <li>ISO 18092</li>
     <li>LLCP 1.2 (defined by the NFC Forum)</li>
     <li>SDP 1.0 (defined by the NFC Forum)</li>
-    <li>NDEF Push Protocol [<a href="http://static.googleusercontent.com/media/source.android.com/en/us/compatibility/ndef-push-protocol.pdf">Resources, 84</a>]</li>
+    <li>NDEF Push Protocol [<a href="http://static.googleusercontent.com/media/source.android.com/en/us/compatibility/ndef-push-protocol.pdf">Resources, 103</a>]</li>
     <li>SNEP 1.0 (defined by the NFC Forum)</li>
   </ul></li>
-  <li>MUST include support for Android Beam [<a href="http://developer.android.com/guide/topics/connectivity/nfc/nfc.html">Resources, 85</a>]:
+  <li>MUST include support for Android Beam [<a href="http://developer.android.com/guide/topics/connectivity/nfc/nfc.html">Resources, 104</a>]:
   <ul>
     <li>MUST implement the SNEP default server. Valid NDEF messages received by the
 default SNEP server MUST be dispatched to applications using the
 android.nfc.ACTION_NDEF_DISCOVERED intent. Disabling Android Beam in settings
 MUST NOT disable dispatch of incoming NDEF message.</li>
     <li>MUST honor the android.settings.NFCSHARING_SETTINGS intent to show NFC sharing
-settings [<a href="http://developer.android.com/reference/android/provider/Settings.html#ACTION_NFCSHARING_SETTINGS">Resources, 86</a>].</li>
+settings [<a href="http://developer.android.com/reference/android/provider/Settings.html#ACTION_NFCSHARING_SETTINGS">Resources, 105</a>].</li>
     <li>MUST implement the NPP server. Messages received by the NPP server MUST be
 processed the same way as the SNEP default server.</li>
     <li>MUST implement a SNEP client and attempt to send outbound P2P NDEF to the
@@ -4023,7 +4023,7 @@ using Android Beam, even when another proprietary NFC P2p mode is turned on.</li
     <li>MUST support NFC Connection handover to Bluetooth when the device supports
 Bluetooth Object Push Profile. Device implementations MUST support connection
 handover to Bluetooth when using android.nfc.NfcAdapter.setBeamPushUris, by
-implementing the &ldquo;Connection Handover version 1.2&rdquo; [<a href="http://members.nfc-forum.org/specs/spec_list/#conn_handover">Resources, 87</a>] and &ldquo;Bluetooth Secure Simple Pairing Using NFC version 1.0&rdquo; [<a href="http://members.nfc-forum.org/apps/group_public/download.php/18688/NFCForum-AD-BTSSP_1_1.pdf">Resources, 88</a>] specs from the NFC Forum. Such an implementation MUST implement the handover
+implementing the &ldquo;Connection Handover version 1.2&rdquo; [<a href="http://members.nfc-forum.org/specs/spec_list/#conn_handover">Resources, 106</a>] and &ldquo;Bluetooth Secure Simple Pairing Using NFC version 1.0&rdquo; [<a href="http://members.nfc-forum.org/apps/group_public/download.php/18688/NFCForum-AD-BTSSP_1_1.pdf">Resources, 107</a>] specs from the NFC Forum. Such an implementation MUST implement the handover
 LLCP service with service name &ldquo;urn:nfc:sn:handover&rdquo; for exchanging the
 handover request/select records over NFC, and it MUST use the Bluetooth Object
 Push Profile for the actual Bluetooth data transfer. For legacy reasons (to
@@ -4047,7 +4047,7 @@ Application ID (AID) routing, then it:</p>
 
 <ul>
   <li>MUST report the android.hardware.nfc.hce feature constant.</li>
-  <li>MUST support NFC HCE APIs as defined in the Android SDK [<a href="http://developer.android.com/guide/topics/connectivity/nfc/hce.html">Resources, 10</a>].</li>
+  <li>MUST support NFC HCE APIs as defined in the Android SDK [<a href="http://developer.android.com/guide/topics/connectivity/nfc/hce.html">Resources, 108</a>].</li>
 </ul>
 
 <p>Additionally, device implementations MAY include reader/writer support for the
@@ -4065,7 +4065,7 @@ implementation supports MIFARE in the reader/writer role, it:</p>
 <ul>
   <li>MUST implement the corresponding Android APIs as documented by the Android SDK.</li>
   <li>MUST report the feature com.nxp.mifare from the
-android.content.pm.PackageManager.hasSystemFeature() method <a href="http://developer.android.com/reference/android/content/pm/PackageManager.html">[Resources, 53]</a>. Note that this is not a standard Android feature and as such does not appear
+android.content.pm.PackageManager.hasSystemFeature() method [<a href="http://developer.android.com/reference/android/content/pm/PackageManager.html">Resources, 70</a>]. Note that this is not a standard Android feature and as such does not appear
 as a constant in the android.content.pm.PackageManager class.</li>
   <li>MUST NOT implement the corresponding Android APIs nor report the com.nxp.mifare
 feature unless it also implements general NFC support as described in this
@@ -4074,7 +4074,7 @@ section.</li>
 
 <p>If a device implementation does not include NFC hardware, it MUST NOT declare
 the android.hardware.nfc feature from the
-android.content.pm.PackageManager.hasSystemFeature() method [<a href="http://developer.android.com/reference/android/content/pm/PackageManager.html">Resources, 53]</a>, and MUST implement the Android NFC API as a no-op.</p>
+android.content.pm.PackageManager.hasSystemFeature() method [<a href="http://developer.android.com/reference/android/content/pm/PackageManager.html">Resources, 70</a>], and MUST implement the Android NFC API as a no-op.</p>
 
 <p>As the classes android.nfc.NdefMessage and android.nfc.NdefRecord represent a
 protocol-independent data representation format, device implementations MUST
@@ -4100,7 +4100,7 @@ common wireless data standard, such as 802.11 (Wi-Fi).</p>
 
 
 <p>Device implementations MUST have the master auto-sync setting on by default so
-that the method getMasterSyncAutomatically() returns &ldquo;true&rdquo; [<a href="http://developer.android.com/reference/android/content/ContentResolver.html">Resources, 89</a>].</p>
+that the method getMasterSyncAutomatically() returns &ldquo;true&rdquo; [<a href="http://developer.android.com/reference/android/content/ContentResolver.html">Resources, 109</a>].</p>
 
 <h2 id="7_5_cameras">7.5. Cameras</h2>
 
@@ -4163,7 +4163,7 @@ automatically via an accelerometer or manually via user input), the camera
 preview MUST be mirrored horizontally relative to the device&rsquo;s current
 orientation.</li>
     <li>If the current application has explicitly requested that the Camera display be
-rotated via a call to the android.hardware.Camera.setDisplayOrientation()[<a href="http://developer.android.com/reference/android/hardware/Camera.html#setDisplayOrientation(int)">Resources, 90</a>] method, the camera preview MUST be mirrored horizontally relative to the
+rotated via a call to the android.hardware.Camera.setDisplayOrientation()[<a href="http://developer.android.com/reference/android/hardware/Camera.html#setDisplayOrientation(int)">Resources, 110</a>] method, the camera preview MUST be mirrored horizontally relative to the
 orientation specified by the application.</li>
     <li>Otherwise, the preview MUST be mirrored along the device&rsquo;s default horizontal
 axis.</li>
@@ -4232,7 +4232,8 @@ formats as outputs through the android.media.ImageReader API.</li>
 </ul>
 
 <p>Device implementations MUST still implement the full Camera API included in the
-Android SDK documentation [<a href="http://developer.android.com/reference/android/hardware/Camera.html">Resources, 91</a>], regardless of whether the device includes hardware autofocus or other
+Android SDK documentation [<a href="http://developer.android.com/reference/android/hardware/Camera.html">Resources, 111</a>],
+regardless of whether the device includes hardware autofocus or other
 capabilities. For instance, cameras that lack autofocus MUST still call any
 registered android.hardware.Camera.AutoFocusCallback instances (even though
 this has no relevance to a non-autofocus camera.) Note that this does apply to
@@ -4249,16 +4250,16 @@ constants on the android.hardware.Camera.Parameters. That is, device
 implementations MUST support all standard Camera parameters if the hardware
 allows, and MUST NOT support custom Camera parameter types. For instance,
 device implementations that support image capture using high dynamic range
-(HDR) imaging techniques MUST support camera parameter Camera.SCENE_MODE_HDR [<a href="http://developer.android.com/reference/android/hardware/Camera.Parameters.html">Resources, 92</a>].</p>
+(HDR) imaging techniques MUST support camera parameter Camera.SCENE_MODE_HDR [<a href="http://developer.android.com/reference/android/hardware/Camera.Parameters.html">Resources, 112</a>].</p>
 
 <p>Because not all device implementations can fully support all the features of
 the android.hardware.camera2 API, device implementations MUST report the proper
 level of support with the android.info.supportedHardwareLevel property as
-described in the Android SDK [<a href="https://developer.android.com/reference/android/hardware/camera2/CameraCharacteristics.html#INFO_SUPPORTED_HARDWARE_LEVEL">Resources, 93]</a> and report the appropriate framework feature flags [<a href="http://source.android.com/devices/camera/versioning.html">Resources, 94]</a>. </p>
+described in the Android SDK [<a href="https://developer.android.com/reference/android/hardware/camera2/CameraCharacteristics.html#INFO_SUPPORTED_HARDWARE_LEVEL">Resources, 113</a>] and report the appropriate framework feature flags [<a href="http://source.android.com/devices/camera/versioning.html">Resources, 114</a>].</p>
 
 <p>Device implementations MUST also declare its Individual camera capabilities of
 android.hardware.camera2 via the android.request.availableCapabilities property
-and declare the appropriate feature flags [<a href="http://source.android.com/devices/camera/versioning.html">Resources, 94]</a>; a device must define the feature flag if any of its attached camera devices supports the feature.</p>
+and declare the appropriate feature flags [<a href="http://source.android.com/devices/camera/versioning.html">Resources, 114</a>]; a device must define the feature flag if any of its attached camera devices supports the feature.</p>
 
 <p>Device implementations MUST broadcast the Camera.ACTION_NEW_PICTURE intent
 whenever a new picture is taken by the camera and the entry of the picture has
@@ -4355,7 +4356,7 @@ Device implementations that run Android are <strong>STRONGLY RECOMMENDED</strong
 they will be able to upgrade to the future platform releases.</p>
 
 <p>The Android APIs include a Download Manager that applications MAY use to
-download data files [<a href="http://developer.android.com/reference/android/app/DownloadManager.html">Resources, 95</a>]. The device implementation of the Download Manager MUST be capable of
+download data files [<a href="http://developer.android.com/reference/android/app/DownloadManager.html">Resources, 115</a>]. The device implementation of the Download Manager MUST be capable of
 downloading individual files of at least 100MB in size to the default &ldquo;cache"
 location.</p>
 
@@ -4412,7 +4413,7 @@ Transfer Protocol, it:</p>
 
 <ul>
   <li>SHOULD be compatible with the reference Android MTP host, Android File Transfer
-[<a href="http://www.android.com/filetransfer">Resources, 96</a>].</li>
+[<a href="http://www.android.com/filetransfer">Resources, 116</a>].</li>
   <li>SHOULD report a USB device class of 0x00.</li>
   <li>SHOULD report a USB interface name of 'MTP'.</li>
 </ul>
@@ -4424,7 +4425,7 @@ storage if the removable storage device port is in a long-term stable location,
 such as within the battery compartment or other protective cover
 [<a
 href="http://source.android.com/devices/storage/adoptable.html">Resources,
-XX</a>].</p>
+117</a>].</p>
 
 <p>Device implementations such as a television, MAY enable adoption through USB
 ports as the device is expected to be static and not mobile. But for other
@@ -4458,16 +4459,16 @@ documented in the Android SDK documentation, and if it is an Android Handheld
 device it MUST implement the AOA API. Device implementations implementing the
 AOA specification:
   <ul>
-    <li>MUST declare support for the hardware feature android.hardware.usb.accessory [<a href="http://developer.android.com/guide/topics/connectivity/usb/accessory.html">Resources, 97</a>].</li>
+    <li>MUST declare support for the hardware feature android.hardware.usb.accessory [<a href="http://developer.android.com/guide/topics/connectivity/usb/accessory.html">Resources, 118</a>].</li>
     <li>MUST implement the USB audio class as documented in the Android SDK
-documentation [<a href="http://developer.android.com/reference/android/hardware/usb/UsbConstants.html#USB_CLASS_AUDIO">Resources, 98</a>].</li>
+documentation [<a href="http://developer.android.com/reference/android/hardware/usb/UsbConstants.html#USB_CLASS_AUDIO">Resources, 119</a>].</li>
     <li>And also the USB mass storage class, MUST include the string "android"
 at the end of the interface description <code>iInterface</code> string of the
 USB mass storage</li>
   </ul>
   </li>
   <li>It SHOULD implement support to draw 1.5 A current during HS chirp and traffic
-as specified in the USB battery charging specification [<a href="http://www.usb.org/developers/docs/devclass_docs/USB_Battery_Charging_1.2.pdf">Resources, 99</a>]. Existing and new Android devices are <strong>STRONGLY RECOMMENDED to meet these requirements</strong> so they will be able to upgrade to the future platform releases.</li>
+as specified in the USB battery charging specification [<a href="http://www.usb.org/developers/docs/devclass_docs/USB_Battery_Charging_1.2.pdf">Resources, 120</a>]. Existing and new Android devices are <strong>STRONGLY RECOMMENDED to meet these requirements</strong> so they will be able to upgrade to the future platform releases.</li>
   <li>The value of iSerialNumber in USB standard device descriptor MUST be equal to
 the value of android.os.Build.SERIAL.</li>
 </ul>
@@ -4481,11 +4482,11 @@ cables adapting the port to a standard type-A or type-C USB port.</li>
   <li>MAY use a micro-AB USB port, but if so SHOULD ship with a cable or cables
 adapting the port to a standard type-A or type-C USB port.</li>
   <li>is <strong>STRONGLY RECOMMENDED</strong> to implement the USB audio class as documented in the Android SDK
-documentation [<a href="http://developer.android.com/reference/android/hardware/usb/UsbConstants.html#USB_CLASS_AUDIO">Resources, 98</a>].</li>
+documentation [<a href="http://developer.android.com/reference/android/hardware/usb/UsbConstants.html#USB_CLASS_AUDIO">Resources, 119</a>].</li>
   <li>MUST implement the Android USB host API as documented in the Android SDK, and
-MUST declare support for the hardware feature android.hardware.usb.host [<a href="http://developer.android.com/guide/topics/connectivity/usb/host.html">Resources, 100</a>].</li>
+MUST declare support for the hardware feature android.hardware.usb.host [<a href="http://developer.android.com/guide/topics/connectivity/usb/host.html">Resources, 121</a>].</li>
   <li>SHOULD support the Charging Downstream Port output current range of 1.5 A ~ 5 A
-as specified in the USB Battery Charging Specifications [<a href="http://www.usb.org/developers/docs/devclass_docs/USB_Battery_Charging_1.2.pdf">Resources, 99</a>].</li>
+as specified in the USB Battery Charging Specifications [<a href="http://www.usb.org/developers/docs/devclass_docs/USB_Battery_Charging_1.2.pdf">Resources, 120</a>].</li>
 </ul>
 
 <h2 id="7_8_audio">7.8. Audio</h2>
@@ -4542,7 +4543,7 @@ declare android.hardware.audio.output.</p>
 
 
 <p>In order to be compatible with the headsets and other audio accessories using
-the 3.5mm audio plug across the Android ecosystem [<a href="http://source.android.com/accessories/headset-spec.html">Resources, 101</a>], if a device implementation includes one or more analog audio ports, at least
+the 3.5mm audio plug across the Android ecosystem [<a href="http://source.android.com/accessories/headset-spec.html">Resources, 122</a>], if a device implementation includes one or more analog audio ports, at least
 one of the audio port(s) SHOULD be a 4 conductor 3.5mm audio jack. If a device
 implementation has a 4 conductor 3.5mm audio jack, it:</p>
 
@@ -4571,7 +4572,7 @@ audio plug:
   </ul></li>
   <li>MUST trigger ACTION_HEADSET_PLUG upon a plug insert, but only after all
 contacts on plug are touching their relevant segments on the jack.</li>
-  <li>MUST be capable of driving at least 150mV +/- 10% of output voltage on a 32 Ohm
+  <li>MUST be capable of driving at least 150mV &plusmn; 10% of output voltage on a 32 Ohm
 speaker impedance.</li>
   <li>MUST have a microphone bias voltage between 1.8V ~ 2.9V.</li>
 </ul>
@@ -4602,7 +4603,7 @@ API as follows:
   </li>
 </ul>
 
-<h1 id="8_performance_compatibility">8. Performance and Power</h1>
+<h1 id="8_performance_power">8. Performance and Power</h1>
 
 
 <p>Some minimum performance and power criteria are critical to the user experience
@@ -4664,7 +4665,7 @@ of the application. Therefore, device implementations:</p>
       <li>MUST provide a per-component power profile that defines the current consumption
         value for each hardware component and the approximate battery drain caused by the
         components over time as documented in the Android Open Source Project site [<a
-href="http://source.android.com/devices/tech/power/values.html">Resources, XX</a>].</li>
+href="http://source.android.com/devices/tech/power/values.html">Resources, 123</a>].</li>
       <li>MUST report all power consumption values in milliampere hours (mAh)</li>
       <li>SHOULD be attributed to the hardware component itself if unable to
         attribute hardware component power usage to an application.</li>
@@ -4675,11 +4676,11 @@ href="http://source.android.com/devices/tech/power/values.html">Resources, XX</a
   </li>
   <li>MUST make this power usage available via the <code>adb shell dumpsys
     batterystats</code> shell command to the app developer [<a
-href="http://source.android.com/devices/tech/power/batterystats.html">Resources,XX</a>].</li>
+href="http://source.android.com/devices/tech/power/batterystats.html">Resources, 124</a>].</li>
   <li>MUST honor the android.intent.action.POWER_USAGE_SUMMARY intent and display
     a settings menu that shows this power usage [<a
 href="http://developer.android.com/reference/android/content/Intent.html#ACTION_POWER_USAGE_SUMMARY">Resources,
-XX</a>].</li>
+125</a>].</li>
 </ul>
 
 <h1 id="9_security_model_compatibility">9. Security Model Compatibility</h1>
@@ -4687,7 +4688,7 @@ XX</a>].</li>
 
 <p>Device implementations MUST implement a security model consistent with the
 Android platform security model as defined in Security and Permissions
-reference document in the APIs [<a href="http://developer.android.com/guide/topics/security/permissions.html">Resources, 102</a>] in the Android developer documentation. Device implementations MUST support
+reference document in the APIs [<a href="http://developer.android.com/guide/topics/security/permissions.html">Resources, 126</a>] in the Android developer documentation. Device implementations MUST support
 installation of self-signed applications without requiring any additional
 permissions/certificates from any third parties/authorities. Specifically,
 compatible devices MUST support the security mechanisms described in the follow
@@ -4697,7 +4698,7 @@ subsections.</p>
 
 
 <p>Device implementations MUST support the Android permissions model as defined in
-the Android developer documentation [<a href="http://developer.android.com/guide/topics/security/permissions.html">Resources, 102</a>]. Specifically, implementations MUST enforce each permission defined as
+the Android developer documentation [<a href="http://developer.android.com/guide/topics/security/permissions.html">Resources, 126</a>]. Specifically, implementations MUST enforce each permission defined as
 described in the SDK documentation; no permissions may be omitted, altered, or
 ignored. Implementations MAY add additional permissions, provided the new
 permission ID strings are not in the android.* namespace.</p>
@@ -4726,13 +4727,13 @@ runtime permissions.</li>
 which each application runs as a unique Unixstyle UID and in a separate
 process. Device implementations MUST support running multiple applications as
 the same Linux user ID, provided that the applications are properly signed and
-constructed, as defined in the Security and Permissions reference [<a href="http://developer.android.com/guide/topics/security/permissions.html">Resources, 102</a>].</p>
+constructed, as defined in the Security and Permissions reference [<a href="http://developer.android.com/guide/topics/security/permissions.html">Resources, 126</a>].</p>
 
 <h2 id="9_3_filesystem_permissions">9.3. Filesystem Permissions</h2>
 
 
 <p>Device implementations MUST support the Android file access permissions model
-as defined in the Security and Permissions reference [<a href="http://developer.android.com/guide/topics/security/permissions.html">Resources, 102</a>].</p>
+as defined in the Security and Permissions reference [<a href="http://developer.android.com/guide/topics/security/permissions.html">Resources, 126</a>].</p>
 
 <h2 id="9_4_alternate_execution_environments">9.4. Alternate Execution Environments</h2>
 
@@ -4791,8 +4792,8 @@ installing any application using that runtime.</p>
 
 
 <p>Android includes support for multiple users and provides support for full user
-isolation [<a href="http://developer.android.com/reference/android/os/UserManager.html">Resources, 103]</a>. Device implementations MAY enable multiple users, but when enabled MUST meet
-the following requirements related to multi-user support [<a href="http://source.android.com/devices/storage/">Resources, 104</a>]:</p>
+isolation [<a href="http://developer.android.com/reference/android/os/UserManager.html">Resources, 127</a>]. Device implementations MAY enable multiple users, but when enabled MUST meet
+the following requirements related to multi-user support [<a href="http://source.android.com/devices/storage/traditional.html">Resources, 128</a>]:</p>
 
 <ul>
   <li>Device implementations that do not declare the android.hardware.telephony
@@ -4807,7 +4808,7 @@ implementation of controls to enable /disable other users from accessing the
 voice calls and SMS.</li>
   <li>Device implementations MUST, for each user, implement a security model
 consistent with the Android platform security model as defined in Security and
-Permissions reference document in the APIs [<a href="http://developer.android.com/guide/topics/security/permissions.html">Resources, 102</a>].</li>
+Permissions reference document in the APIs [<a href="http://developer.android.com/guide/topics/security/permissions.html">Resources, 126</a>].</li>
   <li>Each user instance on an Android device MUST have separate and isolated
 external storage directories. Device implementations MAY store multiple users'
 data on the same volume or filesystem. However, the device implementation MUST
@@ -4821,14 +4822,14 @@ only to the system. As this will make the media unreadable by a host PC, device
 implementations will be required to switch to MTP or a similar system to
 provide host PCs with access to the current user&rsquo;s data. Accordingly, device
 implementations MAY but SHOULD NOT enable multi-user if they use removable
-media [<a href="http://developer.android.com/reference/android/os/Environment.html">Resources, 105</a>] for primary external storage.</li>
+media [<a href="http://developer.android.com/reference/android/os/Environment.html">Resources, 129</a>] for primary external storage.</li>
 </ul>
 
 <h2 id="9_6_premium_sms_warning">9.6. Premium SMS Warning</h2>
 
 
 <p>Android includes support for warning users of any outgoing premium SMS message
-[<a href="http://en.wikipedia.org/wiki/Short_code">Resources, 106</a>] . Premium SMS messages are text messages sent to a service registered with a
+[<a href="http://en.wikipedia.org/wiki/Short_code">Resources, 130</a>]. Premium SMS messages are text messages sent to a service registered with a
 carrier that may incur a charge to the user. Device implementations that
 declare support for android.hardware.telephony MUST warn users before sending a
 SMS message to numbers identified by regular expressions defined in
@@ -4902,10 +4903,10 @@ access to the contents of the shared storage over the USB port.</p>
 
 <p>If the device implementation supports a secure lock screen reporting "<code>true</code>"
 for KeyguardManager.isDeviceSecure()
-[<a href="http://developer.android.com/reference/android/app/KeyguardManager.html#isDeviceSecure()">Resources, XX</a>],
+[<a href="http://developer.android.com/reference/android/app/KeyguardManager.html#isDeviceSecure()">Resources, 131</a>],
 and is not a device with restricted memory as reported through the
 ActivityManager.isLowRamDevice() method, then the device MUST support full-disk encryption
-[<a href="http://source.android.com/devices/tech/security/encryption/index.html">Resources, 107</a>]
+[<a href="http://source.android.com/devices/tech/security/encryption/index.html">Resources, 132</a>]
 of the application private data (/data partition), as well as the application
 shared storage partition (/sdcard partition) if it is a permanent, non-removable
 part of the device.</p>
@@ -4960,12 +4961,12 @@ update and thus are exempted from the requirement.</p>
 <h2 id="9_11_keys_and_credentials">9.11. Keys and Credentials</h2>
 
 <p>The Android Keystore System
-[<a href="https://developer.android.com/training/articles/keystore.html">Resources, XX</a>]
+[<a href="https://developer.android.com/training/articles/keystore.html">Resources, 133</a>]
 allows app developers to store cryptographic keys in a container and use them in cryptographic
 operations through the KeyChain API
-[<a href="https://developer.android.com/reference/android/security/KeyChain.html">Resources, XX</a>]
+[<a href="https://developer.android.com/reference/android/security/KeyChain.html">Resources, 134</a>]
 or the Keystore API
-  [<a href="https://developer.android.com/reference/java/security/KeyStore.html">Resources, XX</a>].
+  [<a href="https://developer.android.com/reference/java/security/KeyStore.html">Resources, 135</a>].
 </p>
 
 <p>All Android device implementations MUST meet the following requirements:</p>
@@ -4986,7 +4987,7 @@ than 8,192 keys to be imported.</li>
     allow the authentication-bound keys to be used. The upstream Android Open Source Project
     provides the Gatekeeper Hardware Abstraction Layer (HAL) that can be used to satisfy this
     requirement
-    [<a href="http://source.android.com/devices/tech/security/authentication/gatekeeper.html">Resources, XX</a>].</li>
+    [<a href="http://source.android.com/devices/tech/security/authentication/gatekeeper.html">Resources, 136</a>].</li>
   </ul>
 </li>
 </ul>
@@ -5019,7 +5020,7 @@ incompatibilities requiring rework and potential device updates.</p>
 <h2 id="10_1_compatibility_test_suite">10.1. Compatibility Test Suite</h2>
 
 
-<p>Device implementations MUST pass the Android Compatibility Test Suite (CTS) [<a href="http://source.android.com/compatibility/index.html">Resources, 108</a>] available from the Android Open Source Project, using the final shipping
+<p>Device implementations MUST pass the Android Compatibility Test Suite (CTS) [<a href="http://source.android.com/compatibility/index.html">Resources, 137</a>] available from the Android Open Source Project, using the final shipping
 software on the device. Additionally, device implementers SHOULD use the
 reference implementation in the Android Open Source tree as much as possible,
 and MUST ensure compatibility in cases of ambiguity in CTS and for any
@@ -5103,7 +5104,7 @@ installation of system updates. To facilitate this, the system update subsystem
 for devices that report android.software.device_admin MUST implement the behavior
 described in the SystemUpdatePolicy class
 [<a href="http://developer.android.com/reference/android/app/admin/SystemUpdatePolicy.html">
-Resources, XX</a>].</p>
+Resources, 138</a>].</p>
 
 <h1 id="12_document_changelog">12. Document Changelog</h1>
 
@@ -5296,267 +5297,291 @@ switching</td>
 <h1 id="13_contact_us">13. Contact Us</h1>
 
 
-<p>You can join the android-compatibility forum <a href="https://groups.google.com/forum/#!forum/android-compatibility">[Resources, 109</a>] and ask for clarifications or bring up any issues that you think the document
+<p>You can join the android-compatibility forum <a href="https://groups.google.com/forum/#!forum/android-compatibility">[Resources, 139</a>] and ask for clarifications or bring up any issues that you think the document
 does not cover.</p>
 
 <h1 id="14_resources">14. Resources</h1>
-
 
 <p>1. IETF RFC2119 Requirement Levels: <a href="http://www.ietf.org/rfc/rfc2119.txt">http://www.ietf.org/rfc/rfc2119.txt</a></p>
 
 <p>2. Android Open Source Project: <a href="http://source.android.com/">http://source.android.com/</a></p>
 
-<p>3. Android Television features: <a href="http://developer.android.com/reference/android/content/pm/PackageManager.html#FEATURE_LEANBACK">http://developer.android.com/reference/android/content/pm/PackageManager.html#FEATURE_LEANBACK</a> </p>
+<p>3. Android Television features: <a href="http://developer.android.com/reference/android/content/pm/PackageManager.html#FEATURE_LEANBACK">http://developer.android.com/reference/android/content/pm/PackageManager.html#FEATURE_LEANBACK</a></p>
 
 <p>4. Android Watch feature: <a href="http://developer.android.com/reference/android/content/res/Configuration.html#UI_MODE_TYPE_WATCH">http://developer.android.com/reference/android/content/res/Configuration.html#UI_MODE_TYPE_WATCH</a></p>
 
-<p>5. API definitions and documentation: <a href="http://developer.android.com/reference/packages.html">http://developer.android.com/reference/packages.html</a></p>
+<p>5. Android UI_MODE_TYPE_CAR API: <a href="http://developer.android.com/reference/android/content/res/Configuration.html#UI_MODE_TYPE_CAR">http://developer.android.com/reference/android/content/res/Configuration.html#UI_MODE_TYPE_CAR</a></p>
 
-<p>6. Android Permissions reference: <a href="http://developer.android.com/reference/android/Manifest.permission.html">http://developer.android.com/reference/android/Manifest.permission.html</a></p>
+<p>6. API definitions and documentation: <a href="http://developer.android.com/reference/packages.html">http://developer.android.com/reference/packages.html</a></p>
 
-<p>7. android.os.Build reference: <a href="http://developer.android.com/reference/android/os/Build.html">http://developer.android.com/reference/android/os/Build.html</a></p>
+<p>7. Android Permissions reference: <a href="http://developer.android.com/reference/android/Manifest.permission.html">http://developer.android.com/reference/android/Manifest.permission.html</a></p>
 
-<p>8. Android ANDROID_VERSION allowed version strings: <a href="http://source.android.com/compatibility/ANDROID_VERSION/versions.html">http://source.android.com/compatibility/ANDROID_VERSION/versions.html</a></p>
+<p>8. android.os.Build reference: <a href="http://developer.android.com/reference/android/os/Build.html">http://developer.android.com/reference/android/os/Build.html</a></p>
 
-<p>9. Telephony Provider: <a href="http://developer.android.com/reference/android/provider/Telephony.html">http://developer.android.com/reference/android/provider/Telephony.html</a></p>
+<p>9. Android ANDROID_VERSION allowed version strings: <a href="http://source.android.com/compatibility/ANDROID_VERSION/versions.html">http://source.android.com/compatibility/ANDROID_VERSION/versions.html</a></p>
 
-<p>10. Host-based Card Emulation: <a href="http://developer.android.com/guide/topics/connectivity/nfc/hce.html">http://developer.android.com/guide/topics/connectivity/nfc/hce.html</a></p>
+<p>10. Android Developer Settings: <a href="http://developer.android.com/reference/android/provider/Settings.html">http://developer.android.com/reference/android/provider/Settings.html</a></p>
 
-<p>11. Android Extension Pack: <a href="http://developer.android.com/guide/topics/graphics/opengl.html#aep">http://developer.android.com/guide/topics/graphics/opengl.html#aep</a> </p>
+<p>11. Telephony Provider: <a href="http://developer.android.com/reference/android/provider/Telephony.html">http://developer.android.com/reference/android/provider/Telephony.html</a></p>
 
-<p>12. android.webkit.WebView class: <a href="http://developer.android.com/reference/android/webkit/WebView.html">http://developer.android.com/reference/android/webkit/WebView.html</a></p>
+<p>12. Android NDK ABI Management: <a href="https://developer.android.com/ndk/guides/abis.html">https://developer.android.com/ndk/guides/abis.html</a></p>
 
-<p>13. WebView compatibility: <a href="http://www.chromium.org/">http://www.chromium.org/</a></p>
+<p>13. Advanced SIMD architecture: <a href="http://infocenter.arm.com/help/index.jsp?topic=/com.arm.doc.ddi0388f/Beijfcja.html">http://infocenter.arm.com/help/index.jsp?topic=/com.arm.doc.ddi0388f/Beijfcja.html</a></p>
 
-<p>14. HTML5: <a href="http://html.spec.whatwg.org/multipage/">http://html.spec.whatwg.org/multipage/</a></p>
+<p>14. Android Extension Pack: <a href="http://developer.android.com/guide/topics/graphics/opengl.html#aep">http://developer.android.com/guide/topics/graphics/opengl.html#aep</a></p>
 
-<p>15. HTML5 offline capabilities:<a href="http://dev.w3.org/html5/spec/Overview.html#offline"> http://dev.w3.org/html5/spec/Overview.html#offline</a></p>
+<p>15. android.webkit.WebView class: <a href="http://developer.android.com/reference/android/webkit/WebView.html">http://developer.android.com/reference/android/webkit/WebView.html</a></p>
 
-<p>16. HTML5 video tag: <a href="http://dev.w3.org/html5/spec/Overview.html#video">http://dev.w3.org/html5/spec/Overview.html#video</a></p>
+<p>16. WebView compatibility: <a href="http://www.chromium.org/">http://www.chromium.org/</a></p>
 
-<p>17. HTML5/W3C geolocation API: <a href="http://www.w3.org/TR/geolocation-API/">http://www.w3.org/TR/geolocation-API/</a></p>
+<p>17. HTML5: <a href="http://html.spec.whatwg.org/multipage/">http://html.spec.whatwg.org/multipage/</a></p>
 
-<p>18. HTML5/W3C webstorage API: <a href="http://www.w3.org/TR/webstorage/">http://www.w3.org/TR/webstorage/</a></p>
+<p>18. HTML5 offline capabilities:<a href="http://dev.w3.org/html5/spec/Overview.html#offline"> http://dev.w3.org/html5/spec/Overview.html#offline</a></p>
 
-<p>19. HTML5/W3C IndexedDB API: <a href="http://www.w3.org/TR/IndexedDB/">http://www.w3.org/TR/IndexedDB/</a></p>
+<p>19. HTML5 video tag: <a href="http://dev.w3.org/html5/spec/Overview.html#video">http://dev.w3.org/html5/spec/Overview.html#video</a></p>
 
-<p>20. Dalvik Executable Format and bytecode specification: available in the
+<p>20. HTML5/W3C geolocation API: <a href="http://www.w3.org/TR/geolocation-API/">http://www.w3.org/TR/geolocation-API/</a></p>
+
+<p>21. HTML5/W3C webstorage API: <a href="http://www.w3.org/TR/webstorage/">http://www.w3.org/TR/webstorage/</a></p>
+
+<p>22. HTML5/W3C IndexedDB API: <a href="http://www.w3.org/TR/IndexedDB/">http://www.w3.org/TR/IndexedDB/</a></p>
+
+<p>23. Dalvik Executable Format and bytecode specification: available in the
 Android source code, at dalvik/docs</p>
 
-<p>21. AppWidgets: <a href="http://developer.android.com/guide/practices/ui_guidelines/widget_design.html">http://developer.android.com/guide/practices/ui_guidelines/widget_design.html</a></p>
+<p>24. AppWidgets: <a href="http://developer.android.com/guide/practices/ui_guidelines/widget_design.html">http://developer.android.com/guide/practices/ui_guidelines/widget_design.html</a></p>
 
-<p>22. Notifications: <a href="http://developer.android.com/guide/topics/ui/notifiers/notifications.html">http://developer.android.com/guide/topics/ui/notifiers/notifications.html</a></p>
+<p>25. Notifications: <a href="http://developer.android.com/guide/topics/ui/notifiers/notifications.html">http://developer.android.com/guide/topics/ui/notifiers/notifications.html</a></p>
 
-<p>23. Application Resources: <a href="https://developer.android.com/guide/topics/resources/available-resources.html">https://developer.android.com/guide/topics/resources/available-resources.html</a></p>
+<p>26. Application Resources: <a href="https://developer.android.com/guide/topics/resources/available-resources.html">https://developer.android.com/guide/topics/resources/available-resources.html</a></p>
 
-<p>24. Status Bar icon style guide: <a href="http://developer.android.com/design/style/iconography.html">http://developer.android.com/design/style/iconography.html</a></p>
+<p>27. Status Bar icon style guide: <a href="http://developer.android.com/design/style/iconography.html">http://developer.android.com/design/style/iconography.html</a></p>
 
-<p>25. Notifications Resources: <a href="https://developer.android.com/design/patterns/notifications.html">https://developer.android.com/design/patterns/notifications.html</a> </p>
+<p>28. Notifications Resources: <a href="https://developer.android.com/design/patterns/notifications.html">https://developer.android.com/design/patterns/notifications.html</a></p>
 
-<p>26. Search Manager: <a href="http://developer.android.com/reference/android/app/SearchManager.html">http://developer.android.com/reference/android/app/SearchManager.html</a> </p>
+<p>29. Search Manager: <a href="http://developer.android.com/reference/android/app/SearchManager.html">http://developer.android.com/reference/android/app/SearchManager.html</a></p>
 
-<p>27. Toasts: <a href="http://developer.android.com/reference/android/widget/Toast.html">http://developer.android.com/reference/android/widget/Toast.html</a></p>
+<p>30. Action Assist: <a href="http://developer.android.com/reference/android/content/Intent.html#ACTION_ASSIST">http://developer.android.com/reference/android/content/Intent.html#ACTION_ASSIST</a></p>
 
-<p>28. Themes: <a href="http://developer.android.com/guide/topics/ui/themes.html">http://developer.android.com/guide/topics/ui/themes.html</a></p>
+<p>31. Android Assist APIs: <a href="https://developer.android.com/reference/android/app/assist/package-summary.html">https://developer.android.com/reference/android/app/assist/package-summary.html</a></p>
 
-<p>29. R.style class: <a href="http://developer.android.com/reference/android/R.style.html">http://developer.android.com/reference/android/R.style.html</a></p>
+<p>32. Toasts: <a href="http://developer.android.com/reference/android/widget/Toast.html">http://developer.android.com/reference/android/widget/Toast.html</a></p>
 
-<p>30. Material design: <a href="http://developer.android.com/reference/android/R.style.html#Theme_Material">http://developer.android.com/reference/android/R.style.html#Theme_Material</a> </p>
+<p>33. Themes: <a href="http://developer.android.com/guide/topics/ui/themes.html">http://developer.android.com/guide/topics/ui/themes.html</a></p>
 
-<p>31. Live Wallpapers: <a href="http://developer.android.com/reference/android/service/wallpaper/WallpaperService.html">http://developer.android.com/reference/android/service/wallpaper/WallpaperService.html</a></p>
+<p>34. R.style class: <a href="http://developer.android.com/reference/android/R.style.html">http://developer.android.com/reference/android/R.style.html</a></p>
 
-<p>32. Overview screen resources: <a href="http://developer.android.com/guide/components/recents.html">http://developer.android.com/guide/components/recents.html</a> </p>
+<p>35. Material design: <a href="http://developer.android.com/reference/android/R.style.html#Theme_Material">http://developer.android.com/reference/android/R.style.html#Theme_Material</a></p>
 
-<p>33. Screen pinning: <a href="https://developer.android.com/about/versions/android-5.0.html#ScreenPinning">https://developer.android.com/about/versions/android-5.0.html#ScreenPinning</a> </p>
+<p>36. Live Wallpapers: <a href="http://developer.android.com/reference/android/service/wallpaper/WallpaperService.html">http://developer.android.com/reference/android/service/wallpaper/WallpaperService.html</a></p>
 
-<p>34. Input methods: <a href="http://developer.android.com/guide/topics/text/creating-input-method.html">http://developer.android.com/guide/topics/text/creating-input-method.html</a> </p>
+<p>37. Overview screen resources: <a href="http://developer.android.com/guide/components/recents.html">http://developer.android.com/guide/components/recents.html</a></p>
 
-<p>35. Media Notification: <a href="https://developer.android.com/reference/android/app/Notification.MediaStyle.html">https://developer.android.com/reference/android/app/Notification.MediaStyle.html</a></p>
+<p>38. Screen pinning: <a href="https://developer.android.com/about/versions/android-5.0.html#ScreenPinning">https://developer.android.com/about/versions/android-5.0.html#ScreenPinning</a></p>
 
-<p>36. Dreams: <a href="http://developer.android.com/reference/android/service/dreams/DreamService.html">http://developer.android.com/reference/android/service/dreams/DreamService.html</a></p>
+<p>39. Input methods: <a href="http://developer.android.com/guide/topics/text/creating-input-method.html">http://developer.android.com/guide/topics/text/creating-input-method.html</a></p>
 
-<p>37. Settings.Secure LOCATION_MODE:</p>
+<p>40. Media Notification: <a href="https://developer.android.com/reference/android/app/Notification.MediaStyle.html">https://developer.android.com/reference/android/app/Notification.MediaStyle.html</a></p>
 
-<p><a href="http://developer.android.com/reference/android/provider/Settings.Secure.html#LOCATION_MODE">http://developer.android.com/reference/android/provider/Settings.Secure.html#LOCATION_MODE</a></p>
+<p>41. Dreams: <a href="http://developer.android.com/reference/android/service/dreams/DreamService.html">http://developer.android.com/reference/android/service/dreams/DreamService.html</a></p>
 
-<p>38. Unicode 6.1.0: <a href="http://www.unicode.org/versions/Unicode6.1.0/">http://www.unicode.org/versions/Unicode6.1.0/</a></p>
+<p>42. Settings.Secure LOCATION_MODE: <a href="http://developer.android.com/reference/android/provider/Settings.Secure.html#LOCATION_MODE">http://developer.android.com/reference/android/provider/Settings.Secure.html#LOCATION_MODE</a></p>
 
-<p>39. Android Device Administration: <a href="http://developer.android.com/guide/topics/admin/device-admin.html">http://developer.android.com/guide/topics/admin/device-admin.html</a></p>
+<p>43. Unicode 6.1.0: <a href="http://www.unicode.org/versions/Unicode6.1.0/">http://www.unicode.org/versions/Unicode6.1.0/</a></p>
 
-<p>40. DevicePolicyManager reference: <a href="http://developer.android.com/reference/android/app/admin/DevicePolicyManager.html">http://developer.android.com/reference/android/app/admin/DevicePolicyManager.html</a></p>
+<p>44. Android Device Administration: <a href="http://developer.android.com/guide/topics/admin/device-admin.html">http://developer.android.com/guide/topics/admin/device-admin.html</a></p>
 
-<p>41. Android Device Owner App:</p>
+<p>45. DevicePolicyManager reference: <a href="http://developer.android.com/reference/android/app/admin/DevicePolicyManager.html">http://developer.android.com/reference/android/app/admin/DevicePolicyManager.html</a></p>
 
-<p><a href="http://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#isDeviceOwnerApp(java.lang.String)">http://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#isDeviceOwnerApp(java.lang.String)</a></p>
-<p>XX. Android Device Owner Provisioning Flow:</p>
+<p>46. Device Owner App: <a href="http://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#isDeviceOwnerApp(java.lang.String)">http://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#isDeviceOwnerApp(java.lang.String)</a></p>
 
-<p><a href="http://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#ACTION_PROVISION_MANAGED_DEVICE">http://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#ACTION_PROVISION_MANAGED_DEVICE</a></p>
-<p>XX. Device Owner Provisioning via NFC:</p>
 
-<p><a href="https://source.android.com/devices/tech/admin/provision.html#device_owner_provisioning_via_nfc">https://source.android.com/devices/tech/admin/provision.html#device_owner_provisioning_via_nfc</a></p>
-<p>XX. Android Managed Profile Provisioning flow:</p>
+<p>47. Android Device Owner Provisioning Flow: <a href="http://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#ACTION_PROVISION_MANAGED_DEVICE">http://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#ACTION_PROVISION_MANAGED_DEVICE</a></p>
 
-<p><a href="http://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#ACTION_PROVISION_MANAGED_PROFILE">http://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#ACTION_PROVISION_MANAGED_PROFILE</a></p>
+<p>48. Device Owner Provisioning via NFC: <a href="https://source.android.com/devices/tech/admin/provision.html#device_owner_provisioning_via_nfc">https://source.android.com/devices/tech/admin/provision.html#device_owner_provisioning_via_nfc</a></p>
 
-<p>XX. Android Profile Owner App:</p>
+<p>49. Android Profile Owner App:<a href="http://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#isProfileOwnerApp(java.lang.String)">http://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#isProfileOwnerApp(java.lang.String)</a></p>
 
-<p><a href="http://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#isProfileOwnerApp(java.lang.String)">http://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#isProfileOwnerApp(java.lang.String)</a></p>
+<p>50. Android Managed Profile Provisioning flow: <a href="http://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#ACTION_PROVISION_MANAGED_PROFILE">http://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#ACTION_PROVISION_MANAGED_PROFILE</a></p>
 
-<p>XX. Managed profile provisioning intent</p>
+<p>51. Android Accessibility Service APIs: <a href="http://developer.android.com/reference/android/accessibilityservice/AccessibilityService.html">http://developer.android.com/reference/android/accessibilityservice/AccessibilityService.html</a></p>
 
-<p><a href="http://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#ACTION_PROVISION_MANAGED_PROFILE">http://developer.android.com/reference/android/app/admin/DevicePolicyManager.html#ACTION_PROVISION_MANAGED_PROFILE</a></p>
+<p>52. Android Accessibility APIs: <a href="http://developer.android.com/reference/android/view/accessibility/package-summary.html">http://developer.android.com/reference/android/view/accessibility/package-summary.html</a></p>
 
-<p>42. Android Accessibility Service APIs: <a href="http://developer.android.com/reference/android/accessibilityservice/AccessibilityService.html">http://developer.android.com/reference/android/accessibilityservice/AccessibilityService.html</a></p>
+<p>53. Eyes Free project: <a href="http://code.google.com/p/eyes-free/">http://code.google.com/p/eyes-free</a></p>
 
-<p>43. Android Accessibility APIs: <a href="http://developer.android.com/reference/android/view/accessibility/package-summary.html">http://developer.android.com/reference/android/view/accessibility/package-summary.html</a></p>
+<p>54. Text-To-Speech APIs: <a href="http://developer.android.com/reference/android/speech/tts/package-summary.html">http://developer.android.com/reference/android/speech/tts/package-summary.html</a></p>
 
-<p>44. Eyes Free project: <a href="http://code.google.com/p/eyes-free/">http://code.google.com/p/eyes-free</a></p>
+<p>55. Television Input Framework: <a href="https://source.android.com/devices/tv/index.html">https://source.android.com/devices/tv/index.html</a></p>
 
-<p>45. Text-To-Speech APIs: <a href="http://developer.android.com/reference/android/speech/tts/package-summary.html">http://developer.android.com/reference/android/speech/tts/package-summary.html</a></p>
+<p>56. TV App channels: <a href="http://developer.android.com/reference/android/media/tv/TvContract.Channels.html">http://developer.android.com/reference/android/media/tv/TvContract.Channels.html</a></p>
 
-<p>46. Television Input Framework: <a href="https://source.android.com/devices/tv/index.html">https://source.android.com/devices/tv/index.html</a></p>
+<p>57. Third-party TV inputs: <a href="https://source.android.com/devices/tv/index.html#third-party_input_example">https://source.android.com/devices/tv/index.html#third-party_input_example</a></p>
 
-<p>47. Reference tool documentation (for adb, aapt, ddms, systrace): <a href="http://developer.android.com/tools/help/index.html">http://developer.android.com/tools/help/index.html</a></p>
+<p>58. TV inputs: <a href="https://source.android.com/devices/tv/index.html#tv_inputs">https://source.android.com/devices/tv/index.html#tv_inputs</a></p>
 
-<p>48. Android apk file description: <a href="http://developer.android.com/guide/components/fundamentals.html">http://developer.android.com/guide/components/fundamentals.html </a></p>
+<p>59. TV channel EPG fields: <a href="https://developer.android.com/reference/android/media/tv/TvContract.Programs.html">https://developer.android.com/reference/android/media/tv/TvContract.Programs.html</a></p>
 
-<p>49. Manifest files: <a href="http://developer.android.com/guide/topics/manifest/manifest-intro.html">http://developer.android.com/guide/topics/manifest/manifest-intro.html</a></p>
+<p>60. TV input app linking: <a href="http://developer.android.com/reference/android/media/tv/TvContract.Channels.html#COLUMN_APP_LINK_INTENT_URI">http://developer.android.com/reference/android/media/tv/TvContract.Channels.html#COLUMN_APP_LINK_INTENT_URI</a></p>
 
-<p>50. Android Media Formats: <a href="http://developer.android.com/guide/appendix/media-formats.html">http://developer.android.com/guide/appendix/media-formats.html</a></p>
+<p>61. Reference tool documentation (for adb, aapt, ddms, systrace): <a href="http://developer.android.com/tools/help/index.html">http://developer.android.com/tools/help/index.html</a></p>
 
-<p>51. RTC Hardware Coding Requirements: <a href="http://www.webmproject.org/hardware/rtc-coding-requirements/">http://www.webmproject.org/hardware/rtc-coding-requirements/</a></p>
+<p>62. Android apk file description: <a href="http://developer.android.com/guide/components/fundamentals.html">http://developer.android.com/guide/components/fundamentals.html</a></p>
 
-<p>52. AudioEffect API: <a href="http://developer.android.com/reference/android/media/audiofx/AudioEffect.html">http://developer.android.com/reference/android/media/audiofx/AudioEffect.html</a></p>
+<p>63. Manifest files: <a href="http://developer.android.com/guide/topics/manifest/manifest-intro.html">http://developer.android.com/guide/topics/manifest/manifest-intro.html</a></p>
 
-<p>53. Android android.content.pm.PackageManager class and Hardware Features List:</p>
+<p>64. Android Media Formats: <a href="http://developer.android.com/guide/appendix/media-formats.html">http://developer.android.com/guide/appendix/media-formats.html</a></p>
 
-<p><a href="http://developer.android.com/reference/android/content/pm/PackageManager.html">http://developer.android.com/reference/android/content/pm/PackageManager.html</a></p>
+<p>65. Android MediaCodecList API: <a href="http://developer.android.com/reference/android/media/MediaCodecList.html">http://developer.android.com/reference/android/media/MediaCodecList.html</a></p>
 
-<p>54. HTTP Live Streaming Draft Protocol: <a href="http://tools.ietf.org/html/draft-pantos-http-live-streaming-03">http://tools.ietf.org/html/draft-pantos-http-live-streaming-03</a></p>
+<p>66. Android CamcorderProfile API: <a href="http://developer.android.com/reference/android/media/CamcorderProfile.html">http://developer.android.com/reference/android/media/CamcorderProfile.html</a></p>
 
-<p>55. ADB: <a href="http://developer.android.com/tools/help/adb.html">http://developer.android.com/tools/help/adb.html</a> </p>
+<p>67. WebM project: <a href="http://www.webmproject.org/">http://www.webmproject.org/</a></p>
 
-<p>56. Dumpsys: <a href="https://source.android.com/devices/input/diagnostics.html">https://source.android.com/devices/input/diagnostics.html</a> </p>
+<p>68. RTC Hardware Coding Requirements: <a href="http://www.webmproject.org/hardware/rtc-coding-requirements/">http://www.webmproject.org/hardware/rtc-coding-requirements/</a></p>
 
-<p>57. DDMS: <a href="http://developer.android.com/tools/debugging/ddms.html">http://developer.android.com/tools/debugging/ddms.html</a> </p>
+<p>69. AudioEffect API: <a href="http://developer.android.com/reference/android/media/audiofx/AudioEffect.html">http://developer.android.com/reference/android/media/audiofx/AudioEffect.html</a></p>
 
-<p>58. Monkey testing tool: <a href="http://developer.android.com/tools/help/monkey.html">http://developer.android.com/tools/help/monkey.html</a> </p>
+<p>70. Android android.content.pm.PackageManager class and Hardware Features List: <a href="http://developer.android.com/reference/android/content/pm/PackageManager.html">http://developer.android.com/reference/android/content/pm/PackageManager.html</a></p>
 
-<p>59. SysyTrace tool: <a href="http://developer.android.com/tools/help/systrace.html">http://developer.android.com/tools/help/systrace.html</a></p>
+<p>71. HTTP Live Streaming Draft Protocol: <a href="http://tools.ietf.org/html/draft-pantos-http-live-streaming-03">http://tools.ietf.org/html/draft-pantos-http-live-streaming-03</a></p>
 
-<p>60. Android Application Development-Related Settings:</p>
+<p>72. ADB: <a href="http://developer.android.com/tools/help/adb.html">http://developer.android.com/tools/help/adb.html</a></p>
 
-<p><a href="http://developer.android.com/reference/android/provider/Settings.html#ACTION_APPLICATION_DEVELOPMENT_SETTINGS">http://developer.android.com/reference/android/provider/Settings.html#ACTION_APPLICATION_DEVELOPMENT_SETTINGS</a></p>
+<p>73. Dumpsys: <a href="https://source.android.com/devices/input/diagnostics.html">https://source.android.com/devices/input/diagnostics.html</a></p>
 
-<p>61. Supporting Multiple Screens: <a href="http://developer.android.com/guide/practices/screens_support.html">http://developer.android.com/guide/practices/screens_support.html</a></p>
+<p>74. DDMS: <a href="http://developer.android.com/tools/debugging/ddms.html">http://developer.android.com/tools/debugging/ddms.html</a></p>
 
-<p>62. android.util.DisplayMetrics: <a href="http://developer.android.com/reference/android/util/DisplayMetrics.html">http://developer.android.com/reference/android/util/DisplayMetrics.html</a></p>
+<p>75. Monkey testing tool: <a href="http://developer.android.com/tools/help/monkey.html">http://developer.android.com/tools/help/monkey.html</a></p>
 
-<p>63. RenderScript: <a href="http://developer.android.com/guide/topics/renderscript/">http://developer.android.com/guide/topics/renderscript/</a></p>
+<p>76. SysyTrace tool: <a href="http://developer.android.com/tools/help/systrace.html">http://developer.android.com/tools/help/systrace.html</a></p>
 
-<p>64. Android extension pack for OpenGL ES: <a href="https://developer.android.com/reference/android/opengl/GLES31Ext.html">https://developer.android.com/reference/android/opengl/GLES31Ext.html</a> </p>
+<p>77. Android Application Development-Related Settings: <a href="http://developer.android.com/reference/android/provider/Settings.html#ACTION_APPLICATION_DEVELOPMENT_SETTINGS">http://developer.android.com/reference/android/provider/Settings.html#ACTION_APPLICATION_DEVELOPMENT_SETTINGS</a></p>
 
-<p>65. Hardware Acceleration: <a href="http://developer.android.com/guide/topics/graphics/hardware-accel.html">http://developer.android.com/guide/topics/graphics/hardware-accel.html</a></p>
+<p>78. Supporting Multiple Screens: <a href="http://developer.android.com/guide/practices/screens_support.html">http://developer.android.com/guide/practices/screens_support.html</a></p>
 
-<p>66. EGL Extension-EGL_ANDROID_RECORDABLE:</p>
+<p>79. android.util.DisplayMetrics: <a href="http://developer.android.com/reference/android/util/DisplayMetrics.html">http://developer.android.com/reference/android/util/DisplayMetrics.html</a></p>
 
-<p><a href="http://www.khronos.org/registry/egl/extensions/ANDROID/EGL_ANDROID_recordable.txt">http://www.khronos.org/registry/egl/extensions/ANDROID/EGL_ANDROID_recordable.txt</a></p>
+<p>80. RenderScript: <a href="http://developer.android.com/guide/topics/renderscript/">http://developer.android.com/guide/topics/renderscript/</a></p>
 
-<p>67. Display Manager: <a href="http://developer.android.com/reference/android/hardware/display/DisplayManager.html">http://developer.android.com/reference/android/hardware/display/DisplayManager.html</a></p>
+<p>81. Android extension pack for OpenGL ES: <a href="https://developer.android.com/reference/android/opengl/GLES31Ext.html">https://developer.android.com/reference/android/opengl/GLES31Ext.html</a></p>
 
-<p>68. android.content.res.Configuration: <a href="http://developer.android.com/reference/android/content/res/Configuration.html">http://developer.android.com/reference/android/content/res/Configuration.html</a></p>
+<p>82. Hardware Acceleration: <a href="http://developer.android.com/guide/topics/graphics/hardware-accel.html">http://developer.android.com/guide/topics/graphics/hardware-accel.html</a></p>
 
-<p>69. Action Assist: <a href="http://developer.android.com/reference/android/content/Intent.html#ACTION_ASSIST">http://developer.android.com/reference/android/content/Intent.html#ACTION_ASSIST</a></p>
+<p>83. EGL Extension-EGL_ANDROID_RECORDABLE: <a href="http://www.khronos.org/registry/egl/extensions/ANDROID/EGL_ANDROID_recordable.txt">http://www.khronos.org/registry/egl/extensions/ANDROID/EGL_ANDROID_recordable.txt</a></p>
 
-<p>70. Touch Input Configuration: <a href="http://source.android.com/devices/tech/input/touch-devices.html">http://source.android.com/devices/tech/input/touch-devices.html</a></p>
+<p>84. Display Manager: <a href="http://developer.android.com/reference/android/hardware/display/DisplayManager.html">http://developer.android.com/reference/android/hardware/display/DisplayManager.html</a></p>
 
-<p>71. Motion Event API: <a href="http://developer.android.com/reference/android/view/MotionEvent.html">http://developer.android.com/reference/android/view/MotionEvent.html</a></p>
+<p>85. android.content.res.Configuration: <a href="http://developer.android.com/reference/android/content/res/Configuration.html">http://developer.android.com/reference/android/content/res/Configuration.html</a></p>
 
-<p>72. Key Event API: <a href="http://developer.android.com/reference/android/view/KeyEvent.html">http://developer.android.com/reference/android/view/KeyEvent.html</a> </p>
+<p>86. Touch Input Configuration: <a href="http://source.android.com/devices/tech/input/touch-devices.html">http://source.android.com/devices/tech/input/touch-devices.html</a></p>
 
-<p>73. Android Open Source sensors: <a href="http://source.android.com/devices/sensors/">http://source.android.com/devices/sensors</a></p>
+<p>87. Motion Event API: <a href="http://developer.android.com/reference/android/view/MotionEvent.html">http://developer.android.com/reference/android/view/MotionEvent.html</a></p>
 
-<p>74. android.hardware.SensorEvent: <a href="http://developer.android.com/reference/android/hardware/SensorEvent.html">http://developer.android.com/reference/android/hardware/SensorEvent.html</a></p>
+<p>88. Key Event API: <a href="http://developer.android.com/reference/android/view/KeyEvent.html">http://developer.android.com/reference/android/view/KeyEvent.html</a></p>
 
-<p>75. Timestamp sensor event: <a href="http://developer.android.com/reference/android/hardware/SensorEvent.html#timestamp">http://developer.android.com/reference/android/hardware/SensorEvent.html#timestamp</a></p>
+<p>89. Android Open Source sensors: <a href="http://source.android.com/devices/sensors/">http://source.android.com/devices/sensors</a></p>
 
-<p>76. Android Open Source composite sensors: <a href="http://source.android.com/devices/sensors/sensor-types.html#composite_sensor_type_summary">https://source.android.com/devices/sensors/sensor-types.html#composite_sensor_type_summary</a></p>
+<p>90. android.hardware.SensorEvent: <a href="http://developer.android.com/reference/android/hardware/SensorEvent.html">http://developer.android.com/reference/android/hardware/SensorEvent.html</a></p>
 
-<p>77. Continuous trigger mode: <a href="http://source.android.com/devices/sensors/report-modes.html#continuous">https://source.android.com/devices/sensors/report-modes.html#continuous</a></p>
+<p>91. Timestamp sensor event: <a href="http://developer.android.com/reference/android/hardware/SensorEvent.html#timestamp">http://developer.android.com/reference/android/hardware/SensorEvent.html#timestamp</a></p>
 
-<p>78. Accelerometer sensor: <a href="http://developer.android.com/reference/android/hardware/Sensor.html#TYPE_ACCELEROMETER">http://developer.android.com/reference/android/hardware/Sensor.html#TYPE_ACCELEROMETER</a></p>
+<p>92. Android Open Source composite sensors: <a href="http://source.android.com/devices/sensors/sensor-types.html#composite_sensor_type_summary">https://source.android.com/devices/sensors/sensor-types.html#composite_sensor_type_summary</a></p>
 
-<p>79. Wi-Fi Multicast API: <a href="http://developer.android.com/reference/android/net/wifi/WifiManager.MulticastLock.html">http://developer.android.com/reference/android/net/wifi/WifiManager.MulticastLock.html</a></p>
+<p>93. Continuous trigger mode: <a href="http://source.android.com/devices/sensors/report-modes.html#continuous">https://source.android.com/devices/sensors/report-modes.html#continuous</a></p>
 
-<p>80. Wi-Fi Direct (Wi-Fi P2P): <a href="http://developer.android.com/reference/android/net/wifi/p2p/WifiP2pManager.html">http://developer.android.com/reference/android/net/wifi/p2p/WifiP2pManager.html</a></p>
+<p>94. Accelerometer sensor: <a href="http://developer.android.com/reference/android/hardware/Sensor.html#TYPE_ACCELEROMETER">http://developer.android.com/reference/android/hardware/Sensor.html#TYPE_ACCELEROMETER</a></p>
 
-<p>81. WifiManager API: <a href="http://developer.android.com/reference/android/net/wifi/WifiManager.html">http://developer.android.com/reference/android/net/wifi/WifiManager.html</a></p>
+<p>95. Android Fingerprint API: <a href="https://developer.android.com/reference/android/hardware/fingerprint/package-summary.html">https://developer.android.com/reference/android/hardware/fingerprint/package-summary.html</a></p>
 
-<p>82. Bluetooth API: <a href="http://developer.android.com/reference/android/bluetooth/package-summary.html">http://developer.android.com/reference/android/bluetooth/package-summary.html</a></p>
+<p>96. Android Fingerprint HAL: <a href="https://source.android.com/devices/tech/security/authentication/fingerprint-hal.html">https://source.android.com/devices/tech/security/authentication/fingerprint-hal.html</a></p>
 
-<p>83. Bluetooth ScanFilter API: <a href="https://developer.android.com/reference/android/bluetooth/le/ScanFilter.html">https://developer.android.com/reference/android/bluetooth/le/ScanFilter.html</a></p>
+<p>97. Wi-Fi Multicast API: <a href="http://developer.android.com/reference/android/net/wifi/WifiManager.MulticastLock.html">http://developer.android.com/reference/android/net/wifi/WifiManager.MulticastLock.html</a></p>
 
-<p>84. NDEF Push Protocol: <a href="http://source.android.com/compatibility/ndef-push-protocol.pdf">http://source.android.com/compatibility/ndef-push-protocol.pdf</a></p>
+<p>98. Wi-Fi Direct (Wi-Fi P2P): <a href="http://developer.android.com/reference/android/net/wifi/p2p/WifiP2pManager.html">http://developer.android.com/reference/android/net/wifi/p2p/WifiP2pManager.html</a></p>
 
-<p>85. Android Beam: <a href="http://developer.android.com/guide/topics/connectivity/nfc/nfc.html">http://developer.android.com/guide/topics/connectivity/nfc/nfc.html</a> </p>
+<p>99. WifiManager API: <a href="http://developer.android.com/reference/android/net/wifi/WifiManager.html">http://developer.android.com/reference/android/net/wifi/WifiManager.html</a></p>
 
-<p>86. Android NFC Sharing Settings:</p>
+<p>100. Bluetooth API: <a href="http://developer.android.com/reference/android/bluetooth/package-summary.html">http://developer.android.com/reference/android/bluetooth/package-summary.html</a></p>
 
-<p><a href="http://developer.android.com/reference/android/provider/Settings.html#ACTION_NFCSHARING_SETTINGS">http://developer.android.com/reference/android/provider/Settings.html#ACTION_NFCSHARING_SETTINGS</a></p>
+<p>101. Bluetooth ScanFilter API: <a href="https://developer.android.com/reference/android/bluetooth/le/ScanFilter.html">https://developer.android.com/reference/android/bluetooth/le/ScanFilter.html</a></p>
 
-<p>87. NFC Connection Handover: <a href="http://members.nfc-forum.org/specs/spec_list/#conn_handover">http://members.nfc-forum.org/specs/spec_list/#conn_handover</a></p>
+<p>102. NFC Barcode: <a href="http://developer.android.com/reference/android/nfc/tech/NfcBarcode.html">http://developer.android.com/reference/android/nfc/tech/NfcBarcode.html</a></p>
 
-<p>88. Bluetooth Secure Simple Pairing Using NFC: <a href="http://members.nfc-forum.org/apps/group_public/download.php/18688/NFCForum-AD-BTSSP_1_1.pdf">http://members.nfc-forum.org/apps/group_public/download.php/18688/NFCForum-AD-BTSSP_1_1.pdf</a> </p>
+<p>103. NDEF Push Protocol: <a href="http://source.android.com/compatibility/ndef-push-protocol.pdf">http://source.android.com/compatibility/ndef-push-protocol.pdf</a></p>
 
-<p>89. Content Resolver: <a href="http://developer.android.com/reference/android/content/ContentResolver.html">http://developer.android.com/reference/android/content/ContentResolver.html</a></p>
+<p>104. Android Beam: <a href="http://developer.android.com/guide/topics/connectivity/nfc/nfc.html">http://developer.android.com/guide/topics/connectivity/nfc/nfc.html</a></p>
 
-<p>90. Camera orientation API: <a href="http://developer.android.com/reference/android/hardware/Camera.html#setDisplayOrientation(int)">http://developer.android.com/reference/android/hardware/Camera.html#setDisplayOrientation(int)</a></p>
+<p>105. Android NFC Sharing Settings: <a href="http://developer.android.com/reference/android/provider/Settings.html#ACTION_NFCSHARING_SETTINGS">http://developer.android.com/reference/android/provider/Settings.html#ACTION_NFCSHARING_SETTINGS</a></p>
 
-<p>91. Camera: <a href="http://developer.android.com/reference/android/hardware/Camera.html">http://developer.android.com/reference/android/hardware/Camera.html</a></p>
+<p>106. NFC Connection Handover: <a href="http://members.nfc-forum.org/specs/spec_list/#conn_handover">http://members.nfc-forum.org/specs/spec_list/#conn_handover</a></p>
 
-<p>92. Camera: <a href="http://developer.android.com/reference/android/hardware/Camera.Parameters.html">http://developer.android.com/reference/android/hardware/Camera.Parameters.html</a></p>
+<p>107. Bluetooth Secure Simple Pairing Using NFC: <a href="http://members.nfc-forum.org/apps/group_public/download.php/18688/NFCForum-AD-BTSSP_1_1.pdf">http://members.nfc-forum.org/apps/group_public/download.php/18688/NFCForum-AD-BTSSP_1_1.pdf</a></p>
 
-<p>93. Camera hardware level: <a href="https://developer.android.com/reference/android/hardware/camera2/CameraCharacteristics.html#INFO_SUPPORTED_HARDWARE_LEVEL">https://developer.android.com/reference/android/hardware/camera2/CameraCharacteristics.html#INFO_SUPPORTED_HARDWARE_LEVEL</a> </p>
+<p>108. Host-based Card Emulation: <a href="http://developer.android.com/guide/topics/connectivity/nfc/hce.html">http://developer.android.com/guide/topics/connectivity/nfc/hce.html</a></p>
 
-<p>94. Camera version support: <a href="http://source.android.com/devices/camera/versioning.html">http://source.android.com/devices/camera/versioning.html</a> </p>
+<p>109. Content Resolver: <a href="http://developer.android.com/reference/android/content/ContentResolver.html">http://developer.android.com/reference/android/content/ContentResolver.html</a></p>
 
-<p>95. Android DownloadManager: <a href="http://developer.android.com/reference/android/app/DownloadManager.html">http://developer.android.com/reference/android/app/DownloadManager.html</a></p>
+<p>110. Camera orientation API: <a href="http://developer.android.com/reference/android/hardware/Camera.html#setDisplayOrientation(int)">http://developer.android.com/reference/android/hardware/Camera.html#setDisplayOrientation(int)</a></p>
 
-<p>96. Android File Transfer: <a href="http://www.android.com/filetransfer">http://www.android.com/filetransfer</a></p>
+<p>111. Camera: <a href="http://developer.android.com/reference/android/hardware/Camera.html">http://developer.android.com/reference/android/hardware/Camera.html</a></p>
 
-<p>97. Android Open Accessories: <a href="http://developer.android.com/guide/topics/connectivity/usb/accessory.html">http://developer.android.com/guide/topics/connectivity/usb/accessory.html</a></p>
+<p>112. Camera: <a href="http://developer.android.com/reference/android/hardware/Camera.Parameters.html">http://developer.android.com/reference/android/hardware/Camera.Parameters.html</a></p>
 
-<p>98. Android USB Audio: <a href="http://developer.android.com/reference/android/hardware/usb/UsbConstants.html#USB_CLASS_AUDIO">http://developer.android.com/reference/android/hardware/usb/UsbConstants.html#USB_CLASS_AUDIO</a></p>
+<p>113. Camera hardware level: <a href="https://developer.android.com/reference/android/hardware/camera2/CameraCharacteristics.html#INFO_SUPPORTED_HARDWARE_LEVEL">https://developer.android.com/reference/android/hardware/camera2/CameraCharacteristics.html#INFO_SUPPORTED_HARDWARE_LEVEL</a></p>
 
-<p>99. USB Charging Specification: <a href="http://www.usb.org/developers/docs/devclass_docs/USB_Battery_Charging_1.2.pdf">http://www.usb.org/developers/docs/devclass_docs/USB_Battery_Charging_1.2.pdf</a></p>
+<p>114. Camera version support: <a href="http://source.android.com/devices/camera/versioning.html">http://source.android.com/devices/camera/versioning.html</a></p>
 
-<p>100. USB Host API:<a href="http://developer.android.com/guide/topics/connectivity/usb/host.html"> http://developer.android.com/guide/topics/connectivity/usb/host.html</a></p>
+<p>115. Android DownloadManager: <a href="http://developer.android.com/reference/android/app/DownloadManager.html">http://developer.android.com/reference/android/app/DownloadManager.html</a></p>
 
-<p>101. Wired audio headset: <a href="http://source.android.com/accessories/headset-spec.html">http://source.android.com/accessories/headset-spec.html</a> </p>
+<p>116. Android File Transfer: <a href="http://www.android.com/filetransfer">http://www.android.com/filetransfer</a></p>
 
-<p>102. Android Security and Permissions reference: <a href="http://developer.android.com/guide/topics/security/permissions.html">http://developer.android.com/guide/topics/security/permissions.html</a></p>
+<p>117. Adoptable storage: <a href="http://source.android.com/devices/storage/adoptable.html">http://source.android.com/devices/storage/adoptable.html</a></p>
 
-<p>103. UserManager reference: <a href="http://developer.android.com/reference/android/os/UserManager.html">http://developer.android.com/reference/android/os/UserManager.html</a></p>
+<p>118. Android Open Accessories: <a href="http://developer.android.com/guide/topics/connectivity/usb/accessory.html">http://developer.android.com/guide/topics/connectivity/usb/accessory.html</a></p>
 
-<p>104. External Storage reference: <a href="http://source.android.com/devices/storage">http://source.android.com/devices/storage</a></p>
+<p>119. Android USB Audio: <a href="http://developer.android.com/reference/android/hardware/usb/UsbConstants.html#USB_CLASS_AUDIO">http://developer.android.com/reference/android/hardware/usb/UsbConstants.html#USB_CLASS_AUDIO</a></p>
 
-<p>105. External Storage APIs: <a href="http://developer.android.com/reference/android/os/Environment.html">http://developer.android.com/reference/android/os/Environment.html</a></p>
+<p>120. USB Charging Specification: <a href="http://www.usb.org/developers/docs/devclass_docs/USB_Battery_Charging_1.2.pdf">http://www.usb.org/developers/docs/devclass_docs/USB_Battery_Charging_1.2.pdf</a></p>
 
-<p>106. SMS Short Code: <a href="http://en.wikipedia.org/wiki/Short_code">http://en.wikipedia.org/wiki/Short_code</a></p>
+<p>121. USB Host API:<a href="http://developer.android.com/guide/topics/connectivity/usb/host.html"> http://developer.android.com/guide/topics/connectivity/usb/host.html</a></p>
 
-<p>107. Android Open Source Encryption: <a href="http://source.android.com/devices/tech/security/encryption/index.html">http://source.android.com/devices/tech/security/encryption/index.html</a></p>
+<p>122. Wired audio headset: <a href="http://source.android.com/accessories/headset-spec.html">http://source.android.com/accessories/headset-spec.html</a></p>
 
-<p>108. Android Compatibility Program Overview: <a href="http://source.android.com/compatibility/index.html">http://source.android.com/compatibility/index.html</a></p>
+<p>123. Power profile components: <a href="http://source.android.com/devices/tech/power/values.html">http://source.android.com/devices/tech/power/values.html</a></p>
 
-<p>109. Android Compatibility forum: <a href="https://groups.google.com/forum/#!forum/android-compatibility">https://groups.google.com/forum/#!forum/android-compatibility</a></p>
+<p>124. Batterystats: <a href="http://source.android.com/devices/tech/power/batterystats.html">http://source.android.com/devices/tech/power/batterystats.html</a></p>
 
-<p>110. WebM project: <a href="http://www.webmproject.org/">http://www.webmproject.org/</a>  </p>
+<p>125. Power usage summary: <a href="http://developer.android.com/reference/android/content/Intent.html#ACTION_POWER_USAGE_SUMMARY">http://developer.android.com/reference/android/content/Intent.html#ACTION_POWER_USAGE_SUMMARY</a></p>
 
-<p>111. Android UI_MODE_TYPE_CAR API: <a href="http://developer.android.com/reference/android/content/res/Configuration.html#UI_MODE_TYPE_CAR">http://developer.android.com/reference/android/content/res/Configuration.html#UI_MODE_TYPE_CAR</a></p>
+<p>126. Android Security and Permissions reference: <a href="http://developer.android.com/guide/topics/security/permissions.html">http://developer.android.com/guide/topics/security/permissions.html</a></p>
 
-<p>112. Android MediaCodecList API: <a href="http://developer.android.com/reference/android/media/MediaCodecList.html">http://developer.android.com/reference/android/media/MediaCodecList.html</a></p>
+<p>127. UserManager reference: <a href="http://developer.android.com/reference/android/os/UserManager.html">http://developer.android.com/reference/android/os/UserManager.html</a></p>
 
-<p>113. Android CamcorderProfile API: <a href="http://developer.android.com/reference/android/media/CamcorderProfile.html">http://developer.android.com/reference/android/media/CamcorderProfile.html</a></p>
+<p>128. External Storage reference: <a href="http://source.android.com/devices/storage/traditional.html">http://source.android.com/devices/storage</a></p>
+
+<p>129. External Storage APIs: <a href="http://developer.android.com/reference/android/os/Environment.html">http://developer.android.com/reference/android/os/Environment.html</a></p>
+
+<p>130. SMS Short Code: <a href="http://en.wikipedia.org/wiki/Short_code">http://en.wikipedia.org/wiki/Short_code</a></p>
+
+<p>131. Secure lock screen reporting: <a href="http://developer.android.com/reference/android/app/KeyguardManager.html#isDeviceSecure()">http://developer.android.com/reference/android/app/KeyguardManager.html#isDeviceSecure()</a></p>
+
+<p>132. Android Open Source Encryption: <a href="http://source.android.com/devices/tech/security/encryption/index.html">http://source.android.com/devices/tech/security/encryption/index.html</a></p>
+
+<p>133. Android Keystore System: <a href="https://developer.android.com/training/articles/keystore.html">https://developer.android.com/training/articles/keystore.html</a></p>
+
+<p>134. KeyChain API: <a href="https://developer.android.com/reference/android/security/KeyChain.html">https://developer.android.com/reference/android/security/KeyChain.html</a></p>
+
+<p>135. Keystore API: <a href="https://developer.android.com/reference/java/security/KeyStore.html">https://developer.android.com/reference/java/security/KeyStore.html</a></p>
+
+<p>136. Gatekeeper HAL: <a href="http://source.android.com/devices/tech/security/authentication/gatekeeper.html">http://source.android.com/devices/tech/security/authentication/gatekeeper.html</a></p>
+
+<p>137. Android Compatibility Program Overview: <a href="http://source.android.com/compatibility/index.html">http://source.android.com/compatibility/index.html</a></p>
+
+<p>138. SystemUpdatePolicy class: <a href="http://developer.android.com/reference/android/app/admin/SystemUpdatePolicy.html">http://developer.android.com/reference/android/app/admin/SystemUpdatePolicy.html</a></p>
+
+<p>139. Android Compatibility forum: <a href="https://groups.google.com/forum/#!forum/android-compatibility">https://groups.google.com/forum/#!forum/android-compatibility</a></p>
+
 
 <p>Many of these resources are derived directly or indirectly from the Android
 SDK, and will be functionally identical to the information in that SDK&rsquo;s
