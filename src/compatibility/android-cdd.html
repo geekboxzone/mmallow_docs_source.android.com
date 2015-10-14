@@ -5009,21 +5009,24 @@ than 8,192 keys to be imported.</li>
   such as a Secure Element (SE) where a Trusted Execution Environment (TEE) can be implemented,
   then it:
   <ul>
-  <li>MUST back up the keystore implementation with the secure hardware. The upstream Android
-    Open Source Project provides the Keymaster Hardware Abstraction Layer (HAL) implementation
-    that can be used to satisfy this requirement.</li>
-  <li>MUST perform the lock screen authentication in the secure hardware and only when successful
-    allow the authentication-bound keys to be used. The upstream Android Open Source Project
-    provides the Gatekeeper Hardware Abstraction Layer (HAL) that can be used to satisfy this
-    requirement
+  <li>Is STRONGLY RECOMMENDED to back up the keystore implementation with the secure hardware.
+    The upstream Android Open Source Project provides the Keymaster Hardware Abstraction Layer
+    (HAL) implementation that can be used to satisfy this requirement.</li>
+  <li>MUST perform the lock screen authentication in the secure hardware if the device has a
+    hardware-backed keystore implementation and only when successful allow the authentication-bound
+    keys to be used. The upstream Android Open Source Project provides the Gatekeeper Hardware
+    Abstraction Layer (HAL) that can be used to satisfy this requirement
     [<a href="http://source.android.com/devices/tech/security/authentication/gatekeeper.html">Resources, 136</a>].</li>
   </ul>
 </li>
 </ul>
 
-<p>Note that if a device implementation is already launched on an earlier Android version and has
-  not implemented a trusted operating system on the secure hardware, such a device cannot meet
-  the above TEE-related requirements through a system software update and thus is exempted from these TEE-related requirements.</p>
+<p>Note that while the above TEE-related requirements are stated as STRONGLY RECOMMENDED, the
+  Compatibility Definition for the next API version is planned to changed these to REQIUIRED. If a
+  device implementation is already launched on an earlier Android version and has not implemented a
+  trusted operating system on the secure hardware, such a device might not be able to meet the
+  requirements through a system software update and thus is STRONGLY RECOMMENDED to implement a
+  TEE.</p>
 
 <h2 id="9_12_data_deletion">9.12. Data Deletion</h2>
 
