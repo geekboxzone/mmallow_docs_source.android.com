@@ -4096,6 +4096,35 @@ common wireless data standard, such as 802.11 (Wi-Fi).</p>
 
 <p>Devices MAY implement more than one form of data connectivity.</p>
 
+<p>Devices MUST include an IPv6 networking stack and support IPv6 communication
+using the managed APIs, such as <code>java.net.Socket</code> and
+<code>java.net.URLConnection</code>, as well as the native APIs, such as
+<code>AF_INET6</code> sockets. The required level of IPv6 support depends on
+the network type, as follows:</p>
+<ul>
+  <li>Devices that support Wi-Fi networks MUST support dual-stack and IPv6-only
+  operation on Wi-Fi.</li>
+  <li>Devices that support Ethernet networks MUST support dual-stack operation
+  on Ethernet.</li>
+  <li>Devices that support cellular data SHOULD support IPv6 operation
+  (IPv6-only and possibly dual-stack) on cellular data.</li>
+  <li>When a device is simultaneously connected to more than one network (e.g.,
+  Wi-Fi and cellular data), it MUST simultaneously meet these requirements on
+  each network to which it is connected.</li>
+</ul>
+
+<p>IPv6 MUST be enabled by default.</p>
+
+<p>In order to ensure that IPv6 communication is as reliable as IPv4, unicast
+IPv6 packets sent to the device MUST NOT be dropped, even when the screen is
+not in an active state. Redundant multicast IPv6 packets, such as repeated
+identical Router Advertisements, MAY be rate-limited in hardware or firmware
+if doing so is necessary to save power. In such cases, rate-limiting MUST NOT
+cause the device to lose IPv6 connectivity on any IPv6-compliant network that
+uses RA lifetimes of at least 180 seconds.</p>
+
+<p>IPv6 connectivity MUST be maintained in doze mode.</p>
+
 <h3 id="7_4_6_sync_settings">7.4.6. Sync Settings</h3>
 
 
@@ -5238,6 +5267,10 @@ switching</td>
  <tr>
     <td>7.4.4. Near-Field Communications</td>
     <td>Additions to requirements for Near-Field Communications (NFC)</td>
+ </tr>
+ <tr>
+    <td>7.4.5. Minimum Network Capability</td>
+    <td>Added requirements for IPv6 support</td>
  </tr>
  <tr>
     <td>7.6.3. Adoptable Storage</td>
