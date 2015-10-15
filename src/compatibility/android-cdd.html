@@ -32,7 +32,7 @@
 
 <p class="toc_h4"><a href="#3_2_3_1_core_application_intents">3.2.3.1. Core Application Intents</a></p>
 
-<p class="toc_h4"><a href="#3_2_3_2_intent_overrides">3.2.3.2. Intent Overrides</a></p>
+<p class="toc_h4"><a href="#3_2_3_2_intent_resolution">3.2.3.2. Intent Resolution</a></p>
 
 <p class="toc_h4"><a href="#3_2_3_3_intent_namespaces">3.2.3.3. Intent Namespaces</a></p>
 
@@ -826,11 +826,12 @@ defined by all the &ldquo;public&rdquo; Activity or Service components of these 
 Android applications. Note that Activity or Service components are considered
 &ldquo;public&rdquo; when the attribute android:exported is absent or has the value true.</p>
 
-<h4 id="3_2_3_2_intent_overrides">3.2.3.2. Intent Overrides</h4>
+<h4 id="3_2_3_2_intent_resolution">3.2.3.2. Intent Resolution</h4>
 
 
 <p>As Android is an extensible platform, device implementations MUST allow each
-intent pattern referenced in <a href="#3_2_3_1_core_application_intents">section 3.2.3.1</a> to be overridden by third-party applications. The upstream Android open source
+intent pattern referenced in <a href="#3_2_3_1_core_application_intents">section 3.2.3.1</a>
+to be overridden by third-party applications. The upstream Android open source
 implementation allows this by default; device implementers MUST NOT attach
 special privileges to system applications' use of these intent patterns, or
 prevent third-party applications from binding to and assuming control of these
@@ -838,11 +839,48 @@ patterns. This prohibition specifically includes but is not limited to
 disabling the&ldquo;Chooser&rdquo; user interface that allows the user to select between
 multiple applications that all handle the same intent pattern.</p>
 
+<p>Device implementations MUST provide a user interface for users to modify the default
+activity for intents.</p>
+
 <p>However, device implementations MAY provide default activities for specific URI
-patterns (eg. http://play.google.com) if the default activity provides a more
-specific filter for the data URI. For example, an intent filter specifying the
-data URI &ldquo;http://www.android.com&rdquo; is more specific than the browser filter for&ldquo;http://&rdquo;. Device implementations MUST provide a user interface for users to
-modify the default activity for intents.</p>
+patterns (eg. http://play.google.com) when the default activity provides a more
+specific attribute for the data URI. For example, an intent filter pattern specifying
+the data URI &ldquo;http://www.android.com&rdquo; is more specific than the browser's
+core intent pattern for &ldquo;http://&rdquo;.</p>
+  
+<p>Android also includes a mechanism for third-party apps to declare an authoritative
+default app linking behavior for certain types of web URI intents [<a
+href="https://developer.android.com/training/app-links">Resources, 140</a>]. When such
+authoritative declarations are defined in an app's intent filter patterns, device
+implementations:</p>
+
+<ul>
+<li>MUST attempt to validate any intent filters by performing the validation steps 
+defined in the Digital Asset Links specification [<a
+href="https://developers.google.com/digital-asset-links">Resources, 141</a>] as implemented
+by the Package Manager in the upstream Android Open Source Project.</li>
+<li>MUST attempt validation of the intent filters during the installation of the
+application and set all successfully validated UIR intent filters as default app handlers
+for their UIRs.</li>
+<li>MAY set specific URI intent filters as default app handlers for their URIs, if they
+are successfully verified but other candidate URI filters fail verification. If a device
+implementation does this, it MUST provide the user appropriate per-URI pattern overrides
+in the settings menu.</li>
+<li>MUST provide the user with per-app App Links controls in Settings as follows:
+  <ul>
+  <li>The user MUST be able to override holistically the default app links behavior for
+  an app to be: always open, always ask, or never open, which must apply to all candidate
+  URI intent filters equally.</li>
+  <li>The user MUST be able to see a list of the candidate URI intent filters.</li>
+  <li>The device implementation MAY provide the user with the ability to override specific
+  candidate URI intent filters that were successfully verified, on a per-intent filter basis.
+  </li>
+  <li>The device implementation MUST provide users with the ability to view and override
+  specific candidate URI intent filters if the device implementation lets some candidate
+  URI intent filters succeed verification while some others can fail.</li>
+  </ul>
+</li>
+</ul>
 
 <h4 id="3_2_3_3_intent_namespaces">3.2.3.3. Intent Namespaces</h4>
 
@@ -5618,6 +5656,9 @@ Android source code, at dalvik/docs</p>
 
 <p>139. Android Compatibility forum: <a href="https://groups.google.com/forum/#!forum/android-compatibility">https://groups.google.com/forum/#!forum/android-compatibility</a></p>
 
+<p>140. Handling App Links: <a href="https://developer.android.com/training/app-links">https://developer.android.com/training/app-links/index.html</a></p>
+
+<p>141. Google Digital Asset Links: <a href="https://developers.google.com/digital-asset-links">https://developers.google.com/digital-asset-links</a></p>
 
 <p>Many of these resources are derived directly or indirectly from the Android
 SDK, and will be functionally identical to the information in that SDK&rsquo;s
