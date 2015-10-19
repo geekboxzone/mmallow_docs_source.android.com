@@ -116,7 +116,7 @@ fingerprint daemon (<code>fingerprintd</code>) with the fingerprint vendor-speci
 
 <ul>
   <li>Fingerprint data is not leaked
-  <li>Fingerprint data is removed when a user account is removed from a device
+  <li>Fingerprint data is removed when a user is removed from a device
 </ul>
 
 <p>Here are the guidelines:</p>
@@ -139,10 +139,10 @@ the fingerprint data from a different user on the same device, or from another
 device, must not work.
   <li>Implementations must either use the file system path provided by the
   <code>set_active_group()</code> function or provide a way to erase all user template data when the user
-account is removed. It is strongly recommended that fingerprint template files
+is removed. It is strongly recommended that fingerprint template files
 be stored as encrypted in the path provided. If this is infeasible due to TEE
 storage requirements, then the implementer must add hooks to ensure removal of
-the data when the user's account is removed.
+the data when the user is removed.
 </ol>
 
 <h2 id=major_functions_in_the_fingerprint_hal>Major functions in the Fingerprint HAL</h2>
